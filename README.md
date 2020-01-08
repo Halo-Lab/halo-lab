@@ -1,4 +1,4 @@
-What we should take in consideration during development:
+# What we should take in consideration during development:
 
 1. It's a public repo, so no private data should be commited
 2. We already have this app implemented, we need to re-use as many code as possible.
