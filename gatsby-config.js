@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Halo-Lab`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@halolabteam`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,6 +25,30 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@src": "src",
+          "@components": "src/components",
+          "@pages": "src/pages",
+          "@styles": "src/styles",
+        },
+        extensions: [
+          "js",
+        ],
+      }
+    },
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        useResolveUrlLoader: {
+          options: {
+            sourceMap: true, //default is false
+          },
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
