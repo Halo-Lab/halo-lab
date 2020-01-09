@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>stars-framework</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="43.5" cy="91.5" r="1.5"></circle>
+        <filter x="-400.0%" y="-400.0%" width="900.0%" height="900.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-3" cx="44" cy="11" r="2"></circle>
+        <filter x="-300.0%" y="-300.0%" width="700.0%" height="700.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-5" cx="109.595703" cy="161.322266" r="1.5"></circle>
+        <filter x="-400.0%" y="-400.0%" width="900.0%" height="900.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-7" cx="202" cy="50" r="1"></circle>
+        <filter x="-600.0%" y="-600.0%" width="1300.0%" height="1300.0%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-9" cx="141.818359" cy="41.25" r="2.5"></circle>
+        <filter x="-240.0%" y="-240.0%" width="580.0%" height="580.0%" filterUnits="objectBoundingBox" id="filter-10">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Main-Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="stars-framework">
+            <g id="stars" transform="translate(40.000000, 41.000000)">
+                <g id="Oval-4-Copy-12">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="Oval-4-Copy-12">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+                <circle id="Oval-4-Copy-17" fill="#FFFFFF" cx="150" cy="149" r="1"></circle>
+                <circle id="Oval-4-Copy-17" fill="#FFFFFF" cx="175.269531" cy="186.701172" r="1"></circle>
+                <circle id="Oval-4-Copy-17" fill="#FFFFFF" cx="120.878906" cy="0.537109375" r="1"></circle>
+                <circle id="Oval-4-Copy-17" fill="#FFFFFF" cx="108.142578" cy="218.121094" r="1"></circle>
+                <circle id="Oval-4-Copy-17" fill="#FFFFFF" cx="37.5664062" cy="205.144531" r="1"></circle>
+                <circle id="Oval-4-Copy-17" fill="#FFFFFF" cx="87.5" cy="177.5" r="1"></circle>
+                <circle id="Oval-4-Copy-17" fill="#FFFFFF" cx="61.5" cy="165.5" r="1"></circle>
+                <circle id="Oval-4-Copy-17" fill="#FFFFFF" cx="89.3300781" cy="42.5898438" r="1"></circle>
+                <circle id="Oval-4-Copy-17" fill="#FFFFFF" cx="95.3300781" cy="102.589844" r="1"></circle>
+                <circle id="Oval-4-Copy-17" fill="#FFFFFF" transform="translate(167.697754, 90.295898) rotate(85.000000) translate(-167.697754, -90.295898) " cx="167.697754" cy="90.2958984" r="1.5"></circle>
+                <g id="Oval-6">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                </g>
+                <circle id="Oval-6-Copy" fill="#FFFFFF" cx="115.320312" cy="95.7001953" r="1.5"></circle>
+                <g id="Oval-6-Copy-2">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-7"></use>
+                </g>
+                <g id="Oval-6-Copy-3">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-9"></use>
+                </g>
+                <circle id="Oval" fill="#FFFFFF" cx="1.5" cy="130.5" r="1.5"></circle>
+                <circle id="Oval-4-Copy-17" fill="#FFFFFF" cx="92.3300781" cy="79.5898438" r="1"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

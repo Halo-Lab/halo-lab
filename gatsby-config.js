@@ -34,23 +34,14 @@ module.exports = {
           "@src": "src",
           "@components": "src/components",
           "@pages": "src/pages",
-          "@styles": "src/styles",
+          "@styles": "src/styles", 
         },
         extensions: [
-          "js",
+          "js"
         ],
       }
     },
-    {
-      resolve: "gatsby-plugin-sass",
-      options: {
-        useResolveUrlLoader: {
-          options: {
-            sourceMap: true, //default is false
-          },
-        },
-      },
-    },
+    "gatsby-plugin-sass",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

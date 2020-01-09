@@ -3,6 +3,8 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 
 import Layout from "@components/Layout";
 
+import "@styles/index.scss";
+
 const Home = () => {
   const { allSitePage } = useStaticQuery(
     graphql`
