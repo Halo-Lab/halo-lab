@@ -1,0 +1,9 @@
+@mixin font($name, $path, $weight: 400, $style: normal, $display: 'block') {
+  @font-face {
+    font-family: $name;
+    font-style: $style;
+    font-weight: $weight;
+    src: url('#{$path}.ttf') format('truetype'), url('#{$path}.woff') format('woff'), url('#{$path}.woff2') format('woff2'), url('#{$path}.eot?') format('embedded-opentype');
+    font-display: $display;
+  }
+}

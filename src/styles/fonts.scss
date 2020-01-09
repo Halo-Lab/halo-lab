@@ -1,0 +1,4 @@
+@import "@styles/variables/all";
+@import "@styles/mixins/all";
+
+@include font('ProximaNova-Bold', '../fonts/ProximaNova-Bold', normal, normal);
