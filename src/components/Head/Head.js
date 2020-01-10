@@ -36,6 +36,7 @@ const Head = ({ children }) => {
       {/* <-- fonts */}
 
       <title>{titleDefault}</title>
+      <body className="body-inside"></body>
 
       {children}
     </Helmet>
