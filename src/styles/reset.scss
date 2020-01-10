@@ -1,0 +1,13 @@
+@import "@styles/variables/all";
+@import "@styles/mixins/all";
+
+html, body, #___gatsby, #gatsby-focus-wrapper {
+  height: 100%
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+@import "@styles/legacy/template.scss";

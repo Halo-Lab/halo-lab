@@ -1,0 +1,64 @@
+.main-home {
+  font-family: sofia-pro-soft, sans-serif;
+}
+
+.intro h1 {
+  color: #fff;
+  display: table-cell;
+  font-family: ratiomodern, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.57rem;
+  line-height: 1.14em;
+  height: 100%;
+  padding: 0;
+  vertical-align: middle;
+  white-space: pre-wrap;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 4.17rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 3.34rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 3.7rem;
+    line-height: 1.5;
+    br {
+      display: none;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    font-size: 2.5rem;
+  }
+  span {
+    color: #84a4ff;
+  }
+}
+
+html.menu--open {
+  overflow: hidden;
+}
+
+.section__title {
+  font-family: $font-ratiomodern;
+  font-size: 10rem;
+  line-height: 1.285em;
+  color: $white-color;
+  font-weight: 400;
+  margin-bottom: 8.57rem;
+  text-align: center;
+
+  @include media-breakpoint-down(md) {
+    font-size: 6.25rem;
+    line-height: 1.46em;
+    margin-bottom: 5rem;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 4.5rem;
+    line-height: 1.1em;
+    margin-bottom: 2.5rem;
+  }
+}

@@ -1,0 +1,219 @@
+.section__projects {
+  margin-top: 11rem;
+
+  @media (min-width: 1280px) {
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 8.33rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin-top: 6.67rem;
+  }
+
+  // .project__image-container {
+  //   padding-top: 0;
+  // }
+
+  .projects__others {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: -4.3rem;
+    margin-left: 4.4rem;
+    margin-top: 9.57rem;
+
+    @media screen and (max-width: 1024px) {
+      margin-right: -5rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  .projects__others-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
+  }
+
+  .projects__others-block {
+    display: flex;
+    box-shadow: inset 0 0 0 1px #32344d;
+    border-right: none;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+
+  .projects__others-title {
+    font-size: 2.86rem;
+    max-width: 2.85em;
+
+    @include media-breakpoint-down(md) {
+      font-size: 1.84rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      max-width: none;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .projects__others-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14.29rem;
+    height: 14.29rem;
+
+    @include media-breakpoint-down(md) {
+      width: 9.34rem;
+      height: 9.34rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 50%;
+      height: 0;
+      padding-bottom: 50%;
+      position: relative;
+    }
+  }
+
+  .projects__others-item img {
+    @include media-breakpoint-down(sm) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .jackandjones-item img {
+    width: 9.57rem;
+
+    @include media-breakpoint-down(md) {
+      width: 6.17rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 64%;
+    }
+  }
+
+  .udemy-item img {
+    width: 5.71rem;
+
+    @include media-breakpoint-down(md) {
+      width: 3.67rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 39%;
+    }
+  }
+
+  .luzern-item img {
+    width: 6.36rem;
+
+    @include media-breakpoint-down(md) {
+      width: 4.17rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 46%;
+    }
+  }
+
+  .projects__others-item + .projects__others-item:not(:last-child) {
+    box-shadow: -1px 0 0 0 #32344d;
+
+    @media screen and (min-width: 2400px) {
+      box-shadow: -0.042vw 0 0 0 #32344d;
+    }
+  }
+
+  .projects__others-item:nth-child(1),
+  .projects__others-item:nth-child(2) {
+    @include media-breakpoint-down(sm) {
+      box-shadow: -1px 0 0 0 #32344d, 0 1px 0 0 #32344d;
+    }
+  }
+
+  .projects__others-item:last-child {
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background: $main-color;
+      font-size: 1rem;
+      line-height: 2.14em;
+      text-decoration: none;
+      color: #fff;
+      text-transform: uppercase;
+
+      @include media-breakpoint-down(md) {
+        line-height: 1.67em;
+      }
+
+      @include media-breakpoint-down(sm) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        font-size: 1.3rem;
+      }
+
+      @include media-breakpoint-down(xs) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .projects__others-item:last-child a span {
+    letter-spacing: 0.71em;
+
+    @include media-breakpoint-down(md) {
+      letter-spacing: 0.5em;
+    }
+
+    @include media-breakpoint-down(sm) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .project__partners-list {
+    margin-left: 4.4rem;
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .project--reverse .project__partners-list {
+    margin-left: auto;
+  }
+
+  .project:not(.project--reverse) .project__text-container {
+    padding-right: 10px;
+  }
+}

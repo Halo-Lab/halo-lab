@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 
 import Layout from "@components/Layout";
+import Head from "@components/Head";
 
 import "@styles/index.scss";
 
@@ -23,6 +24,9 @@ const Home = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>Главная - Halo Lab Blog</title>
+      </Head>
       <div>Home</div>
       <ul>
         {

@@ -6,7 +6,7 @@ import "./Footer.scss";
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: {eq: "header-logo.svg"}) {
+      file(relativePath: {eq: "logo.svg"}) {
         publicURL
       }
     }
