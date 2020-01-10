@@ -22,7 +22,7 @@ const Head = ({ children }) => {
 
   return (
     <Helmet>
-      <meta lang="en"/>
+      <html lang="en"/>
       <meta charSet="utf-8"/>
 
       <meta name="description" content={descriptionDefault}/>

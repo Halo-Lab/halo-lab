@@ -20,31 +20,28 @@ const Footer = () => {
   ];
 
   return (
-    <div>
-      <footer className="clearfix">
-        <div className="footer_conteiner">
-          <div className="footer__logo">
-            <img src={data.file.publicURL} alt="logo"/>
-            With Love from Halo Lab
-          </div>
-        
-          <div className="socials">
-            <ul>
-              {
-                itemsSocial.map(({ href, classIcon }) => {
-                  return (
-                    <li key={href}>
-                      <a href={href} className={classIcon}>{}</a>
-                    </li>
-                  );
-                })
-              }
-            </ul>
-          </div>
+    <footer className="clearfix">
+      <div className="footer_conteiner">
+        <div className="footer__logo">
+          <img src={data.file.publicURL} alt="logo"/>
+          With Love from Halo Lab
         </div>
-      </footer>
-      <div className="modal-overlay"></div>
-    </div>
+      
+        <div className="socials">
+          <ul>
+            {
+              itemsSocial.map(({ href, classIcon }) => {
+                return (
+                  <li key={href}>
+                    <a href={href} className={classIcon}>{classIcon}</a>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+      </div>
+    </footer>
   );
 };
 
