@@ -17,7 +17,7 @@ const Menu = () => {
         {
           items.map(({ classes, href, title }) => {
             return (
-              <li className={`menu-item ${classes}`}>
+              <li className={`menu-item ${classes}`} key={href}>
                 <Link to={href}>
                   <div className="menu-link__circle"></div>
                   <span className="menu-link__text">{title}</span>

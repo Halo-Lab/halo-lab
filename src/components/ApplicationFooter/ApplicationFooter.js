@@ -1,9 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import "./Footer.scss";
+import "./ApplicationFooter.scss";
 
-const Footer = () => {
+const ApplicationFooter = () => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "logo.svg"}) {
@@ -33,7 +33,7 @@ const Footer = () => {
               itemsSocial.map(({ href, classIcon }) => {
                 return (
                   <li key={href}>
-                    <a href={href} target="_blank" className={classIcon}>{classIcon}</a>
+                    <a href={href} target="_blank" rel="noopener noreferrer" className={classIcon}>{classIcon}</a>
                   </li>
                 );
               })
@@ -45,4 +45,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default ApplicationFooter;

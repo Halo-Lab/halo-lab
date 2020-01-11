@@ -3,16 +3,16 @@ import React from 'react';
 import ApplicationLayout from "@components/ApplicationLayout";
 import Head from "@components/Head";
 
-const Services = () => {
+const Thanks = () => {
 
   return (
     <ApplicationLayout>
       <Head>
-        <title>Services - Halo Lab Blog</title>
+        <title>Thanks - Halo Lab Blog</title>
       </Head>
-      <div>Services</div>
+      <div>Thanks</div>
     </ApplicationLayout>
   );
 };
 
-export default Services;
+export default Thanks;

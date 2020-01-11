@@ -113,6 +113,8 @@ header .mail {
   margin-left: 2.86rem;
   overflow: hidden;
   transition: border-color 0.3s;
+  background-color: transparent;
+  border: none;
 
   @media (min-width: 2500px) {
     box-shadow: inset 0 0 0 2px #32344d;
@@ -223,15 +225,6 @@ header .mail {
 //   opacity: 0;
 //   pointer-events: none;
 // }
-
-.menu--open .hiddenable {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.main-header .menu {
-  opacity: 0;
-}
 
 .main-header .menu .menu-item {
   opacity: 0;
