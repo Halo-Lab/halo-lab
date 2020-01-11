@@ -4,6 +4,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import Layout from "@components/Layout";
 import Head from "@components/Head";
 import Stars from "@components/Stars";
+import Posts from "@components/Posts";
 
 import "@styles/index.scss";
 
@@ -36,20 +37,12 @@ const Home = () => {
       <Head>
         <title>Главная - Halo Lab Blog</title>
       </Head>
-      <Stars/>
       <div>Home</div>
       <ul>
         { navList }
-        { navList }
-        { navList }
-        { navList }
-        { navList }
-        { navList }
-        { navList }
-        { navList }
-        { navList }
-        { navList }
       </ul>
+      <div>Page list</div>
+      <Posts/>
     </Layout>
   );
 };
