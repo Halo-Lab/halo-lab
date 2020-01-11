@@ -48,11 +48,11 @@ const Header = () => {
             <span className="desctop_mail">{email}</span>
           </a>
 
-          <div className={`burger-menu ${burgerStatusClass}`}
+          <button className={`burger-menu ${burgerStatusClass}`}
             onClick={onBurgerMenuClick}
           >
             <span className="bar"></span>
-          </div>
+          </button>
         </div>
       </div>
     </header>

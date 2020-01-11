@@ -32,25 +32,27 @@ const Home = () => {
   });
 
   return (
-    <Layout>
-      <Head>
-        <title>Главная - Halo Lab Blog</title>
-      </Head>
+    <>
       <Stars/>
-      <div>Home</div>
-      <ul>
-        { navList }
-        { navList }
-        { navList }
-        { navList }
-        { navList }
-        { navList }
-        { navList }
-        { navList }
-        { navList }
-        { navList }
-      </ul>
-    </Layout>
+      <Layout>
+        <Head>
+          <title>Главная - Halo Lab Blog</title>
+        </Head>
+        <div>Home</div>
+        <ul>
+          { navList }
+          { navList }
+          { navList }
+          { navList }
+          { navList }
+          { navList }
+          { navList }
+          { navList }
+          { navList }
+          { navList }
+        </ul>
+      </Layout>
+    </>
   );
 };
 
