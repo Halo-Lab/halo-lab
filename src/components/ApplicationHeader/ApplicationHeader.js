@@ -4,9 +4,9 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import Menu from "./_Menu";
 import { MenuContext } from "@contexts";
 
-import "./Header.scss";
+import "./ApplicationHeader.scss";
 
-const Header = () => {
+const ApplicationHeader = () => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "header-logo.svg"}) {
@@ -51,4 +51,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default ApplicationHeader;

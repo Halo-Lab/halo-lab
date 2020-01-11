@@ -2,21 +2,21 @@ import React from "react";
 import Helmet from "react-helmet";
 import PropTypes from "prop-types";
 
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import Stars from "@components/Stars";
+import ApplicationHeader from "@components/ApplicationHeader";
+import ApplicationFooter from "@components/ApplicationFooter";
+import BackgroundStars from "@components/BackgroundStars";
 import { MenuContext } from "@contexts";
 import { useToggleOpenedStatus } from "@hooks";
 
-import styles from "./Layout.module.scss";
-import "./Layout.scss";
+import styles from "./ApplicationLayout.module.scss";
+import "./ApplicationLayout.scss";
 
-const Layout = ({ children }) => {
+const ApplicationLayout = ({ children }) => {
   const { isOpened, handleTogglingOpenedStatus } = useToggleOpenedStatus();
 
   return (
     <MenuContext.Provider value={{ isOpened, handleTogglingOpenedStatus }}>
-      <Stars/>
+      <BackgroundStars/>
       {
           isOpened ? (
             <Helmet>
@@ -26,21 +26,21 @@ const Layout = ({ children }) => {
         }
       <div className={styles.container} id="wrapper">
         <div className={styles.header}>
-          <Header/>
+          <ApplicationHeader/>
         </div>
         <main className={`${styles.main} hiddenable`}>
           {children}
         </main>
         <div className={`${styles.footer} hiddenable`}>
-          <Footer/>
+          <ApplicationFooter/>
         </div>
       </div>
     </MenuContext.Provider>
   );
 };
 
-Layout.propTypes = {
+ApplicationLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
+export default ApplicationLayout;

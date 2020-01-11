@@ -1,16 +1,16 @@
 import React from "react";
 
-import Layout from "@components/Layout";
+import ApplicationLayout from "@components/ApplicationLayout";
 import Head from "@components/Head";
 
 const NotFound = () => (
-  <Layout>
+  <ApplicationLayout>
     <Head>
       <title>Not Found - Halo Lab Blog</title>
     </Head>
     <h1>NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
+  </ApplicationLayout>
 );
 
 export default NotFound;

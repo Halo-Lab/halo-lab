@@ -2,13 +2,13 @@ import React, { useState, useEffect, useContext } from "react";
 
 import { MenuContext } from "@contexts";
 
-import "./Stars.scss";
+import "./BackgroundStars.scss";
 
 // variables for scroll speed
 const bigStarsScrollIndex = 3;
 const smallStarsScrollIndex = 5;
 
-const Stars = () => {
+const BackgroundStars = () => {
   const [ positionOfSmallStars, setPositionOfSmallStars ] = useState('');
   const [ positionOfBigStars, setPositionOfBigStars ] = useState('');
   const { isOpened } = useContext(MenuContext);
@@ -50,4 +50,4 @@ const Stars = () => {
   );
 };
 
-export default Stars;
+export default BackgroundStars;
