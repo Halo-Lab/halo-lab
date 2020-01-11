@@ -1,62 +1,13 @@
-* {
-	outline: none;
-}
-html {
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-  font-size: 18px;
-	min-height: 100%;
-	margin: 0;
-  padding: 0;
 
-  @include fluid-type(1920px, 5120px, 18px, 20px);
-
-	@media screen and (max-width: 1920px) {
-		font-size: 16px;
-	}
-	@media screen and (max-width: 1400px) {
-		font-size: 14px;
-	}
-	@media screen and (max-width: 1200px) {
-		font-size: 12px;
-	}
-}
 body {
 	background: url("../images/glow.png") left top no-repeat #02031d;
 	background-size: 70% 100%;
 	min-height: 100%;
 	margin: 0;
 	padding: 0;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
+	
 }
-h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-}
-body:not(.body-inside) #wrapper {
-	@include media-breakpoint-down(xs){
-		padding: 0 15px;
-	}
-}
-#wrapper {
-  min-height: 100%;
-  
-  overflow-x: hidden;
 
-	padding: 0 4.28rem;
-	@media screen and (max-width: 1300px) {
-		padding: 0 4.28rem;
-	}
-	@media screen and (max-width: 1024px) {
-		padding: 0 5rem;
-	}
-	@include media-breakpoint-down(sm){
-		padding: 0 60px;
-	}
-	@include media-breakpoint-down(xs){
-		padding: 0 1.67rem;
-	}
-}
 .content-area{
 	@include media-breakpoint-down(xs){
 		padding-top: 3.5rem;
@@ -64,15 +15,6 @@ body:not(.body-inside) #wrapper {
 	}
 }
 
-.body-inside{
-	color: #fff;
-	background: $dark-color;
-	// background-image: url("../img/stars_bg.jpg");
-	position: relative;
-	background-size: 100% auto;
-	background-position: 0 0;
-	background-repeat: no-repeat;
-}
 .tac{
 	text-align: center;
 }
@@ -87,10 +29,7 @@ body:not(.body-inside) #wrapper {
 		margin-right: 0.5rem;
 	}
 }
-img{
-	max-width: 100%;
-	height: auto;
-}
+
 .block_title{
 	font-family: $font-sofia-pro;
 	font-size: 1rem;

@@ -33,7 +33,7 @@ const Footer = () => {
               itemsSocial.map(({ href, classIcon }) => {
                 return (
                   <li key={href}>
-                    <a href={href} className={classIcon}>{classIcon}</a>
+                    <a href={href} target="_blank" className={classIcon}>{classIcon}</a>
                   </li>
                 );
               })
