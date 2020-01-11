@@ -8,7 +8,6 @@ header {
   box-sizing: border-box;
   padding: 2.5rem 4.28rem 0;
   
-  
   @include media-breakpoint-down(sm) {
     padding: 2rem 0 0;
   }

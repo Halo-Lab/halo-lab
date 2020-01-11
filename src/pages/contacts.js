@@ -1,17 +1,17 @@
 import React from 'react';
 
-import ApplicationLayout from "@components/ApplicationLayout";
+import Layout from "@components/Layout";
 import Head from "@components/Head";
 
 const Contacts = () => {
 
   return (
-    <ApplicationLayout>
+    <Layout>
       <Head>
         <title>Contacts - Halo Lab Blog</title>
       </Head>
       <div>Contacts</div>
-    </ApplicationLayout>
+    </Layout>
   );
 };
 

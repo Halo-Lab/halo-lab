@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 
-import Menu from "./_Menu";
+import Menu from "./components/Menu";
 import { MenuContext } from "@contexts";
 
-import "./ApplicationHeader.scss";
+import "./Header.scss";
 
-const ApplicationHeader = () => {
+const Header = () => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "header-logo.svg"}) {
@@ -48,4 +48,4 @@ const ApplicationHeader = () => {
   );
 };
 
-export default ApplicationHeader;
+export default Header;

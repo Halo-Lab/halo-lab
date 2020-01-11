@@ -1,9 +1,9 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 
-import "./ApplicationFooter.scss";
+import "./Footer.scss";
 
-const ApplicationFooter = () => {
+const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "logo.svg"}) {
@@ -45,4 +45,4 @@ const ApplicationFooter = () => {
   );
 };
 
-export default ApplicationFooter;
+export default Footer;

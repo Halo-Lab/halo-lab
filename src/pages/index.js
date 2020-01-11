@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 
-import ApplicationLayout from "@components/ApplicationLayout";
+import Layout from "@components/Layout";
 import Head from "@components/Head";
 
 import "@styles/index.scss";
@@ -31,7 +31,7 @@ const Home = () => {
   });
 
   return (
-    <ApplicationLayout>
+    <Layout>
       <Head>
         <title>Главная - Halo Lab Blog</title>
       </Head>
@@ -48,7 +48,7 @@ const Home = () => {
         { navList }
         { navList }
       </ul>
-    </ApplicationLayout>
+    </Layout>
   );
 };
 

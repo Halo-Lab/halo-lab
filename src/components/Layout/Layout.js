@@ -2,21 +2,22 @@ import React from "react";
 import Helmet from "react-helmet";
 import PropTypes from "prop-types";
 
-import ApplicationHeader from "@components/ApplicationHeader";
-import ApplicationFooter from "@components/ApplicationFooter";
+import Header from "@components/Header";
+import Footer from "@components/Footer";
 import BackgroundStars from "@components/BackgroundStars";
 import { MenuContext } from "@contexts";
 import { useToggleOpenedStatus } from "@hooks";
 
-import styles from "./ApplicationLayout.module.scss";
-import "./ApplicationLayout.scss";
+import styles from "./Layout.module.scss";
+import "./Layout.scss";
 
-const ApplicationLayout = ({ children }) => {
+const Layout = ({ children }) => {
   const menuState = useToggleOpenedStatus();
 
   return (
     <MenuContext.Provider value={menuState}>
       <BackgroundStars/>
+      {/* TODO: This is very bad, I know. But. */}
       {
           menuState.isOpened ? (
             <Helmet>
@@ -26,21 +27,21 @@ const ApplicationLayout = ({ children }) => {
         }
       <div className={styles.container} id="wrapper">
         <div className={styles.header}>
-          <ApplicationHeader/>
+          <Header/>
         </div>
         <main className={`${styles.main} hiddenable`}>
           {children}
         </main>
         <div className={`${styles.footer} hiddenable`}>
-          <ApplicationFooter/>
+          <Footer/>
         </div>
       </div>
     </MenuContext.Provider>
   );
 };
 
-ApplicationLayout.propTypes = {
+Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default ApplicationLayout;
+export default Layout;

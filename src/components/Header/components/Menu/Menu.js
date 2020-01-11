@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import "./_Menu.scss";
+import "./Menu.scss";
 
 const Menu = () => {
   const items = [
