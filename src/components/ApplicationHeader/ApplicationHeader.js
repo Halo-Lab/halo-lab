@@ -20,9 +20,6 @@ const ApplicationHeader = () => {
   const headerStatusClass = isOpened ? 'main-header--active' : '';
   const burgerStatusClass = isOpened ? 'burger-menu--open' : 'burger-menu--closed';
   const email = 'mail@halo-lab.com';
-  const onBurgerMenuClick = () => {
-    handleTogglingOpenedStatus();
-  };
   
   return (
     <header className={`clearfix main-header ${headerStatusClass}`}>
@@ -41,7 +38,7 @@ const ApplicationHeader = () => {
           </a>
 
           <button className={`burger-menu ${burgerStatusClass}`}
-            onClick={onBurgerMenuClick}
+            onClick={handleTogglingOpenedStatus}
           >
             <span className="bar"></span>
           </button>

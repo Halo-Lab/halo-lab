@@ -12,13 +12,13 @@ import styles from "./ApplicationLayout.module.scss";
 import "./ApplicationLayout.scss";
 
 const ApplicationLayout = ({ children }) => {
-  const { isOpened, handleTogglingOpenedStatus } = useToggleOpenedStatus();
+  const menuState = useToggleOpenedStatus();
 
   return (
-    <MenuContext.Provider value={{ isOpened, handleTogglingOpenedStatus }}>
+    <MenuContext.Provider value={menuState}>
       <BackgroundStars/>
       {
-          isOpened ? (
+          menuState.isOpened ? (
             <Helmet>
               <body class="body-inside menu--open"></body>
             </Helmet>
