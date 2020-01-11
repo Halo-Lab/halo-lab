@@ -14,7 +14,8 @@ const Head = ({ children }) => {
       }
     }
   `);
-  console.log('Warning "componentWillMount has been renamed" maked by Head Component. Helmet issue.');
+  
+  console.log('Warning "componentWillMount has been renamed" maked by Head Component. Helmet issue: https://github.com/nfl/react-helmet/issues/499');
 
   const descriptionDefault = site.siteMetadata.description;
   const titleDefault = site.siteMetadata.title;
