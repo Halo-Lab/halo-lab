@@ -226,19 +226,6 @@ header .mail {
 //   pointer-events: none;
 // }
 
-.menu--open {
-  overflow-y: hidden;
-}
-
-.menu--open .hiddenable {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.main-header .menu {
-  opacity: 0;
-}
-
 .main-header .menu .menu-item {
   opacity: 0;
   @include media-breakpoint-up(lg) {

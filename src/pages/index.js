@@ -3,7 +3,6 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 
 import Layout from "@components/Layout";
 import Head from "@components/Head";
-import Stars from "@components/Stars";
 
 import "@styles/index.scss";
 
@@ -32,27 +31,24 @@ const Home = () => {
   });
 
   return (
-    <>
-      <Stars/>
-      <Layout>
-        <Head>
-          <title>Главная - Halo Lab Blog</title>
-        </Head>
-        <div>Home</div>
-        <ul>
-          { navList }
-          { navList }
-          { navList }
-          { navList }
-          { navList }
-          { navList }
-          { navList }
-          { navList }
-          { navList }
-          { navList }
-        </ul>
-      </Layout>
-    </>
+    <Layout>
+      <Head>
+        <title>Главная - Halo Lab Blog</title>
+      </Head>
+      <div>Home</div>
+      <ul>
+        { navList }
+        { navList }
+        { navList }
+        { navList }
+        { navList }
+        { navList }
+        { navList }
+        { navList }
+        { navList }
+        { navList }
+      </ul>
+    </Layout>
   );
 };
 

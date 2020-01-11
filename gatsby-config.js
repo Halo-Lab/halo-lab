@@ -42,9 +42,10 @@ module.exports = {
           "@src": "src",
           "@components": "src/components",
           "@hooks": "src/hooks",
+          "@contexts": "src/contexts",
           "@pages": "src/pages",
           "@styles": "src/styles",
-          "@images": "src/images" 
+          "@images": "src/images",
         },
         extensions: [
           "js"
