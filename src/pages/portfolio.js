@@ -7,15 +7,12 @@ import Stars from "@components/Stars";
 const Portfolio = () => {
 
   return (
-    <>
-      <Stars/>
-      <Layout>
-        <Head>
-          <title>Portfolio - Halo Lab Blog</title>
-        </Head>
-        <div>Portfolio</div>
-      </Layout>
-    </>
+    <Layout>
+      <Head>
+        <title>Portfolio - Halo Lab Blog</title>
+      </Head>
+      <div>Portfolio</div>
+    </Layout>
   );
 };
 

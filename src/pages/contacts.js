@@ -7,15 +7,12 @@ import Stars from "@components/Stars";
 const Contacts = () => {
 
   return (
-    <>
-      <Stars/>
-      <Layout>
-        <Head>
-          <title>Contacts - Halo Lab Blog</title>
-        </Head>
-        <div>Contacts</div>
-      </Layout>
-    </>
+    <Layout>
+      <Head>
+        <title>Contacts - Halo Lab Blog</title>
+      </Head>
+      <div>Contacts</div>
+    </Layout>
   );
 };
 
