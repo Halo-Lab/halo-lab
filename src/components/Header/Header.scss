@@ -215,18 +215,22 @@ header .mail {
 }
 
 #wrapper > *:not(header) {
-  opacity: 1;
+  // opacity: 1;
   transition: opacity 0.2s;
 }
 
-.menu--open #wrapper > *:not(header) {
+// .menu--open #wrapper > *:not(header) {
+//   opacity: 0;
+//   pointer-events: none;
+// }
+
+.menu--open .hiddenable {
   opacity: 0;
   pointer-events: none;
 }
 
 .main-header .menu {
   opacity: 0;
-
 }
 
 .main-header .menu .menu-item {

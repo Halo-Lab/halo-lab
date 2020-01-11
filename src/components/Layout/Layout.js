@@ -13,10 +13,10 @@ const Layout = ({ children }) => {
       <div className={styles.header}>
         <Header/>
       </div>
-      <main className={styles.main}>
+      <main className={`${styles.main} hiddenable`}>
         {children}
       </main>
-      <div className={styles.footer}>
+      <div className={`${styles.footer} hiddenable`}>
         <Footer/>
       </div>
     </div>
