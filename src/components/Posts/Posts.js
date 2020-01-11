@@ -19,9 +19,6 @@ const Posts = ({ data }) => {
     `
   );
 
-  console.log('111111111');
-  console.log(allWordpressPost);
-
   return (<pre>{JSON.stringify(allWordpressPost, null, 4)}</pre>);
 }
 
