@@ -1,5 +1,3 @@
-import MenuContext from "./MenuContext";
+import MenuContext from './MenuContext';
 
-export {
-  MenuContext
-};
+export { MenuContext };

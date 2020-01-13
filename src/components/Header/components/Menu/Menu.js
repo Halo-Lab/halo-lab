@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react';
+import { Link } from 'gatsby';
 
-import "./_Menu.scss";
+import './Menu.scss';
 
 const Menu = () => {
   const items = [
@@ -14,18 +14,16 @@ const Menu = () => {
   return (
     <div className="main-menu">
       <ul className="menu-menu-1">
-        {
-          items.map(({ classes, href, title }) => {
-            return (
-              <li className={`menu-item ${classes}`} key={href}>
-                <Link to={href}>
-                  <div className="menu-link__circle"></div>
-                  <span className="menu-link__text">{title}</span>
-                </Link>
-              </li>
-            );
-          })
-        }
+        {items.map(({ classes, href, title }) => {
+          return (
+            <li className={`menu-item ${classes}`} key={href}>
+              <Link to={href}>
+                <div className="menu-link__circle"></div>
+                <span className="menu-link__text">{title}</span>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

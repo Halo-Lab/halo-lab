@@ -52,6 +52,7 @@ module.exports = {
         ],
       }
     },
+
     /*
      * Gatsby's data processing layer begins with “source”
      * plugins. Here the site sources its data from WordPress.
@@ -63,9 +64,9 @@ module.exports = {
          * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
          * Example : 'gatsbyjsexamplewordpress.wordpress.com' or 'www.example-site.com'
          */
-        baseUrl: "halo-lab.com",
+        baseUrl: "test.halo-lab.com",
         // The protocol. This can be http or https.
-        protocol: "https",
+        protocol: "http",
         // Indicates whether the site is hosted on wordpress.com.
         // If false, then the assumption is made that the site is self hosted.
         // If true, then the plugin will source its content on wordpress.com using the JSON REST API V2.
@@ -84,31 +85,31 @@ module.exports = {
         // options page using the provided `acf_add_options_page` method, in your WordPress setup
         // Dashes in IDs will be converted to underscores for use in GraphQL
         // acfOptionPageIds: [],
-        // auth: {
-        //   // If auth.user and auth.pass are filled, then the source plugin will be allowed
-        //   // to access endpoints that are protected with .htaccess.
-        //   htaccess_user: "your-htaccess-username",
-        //   htaccess_pass: "your-htaccess-password",
-        //   htaccess_sendImmediately: false,
+        auth: {
+          // If auth.user and auth.pass are filled, then the source plugin will be allowed
+          // to access endpoints that are protected with .htaccess.
+          // htaccess_user: "your-htaccess-username",
+          // htaccess_pass: "your-htaccess-password",
+          // htaccess_sendImmediately: false,
 
-        //   // If hostingWPCOM is true then you will need to communicate with wordpress.com API
-        //   // in order to do that you need to create an app (of type Web) at https://developer.wordpress.com/apps/
-        //   // then add your clientId, clientSecret, username, and password here
-        //   // Learn about environment variables: https://www.gatsbyjs.org/docs/environment-variables
-        //   // If two-factor authentication is enabled then you need to create an Application-Specific Password,
-        //   // see https://en.support.wordpress.com/security/two-step-authentication/#application-specific-passwords
-        //   wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
-        //   wpcom_app_clientId: "54793",
-        //   wpcom_user: "gatsbyjswpexample@gmail.com",
-        //   wpcom_pass: process.env.WORDPRESS_PASSWORD,
+          // If hostingWPCOM is true then you will need to communicate with wordpress.com API
+          // in order to do that you need to create an app (of type Web) at https://developer.wordpress.com/apps/
+          // then add your clientId, clientSecret, username, and password here
+          // Learn about environment variables: https://www.gatsbyjs.org/docs/environment-variables
+          // If two-factor authentication is enabled then you need to create an Application-Specific Password,
+          // see https://en.support.wordpress.com/security/two-step-authentication/#application-specific-passwords
+          // wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
+          // wpcom_app_clientId: "54793",
+          // wpcom_user: "gatsbyjswpexample@gmail.com",
+          // wpcom_pass: process.env.WORDPRESS_PASSWORD,
 
-        //   // If you use "JWT Authentication for WP REST API" (https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/)
-        //   // or (https://github.com/jonathan-dejong/simple-jwt-authentication) requires jwt_base_path, path can be found in WordPress wp-api.
-        //   // plugin, you can specify user and password to obtain access token and use authenticated requests against WordPress REST API.
-        //   jwt_user: process.env.JWT_USER,
-        //   jwt_pass: process.env.JWT_PASSWORD,
-        //   jwt_base_path: "/jwt-auth/v1/token", // Default - can skip if you are using https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
-        // },
+          // If you use "JWT Authentication for WP REST API" (https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/)
+          // or (https://github.com/jonathan-dejong/simple-jwt-authentication) requires jwt_base_path, path can be found in WordPress wp-api.
+          // plugin, you can specify user and password to obtain access token and use authenticated requests against WordPress REST API.
+          jwt_user: "admin",
+          jwt_pass: "Yu!51*R#Eo07rnJAHQ3B$brH",
+          jwt_base_path: "/jwt-auth/v1/token", // Default - can skip if you are using https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
+        },
         // Set cookies that should be send with requests to WordPress as key value pairs
         // cookies: {},
         // Set verboseOutput to true to display a verbose output on `npm run develop` or `npm run build`
@@ -174,6 +175,19 @@ module.exports = {
       },
     },
     
+
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        test: /\.js$|\.jsx$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ['develop'],
+        options: {
+          emitWarning: true,
+          failOnError: false
+        }
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

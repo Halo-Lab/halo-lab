@@ -1,3 +1,3 @@
-import useToggleOpenedStatus from "./useToggleOpenedStatus";
+import useToggleOpenedStatus from './useToggleOpenedStatus';
 
 export { useToggleOpenedStatus };
