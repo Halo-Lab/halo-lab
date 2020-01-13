@@ -4,6 +4,8 @@ import Layout from '@components/Layout';
 import Head from '@components/Head';
 
 import Hero from '@scenes/Home/components/Hero';
+import WhatWeDo from '@scenes/Home/components/WhatWeDo';
+import Projects from '@scenes/Home/components/Projects';
 
 import '@styles/index.scss';
 
@@ -15,6 +17,8 @@ const Home = () => {
       </Head>
       <div className="main-home">
         <Hero />
+        <WhatWeDo />
+        <Projects />
       </div>
     </Layout>
   );
