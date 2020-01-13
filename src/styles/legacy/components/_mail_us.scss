@@ -1,0 +1,80 @@
+.mail_us {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14.28rem 0;
+  height: 20rem;
+  @include media-breakpoint-down(xs) {
+    padding: 0;
+    margin: 11.25rem 0 5rem;
+    height: 17.4rem;
+  }
+}
+
+.services .mail_us {
+  padding: 14.28rem 0;
+  @include media-breakpoint-down(md) {
+    padding: 7rem 0;
+  }
+}
+.mail_us-title {
+  font-family: $font-ratiomodern;
+  font-weight: 400;
+  font-size: 2.1rem;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 3rem;
+  margin: 0;
+  @include media-breakpoint-down(xs) {
+    font-size: 1.67rem;
+    line-height: 2.5rem;
+    margin-bottom: 1.67rem;
+  }
+}
+.mail_us-link {
+  font-family: $font-sofia-pro;
+  font-weight: 400;
+  font-size: 5rem;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 6rem;
+  text-decoration: none;
+  transition: color 0.3s;
+  @include media-breakpoint-down(sm) {
+    font-size: 3.8rem;
+  }
+  @include media-breakpoint-down(xs) {
+    font-size: 2.5rem;
+    line-height: 3.4rem;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    background-color: $main-color;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: all 0.3s;
+    @include media-breakpoint-down(xs) {
+      width: 17.4rem;
+      height: 17.4rem;
+    }
+  }
+  &:hover {
+    color: $yellow-color;
+    &:before {
+      width: 27.15rem;
+      height: 27.15rem;
+      @include media-breakpoint-down(xs) {
+        width: 20rem;
+        height: 20rem;
+      }
+    }
+  }
+}

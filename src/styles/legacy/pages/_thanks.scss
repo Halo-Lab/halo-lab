@@ -1,0 +1,57 @@
+.thanks-page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 302px);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.thanks-page-container {
+  height: 100%;
+}
+
+.thanks-page__title {
+  font-family: $font-ratiomodern;
+  font-size: 3.57rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.8em;
+}
+
+.thanks-page__description {
+  max-width: 54rem;
+  margin: 0;
+  font-family: $font-sofia-pro;
+  font-size: 1.42rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.thanks-page__description:first-of-type {
+  margin-bottom: 1.5em;
+}
+
+.thanks-page__description:last-of-type {
+  margin-bottom: 3.1em;
+}
+
+.thanks-page__link {
+  color:$white-color;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.thanks-page__link:hover {
+  color: $main-color;
+}
+
+.thanks-page__button.button--main {
+  min-width: 300px;
+  letter-spacing: 10px;
+}
+
+.thanks-page__button.button--main:hover {
+  background: #5d59e8;
+  border-color: #5d59e8
+}

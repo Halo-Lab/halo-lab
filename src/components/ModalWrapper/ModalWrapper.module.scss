@@ -1,0 +1,18 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(grey, .75);
+  animation: apperancing .5s 1;
+}
+
+@keyframes apperancing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

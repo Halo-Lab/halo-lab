@@ -1,0 +1,48 @@
+@import "@styles/variables/all";
+@import "@styles/mixins/all";
+
+.menu--open {
+  overflow-y: hidden;
+}
+
+.menu--open .hiddenable {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.main-header .menu {
+  opacity: 0;
+}
+
+.body-inside{
+	color: #fff;
+	background: $dark-color;
+	// background-image: url("../images/stars_bg.jpg");
+	position: relative;
+	background-size: 100% auto;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+body:not(.body-inside) #wrapper {
+	@include media-breakpoint-down(xs){
+		padding: 0 15px;
+	}
+}
+
+#wrapper {
+	padding: 0 4.28rem;
+  
+  @media screen and (max-width: 1300px) {
+		padding: 0 4.28rem;
+	}
+	@media screen and (max-width: 1024px) {
+		padding: 0 5rem;
+	}
+	@include media-breakpoint-down(sm){
+		padding: 0 60px;
+	}
+	@include media-breakpoint-down(xs){
+		padding: 0 1.67rem;
+	}
+}
