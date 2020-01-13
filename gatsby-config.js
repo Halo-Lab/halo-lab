@@ -20,8 +20,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `fonts`,
-        path: `${__dirname}/src/fonts/`
-      }
+        path: `${__dirname}/src/fonts/`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -39,18 +39,18 @@ module.exports = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          "@src": "src",
-          "@components": "src/components",
-          "@hooks": "src/hooks",
-          "@contexts": "src/contexts",
-          "@pages": "src/pages",
-          "@styles": "src/styles",
-          "@images": "src/images",
+          '@src': 'src',
+          '@components': 'src/components',
+          '@pages': 'src/pages',
+          '@scenes': 'src/scenes',
+          '@hooks': 'src/hooks',
+          '@contexts': 'src/contexts',
+          '@services': 'src/services/',
+          '@styles': 'src/styles',
+          '@images': 'src/images',
         },
-        extensions: [
-          "js"
-        ],
-      }
+        extensions: ['js', 'sass', 'scss'],
+      },
     },
     {
       resolve: 'gatsby-plugin-eslint',
@@ -60,12 +60,12 @@ module.exports = {
         stages: ['develop'],
         options: {
           emitWarning: true,
-          failOnError: false
-        }
-      }
+          failOnError: false,
+        },
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

@@ -1,22 +1,16 @@
 import React, { useContext } from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 
 import Menu from './components/Menu';
-import { MenuContext } from '@contexts';
+import { MenuContext, GlobalContext } from '@contexts';
 
 import './Header.scss';
 
 const Header = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "header-logo.svg" }) {
-        publicURL
-      }
-    }
-  `);
-
   const { isOpened, handleTogglingOpenedStatus } = useContext(MenuContext);
+  const { images } = useContext(GlobalContext);
 
+  const headerLogo = images.getItem('header-logo.svg');
   const headerStatusClass = isOpened ? 'main-header--active' : '';
   const burgerStatusClass = isOpened
     ? 'burger-menu--open'
@@ -28,11 +22,7 @@ const Header = () => {
       <div className="header-container">
         <div className="header-left">
           <Link to="/" rel="home">
-            <img
-              src={data.file.publicURL}
-              className="logo"
-              alt="Halo Lab logotype"
-            />
+            <img src={headerLogo.url} className="logo" alt={headerLogo.name} />
           </Link>
         </div>
 
