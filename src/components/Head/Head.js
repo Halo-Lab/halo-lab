@@ -27,7 +27,7 @@ const Head = ({ children }) => {
       <meta charSet="utf-8"/>
 
       <meta name="description" content={descriptionDefault}/>
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
       <meta name="google-site-verification" content="KaWJr5sGtZ__QgG_cgjeVJ-BtUEvLAv7XFF1xXUb7yA" />
       <link rel="profile" href="https://gmpg.org/xfn/11"/>
       

@@ -37,7 +37,9 @@ const Header = () => {
             <span className="desctop_mail">{email}</span>
           </a>
 
-          <button className={`burger-menu ${burgerStatusClass}`}
+          <button
+            className={`burger-menu ${burgerStatusClass}`}
+            type="button"
             onClick={handleTogglingOpenedStatus}
           >
             <span className="bar"></span>
