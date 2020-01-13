@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from 'react';
 
-import { MenuContext } from "@contexts";
+import { MenuContext } from '@contexts';
 
-import "./BackgroundStars.scss";
+import './BackgroundStars.scss';
 
 // variables for scroll speed
 const bigStarsScrollIndex = 3;
 const smallStarsScrollIndex = 5;
 
 const BackgroundStars = () => {
-  const [ positionOfSmallStars, setPositionOfSmallStars ] = useState('');
-  const [ positionOfBigStars, setPositionOfBigStars ] = useState('');
+  const [positionOfSmallStars, setPositionOfSmallStars] = useState('');
+  const [positionOfBigStars, setPositionOfBigStars] = useState('');
   const { isOpened } = useContext(MenuContext);
 
   const bigStarsState = isOpened ? 'active' : '';
@@ -18,17 +18,19 @@ const BackgroundStars = () => {
   const hiddenStarsState = isOpened ? 'active-hidden' : '';
 
   const handleScroll = () => {
-    const newPositionOfSmallStars = `${(window.pageYOffset * -1) / smallStarsScrollIndex}px`;
-    const newPositionOfBigStars = `${(window.pageYOffset * -1) / bigStarsScrollIndex}px`;
+    const newPositionOfSmallStars = `${(window.pageYOffset * -1) /
+      smallStarsScrollIndex}px`;
+    const newPositionOfBigStars = `${(window.pageYOffset * -1) /
+      bigStarsScrollIndex}px`;
 
     setPositionOfSmallStars(newPositionOfSmallStars);
     setPositionOfBigStars(newPositionOfBigStars);
   };
 
   useEffect(() => {
-    document.addEventListener("scroll", handleScroll);
+    document.addEventListener('scroll', handleScroll);
 
-    return () => document.removeEventListener("scroll", handleScroll);
+    return () => document.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (

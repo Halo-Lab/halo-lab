@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from 'react';
 
 const useToggleOpenedStatus = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -8,7 +8,7 @@ const useToggleOpenedStatus = () => {
 
   return {
     isOpened,
-    handleTogglingOpenedStatus
+    handleTogglingOpenedStatus,
   };
 };
 
