@@ -6,7 +6,8 @@ import MailUs from '@components/MailUs';
 import Hero from '@scenes/Home/components/Hero';
 import WhatWeDo from '@scenes/Home/components/WhatWeDo';
 import Projects from '@scenes/Home/components/Projects';
-import Posts from '@scenes/Home/components/Posts';
+import Testimonials from '@scenes/Home/components/Testimonials';
+// import Posts from '@scenes/Home/components/Posts';
 
 import '@styles/index.scss';
 
@@ -20,7 +21,8 @@ const Home = () => {
         <Hero />
         <WhatWeDo />
         <Projects />
-        <Posts />
+        <Testimonials />
+        {/* <Posts /> */}
         <MailUs />
       </div>
     </Layout>

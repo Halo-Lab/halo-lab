@@ -1,0 +1,66 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  margin-top: 12.14rem;
+
+  @media (min-width: 1280px) {
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-top: 8.34rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin-top: 6.67rem;
+  }
+
+  .arrow {
+    background-color: red;
+  }
+}
+
+.dots {
+  list-style-type: none;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+
+  [class='slick-active'] button {
+    background: $yellow-color;
+  }
+
+  li {
+    margin: 0 6px;
+
+    @media screen and (min-width: 2400px) {
+      margin: 0 0.25vw;
+    }
+  }
+
+  button {
+    $size: 8px;
+
+    display: block;
+    padding: 0;
+    border: none;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background: #32344d;
+    font-size: 0;
+    cursor: pointer;
+
+    @media screen and (min-width: 2400px) {
+      width: 0.33vw;
+      height: 0.33vw;
+    }
+    @media (min-width: 2000px) {
+      width: 0.4vw;
+      height: 0.4vw;
+    }
+  }
+}
