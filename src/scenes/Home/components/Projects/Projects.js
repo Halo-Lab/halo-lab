@@ -6,21 +6,24 @@ import { GlobalContext } from '@contexts';
 import './Projects.scss';
 
 const Projects = () => {
-  const { images } = useContext(GlobalContext);
+  const { imagesAPI } = useContext(GlobalContext);
+  const images = imagesAPI.get([
+    'project/project1.jpg',
+    'project/project2.jpg',
+    'project/project3.jpg',
+    'avatar1.jpg',
+    'partners/forbes.svg',
+    'partners/mashable.svg',
+    'partners/indiegogo.svg',
+    'partners/techcrunch.svg',
+    'partners/vc.ru.svg',
+    'partners/angellist.svg',
+    'jackandjones.svg',
+    'udemy.svg',
+    'kkl-luzern.svg',
+  ]);
 
-  const project1Image = images.getItem('project/project1.jpg');
-  const project2Image = images.getItem('project/project2.jpg');
-  const project3Image = images.getItem('project/project3.jpg');
-  const avatar1Image = images.getItem('avatar1.jpg');
-  const forbesIcon = images.getItem('partners/forbes.svg');
-  const mashableIcon = images.getItem('partners/mashable.svg');
-  const indiegogoIcon = images.getItem('partners/indiegogo.svg');
-  const techcrunchIcon = images.getItem('partners/techcrunch.svg');
-  const vcRuIcon = images.getItem('partners/vc.ru.svg');
-  const angellistIcon = images.getItem('partners/angellist.svg');
-  const jackandjonesImage = images.getItem('jackandjones.svg');
-  const udemy = images.getItem('udemy.svg');
-  const kklLuzern = images.getItem('kkl-luzern.svg');
+  console.log(images);
 
   return (
     <section className="section section__projects">
@@ -33,8 +36,8 @@ const Projects = () => {
               <div className="project__image-container">
                 <a href="https://www.behance.net/gallery/65940547/Primary-Smart-Bedding-Website">
                   <img
-                    src={project1Image.url}
-                    alt={project1Image.name}
+                    src={images['project/project1.jpg'].url}
+                    alt={images['project/project1.jpg'].name}
                     draggable="false"
                   />
                 </a>
@@ -60,8 +63,8 @@ const Projects = () => {
               <div className="project__review-container">
                 <img
                   className="project__avatar"
-                  src={avatar1Image.url}
-                  alt={avatar1Image.name}
+                  src={images['avatar1.jpg'].url}
+                  alt={images['avatar1.jpg'].name}
                   draggable="false"
                 />
                 <div>
@@ -74,22 +77,22 @@ const Projects = () => {
           <ul className="project__partners-list">
             <li className="project__partners-item">
               <img
-                src={forbesIcon.url}
-                alt={forbesIcon.name}
+                src={images['partners/forbes.svg'].url}
+                alt={images['partners/forbes.svg'].name}
                 draggable="false"
               />
             </li>
             <li className="project__partners-item">
               <img
-                src={mashableIcon.url}
-                alt={mashableIcon.name}
+                src={images['partners/mashable.svg'].url}
+                alt={images['partners/mashable.svg'].name}
                 draggable="false"
               />
             </li>
             <li className="project__partners-item">
               <img
-                src={indiegogoIcon.url}
-                alt={indiegogoIcon.name}
+                src={images['partners/indiegogo.svg'].url}
+                alt={images['partners/indiegogo.svg'].url}
                 draggable="false"
               />
             </li>
@@ -102,8 +105,8 @@ const Projects = () => {
               <div className="project__image-container">
                 <a href="https://www.behance.net/gallery/66754531/Mobalytics-Game-Analytics-Platform-Website">
                   <img
-                    src={project2Image.url}
-                    alt={project2Image.name}
+                    src={images['project/project2.jpg'].url}
+                    alt={images['project/project2.jpg'].name}
                     draggable="false"
                   />
                 </a>
@@ -130,8 +133,8 @@ const Projects = () => {
               <div className="project__review-container">
                 <img
                   className="project__avatar"
-                  src={avatar1Image.url}
-                  alt={avatar1Image.name}
+                  src={images['avatar1.jpg'].url}
+                  alt={images['avatar1.jpg'].name}
                   draggable="false"
                 />
                 <div>
@@ -144,25 +147,29 @@ const Projects = () => {
           <ul className="project__partners-list">
             <li className="project__partners-item">
               <img
-                src={forbesIcon.url}
-                alt={forbesIcon.name}
+                src={images['partners/forbes.svg'].url}
+                alt={images['partners/forbes.svg'].name}
                 draggable="false"
               />
             </li>
             <li className="project__partners-item">
               <img
-                src={techcrunchIcon.url}
-                alt={techcrunchIcon.name}
+                src={images['partners/techcrunch.svg'].url}
+                alt={images['partners/techcrunch.svg'].name}
                 draggable="false"
               />
             </li>
             <li className="project__partners-item">
-              <img src={vcRuIcon.url} alt={vcRuIcon.name} draggable="false" />
+              <img
+                src={images['partners/vc.ru.svg'].url}
+                alt={images['partners/vc.ru.svg'].name}
+                draggable="false"
+              />
             </li>
             <li className="project__partners-item">
               <img
-                src={angellistIcon.url}
-                alt={angellistIcon.name}
+                src={images['partners/angellist.svg'].url}
+                alt={images['partners/angellist.svg'].name}
                 draggable="false"
               />
             </li>
@@ -175,8 +182,8 @@ const Projects = () => {
               <div className="project__image-container">
                 <a href="https://www.behance.net/gallery/70303073/Glance-Clock-First-Smart-Clock">
                   <img
-                    src={project3Image.url}
-                    alt={project3Image.name}
+                    src={images['project/project3.jpg'].url}
+                    alt={images['project/project3.jpg'].name}
                     draggable="false"
                   />
                 </a>
@@ -201,8 +208,8 @@ const Projects = () => {
               <div className="project__review-container">
                 <img
                   className="project__avatar"
-                  src={avatar1Image.url}
-                  alt={avatar1Image.name}
+                  src={images['avatar1.jpg'].url}
+                  alt={images['avatar1.jpg'].name}
                   draggable="false"
                 />
                 <div>
@@ -215,29 +222,29 @@ const Projects = () => {
           <ul className="project__partners-list">
             <li className="project__partners-item">
               <img
-                src={forbesIcon.url}
-                alt={forbesIcon.name}
+                src={images['partners/forbes.svg'].url}
+                alt={images['partners/forbes.svg'].name}
                 draggable="false"
               />
             </li>
             <li className="project__partners-item">
               <img
-                src={techcrunchIcon.url}
-                alt={techcrunchIcon.name}
+                src={images['partners/techcrunch.svg'].url}
+                alt={images['partners/techcrunch.svg'].name}
                 draggable="false"
               />
             </li>
             <li className="project__partners-item">
               <img
-                src={mashableIcon.url}
-                alt={mashableIcon.name}
+                src={images['partners/mashable.svg'].url}
+                alt={images['partners/mashable.svg'].name}
                 draggable="false"
               />
             </li>
             <li className="project__partners-item">
               <img
-                src={indiegogoIcon.url}
-                alt={indiegogoIcon.name}
+                src={images['partners/indiegogo.svg'].url}
+                alt={images['partners/indiegogo.svg'].name}
                 draggable="false"
               />
             </li>
@@ -252,16 +259,22 @@ const Projects = () => {
           <div className="projects__others-block">
             <div className="projects__others-item jackandjones-item">
               <img
-                src={jackandjonesImage.url}
-                alt={jackandjonesImage.name}
+                src={images['jackandjones.svg'].url}
+                alt={images['jackandjones.svg'].name}
                 draggable="false"
               />
             </div>
             <div className="projects__others-item udemy-item">
-              <img src={udemy.url} alt={udemy.name} />
+              <img
+                src={images['udemy.svg'].url}
+                alt={images['udemy.svg'].name}
+              />
             </div>
             <div className="projects__others-item luzern-item">
-              <img src={kklLuzern.url} alt={kklLuzern.name} />
+              <img
+                src={images['kkl-luzern.svg'].url}
+                alt={images['kkl-luzern.svg'].name}
+              />
             </div>
             <div className="projects__others-item">
               <Link to="/portfolio">

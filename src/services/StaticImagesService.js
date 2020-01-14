@@ -17,6 +17,18 @@ class StaticImagesService {
       return path === item.path;
     });
   }
+
+  get(paths) {
+    const found = {};
+
+    if (paths.length === 0) return found;
+
+    this.items.forEach(item => {
+      if (paths.indexOf(item.path) !== -1) found[item.path] = item;
+    });
+
+    return found;
+  }
 }
 
 export default StaticImagesService;

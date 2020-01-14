@@ -15,7 +15,7 @@ import './Layout.scss';
 const Layout = ({ children }) => {
   const menuState = useToggleOpenedStatus();
   const globalState = {
-    images: new StaticImagesService(useQueryStaticImages()),
+    imagesAPI: new StaticImagesService(useQueryStaticImages()),
   };
 
   return (

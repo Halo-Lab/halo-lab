@@ -8,9 +8,10 @@ import './Header.scss';
 
 const Header = () => {
   const { isOpened, handleTogglingOpenedStatus } = useContext(MenuContext);
-  const { images } = useContext(GlobalContext);
+  const { imagesAPI } = useContext(GlobalContext);
 
-  const headerLogo = images.getItem('header-logo.svg');
+  const images = imagesAPI.get(['header-logo.svg']);
+
   const headerStatusClass = isOpened ? 'main-header--active' : '';
   const burgerStatusClass = isOpened
     ? 'burger-menu--open'
@@ -22,7 +23,11 @@ const Header = () => {
       <div className="header-container">
         <div className="header-left">
           <Link to="/" rel="home">
-            <img src={headerLogo.url} className="logo" alt={headerLogo.name} />
+            <img
+              className="logo"
+              src={images['header-logo.svg'].url}
+              alt={images['header-logo.svg'].name}
+            />
           </Link>
         </div>
 

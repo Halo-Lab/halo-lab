@@ -5,11 +5,13 @@ import { GlobalContext } from '@contexts';
 import './Hero.scss';
 
 const Hero = () => {
-  const { images } = useContext(GlobalContext);
+  const { imagesAPI } = useContext(GlobalContext);
 
-  const upworkLogo = images.getItem('cards/upwork-logo.svg');
-  const dribbleLogo = images.getItem('cards/dribbble-logo.svg');
-  const clutchMiniLogo = images.getItem('cards/clutch-mini-logo.svg');
+  const images = imagesAPI.get([
+    'cards/upwork-logo.svg',
+    'cards/dribbble-logo.svg',
+    'cards/clutch-mini-logo.svg',
+  ]);
 
   return (
     <section className="section section__hero">
@@ -34,7 +36,10 @@ const Hero = () => {
         <div className="hero__card-wrap">
           <a href="#" className="hero__info-card upwork-card">
             <div className="hero__info-card-body">
-              <img src={upworkLogo.url} alt={upworkLogo.name} />
+              <img
+                src={images['cards/upwork-logo.svg'].url}
+                alt={images['cards/upwork-logo.svg'].name}
+              />
               <div>
                 Best
                 <br />
@@ -49,7 +54,10 @@ const Hero = () => {
         <div className="hero__card-wrap">
           <a href="#" className="hero__info-card dribbble-card">
             <div className="hero__info-card-body">
-              <img src={dribbleLogo.url} alt={dribbleLogo.name} />
+              <img
+                src={images['cards/dribbble-logo.svg'].url}
+                alt={images['cards/dribbble-logo.svg'].name}
+              />
               <div>Top Trending Team with 3m Total Views</div>
             </div>
           </a>
@@ -58,7 +66,10 @@ const Hero = () => {
         <div className="hero__card-wrap">
           <a href="#" className="hero__info-card clutch-card">
             <div className="hero__info-card-body">
-              <img src={clutchMiniLogo.url} alt={clutchMiniLogo.name} />
+              <img
+                src={images['cards/clutch-mini-logo.svg'].url}
+                alt={images['cards/clutch-mini-logo.svg'].name}
+              />
               <div>
                 4.9/5
                 <br />
