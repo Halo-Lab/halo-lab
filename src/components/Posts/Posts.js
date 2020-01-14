@@ -1,7 +1,7 @@
-import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 
-const Posts = ({ data }) => {
+const Posts = () => {
   const { allWordpressPost } = useStaticQuery(
     graphql`
       {
@@ -19,12 +19,6 @@ const Posts = ({ data }) => {
     `
   );
 
-  return (<pre>{JSON.stringify(allWordpressPost, null, 4)}</pre>);
-}
-
-  
-
-
-
-
-export default Posts
+  return <pre>{JSON.stringify(allWordpressPost, null, 4)}</pre>;
+};
+export default Posts;

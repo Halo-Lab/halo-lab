@@ -1,13 +1,11 @@
-import React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import ApplicationLayout from "@components/ApplicationLayout";
-import Head from "@components/Head";
-import Stars from "@components/Stars";
+import Head from '@components/Head';
 import Layout from '@components/Layout';
-import Posts from "@components/Posts";
+import Posts from '@components/Posts';
 
-import "@styles/index.scss";
+import '@styles/index.scss';
 
 const Home = () => {
   const { allSitePage } = useStaticQuery(

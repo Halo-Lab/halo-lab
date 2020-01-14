@@ -64,7 +64,7 @@ module.exports = {
          * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
          * Example : 'gatsbyjsexamplewordpress.wordpress.com' or 'www.example-site.com'
          */
-        baseUrl: "test.halo-lab.com",
+        baseUrl: "api.halo-lab.com",
         // The protocol. This can be http or https.
         protocol: "http",
         // Indicates whether the site is hosted on wordpress.com.
@@ -140,7 +140,7 @@ module.exports = {
           "**/media",
           "**/tags",
           "**/taxonomies",
-          "**/users",
+          // "**/users",
         ],
         // Blacklisted routes using glob patterns
         // excludedRoutes: ["**/posts/1456"],
