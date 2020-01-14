@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from '@components/Layout';
 import Head from '@components/Head';
-
+import MailUs from '@components/MailUs';
 import Hero from '@scenes/Home/components/Hero';
 import WhatWeDo from '@scenes/Home/components/WhatWeDo';
 import Projects from '@scenes/Home/components/Projects';
@@ -19,6 +19,7 @@ const Home = () => {
         <Hero />
         <WhatWeDo />
         <Projects />
+        <MailUs />
       </div>
     </Layout>
   );

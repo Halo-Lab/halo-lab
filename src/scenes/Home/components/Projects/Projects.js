@@ -23,8 +23,6 @@ const Projects = () => {
     'kkl-luzern.svg',
   ]);
 
-  console.log(images);
-
   return (
     <section className="section section__projects">
       <h2 className="portfolio__title">Projects</h2>

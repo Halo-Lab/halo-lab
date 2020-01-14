@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import Menu from './components/Menu';
 import { MenuContext, GlobalContext } from '@contexts';
@@ -7,6 +7,15 @@ import { MenuContext, GlobalContext } from '@contexts';
 import './Header.scss';
 
 const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          email
+        }
+      }
+    }
+  `);
   const { isOpened, handleTogglingOpenedStatus } = useContext(MenuContext);
   const { imagesAPI } = useContext(GlobalContext);
 
@@ -16,7 +25,6 @@ const Header = () => {
   const burgerStatusClass = isOpened
     ? 'burger-menu--open'
     : 'burger-menu--closed';
-  const email = 'mail@halo-lab.com';
 
   return (
     <header className={`clearfix main-header ${headerStatusClass}`}>
@@ -34,8 +42,8 @@ const Header = () => {
         <div className="header-right">
           <Menu />
 
-          <a href={`mailto:${email}`} className="mail">
-            <span className="desctop_mail">{email}</span>
+          <a href={`mailto:${data.site.siteMetadata.email}`} className="mail">
+            <span className="desctop_mail">{data.site.siteMetadata.email}</span>
           </a>
 
           <button

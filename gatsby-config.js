@@ -3,6 +3,7 @@ module.exports = {
     title: `Halo-Lab`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@halolabteam`,
+    email: `mail@halo-lab.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
