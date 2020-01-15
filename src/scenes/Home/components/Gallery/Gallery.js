@@ -21,14 +21,39 @@ const Gallery = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0,
-    speed: 2000,
+    speed: 2500,
     cssEase: 'linear',
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          autoplay: true,
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          autoplay: false,
+          speed: 1500,
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          autoplay: false,
+          speed: 1500,
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>We are live</h2>
-      <div>
+      <div className={styles.sliderWrapper}>
         <Slider settings={settings}>
           {items.map(item => {
             return <Item key={item.path} {...item} />;
