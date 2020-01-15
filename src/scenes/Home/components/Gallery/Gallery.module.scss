@@ -1,23 +1,6 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
-// need to be remove -->
-.item {
-  display: block;
-  box-sizing: border-box;
-  border: 2px solid white;
-  height: 200px;
-  background-color: navy;
-  color: white;
-  text-align: center;
-  font-size: 32px;
-}
-
-.sliderWrapper {
-  cursor: pointer;
-}
-// <-- need to be remove
-
 .container {
   margin-top: 12.3rem;
   text-align: center;
@@ -101,6 +84,10 @@
       right: -0.51em;
     }
   }
+}
+
+.sliderWrapper {
+  cursor: pointer;
 }
 
 @keyframes pulse {
