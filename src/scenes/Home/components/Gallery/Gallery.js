@@ -1,21 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Slider from '@components/Slider';
+import Item from './components/Item';
+import { GlobalContext } from '@contexts';
 
-import './Gallery.scss';
 import styles from './Gallery.module.scss';
 
 const Gallery = () => {
-  const itemsNumber = 5;
-  const items = [];
-
-  const DefaultItem = ({ number }) => (
-    <div className={styles.item}>Item {number}</div>
-  );
-
-  for (let i = 0; i < itemsNumber; i++) {
-    items.push(<DefaultItem key={i} number={i} />);
-  }
+  const { imagesAPI } = useContext(GlobalContext);
+  const images = imagesAPI.getArray([
+    'gallery/gallery-1.jpg',
+    'gallery/gallery-2.jpg',
+    'gallery/gallery-3.jpg',
+  ]);
+  const items = [...images, ...images, ...images];
 
   const settings = {
     arrows: false,
@@ -31,7 +29,11 @@ const Gallery = () => {
     <section className={styles.container}>
       <h2 className={styles.title}>We are live</h2>
       <div>
-        <Slider settings={settings}>{items}</Slider>
+        <Slider settings={settings}>
+          {items.map(item => {
+            return <Item key={item.path} {...item} />;
+          })}
+        </Slider>
       </div>
     </section>
   );

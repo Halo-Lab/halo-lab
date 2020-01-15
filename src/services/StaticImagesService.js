@@ -12,19 +12,25 @@ class StaticImagesService {
     );
   }
 
-  getItem(path) {
-    return this.items.find(item => {
-      return path === item.path;
-    });
-  }
-
   get(paths) {
-    const found = {};
+    if (paths.length === 0) return {};
 
-    if (paths.length === 0) return found;
+    const found = {};
 
     this.items.forEach(item => {
       if (paths.indexOf(item.path) !== -1) found[item.path] = item;
+    });
+
+    return found;
+  }
+
+  getArray(paths) {
+    if (paths.length === 0) return [];
+
+    const found = [];
+
+    this.items.forEach(item => {
+      if (paths.indexOf(item.path) !== -1) found.push(item);
     });
 
     return found;

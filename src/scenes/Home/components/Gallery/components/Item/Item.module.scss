@@ -1,0 +1,12 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  padding: 0 20px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
