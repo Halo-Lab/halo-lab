@@ -46,7 +46,7 @@ const Posts = () => {
       <div className="section__posts-block">
         {posts ? (
           posts.map(item => {
-            return <Item key={item.link} {...item} />;
+            return <Item key={item.title} {...item} />;
           })
         ) : (
           <div>Loading ...</div>
