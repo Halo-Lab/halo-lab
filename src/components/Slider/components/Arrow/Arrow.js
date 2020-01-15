@@ -1,20 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Arrow = ({ myClass, className, style, onClick }) => {
+import styles from './Arrow.module.scss';
+
+const Arrow = ({ onClick, children, direction }) => {
+  const directionStyles =
+    direction && direction === 'next' ? styles.next : styles.previous;
+
   return (
-    <button
-      className={`${className} ${myClass}`}
-      style={style}
-      onClick={onClick}
-    ></button>
+    <button className={`${styles.arrow} ${directionStyles}`} onClick={onClick}>
+      {children}
+    </button>
   );
 };
 
 Arrow.propTypes = {
-  myClass: PropTypes.string,
-  className: PropTypes.string,
-  style: PropTypes.string,
+  direction: PropTypes.string,
+  children: PropTypes.node,
   onClick: PropTypes.func,
 };
 

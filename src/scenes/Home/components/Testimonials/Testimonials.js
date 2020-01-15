@@ -1,12 +1,9 @@
 import React, { useContext } from 'react';
-import Slick from 'react-slick';
 
+import Slider from '@components/Slider';
 import Item from './components/Item';
-import Arrow from './components/Arrow';
 import { GlobalContext } from '@contexts';
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import styles from './Testimonials.module.scss';
 
 const Testimonials = () => {
@@ -19,44 +16,28 @@ const Testimonials = () => {
 
   const settings = {
     dots: true,
-    dotsClass: styles.dots,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: <Arrow myClass={styles.arrow} />,
-    nextArrow: <Arrow myClass={styles.arrow} />,
   };
+
+  const defaultItem = (
+    <Item
+      stars={images['stars-5.svg']}
+      clutch={images['clutch-logo.svg']}
+      rating={images['rating-logo.svg']}
+    />
+  );
 
   return (
     <section className={styles.container}>
-      <Slick {...settings}>
-        <Item
-          stars={images['stars-5.svg']}
-          clutch={images['clutch-logo.svg']}
-          rating={images['rating-logo.svg']}
-        />
-        <Item
-          stars={images['stars-5.svg']}
-          clutch={images['clutch-logo.svg']}
-          rating={images['rating-logo.svg']}
-        />
-        <Item
-          stars={images['stars-5.svg']}
-          clutch={images['clutch-logo.svg']}
-          rating={images['rating-logo.svg']}
-        />
-        <Item
-          stars={images['stars-5.svg']}
-          clutch={images['clutch-logo.svg']}
-          rating={images['rating-logo.svg']}
-        />
-        <Item
-          stars={images['stars-5.svg']}
-          clutch={images['clutch-logo.svg']}
-          rating={images['rating-logo.svg']}
-        />
-      </Slick>
+      <Slider settings={settings}>
+        {defaultItem}
+        {defaultItem}
+        {defaultItem}
+        {defaultItem}
+      </Slider>
     </section>
   );
 };

@@ -6,11 +6,13 @@ import Arrow from './components/Arrow';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import styles from './Slider.module.scss';
 
 const Slider = ({ children, settings }) => {
   const defaultSettings = {
-    nextArrpw: <Arrow />,
-    prevArrow: <Arrow />,
+    prevArrow: <Arrow direction="previous" />,
+    nextArrow: <Arrow direction="next" />,
+    dotsClass: styles.dots,
     ...settings,
   };
 

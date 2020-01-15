@@ -33,9 +33,9 @@ const Item = ({ stars, clutch, rating }) => {
 };
 
 Item.propTypes = {
-  stars: PropTypes.exact({ url: PropTypes.string, name: PropTypes.string }),
-  clutch: PropTypes.exact({ url: PropTypes.string, name: PropTypes.string }),
-  rating: PropTypes.exact({ url: PropTypes.string, name: PropTypes.string }),
+  stars: PropTypes.object,
+  clutch: PropTypes.object,
+  rating: PropTypes.object,
 };
 
 export default Item;
