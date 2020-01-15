@@ -7,6 +7,7 @@ import Hero from '@scenes/Home/components/Hero';
 import WhatWeDo from '@scenes/Home/components/WhatWeDo';
 import Projects from '@scenes/Home/components/Projects';
 import Testimonials from '@scenes/Home/components/Testimonials';
+import Gallery from '@scenes/Home/components/Gallery';
 import Posts from '@scenes/Home/components/Posts';
 
 import '@styles/index.scss';
@@ -22,6 +23,7 @@ const Home = () => {
         <WhatWeDo />
         <Projects />
         <Testimonials />
+        <Gallery />
         <Posts />
         <MailUs />
       </div>
