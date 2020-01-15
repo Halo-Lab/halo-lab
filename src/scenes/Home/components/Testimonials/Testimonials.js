@@ -37,6 +37,7 @@ const Testimonials = () => {
         {defaultItem}
         {defaultItem}
         {defaultItem}
+        {defaultItem}
       </Slider>
     </section>
   );
