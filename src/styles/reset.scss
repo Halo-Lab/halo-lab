@@ -1,8 +1,11 @@
-@import "@styles/variables/all";
-@import "@styles/mixins/all";
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
 
-html, body, #___gatsby, #gatsby-focus-wrapper {
-  height: 100%
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
 }
 
 body {
@@ -12,37 +15,44 @@ body {
 
 // legacy -->
 
+@import '@styles/normalize.scss';
+
 * {
-	outline: none;
+  outline: none;
 }
 html {
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   font-size: 18px;
 
   @include fluid-type(1920px, 5120px, 18px, 20px);
 
-	@media screen and (max-width: 1920px) {
-		font-size: 16px;
-	}
-	@media screen and (max-width: 1400px) {
-		font-size: 14px;
-	}
-	@media screen and (max-width: 1200px) {
-		font-size: 12px;
-	}
+  @media screen and (max-width: 1920px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 1400px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1200px) {
+    font-size: 12px;
+  }
 }
 
 body {
   -moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
-img{
-	max-width: 100%;
-	height: auto;
+img {
+  max-width: 100%;
+  height: auto;
 }

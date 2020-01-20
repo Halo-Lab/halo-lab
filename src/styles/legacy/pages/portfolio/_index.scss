@@ -1,5 +1,5 @@
-@import "@styles/variables/all";
-@import "@styles/mixins/all";
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
 
 .portfolio {
   font-family: $font-sofia-pro;
@@ -10,7 +10,7 @@
     margin: 0 auto;
   }
 }
-
+// Used in Projects component -->
 .portfolio__title {
   font-family: $font-ratiomodern;
   font-size: 10rem;
@@ -31,6 +31,7 @@
     margin-bottom: 2.5rem;
   }
 }
+// <-- Used in Projects component
 
 .portfolio__clients {
   margin-top: 11.4rem;
@@ -44,6 +45,6 @@
   }
 }
 
-@import "./project";
-@import "./clients";
-@import "./portfolio-works";
+@import './project';
+@import './clients';
+@import './portfolio-works';

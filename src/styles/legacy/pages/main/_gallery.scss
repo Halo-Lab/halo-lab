@@ -1,68 +1,4 @@
 .section__gallery {
-  margin-top: 12.3rem;
-  text-align: center;
-
-  @include media-breakpoint-down(md) {
-    margin-top: 5rem;
-  }
-
-  @include media-breakpoint-down(xs) {
-    margin-top: 7.5rem;
-  }
-
-  @media (min-width: 1280px) {
-    // max-width: 90rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .section__title {
-    position: relative;
-    display: inline-flex;
-    font-size: 6.86rem;
-    line-height: 1.46em;
-    margin-bottom: 4.32rem;
-
-    @include media-breakpoint-down(sm) {
-      font-size: 6.25rem;
-    }
-
-    @include media-breakpoint-down(xs) {
-      font-size: 3.33rem;
-      margin-bottom: 1.7rem;
-    }
-
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0.42em;
-      right: -0.31em;
-      width: 12px;
-      height: 12px;
-      box-shadow: 0 0 0 rgba(#e72121, 0.3);
-      border-radius: 50%;
-      background: rgba(#e72121, 1);
-      animation: pulse 2s infinite ease-out;
-
-      @media screen and (min-width: 1281px) {
-        width: 0.86rem;
-        height: 0.86rem;
-      }
-
-      @include media-breakpoint-down(sm) {
-        width: 8px;
-        height: 8px;
-        animation: pulse-sm 2s infinite ease-out;
-      }
-
-      @include media-breakpoint-down(xs) {
-        top: 0.32em;
-        right: -0.51em;
-      }
-    }
-  }
-
   .gallery-slider-wrap {
     margin-right: -4.28rem;
     margin-left: -4.28rem;
@@ -126,13 +62,13 @@
 
 .gallery-slider.hover-right {
   @media screen and (min-width: 1025px) {
-    cursor: url("../images/gallery/right-arrow.png"), auto;
+    cursor: url('../images/gallery/right-arrow.png'), auto;
   }
 }
 
 .gallery-slider.hover-left {
   @media screen and (min-width: 1025px) {
-    cursor: url("../images/gallery/left-arrow.png"), auto;
+    cursor: url('../images/gallery/left-arrow.png'), auto;
   }
 }
 
