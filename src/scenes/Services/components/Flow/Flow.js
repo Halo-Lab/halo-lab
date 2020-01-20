@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Tabulation from './components/Tabulation';
+import { useDesktopStatus } from '@hooks';
 
 import styles from './Flow.module.scss';
 
@@ -31,11 +32,12 @@ const Flow = () => {
       message: `6) Halo Lab development process starts with understanding of your project and your needs, bottlenecks, and develop an appropriate estimation and project plan.`,
     },
   ];
+  const { isDesktop } = useDesktopStatus();
 
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Our Flow</h2>
-      <Tabulation items={items} />
+      {isDesktop ? <Tabulation items={items} /> : null}
     </div>
   );
 };
