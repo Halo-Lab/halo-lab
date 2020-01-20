@@ -1,5 +1,5 @@
-@import "@styles/variables/all";
-@import "@styles/mixins/all";
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
 
 .services {
   font-family: $font-sofia-pro;
@@ -33,27 +33,6 @@
   justify-content: space-between;
   @include media-breakpoint-down(md) {
     flex-direction: column;
-  }
-}
-
-.services__title {
-  font-family: $font-ratiomodern;
-  font-size: 10rem;
-  line-height: 1.2;
-  color: $white-color;
-  font-weight: 400;
-  margin-bottom: 5.7rem;
-  text-align: center;
-
-  @include media-breakpoint-down(md) {
-    font-size: 6.25rem;
-    line-height: 1.46em;
-    margin-bottom: 5rem;
-  }
-  @include media-breakpoint-down(sm) {
-    font-size: 4.5rem;
-    line-height: 1.1em;
-    margin-bottom: 2.5rem;
   }
 }
 
@@ -142,7 +121,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: calc(100% + 1.42rem);
     left: 50%;
@@ -205,7 +184,7 @@
   text-decoration: none;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 240px;
     height: 76px;
@@ -233,7 +212,7 @@
 }
 
 .services__desing .services__banner-link {
-  background: url("../images/services/desing/services-design-button-bg.png")
+  background: url('../images/services/desing/services-design-button-bg.png')
     no-repeat center;
   background-size: 101%;
 
@@ -246,7 +225,7 @@
 }
 
 .services__development .services__banner-link {
-  background: url("../images/services/dev/services-development-button-bg.png")
+  background: url('../images/services/dev/services-development-button-bg.png')
     no-repeat center;
   background-size: 101%;
 
