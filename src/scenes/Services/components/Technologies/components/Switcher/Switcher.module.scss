@@ -1,0 +1,53 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.tabList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5.7rem;
+
+  [aria-selected='true'],
+  .tabListItem:hover {
+    &::before {
+      height: 100%;
+    }
+  }
+}
+
+.tabListItem {
+  position: relative;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.42em;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 1.42rem);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    height: 0px;
+    background-color: $main-color;
+    z-index: -1;
+    transition: height 0.3s;
+  }
+
+  &:hover {
+    &::before {
+      height: 100%;
+    }
+  }
+}
+
+.tabListItem + .tabListItem {
+  margin-left: 5.64rem;
+}
