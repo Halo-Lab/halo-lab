@@ -1,0 +1,69 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $md) {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .item {
+      flex-basis: 46%;
+    }
+  }
+}
+
+.item {
+  text-align: left;
+  margin-bottom: 55px;
+
+  &:nth-last-child(1) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $md) {
+    margin-bottom: 7.83rem;
+
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 1.83rem;
+  line-height: 1.4em;
+  margin-bottom: 10px;
+
+  @include media-breakpoint-down(xs) {
+    font-size: 1.67rem;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 0 0 1px #554f71;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: 300;
+}
