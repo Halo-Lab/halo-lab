@@ -2,35 +2,6 @@
 @import '@styles/mixins/all';
 
 .container {
-  margin-bottom: 11.42rem;
-
-  @include media-breakpoint-down(md) {
-    margin-bottom: 6.67rem;
-  }
-}
-
-.title {
-  font-family: $font-ratiomodern;
-  font-size: 10rem;
-  line-height: 1.2;
-  color: $white-color;
-  font-weight: 400;
-  margin-bottom: 5.7rem;
-  text-align: center;
-
-  @include media-breakpoint-down(md) {
-    font-size: 6.25rem;
-    line-height: 1.46em;
-    margin-bottom: 5rem;
-  }
-  @include media-breakpoint-down(sm) {
-    font-size: 4.5rem;
-    line-height: 1.1em;
-    margin-bottom: 2.5rem;
-  }
-}
-
-.wrapper {
   display: flex;
   max-width: 82.85rem;
   margin: 0 auto;

@@ -9,11 +9,8 @@ import styles from './ServicesItem.module.scss';
 const ServicesItem = ({ items, banner }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>Design</div>
-      <div className={styles.wrapper}>
-        <Block banner={banner} />
-        <List items={items} />
-      </div>
+      <Block banner={banner} />
+      <List items={items} />
     </div>
   );
 };
