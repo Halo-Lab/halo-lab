@@ -52,7 +52,14 @@ body:not(.body-inside) #wrapper {
 }
 
 .pageWrapper {
-  font-family: sofia-pro-soft, sans-serif;
+  font-family: $font-sofia-pro;
+  padding-top: 11.4rem;
+
+  @include media-breakpoint-down(md) {
+    max-width: 59rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .section__title {
