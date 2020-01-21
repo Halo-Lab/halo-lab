@@ -1,5 +1,5 @@
-@import "@styles/variables/all";
-@import "@styles/mixins/all";
+@import '../../variable';
+@import '../../mixins/breakpoints';
 
 .industries__description {
   display: flex;
@@ -80,19 +80,21 @@
   width: 18.57rem;
   border-radius: 2.14rem;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    width: 1rem;
-    height: 2px;
-    background-color: $white-color;
-    top: 2rem;
-    right: 1.42rem;
-  }
-  &::after {
-    transform: rotate(-90deg);
-  }
+  // we don't need it for now.
+  // to be retrieved when industries__item becomes link
+  // &::before,
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   width: 1rem;
+  //   height: 2px;
+  //   background-color: $white-color;
+  //   top: 2rem;
+  //   right: 1.42rem;
+  // }
+  // &::after {
+  //   transform: rotate(-90deg);
+  // }
 
   @include media-breakpoint-down(md) {
     box-sizing: border-box;
