@@ -1,0 +1,221 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 25.7rem;
+  margin-right: 5rem;
+
+  @media screen and (max-width: 1200px) {
+    margin-right: 2.4rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 6.67rem;
+    position: relative;
+    flex-direction: row;
+    max-width: 100%;
+    margin-right: 0;
+  }
+  @include media-breakpoint-down(xs) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 7.17rem;
+  }
+}
+
+.info {
+  @include media-breakpoint-down(md) {
+    max-width: 50%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    max-width: 48%;
+    flex-shrink: 0;
+  }
+
+  @include media-breakpoint-down(xs) {
+    max-width: none;
+  }
+}
+
+.infoMessage {
+  margin: 0;
+  margin-bottom: 3.56rem;
+  font-size: 2.15rem;
+  line-height: 1.33;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 3rem;
+    font-weight: 400;
+    font-size: 1.83rem;
+    line-height: 1.4em;
+  }
+
+  @include media-breakpoint-down(sm) {
+    max-width: 280px;
+    font-size: 1.67rem;
+    margin-bottom: 5rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    max-width: none;
+    margin-bottom: 30px;
+  }
+}
+
+.infoLink {
+  position: relative;
+  max-width: 16rem;
+  width: auto;
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $yellow-color;
+  text-decoration: none;
+  transition: color 0.4s;
+  z-index: 1;
+
+  @media (max-width: 1200px) {
+    font-size: 1.17rem;
+    white-space: nowrap;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 1.42rem);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    height: 0;
+    background-color: #3719ca;
+    z-index: -1;
+    transition: height 0.3s;
+  }
+
+  &:hover {
+    color: $white-color;
+
+    &::before {
+      height: 100%;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    left: 0;
+    bottom: 0;
+    width: 16.5rem;
+  }
+  @include media-breakpoint-down(xs) {
+    position: relative;
+  }
+}
+
+.banner {
+  margin-top: auto;
+
+  @include media-breakpoint-down(md) {
+    margin-left: auto;
+  }
+  @include media-breakpoint-down(sm) {
+    margin: 0;
+    // margin-top: 7.8rem;
+    margin-left: auto;
+    margin-top: auto;
+    max-width: 50%;
+  }
+
+  @include media-breakpoint-down(xs) {
+    max-width: none;
+    margin-left: 0;
+    margin-top: 7.83rem;
+  }
+}
+
+.bannerLink {
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 0 1.42rem 0 8.57rem;
+  width: 21.42rem;
+  height: 6.43rem;
+  border-radius: 1.42rem;
+  background-size: cover;
+  text-decoration: none;
+  background: url('../../../../../../images/services/desing/services-design-button-bg.png')
+    no-repeat center;
+  background-size: 101%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 240px;
+    height: 76px;
+    z-index: -1;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+
+    background: #2b00ff;
+    opacity: 0;
+    filter: blur(44px);
+    border-radius: 20px;
+    transition: 0.4s;
+  }
+
+  &:hover {
+    .bannerIcon {
+      bottom: 0.72rem;
+    }
+    &::before {
+      opacity: 0.75;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-left: auto;
+    width: 100%;
+    max-width: 300px;
+    padding-left: 35%;
+    height: 7.53rem;
+  }
+  @include media-breakpoint-down(xs) {
+    padding-left: 9rem;
+  }
+}
+
+.bannerImage {
+  position: absolute;
+  top: -33%;
+  min-width: 140px;
+  left: -17%;
+  width: 13.14rem;
+}
+
+.bannerMessage {
+  position: relative;
+  font-weight: 400;
+  font-size: 1.28rem;
+  line-height: 1.55;
+  color: $white-color;
+  text-align: left;
+  padding-left: 0px;
+}
+
+.bannerIcon {
+  position: absolute;
+  right: 1.08rem;
+  bottom: 1.08rem;
+  transition: bottom 0.3s;
+
+  @include media-breakpoint-up(xl) {
+    height: auto;
+  }
+}

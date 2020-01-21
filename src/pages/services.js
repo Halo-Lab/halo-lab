@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '@components/Layout';
 import Head from '@components/Head';
 import MailUs from '@components/MailUs';
+import Design from '@scenes/Services/components/Design';
 import Flow from '@scenes/Services/components/Flow';
 import Technologies from '@scenes/Services/components/Technologies';
 
@@ -13,6 +14,7 @@ const Services = () => {
         <title>Services - Halo Lab Blog</title>
       </Head>
       <div className="pageWrapper">
+        <Design />
         <Flow />
         <Technologies />
         <MailUs />

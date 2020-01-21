@@ -1,5 +1,5 @@
-@import '@styles/variables/all';
-@import '@styles/mixins/all';
+@import '../../variable';
+@import '../../mixins/breakpoints';
 
 .services {
   font-family: $font-sofia-pro;
@@ -7,147 +7,6 @@
   @include media-breakpoint-down(md) {
     max-width: 59rem;
     margin: 0 auto;
-  }
-}
-
-.services__desing {
-  margin-bottom: 11.42rem;
-  @include media-breakpoint-down(md) {
-    margin-bottom: 8.3rem;
-  }
-  @include media-breakpoint-down(md) {
-    margin-bottom: 6.67rem;
-  }
-}
-
-.services__development .services__title {
-  @include media-breakpoint-down(sm) {
-    font-size: 4rem;
-  }
-}
-
-.services__wrapper {
-  display: flex;
-  max-width: 82.85rem;
-  margin: 0 auto;
-  justify-content: space-between;
-  @include media-breakpoint-down(md) {
-    flex-direction: column;
-  }
-}
-
-.services__block {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 25.7rem;
-  margin-right: 5rem;
-
-  @media screen and (max-width: 1200px) {
-    margin-right: 2.4rem;
-  }
-
-  @include media-breakpoint-down(md) {
-    margin-bottom: 6.67rem;
-    position: relative;
-    flex-direction: row;
-    max-width: 100%;
-    margin-right: 0;
-  }
-  @include media-breakpoint-down(xs) {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 7.17rem;
-  }
-}
-
-.services__info {
-  @include media-breakpoint-down(md) {
-    max-width: 50%;
-  }
-
-  @include media-breakpoint-down(sm) {
-    max-width: 48%;
-    flex-shrink: 0;
-  }
-
-  @include media-breakpoint-down(xs) {
-    max-width: none;
-  }
-}
-
-.services__info > p {
-  margin: 0;
-  margin-bottom: 3.56rem;
-  font-size: 2.15rem;
-  line-height: 1.33;
-  @include media-breakpoint-down(md) {
-    // max-width: 50%;
-    margin-bottom: 3rem;
-    font-weight: 400;
-    font-size: 1.83rem;
-    line-height: 1.4em;
-  }
-  @include media-breakpoint-down(sm) {
-    max-width: 280px;
-    font-size: 1.67rem;
-    margin-bottom: 5rem;
-  }
-
-  @include media-breakpoint-down(xs) {
-    max-width: none;
-    margin-bottom: 30px;
-  }
-}
-
-.services__info > a {
-  position: relative;
-  max-width: 16rem;
-  width: auto;
-  font-size: 1rem;
-  line-height: 1.4;
-  letter-spacing: 5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: $yellow-color;
-  text-decoration: none;
-  transition: color 0.4s;
-  z-index: 1;
-
-  @media (max-width: 1200px) {
-    font-size: 1.17rem;
-    white-space: nowrap;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: calc(100% + 1.42rem);
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    height: 0;
-    background-color: #3719ca;
-    z-index: -1;
-    transition: height 0.3s;
-  }
-
-  @include media-breakpoint-down(md) {
-    // position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 16.5rem;
-  }
-  @include media-breakpoint-down(xs) {
-    position: relative;
-  }
-}
-
-.services__info > a:hover {
-  color: $white-color;
-  &::before {
-    height: 100%;
   }
 }
 
@@ -212,7 +71,7 @@
 }
 
 .services__desing .services__banner-link {
-  background: url('../images/services/desing/services-design-button-bg.png')
+  background: url('../img/services/desing/services-design-button-bg.png')
     no-repeat center;
   background-size: 101%;
 
@@ -225,7 +84,7 @@
 }
 
 .services__development .services__banner-link {
-  background: url('../images/services/dev/services-development-button-bg.png')
+  background: url('../img/services/dev/services-development-button-bg.png')
     no-repeat center;
   background-size: 101%;
 
