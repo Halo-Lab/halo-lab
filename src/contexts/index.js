@@ -1,3 +1,4 @@
+import GlobalContext from './GlobalContext';
 import MenuContext from './MenuContext';
 
-export { MenuContext };
+export { GlobalContext, MenuContext };

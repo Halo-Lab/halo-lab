@@ -1,16 +1,13 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React, { useContext } from 'react';
+
+import { GlobalContext } from '@contexts';
 
 import './Footer.scss';
 
 const Footer = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "logo.svg" }) {
-        publicURL
-      }
-    }
-  `);
+  const { imagesAPI } = useContext(GlobalContext);
+  const images = imagesAPI.get('logo.svg');
+
   const itemsSocial = [
     { href: 'https://twitter.com/halolabteam', classIcon: 's-twitter' },
     { href: 'https://www.instagram.com/halolabteam/', classIcon: 's-inst' },
@@ -23,7 +20,7 @@ const Footer = () => {
     <footer className="clearfix">
       <div className="footer_conteiner">
         <div className="footer__logo">
-          <img src={data.file.publicURL} alt="logo" />
+          <img src={images['logo.svg'].url} alt={images['logo.svg'].name} />
           With Love from Halo Lab
         </div>
 

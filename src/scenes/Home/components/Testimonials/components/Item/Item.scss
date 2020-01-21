@@ -1,0 +1,115 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.testimonials__item {
+  max-width: 54.29rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    max-width: 42.69rem;
+  }
+}
+
+.testimonials__item-body {
+  padding: 3.36rem 4.29rem 4.29rem;
+  background: linear-gradient(
+    133.78deg,
+    rgba(132, 164, 255, 0.2) 6.69%,
+    rgba(2, 2, 30, 0) 85.43%
+  );
+
+  @include media-breakpoint-down(md) {
+    padding: 3.36rem 2.5rem 4.18rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 2.26rem 1.72rem 2.5rem;
+  }
+
+  .testimonials__item-author {
+    display: block;
+    font-size: 1.17rem;
+    margin-top: 2.5rem;
+    line-height: 1.5em;
+
+    @include media-breakpoint-up(sm) {
+      display: none;
+    }
+  }
+}
+
+.testimonials__item-header img {
+  width: 7.36rem;
+
+  @include media-breakpoint-down(md) {
+    width: 7.33rem;
+  }
+}
+
+.testimonials__item-header span {
+  font-size: 1.43rem;
+  margin-right: 1.14rem;
+}
+
+.testimonials__item-text {
+  font-size: 2.14rem;
+  line-height: 1.33em;
+  margin-top: 3.28rem;
+
+  @include media-breakpoint-down(md) {
+    font-size: 1.84rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 1.5rem;
+    margin-top: 2.34rem;
+    line-height: 1.43em;
+  }
+}
+
+.testimonials__item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $main-color;
+  padding: 1.43rem 2.14rem;
+  text-decoration: none;
+
+  @include media-breakpoint-down(xs) {
+    padding: 1.1rem 1.7rem;
+  }
+}
+
+.testimonials__item-author {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 5.71rem;
+
+    @include media-breakpoint-down(md) {
+      width: 5.58rem;
+    }
+  }
+
+  span {
+    display: block;
+    margin-left: 1.43rem;
+    color: #fff;
+    font-size: 20px;
+
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
+  }
+}
+
+.testimonials__item-logo img {
+  width: 4.14rem;
+
+  @include media-breakpoint-down(md) {
+    width: 4.17rem;
+  }
+}

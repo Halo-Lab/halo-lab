@@ -1,3 +1,42 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.intro h1 {
+  color: #fff;
+  display: table-cell;
+  font-family: ratiomodern, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.57rem;
+  line-height: 1.14em;
+  height: 100%;
+  padding: 0;
+  vertical-align: middle;
+  white-space: pre-wrap;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 4.17rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 3.34rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 3.7rem;
+    line-height: 1.5;
+    br {
+      display: none;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    font-size: 2.5rem;
+  }
+  span {
+    color: #84a4ff;
+  }
+}
+
 .section__hero {
   position: relative;
   padding-top: 16.6rem;
@@ -21,7 +60,7 @@
   }
 
   &:before {
-    content: "";
+    content: '';
     display: block;
     width: 2px;
     height: 1px;
@@ -50,7 +89,7 @@
     }
 
     &:before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: 0;
@@ -58,7 +97,7 @@
       bottom: 0;
       width: 3.5em;
       height: 2.5em;
-      background: url("../images/quotes.svg") no-repeat center;
+      background: url('../../../../images/quotes.svg') no-repeat center;
       background-size: contain;
       margin: auto;
     }
@@ -93,7 +132,7 @@
   position: relative;
   z-index: 1;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 1px;
     height: 1px;
@@ -174,7 +213,7 @@
 }
 
 .upwork-card {
-  background: url("../images/cards/upwork-bg.png") no-repeat center;
+  background: url('../../../../images/cards/upwork-bg.png') no-repeat center;
   background-size: cover;
 
   .hero__info-card-body {
@@ -194,7 +233,7 @@
 }
 
 .dribbble-card {
-  background: url("../images/cards/dribbble-bg.png") no-repeat center;
+  background: url('../../../../images/cards/dribbble-bg.png') no-repeat center;
   background-size: cover;
 
   .hero__info-card-body {
@@ -215,7 +254,7 @@
 }
 
 .clutch-card {
-  background: url("../images/cards/clutch-bg.png") no-repeat center;
+  background: url('../../../../images/cards/clutch-bg.png') no-repeat center;
   background-size: cover;
 
   .hero__info-card-body {
