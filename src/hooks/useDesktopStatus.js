@@ -10,8 +10,6 @@ const useDesktopStatus = (width = 992) => {
       return void setIsDesktop(true);
     }
 
-    console.log('handleResize works');
-
     setIsDesktop(false);
   };
 
