@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
-const useDesktopStatus = () => {
+const useDesktopStatus = (width = 992) => {
   const [isDesktop, setIsDesktop] = useState(false);
 
   const handleResize = () => {
-    if (document.documentElement.clientWidth >= 992) {
+    if (document.documentElement.clientWidth >= width) {
       return void setIsDesktop(true);
     }
 

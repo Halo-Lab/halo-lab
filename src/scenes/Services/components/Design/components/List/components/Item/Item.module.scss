@@ -1,0 +1,47 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  img {
+    display: block;
+    max-width: 60px;
+    height: auto;
+
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+    font-weight: 400;
+    font-size: 1.7rem;
+    line-height: 1.25;
+
+    @media screen and(max-width: 1200px) {
+      font-size: 22px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.28rem;
+    line-height: 1.67;
+
+    @media screen and(max-width: 1200px) {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: $sm) {
+    text-align: center;
+
+    img {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}

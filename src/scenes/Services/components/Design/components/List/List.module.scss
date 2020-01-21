@@ -1,7 +1,7 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
-.container {
+.list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -21,7 +21,13 @@
   }
 }
 
-.item {
+.wrapper {
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.listItem {
   max-width: 21.42rem;
 
   @media screen and (max-width: 1200px) {
@@ -46,39 +52,5 @@
 
   &:nth-child(2) {
     margin-bottom: 3.5rem;
-  }
-
-  img {
-    display: block;
-    max-width: 60px;
-    height: auto;
-
-    margin-bottom: 2rem;
-  }
-
-  h3 {
-    margin-bottom: 1rem;
-    font-weight: 400;
-    font-size: 1.7rem;
-    line-height: 1.25;
-
-    @media screen and(max-width: 1200px) {
-      font-size: 22px;
-    }
-
-    @include media-breakpoint-down(sm) {
-      font-size: 20px;
-    }
-  }
-
-  p {
-    margin: 0;
-    font-weight: 300;
-    font-size: 1.28rem;
-    line-height: 1.67;
-
-    @media screen and(max-width: 1200px) {
-      font-size: 18px;
-    }
   }
 }

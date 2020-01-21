@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
 
+import Slider from '@components/Slider';
+import Item from './components/Item';
 import { GlobalContext } from '@contexts';
+import { useDesktopStatus } from '@hooks';
 
 import styles from './List.module.scss';
 
 const List = () => {
+  const { isDesktop } = useDesktopStatus(576);
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get([
     'services/desing/web-desing-icon.svg',
@@ -40,18 +44,37 @@ const List = () => {
     },
   ];
 
+  const settings = {
+    arrows: false,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
-    <ul className={styles.container}>
-      {items.map(({ title, text, image }, index) => {
-        return (
-          <li key={index} className={styles.item}>
-            <img src={image.url} alt={image.name} />
-            <h3>{title}</h3>
-            <p>{text}</p>
-          </li>
-        );
-      })}
-    </ul>
+    <div className={styles.container}>
+      {isDesktop ? (
+        <ul className={styles.list}>
+          {items.map((item, index) => {
+            return (
+              <li key={index} className={styles.listItem}>
+                <Item {...item} />
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <div className={styles.wrapper}>
+          <Slider settings={settings}>
+            {items.map((item, index) => {
+              return <Item key={index} {...item} />;
+            })}
+          </Slider>
+        </div>
+      )}
+    </div>
   );
 };
 
