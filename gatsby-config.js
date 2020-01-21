@@ -1,3 +1,4 @@
+require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `Halo-Lab`,
@@ -107,8 +108,8 @@ module.exports = {
           // If you use "JWT Authentication for WP REST API" (https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/)
           // or (https://github.com/jonathan-dejong/simple-jwt-authentication) requires jwt_base_path, path can be found in WordPress wp-api.
           // plugin, you can specify user and password to obtain access token and use authenticated requests against WordPress REST API.
-          jwt_user: "admin",
-          jwt_pass: "Yu!51*R#Eo07rnJAHQ3B$brH",
+          jwt_user: process.env.JWT_USER,
+          jwt_pass: process.env.JWT_PASSWORD,
           jwt_base_path: "/jwt-auth/v1/token", // Default - can skip if you are using https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
         },
         // Set cookies that should be send with requests to WordPress as key value pairs
@@ -139,7 +140,7 @@ module.exports = {
           "**/posts",
           "**/pages",
           "**/media",
-          "**/tags",
+          // "**/tags",
           "**/taxonomies",
           // "**/users",
         ],
