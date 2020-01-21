@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Tabulation from './components/Tabulation';
+import Switcher from './components/Switcher';
 import List from './components/List';
 import { useDesktopStatus } from '@hooks';
 
@@ -38,7 +38,7 @@ const Flow = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Our Flow</h2>
-      {isDesktop ? <Tabulation items={items} /> : <List items={items} />}
+      {isDesktop ? <Switcher items={items} /> : <List items={items} />}
     </div>
   );
 };

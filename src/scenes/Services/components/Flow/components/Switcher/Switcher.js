@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import styles from './Tabulation.module.scss';
+import styles from './Switcher.module.scss';
 
-const Tabulation = ({ items }) => {
+const Switcher = ({ items }) => {
   return (
     <Tabs>
       <TabList className={styles.tabList}>
@@ -33,12 +33,12 @@ const Tabulation = ({ items }) => {
   );
 };
 
-Tabulation.defaultProps = {
+Switcher.defaultProps = {
   items: [],
 };
 
-Tabulation.propTypes = {
+Switcher.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default Tabulation;
+export default Switcher;
