@@ -23,7 +23,11 @@ const Switcher = ({ items }) => {
             <ul className={styles.tabContentList}>
               {items.map(({ title, image }, index) => {
                 return (
-                  <li className={styles.tabContentItem} key={index}>
+                  <li
+                    key={index}
+                    className={styles.tabContentItem}
+                    style={{ animationDelay: `0.${index}s` }}
+                  >
                     <div className={styles.tabContentIcon}>
                       <img src={image.url} alt={image.name} />
                     </div>
