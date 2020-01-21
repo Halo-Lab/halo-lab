@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { debounce } from '@helpers';
+
 const useDesktopStatus = (width = 992) => {
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -8,14 +10,19 @@ const useDesktopStatus = (width = 992) => {
       return void setIsDesktop(true);
     }
 
+    console.log('handleResize works');
+
     setIsDesktop(false);
   };
 
+  const handleResizeDebounced = debounce(handleResize, 300);
+
   useEffect(() => {
     handleResize();
-    window.addEventListener('resize', handleResize);
 
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResizeDebounced);
+
+    return () => window.removeEventListener('resize', handleResizeDebounced);
   }, []);
 
   return { isDesktop };
