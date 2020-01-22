@@ -1,22 +1,23 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { useToggleOpenedStatus } from "@hooks/index";
+import { useIsOpened } from '@hooks/index';
 
-import styles from "./ModalWrapper.module.scss";
+import styles from './ModalWrapper.module.scss';
 
 const ModalWrapper = ({ children }) => {
-  const { isOpened, handleTogglingOpenedStatus } = useToggleOpenedStatus();
+  const { isOpened, handleTogglingIsOpened } = useIsOpened();
   const onWrapperClick = ({ target }) => {
-    const isWrapper = target.getAttribute("data-name") === "modalWrapper";
+    const isWrapper = target.getAttribute('data-name') === 'modalWrapper';
 
     if (isWrapper) {
-      handleTogglingOpenedStatus();
+      handleTogglingIsOpened();
     }
   };
 
   return (
     <div>
-      <button type="button" onClick={handleTogglingOpenedStatus}>
+      <button type="button" onClick={handleTogglingIsOpened}>
         Toggle
       </button>
       {isOpened ? (
@@ -30,6 +31,10 @@ const ModalWrapper = ({ children }) => {
       ) : null}
     </div>
   );
+};
+
+ModalWrapper.propTypes = {
+  children: PropTypes.node,
 };
 
 export default ModalWrapper;

@@ -7,13 +7,13 @@ import Footer from '@components/Footer';
 import BackgroundStars from '@components/BackgroundStars';
 import { MenuContext, GlobalContext } from '@contexts';
 import { StaticImagesService } from '@services';
-import { useToggleOpenedStatus, useQueryStaticImages } from '@hooks';
+import { useIsOpened, useQueryStaticImages } from '@hooks';
 
 import styles from './Layout.module.scss';
 import './Layout.scss';
 
 const Layout = ({ children }) => {
-  const menuState = useToggleOpenedStatus();
+  const menuState = useIsOpened();
   const globalState = {
     imagesAPI: new StaticImagesService(useQueryStaticImages()),
   };

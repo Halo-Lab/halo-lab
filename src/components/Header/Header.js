@@ -16,7 +16,7 @@ const Header = () => {
       }
     }
   `);
-  const { isOpened, handleTogglingOpenedStatus } = useContext(MenuContext);
+  const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
   const { imagesAPI } = useContext(GlobalContext);
 
   const images = imagesAPI.get(['header-logo.svg']);
@@ -49,7 +49,7 @@ const Header = () => {
           <button
             className={`burger-menu ${burgerStatusClass}`}
             type="button"
-            onClick={handleTogglingOpenedStatus}
+            onClick={handleTogglingIsOpened}
           >
             <span className="bar"></span>
           </button>
