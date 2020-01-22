@@ -14,6 +14,12 @@ const Design = () => {
     'services/design/branding.svg',
   ]);
 
+  const message = {
+    text:
+      'We make the collaboration of people and interface more intensive and exiting.',
+    link: 'NEED A DESIGNER?',
+  };
+
   const items = [
     {
       title: 'Websites Design',
@@ -44,7 +50,7 @@ const Design = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>Design</div>
-      <ServicesItem banner={true} items={items} />
+      <ServicesItem banner={true} items={items} message={message} />
     </div>
   );
 };

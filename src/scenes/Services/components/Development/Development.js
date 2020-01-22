@@ -14,6 +14,11 @@ const Development = () => {
     'services/dev/qa.svg',
   ]);
 
+  const message = {
+    text: 'Front-end & back-end expertise from development to delivery.',
+    link: 'NEED A DEVELOPER?',
+  };
+
   const items = [
     {
       title: 'Web Development',
@@ -43,7 +48,7 @@ const Development = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>Development</div>
-      <ServicesItem banner={false} items={items} />
+      <ServicesItem banner={false} items={items} message={message} />
     </div>
   );
 };

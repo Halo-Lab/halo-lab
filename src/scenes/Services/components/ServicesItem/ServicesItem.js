@@ -6,10 +6,10 @@ import List from './components/List';
 
 import styles from './ServicesItem.module.scss';
 
-const ServicesItem = ({ items, banner }) => {
+const ServicesItem = ({ banner, items, message }) => {
   return (
     <div className={styles.container}>
-      <Block banner={banner} />
+      <Block banner={banner} message={message} />
       <List items={items} />
     </div>
   );
@@ -18,6 +18,7 @@ const ServicesItem = ({ items, banner }) => {
 ServicesItem.propTypes = {
   banner: PropTypes.bool,
   items: PropTypes.arrayOf(PropTypes.object),
+  message: PropTypes.object,
 };
 
 export default ServicesItem;

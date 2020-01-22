@@ -6,7 +6,7 @@ import { GlobalContext } from '@contexts';
 
 import styles from './Block.module.scss';
 
-const Block = ({ banner }) => {
+const Block = ({ banner, message }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -25,15 +25,12 @@ const Block = ({ banner }) => {
   return (
     <div className={styles.container}>
       <div className={styles.info}>
-        <p className={styles.infoMessage}>
-          We make the collaboration of people and interface more intensive and
-          exiting.
-        </p>
+        <p className={styles.infoMessage}>{message.text}</p>
         <a
           href={`mailto:${data.site.siteMetadata.email}`}
           className={styles.infoLink}
         >
-          NEED A DESIGNER?
+          {message.link}
         </a>
       </div>
 
@@ -65,6 +62,7 @@ const Block = ({ banner }) => {
 
 Block.propTypes = {
   banner: PropTypes.bool,
+  message: PropTypes.object,
 };
 
 export default Block;
