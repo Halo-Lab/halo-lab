@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 
-import { useGetDocumentWidth } from '@hooks';
+import { useGetBreakpoint } from '@hooks';
 
 import styles from './BackgroundBlackHole.module.scss';
 
 const BackgroundBlackHole = () => {
   const container = useRef(null);
-  const { width } = useGetDocumentWidth();
+  const { width } = useGetBreakpoint();
 
   useEffect(() => {
     // Global Animation Setting
