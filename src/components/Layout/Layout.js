@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import Header from '@components/Header';
 import Footer from '@components/Footer';
-import BackgroundStars from '@components/BackgroundStars';
 import { MenuContext } from '@contexts';
 
 import styles from './Layout.module.scss';
@@ -15,7 +14,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <BackgroundStars />
       {/* TODO: This is very bad, I know. But. */}
       {isOpened ? (
         <Helmet>
