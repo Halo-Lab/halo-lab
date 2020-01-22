@@ -1,0 +1,56 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 68.57rem;
+  margin: 0 auto 8.57rem;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  h4 {
+    width: 31%;
+    font-weight: 400;
+    font-size: 2.14rem;
+    line-height: 1.33em;
+    @include media-breakpoint-down(md) {
+      font-size: 22px;
+      line-height: 30px;
+      font-weight: 400;
+      width: 35%;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      max-width: 310px;
+      margin-bottom: 15px;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  p {
+    width: 55%;
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.57rem;
+    line-height: 1.45em;
+    @include media-breakpoint-down(md) {
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 30px;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}

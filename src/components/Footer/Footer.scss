@@ -1,5 +1,5 @@
-@import "@styles/variables/all";
-@import "@styles/mixins/all";
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
 
 footer {
   span {
@@ -92,7 +92,7 @@ footer .works ul li a {
 
 footer .works ul li a:after {
   background: #3719ca;
-  content: "";
+  content: '';
   height: 2px;
   position: absolute;
   bottom: 0;
@@ -200,22 +200,22 @@ footer .socials ul li a:hover {
   border-color: #3719ca;
 }
 footer .socials ul li .s-beh {
-  background-image: url("../../images/behance_logo.svg");
+  background-image: url('./images/behance_logo.svg');
 }
 footer .socials ul li .s-dbl {
-  background-image: url("../../images/dribbble_logo.svg");
+  background-image: url('./images/dribbble_logo.svg');
 }
 footer .socials ul li .s-md {
-  background-image: url("../../images/medium_logo.svg");
+  background-image: url('./images/medium_logo.svg');
 }
 footer .socials ul li .s-fb {
-  background-image: url("../../images/facebook_logo.svg");
+  background-image: url('./images/facebook_logo.svg');
 }
 footer .socials ul li .s-inst {
-  background-image: url("../../images/instagram_logo.svg");
+  background-image: url('./images/instagram_logo.svg');
 }
 footer .socials ul li .s-twitter {
-  background-image: url("../../images/twitter.svg");
+  background-image: url('./images/twitter.svg');
 }
 
 .footer_conteiner {

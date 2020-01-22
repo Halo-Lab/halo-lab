@@ -51,6 +51,17 @@ body:not(.body-inside) #wrapper {
   font-family: sofia-pro-soft, sans-serif;
 }
 
+.pageWrapper {
+  font-family: $font-sofia-pro;
+  padding-top: 11.4rem;
+
+  @include media-breakpoint-down(md) {
+    max-width: 59rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 .section__title {
   font-family: $font-ratiomodern;
   font-size: 10rem;
