@@ -1,9 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 
+import { useGetDocumentWidth } from '@hooks';
+
 import styles from './BackgroundBlackHole.module.scss';
 
 const BackgroundBlackHole = () => {
   const container = useRef(null);
+  const { width } = useGetDocumentWidth();
 
   useEffect(() => {
     // Global Animation Setting
@@ -122,7 +125,7 @@ const BackgroundBlackHole = () => {
     }
 
     loop();
-  }, []);
+  }, [width]);
 
   return <canvas ref={container} className={styles.container}></canvas>;
 };
