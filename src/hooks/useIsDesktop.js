@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 
-import { debounce } from '@helpers';
+import { debounce, getBreakpoint } from '@helpers';
 
-const useDesktopStatus = (width = 992) => {
+const useDesktopStatus = breakpoint => {
   const [isDesktop, setIsDesktop] = useState(false);
 
   const handleResize = () => {
-    if (document.documentElement.clientWidth >= width) {
+    if (document.documentElement.clientWidth >= getBreakpoint(breakpoint)) {
       return void setIsDesktop(true);
     }
 
     setIsDesktop(false);
   };
 
-  const handleResizeDebounced = debounce(handleResize, 300);
+  const handleResizeDebounced = debounce(handleResize, 250);
 
   useEffect(() => {
     handleResize();

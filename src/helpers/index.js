@@ -1,3 +1,4 @@
 import debounce from './debounce';
+import getBreakpoint from './getBreakpoint';
 
-export { debounce };
+export { debounce, getBreakpoint };
