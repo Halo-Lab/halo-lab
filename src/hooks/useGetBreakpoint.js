@@ -11,14 +11,14 @@ const useGetBreakpoint = () => {
 
     setBreakpoint(newBreakpoint);
   };
-  const handleResizeDebounced = debounce(handleResize, 250);
+  const handleResizeDebounce = debounce(handleResize, 250);
 
   useEffect(() => {
     // initial invoke
     handleResize();
 
-    window.addEventListener('resize', handleResizeDebounced);
-    return () => window.removeEventListener('resize', handleResizeDebounced);
+    window.addEventListener('resize', handleResizeDebounce);
+    return () => window.removeEventListener('resize', handleResizeDebounce);
   }, []);
 
   return { breakpoint };
