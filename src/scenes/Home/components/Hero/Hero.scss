@@ -97,7 +97,7 @@
       bottom: 0;
       width: 3.5em;
       height: 2.5em;
-      background: url('../../../../images/quotes.svg') no-repeat center;
+      background: url('./images/quotes.svg') no-repeat center;
       background-size: contain;
       margin: auto;
     }
@@ -213,7 +213,7 @@
 }
 
 .upwork-card {
-  background: url('../../../../images/cards/upwork-bg.png') no-repeat center;
+  background: url('./images/upwork-bg.png') no-repeat center;
   background-size: cover;
 
   .hero__info-card-body {
@@ -233,7 +233,7 @@
 }
 
 .dribbble-card {
-  background: url('../../../../images/cards/dribbble-bg.png') no-repeat center;
+  background: url('./images/dribbble-bg.png') no-repeat center;
   background-size: cover;
 
   .hero__info-card-body {
@@ -254,7 +254,7 @@
 }
 
 .clutch-card {
-  background: url('../../../../images/cards/clutch-bg.png') no-repeat center;
+  background: url('./images/clutch-bg.png') no-repeat center;
   background-size: cover;
 
   .hero__info-card-body {
