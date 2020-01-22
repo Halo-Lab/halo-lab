@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Wrapper from '@components/Wrapper';
 import Layout from '@components/Layout';
 import Head from '@components/Head';
 import MailUs from '@components/MailUs';
@@ -14,20 +15,22 @@ import '@styles/index.scss';
 
 const Home = () => {
   return (
-    <Layout>
-      <Head>
-        <title>Главная - Halo Lab Blog</title>
-      </Head>
-      <div className="main-home">
-        <Hero />
-        <WhatWeDo />
-        <Projects />
-        <Testimonials />
-        <Gallery />
-        <Posts />
-        <MailUs />
-      </div>
-    </Layout>
+    <Wrapper>
+      <Layout>
+        <Head>
+          <title>Главная - Halo Lab Blog</title>
+        </Head>
+        <div className="main-home">
+          <Hero />
+          <WhatWeDo />
+          <Projects />
+          <Testimonials />
+          <Gallery />
+          <Posts />
+          <MailUs />
+        </div>
+      </Layout>
+    </Wrapper>
   );
 };
 
