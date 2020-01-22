@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import Slider from '@components/Slider';
 import Item from './components/Item';
-import { useIsDesktop } from '@hooks';
+import { useGetBreakpoint } from '@hooks';
 
 import styles from './List.module.scss';
 
 const List = ({ items }) => {
-  const { isDesktop } = useIsDesktop(576);
+  const { breakpoint } = useGetBreakpoint();
 
   const settings = {
     arrows: false,
@@ -21,7 +21,7 @@ const List = ({ items }) => {
 
   return (
     <div className={styles.container}>
-      {isDesktop ? (
+      {breakpoint === 'desktop' || breakpoint === 'tablet' ? (
         <ul className={styles.list}>
           {items.map((item, index) => {
             return (

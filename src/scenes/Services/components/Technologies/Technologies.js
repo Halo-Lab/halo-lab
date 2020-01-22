@@ -3,12 +3,12 @@ import React, { useContext } from 'react';
 import Switcher from './components/Switcher';
 import List from './components/List';
 import { GlobalContext } from '@contexts';
-import { useIsDesktop } from '@hooks';
+import { useGetBreakpoint } from '@hooks';
 
 import styles from './Technologies.module.scss';
 
 const Technologies = () => {
-  const { isDesktop } = useIsDesktop();
+  const { breakpoint } = useGetBreakpoint();
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get([
     'services/react.svg',
@@ -83,7 +83,11 @@ const Technologies = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Technologies</h2>
-      {isDesktop ? <Switcher items={items} /> : <List items={items} />}
+      {breakpoint === 'mobile' ? (
+        <List items={items} />
+      ) : (
+        <Switcher items={items} />
+      )}
     </div>
   );
 };

@@ -31,7 +31,6 @@ const useGetBreakpoint = () => {
     handleResize();
 
     window.addEventListener('resize', handleResizeDebounced);
-
     return () => window.removeEventListener('resize', handleResizeDebounced);
   }, []);
 
