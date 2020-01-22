@@ -1,5 +1,5 @@
-import useDesktopStatus from './useDesktopStatus';
+import useIsDesktop from './useIsDesktop';
 import useToggleOpenedStatus from './useToggleOpenedStatus';
 import useQueryStaticImages from './useQueryStaticImages';
 
-export { useDesktopStatus, useToggleOpenedStatus, useQueryStaticImages };
+export { useIsDesktop, useToggleOpenedStatus, useQueryStaticImages };

@@ -3,12 +3,12 @@ import React, { useContext } from 'react';
 import Switcher from './components/Switcher';
 import List from './components/List';
 import { GlobalContext } from '@contexts';
-import { useDesktopStatus } from '@hooks';
+import { useIsDesktop } from '@hooks';
 
 import styles from './Technologies.module.scss';
 
 const Technologies = () => {
-  const { isDesktop } = useDesktopStatus();
+  const { isDesktop } = useIsDesktop();
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get([
     'services/react.svg',

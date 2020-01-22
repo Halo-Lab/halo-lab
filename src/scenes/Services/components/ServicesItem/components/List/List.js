@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import Slider from '@components/Slider';
 import Item from './components/Item';
-import { useDesktopStatus } from '@hooks';
+import { useIsDesktop } from '@hooks';
 
 import styles from './List.module.scss';
 
 const List = ({ items }) => {
-  const { isDesktop } = useDesktopStatus(576);
+  const { isDesktop } = useIsDesktop(576);
 
   const settings = {
     arrows: false,
