@@ -19,7 +19,7 @@ const Block = ({ banner }) => {
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get([
     'arrow-down.svg',
-    'services/desing/services-design-button-img.png',
+    'services/design/services-design-button-img.png',
   ]);
 
   return (
@@ -42,9 +42,9 @@ const Block = ({ banner }) => {
           <a className={styles.bannerLink} href="#">
             <img
               className={styles.bannerImage}
-              src={images['services/desing/services-design-button-img.png'].url}
+              src={images['services/design/services-design-button-img.png'].url}
               alt={
-                images['services/desing/services-design-button-img.png'].name
+                images['services/design/services-design-button-img.png'].name
               }
               draggable="false"
             />
