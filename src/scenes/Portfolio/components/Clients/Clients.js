@@ -18,7 +18,6 @@ const Clients = () => {
     'partners/techcrunch.svg',
     'partners/vc.ru.svg',
   ]);
-  console.log(images);
 
   return (
     <div className={styles.container}>
