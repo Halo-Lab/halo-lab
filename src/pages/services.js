@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Wrapper from '@components/Wrapper';
+import Providers from '@components/Providers';
 import Layout from '@components/Layout';
 import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
@@ -13,7 +13,7 @@ import Technologies from '@scenes/Services/components/Technologies';
 
 const Services = () => {
   return (
-    <Wrapper>
+    <Providers>
       <BackgroundStars />
       <Layout>
         <Head>
@@ -28,7 +28,7 @@ const Services = () => {
           <MailUs />
         </div>
       </Layout>
-    </Wrapper>
+    </Providers>
   );
 };
 

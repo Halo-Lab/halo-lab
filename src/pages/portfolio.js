@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Wrapper from '@components/Wrapper';
+import Providers from '@components/Providers';
 import Layout from '@components/Layout';
 import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
 
 const Portfolio = () => {
   return (
-    <Wrapper>
+    <Providers>
       <BackgroundStars />
       <Layout>
         <Head>
@@ -15,7 +15,7 @@ const Portfolio = () => {
         </Head>
         <div>Portfolio</div>
       </Layout>
-    </Wrapper>
+    </Providers>
   );
 };
 

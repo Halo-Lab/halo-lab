@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Wrapper from '@components/Wrapper';
+import Providers from '@components/Providers';
 import Layout from '@components/Layout';
 import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
@@ -16,7 +16,7 @@ import '@styles/index.scss';
 
 const Home = () => {
   return (
-    <Wrapper>
+    <Providers>
       <BackgroundStars />
       <Layout>
         <Head>
@@ -32,7 +32,7 @@ const Home = () => {
           <MailUs />
         </div>
       </Layout>
-    </Wrapper>
+    </Providers>
   );
 };
 

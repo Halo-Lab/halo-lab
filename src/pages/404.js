@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Wrapper from '@components/Wrapper';
+import Providers from '@components/Providers';
 import Layout from '@components/Layout';
 import BackgroundBlackHole from '@components/BackgroundBlackHole';
 import Head from '@components/Head';
 import Title from '@scenes/404/components/Title';
 
 const NotFound = () => (
-  <Wrapper>
+  <Providers>
     <BackgroundBlackHole />
     <Layout>
       <Head>
@@ -15,7 +15,7 @@ const NotFound = () => (
       </Head>
       <Title />
     </Layout>
-  </Wrapper>
+  </Providers>
 );
 
 export default NotFound;

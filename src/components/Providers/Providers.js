@@ -5,7 +5,7 @@ import { MenuContext, GlobalContext } from '@contexts';
 import { StaticImagesService } from '@services';
 import { useIsOpened, useQueryStaticImages } from '@hooks';
 
-const Wrapper = ({ children }) => {
+const Providers = ({ children }) => {
   const menuState = useIsOpened();
   const globalState = {
     imagesAPI: new StaticImagesService(useQueryStaticImages()),
@@ -18,8 +18,8 @@ const Wrapper = ({ children }) => {
   );
 };
 
-Wrapper.propTypes = {
+Providers.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Wrapper;
+export default Providers;
