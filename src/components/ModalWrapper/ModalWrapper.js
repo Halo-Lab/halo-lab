@@ -5,7 +5,7 @@ import { useIsOpened } from '@hooks/index';
 
 import styles from './ModalWrapper.module.scss';
 
-const ModalWrapper = ({ children }) => {
+const ModalWrapper = ({ children, button: Button }) => {
   const { isOpened, handleTogglingIsOpened } = useIsOpened();
   const onWrapperClick = ({ target }) => {
     const isWrapper = target.getAttribute('data-name') === 'modalWrapper';
@@ -16,10 +16,8 @@ const ModalWrapper = ({ children }) => {
   };
 
   return (
-    <div>
-      <button type="button" onClick={handleTogglingIsOpened}>
-        Toggle
-      </button>
+    <>
+      <Button onClick={handleTogglingIsOpened} />
       {isOpened ? (
         <div
           className={styles.wrapper}
@@ -29,12 +27,13 @@ const ModalWrapper = ({ children }) => {
           {children}
         </div>
       ) : null}
-    </div>
+    </>
   );
 };
 
 ModalWrapper.propTypes = {
-  children: PropTypes.node,
+  button: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default ModalWrapper;

@@ -1,16 +1,21 @@
 import React from 'react';
 
+import Providers from '@components/Providers';
 import Layout from '@components/Layout';
+import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
 
 const Contacts = () => {
   return (
-    <Layout>
-      <Head>
-        <title>Contacts - Halo Lab Blog</title>
-      </Head>
-      <div>Contacts</div>
-    </Layout>
+    <Providers>
+      <BackgroundStars />
+      <Layout>
+        <Head>
+          <title>Contacts - Halo Lab Blog</title>
+        </Head>
+        <div>Contacts</div>
+      </Layout>
+    </Providers>
   );
 };
 
