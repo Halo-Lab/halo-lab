@@ -60,6 +60,11 @@ body:not(.body-inside) #wrapper {
     margin-right: auto;
     margin-left: auto;
   }
+
+  @media (min-width: 1280px) {
+    max-width: 90rem;
+    margin: 0 auto;
+  }
 }
 
 .section__title {

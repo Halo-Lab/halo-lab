@@ -4,6 +4,57 @@
 .container {
 }
 
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  width: calc(25% - 22.5px);
+
+  @media (min-width: 1920px) {
+    width: calc(25% - 1.86rem);
+  }
+
+  @include media-breakpoint-down(md) {
+    width: calc(25% - 12px);
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: calc(50% - 5px);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.item + .item:not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) {
+  @include media-breakpoint-up(md) {
+    margin-top: 30px;
+  }
+
+  @media (min-width: 1920px) {
+    margin-top: calc((100% - (25% - 1.86rem) * 4) / 3);
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-top: 16px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .item + .item:not(:nth-child(2)) {
+    margin-top: 10px;
+  }
+}
+
 .buttonWrapper {
   display: flex;
   justify-content: center;

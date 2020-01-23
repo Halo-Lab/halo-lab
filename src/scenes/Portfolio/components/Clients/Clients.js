@@ -21,7 +21,7 @@ const Clients = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Clients</h2>
+      <h2 className={styles.title}>Our Clients</h2>
       <ul className={styles.list}>
         {images.map(({ url, name }, index) => {
           return (

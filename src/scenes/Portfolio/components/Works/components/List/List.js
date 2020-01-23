@@ -3,9 +3,19 @@ import React from 'react';
 import styles from './List.module.scss';
 
 const List = () => {
+  const items = [];
+
   return (
     <div className={styles.container}>
-      <div>List</div>
+      <ul>
+        {items.map((item, index) => {
+          return (
+            <li key={index}>
+              <div>i</div>
+            </li>
+          );
+        })}
+      </ul>
       <div className={styles.buttonWrapper}>
         <a href="#" id="portfolio__button" className={styles.button}>
           INSPIRE MORE
