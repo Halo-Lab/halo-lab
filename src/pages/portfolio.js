@@ -19,10 +19,12 @@ const Portfolio = () => {
         <Head>
           <title>Portfolio - Halo Lab Blog</title>
         </Head>
-        <Projects />
-        <Clients />
-        <Works />
-        <MailUs />
+        <div className="pageWrapper">
+          <Projects />
+          <Clients />
+          <Works />
+          <MailUs />
+        </div>
       </Layout>
     </Providers>
   );
