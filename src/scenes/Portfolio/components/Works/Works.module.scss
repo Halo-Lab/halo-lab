@@ -1,0 +1,29 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+}
+
+.title {
+  display: inline-flex;
+  position: relative;
+  font-size: 4.58rem;
+  line-height: 1.598em;
+  margin-bottom: 5.57rem;
+
+  @include media-breakpoint-down(md) {
+    font-size: 3.67rem;
+    margin-bottom: 5rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 2.83rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.titleIcon {
+}
+
+.titleImage {
+}
