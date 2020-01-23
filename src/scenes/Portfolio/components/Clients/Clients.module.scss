@@ -2,6 +2,15 @@
 @import '@styles/mixins/all';
 
 .container {
+  margin-top: 11.4rem;
+  margin-bottom: 5.83rem;
+
+  @include media-breakpoint-down(md) {
+    margin-top: 8.33rem;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-top: 6.67rem;
+  }
 }
 
 .title {

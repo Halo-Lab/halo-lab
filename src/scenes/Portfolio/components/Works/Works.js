@@ -16,17 +16,18 @@ const Works = () => {
       <h2 className={styles.title}>
         Design that inspires
         <a
+          className={styles.titleLink}
           href="https://dribbble.com/halolab"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
-            className="works__title-text-icon"
+            className={styles.titleIcon}
             src={images['dribbble-badge.svg'].url}
             alt={images['dribbble-badge.svg'].name}
           />
           <img
-            className="works__title-text-image"
+            className={styles.titleImage}
             src={images['dribbble-badge-text.svg'].url}
             alt={images['dribbble-badge-text.svg'].name}
           />
