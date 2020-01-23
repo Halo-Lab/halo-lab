@@ -21,8 +21,8 @@ const List = () => {
           height
           localCover {
             childImageSharp {
-              fixed(width: 360) {
-                ...GatsbyImageSharpFixed
+              fluid(maxWidth: 300) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -50,7 +50,7 @@ const List = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={item.localCover.childImageSharp.fixed.src} />
+                <Img fluid={item.localCover.childImageSharp.fluid} />
               </a>
             </li>
           ) : null;
