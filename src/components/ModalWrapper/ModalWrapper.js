@@ -17,13 +17,7 @@ const ModalWrapper = ({ children, button: Button }) => {
 
   return (
     <>
-      <button
-        type="button"
-        className={styles.button}
-        onClick={handleTogglingIsOpened}
-      >
-        <Button />
-      </button>
+      <Button onClick={handleTogglingIsOpened} />
       {isOpened ? (
         <div
           className={styles.wrapper}
@@ -38,8 +32,8 @@ const ModalWrapper = ({ children, button: Button }) => {
 };
 
 ModalWrapper.propTypes = {
-  button: PropTypes.element,
-  children: PropTypes.node,
+  button: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default ModalWrapper;
