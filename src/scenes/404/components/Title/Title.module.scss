@@ -1,25 +1,18 @@
-.particle-error {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: -1;
-    transition: all 2s;
-}
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
 
-.error-page {
+.container {
   position: fixed;
   top: 53%;
   left: 50%;
-  @include media-breakpoint-down(sm){
+
+  @include media-breakpoint-down(sm) {
     top: 60%;
     left: 15%;
   }
 }
 
-.error-page-text {
+.text {
   max-width: 40rem;
   margin: 0;
   margin-bottom: 1.2em;
@@ -27,14 +20,14 @@
   font-size: 3.6rem;
   line-height: 1.2;
 
-  @include media-breakpoint-down(sm){
+  @include media-breakpoint-down(sm) {
     max-width: 22rem;
     margin-bottom: 70px;
-		font-size: 2rem;
-	}
+    font-size: 2rem;
+  }
 }
 
-.error-page-link {
+.link {
   position: relative;
   font-family: $font-sofia-pro-soft;
   font-size: 1rem;
@@ -52,19 +45,19 @@
     top: 50%;
     left: 110%;
     transform: translateY(-50%);
-    background-image: url('../images/arrow.svg');
+    background-image: url('../../../../images/arrow.svg');
     background-repeat: no-repeat;
     background-size: contain;
     transition: all 0.5s;
   }
 
-  @include media-breakpoint-down(sm){
-		font-size: 1rem;
-	}
-}
+  @include media-breakpoint-down(sm) {
+    font-size: 1rem;
+  }
 
-.error-page-link:hover {
-  &::before {
-    left: 115%;
+  &:hover {
+    &::before {
+      left: 115%;
+    }
   }
 }

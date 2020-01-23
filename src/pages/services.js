@@ -1,6 +1,8 @@
 import React from 'react';
 
+import Providers from '@components/Providers';
 import Layout from '@components/Layout';
+import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
 import MailUs from '@components/MailUs';
 import Design from '@scenes/Services/components/Design';
@@ -11,19 +13,22 @@ import Technologies from '@scenes/Services/components/Technologies';
 
 const Services = () => {
   return (
-    <Layout>
-      <Head>
-        <title>Services - Halo Lab Blog</title>
-      </Head>
-      <div className="pageWrapper">
-        <Design />
-        <Development />
-        <Flow />
-        <Industries />
-        <Technologies />
-        <MailUs />
-      </div>
-    </Layout>
+    <Providers>
+      <BackgroundStars />
+      <Layout>
+        <Head>
+          <title>Services - Halo Lab Blog</title>
+        </Head>
+        <div className="pageWrapper">
+          <Design />
+          <Development />
+          <Flow />
+          <Industries />
+          <Technologies />
+          <MailUs />
+        </div>
+      </Layout>
+    </Providers>
   );
 };
 
