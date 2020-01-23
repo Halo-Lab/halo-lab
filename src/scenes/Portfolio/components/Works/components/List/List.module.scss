@@ -1,6 +1,10 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
+$sizeSmall: 4px;
+$sizeMedium: 12px;
+$sizeBig: 22px;
+
 .container {
 }
 
@@ -12,21 +16,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: -4px;
+  margin: -($sizeSmall);
 
   @media screen and (min-width: $md) {
-    margin: -12px;
+    margin: -($sizeMedium);
+  }
+
+  @media screen and (min-width: $xxl) {
+    margin: -($sizeBig);
   }
 }
 
 .item {
   flex: 0 1 50%;
   box-sizing: border-box;
-  padding: 4px;
+  padding: $sizeSmall;
 
   @media screen and (min-width: $md) {
-    padding: 12px;
+    padding: $sizeMedium;
     flex-basis: 25%;
+  }
+
+  @media screen and (min-width: $xxl) {
+    padding: $sizeBig;
   }
 
   a {
@@ -38,48 +50,6 @@
     display: block;
     width: 100%;
     height: auto;
-  }
-}
-
-.itemOld {
-  width: calc(25% - 22.5px);
-
-  @media (min-width: 1920px) {
-    width: calc(25% - 1.86rem);
-  }
-
-  @include media-breakpoint-down(md) {
-    width: calc(25% - 12px);
-  }
-
-  @include media-breakpoint-down(sm) {
-    width: calc(50% - 5px);
-  }
-
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-}
-
-.itemOld + .itemOld:not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) {
-  @include media-breakpoint-up(md) {
-    margin-top: 30px;
-  }
-
-  @media (min-width: 1920px) {
-    margin-top: calc((100% - (25% - 1.86rem) * 4) / 3);
-  }
-
-  @include media-breakpoint-down(md) {
-    margin-top: 16px;
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  .itemOld + .itemOld:not(:nth-child(2)) {
-    margin-top: 10px;
   }
 }
 
