@@ -11,6 +11,12 @@
   animation: appearance 0.5s 1;
 }
 
+.button {
+  border: none;
+  padding: 0;
+  width: auto;
+}
+
 @keyframes appearance {
   from {
     opacity: 0;

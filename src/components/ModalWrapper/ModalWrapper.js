@@ -5,7 +5,7 @@ import { useIsOpened } from '@hooks/index';
 
 import styles from './ModalWrapper.module.scss';
 
-const ModalWrapper = ({ children, button }) => {
+const ModalWrapper = ({ children, button: Button }) => {
   const { isOpened, handleTogglingIsOpened } = useIsOpened();
   const onWrapperClick = ({ target }) => {
     const isWrapper = target.getAttribute('data-name') === 'modalWrapper';
@@ -19,10 +19,10 @@ const ModalWrapper = ({ children, button }) => {
     <>
       <button
         type="button"
-        className={button.classes}
+        className={styles.button}
         onClick={handleTogglingIsOpened}
       >
-        {button.title}
+        <Button />
       </button>
       {isOpened ? (
         <div
@@ -38,10 +38,7 @@ const ModalWrapper = ({ children, button }) => {
 };
 
 ModalWrapper.propTypes = {
-  button: PropTypes.shape({
-    title: PropTypes.string,
-    classes: PropTypes.string,
-  }),
+  button: PropTypes.element,
   children: PropTypes.node,
 };
 
