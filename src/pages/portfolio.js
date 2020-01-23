@@ -4,6 +4,8 @@ import Providers from '@components/Providers';
 import Layout from '@components/Layout';
 import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
+import Clients from '@scenes/Portfolio/components/Clients';
+import Works from '@scenes/Portfolio/components/Works';
 
 const Portfolio = () => {
   return (
@@ -13,7 +15,8 @@ const Portfolio = () => {
         <Head>
           <title>Portfolio - Halo Lab Blog</title>
         </Head>
-        <div>Portfolio</div>
+        <Clients />
+        <Works />
       </Layout>
     </Providers>
   );
