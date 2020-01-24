@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Img from 'gatsby-image';
 
-import { useAllDribbbleShot } from '@hooks';
+import { useDribbbleShots } from '@hooks';
 
 import styles from './List.module.scss';
 
 const List = () => {
-  const items = useAllDribbbleShot();
+  const items = useDribbbleShots();
 
   const stepValue = 8;
   const [numberOfRendered, setNumberOfRendered] = useState(stepValue);

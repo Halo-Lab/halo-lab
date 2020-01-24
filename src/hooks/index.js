@@ -1,11 +1,11 @@
-import useAllDribbbleShot from './useAllDribbbleShot';
+import useDribbbleShots from './useDribbbleShots';
 import useGetBreakpoint from './useGetBreakpoint';
 import useIsOpened from './useIsOpened';
 import useStaticImages from './useStaticImages';
 import useSiteMetadata from './useSiteMetadata';
 
 export {
-  useAllDribbbleShot,
+  useDribbbleShots,
   useGetBreakpoint,
   useIsOpened,
   useStaticImages,

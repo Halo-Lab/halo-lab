@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-const useAllDribbbleShot = () => {
+const useDribbbleShots = () => {
   const data = useStaticQuery(
     graphql`
       query userQuery {
@@ -32,4 +32,4 @@ const useAllDribbbleShot = () => {
   return data.allDribbbleShot.nodes;
 };
 
-export default useAllDribbbleShot;
+export default useDribbbleShots;
