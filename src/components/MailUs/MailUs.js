@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useSiteMetadata } from '@hooks';
+import { useSiteMetadata } from '@hooks/queries';
 
 import './MailUs.scss';
 

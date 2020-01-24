@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import Menu from './components/Menu';
 import { MenuContext, GlobalContext } from '@contexts';
-import { useSiteMetadata } from '@hooks';
+import { useSiteMetadata } from '@hooks/queries';
 
 import './Header.scss';
 

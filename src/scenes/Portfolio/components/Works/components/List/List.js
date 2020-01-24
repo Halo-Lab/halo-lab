@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import Img from 'gatsby-image';
 
-import { useDribbbleShots } from '@hooks';
+import { useDribbbleShots } from '@hooks/queries';
 
 import styles from './List.module.scss';
 
 const List = () => {
   const items = useDribbbleShots();
 
-  const stepValue = 8;
-  const [numberOfRendered, setNumberOfRendered] = useState(stepValue);
+  const STEP_VALUE = 8;
+  const [numberOfRendered, setNumberOfRendered] = useState(STEP_VALUE);
   const handleSetNumberOfRendered = () => {
-    setNumberOfRendered(numberOfRendered + stepValue);
+    setNumberOfRendered(numberOfRendered + STEP_VALUE);
   };
 
   return (

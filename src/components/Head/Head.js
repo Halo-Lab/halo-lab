@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import { useSiteMetadata } from '@hooks';
+import { useSiteMetadata } from '@hooks/queries';
 
 const Head = ({ children }) => {
   const metadata = useSiteMetadata();

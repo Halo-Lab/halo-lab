@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import { GlobalContext } from '@contexts';
-import { useSiteMetadata } from '@hooks';
+import { useSiteMetadata } from '@hooks/queries';
 
 import styles from './Block.module.scss';
 
