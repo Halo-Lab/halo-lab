@@ -3,6 +3,7 @@ import useGetBreakpoint from './useGetBreakpoint';
 import useIsOpened from './useIsOpened';
 import useStaticImages from './useStaticImages';
 import useSiteMetadata from './useSiteMetadata';
+import useSitePages from './useSitePages';
 
 export {
   useDribbbleShots,
@@ -10,4 +11,5 @@ export {
   useIsOpened,
   useStaticImages,
   useSiteMetadata,
+  useSitePages,
 };
