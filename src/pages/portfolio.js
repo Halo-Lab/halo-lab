@@ -2,12 +2,12 @@ import React from 'react';
 
 import Providers from '@components/Providers';
 import Layout from '@components/Layout';
-import BackgroundStars from '@components/BackgroundStars';
+import BackgroundStars from '@scenes/BackgroundStars';
 import Head from '@components/Head';
 import Projects from '@scenes/Projects';
 import Clients from '@scenes/Portfolio/components/Clients';
 import Works from '@scenes/Portfolio/components/Works';
-import MailUs from '@components/MailUs';
+import MailUs from '@scenes/MailUs';
 
 const Portfolio = () => {
   return (
