@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 import { debounce, getBreakpoint } from '@helpers';
 
 const useGetBreakpoint = () => {
-  const initialWidth = document.documentElement.clientWidth;
-  const [width, setWidth] = useState(initialWidth);
+  const [width, setWidth] = useState(0);
 
   const handleResize = () => {
     const newWidth = document.documentElement.clientWidth;
@@ -13,6 +12,8 @@ const useGetBreakpoint = () => {
   const handleResizeDebounce = debounce(handleResize, 250);
 
   useEffect(() => {
+    handleResize(); // initial call
+
     window.addEventListener('resize', handleResizeDebounce);
     return () => window.removeEventListener('resize', handleResizeDebounce);
   }, []);

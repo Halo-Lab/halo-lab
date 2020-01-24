@@ -1,7 +1,7 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
-.arrow {
+.container {
   $size: 20px;
 
   position: absolute;
@@ -9,6 +9,7 @@
   transform: translateY(-50%);
   display: block;
   background: none;
+  border: none;
   border-radius: 50%;
   width: 3.86rem;
   height: 3.86rem;

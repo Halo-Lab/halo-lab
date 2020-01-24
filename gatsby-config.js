@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `Halo-Lab`,
@@ -10,6 +12,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-dribbble`,
+      options: {
+        access_token: process.env.DRIBBBLE_TOKEN,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
