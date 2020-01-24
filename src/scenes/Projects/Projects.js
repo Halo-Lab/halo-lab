@@ -293,7 +293,7 @@ const Projects = ({ title }) => {
   );
 };
 
-PropTypes.propTypes = {
+Projects.propTypes = {
   title: PropTypes.string,
 };
 

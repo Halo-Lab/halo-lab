@@ -22,6 +22,10 @@
   position: absolute;
   margin: 0;
 
+  .active .menu-link__circle {
+    background-color: $grey-color;
+  }
+
   @include media-breakpoint-down(xs) {
     left: 50%;
   }
