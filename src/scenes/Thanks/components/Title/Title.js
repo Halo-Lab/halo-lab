@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import { useSiteMetadata } from '@hooks/queries';
+
 import styles from './Title.module.scss';
 
 const Title = () => {
-  const metadata = { email: 'mail@halo-lab.com' };
+  const metadata = useSiteMetadata();
 
   return (
     <div className={styles.container}>
