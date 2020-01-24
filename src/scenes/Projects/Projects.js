@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import { GlobalContext } from '@contexts';
 
 import './Projects.scss';
 
-const Projects = () => {
+const Projects = ({ title }) => {
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get([
     'project/project1.jpg',
@@ -25,7 +26,7 @@ const Projects = () => {
 
   return (
     <section className="section section__projects">
-      <h2 className="portfolio__title">Projects</h2>
+      <h2 className="portfolio__title">{title}</h2>
 
       <div className="portfolio__project">
         <div className="project">
@@ -290,6 +291,10 @@ const Projects = () => {
       </div>
     </section>
   );
+};
+
+PropTypes.propTypes = {
+  title: PropTypes.string,
 };
 
 export default Projects;

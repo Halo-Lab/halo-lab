@@ -18,7 +18,7 @@ const Portfolio = () => {
           <title>Portfolio - Halo Lab Blog</title>
         </Head>
         <div className="pageWrapper">
-          <Projects />
+          <Projects title="Portfolio" />
           <Clients />
           <Works />
           <MailUs />
