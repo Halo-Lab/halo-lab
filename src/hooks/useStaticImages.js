@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-const useQueryStaticImages = () => {
+const useStaticImages = () => {
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { internal: { mediaType: { regex: "images/" } } }) {
@@ -19,4 +19,4 @@ const useQueryStaticImages = () => {
   return data;
 };
 
-export default useQueryStaticImages;
+export default useStaticImages;
