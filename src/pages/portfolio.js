@@ -4,9 +4,7 @@ import Providers from '@components/Providers';
 import Layout from '@components/Layout';
 import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
-// need to be replaced -->
-import Projects from '@scenes/Home/components/Projects';
-// <-- need to be replaced
+import Projects from '@scenes/Projects';
 import Clients from '@scenes/Portfolio/components/Clients';
 import Works from '@scenes/Portfolio/components/Works';
 import MailUs from '@components/MailUs';

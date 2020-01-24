@@ -7,7 +7,7 @@ import Head from '@components/Head';
 import MailUs from '@components/MailUs';
 import Hero from '@scenes/Home/components/Hero';
 import WhatWeDo from '@scenes/Home/components/WhatWeDo';
-import Projects from '@scenes/Home/components/Projects';
+import Projects from '@scenes/Projects';
 import Testimonials from '@scenes/Home/components/Testimonials';
 import Gallery from '@scenes/Home/components/Gallery';
 import Posts from '@scenes/Home/components/Posts';
