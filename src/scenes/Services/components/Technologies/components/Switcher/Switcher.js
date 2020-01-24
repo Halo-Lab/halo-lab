@@ -22,11 +22,12 @@ const Switcher = ({ items }) => {
           <TabPanel key={index}>
             <ul className={styles.tabContentList}>
               {items.map(({ title, image }, index) => {
+                const inlineStyles = { animationDelay: `0.${index}s` };
                 return (
                   <li
                     key={index}
                     className={styles.tabContentItem}
-                    style={{ animationDelay: `0.${index}s` }}
+                    style={inlineStyles}
                   >
                     <div className={styles.tabContentIcon}>
                       <img src={image.url} alt={image.name} />
