@@ -1,25 +1,28 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import styles from './Title.module.scss';
 
 const Title = () => {
+  const metadata = { email: 'mail@halo-lab.com' };
+
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Thank you for your request</h1>
+      <h2 className={styles.title}>Thank you for your request</h2>
       <p className={styles.description}>
         We appreciate your time so will be in touch within 24 hours. Enjoy
         exploring beautiful design we have created and soon yours will be as
         great.
       </p>
       <p className={styles.description}>
-        If you have any additional questions, mail us:{' '}
-        <a className={styles.link} href="mailto:mail@halo-lab.com">
-          mail@halo-lab.com
+        If you have any additional questions, mail us:
+        <a className={styles.link} href={`mailto:${metadata.email}`}>
+          {metadata.email}
         </a>
       </p>
-      <a className={styles.button} href="#">
+      <Link className={styles.button} to="/portfolio">
         view projects
-      </a>
+      </Link>
     </div>
   );
 };
