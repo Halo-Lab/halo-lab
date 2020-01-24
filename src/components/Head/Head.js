@@ -1,27 +1,18 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
+import { useSiteMetadata } from '@hooks';
+
 const Head = ({ children }) => {
-  const { site } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          description
-          author
-        }
-      }
-    }
-  `);
+  const metadata = useSiteMetadata();
 
   console.log(
     'Warning "componentWillMount has been renamed" maked by Head Component. Helmet issue: https://github.com/nfl/react-helmet/issues/499'
   );
 
-  const descriptionDefault = site.siteMetadata.description;
-  const titleDefault = site.siteMetadata.title;
+  const descriptionDefault = metadata.description;
+  const titleDefault = metadata.title;
   // const authorDefault = site.siteMetadata.author;
 
   return (
