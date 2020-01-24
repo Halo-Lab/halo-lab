@@ -1,13 +1,37 @@
 import React, { useState } from 'react';
-import { useStaticQuery } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-
-import { GET_ALL_DRIBBBLE_SHOT } from '@queries';
 
 import styles from './List.module.scss';
 
+const localQuery = graphql`
+  query userQuery {
+    allDribbbleShot(limit: 24) {
+      nodes {
+        id
+        title
+        description
+        published
+        updated
+        url
+        tags
+        cover
+        width
+        height
+        localCover {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 const List = () => {
-  const data = useStaticQuery(GET_ALL_DRIBBBLE_SHOT);
+  const data = useStaticQuery(localQuery);
   const items = data.allDribbbleShot.nodes;
 
   const stepValue = 8;

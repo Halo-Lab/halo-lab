@@ -52,7 +52,6 @@ module.exports = {
           '@components': 'src/components',
           '@pages': 'src/pages',
           '@scenes': 'src/scenes',
-          '@queries': 'src/queries',
           '@hooks': 'src/hooks',
           '@contexts': 'src/contexts',
           '@services': 'src/services',
