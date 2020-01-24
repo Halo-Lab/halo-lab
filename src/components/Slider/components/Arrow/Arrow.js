@@ -8,7 +8,10 @@ const Arrow = ({ onClick, children, direction }) => {
     direction && direction === 'next' ? styles.next : styles.previous;
 
   return (
-    <button className={`${styles.arrow} ${directionStyles}`} onClick={onClick}>
+    <button
+      className={`${styles.container} ${directionStyles}`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

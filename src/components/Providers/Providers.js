@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 import { MenuContext, GlobalContext } from '@contexts';
 import { StaticImagesService } from '@services';
-import { useIsOpened, useQueryStaticImages } from '@hooks';
+import { useIsOpened } from '@hooks';
+import { useStaticImages } from '@hooks/queries';
 
 const Providers = ({ children }) => {
   const menuState = useIsOpened();
   const globalState = {
-    imagesAPI: new StaticImagesService(useQueryStaticImages()),
+    imagesAPI: new StaticImagesService(useStaticImages()),
   };
 
   return (

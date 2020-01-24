@@ -1,21 +1,14 @@
 import React, { useContext } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import { GlobalContext } from '@contexts';
+import { useSiteMetadata } from '@hooks/queries';
 
 import styles from './Block.module.scss';
 
 const Block = ({ banner, message }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          email
-        }
-      }
-    }
-  `);
+  const metadata = useSiteMetadata();
+
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get([
     'arrow-down.svg',
@@ -26,10 +19,7 @@ const Block = ({ banner, message }) => {
     <div className={styles.container}>
       <div className={styles.info}>
         <p className={styles.infoMessage}>{message.text}</p>
-        <a
-          href={`mailto:${data.site.siteMetadata.email}`}
-          className={styles.infoLink}
-        >
+        <a href={`mailto:${metadata.email}`} className={styles.infoLink}>
           {message.link}
         </a>
       </div>
