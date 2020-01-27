@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import Item from './components/Item';
 
 import './Posts.scss';
+import styles from './Posts.module.scss';
 
 const Posts = () => {
   let [posts, setPosts] = useState(null);
@@ -34,15 +35,16 @@ const Posts = () => {
   }, []);
 
   return (
-    <section className=" section section__posts">
-      <div className="section__posts-info">
-        <div className="section__posts-title">
+    <section className={styles.container}>
+      <div className={styles.info}>
+        <div className={styles.title}>
           Front-end &amp; back-end expertise from development to delivery
         </div>
-        <Link to="/blog" className="section__posts-link">
+        <Link to="/blog" className={styles.link}>
           MORE BLOG POSTS
         </Link>
       </div>
+
       <div className="section__posts-block">
         {posts ? (
           posts.map(item => {
