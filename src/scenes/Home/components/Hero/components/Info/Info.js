@@ -12,53 +12,54 @@ const Info = () => {
     'cards/clutch-mini-logo.svg',
   ]);
 
+  const items = [
+    {
+      link: '#',
+      image: images['cards/upwork-logo.svg'],
+      classes: styles.upwork,
+      textStrings: ['Best', 'Design Agency', '2018 in Ukraine'],
+    },
+    {
+      link: '#',
+      image: images['cards/dribbble-logo.svg'],
+      classes: styles.dribbble,
+      textStrings: ['Top Trending', 'Team with 3m', 'Total Views'],
+    },
+    {
+      link: '#',
+      image: images['cards/clutch-mini-logo.svg'],
+      classes: styles.clutch,
+      textStrings: ['4.9/5', 'Average Rating', 'by Our Clients'],
+    },
+  ];
+
   return (
     <div className={styles.container}>
-      <div className={styles.cardWrapper}>
-        <a href="#" className={`${styles.card} ${styles.upwork}`}>
-          <div className={styles.cardBody}>
-            <img
-              src={images['cards/upwork-logo.svg'].url}
-              alt={images['cards/upwork-logo.svg'].name}
-            />
-            <div>
-              Best
-              <br />
-              Design Agency
-              <br />
-              2018 in Ukraine
-            </div>
+      {items.map(({ link, image, classes, textStrings }, index) => {
+        return (
+          <div key={index} className={styles.cardWrapper}>
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.card} ${classes}`}
+            >
+              <div className={styles.cardBody}>
+                <img src={image.url} alt={image.name} />
+                <div>
+                  {textStrings.map(item => {
+                    return (
+                      <>
+                        {item} <br />
+                      </>
+                    );
+                  })}
+                </div>
+              </div>
+            </a>
           </div>
-        </a>
-      </div>
-
-      <div className={styles.cardWrapper}>
-        <a href="#" className={`${styles.card} ${styles.dribbble}`}>
-          <div className={styles.cardBody}>
-            <img
-              src={images['cards/dribbble-logo.svg'].url}
-              alt={images['cards/dribbble-logo.svg'].name}
-            />
-            <div>Top Trending Team with 3m Total Views</div>
-          </div>
-        </a>
-      </div>
-
-      <div className={styles.cardWrapper}>
-        <a href="#" className={`${styles.card} ${styles.clutch}`}>
-          <div className={styles.cardBody}>
-            <img
-              src={images['cards/clutch-mini-logo.svg'].url}
-              alt={images['cards/clutch-mini-logo.svg'].name}
-            />
-            <div>
-              4.9/5
-              <br />
-              Average Rating by Our Clients
-            </div>
-          </div>
-        </a>
-      </div>
+        );
+      })}
 
       <div className={`${styles.circle} ${styles.circleSm1}`}></div>
       <div className={`${styles.circle} ${styles.circleSm2}`}></div>
