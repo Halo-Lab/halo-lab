@@ -29,8 +29,12 @@ class StaticImagesService {
 
     const found = [];
 
-    this.items.forEach(item => {
-      if (paths.indexOf(item.path) !== -1) found.push(item);
+    paths.forEach(item => {
+      found.push(
+        this.items.find(({ path }) => {
+          return path === item;
+        })
+      );
     });
 
     return found;

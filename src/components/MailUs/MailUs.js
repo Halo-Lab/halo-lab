@@ -1,27 +1,17 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+
+import { useSiteMetadata } from '@hooks/queries';
 
 import './MailUs.scss';
 
 const MailUs = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          email
-        }
-      }
-    }
-  `);
+  const metadata = useSiteMetadata();
 
   return (
     <div className="mail_us tac">
       <p className="mail_us-title">Time to create your star</p>
-      <a
-        href={`mailto:${data.site.siteMetadata.email}`}
-        className="mail_us-link"
-      >
-        {data.site.siteMetadata.email}
+      <a href={`mailto:${metadata.email}`} className="mail_us-link">
+        {metadata.email}
       </a>
     </div>
   );

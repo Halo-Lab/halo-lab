@@ -1,5 +1,5 @@
-@import "@styles/variables/all";
-@import "@styles/mixins/all";
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
 
 .main-menu {
   position: fixed;
@@ -22,12 +22,16 @@
   position: absolute;
   margin: 0;
 
+  .active .menu-link__circle {
+    background-color: $grey-color;
+  }
+
   @include media-breakpoint-down(xs) {
     left: 50%;
   }
 
   a:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -41,7 +45,7 @@
   }
 
   a:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -112,13 +116,13 @@
   }
 
   a:before {
-    background-image: url("../../../../images/blog-icon.svg");
+    background-image: url('./images/blog-icon.svg');
     width: 11.75rem;
     height: 14rem;
   }
 
   a:after {
-    background-image: url("../../../../images/blog-stars.svg");
+    background-image: url('./images/blog-stars.svg');
   }
 
   &:hover .menu-link__circle {
@@ -148,13 +152,13 @@
   }
 
   a:before {
-    background-image: url("../../../../images/projects-icon.svg");
+    background-image: url('./images/projects-icon.svg');
     width: 11.33rem;
     height: 11.33rem;
   }
 
   a:after {
-    background-image: url("../../../../images/portfolio-stars.svg");
+    background-image: url('./images/portfolio-stars.svg');
   }
 
   &:hover .menu-link__circle {
@@ -190,13 +194,13 @@
   }
 
   a:before {
-    background-image: url("../../../../images/services-icon.svg");
+    background-image: url('./images/services-icon.svg');
     width: 13.17rem;
     height: 11.83rem;
   }
 
   a:after {
-    background-image: url("../../../../images/services-stars.svg");
+    background-image: url('./images/services-stars.svg');
   }
 
   &:hover .menu-link__circle {
@@ -226,13 +230,13 @@
   }
 
   a:before {
-    background-image: url("../../../../images/contacts-icon.svg");
+    background-image: url('./images/contacts-icon.svg');
     width: 9.75rem;
     height: 12.08rem;
   }
 
   a:after {
-    background-image: url("../../../../images/contacts-stars.svg");
+    background-image: url('./images/contacts-stars.svg');
   }
 
   &:hover .menu-link__circle {

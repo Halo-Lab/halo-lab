@@ -1,4 +1,4 @@
-import useToggleOpenedStatus from './useToggleOpenedStatus';
-import useQueryStaticImages from './useQueryStaticImages';
+import useGetBreakpoint from './useGetBreakpoint';
+import useIsOpened from './useIsOpened';
 
-export { useToggleOpenedStatus, useQueryStaticImages };
+export { useGetBreakpoint, useIsOpened };

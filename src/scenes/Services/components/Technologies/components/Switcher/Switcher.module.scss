@@ -1,0 +1,130 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.tabList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5.7rem;
+
+  [aria-selected='true'],
+  .tabListItem:hover {
+    &::before {
+      height: 100%;
+    }
+  }
+}
+
+.tabListItem {
+  position: relative;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.42em;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 1.42rem);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    height: 0px;
+    background-color: $main-color;
+    z-index: -1;
+    transition: height 0.3s;
+  }
+
+  &:hover {
+    &::before {
+      height: 100%;
+    }
+  }
+}
+
+.tabListItem + .tabListItem {
+  margin-left: 5.64rem;
+}
+
+.tabContentList {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  height: 6.4rem;
+  max-width: 68.5rem;
+
+  @include media-breakpoint-down(sm) {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    padding-top: 70px;
+  }
+}
+
+.tabContentItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 0.6s, transform 0.8s;
+  opacity: 0;
+  animation-name: apperancing;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+
+  @include media-breakpoint-down(sm) {
+    width: 40%;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+}
+
+.tabContentItem + .tabContentItem {
+  margin-left: 1rem;
+
+  @include media-breakpoint-down(sm) {
+    margin-left: 0;
+  }
+}
+
+.tabContentIcon {
+  img {
+    display: block;
+    margin: 0 auto;
+    height: 2.8rem;
+    width: auto;
+  }
+}
+
+.tabContentTitle {
+  margin: 0;
+  font-weight: 300;
+  font-size: 1.28rem;
+  line-height: 1.67em;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 20px;
+  }
+}
+
+@keyframes apperancing {
+  from {
+    opacity: 0;
+    top: -2rem;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}

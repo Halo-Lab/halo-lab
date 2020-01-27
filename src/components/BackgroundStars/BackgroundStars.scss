@@ -13,14 +13,14 @@ body {
   // transition: all 0.5s ease-out;
 }
 .big-stars-bg {
-  background-image: url("../../images/big-stars.svg");
+  background-image: url('./images/big-stars.svg');
   background-repeat: repeat;
   position: absolute;
   top: -5%;
   left: -5%;
   width: 110%;
   height: 110%;
-  
+
   &.active {
     transition: 0.5s ease-out;
     opacity: 0;
@@ -28,7 +28,7 @@ body {
   }
 }
 .small-stars-bg {
-  background-image: url("../../images/small-stars.svg");
+  background-image: url('./images/small-stars.svg');
   background-repeat: repeat;
   position: absolute;
   top: -5%;
@@ -43,11 +43,12 @@ body {
   }
 }
 .hidden-stars {
-  background-image: url("../../images/small-stars.svg");
+  background-image: url('./images/small-stars.svg');
   background-repeat: repeat;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: -10;
   width: 100%;
   height: 100%;
   transform: scale(0.4);

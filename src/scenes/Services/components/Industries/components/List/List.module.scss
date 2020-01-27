@@ -1,0 +1,121 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  display: flex;
+  max-width: 82.85rem;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  justify-content: space-between;
+
+  @include media-breakpoint-down(md) {
+    flex-wrap: wrap;
+  }
+  @include media-breakpoint-down(sm) {
+    justify-content: center;
+  }
+}
+
+.item + .item {
+  margin-left: 2.85rem;
+
+  @include media-breakpoint-down(md) {
+    margin: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin: 0;
+    margin-top: 40px;
+  }
+}
+
+.item {
+  position: relative;
+  padding-top: 3.7rem;
+  padding-bottom: 2.14rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 18.57rem;
+  border-radius: 2.14rem;
+
+  @include media-breakpoint-down(md) {
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 30px;
+    width: 310px;
+    margin: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+  &:first-of-type {
+    background: linear-gradient(90deg, #31ceff 0%, #3993ff 100%);
+    box-shadow: 0px 34px 64px rgba(53, 177, 255, 0.2);
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 30px;
+      margin-right: 10px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin: 0;
+    }
+  }
+
+  &:nth-of-type(2) {
+    background: linear-gradient(90deg, #3894ff 0%, #3d39ff 100%);
+    box-shadow: 0px 34px 64px rgba(59, 100, 255, 0.2);
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  &:nth-of-type(3) {
+    background: linear-gradient(89.78deg, #3c38ff 0.16%, #8161fe 99.8%);
+    box-shadow: 0px 34px 64px rgba(93, 76, 255, 0.2);
+  }
+
+  &:last-of-type {
+    background: linear-gradient(90deg, #8060fe 0%, #a660fe 100%);
+    box-shadow: 0px 34px 64px rgba(158, 97, 255, 0.2);
+  }
+
+  img {
+    margin-bottom: 3.5rem;
+
+    @include media-breakpoint-down(md) {
+      width: 40px;
+      height: 39px;
+      margin: 0;
+      margin-right: 24px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-right: 16px;
+    }
+  }
+
+  span {
+    font-size: 1.57rem;
+    line-height: 1.36em;
+
+    @media (max-width: 1200px) {
+      font-size: 1.67rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.5rem;
+    }
+  }
+}

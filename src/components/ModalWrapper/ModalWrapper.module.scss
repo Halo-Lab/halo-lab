@@ -1,14 +1,23 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
 .wrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(grey, .75);
-  animation: apperancing .5s 1;
+  background-color: rgba(grey, 0.75);
+  animation: appearance 0.5s 1;
 }
 
-@keyframes apperancing {
+.button {
+  border: none;
+  padding: 0;
+  width: auto;
+}
+
+@keyframes appearance {
   from {
     opacity: 0;
   }

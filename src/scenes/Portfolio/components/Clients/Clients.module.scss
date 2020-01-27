@@ -1,0 +1,62 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  margin-top: 11.4rem;
+  margin-bottom: 5.83rem;
+
+  @include media-breakpoint-down(md) {
+    margin-top: 8.33rem;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-top: 6.67rem;
+  }
+}
+
+.title {
+  font-family: $font-ratiomodern;
+  font-size: 10rem;
+  line-height: 1.285em;
+  color: $white-color;
+  font-weight: 400;
+  margin-bottom: 8.57rem;
+  text-align: center;
+
+  @include media-breakpoint-down(md) {
+    font-size: 6.25rem;
+    line-height: 1.46em;
+    margin-bottom: 4.66rem;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 4.5rem;
+    line-height: 1.1em;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  width: 16%;
+  margin-bottom: 8.57rem;
+
+  @include media-breakpoint-down(md) {
+    width: 20%;
+    margin-bottom: 4rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 50%;
+    margin-bottom: 5rem;
+  }
+}

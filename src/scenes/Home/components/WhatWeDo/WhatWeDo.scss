@@ -6,6 +6,11 @@
   justify-content: center;
   align-items: center;
   padding-top: 16.43rem;
+  padding-bottom: 11rem;
+
+  @include media-breakpoint-down(xs) {
+    padding-bottom: 6.67rem;
+  }
 
   @include media-breakpoint-down(md) {
     padding-top: 8.35rem;
@@ -13,6 +18,7 @@
 
   @include media-breakpoint-down(sm) {
     padding-top: 18.35rem;
+    padding-bottom: 8.33rem;
   }
 
   @include media-breakpoint-down(sm) {
