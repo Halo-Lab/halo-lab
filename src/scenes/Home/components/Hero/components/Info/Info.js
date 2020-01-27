@@ -13,7 +13,7 @@ const Info = () => {
   ]);
 
   return (
-    <div className={styles.info}>
+    <div className={styles.container}>
       <div className={styles.cardWrapper}>
         <a href="#" className={`${styles.card} ${styles.upwork}`}>
           <div className={styles.cardBody}>
