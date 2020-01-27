@@ -47,11 +47,11 @@ const Info = () => {
               <div className={styles.cardBody}>
                 <img src={image.url} alt={image.name} />
                 <div>
-                  {textStrings.map(item => {
+                  {textStrings.map((item, index) => {
                     return (
-                      <>
+                      <span key={index}>
                         {item} <br />
-                      </>
+                      </span>
                     );
                   })}
                 </div>

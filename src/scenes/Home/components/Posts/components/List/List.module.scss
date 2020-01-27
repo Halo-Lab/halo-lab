@@ -1,22 +1,41 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
-.section__post-item {
+.container {
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  max-width: 51.43rem;
+  margin-left: 3.33rem;
+
+  @include media-breakpoint-down(md) {
+    max-width: 34.2rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 6.67rem;
+    margin-left: 0;
+    max-width: 42.69rem;
+  }
+}
+
+.item {
   display: flex;
   align-items: center;
+
+  &:not(:first-child) {
+    @include media-breakpoint-up(md) {
+      margin-top: 2.86rem;
+    }
+  }
 
   @include media-breakpoint-down(sm) {
     flex-direction: column;
   }
 }
 
-.section__post-item + .section__post-item {
-  @include media-breakpoint-up(md) {
-    margin-top: 2.86rem;
-  }
-}
-
-.section__post-img {
+.image {
   width: 100%;
   max-width: 14.28rem;
   min-width: 100px;
@@ -49,7 +68,7 @@
   }
 }
 
-.section__post-info {
+.info {
   margin-left: 4.29rem;
 
   @include media-breakpoint-down(md) {
@@ -63,7 +82,7 @@
   }
 }
 
-.section__post-date {
+.date {
   font-size: 0.86rem;
   line-height: 1.17em;
   font-weight: 700;
@@ -78,7 +97,7 @@
   }
 }
 
-.section__post-title {
+.title {
   font-family: $font-ratiomodern;
   font-size: 2.14rem;
   line-height: 1.17em;
