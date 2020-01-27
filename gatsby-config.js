@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 module.exports = {
   siteMetadata: {
     title: `Halo-Lab`,
@@ -62,6 +61,33 @@ module.exports = {
         extensions: ['js', 'sass', 'scss'],
       },
     },
+
+    /*
+     * Gatsby's data processing layer begins with “source”
+     * plugins. Here the site sources its data from WordPress.
+     */
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        baseUrl: "api.halo-lab.com",
+        protocol: "http",
+        useACF: false,
+        auth: {
+          jwt_user: process.env.JWT_USER,
+          jwt_pass: process.env.JWT_PASSWORD,
+          jwt_base_path: "/jwt-auth/v1/token",
+        },
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/media",
+          "**/taxonomies"
+        ],
+      },
+    },
+    
+
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
@@ -74,8 +100,5 @@ module.exports = {
         },
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 };
