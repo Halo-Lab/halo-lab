@@ -1,4 +1,5 @@
 import React from 'react';
+import Posts from '@components/Posts';
 
 import Providers from '@components/Providers';
 import Layout from '@components/Layout';
@@ -14,6 +15,7 @@ const Blog = () => {
           <title>Blog - Halo Lab Blog</title>
         </Head>
         <div>Blog</div>
+         <Posts />
       </Layout>
     </Providers>
   );
