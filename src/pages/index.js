@@ -25,7 +25,7 @@ const Home = () => {
         <div className="main-home">
           <Hero />
           <WhatWeDo />
-          <Projects title="Projects" />
+          <Projects title="Projects" navigation={true} />
           <Testimonials />
           <Gallery />
           <Posts />
