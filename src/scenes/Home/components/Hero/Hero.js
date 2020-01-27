@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { GlobalContext } from '@contexts';
 
-import './Hero.scss';
+import styles from './Hero.module.scss';
 
 const Hero = () => {
   const { imagesAPI } = useContext(GlobalContext);
@@ -14,28 +14,24 @@ const Hero = () => {
   ]);
 
   return (
-    <section className="section section__hero">
-      <div className="intro">
-        <div className="center">
-          <h1>
-            <span>Design driven </span>
-            <br />
-            development of your
-            <br />
-            <span>web product </span>
-            for years.
-          </h1>
-        </div>
-        <div className="quote">
+    <section className={styles.container}>
+      <div>
+        <h2 className={styles.title}>
+          <span>Design driven </span>
+          <br />
+          development of your <br />
+          <span>web product</span> for years.
+        </h2>
+        <div className={styles.subtitle}>
           Design is not just what it looks like. Design is how it works!” —
           Steve Jobs
         </div>
       </div>
 
-      <div className="hero__info">
-        <div className="hero__card-wrap">
-          <a href="#" className="hero__info-card upwork-card">
-            <div className="hero__info-card-body">
+      <div className={styles.info}>
+        <div className={styles.cardWrapper}>
+          <a href="#" className={`${styles.card} ${styles.upwork}`}>
+            <div className={styles.cardBody}>
               <img
                 src={images['cards/upwork-logo.svg'].url}
                 alt={images['cards/upwork-logo.svg'].name}
@@ -51,9 +47,9 @@ const Hero = () => {
           </a>
         </div>
 
-        <div className="hero__card-wrap">
-          <a href="#" className="hero__info-card dribbble-card">
-            <div className="hero__info-card-body">
+        <div className={styles.cardWrapper}>
+          <a href="#" className={`${styles.card} ${styles.dribbble}`}>
+            <div className={styles.cardBody}>
               <img
                 src={images['cards/dribbble-logo.svg'].url}
                 alt={images['cards/dribbble-logo.svg'].name}
@@ -63,9 +59,9 @@ const Hero = () => {
           </a>
         </div>
 
-        <div className="hero__card-wrap">
-          <a href="#" className="hero__info-card clutch-card">
-            <div className="hero__info-card-body">
+        <div className={styles.cardWrapper}>
+          <a href="#" className={`${styles.card} ${styles.clutch}`}>
+            <div className={styles.cardBody}>
               <img
                 src={images['cards/clutch-mini-logo.svg'].url}
                 alt={images['cards/clutch-mini-logo.svg'].name}
@@ -79,10 +75,10 @@ const Hero = () => {
           </a>
         </div>
 
-        <div className="hero__circle circle--sm-1"></div>
-        <div className="hero__circle circle--sm-2"></div>
-        <div className="hero__circle circle--md"></div>
-        <div className="hero__circle circle--lg"></div>
+        <div className={`${styles.circle} ${styles.circleSm1}`}></div>
+        <div className={`${styles.circle} ${styles.circleSm2}`}></div>
+        <div className={`${styles.circle} ${styles.circleMd}`}></div>
+        <div className={`${styles.circle} ${styles.circleLg}`}></div>
       </div>
     </section>
   );
