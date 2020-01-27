@@ -31,7 +31,7 @@ const List = () => {
       <ul className={styles.list}>
         {items.map((item, index) => {
           return numberOfRendered > index ? (
-            <li key={index} className={styles.item}>
+            <li key={item.url} className={styles.item}>
               <a
                 href={item.url}
                 title={item.title}
