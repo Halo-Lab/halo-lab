@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 import styles from './Item.module.scss';
 
 const Item = ({ path, title, featured_media, date }) => {
   const link = path;
-  const image = featured_media.source_url;
+  const image = featured_media.localFile.childImageSharp.fluid;
 
   return (
     <div className={styles.container}>
       <div className={styles.image}>
         <Link to={link}>
-          <img src={image} alt="preview" />
+          <Img fluid={image} alt="preview" />
         </Link>
       </div>
       <div className={styles.info}>

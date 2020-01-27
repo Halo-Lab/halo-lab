@@ -12,6 +12,13 @@ const useWordpressPosts = () => {
               date
               featured_media {
                 source_url
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 515) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
             }
           }
