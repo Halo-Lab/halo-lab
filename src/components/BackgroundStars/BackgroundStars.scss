@@ -1,6 +1,11 @@
 body {
   overflow-x: hidden;
 }
+
+.stars-wrapper {
+  pointer-events: none;
+}
+
 .big-stars-bg-wrap,
 .small-stars-bg-wrap {
   overflow: hidden;
