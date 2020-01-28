@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import { GlobalContext } from '@contexts';
 
 import './Projects.scss';
 
-const Projects = () => {
+const Projects = ({ title, navigation }) => {
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get([
     'project/project1.jpg',
@@ -25,7 +26,7 @@ const Projects = () => {
 
   return (
     <section className="section section__projects">
-      <h2 className="portfolio__title">Projects</h2>
+      <h2 className="portfolio__title">{title}</h2>
 
       <div className="portfolio__project">
         <div className="project">
@@ -250,46 +251,53 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="projects__others">
-        <div className="projects__others-container">
-          <div className="projects__others-title">And others</div>
+      {navigation ? (
+        <div className="projects__others">
+          <div className="projects__others-container">
+            <div className="projects__others-title">And others</div>
 
-          <div className="projects__others-block">
-            <div className="projects__others-item jackandjones-item">
-              <img
-                src={images['jackandjones.svg'].url}
-                alt={images['jackandjones.svg'].name}
-                draggable="false"
-              />
-            </div>
-            <div className="projects__others-item udemy-item">
-              <img
-                src={images['udemy.svg'].url}
-                alt={images['udemy.svg'].name}
-              />
-            </div>
-            <div className="projects__others-item luzern-item">
-              <img
-                src={images['kkl-luzern.svg'].url}
-                alt={images['kkl-luzern.svg'].name}
-              />
-            </div>
-            <div className="projects__others-item">
-              <Link to="/portfolio">
-                <span>
-                  view
-                  <br />
-                  all
-                  <br />
-                  cases
-                </span>
-              </Link>
+            <div className="projects__others-block">
+              <div className="projects__others-item jackandjones-item">
+                <img
+                  src={images['jackandjones.svg'].url}
+                  alt={images['jackandjones.svg'].name}
+                  draggable="false"
+                />
+              </div>
+              <div className="projects__others-item udemy-item">
+                <img
+                  src={images['udemy.svg'].url}
+                  alt={images['udemy.svg'].name}
+                />
+              </div>
+              <div className="projects__others-item luzern-item">
+                <img
+                  src={images['kkl-luzern.svg'].url}
+                  alt={images['kkl-luzern.svg'].name}
+                />
+              </div>
+              <div className="projects__others-item">
+                <Link to="/portfolio">
+                  <span>
+                    view
+                    <br />
+                    all
+                    <br />
+                    cases
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : null}
     </section>
   );
+};
+
+Projects.propTypes = {
+  navigation: PropTypes.bool,
+  title: PropTypes.string,
 };
 
 export default Projects;

@@ -1,24 +1,18 @@
 import React, { useContext } from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 
 import Menu from './components/Menu';
 import { MenuContext, GlobalContext } from '@contexts';
+import { useSiteMetadata } from '@hooks/queries';
 
 import './Header.scss';
 
 const Header = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          email
-        }
-      }
-    }
-  `);
-  const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
-  const { imagesAPI } = useContext(GlobalContext);
+  const metadata = useSiteMetadata();
 
+  const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
+
+  const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get(['header-logo.svg']);
 
   const headerStatusClass = isOpened ? 'main-header--active' : '';
@@ -42,8 +36,8 @@ const Header = () => {
         <div className="header-right">
           <Menu />
 
-          <a href={`mailto:${data.site.siteMetadata.email}`} className="mail">
-            <span className="desctop_mail">{data.site.siteMetadata.email}</span>
+          <a href={`mailto:${metadata.email}`} className="mail">
+            <span className="desctop_mail">{metadata.email}</span>
           </a>
 
           <button

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Providers from '@components/Providers';
 import Layout from '@components/Layout';
-import BackgroundBlackHole from '@components/BackgroundBlackHole';
+import BackgroundBlackHole from '@scenes/BackgroundBlackHole';
 import Head from '@components/Head';
 import Title from '@scenes/404/components/Title';
 
