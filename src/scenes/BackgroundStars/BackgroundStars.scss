@@ -3,7 +3,7 @@ body {
 }
 
 .stars-wrapper {
-  pointer-events: none;
+  z-index: -1;
 }
 
 .big-stars-bg-wrap,

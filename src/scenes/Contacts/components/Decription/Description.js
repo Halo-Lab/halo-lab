@@ -1,28 +1,17 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useSiteMetadata } from '@hooks/queries';
 
 import styles from './Description.module.scss';
 
 const Description = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          email
-        }
-      }
-    }
-  `);
+  const data = useSiteMetadata();
   return (
     <>
       <div className={styles.title}>Contacts</div>
       <div className={styles.description}>
         <h2>
           Got a project in mind? Fill in the form or send us a&nbsp;
-          <a
-            href={`mailto:${data.site.siteMetadata.email}`}
-            className={styles.mail}
-          >
+          <a href={`mailto:${data.email}`} className={styles.mail}>
             direct email
           </a>
           .
@@ -35,9 +24,7 @@ const Description = () => {
       </div>
       <div className={styles.contactMail}>
         <p>You can mail us directly:</p>
-        <a href={`mailto:${data.site.siteMetadata.email}`}>
-          {data.site.siteMetadata.email}
-        </a>
+        <a href={`mailto:${data.email}`}>{data.email}</a>
       </div>
     </>
   );
