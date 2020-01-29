@@ -1,7 +1,7 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
-.section__posts {
+.container {
   padding-top: 14.28rem;
   display: flex;
   justify-content: space-between;
@@ -27,7 +27,7 @@
   }
 }
 
-.section__posts-info {
+.info {
   width: 100%;
   max-width: 22.14rem;
 
@@ -37,7 +37,7 @@
   }
 }
 
-.section__posts-title {
+.title {
   font-size: 2.14rem;
   margin-bottom: 3rem;
 
@@ -47,7 +47,7 @@
   }
 }
 
-.section__posts-link {
+.link {
   position: relative;
   font-weight: bold;
   font-size: 1rem;
@@ -79,32 +79,13 @@
     font-size: 1rem;
     letter-spacing: 3px;
   }
-}
 
-.section__posts-link:hover {
-  @include media-breakpoint-up(lg) {
-    color: $white-color;
-    &::before {
-      height: 100%;
+  &:hover {
+    @include media-breakpoint-up(lg) {
+      color: $white-color;
+      &::before {
+        height: 100%;
+      }
     }
-  }
-}
-
-.section__posts-block {
-  position: relative;
-  flex-direction: column;
-  display: flex;
-  width: 100%;
-  max-width: 51.43rem;
-  margin-left: 3.33rem;
-
-  @include media-breakpoint-down(md) {
-    max-width: 34.2rem;
-  }
-
-  @include media-breakpoint-down(sm) {
-    margin-top: 6.67rem;
-    margin-left: 0;
-    max-width: 42.69rem;
   }
 }
