@@ -67,27 +67,25 @@ module.exports = {
      * plugins. Here the site sources its data from WordPress.
      */
     {
-      resolve: "gatsby-source-wordpress",
+      resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: "api.halo-lab.com",
-        protocol: "http",
+        baseUrl: 'api.halo-lab.com',
+        protocol: 'http',
         useACF: false,
         auth: {
           jwt_user: process.env.JWT_USER,
           jwt_pass: process.env.JWT_PASSWORD,
-          jwt_base_path: "/jwt-auth/v1/token",
+          jwt_base_path: '/jwt-auth/v1/token',
         },
         includedRoutes: [
-          "**/categories",
-          "**/posts",
-          "**/pages",
-          "**/media",
-          "**/taxonomies"
+          '**/categories',
+          '**/posts',
+          '**/pages',
+          '**/media',
+          '**/taxonomies',
         ],
       },
     },
-    
-
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
