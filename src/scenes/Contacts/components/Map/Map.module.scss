@@ -1,0 +1,174 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  display: flex;
+  width: 90%;
+  margin: 0 auto 12.2rem;
+  display: flex;
+  justify-content: center;
+
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  margin-right: 6rem;
+  width: 45%;
+  align-self: flex-start;
+  max-width: 35rem;
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    margin-right: 0;
+    order: 1;
+    align-self: center;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.mapPin {
+  position: absolute;
+  left: 48%;
+  top: 70%;
+  transform: translateX(-52%) translateY(-30%);
+  width: 0.8rem;
+  height: 0.8rem;
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 300%;
+    height: 300%;
+    bottom: -100%;
+    right: -100%;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: #484a4b;
+    animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $yellow-color;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+  }
+}
+
+.textWrapper {
+  width: 60%;
+  max-width: 43.3rem;
+  text-align: left;
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    align-self: center;
+    margin-bottom: 80px;
+  }
+}
+
+.title {
+  max-width: 25.7rem;
+  margin-bottom: 3.5rem;
+  font-family: $font-ratiomodern;
+  font-weight: 400;
+  font-size: 3.6rem;
+  line-height: 1.2em;
+}
+
+.titleFlag {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 1.5rem;
+    right: -3rem;
+    background-image: url('./images/flag-icon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.mailList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include media-breakpoint-down(xs) {
+    flex-direction: column;
+  }
+}
+
+.mailItem {
+  &:last-child {
+    margin-left: 5rem;
+    @include media-breakpoint-down(xs) {
+      margin-left: 0;
+      margin-top: 2rem;
+    }
+  }
+}
+
+.mailLabel {
+  font-family: $font-sofia-pro;
+  margin-bottom: 2.14em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #80808e;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+.mailLink {
+  font-family: $font-sofia-pro;
+  font-size: 1.71em;
+  font-weight: 400;
+  color: $white-color;
+  line-height: 1.25;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.2s;
+
+  &:hover {
+    color: $main-color;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.33);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
