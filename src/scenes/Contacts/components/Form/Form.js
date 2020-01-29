@@ -22,6 +22,16 @@ const Form = () => {
     },
   });
 
+  const handleChange = ({ target: { name, value } }) => {
+    setData(data => ({
+      ...data,
+      [name]: {
+        valid: name === 'email' ? isCompanyEmailValid(value) : value,
+        value: value,
+      },
+    }));
+  };
+
   const [isValid, setisValid] = useState(true);
   const [filesList, setFilesList] = useState([]);
 
@@ -38,7 +48,6 @@ const Form = () => {
 
     const valid =
       data.name.valid &&
-      data.email.valid &&
       isCompanyEmailValid(data.email.value) &&
       data.message.valid;
 
@@ -80,19 +89,10 @@ const Form = () => {
               !isValid && !data.name.valid ? styles.error : ''
             } ${data.name.valid ? styles.focused : ''}`}
             type="text"
-            name="quote-name"
+            name="name"
             id="name"
             require="true"
-            onChange={event =>
-              setData({
-                ...data,
-                ['name']: {
-                  ...data.name,
-                  value: event.target.value,
-                  valid: !!event.target.value.length,
-                },
-              })
-            }
+            onChange={handleChange}
           />
           <label className={styles.placeholder} htmlFor="name">
             Full Name
@@ -104,18 +104,9 @@ const Form = () => {
               data.company.valid ? styles.focused : ''
             }`}
             type="text"
-            name="quote-company"
+            name="company"
             id="company"
-            onChange={event =>
-              setData({
-                ...data,
-                ['company']: {
-                  ...data.company,
-                  value: event.target.value,
-                  valid: !!event.target.value.length,
-                },
-              })
-            }
+            onChange={handleChange}
           ></input>
           <label className={styles.placeholder} htmlFor="company">
             Company
@@ -127,21 +118,10 @@ const Form = () => {
               !isValid && !data.email.valid ? styles.error : ''
             } ${data.email.value.length ? styles.focused : ''}`}
             type="text"
-            name="quote-email"
+            name="email"
             id="email"
             require="true"
-            onChange={event =>
-              setData({
-                ...data,
-                ['email']: {
-                  ...data.email,
-                  value: event.target.value,
-                  valid:
-                    !!event.target.value.length &&
-                    isCompanyEmailValid(event.target.value),
-                },
-              })
-            }
+            onChange={handleChange}
           />
           <label className={styles.placeholder} htmlFor="email">
             Email
@@ -155,19 +135,10 @@ const Form = () => {
             className={`${styles.textarea} ${
               !isValid && !data.message.valid ? styles.error : ''
             } ${data.message.valid ? styles.focused : ''}`}
-            name="quote-message"
+            name="message"
             id="message"
             require="true"
-            onChange={event =>
-              setData({
-                ...data,
-                ['message']: {
-                  ...data.message,
-                  value: event.target.value,
-                  valid: !!event.target.value.length,
-                },
-              })
-            }
+            onChange={handleChange}
           ></textarea>
           <label className={styles.placeholder} htmlFor="message">
             What is your project about?

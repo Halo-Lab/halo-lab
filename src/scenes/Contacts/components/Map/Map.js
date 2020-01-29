@@ -3,17 +3,17 @@ import { GlobalContext } from '@contexts';
 
 import styles from './Map.module.scss';
 
+const items = [
+  { title: 'INQUIRIES', link: 'mail@halo-lab.com' },
+  { title: 'CAREERS', link: 'team@halo-lab.com' },
+];
+
 const Map = () => {
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get([
     'contacts/contact-map.svg',
     'contacts/flag-icon.svg',
   ]);
-
-  const items = [
-    { title: 'INQUIRIES', link: 'mail@halo-lab.com' },
-    { title: 'CAREERS', link: 'team@halo-lab.com' },
-  ];
 
   return (
     <div className={styles.container}>
