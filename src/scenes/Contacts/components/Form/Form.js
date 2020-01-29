@@ -3,59 +3,96 @@ import React, { useState } from 'react';
 import styles from './Form.module.scss';
 
 const Form = () => {
-  let [data, setData] = useState({
-    name: '',
-    company: '',
-    email: '',
-    message: '',
-    files: [],
+  const [data, setData] = useState({
+    name: {
+      value: '',
+      valid: false,
+    },
+    company: {
+      value: '',
+      valid: false,
+    },
+    email: {
+      value: '',
+      valid: false,
+    },
+    message: {
+      value: '',
+      valid: false,
+    },
   });
 
-  // const key = 'https://getform.io/f/f65d5c0b-3ff7-40f7-a418-3ea72cd680cd';
+  const [isValid, setisValid] = useState(true);
+  const [filesList, setFilesList] = useState([]);
 
-  // const isNotEmpty = value => value !== '';
+  const fileAccept =
+    '.png,.jpg,.pdf,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document';
 
-  // const isCompanyEmailValid = email => {
-  //   const regexp = new RegExp(/[^@]+@[^.]+\..+/g);
-  //   return regexp.test(email);
-  // };
-
-  // const isFileSizeValid = (fileType, fileSize) => {
-  //   const fileSizeInMB = fileSize / 1024 / 1024;
-
-  //   return [ALLOWED_FILES.PDF.MIME_TYPE, ALLOWED_FILES.PPT.MIME_TYPE].includes(
-  //     fileType
-  //   )
-  //     ? fileSizeInMB < 10
-  //     : fileSizeInMB < 1;
-  // };
-
-  const handleSubmit = () => {
-    console.log(data);
+  const isCompanyEmailValid = email => {
+    const regexp = new RegExp(/[^@]+@[^.]+\..+/g);
+    return regexp.test(email);
   };
 
-  const handleInputFileChange = data => {
-    console.log(data);
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const valid =
+      data.name.valid &&
+      data.email.valid &&
+      isCompanyEmailValid(data.email.value) &&
+      data.message.valid;
+
+    setisValid(valid);
+
+    const formData = {
+      'quote-name': data.name.value,
+      'quote-company': data.company.value,
+      'quote-email': data.email.value,
+      'quote-message': data.message.value,
+    };
+
+    valid &&
+      fetch(
+        'http://api.halo-lab.com/wp-json/contact-form-7/v1/contact-forms/288/feedback',
+        {
+          method: 'POST',
+          body: JSON.stringify(formData),
+        }
+      );
+  };
+
+  const handleInputFileChange = async e => {
+    const mergedFilesList = [...e.target.files];
+    setFilesList(mergedFilesList);
+  };
+
+  const handleFileClear = async () => {
+    setFilesList([]);
   };
 
   return (
     <div className={styles.container}>
-      <form
-        className={styles.form}
-        action="#"
-        method="POST"
-        encType="multipart/form-data"
-        onSubmit={handleSubmit}
-      >
+      <form className={styles.form} onSubmit={e => handleSubmit(e)}>
         <h3 className={styles.formTitle}>REQUEST A QUOTE</h3>
         <div className={styles.inputWrapper}>
           <input
-            className={styles.input}
+            className={`${styles.input} ${
+              !isValid && !data.name.valid ? styles.error : ''
+            } ${data.name.valid ? styles.focused : ''}`}
             type="text"
-            name="name"
+            name="quote-name"
             id="name"
             require="true"
-            onChange={event => setData({ name: event.target.value })}
+            onChange={event =>
+              setData({
+                ...data,
+                ['name']: {
+                  ...data.name,
+                  value: event.target.value,
+                  valid: !!event.target.value.length,
+                },
+              })
+            }
           />
           <label className={styles.placeholder} htmlFor="name">
             Full Name
@@ -63,11 +100,22 @@ const Form = () => {
         </div>
         <div className={styles.inputWrapper}>
           <input
-            className={styles.input}
+            className={`${styles.input} ${
+              data.company.valid ? styles.focused : ''
+            }`}
             type="text"
-            name="company"
+            name="quote-company"
             id="company"
-            onChange={event => setData({ company: event.target.value })}
+            onChange={event =>
+              setData({
+                ...data,
+                ['company']: {
+                  ...data.company,
+                  value: event.target.value,
+                  valid: !!event.target.value.length,
+                },
+              })
+            }
           ></input>
           <label className={styles.placeholder} htmlFor="company">
             Company
@@ -75,12 +123,25 @@ const Form = () => {
         </div>
         <div className={styles.inputWrapper}>
           <input
-            className={styles.input}
-            type="email"
-            name="email"
+            className={`${styles.input} ${
+              !isValid && !data.email.valid ? styles.error : ''
+            } ${data.email.value.length ? styles.focused : ''}`}
+            type="text"
+            name="quote-email"
             id="email"
             require="true"
-            onChange={event => setData({ email: event.target.value })}
+            onChange={event =>
+              setData({
+                ...data,
+                ['email']: {
+                  ...data.email,
+                  value: event.target.value,
+                  valid:
+                    !!event.target.value.length &&
+                    isCompanyEmailValid(event.target.value),
+                },
+              })
+            }
           />
           <label className={styles.placeholder} htmlFor="email">
             Email
@@ -91,17 +152,32 @@ const Form = () => {
         </h3>
         <div className={styles.textareaWrapper}>
           <textarea
-            className={styles.textarea}
-            name="message"
+            className={`${styles.textarea} ${
+              !isValid && !data.message.valid ? styles.error : ''
+            } ${data.message.valid ? styles.focused : ''}`}
+            name="quote-message"
             id="message"
             require="true"
-            onChange={event => setData({ message: event.target.value })}
+            onChange={event =>
+              setData({
+                ...data,
+                ['message']: {
+                  ...data.message,
+                  value: event.target.value,
+                  valid: !!event.target.value.length,
+                },
+              })
+            }
           ></textarea>
           <label className={styles.placeholder} htmlFor="message">
             What is your project about?
           </label>
           <div className={styles.block}></div>
-          <div className={styles.attachmentWrapper}>
+          <div
+            className={`${styles.attachmentWrapper} ${
+              filesList.length ? styles.attached : ''
+            }`}
+          >
             <label
               className={styles.attachmentLabel}
               htmlFor="attachment-file"
@@ -109,13 +185,18 @@ const Form = () => {
             <input
               className={styles.attachmentFile}
               type="file"
-              name="file"
+              name="quote-file"
               id="attachment-file"
-              accept=".png,.jpg,.pdf,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+              accept={fileAccept}
               onChange={handleInputFileChange}
             ></input>
             <div className={styles.attachmentName}>
-              <button className={styles.attachmentButton}></button>
+              <button
+                type="button"
+                className={styles.attachmentButton}
+                onClick={handleFileClear}
+              ></button>
+              {!!filesList.length && <span>{filesList[0].name}</span>}
             </div>
           </div>
         </div>

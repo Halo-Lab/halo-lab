@@ -15,7 +15,7 @@ const Blog = () => {
           <title>Blog - Halo Lab Blog</title>
         </Head>
         <div>Blog</div>
-         <Posts />
+        <Posts />
       </Layout>
     </Providers>
   );

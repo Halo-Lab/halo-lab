@@ -16,7 +16,7 @@
   margin-bottom: 2.14em;
   font-size: 1rem;
   font-weight: 700;
-  color: #80808e;
+  color: $grey-color;
   text-transform: uppercase;
   letter-spacing: 10px;
 
@@ -51,13 +51,13 @@
 .input {
   padding: 0 10rem 0 1.45rem;
   box-sizing: border-box;
-  border: 1px solid #fff;
+  border: 1px solid $white-color;
   background: transparent;
   width: 100%;
   padding-top: 20px;
   height: 70px;
-  border-color: #32344d;
-  color: #1e213d;
+  border-color: $dark-grey-color;
+  color: $dark-blue-color;
   font-size: 1.3rem;
   font-weight: 300;
   font-family: $font-sofia-pro-soft;
@@ -85,10 +85,10 @@
   min-height: 12.3rem;
   padding: 2rem 1.4rem 0 1.4rem;
   background-color: transparent;
-  border: 2px solid #32344d;
+  border: 2px solid $dark-grey-color;
   border-bottom: none;
   font-size: 1.3rem;
-  color: #1e213d;
+  color: $dark-blue-color;
   font-weight: 300;
   font-family: $font-sofia-pro;
   resize: none;
@@ -113,7 +113,7 @@
 
 .placeholder {
   position: absolute;
-  color: #80808e;
+  color: $grey-color;
   font-size: 16px;
   font-family: $font-sofia-pro-soft;
   font-weight: 300;
@@ -146,9 +146,9 @@
 }
 
 .block {
-  margin-top: -5px;
+  margin-top: -6px;
   height: 4.4rem;
-  border: 2px solid #32344d;
+  border: 2px solid $dark-grey-color;
   border-top: none;
 }
 
@@ -219,6 +219,8 @@
       min-width: 17px;
       width: 17px;
       height: 17px;
+      cursor: pointer;
+
       &:before {
         content: '';
         position: absolute;
@@ -226,10 +228,11 @@
         height: 2px;
         left: 0;
         bottom: 50%;
-        background-color: #32344d;
+        background-color: $dark-grey-color;
         transform: rotate(45deg);
         transition: background-color 0.3s;
       }
+
       &:after {
         content: '';
         position: absolute;
@@ -237,7 +240,7 @@
         height: 2px;
         left: 0;
         bottom: 50%;
-        background-color: #32344d;
+        background-color: $dark-grey-color;
         transform: rotate(-45deg);
         transition: background-color 0.3s;
       }
@@ -268,7 +271,7 @@
   padding: 0;
   border-radius: 50%;
   font-size: 0;
-  background-color: #32344d;
+  background-color: $dark-grey-color;
   border: none;
   cursor: pointer;
   background-image: url('./images/clip.svg');
@@ -311,7 +314,7 @@
   font-family: sofia-pro, sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  color: #fff;
+  color: $white-color;
   letter-spacing: 0.3rem;
   line-height: 1.43rem;
   text-indent: 0.3rem;
@@ -325,7 +328,7 @@
   justify-content: center;
   box-sizing: border-box;
   height: 60px;
-  background-color: #3719ca;
+  background-color: $main-color;
   border: none;
   padding: 0 2.2em;
   transition: box-shadow 0.5s ease;
