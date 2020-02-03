@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { navigate } from 'gatsby';
 
 import styles from './Form.module.scss';
 
@@ -60,14 +61,28 @@ const Form = () => {
       'quote-message': data.message.value,
     };
 
+    // const urlHalo = 'http://api.halo-lab.com/wp-json/contact-form-7/v1/contact-forms/288/feedback';
+    const url = 'https://getform.io/f/2812474b-d85f-48db-ad59-fcaf9e8a4920';
+
     valid &&
-      fetch(
-        'http://api.halo-lab.com/wp-json/contact-form-7/v1/contact-forms/288/feedback',
-        {
-          method: 'POST',
-          body: JSON.stringify(formData),
-        }
-      );
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+        .then(response => {
+          if (response.ok) {
+            navigate('/thanks');
+          } else {
+            console.log('Server responded with an error!', response);
+          }
+        })
+        .catch(response => {
+          console.log('Error: ', response);
+        });
   };
 
   const handleInputFileChange = async e => {
