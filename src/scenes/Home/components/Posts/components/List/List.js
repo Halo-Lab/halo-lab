@@ -9,7 +9,7 @@ import styles from './List.module.scss';
 
 const List = () => {
   const { breakpoint } = useGetBreakpoint();
-  const items = useWordpressPosts();
+  const items = useWordpressPosts().slice(0, 3);
 
   const settings = {
     dots: true,

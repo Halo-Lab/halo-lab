@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
+import { useWordpressPosts } from '@hooks/queries';
+
 const Posts = () => {
   const { allWordpressPost } = useStaticQuery(
     graphql`
@@ -18,6 +20,8 @@ const Posts = () => {
       }
     `
   );
+  const items = useWordpressPosts();
+  console.log(items);
 
   return <pre>{JSON.stringify(allWordpressPost, null, 4)}</pre>;
 };

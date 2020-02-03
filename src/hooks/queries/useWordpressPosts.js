@@ -4,12 +4,19 @@ const useWordpressPosts = () => {
   const data = useStaticQuery(
     graphql`
       query {
-        allWordpressPost(limit: 3) {
+        allWordpressPost {
           edges {
             node {
+              id
               title
               path
-              date
+              date(formatString: "DD.MM.YYYY")
+              content
+              categories {
+                name
+                id
+                count
+              }
               featured_media {
                 source_url
                 localFile {
