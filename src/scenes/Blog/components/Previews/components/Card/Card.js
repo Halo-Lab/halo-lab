@@ -16,14 +16,14 @@ const getDateEntries = date => {
 
 const Card = ({ title, path, featured_media, date }) => {
   const image = featured_media.localFile.childImageSharp;
-  const dateEntries = getDateEntries(date);
+  const [month, day] = getDateEntries(date);
   const link = path;
 
   return (
     <article className={styles.container}>
       <div className={styles.date}>
-        <div>{dateEntries[1]}</div>
-        <div>{dateEntries[0]}</div>
+        <div>{day}</div>
+        <div>{month}</div>
       </div>
       <a href={link} className={styles.link}>
         {image ? (

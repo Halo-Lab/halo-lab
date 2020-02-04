@@ -107,7 +107,7 @@
 }
 
 .title {
-  $size: 10%;
+  $size: 5%;
 
   position: absolute;
   top: 90%;
@@ -120,6 +120,13 @@
   line-height: 2.85rem;
   font-weight: 400;
   transition: transform 0.2s;
+
+  @media screen and (min-width: 768px) {
+    $size: 10%;
+
+    right: $size;
+    left: $size;
+  }
 
   @include media-breakpoint-down(md) {
     font-size: 2.5rem;
