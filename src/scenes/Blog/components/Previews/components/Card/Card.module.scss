@@ -68,8 +68,7 @@
   overflow: hidden;
   position: relative;
   display: block;
-  overflow: hidden;
-  height: 300px;
+  padding-bottom: 56.25%;
   text-decoration: none;
   color: inherit;
 
@@ -102,6 +101,9 @@
 
   > div,
   > img {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
     width: auto;
     height: auto;
@@ -127,6 +129,8 @@
   transition: transform 0.2s;
 
   @media screen and (min-width: 768px) {
+    font-size: 2.5rem;
+    line-height: 2.85rem;
   }
 
   @media screen and (min-width: 992px) {
@@ -134,8 +138,6 @@
 
     right: $size;
     left: $size;
-    font-size: 2.5rem;
-    line-height: 2.85rem;
   }
 
   > a {

@@ -27,7 +27,9 @@ const Card = ({ title, path, featured_media, date }) => {
       </div>
       <a href={link} className={styles.link}>
         {image ? (
-          <Img fluid={image.fluid} />
+          <div>
+            <Img fluid={image.fluid} />
+          </div>
         ) : (
           <img src={featured_media.source_url} />
         )}
