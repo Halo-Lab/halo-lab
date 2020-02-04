@@ -1,21 +1,39 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Providers from '@components/Providers';
+import Layout from '@components/Layout';
+import BackgroundStars from '@scenes/BackgroundStars';
+import Head from '@components/Head';
+import Hero from '@scenes/Home/components/Hero';
+import WhatWeDo from '@scenes/Home/components/WhatWeDo';
+import Projects from '@scenes/Projects';
+import Testimonials from '@scenes/Home/components/Testimonials';
+import Gallery from '@scenes/Home/components/Gallery';
+import Posts from '@scenes/Home/components/Posts';
+import MailUs from '@scenes/MailUs';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+import '@styles/index.scss';
 
-export default IndexPage
+const Home = () => {
+  return (
+    <Providers>
+      <BackgroundStars />
+      <Layout>
+        <Head>
+          <title>Главная - Halo Lab Blog</title>
+        </Head>
+        <div className="main-home">
+          <Hero />
+          <WhatWeDo />
+          <Projects title="Projects" navigation={true} />
+          <Testimonials />
+          <Gallery />
+          <Posts />
+          <MailUs />
+        </div>
+      </Layout>
+    </Providers>
+  );
+};
+
+export default Home;

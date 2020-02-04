@@ -1,0 +1,21 @@
+$time: .7s;
+$deley: .2s;
+
+
+.animate{
+	opacity: 0;
+	transition: all $time, opacity $time + 0.1;
+	// &+:nth-child(2n){
+	// 	transition-delay: $deley;
+	// }
+	// &+:nth-child(3n){
+	// 	transition-delay: $deley * 2;
+	// }
+	&--top{
+		transform: translateY(4rem);
+		&.animate--show{
+			opacity: 1;
+			transform: translateY(0rem);
+		}
+	}
+}

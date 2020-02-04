@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Desktop-Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-1114.000000, -333.000000)" fill-rule="nonzero">
+            <g id="thank-you" transform="translate(760.000000, 330.000000)">
+                <g id="Group" transform="translate(354.000000, 3.000000)">
+                    <path d="M13,26 C5.82029832,26 0,20.1797017 0,13 C0,5.82029832 5.82029832,0 13,0 C20.1797017,0 26,5.82029832 26,13 C26,20.1797017 20.1797017,26 13,26 Z M13,24.5555556 C19.3819571,24.5555556 24.5555556,19.3819571 24.5555556,13 C24.5555556,6.61804289 19.3819571,1.44444444 13,1.44444444 C6.61804289,1.44444444 1.44444444,6.61804289 1.44444444,13 C1.44444444,19.3819571 6.61804289,24.5555556 13,24.5555556 Z" id="Shape" fill="#FFFFFF" transform="translate(13.000000, 13.000000) rotate(90.000000) translate(-13.000000, -13.000000) "></path>
+                    <polyline id="Path-2" stroke="#FFFFFF" stroke-width="2" transform="translate(13.081787, 12.670410) rotate(-270.000000) translate(-13.081787, -12.670410) " points="12.1105957 18.7521973 16.7521973 13.9504395 9.41137695 6.58862305"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

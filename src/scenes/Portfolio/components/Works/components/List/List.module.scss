@@ -1,0 +1,119 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+$sizeSmall: 4px;
+$sizeMedium: 12px;
+$sizeBig: 22px;
+
+.container {
+}
+
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: -($sizeSmall);
+
+  @media screen and (min-width: $md) {
+    margin: -($sizeMedium);
+  }
+
+  @media screen and (min-width: $xxl) {
+    margin: -($sizeBig);
+  }
+}
+
+.item {
+  flex: 0 1 50%;
+  box-sizing: border-box;
+  padding: $sizeSmall;
+
+  @media screen and (min-width: $md) {
+    padding: $sizeMedium;
+    flex-basis: 25%;
+  }
+
+  @media screen and (min-width: $xxl) {
+    padding: $sizeBig;
+  }
+
+  a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 5.71rem;
+
+  @include media-breakpoint-down(xs) {
+    margin-top: 3.34rem;
+  }
+
+  a {
+    @media screen and (max-width: 1200px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 2.43em;
+  letter-spacing: 0.71em;
+  text-decoration: none;
+  color: $yellow-color;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: $main-color;
+    z-index: -1;
+    transform: scaleY(0);
+    transition: transform 0.2s;
+    transform-origin: bottom;
+  }
+
+  svg {
+    display: block;
+    width: 1.14em;
+    height: auto;
+    margin-left: 0.36em;
+    fill: currentColor;
+  }
+
+  &:hover {
+    color: #ffffff;
+
+    svg {
+      fill: currentColor;
+    }
+
+    @include media-breakpoint-up(md) {
+      &:before {
+        transform: scaleY(1);
+      }
+    }
+  }
+}

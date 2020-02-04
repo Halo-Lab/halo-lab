@@ -1,14 +1,21 @@
-import React from "react"
+import React from 'react';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Providers from '@components/Providers';
+import Layout from '@components/Layout';
+import BackgroundBlackHole from '@scenes/BackgroundBlackHole';
+import Head from '@components/Head';
+import Title from '@scenes/404/components/Title';
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
+const NotFound = () => (
+  <Providers>
+    <BackgroundBlackHole />
+    <Layout>
+      <Head>
+        <title>Not Found - Halo Lab Blog</title>
+      </Head>
+      <Title />
+    </Layout>
+  </Providers>
+);
 
-export default NotFoundPage
+export default NotFound;

@@ -1,0 +1,95 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.menu--open {
+  overflow: hidden;
+}
+
+.menu--open .hiddenable {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.main-header .menu {
+  opacity: 0;
+}
+
+.body-inside {
+  color: #fff;
+  background: $dark-color;
+  // background-image: url("../images/stars_bg.jpg");
+  position: relative;
+  background-size: 100% auto;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+body:not(.body-inside) #wrapper {
+  @include media-breakpoint-down(xs) {
+    padding: 0 15px;
+  }
+}
+
+#wrapper {
+  padding: 0 4.28rem;
+
+  @media screen and (max-width: 1300px) {
+    padding: 0 4.28rem;
+  }
+  @media screen and (max-width: 1024px) {
+    padding: 0 5rem;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 0 60px;
+  }
+  @include media-breakpoint-down(xs) {
+    padding: 0 1.67rem;
+  }
+}
+
+.main-home {
+  font-family: sofia-pro-soft, sans-serif;
+}
+
+.pageWrapper {
+  font-family: $font-sofia-pro;
+  padding-top: 11.4rem;
+
+  @include media-breakpoint-down(md) {
+    max-width: 59rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+}
+
+.contacts-container {
+  max-width: 68.5rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section__title {
+  font-family: $font-ratiomodern;
+  font-size: 10rem;
+  line-height: 1.285em;
+  color: $white-color;
+  font-weight: 400;
+  margin-bottom: 8.57rem;
+  text-align: center;
+
+  @include media-breakpoint-down(md) {
+    font-size: 6.25rem;
+    line-height: 1.46em;
+    margin-bottom: 5rem;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 4.5rem;
+    line-height: 1.1em;
+    margin-bottom: 2.5rem;
+  }
+}

@@ -1,0 +1,34 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  margin-top: 11.42rem;
+
+  @include media-breakpoint-down(md) {
+    margin-top: 8.33rem;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-top: 6.67rem;
+  }
+}
+
+.title {
+  font-family: $font-ratiomodern;
+  font-size: 10rem;
+  line-height: 1.2;
+  color: $white-color;
+  font-weight: 400;
+  margin-bottom: 5.7rem;
+  text-align: center;
+
+  @include media-breakpoint-down(md) {
+    font-size: 6.25rem;
+    line-height: 1.46em;
+    margin-bottom: 5rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 60px;
+    font-size: 48px;
+  }
+}
