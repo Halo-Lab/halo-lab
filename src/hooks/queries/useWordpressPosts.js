@@ -10,18 +10,19 @@ const useWordpressPosts = () => {
               id
               title
               path
-              date(formatString: "DD.MM.YYYY")
+              date(formatString: "MMM DD, YYYY")
               content
               categories {
                 name
                 id
                 count
+                slug
               }
               featured_media {
                 source_url
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 515) {
+                    fluid(maxWidth: 800) {
                       ...GatsbyImageSharpFluid
                     }
                   }

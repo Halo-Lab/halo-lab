@@ -1,0 +1,85 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+}
+
+.tabList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: 5.5rem;
+  padding: 0;
+}
+
+.tabItem {
+  &:not(:first-child) {
+    margin-left: 18px;
+
+    @media screen and (min-width: 992px) {
+      margin-left: 35px;
+    }
+  }
+
+  &[aria-selected='true'] {
+    > div {
+      &:after {
+        height: 100%;
+        width: 100%;
+        bottom: 0rem;
+      }
+    }
+  }
+
+  > div {
+    position: relative;
+    font-family: $font-sofia-pro;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.43rem;
+    letter-spacing: 0.7rem;
+    text-indent: 0.7rem;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @include media-breakpoint-down(md) {
+      letter-spacing: 0.5rem;
+      text-indent: 0.5rem;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -0.3rem;
+      left: 0;
+      z-index: -1;
+      height: 2px;
+      width: 0;
+      background: #3719ca;
+      transition: 0.2s;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.tabContentList {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0 -22px;
+  padding: 0;
+}
+
+.tabContentItem {
+  flex-basis: 50%;
+  box-sizing: border-box;
+  padding: 0 22px 120px;
+}
