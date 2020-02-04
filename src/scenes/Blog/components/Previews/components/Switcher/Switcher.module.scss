@@ -72,10 +72,15 @@
 .tabContentList {
   overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   list-style-type: none;
   margin: 0 -22px;
   padding: 0;
+
+  @media screen and (min-width: 992px) {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 }
 
 .tabContentItem {

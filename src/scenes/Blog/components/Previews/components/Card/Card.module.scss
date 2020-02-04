@@ -68,7 +68,8 @@
   overflow: hidden;
   position: relative;
   display: block;
-  height: 100%;
+  overflow: hidden;
+  height: 300px;
   text-decoration: none;
   color: inherit;
 
@@ -99,10 +100,13 @@
     background-color: transparent;
   }
 
+  > div,
   > img {
     display: block;
-    width: 100%;
+    width: auto;
     height: auto;
+    min-width: 100%;
+    min-height: 100%;
   }
 }
 
@@ -114,27 +118,24 @@
   right: $size;
   left: $size;
   z-index: 10;
-  letter-spacing: 0;
   font-family: $font-ratiomodern;
   font-size: 2.15rem;
-  line-height: 2.85rem;
+  font-size: 1.65rem;
   font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0;
   transition: transform 0.2s;
 
   @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 992px) {
     $size: 10%;
 
     right: $size;
     left: $size;
-  }
-
-  @include media-breakpoint-down(md) {
     font-size: 2.5rem;
-  }
-
-  @include media-breakpoint-down(xs) {
-    line-height: 2rem;
-    font-size: 1.65rem;
+    line-height: 2.85rem;
   }
 
   > a {
