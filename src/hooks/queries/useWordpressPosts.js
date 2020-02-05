@@ -9,6 +9,7 @@ const useWordpressPosts = () => {
             node {
               title
               path
+              slug
               date
               featured_media {
                 source_url
