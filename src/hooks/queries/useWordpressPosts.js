@@ -4,18 +4,26 @@ const useWordpressPosts = () => {
   const data = useStaticQuery(
     graphql`
       query {
-        allWordpressPost(limit: 3) {
+        allWordpressPost {
           edges {
             node {
+              id
               title
               path
               slug
-              date
+              date(formatString: "MMM DD, YYYY")
+              content
+              categories {
+                name
+                id
+                count
+                slug
+              }
               featured_media {
                 source_url
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 515) {
+                    fluid(maxWidth: 800) {
                       ...GatsbyImageSharpFluid
                     }
                   }

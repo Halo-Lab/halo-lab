@@ -1,0 +1,22 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.title {
+  font-family: $font-ratiomodern;
+  font-weight: 400;
+  font-size: 10rem;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 180px;
+  padding-bottom: 6.75rem;
+  text-align: center;
+
+  @include media-breakpoint-down(md) {
+    font-size: 6.25rem;
+    line-height: 1;
+  }
+  @include media-breakpoint-down(xs) {
+    font-size: 4.5rem;
+    padding-bottom: 5rem;
+  }
+}
