@@ -2,8 +2,15 @@
 @import '@styles/mixins/all';
 
 .container {
+  padding: 180px 0;
   background-color: #fff;
-  color: #02021e;
+
+  font-family: $font-sofia-pro;
+  font-size: 1.3rem;
+  letter-spacing: 0;
+  line-height: 2.15rem;
+  font-weight: 300;
+  color: $dark-color;
 }
 
 .wrapper {

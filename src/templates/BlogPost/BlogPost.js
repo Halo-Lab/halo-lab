@@ -6,8 +6,8 @@ import Layout from '@components/Layout';
 import BackgroundStars from '@scenes/BackgroundStars';
 import Head from '@components/Head';
 import MailUs from '@scenes/MailUs';
-import Headline from './components/Headline';
 import Article from './components/Article';
+import Headline from './components/Headline';
 
 const BlogPost = ({ pageContext }) => {
   const { data } = pageContext;
