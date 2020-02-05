@@ -1,10 +1,10 @@
 import React from 'react';
-import Posts from '@components/Posts';
 
 import Providers from '@components/Providers';
 import Layout from '@components/Layout';
-import BackgroundStars from '@scenes/BackgroundStars';
 import Head from '@components/Head';
+import BackgroundStars from '@scenes/BackgroundStars';
+import BlogScene from '@scenes/Blog';
 
 const Blog = () => {
   return (
@@ -14,8 +14,7 @@ const Blog = () => {
         <Head>
           <title>Blog - Halo Lab Blog</title>
         </Head>
-        <div>Blog</div>
-        <Posts />
+        <BlogScene />
       </Layout>
     </Providers>
   );

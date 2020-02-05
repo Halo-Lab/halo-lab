@@ -5,10 +5,10 @@ import './Menu.scss';
 
 const Menu = () => {
   const items = [
-    { title: 'Projects', href: '/portfolio', classes: 'menu-item__portfolio' },
-    { title: 'Services', href: '/services', classes: 'menu-item__services' },
-    { title: 'Blog', href: '/blog', classes: 'menu-item__blog' },
-    { title: 'Contacts', href: '/contacts', classes: 'menu-item__contacts' },
+    { title: 'Projects', href: '/portfolio/', classes: 'menu-item__portfolio' },
+    { title: 'Services', href: '/services/', classes: 'menu-item__services' },
+    { title: 'Blog', href: '/blog/', classes: 'menu-item__blog' },
+    { title: 'Contacts', href: '/contacts/', classes: 'menu-item__contacts' },
   ];
 
   return (
