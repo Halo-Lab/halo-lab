@@ -8,7 +8,6 @@ import { useWordpressPosts } from '@hooks/queries';
 const Previews = () => {
   const { breakpoint } = useGetBreakpoint();
   const items = useWordpressPosts();
-  console.log(items);
 
   return (
     <div className="">

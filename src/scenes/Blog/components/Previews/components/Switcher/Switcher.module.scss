@@ -85,6 +85,22 @@
 
 .tabContentItem {
   flex-basis: 50%;
+  position: relative;
   box-sizing: border-box;
   padding: 0 22px 120px;
+  animation-name: apperancing;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes apperancing {
+  from {
+    opacity: 0;
+    top: 2rem;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
 }

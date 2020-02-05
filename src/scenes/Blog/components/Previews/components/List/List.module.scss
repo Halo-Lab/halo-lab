@@ -14,7 +14,12 @@
 }
 
 .item {
+  position: relative;
   margin-bottom: 72px;
+  animation-name: apperancing;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .buttonWrapper {
@@ -51,5 +56,16 @@
     transform: scaleY(0);
     transition: transform 0.2s;
     transform-origin: bottom;
+  }
+}
+
+@keyframes apperancing {
+  from {
+    opacity: 0;
+    top: 2rem;
+  }
+  to {
+    opacity: 1;
+    top: 0;
   }
 }

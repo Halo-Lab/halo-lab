@@ -19,8 +19,10 @@ const List = ({ items }) => {
     <div className={styles.container}>
       <ul className={styles.list}>
         {items.map((item, index) => {
+          const inlineStyles = { animationDelay: `0.${index}s` };
+
           return numberOfRendered > index ? (
-            <li key={item.id} className={styles.item}>
+            <li key={item.id} style={inlineStyles} className={styles.item}>
               <Card {...item} />
             </li>
           ) : null;
