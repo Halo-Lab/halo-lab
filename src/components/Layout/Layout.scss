@@ -30,23 +30,6 @@ body:not(.body-inside) #wrapper {
   }
 }
 
-#wrapper {
-  padding: 0 4.28rem;
-
-  @media screen and (max-width: 1300px) {
-    padding: 0 4.28rem;
-  }
-  @media screen and (max-width: 1024px) {
-    padding: 0 5rem;
-  }
-  @include media-breakpoint-down(sm) {
-    padding: 0 60px;
-  }
-  @include media-breakpoint-down(xs) {
-    padding: 0 1.67rem;
-  }
-}
-
 .main-home {
   font-family: sofia-pro-soft, sans-serif;
 }
@@ -54,6 +37,25 @@ body:not(.body-inside) #wrapper {
 .pageWrapper {
   font-family: $font-sofia-pro;
   padding-top: 11.4rem;
+  padding-right: 4.28rem;
+  padding-left: 4.28rem;
+
+  @media screen and (max-width: 1300px) {
+    padding-right: 4.28rem;
+    padding-left: 4.28rem;
+  }
+  @media screen and (max-width: 1024px) {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  @include media-breakpoint-down(xs) {
+    padding-right: 1.67rem;
+    padding-left: 1.67rem;
+  }
 
   @include media-breakpoint-down(md) {
     max-width: 59rem;

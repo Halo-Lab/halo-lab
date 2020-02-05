@@ -22,12 +22,14 @@ const Home = () => {
         <Head>
           <title>Главная - Halo Lab Blog</title>
         </Head>
-        <div className="main-home">
+        <div className="main-home pageWrapper">
           <Hero />
           <WhatWeDo />
           <Projects title="Projects" navigation={true} />
           <Testimonials />
-          <Gallery />
+        </div>
+        <Gallery />
+        <div className="main-home pageWrapper">
           <Posts />
           <MailUs />
         </div>
