@@ -9,25 +9,26 @@ const STEP_VALUE = 6;
 
 const List = ({ items }) => {
   const [numberOfRendered, setNumberOfRendered] = useState(STEP_VALUE);
+  const postsToRender = [];
 
   const handleClick = () => {
     const value = numberOfRendered + STEP_VALUE;
-    setNumberOfRendered(value);
+    setNumberOfRendered(value > items.length ? items.length : value);
   };
+
+  for (let i = 0; i < numberOfRendered; i++) {
+    const inlineStyles = { animationDelay: `0.${i}s` };
+
+    postsToRender.push(
+      <li key={items[i].id} style={inlineStyles} className={styles.item}>
+        <Card {...items[i]} />
+      </li>
+    );
+  }
 
   return (
     <div className={styles.container}>
-      <ul className={styles.list}>
-        {items.map((item, index) => {
-          const inlineStyles = { animationDelay: `0.${index}s` };
-
-          return numberOfRendered > index ? (
-            <li key={item.id} style={inlineStyles} className={styles.item}>
-              <Card {...item} />
-            </li>
-          ) : null;
-        })}
-      </ul>
+      <ul className={styles.list}>{postsToRender}</ul>
 
       {numberOfRendered < items.length ? (
         <div className={styles.buttonWrapper}>

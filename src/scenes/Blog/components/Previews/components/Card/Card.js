@@ -14,10 +14,10 @@ const getDateEntries = date => {
   return dateEntries;
 };
 
-const Card = ({ title, path, featured_media, date }) => {
+const Card = ({ title, slug, featured_media, date }) => {
   const image = featured_media.localFile.childImageSharp;
   const [month, day] = getDateEntries(date);
-  const link = path;
+  const link = `/blog/${slug}`;
 
   return (
     <article className={styles.container}>
@@ -43,7 +43,7 @@ const Card = ({ title, path, featured_media, date }) => {
 
 Card.propTypes = {
   title: PropTypes.string,
-  path: PropTypes.string,
+  slug: PropTypes.string,
   date: PropTypes.string,
   featured_media: PropTypes.object,
 };
