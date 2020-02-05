@@ -35,7 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allWordpressPost.edges.forEach(({ node }) => {
     createPage({
       path: `/blog/${node.slug}`,
-      component: require.resolve(`./src/templates/blog-post.js`),
+      component: require.resolve(`./src/templates/BlogPost`),
       context: { data: node },
     });
   });
