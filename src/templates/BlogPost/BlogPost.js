@@ -6,10 +6,8 @@ import Layout from '@components/Layout';
 import BackgroundStars from '@scenes/BackgroundStars';
 import Head from '@components/Head';
 import MailUs from '@scenes/MailUs';
-import Categories from './components/Categories';
+import Headline from './components/Headline';
 import Article from './components/Article';
-
-import styles from './BlogPost.module.scss';
 
 const BlogPost = ({ pageContext }) => {
   const { data } = pageContext;
@@ -23,8 +21,11 @@ const BlogPost = ({ pageContext }) => {
           <title>{data.title} - Halo Lab Blog</title>
         </Head>
         <div className="pageWrapper">
-          <Categories items={data.categories} />
-          <h2 className={styles.title}>{data.title}</h2>
+          <Headline
+            categories={data.categories}
+            image={data.featured_media.source_url}
+            title={data.title}
+          />
         </div>
         <Article content={data.content} />
         <div className="pageWrapper">

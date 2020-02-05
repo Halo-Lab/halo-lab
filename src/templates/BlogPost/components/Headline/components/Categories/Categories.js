@@ -10,7 +10,7 @@ const Categories = ({ items }) => {
         const link = `/blog?category=${item.slug}`;
 
         return (
-          <li key={item.id}>
+          <li key={item.id} className={styles.item}>
             <a href={link}>{item.name}</a>
           </li>
         );

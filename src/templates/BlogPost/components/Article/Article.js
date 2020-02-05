@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import styles from './Article.module.scss';
 
 const Article = ({ content }) => {
-  console.log(content);
-
   return (
     <div className={styles.container}>
       <div
