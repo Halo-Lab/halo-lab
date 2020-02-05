@@ -1,0 +1,12 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  background-color: #fff;
+  color: #02021e;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 735px;
+}

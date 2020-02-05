@@ -6,9 +6,14 @@ import Layout from '@components/Layout';
 import BackgroundStars from '@scenes/BackgroundStars';
 import Head from '@components/Head';
 import MailUs from '@scenes/MailUs';
+import Categories from './components/Categories';
+import Article from './components/Article';
+
+import styles from './BlogPost.module.scss';
 
 const BlogPost = ({ pageContext }) => {
   const { data } = pageContext;
+  console.log(data);
 
   return (
     <Providers>
@@ -17,9 +22,14 @@ const BlogPost = ({ pageContext }) => {
         <Head>
           <title>{data.title} - Halo Lab Blog</title>
         </Head>
-        <div className="pageWrapper">Hello, world</div>
-        Goodbye wrapper!!!
-        <MailUs />
+        <div className="pageWrapper">
+          <Categories items={data.categories} />
+          <h2 className={styles.title}>{data.title}</h2>
+        </div>
+        <Article content={data.content} />
+        <div className="pageWrapper">
+          <MailUs />
+        </div>
       </Layout>
     </Providers>
   );
