@@ -2,14 +2,9 @@ import React from 'react';
 
 import Providers from '@components/Providers';
 import Layout from '@components/Layout';
-import BackgroundStars from '@scenes/BackgroundStars';
 import Head from '@components/Head';
-import Design from '@scenes/Services/components/Design';
-import Development from '@scenes/Services/components/Development';
-import Flow from '@scenes/Services/components/Flow';
-import Industries from '@scenes/Services/components/Industries';
-import Technologies from '@scenes/Services/components/Technologies';
-import MailUs from '@scenes/MailUs';
+import BackgroundStars from '@scenes/BackgroundStars';
+import ServicesPage from '@scenes/ServicesPage';
 
 const Services = () => {
   return (
@@ -19,14 +14,7 @@ const Services = () => {
         <Head>
           <title>Services - Halo Lab Blog</title>
         </Head>
-        <div className="pageWrapper">
-          <Design />
-          <Development />
-          <Flow />
-          <Industries />
-          <Technologies />
-          <MailUs />
-        </div>
+        <ServicesPage />
       </Layout>
     </Providers>
   );
