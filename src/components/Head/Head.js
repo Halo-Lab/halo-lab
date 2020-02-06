@@ -7,9 +7,11 @@ import { useSiteMetadata } from '@hooks/queries';
 const Head = ({ children }) => {
   const metadata = useSiteMetadata();
 
-  console.log(
-    'Warning "componentWillMount has been renamed" maked by Head Component. Helmet issue: https://github.com/nfl/react-helmet/issues/499'
-  );
+  // eslint-disable-next-line no-console
+  console.log(`
+    Warning "componentWillMount has been renamed" maked by Head Component.
+    Helmet issue: https://github.com/nfl/react-helmet/issues/499
+  `);
 
   const descriptionDefault = metadata.description;
   const titleDefault = metadata.title;
