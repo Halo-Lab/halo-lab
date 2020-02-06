@@ -2,9 +2,9 @@ import React from 'react';
 
 import Previews from './components/Previews';
 
-import styles from './Blog.module.scss';
+import styles from './BlogPage.module.scss';
 
-const Blog = () => {
+const BlogPage = () => {
   return (
     <div className={`pageWrapper ${styles.container}`}>
       <div className={styles.title}>Our Blog</div>
@@ -13,4 +13,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogPage;
