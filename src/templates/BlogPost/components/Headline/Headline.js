@@ -9,7 +9,10 @@ const Headline = ({ categories, title, image }) => {
   return (
     <div className={styles.container}>
       <Categories items={categories} />
-      <h2 className={styles.title}>{title}</h2>
+      <h2
+        dangerouslySetInnerHTML={{ __html: title }}
+        className={styles.title}
+      ></h2>
       <img src={image} alt="article image" className={styles.image} />
     </div>
   );

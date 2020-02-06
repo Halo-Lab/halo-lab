@@ -40,7 +40,7 @@ const PostThumbnail = ({ title, slug, featured_media, date }) => {
         )}
       </Link>
       <h3 className={styles.title}>
-        <Link to={link}>{title}</Link>
+        <Link to={link} dangerouslySetInnerHTML={{ __html: title }}></Link>
       </h3>
     </article>
   );
