@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Article.module.scss';
-import './wordpress-theme.scss';
-import './custom-theme.scss';
+// import './wordpress-theme.scss';
+// import './custom-theme.scss';
 
 const Article = ({ content }) => {
   return (
