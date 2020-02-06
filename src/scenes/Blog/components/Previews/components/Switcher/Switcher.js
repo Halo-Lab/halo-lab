@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import Card from '../Card';
+import PostThumbnail from '@scenes/PostThumbnail';
 
 import styles from './Switcher.module.scss';
 
@@ -53,7 +53,7 @@ const Switcher = ({ items }) => {
                 {items.map(item => {
                   return (
                     <li key={item.id} className={styles.tabContentItem}>
-                      <Card {...item} />
+                      <PostThumbnail {...item} />
                     </li>
                   );
                 })}

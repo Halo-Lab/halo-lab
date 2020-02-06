@@ -15,7 +15,11 @@ const getDateEntries = date => {
 };
 
 const PostThumbnail = ({ title, slug, featured_media, date }) => {
-  const image = featured_media.localFile;
+  const imageSource = featured_media.source_url;
+  const imageOptimized =
+    featured_media.localFile &&
+    featured_media.localFile.childImageSharp &&
+    featured_media.localFile.childImageSharp.fluid;
   const [month, day] = getDateEntries(date);
   const link = `/blog/${slug}`;
 
@@ -26,12 +30,12 @@ const PostThumbnail = ({ title, slug, featured_media, date }) => {
         <div>{month}</div>
       </div>
       <a href={link} className={styles.link}>
-        {image ? (
+        {imageOptimized ? (
           <div>
-            <Img fluid={featured_media.localFile.childImageSharp.fluid} />
+            <Img fluid={imageOptimized} />
           </div>
         ) : (
-          <img src={featured_media.source_url} />
+          <img src={imageSource} />
         )}
       </a>
       <h3 className={styles.title}>

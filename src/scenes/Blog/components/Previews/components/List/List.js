@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Card from '../Card';
+import PostThumbnail from '@scenes/PostThumbnail';
 
 import styles from './List.module.scss';
 
@@ -21,7 +21,7 @@ const List = ({ items }) => {
 
     postsToRender.push(
       <li key={items[i].id} style={inlineStyles} className={styles.item}>
-        <Card {...items[i]} />
+        <PostThumbnail {...items[i]} />
       </li>
     );
   }
