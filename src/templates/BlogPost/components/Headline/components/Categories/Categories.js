@@ -20,7 +20,7 @@ const Categories = ({ items }) => {
 };
 
 Categories.propTypes = {
-  items: PropTypes.arrayOf(Categories.object),
+  items: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Categories;

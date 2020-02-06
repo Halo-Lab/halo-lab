@@ -27,16 +27,32 @@ exports.createPages = async ({ graphql, actions }) => {
               source_url
             }
           }
+          next {
+            slug
+            title
+            date(formatString: "MMM DD, YYYY")
+            featured_media {
+              source_url
+            }
+          }
+          previous {
+            slug
+            title
+            date(formatString: "MMM DD, YYYY")
+            featured_media {
+              source_url
+            }
+          }
         }
       }
     }
   `);
 
-  result.data.allWordpressPost.edges.forEach(({ node }) => {
+  result.data.allWordpressPost.edges.forEach(({ node, previous, next }) => {
     createPage({
       path: `/blog/${node.slug}`,
       component: require.resolve(`./src/templates/BlogPost`),
-      context: { data: node },
+      context: { data: node, recent: { previous, next } },
     });
   });
 };

@@ -8,10 +8,16 @@ import Head from '@components/Head';
 import MailUs from '@scenes/MailUs';
 import Article from './components/Article';
 import Headline from './components/Headline';
+import Thumbnails from './components/Thumbnails';
 
 const BlogPost = ({ pageContext }) => {
-  const { data } = pageContext;
-  console.log(data);
+  const {
+    data,
+    recent: { previous, next },
+  } = pageContext;
+  const thumbnailsItems = [];
+  if (previous) thumbnailsItems.push(previous);
+  if (next) thumbnailsItems.push(next);
 
   return (
     <Providers>
@@ -28,7 +34,8 @@ const BlogPost = ({ pageContext }) => {
           />
         </div>
         <Article content={data.content} />
-        <div className="pageWrapper">
+        <div style={{ paddingTop: '0' }} className="pageWrapper">
+          <Thumbnails items={thumbnailsItems} />
           <MailUs />
         </div>
       </Layout>

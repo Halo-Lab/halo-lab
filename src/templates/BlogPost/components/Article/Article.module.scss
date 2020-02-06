@@ -11,6 +11,12 @@
   line-height: 2.15rem;
   font-weight: 300;
   color: $dark-color;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 }
 
 .wrapper {
