@@ -11,6 +11,8 @@ const getDefaultTabIndex = search => {
   const value = new URLSearchParams(search).get('category');
 
   switch (value) {
+    case 'all':
+      return 0;
     case 'agency':
       return 1;
     case 'case-studies':
