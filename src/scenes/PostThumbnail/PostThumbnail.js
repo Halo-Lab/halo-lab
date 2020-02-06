@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
@@ -29,7 +30,7 @@ const PostThumbnail = ({ title, slug, featured_media, date }) => {
         <div>{day}</div>
         <div>{month}</div>
       </div>
-      <a href={link} className={styles.link}>
+      <Link to={link} className={styles.link}>
         {imageOptimized ? (
           <div>
             <Img fluid={imageOptimized} />
@@ -37,9 +38,9 @@ const PostThumbnail = ({ title, slug, featured_media, date }) => {
         ) : (
           <img src={imageSource} />
         )}
-      </a>
+      </Link>
       <h3 className={styles.title}>
-        <a href={link}>{title}</a>
+        <Link to={link}>{title}</Link>
       </h3>
     </article>
   );

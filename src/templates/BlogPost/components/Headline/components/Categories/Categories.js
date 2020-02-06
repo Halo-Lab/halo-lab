@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import styles from './Categories.module.scss';
@@ -11,7 +12,7 @@ const Categories = ({ items }) => {
 
         return (
           <li key={item.id} className={styles.item}>
-            <a href={link}>{item.name}</a>
+            <Link to={link}>{item.name}</Link>
           </li>
         );
       })}
