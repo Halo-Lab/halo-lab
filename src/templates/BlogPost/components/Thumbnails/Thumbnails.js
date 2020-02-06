@@ -6,8 +6,6 @@ import PostThumbnail from '@scenes/PostThumbnail';
 import styles from './Thumbnails.module.scss';
 
 const Thumbnails = ({ items }) => {
-  console.log('thumbnails', items);
-
   return (
     <div className={styles.container}>
       <div className={styles.title}>Other recent posts</div>
