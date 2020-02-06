@@ -16,8 +16,8 @@ const BlogPost = ({ pageContext }) => {
     recent: { previous, next },
   } = pageContext;
   const thumbnailsItems = [];
-  if (previous) thumbnailsItems.push(previous);
   if (next) thumbnailsItems.push(next);
+  if (previous) thumbnailsItems.push(previous);
 
   return (
     <Providers>

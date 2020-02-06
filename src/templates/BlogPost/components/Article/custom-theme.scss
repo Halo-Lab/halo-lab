@@ -2,6 +2,18 @@
 @import '@styles/mixins/all';
 
 .content {
+  & > :not(figure) {
+    width: 100%;
+    margin: auto;
+    max-width: 700px;
+    @include media-breakpoint-up(xxl) {
+      max-width: 900px;
+    }
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+    }
+  }
+
   blockquote {
     font-family: $font-ratiomodern;
     font-size: 2.3rem;
@@ -70,10 +82,6 @@
     margin-top: 0;
   }
 
-  strong {
-    font-weight: 500;
-  }
-
   a {
     text-decoration: none;
 
@@ -82,64 +90,7 @@
     }
   }
 
-  .post-thumbnail {
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-    max-height: 30rem;
-    margin-bottom: 5rem;
-
-    @include media-breakpoint-down(md) {
-      overflow: visible;
-
-      &::before {
-        content: '';
-        position: absolute;
-        width: 150vw;
-        height: 100%;
-        background-color: #ffffff;
-        top: 70%;
-        z-index: -1;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-
-    @include media-breakpoint-down(sm) {
-      margin: 2.5rem 0;
-    }
-  }
-
-  .post-thumbnail,
-  .wp-block-image {
-    max-width: 100%;
-  }
-
-  .alignright {
-    float: right;
-    margin-left: 1em;
-  }
-
-  .aligncenter {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .alignleft {
-    float: left;
-    margin: 0.5em 1em 0.5em 0;
-  }
-
-  .attachment-post-thumbnail {
-    width: 100%;
-    height: auto;
-    margin-bottom: 5rem;
-    max-width: 1400px;
-
-    @include media-breakpoint-down(sm) {
-      transform: translateY(0%);
-      margin-bottom: 0;
-    }
+  strong {
+    font-weight: 500;
   }
 }
