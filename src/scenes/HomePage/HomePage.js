@@ -13,13 +13,17 @@ import styles from './HomePage.module.scss';
 const HomePage = () => {
   return (
     <div className={styles.container}>
-      <Hero />
-      <WhatWeDo />
-      <Projects title="Projects" navigation={true} />
-      <Testimonials />
+      <div className="pageWrapper">
+        <Hero />
+        <WhatWeDo />
+        <Projects title="Projects" navigation={true} />
+        <Testimonials />
+      </div>
       <Gallery />
-      <Posts />
-      <MailUs />
+      <div className="pageWrapper">
+        <Posts />
+        <MailUs />
+      </div>
     </div>
   );
 };

@@ -1,12 +1,31 @@
 import React from 'react';
+import { Location } from '@reach/router';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import Card from '../Card';
+import PostThumbnail from '@scenes/PostThumbnail';
 
 import styles from './Switcher.module.scss';
 
-const Switcher = ({ items }) => {
+const getDefaultTabIndex = search => {
+  const value = new URLSearchParams(search).get('category');
+
+  switch (value) {
+    case 'all':
+      return 0;
+    case 'agency':
+      return 1;
+    case 'case-studies':
+      return 2;
+    case 'news':
+      return 3;
+    default:
+      return 0;
+  }
+};
+
+const Switcher = ({ items, location }) => {
+  const defaultIndex = getDefaultTabIndex(location.search);
   const itemsAgency = [];
   const itemsCaseStudies = [];
   const itemsNews = [];
@@ -35,7 +54,7 @@ const Switcher = ({ items }) => {
 
   return (
     <div className={styles.container}>
-      <Tabs>
+      <Tabs defaultIndex={defaultIndex}>
         <TabList className={styles.tabList}>
           {allCategories.map(({ title }) => {
             return (
@@ -53,7 +72,7 @@ const Switcher = ({ items }) => {
                 {items.map(item => {
                   return (
                     <li key={item.id} className={styles.tabContentItem}>
-                      <Card {...item} />
+                      <PostThumbnail {...item} />
                     </li>
                   );
                 })}
@@ -72,6 +91,15 @@ Switcher.defaultProps = {
 
 Switcher.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
+  location: PropTypes.object,
 };
 
-export default Switcher;
+const Wrapped = props => {
+  return (
+    <Location>
+      {locationProps => <Switcher {...locationProps} {...props} />}
+    </Location>
+  );
+};
+
+export default Wrapped;

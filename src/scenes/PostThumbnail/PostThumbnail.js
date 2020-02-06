@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
-import styles from './Card.module.scss';
+import styles from './PostThumbnail.module.scss';
 
 const getDateEntries = date => {
   if (!date) {
@@ -14,8 +15,12 @@ const getDateEntries = date => {
   return dateEntries;
 };
 
-const Card = ({ title, slug, featured_media, date }) => {
-  const image = featured_media.localFile.childImageSharp;
+const PostThumbnail = ({ title, slug, featured_media, date }) => {
+  const imageSource = featured_media.source_url;
+  const imageOptimized =
+    featured_media.localFile &&
+    featured_media.localFile.childImageSharp &&
+    featured_media.localFile.childImageSharp.fluid;
   const [month, day] = getDateEntries(date);
   const link = `/blog/${slug}`;
 
@@ -25,27 +30,27 @@ const Card = ({ title, slug, featured_media, date }) => {
         <div>{day}</div>
         <div>{month}</div>
       </div>
-      <a href={link} className={styles.link}>
-        {image ? (
+      <Link to={link} className={styles.link}>
+        {imageOptimized ? (
           <div>
-            <Img fluid={image.fluid} />
+            <Img fluid={imageOptimized} />
           </div>
         ) : (
-          <img src={featured_media.source_url} />
+          <img src={imageSource} />
         )}
-      </a>
+      </Link>
       <h3 className={styles.title}>
-        <a href={link}>{title}</a>
+        <Link to={link} dangerouslySetInnerHTML={{ __html: title }}></Link>
       </h3>
     </article>
   );
 };
 
-Card.propTypes = {
+PostThumbnail.propTypes = {
   title: PropTypes.string,
   slug: PropTypes.string,
   date: PropTypes.string,
   featured_media: PropTypes.object,
 };
 
-export default Card;
+export default PostThumbnail;

@@ -1,6 +1,28 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
+.container {
+  padding-right: 4.28rem;
+  padding-left: 4.28rem;
+
+  @media screen and (max-width: 1300px) {
+    padding-right: 4.28rem;
+    padding-left: 4.28rem;
+  }
+  @media screen and (max-width: 1024px) {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  @include media-breakpoint-down(xs) {
+    padding-right: 1.67rem;
+    padding-left: 1.67rem;
+  }
+}
+
 footer {
   span {
     color: #707a9b;

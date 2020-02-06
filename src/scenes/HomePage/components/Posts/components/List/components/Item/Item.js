@@ -19,7 +19,7 @@ const Item = ({ path, title, featured_media, date }) => {
       <div className={styles.info}>
         <div className={styles.date}>{date}</div>
         <h3 className={styles.title}>
-          <Link to={link}>{title}</Link>
+          <Link to={link} dangerouslySetInnerHTML={{ __html: title }}></Link>
         </h3>
       </div>
     </div>

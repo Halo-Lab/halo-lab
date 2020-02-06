@@ -77,10 +77,12 @@ const Form = () => {
           if (response.ok) {
             navigate('/thanks');
           } else {
+            // eslint-disable-next-line no-console
             console.log('Server responded with an error!', response);
           }
         })
         .catch(response => {
+          // eslint-disable-next-line no-console
           console.log('Error: ', response);
         });
   };

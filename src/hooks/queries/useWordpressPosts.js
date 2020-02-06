@@ -9,6 +9,7 @@ const useWordpressPosts = () => {
             node {
               id
               title
+              path
               slug
               date(formatString: "MMM DD, YYYY")
               content
