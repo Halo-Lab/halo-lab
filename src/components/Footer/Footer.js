@@ -17,33 +17,35 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="clearfix">
-      <div className="footer_conteiner">
-        <div className="footer__logo">
-          <img src={images['logo.svg'].url} alt={images['logo.svg'].name} />
-          With Love from Halo Lab
-        </div>
+    <div className="container">
+      <footer className="clearfix">
+        <div className="footer_conteiner">
+          <div className="footer__logo">
+            <img src={images['logo.svg'].url} alt={images['logo.svg'].name} />
+            With Love from Halo Lab
+          </div>
 
-        <div className="socials">
-          <ul>
-            {itemsSocial.map(({ href, classIcon }) => {
-              return (
-                <li key={href}>
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={classIcon}
-                  >
-                    {classIcon}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
+          <div className="socials">
+            <ul>
+              {itemsSocial.map(({ href, classIcon }) => {
+                return (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={classIcon}
+                    >
+                      {classIcon}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   );
 };
 

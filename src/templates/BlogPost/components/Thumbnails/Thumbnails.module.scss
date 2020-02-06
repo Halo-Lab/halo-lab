@@ -1,0 +1,40 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  margin-bottom: 140px;
+}
+
+.title {
+  margin-bottom: 3.2rem;
+  font-family: sofia-pro, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.43rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: $dark-color;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0 -24px -120px;
+  padding: 0;
+
+  @media screen and (min-width: $lg) {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+.item {
+  flex-basis: 100%;
+  box-sizing: border-box;
+  padding: 0 24px 120px;
+
+  @media screen and (min-width: $lg) {
+    flex-basis: 50%;
+  }
+}
