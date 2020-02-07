@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
           <body className="menu--open"></body>
         </Helmet>
       ) : null}
-      <div className={styles.container} id="wrapper">
+      <div className={styles.container}>
         <div className={styles.header}>
           <Header />
         </div>
