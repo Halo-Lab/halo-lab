@@ -1,5 +1,5 @@
-@import "@styles/variables/all";
-@import "@styles/mixins/all";
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
 
 header {
   -webkit-box-sizing: border-box;
@@ -7,7 +7,7 @@ header {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   padding: 2.5rem 4.28rem 0;
-  
+
   @include media-breakpoint-down(sm) {
     padding: 2rem 0 0;
   }
@@ -19,7 +19,7 @@ header {
   left: 0;
   z-index: 11;
   width: 100%;
-  background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021E 98%);
+  background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021e 98%);
 
   @include media-breakpoint-down(md) {
     padding: 2.5rem 5rem 0;
@@ -64,7 +64,7 @@ header .mail {
   }
   &:after {
     background: #3719ca;
-    content: "";
+    content: '';
     height: 2px;
     position: absolute;
     bottom: 0px;
@@ -135,7 +135,7 @@ header .mail {
     &:before,
     &:after {
       left: 50%;
-      content: "";
+      content: '';
       display: block;
       height: 0.15rem;
       width: 70%;
@@ -170,7 +170,7 @@ header .mail {
 }
 
 .burger-menu:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -215,16 +215,6 @@ header .mail {
   }
 }
 
-#wrapper > *:not(header) {
-  // opacity: 1;
-  transition: opacity 0.2s;
-}
-
-// .menu--open #wrapper > *:not(header) {
-//   opacity: 0;
-//   pointer-events: none;
-// }
-
 .main-header .menu .menu-item {
   opacity: 0;
   @include media-breakpoint-up(lg) {
@@ -235,25 +225,25 @@ header .mail {
 }
 
 .main-header--active .menu .menu-item__portfolio {
-  @include media-breakpoint-up(lg){
+  @include media-breakpoint-up(lg) {
     transition-delay: 0.2s;
   }
 }
 
 .main-header--active .menu .menu-item__services {
-  @include media-breakpoint-up(lg){
+  @include media-breakpoint-up(lg) {
     transition-delay: 0.3s;
   }
 }
 
 .main-header--active .menu .menu-item__blog {
-  @include media-breakpoint-up(lg){
+  @include media-breakpoint-up(lg) {
     transition-delay: 0.4s;
   }
 }
 
 .main-header--active .menu .menu-item__contacts {
-  @include media-breakpoint-up(lg){
+  @include media-breakpoint-up(lg) {
     transition-delay: 0.5s;
   }
 }
@@ -274,7 +264,7 @@ header .mail {
 
 .main-header--active .main-menu .menu-item {
   opacity: 1;
-  @include media-breakpoint-up(lg){
+  @include media-breakpoint-up(lg) {
     transform: translateY(0);
   }
 }

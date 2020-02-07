@@ -4,7 +4,7 @@ import Providers from '@components/Providers';
 import Layout from '@components/Layout';
 import Head from '@components/Head';
 import BackgroundStars from '@scenes/BackgroundStars';
-import BlogScene from '@scenes/Blog';
+import BlogPage from '@scenes/BlogPage';
 
 const Blog = () => {
   return (
@@ -14,7 +14,7 @@ const Blog = () => {
         <Head>
           <title>Blog - Halo Lab Blog</title>
         </Head>
-        <BlogScene />
+        <BlogPage />
       </Layout>
     </Providers>
   );

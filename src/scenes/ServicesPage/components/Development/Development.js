@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import ServicesItem from '@scenes/Services/components/ServicesItem';
+import ServicesItem from '../ServicesItem';
 import { GlobalContext } from '@contexts';
 
 import styles from './Development.module.scss';
