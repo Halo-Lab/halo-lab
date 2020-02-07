@@ -10,7 +10,8 @@ const Head = ({ children }) => {
   // eslint-disable-next-line no-console
   console.log(`
     Warning "componentWillMount has been renamed" maked by Head Component.
-    Helmet issue: https://github.com/nfl/react-helmet/issues/499
+    Helmet issue: https://github.com/nfl/react-helmet/issues/499.
+    Solution: update package to 6.0.0 version when it will be available. 
   `);
 
   const descriptionDefault = metadata.description;
