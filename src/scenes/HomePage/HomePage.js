@@ -1,5 +1,6 @@
 import React from 'react';
 
+import FacebookChat from '@components/FacebookChat';
 import Projects from '@scenes/Projects';
 import MailUs from '@scenes/MailUs';
 import Hero from './components/Hero';
@@ -23,6 +24,7 @@ const HomePage = () => {
       <div className="pageWrapper">
         <Posts />
         <MailUs />
+        <FacebookChat />
       </div>
     </div>
   );
