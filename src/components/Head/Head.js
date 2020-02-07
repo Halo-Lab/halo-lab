@@ -14,16 +14,12 @@ const Head = ({ children }) => {
     Solution: update package to 6.0.0 version when it will be available. 
   `);
 
-  const descriptionDefault = metadata.description;
-  const titleDefault = metadata.title;
-  // const authorDefault = site.siteMetadata.author;
-
   return (
     <Helmet>
       <html lang="en" />
       <meta charSet="utf-8" />
 
-      <meta name="description" content={descriptionDefault} />
+      <meta name="description" content={metadata.description} />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
@@ -42,8 +38,7 @@ const Head = ({ children }) => {
       />
       {/* <-- fonts */}
 
-      <title>{titleDefault}</title>
-      <body className="body-inside"></body>
+      <title>{metadata.title}</title>
 
       {children}
     </Helmet>
