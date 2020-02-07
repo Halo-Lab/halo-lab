@@ -46,6 +46,7 @@ const Header = () => {
             onClick={handleTogglingIsOpened}
           >
             <span className="bar"></span>
+            <span className="titleHidden">Menu</span>
           </button>
         </div>
       </div>

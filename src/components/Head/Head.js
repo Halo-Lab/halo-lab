@@ -30,14 +30,6 @@ const Head = ({ children }) => {
       />
       <link rel="profile" href="https://gmpg.org/xfn/11" />
 
-      {/* fonts --> */}
-      <link rel="stylesheet" href="https://use.typekit.net/dbe7btx.css" />
-      <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
-        rel="stylesheet"
-      />
-      {/* <-- fonts */}
-
       <title>{metadata.title}</title>
 
       {children}
