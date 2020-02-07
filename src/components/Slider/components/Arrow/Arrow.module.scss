@@ -6,6 +6,7 @@
 
   position: absolute;
   top: 50%;
+  z-index: 10;
   transform: translateY(-50%);
   display: block;
   background: none;
@@ -56,4 +57,8 @@
     border-color: rgba(#fff, 0) rgba(#fff, 1) rgba(#fff, 1) rgba(#fff, 0);
     transform: rotate(-45deg) translate(-10%, -80%);
   }
+}
+
+.titleHidden {
+  font-size: 0;
 }

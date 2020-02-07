@@ -152,6 +152,11 @@ header .mail {
       margin-top: 0.5rem;
     }
   }
+
+  .titleHidden {
+    font-size: 0;
+  }
+
   &.burger-menu--open {
     .bar {
       background-color: transparent;

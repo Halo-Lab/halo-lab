@@ -13,6 +13,7 @@ const Arrow = ({ onClick, children, direction }) => {
       onClick={onClick}
     >
       {children}
+      <span className={styles.titleHidden}>Arrow</span>
     </button>
   );
 };
