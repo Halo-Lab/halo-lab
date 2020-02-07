@@ -1,19 +1,6 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
-.menu--open {
-  overflow: hidden;
-}
-
-.menu--open .hiddenable {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.main-header .menu {
-  opacity: 0;
-}
-
 .pageWrapper {
   font-family: $font-sofia-pro;
   padding-top: 11.4rem;
@@ -52,4 +39,17 @@
     padding-right: 15px;
     padding-left: 15px;
   }
+}
+
+.menu--open {
+  overflow: hidden;
+}
+
+.menu--open .hiddenable {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.main-header .menu {
+  opacity: 0;
 }
