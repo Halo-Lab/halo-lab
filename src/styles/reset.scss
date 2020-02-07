@@ -10,7 +10,10 @@ body,
 
 body {
   overflow-x: hidden;
+  position: relative;
   margin: 0;
+  color: #fff;
+  background: $dark-color;
 }
 
 // legacy -->

@@ -7,7 +7,7 @@ import Footer from '@components/Footer';
 import { MenuContext } from '@contexts';
 
 import styles from './Layout.module.scss';
-import './Layout.scss';
+import '@styles/index.scss';
 
 const Layout = ({ children }) => {
   const { isOpened } = useContext(MenuContext);
@@ -17,10 +17,10 @@ const Layout = ({ children }) => {
       {/* TODO: This is very bad, I know. But. */}
       {isOpened ? (
         <Helmet>
-          <body className="body-inside menu--open"></body>
+          <body className="menu--open"></body>
         </Helmet>
       ) : null}
-      <div className={styles.container} id="wrapper">
+      <div className={styles.container}>
         <div className={styles.header}>
           <Header />
         </div>

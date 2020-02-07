@@ -1,0 +1,32 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  margin-top: 16px 8px 0;
+
+  a {
+    font-family: $font-sofia-pro;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.43rem;
+    letter-spacing: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    transition: 0.4s;
+
+    &:hover {
+      color: $yellow-color;
+    }
+  }
+}

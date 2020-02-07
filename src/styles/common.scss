@@ -1,0 +1,60 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.pageWrapper {
+  font-family: $font-sofia-pro;
+  padding-top: 11.4rem;
+  padding-right: 4.28rem;
+  padding-left: 4.28rem;
+
+  @media screen and (max-width: 1300px) {
+    padding-right: 4.28rem;
+    padding-left: 4.28rem;
+  }
+  @media screen and (max-width: 1024px) {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  @include media-breakpoint-down(xs) {
+    padding-right: 1.67rem;
+    padding-left: 1.67rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    max-width: 59rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.menu--open {
+  overflow: hidden;
+}
+
+.hiddenable,
+.menu {
+  transition: opacity 0.2s;
+}
+
+.menu--open .hiddenable {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.main-header .menu {
+  opacity: 0;
+}
