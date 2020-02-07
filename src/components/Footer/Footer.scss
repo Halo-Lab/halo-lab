@@ -27,8 +27,7 @@ footer {
   span {
     color: #707a9b;
     display: block;
-    font-family: sofia-pro-soft, sans-serif;
-    font-weight: 400;
+    font-family: $font-sofia-pro-soft;
     font-size: 1rem;
     margin-bottom: 15px;
     font-weight: 700;
@@ -50,7 +49,7 @@ footer .works {
 footer .footer__logo {
   display: flex;
   align-items: center;
-  font-family: sofia-pro-soft, sans-serif;
+  font-family: $font-sofia-pro-soft;
   font-style: normal;
   font-weight: 300;
   font-size: 1.14rem;
@@ -65,7 +64,7 @@ footer .footer__logo img {
   margin-right: 1.42rem;
 }
 footer .works span {
-  font-family: sofia-pro-soft, sans-serif;
+  font-family: $font-sofia-pro-soft;
   @include media-breakpoint-down(sm) {
     font-size: 1.6rem;
     letter-spacing: 0.45rem;
@@ -97,7 +96,7 @@ footer .works ul li {
 footer .works ul li a {
   color: #fff;
   display: block;
-  font-family: sofia-pro-soft, sans-serif;
+  font-family: $font-sofia-pro-soft;
   font-weight: 400;
   font-size: 1.45rem;
   line-height: 2.25rem;
@@ -130,7 +129,7 @@ footer .works ul li a:hover:after {
 }
 footer .works ul .more {
   color: #79aeea;
-  font-family: sofia-pro-soft, sans-serif;
+  font-family: $font-sofia-pro-soft;
   font-size: 1.1rem;
   line-height: 2rem;
 }
