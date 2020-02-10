@@ -9,6 +9,7 @@ const Head = ({ children }) => {
   const metadata = useSiteMetadata();
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get(['meta/tile.256.png', 'meta/tile.512.png']);
+  // eslint-disable-next-line no-unused-vars
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -66,32 +67,24 @@ const Head = ({ children }) => {
 
   return (
     <Helmet>
+      {/* Encodings and styles */}
       <html lang="en" />
-
       <meta charSet="utf-8" />
       <meta
         content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
         name="viewport"
       />
-      <meta
-        name="robots"
-        content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-      />
 
-      {/* <!-- General meta --> */}
+      {/* General meta */}
       <meta
         content="We are a full-stack design & development team who focuses on digital products whatever they are."
         name="description"
       />
       <meta
-        content="experts, expert networks, consulting, linkedin, transcripts, halo-lab"
+        content="ui/ux agency, design agency, ux agency, design and development, design and development agency, design studio, design and development studio, design company, design and development company, design consultant, ui ux agency, ux ui design agency, ui design company, ux design consultancy, ui company, ux design company, ui ux design firm, ui design agency, user interface design company, ui ux company, ui ux design agency, ui design firm, ui studio, best design studios, best design and development studios, top development agencies, reactjs development, gatsbyjs development, websites, web development, front-end development"
         name="keywords"
       />
       <meta content={metadata.title} name="author" />
-      <meta
-        content="KaWJr5sGtZ__QgG_cgjeVJ-BtUEvLAv7XFF1xXUb7yA"
-        name="google-site-verification"
-      />
 
       {/* <!-- Twitter meta --> */}
       <meta content="summary" name="twitter:card" />
@@ -122,24 +115,47 @@ const Head = ({ children }) => {
       <meta property="og:locale" content="en_US" />
 
       {/* <!-- Analytics --> */}
-      {/* <script async="" src="https://static.hotjar.com/c/hotjar-1373557.js?sv=6"></script> */}
-      {/* <script async="" src="https://script.hotjar.com/modules.58256f2231d5f12d5589.js" charset="utf-8"></script> */}
 
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      {/* <!-- Hotjat --> */}
+      <script
+        async=""
+        src="https://static.hotjar.com/c/hotjar-1373557.js?sv=6"
+      ></script>
+      <script
+        async=""
+        src="https://script.hotjar.com/modules.58256f2231d5f12d5589.js"
+        charset="utf-8"
+      ></script>
 
-      <link
+      {/* <!-- Google --> */}
+      <meta
+        content="KaWJr5sGtZ__QgG_cgjeVJ-BtUEvLAv7XFF1xXUb7yA"
+        name="google-site-verification"
+      />
+
+      {/* Search result */}
+
+      {/* Micro-marking */}
+      {/* <script type="application/ld+json">{JSON.stringify(schema)}</script> */}
+
+      {/* Control the display of content in Google Search results */}
+      {/* <meta
+        name="robots"
+        content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+      /> */}
+
+      {/* Semantic navigation */}
+      {/* <link
         rel="alternate"
         type="application/rss+xml"
         title="Halo Lab » Portfolio"
         href="https://halo-lab.com/portfolio/"
-      ></link>
-
-      {/* <!-- What is this? --> */}
-      <link rel="profile" href="https://gmpg.org/xfn/11" />
+      ></link> */}
 
       {/* Default title */}
       <title>{metadata.title}</title>
 
+      {/* Additional tags */}
       {children}
     </Helmet>
   );
