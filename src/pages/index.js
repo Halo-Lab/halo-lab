@@ -12,7 +12,7 @@ const Home = () => {
       <BackgroundStars />
       <Layout>
         <Head>
-          <title>Главная - Halo Lab Blog</title>
+          <title>Home - Halo Lab Blog</title>
         </Head>
         <HomePage />
       </Layout>
