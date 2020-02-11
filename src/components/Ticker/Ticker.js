@@ -12,33 +12,49 @@ const Ticker = ({ items }) => {
   const pseudoItems = [...items, ...items, ...items];
 
   useEffect(() => {
-    const fullWidth = list.current.scrollWidth;
+    const startPoint = getStartPoint();
 
-    offset.current = -(fullWidth / 3);
+    offset.current = startPoint;
 
     requestedAnimate({
-      offset: offset.current,
       duration: 0,
     });
   }, []);
 
-  const check = offset => {
+  const getStartPoint = (stepOver = 0) => {
+    const fullWidth = list.current.scrollWidth;
+    // return -(fullWidth / 3 + stepOver);
+    return -(fullWidth / 3);
+  };
+
+  const getEndPoint = (stepOver = 0) => {
     const fullWidth = list.current.scrollWidth;
     const visibleWidth = list.current.offsetWidth;
-    const originalLength = fullWidth / 3;
-    const boundaryLeft = -(originalLength - visibleWidth);
-    const boundaryRight = -(originalLength + originalLength);
+    // return -(fullWidth / 3 + fullWidth / 3 - visibleWidth - stepOver);
+    return -(fullWidth / 3 + fullWidth / 3 - visibleWidth);
+  };
 
-    const startPoint = -(fullWidth / 3);
-    const endPoint = -(fullWidth / 3 + fullWidth / 3);
+  const getBoundaries = () => {
+    const fullWidth = list.current.scrollWidth;
+    const visibleWidth = list.current.offsetWidth;
+    const listLength = fullWidth / 3;
+    const boundaryLeft = -(listLength - visibleWidth);
+    const boundaryRight = -(listLength + listLength);
 
-    if (offset >= boundaryLeft) {
-      console.log('to end', endPoint);
+    return { left: boundaryLeft, right: boundaryRight };
+  };
+
+  const getStepOver = offset => {
+    const boundaries = getBoundaries();
+    const stepOverLeft = offset - boundaries.left;
+    const stepOverRight = boundaries.right - offset;
+
+    if (stepOverLeft > 0) {
+      return getEndPoint(stepOverLeft);
     }
 
-    if (offset <= boundaryRight) {
-      console.log('to start', startPoint);
-      return true;
+    if (stepOverRight > 0) {
+      return getStartPoint(stepOverRight);
     }
   };
 
@@ -61,14 +77,33 @@ const Ticker = ({ items }) => {
     let step = name === 'right' ? -25 : 25;
 
     offset.current += step;
-    requestedAnimate();
+
+    const stepOver = getStepOver(offset.current);
+
+    if (stepOver) {
+      offset.current = stepOver;
+
+      requestedAnimate({
+        duration: 0,
+      });
+    } else {
+      requestedAnimate();
+    }
 
     intervalId = setInterval(() => {
       offset.current += step;
 
-      const options = check(offset.current);
+      const stepOver = getStepOver(offset.current);
 
-      requestedAnimate();
+      if (stepOver) {
+        offset.current = stepOver;
+
+        requestedAnimate({
+          duration: 0,
+        });
+      } else {
+        requestedAnimate();
+      }
     }, interval);
   };
 
