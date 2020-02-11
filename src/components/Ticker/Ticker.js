@@ -9,12 +9,12 @@ let intervalId = null;
 const Ticker = ({ items }) => {
   const list = useRef(null);
   const offset = useRef(null);
+  const pseudoItems = [...items, ...items, ...items];
 
   useEffect(() => {
     const fullWidth = list.current.scrollWidth;
-    const visibleWidth = list.current.offsetWidth;
 
-    offset.current = -(fullWidth / 2 - visibleWidth / 2);
+    offset.current = -(fullWidth / 3);
 
     requestedAnimate({
       offset: offset.current,
@@ -22,21 +22,29 @@ const Ticker = ({ items }) => {
     });
   }, []);
 
-  const calculateOffset = (value, size) => {
-    const boundaryLeft = 0;
-    const boundaryRight = 0;
+  const check = offset => {
+    const fullWidth = list.current.scrollWidth;
+    const visibleWidth = list.current.offsetWidth;
+    const originalLength = fullWidth / 3;
+    const boundaryLeft = -(originalLength - visibleWidth);
+    const boundaryRight = -(originalLength + originalLength);
 
-    let result = value + size;
+    const startPoint = -(fullWidth / 3);
+    const endPoint = -(fullWidth / 3 + fullWidth / 3);
 
-    if (result > boundaryLeft) {
+    if (offset >= boundaryLeft) {
+      console.log('to end', endPoint);
     }
-    if (result < boundaryRight) {
-    }
 
-    return result;
+    if (offset <= boundaryRight) {
+      console.log('to start', startPoint);
+      return true;
+    }
   };
 
-  const requestedAnimate = ({ duration = interval, animation = '' }) => {
+  const requestedAnimate = ({ duration = interval, animation = '' } = {}) => {
+    // console.log('current', offset.current);
+
     const animate = () => {
       list.current.style.transform = `translate3d(${offset.current}px, 0px, 0px)`;
       list.current.style.transitionDuration = `${duration}ms`;
@@ -53,11 +61,14 @@ const Ticker = ({ items }) => {
     let step = name === 'right' ? -25 : 25;
 
     offset.current += step;
-    requestedAnimate({});
+    requestedAnimate();
 
     intervalId = setInterval(() => {
       offset.current += step;
-      requestedAnimate({});
+
+      const options = check(offset.current);
+
+      requestedAnimate();
     }, interval);
   };
 
@@ -70,9 +81,9 @@ const Ticker = ({ items }) => {
   return (
     <div className={styles.container}>
       <ul ref={list} className={styles.list}>
-        {items.map(({ id, title }) => {
+        {pseudoItems.map(({ title }, index) => {
           return (
-            <li key={id} className={styles.item}>
+            <li key={index} className={styles.item}>
               <div className={styles.slide}>{title}</div>
             </li>
           );

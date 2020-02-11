@@ -17,7 +17,9 @@ const Test = () => {
   return (
     <div>
       <div>Test</div>
+      {/* <div style={{ maxWidth: '450px', margin: '0 auto' }}> */}
       <Ticker items={items} />
+      {/* </div> */}
     </div>
   );
 };
