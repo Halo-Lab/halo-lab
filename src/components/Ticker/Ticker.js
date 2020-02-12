@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Ticker.module.scss';
 
-const interval = 100;
+const interval = 1000;
 let intervalId = null;
 
 const Ticker = ({ items }) => {
@@ -74,9 +74,9 @@ const Ticker = ({ items }) => {
 
   const onMouseEnter = ({ target }) => {
     const name = target.getAttribute('data-name');
-    let step = name === 'right' ? -25 : 25;
+    let step = name === 'right' ? -250 : 250;
 
-    offset.current += step;
+    offset.current += step * 0.5;
 
     const stepOver = getStepOver(offset.current);
 
@@ -87,7 +87,10 @@ const Ticker = ({ items }) => {
         duration: 0,
       });
     } else {
-      requestedAnimate();
+      requestedAnimate({
+        // duration: 200,
+        animation: 'ease-in',
+      });
     }
 
     intervalId = setInterval(() => {
