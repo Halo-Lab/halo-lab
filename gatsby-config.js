@@ -69,8 +69,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: 'api.halo-lab.com',
-        protocol: 'http',
+        baseUrl: process.env.WP_API_BASE_URL,
+        protocol: process.env.WP_API_PROTOCOL,
         useACF: false,
         auth: {
           jwt_user: process.env.JWT_USER,

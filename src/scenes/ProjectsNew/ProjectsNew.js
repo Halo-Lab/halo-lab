@@ -10,7 +10,7 @@ import styles from './ProjectsNew.module.scss';
 const ProjectsNew = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>ProjectsNew</div>
+      <div className={styles.title}>Projects</div>
       <List />
     </div>
   );

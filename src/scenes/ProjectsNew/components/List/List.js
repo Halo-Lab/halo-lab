@@ -17,9 +17,6 @@ const List = () => {
     'partners/techcrunch.svg',
     'partners/vc.ru.svg',
     'partners/angellist.svg',
-    'jackandjones.svg',
-    'udemy.svg',
-    'kkl-luzern.svg',
   ]);
 
   const items = [
@@ -33,60 +30,88 @@ const List = () => {
         author: 'Jon-Paul Wheatley, CPO',
         text: 'Highly recommend!',
       },
+      partners: [
+        images['partners/forbes.svg'],
+        images['partners/mashable.svg'],
+        images['partners/indiegogo.svg'],
+      ],
     },
     {
       link: '#',
       preview: preview2,
-      tags: 'UX, UI, Illustrations, Icons',
-      title: 'Reinvented bedding cutting price for 50%',
+      tags: 'Analytics, UX, UI, Icons, Front-end',
+      title: 'Game Analytics wins TechCrunch Disrupt & Raise $2.6M',
       review: {
         avatar: avatar1,
-        author: 'Jon-Paul Wheatley, CPO',
-        text: 'Highly recommend!',
+        author: 'Bogdan Suchyk, CEO',
+        text: 'Awesome guys!',
       },
+      partners: [
+        images['partners/forbes.svg'],
+        images['partners/techcrunch.svg'],
+        images['partners/mashable.svg'],
+        images['partners/angellist.svg'],
+      ],
     },
     {
       link: '#',
       preview: preview3,
-      tags: 'UX, UI, Illustrations, Icons',
-      title: 'Reinvented bedding cutting price for 50%',
+      tags: 'Analytics, UX, UI, Front-end',
+      title: 'Indiegogo superstar smart clock which ease your life',
       review: {
         avatar: avatar1,
         author: 'Jon-Paul Wheatley, CPO',
         text: 'Highly recommend!',
       },
+      partners: [
+        images['partners/forbes.svg'],
+        images['partners/techcrunch.svg'],
+        images['partners/vc.ru.svg'],
+        images['partners/indiegogo.svg'],
+      ],
     },
   ];
   console.log('items', items);
 
   return (
     <ul className={styles.container}>
-      {items.map(({ link, preview, tags, title, review }) => {
+      {items.map(({ link, partners, preview, review, tags, title }) => {
         return (
           <li key={title} className={styles.item}>
-            <div className={styles.preview}>
-              <a href={link}>
-                <Img fluid={preview.childImageSharp.fluid} />
-              </a>
-            </div>
-            <div className={styles.description}>
-              <div className={styles.tags}>{tags}</div>
-              <div className={styles.title}>
-                <a href={link}>{title}</a>
+            <div className={styles.project}>
+              <div className={styles.preview}>
+                <a href={link}>
+                  <Img fluid={preview.childImageSharp.fluid} />
+                </a>
               </div>
-              <div className={styles.descriptionLink}>
-                <a href={link}>More info</a>
-              </div>
-              <div className={styles.review}>
-                <div className={styles.avatar}>
-                  <Img fluid={review.avatar.childImageSharp.fluid} />
+              <div className={styles.description}>
+                <div className={styles.tags}>{tags}</div>
+                <div className={styles.title}>
+                  <a href={link}>{title}</a>
                 </div>
-                <div className={styles.reviewContent}>
-                  <div className={styles.reviewText}>{review.text}</div>
-                  <div className={styles.reviewAuthor}>{review.author}</div>
+                <div className={styles.descriptionLink}>
+                  <a href={link}>More info</a>
+                </div>
+                <div className={styles.review}>
+                  <div className={styles.avatar}>
+                    <Img fluid={review.avatar.childImageSharp.fluid} />
+                  </div>
+                  <div className={styles.reviewContent}>
+                    <div className={styles.reviewText}>{review.text}</div>
+                    <div className={styles.reviewAuthor}>{review.author}</div>
+                  </div>
                 </div>
               </div>
             </div>
+            <ul className={styles.partners}>
+              {partners.map(({ url, name }) => {
+                return (
+                  <li key={name}>
+                    <img src={url} alt={name} />
+                  </li>
+                );
+              })}
+            </ul>
           </li>
         );
       })}

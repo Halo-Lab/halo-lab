@@ -8,6 +8,16 @@
 }
 
 .item {
+  &:not(:first-child) {
+    margin-top: 6.67rem;
+
+    @media screen and (min-width: $md) {
+      margin-top: 8.57rem;
+    }
+  }
+}
+
+.project {
   display: flex;
   flex-direction: column;
 
@@ -26,21 +36,25 @@
     margin-right: 0;
   }
 
-  // hover: the link remains the same size, but the picture becomes smaller -->
-  > a {
-    > div {
-      transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
+  @media screen and (min-width: $lg) {
+    // hover: the link remains the same size, but the picture becomes smaller -->
+    > a {
+      > div {
+        transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
 
-    @media screen and (min-width: $lg) {
       &:hover {
         > div {
           transform: scale(0.9);
         }
       }
     }
+    // <-- hover
   }
-  // <-- hover
+
+  > a {
+    display: block;
+  }
 }
 
 .description {
@@ -110,10 +124,10 @@
   @media screen and (min-width: $lg) {
     margin-top: 3.85rem;
     font-size: 1rem;
-  }
 
-  &:hover {
-    color: $yellow-color;
+    &:hover {
+      color: $yellow-color;
+    }
   }
 
   > a {
@@ -165,5 +179,31 @@
 
   @media screen and (min-width: $md) {
     font-size: 1.14rem;
+  }
+}
+
+.partners {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: 2.34rem 0 0 4.4rem;
+  padding: 0;
+  max-width: 30rem;
+
+  @media screen and (min-width: $md) {
+    display: flex;
+  }
+
+  @media screen and (min-width: $lg) {
+    max-width: 40rem;
+  }
+
+  img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 80px;
+    max-height: 50px;
   }
 }
