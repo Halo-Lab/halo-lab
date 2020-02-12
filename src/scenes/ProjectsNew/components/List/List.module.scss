@@ -15,6 +15,34 @@
       margin-top: 8.57rem;
     }
   }
+
+  // reversed items -->
+  &:nth-child(even) {
+    .project {
+      @media screen and (min-width: $md) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .preview {
+      @media screen and (min-width: $md) {
+        margin-right: -60px;
+        margin-left: 0;
+      }
+    }
+
+    .description {
+      @media screen and (min-width: $md) {
+        margin-right: -40px;
+        margin-left: 0;
+      }
+    }
+
+    .partners {
+      margin-left: auto;
+    }
+  }
+  // <-- reversed
 }
 
 .project {
