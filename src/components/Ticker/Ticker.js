@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Ticker.module.scss';
 
-const interval = 1000;
+const interval = 100;
 let intervalId = null;
 
 const Ticker = ({ items }) => {
@@ -74,7 +74,7 @@ const Ticker = ({ items }) => {
 
   const onMouseEnter = ({ target }) => {
     const name = target.getAttribute('data-name');
-    let step = name === 'right' ? -250 : 250;
+    let step = name === 'right' ? -25 : 25;
 
     offset.current += step * 0.5;
 
