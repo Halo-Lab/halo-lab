@@ -13,14 +13,21 @@ export const responsiveImage = graphql`
 const useProjectImages = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      image1: file(relativePath: { eq: "project/project1.jpg" }) {
-        publicURL
+      preview1: file(relativePath: { eq: "project/project1.jpg" }) {
+        name
+        ...responsiveImage
       }
-      image2: file(relativePath: { eq: "project/project2.jpg" }) {
-        publicURL
+      preview2: file(relativePath: { eq: "project/project2.jpg" }) {
+        name
+        ...responsiveImage
       }
-      image3: file(relativePath: { eq: "project/project3.jpg" }) {
-        publicURL
+      preview3: file(relativePath: { eq: "project/project3.jpg" }) {
+        name
+        ...responsiveImage
+      }
+      avatar1: file(relativePath: { eq: "avatar1.jpg" }) {
+        name
+        ...responsiveImage
       }
     }
   `);

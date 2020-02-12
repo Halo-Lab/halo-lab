@@ -1,16 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 import { GlobalContext } from '@contexts';
-import { useProjectImages } from '@hooks/queries';
 
 import './Projects.scss';
 
 const Projects = ({ title, navigation }) => {
-  const pj = useProjectImages();
-  console.log(pj);
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get([
     'project/project1.jpg',
