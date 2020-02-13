@@ -10,12 +10,14 @@
 }
 
 .socials {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
+  z-index: 10;
 
   li {
     &:not(:first-child) {

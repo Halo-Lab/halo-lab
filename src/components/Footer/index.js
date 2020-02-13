@@ -1,4 +1,4 @@
 // import Footer from './Footer';
-import Footer from './FooterNew';
+import Footer from './Footer';
 
 export default Footer;

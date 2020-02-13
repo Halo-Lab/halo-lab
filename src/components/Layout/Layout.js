@@ -25,9 +25,9 @@ const Layout = ({ children }) => {
           <Header />
         </div>
         <main className={`${styles.main} hiddenable`}>{children}</main>
-        <div className={`${styles.footer} hiddenable`}>
+        <footer className={`${styles.footer} hiddenable`}>
           <Footer />
-        </div>
+        </footer>
       </div>
     </>
   );
