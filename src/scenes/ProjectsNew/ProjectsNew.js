@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import List from './components/List';
+import Others from './components/Others';
 
 import styles from './ProjectsNew.module.scss';
 
@@ -11,7 +12,8 @@ const ProjectsNew = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>Projects</div>
-      <List />
+      {/* <List /> */}
+      <Others />
     </div>
   );
 };
