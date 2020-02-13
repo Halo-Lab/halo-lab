@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Projects from '@scenes/Projects';
 import ProjectsNew from '@scenes/ProjectsNew';
 import MailUs from '@scenes/MailUs';
 import Hero from './components/Hero';
@@ -18,7 +17,6 @@ const HomePage = () => {
         <Hero />
         <WhatWeDo />
         <ProjectsNew title="Projects" navigation={true} />
-        {/* <Projects title="Projects" navigation={true} /> */}
         <Testimonials />
       </div>
       <Gallery />

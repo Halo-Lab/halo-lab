@@ -37,10 +37,6 @@
         margin-left: 0;
       }
     }
-
-    .partners {
-      margin-left: auto;
-    }
   }
   // <-- reversed
 }
@@ -205,31 +201,5 @@
 
   @media screen and (min-width: $md) {
     font-size: 1.14rem;
-  }
-}
-
-.partners {
-  display: none;
-  justify-content: space-between;
-  align-items: center;
-  list-style-type: none;
-  margin: 2.34rem 0 0 4.4rem;
-  padding: 0;
-  max-width: 30rem;
-
-  @media screen and (min-width: $md) {
-    display: flex;
-  }
-
-  @media screen and (min-width: $lg) {
-    max-width: 40rem;
-  }
-
-  img {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 80px;
-    max-height: 50px;
   }
 }

@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 
 import { GlobalContext } from '@contexts';
 import { useProjectImages } from '@hooks/queries';
+import Partners from './components/Partners';
 
 import styles from './List.module.scss';
 
@@ -71,11 +72,12 @@ const List = () => {
       ],
     },
   ];
-  console.log('items', items);
 
   return (
     <ul className={styles.container}>
-      {items.map(({ link, partners, preview, review, tags, title }) => {
+      {items.map(({ link, partners, preview, review, tags, title }, index) => {
+        const isReversed = !((index + 1) % 2);
+
         return (
           <li key={title} className={styles.item}>
             <div className={styles.project}>
@@ -103,15 +105,7 @@ const List = () => {
                 </div>
               </div>
             </div>
-            <ul className={styles.partners}>
-              {partners.map(({ url, name }) => {
-                return (
-                  <li key={name}>
-                    <img src={url} alt={name} />
-                  </li>
-                );
-              })}
-            </ul>
+            <Partners items={partners} reversed={isReversed} />
           </li>
         );
       })}
