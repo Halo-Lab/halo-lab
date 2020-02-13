@@ -1,0 +1,180 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2rem 0;
+  background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021e 98%);
+
+  @media screen and (min-width: $md) {
+    padding: 2.5rem 0;
+  }
+}
+
+.logotype {
+  margin-right: auto;
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  img {
+    display: inline-block;
+    width: auto;
+    max-height: 38px;
+  }
+}
+
+.email {
+  display: none;
+  font-family: $font-sofia-pro-soft;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2.8rem;
+  transition: 0.2s;
+
+  @media screen and (min-width: $md) {
+    display: block;
+  }
+
+  a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      z-index: -10;
+      width: 100%;
+      height: 2px;
+      background: $main_color;
+      transition: 0.2s;
+    }
+
+    &:hover {
+      &:after {
+        height: 100%;
+      }
+    }
+  }
+
+  &[data-status='opened'] {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.menuBar {
+  margin-left: 2.86rem;
+}
+
+.menuButton {
+  $size: 3.4rem;
+
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  box-shadow: inset 0 0 0 1px #32344d;
+  border: none;
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background: $main-color;
+    border-radius: 50%;
+    transition: transform 0.3s;
+    transform: translateX(100%);
+    z-index: -10;
+  }
+
+  @media screen and (min-width: $lg) {
+    &:hover {
+      box-shadow: inset 0 0 0 1px $main-color;
+
+      &:after {
+        transform: translateX(0%);
+      }
+    }
+  }
+
+  @media screen and (min-width: $xxl) {
+    box-shadow: inset 0 0 0 2px #32344d;
+
+    &:hover {
+      box-shadow: inset 0 0 0 2px $main-color;
+    }
+  }
+}
+
+.menuIcon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: block;
+  border-radius: 35px;
+  width: 43%;
+  height: 0.15rem;
+  margin: auto;
+  background-color: #fff;
+  transition: all 0.3s;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    border-radius: 35px;
+    height: 0.15rem;
+    width: 70%;
+    background: #fff;
+    transition: all 0.3s;
+  }
+
+  &:before {
+    margin-top: -0.5rem;
+  }
+
+  &:after {
+    margin-top: 0.5rem;
+  }
+
+  &[data-status='opened'] {
+    background-color: transparent;
+
+    &:before {
+      top: 0.45rem;
+      transform: translateX(-50%) rotate(45deg);
+      width: 100%;
+    }
+
+    &:after {
+      top: -0.55rem;
+      transform: translateX(-50%) rotate(-45deg);
+      width: 100%;
+    }
+  }
+}
+
+.menuTitle {
+  font-size: 0;
+}
