@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ProjectsNew from '@scenes/ProjectsNew';
+import Projects from '@scenes/Projects';
 import MailUs from '@scenes/MailUs';
 import Hero from './components/Hero';
 import WhatWeDo from './components/WhatWeDo';
@@ -16,7 +16,7 @@ const HomePage = () => {
       <div className="pageWrapper">
         <Hero />
         <WhatWeDo />
-        <ProjectsNew title="Projects" navigation={true} />
+        <Projects title="Projects" navigation={true} />
         <Testimonials />
       </div>
       <Gallery />

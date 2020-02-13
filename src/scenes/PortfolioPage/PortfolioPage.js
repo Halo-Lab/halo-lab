@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ProjectsNew from '@scenes/ProjectsNew';
+import Projects from '@scenes/Projects';
 import MailUs from '@scenes/MailUs';
 import Clients from './components/Clients';
 import Works from './components/Works';
@@ -8,7 +8,7 @@ import Works from './components/Works';
 const PortfolioPage = () => {
   return (
     <div className="pageWrapper">
-      <ProjectsNew title="Portfolio" navigation={false} />
+      <Projects title="Portfolio" navigation={false} />
       <Clients />
       <Works />
       <MailUs />
