@@ -117,10 +117,12 @@
   letter-spacing: 10px;
   text-transform: uppercase;
   transition: color 0.3s;
+  color: $yellow-color;
 
   @media screen and (min-width: $md) {
     margin-top: 3.35rem;
     font-size: 1.17rem;
+    color: $white-color;
   }
 
   @media screen and (min-width: $lg) {
