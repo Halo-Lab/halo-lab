@@ -2,6 +2,21 @@
 @import '@styles/mixins/all';
 
 .pageWrapper {
+  margin: 0 auto;
+  padding-top: 11.4rem;
+  padding-right: 15px;
+  padding-left: 15px;
+  max-width: 90rem;
+  font-family: $font-sofia-pro;
+
+  @media screen and (min-width: $md) {
+    padding-right: 4.28rem;
+    padding-left: 4.28rem;
+  }
+}
+
+// if all will be o.k., it can be removed
+.pageWrapperOld {
   font-family: $font-sofia-pro;
   padding-top: 11.4rem;
   padding-right: 4.28rem;
