@@ -8,17 +8,21 @@ const ProjectScene = ({ link, preview, reversed, review, tags, title }) => {
   return (
     <div className={`${styles.container} ${reversed ? styles.reversed : ''}`}>
       <div className={styles.preview}>
-        <a href={link}>
+        <a href={link} target="_blank" rel="noopener noreferrer">
           <Img fluid={preview.childImageSharp.fluid} />
         </a>
       </div>
       <div className={styles.description}>
         <div className={styles.tags}>{tags}</div>
         <div className={styles.title}>
-          <a href={link}>{title}</a>
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            {title}
+          </a>
         </div>
         <div className={styles.descriptionLink}>
-          <a href={link}>More info</a>
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            More info
+          </a>
         </div>
         <div className={styles.review}>
           <div className={styles.avatar}>

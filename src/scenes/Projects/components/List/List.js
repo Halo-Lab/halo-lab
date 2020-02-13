@@ -23,7 +23,8 @@ const List = () => {
   const items = [
     {
       id: 0,
-      link: '#',
+      link:
+        'https://www.behance.net/gallery/65940547/Primary-Smart-Bedding-Website',
       preview: preview1,
       tags: 'UX, UI, Illustrations, Icons',
       title: 'Reinvented bedding cutting price for 50%',
@@ -40,7 +41,8 @@ const List = () => {
     },
     {
       id: 1,
-      link: '#',
+      link:
+        'https://www.behance.net/gallery/66754531/Mobalytics-Game-Analytics-Platform-Website',
       preview: preview2,
       tags: 'Analytics, UX, UI, Icons, Front-end',
       title: 'Game Analytics wins TechCrunch Disrupt & Raise $2.6M',
@@ -58,7 +60,8 @@ const List = () => {
     },
     {
       id: 2,
-      link: '#',
+      link:
+        'https://www.behance.net/gallery/70303073/Glance-Clock-First-Smart-Clock',
       preview: preview3,
       tags: 'Analytics, UX, UI, Front-end',
       title: 'Indiegogo superstar smart clock which ease your life',
