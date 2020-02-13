@@ -17,12 +17,12 @@ const HomePage = () => {
       <div className="pageWrapper">
         <Hero />
         <WhatWeDo />
-        <ProjectsNew />
-        <Projects title="Projects" navigation={true} />
+        <ProjectsNew title="Projects" navigation={true} />
+        {/* <Projects title="Projects" navigation={true} /> */}
         <Testimonials />
       </div>
       <Gallery />
-      <div className="pageWrapper">
+      <div style={{ paddingTop: '0' }} className="pageWrapper">
         <Posts />
         <MailUs />
       </div>
