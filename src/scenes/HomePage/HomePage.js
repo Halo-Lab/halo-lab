@@ -20,7 +20,7 @@ const HomePage = () => {
         <Testimonials />
       </div>
       <Gallery />
-      <div style={{ paddingTop: '0' }} className="pageWrapper">
+      <div className="pageWrapper">
         <Posts />
         <MailUs />
       </div>

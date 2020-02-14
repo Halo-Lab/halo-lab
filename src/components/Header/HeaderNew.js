@@ -16,26 +16,28 @@ const Header = () => {
   const menuStatus = isOpened ? 'opened' : 'closed';
 
   return (
-    <div className={`${styles.container} pageWrapper`}>
-      <div className={styles.logotype}>
-        <Link to="/">
-          <img src={images['header-logo.svg'].url} alt="logotype" />
-        </Link>
-      </div>
+    <div className={styles.container}>
+      <div className={`${styles.bar} pageWrapper`}>
+        <div className={styles.logotype}>
+          <Link to="/">
+            <img src={images['header-logo.svg'].url} alt="logotype" />
+          </Link>
+        </div>
 
-      <div className={styles.email} data-status={menuStatus}>
-        <a href={`mailto:${metadata.email}`}>{metadata.email}</a>
-      </div>
+        <div className={styles.email} data-status={menuStatus}>
+          <a href={`mailto:${metadata.email}`}>{metadata.email}</a>
+        </div>
 
-      <div className={styles.menuBar}>
-        <button
-          type="button"
-          className={styles.menuButton}
-          onClick={handleTogglingIsOpened}
-        >
-          <span className={styles.menuIcon} data-status={menuStatus}></span>
-          <span className={styles.menuTitle}>Menu</span>
-        </button>
+        <div className={styles.menuBar}>
+          <button
+            type="button"
+            className={styles.menuButton}
+            onClick={handleTogglingIsOpened}
+          >
+            <span className={styles.menuIcon} data-status={menuStatus}></span>
+            <span className={styles.menuTitle}>Menu</span>
+          </button>
+        </div>
       </div>
     </div>
   );
