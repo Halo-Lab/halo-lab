@@ -14,7 +14,6 @@ const Footer = () => {
     'socials/instagram.svg',
     'socials/twitter.svg',
   ]);
-  console.log(images);
 
   const socials = [
     {

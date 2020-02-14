@@ -40,9 +40,9 @@ const ProjectScene = ({ link, preview, reversed, review, tags, title }) => {
 
 ProjectScene.propTypes = {
   link: PropTypes.string,
-  preview: PropTypes.string,
+  preview: PropTypes.object,
   reversed: PropTypes.bool,
-  review: PropTypes.string,
+  review: PropTypes.object,
   tags: PropTypes.string,
   title: PropTypes.string,
 };

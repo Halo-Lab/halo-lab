@@ -117,7 +117,7 @@ const Head = ({ children }) => {
       {/* <!-- Analytics --> */}
 
       {/* <!-- Hotjat --> */}
-      <script
+      {/* <script
         async=""
         src="https://static.hotjar.com/c/hotjar-1373557.js?sv=6"
       ></script>
@@ -125,7 +125,7 @@ const Head = ({ children }) => {
         async=""
         src="https://script.hotjar.com/modules.58256f2231d5f12d5589.js"
         charset="utf-8"
-      ></script>
+      ></script> */}
 
       {/* <!-- Google --> */}
       <meta
