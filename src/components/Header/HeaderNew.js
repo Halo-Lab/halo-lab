@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 import { MenuContext, GlobalContext } from '@contexts';
 import { useSiteMetadata } from '@hooks/queries';
+import MenuNew from './components/Menu/MenuNew';
 
 import styles from './Header.module.scss';
 
@@ -37,6 +38,8 @@ const Header = () => {
             <span className={styles.menuIcon} data-status={menuStatus}></span>
             <span className={styles.menuTitle}>Menu</span>
           </button>
+
+          {!isOpened ? <MenuNew /> : null}
         </div>
       </div>
     </div>

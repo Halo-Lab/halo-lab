@@ -5,7 +5,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 30;
+  box-sizing: border-box;
   width: 100%;
   padding: 2rem 0;
   background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021e 98%);

@@ -1,0 +1,118 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(black, 0.95);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  list-style-type: none;
+  margin: 5% 0 0 -8%;
+  padding: 0;
+  width: 50%;
+  height: 65%;
+
+  @media screen and (min-width: $md) {
+    margin-left: 0;
+    width: 60%;
+  }
+}
+
+.item {
+  &:nth-child(even) {
+    align-self: flex-end;
+  }
+
+  @media screen and (min-width: $md) {
+    &:nth-child(1) {
+      margin-left: 20%;
+    }
+
+    &:nth-child(4) {
+      margin-right: 20%;
+    }
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.image {
+  $size: 60px;
+
+  position: relative;
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  background-color: $main-color;
+
+  @media screen and (min-width: $md) {
+    &[data-number='1'] {
+      $size: 10.24rem;
+
+      width: $size;
+      height: $size;
+    }
+
+    &[data-number='2'] {
+      $size: 5.858rem;
+
+      width: $size;
+      height: $size;
+    }
+
+    &[data-number='3'] {
+      $size: 5.858rem;
+
+      width: $size;
+      height: $size;
+    }
+
+    &[data-number='4'] {
+      $size: 7.75rem;
+
+      width: $size;
+      height: $size;
+    }
+  }
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  font-size: 1.167rem;
+  font-weight: bold;
+  letter-spacing: 0.357em;
+  text-transform: uppercase;
+  color: #fafafa;
+
+  @media screen and (min-width: $md) {
+    font-size: 0.86rem;
+    letter-spacing: 0.67em;
+  }
+
+  @media screen and (min-with: $xxl) {
+    font-size: 0.96rem;
+  }
+}
