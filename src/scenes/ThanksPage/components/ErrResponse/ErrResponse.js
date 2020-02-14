@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import { useSiteMetadata } from '@hooks/queries';
 
-import styles from './Title.module.scss';
+import styles from './ErrResponse.module.scss';
 
 const Title = () => {
   const metadata = useSiteMetadata();

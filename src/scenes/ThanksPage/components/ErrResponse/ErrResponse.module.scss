@@ -1,0 +1,75 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 116px);
+  text-align: center;
+}
+
+.title {
+  font-family: $font-ratiomodern;
+  font-size: 3.57rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.8em;
+}
+
+.description {
+  max-width: 54rem;
+  margin: 0;
+  font-family: $font-sofia-pro;
+  font-size: 1.42rem;
+  font-weight: 300;
+  line-height: 1.5;
+
+  &:first-of-type {
+    margin-bottom: 1.5em;
+  }
+
+  &:last-of-type {
+    margin-bottom: 3.1em;
+  }
+}
+
+.link {
+  color: $white-color;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    color: $main-color;
+  }
+}
+
+.button {
+  font-family: $font-sofia-pro;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.43rem;
+  padding: 1rem;
+  text-indent: 0.3rem;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 60px;
+  background-color: $main-color;
+  border: none;
+  min-width: 300px;
+  letter-spacing: 10px;
+
+  &:hover {
+    background: #5d59e8;
+    border-color: #2a2a33;
+  }
+}

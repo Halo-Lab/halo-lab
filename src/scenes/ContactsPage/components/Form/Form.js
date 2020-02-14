@@ -62,20 +62,27 @@ const Form = () => {
     };
 
     // const urlHalo = 'http://api.halo-lab.com/wp-json/contact-form-7/v1/contact-forms/288/feedback';
+
     const url = 'https://getform.io/f/2812474b-d85f-48db-ad59-fcaf9e8a4920';
+    // const url = 'https://getform.io/f/2812474b-d85f-48db-ad59-fcaf9e8a4920';
 
     valid &&
       fetch(url, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
-          'Content-Type': 'application/json',
+          'Content-Type': 'multipart/form-data',
         },
         body: JSON.stringify(formData),
       })
         .then(response => {
+          console.log(response);
           if (response.ok) {
-            navigate('/thanks');
+            navigate('/thanks', {
+              state: {
+                status: response.status,
+              },
+            });
           } else {
             // eslint-disable-next-line no-console
             console.log('Server responded with an error!', response);
@@ -83,7 +90,7 @@ const Form = () => {
         })
         .catch(response => {
           // eslint-disable-next-line no-console
-          console.log('Error: ', response);
+          console.log('Error: No internet connection.', response);
         });
   };
 
