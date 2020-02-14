@@ -55,21 +55,3 @@
   }
 }
 // <-- end
-
-.menu--open {
-  overflow: hidden;
-}
-
-.hiddenable,
-.menu {
-  transition: opacity 0.2s;
-}
-
-.menu--open .hiddenable {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.main-header .menu {
-  opacity: 0;
-}
