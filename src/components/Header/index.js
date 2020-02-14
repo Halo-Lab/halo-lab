@@ -1,4 +1,3 @@
-// import Header from './Header';
-import Header from './HeaderNew';
+import Header from './Header';
 
 export default Header;
