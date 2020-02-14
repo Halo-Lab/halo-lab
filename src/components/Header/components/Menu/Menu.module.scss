@@ -12,8 +12,6 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-
-  background-color: rgba(black, 0.95);
 }
 
 .list {
@@ -34,6 +32,10 @@
 }
 
 .item {
+  position: relative;
+  opacity: 0;
+  animation: appearance 0.5s forwards;
+
   &:nth-child(even) {
     align-self: flex-end;
   }
@@ -50,49 +52,125 @@
 }
 
 .link {
+  position: relative;
   display: flex;
   align-items: center;
   text-decoration: none;
   color: inherit;
+
+  &.active {
+    .circle {
+      background-color: $grey-color;
+    }
+  }
+
+  @media screen and (min-width: $lg) {
+    &:hover {
+      [data-circle='1'] {
+        transform: scale(1.94);
+      }
+
+      [data-circle='2'],
+      [data-circle='3'] {
+        transform: scale(3.4);
+      }
+
+      [data-circle='4'] {
+        transform: scale(2.564);
+      }
+
+      .stars {
+        opacity: 1;
+        z-index: 1;
+        transform: translate(-50%, -50%) rotate(-20deg);
+        transition-delay: 0.2s;
+      }
+
+      .icon {
+        opacity: 1;
+        z-index: 1;
+        transition-delay: 0.2s;
+      }
+    }
+  }
 }
 
-.image {
+.circle {
   $size: 60px;
 
-  position: relative;
   border-radius: 50%;
   width: $size;
   height: $size;
   background-color: $main-color;
+  transition: transform 0.5s;
 
   @media screen and (min-width: $md) {
-    &[data-number='1'] {
+    &[data-circle='1'] {
       $size: 10.24rem;
 
       width: $size;
       height: $size;
     }
 
-    &[data-number='2'] {
+    &[data-circle='2'],
+    &[data-circle='3'] {
       $size: 5.858rem;
 
       width: $size;
       height: $size;
     }
 
-    &[data-number='3'] {
-      $size: 5.858rem;
-
-      width: $size;
-      height: $size;
-    }
-
-    &[data-number='4'] {
+    &[data-circle='4'] {
       $size: 7.75rem;
 
       width: $size;
       height: $size;
     }
+  }
+}
+
+.stars {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 19.86rem;
+  height: 19.86rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform-origin: center;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transition: opacity 0.3s, transform 0.4s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: opacity 0.5s;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+
+  &[data-icon='1'] {
+    width: 11.33rem;
+    height: 11.33rem;
+  }
+
+  &[data-icon='2'],
+  &[data-icon='3'] {
+    width: 13.17rem;
+    height: 11.83rem;
+  }
+
+  &[data-icon='4'] {
+    width: 9.75rem;
+    height: 12.08rem;
   }
 }
 
@@ -114,5 +192,17 @@
 
   @media screen and (min-with: $xxl) {
     font-size: 0.96rem;
+  }
+}
+
+@keyframes appearance {
+  from {
+    top: 50px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
   }
 }

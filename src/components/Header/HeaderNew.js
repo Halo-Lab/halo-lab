@@ -29,6 +29,8 @@ const Header = () => {
           <a href={`mailto:${metadata.email}`}>{metadata.email}</a>
         </div>
 
+        {isOpened ? <MenuNew /> : null}
+
         <div className={styles.menuBar}>
           <button
             type="button"
@@ -38,8 +40,6 @@ const Header = () => {
             <span className={styles.menuIcon} data-status={menuStatus}></span>
             <span className={styles.menuTitle}>Menu</span>
           </button>
-
-          {!isOpened ? <MenuNew /> : null}
         </div>
       </div>
     </div>

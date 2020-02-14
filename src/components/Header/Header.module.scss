@@ -23,6 +23,8 @@
 }
 
 .logotype {
+  position: relative;
+  z-index: 50;
   margin-right: auto;
 
   a {
@@ -81,6 +83,8 @@
 }
 
 .menuBar {
+  position: relative;
+  z-index: 50;
   margin-left: 2.86rem;
 }
 
