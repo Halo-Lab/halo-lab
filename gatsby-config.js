@@ -34,13 +34,28 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Halo-Lab Blog`,
+        short_name: `Halo-Lab`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        background_color: `#02021e`,
+        theme_color: `#02021e`,
+        display: `standalone`,
         icon: `src/images/meta/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [
+          `/`,
+          `/portfolio/`,
+          `/services/`,
+          `/blog/`,
+          // `/blog/*`,
+          `/contacts/`,
+          `/thanks/`,
+          `/404/`,
+        ],
       },
     },
     {
