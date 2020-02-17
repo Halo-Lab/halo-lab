@@ -1,8 +1,6 @@
 import React from 'react';
 
 import Providers from '@components/Providers';
-import TestComponent from '@components/TestComponent';
-// import Ticker from '@components/Ticker';
 
 const Test = () => {
   const items = [
@@ -20,10 +18,6 @@ const Test = () => {
     <Providers>
       <div>
         <div>Test</div>
-        {/* <div style={{ maxWidth: '450px', margin: '0 auto' }}> */}
-        {/* <Ticker items={items} /> */}
-        {/* </div> */}
-        <TestComponent />
       </div>
     </Providers>
   );
