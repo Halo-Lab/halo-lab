@@ -1,0 +1,18 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  &:not(:first-child) {
+    margin-top: 6.67rem;
+
+    @media screen and (min-width: $md) {
+      margin-top: 8.57rem;
+    }
+  }
+}
