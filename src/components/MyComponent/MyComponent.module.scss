@@ -1,0 +1,39 @@
+.wrapper {
+  margin: 0 auto;
+  height: 50px;
+  max-width: 200px;
+  overflow: scroll;
+}
+
+.container {
+  position: relative;
+  background-color: maroon;
+  height: 120px;
+}
+
+.left,
+.right {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: 30%;
+  height: 100%;
+  background-color: skyblue;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.animated {
+  will-change: transform;
+}
+
+.area {
+  height: 50px;
+  background-color: skyblue;
+}

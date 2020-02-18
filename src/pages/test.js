@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Providers from '@components/Providers';
+import Chain from '@components/MyComponent/Chain';
+import Configs from '@components/MyComponent/Configs';
 
 const Test = () => {
   const items = [
@@ -18,6 +20,8 @@ const Test = () => {
     <Providers>
       <div>
         <div>Test</div>
+        <Chain />
+        <Configs />
       </div>
     </Providers>
   );
