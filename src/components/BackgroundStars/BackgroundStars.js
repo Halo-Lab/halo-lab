@@ -7,8 +7,10 @@ import { GlobalContext, MenuContext } from '@contexts';
 import styles from './BackgroundStars.module.scss';
 
 const myConfig = { mass: 1, tension: 280, friction: 40 };
+
 const iTranslateBig = y => `translate3d(0, ${y}%, 0)`;
 const iTranslateSmall = y => `translate3d(0, ${y / 1.5}%, 0)`;
+const iScale = value => `scale(${value})`;
 
 const BackgroundStars = () => {
   const { imagesAPI } = useContext(GlobalContext);
@@ -23,11 +25,13 @@ const BackgroundStars = () => {
     from: { y: 0 },
     config: myConfig,
   }));
-
   const hiddenStarsProps = useSpring({
     opacity: isOpened ? 1 : 0,
     scale: isOpened ? 1.4 : 0.8,
     config: myConfig,
+  });
+  const containerProps = useSpring({
+    scale: isOpened ? 1.2 : 1,
   });
 
   let scrollPercentage = null;
@@ -48,14 +52,17 @@ const BackgroundStars = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <a.div
+      className={styles.container}
+      style={{
+        transform: containerProps.scale.interpolate(iScale),
+      }}
+    >
       <a.div
         className={styles.hiddenStars}
         style={{
           opacity: hiddenStarsProps.opacity,
-          transform: hiddenStarsProps.scale.interpolate(
-            value => `scale(${value})`
-          ),
+          transform: hiddenStarsProps.scale.interpolate(iScale),
           backgroundImage: `url(${images['backgrounds/small-stars.svg'].url})`,
         }}
       />
@@ -81,7 +88,7 @@ const BackgroundStars = () => {
           }}
         />
       </a.div>
-    </div>
+    </a.div>
   );
 };
 
