@@ -2,25 +2,33 @@ import React, { useEffect, useContext } from 'react';
 import { useSpring, animated as a } from 'react-spring';
 import PropTypes from 'prop-types';
 
-import { GlobalContext } from '@contexts';
+import { GlobalContext, MenuContext } from '@contexts';
 
 import styles from './BackgroundStars.module.scss';
 
+const myConfig = { mass: 1, tension: 280, friction: 40 };
 const iTranslateBig = y => `translate3d(0, ${y}%, 0)`;
 const iTranslateSmall = y => `translate3d(0, ${y / 1.5}%, 0)`;
 
 const BackgroundStars = () => {
   const { imagesAPI } = useContext(GlobalContext);
+  const { isOpened } = useContext(MenuContext);
 
   const images = imagesAPI.get([
     'backgrounds/big-stars.svg',
     'backgrounds/small-stars.svg',
   ]);
 
-  const [props, set] = useSpring(() => ({
+  const [layerProps, set] = useSpring(() => ({
     from: { y: 0 },
-    config: { mass: 1, tension: 280, friction: 40 },
+    config: myConfig,
   }));
+
+  const hiddenStarsProps = useSpring({
+    opacity: isOpened ? 1 : 0,
+    scale: isOpened ? 1.4 : 0.8,
+    config: myConfig,
+  });
 
   let scrollPercentage = null;
 
@@ -42,8 +50,18 @@ const BackgroundStars = () => {
   return (
     <div className={styles.container}>
       <a.div
+        className={styles.hiddenStars}
+        style={{
+          opacity: hiddenStarsProps.opacity,
+          transform: hiddenStarsProps.scale.interpolate(
+            value => `scale(${value})`
+          ),
+          backgroundImage: `url(${images['backgrounds/small-stars.svg'].url})`,
+        }}
+      />
+      <a.div
         className={styles.wrapper}
-        style={{ transform: props.y.interpolate(iTranslateBig) }}
+        style={{ transform: layerProps.y.interpolate(iTranslateBig) }}
       >
         <a.div
           className={styles.layer}
@@ -54,7 +72,7 @@ const BackgroundStars = () => {
       </a.div>
       <a.div
         className={styles.wrapper}
-        style={{ transform: props.y.interpolate(iTranslateSmall) }}
+        style={{ transform: layerProps.y.interpolate(iTranslateSmall) }}
       >
         <a.div
           className={styles.layer}
