@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react';
-import { useSpring, animated as a, config } from 'react-spring';
+import { useSpring, animated as a } from 'react-spring';
+import PropTypes from 'prop-types';
 
 import { GlobalContext } from '@contexts';
 
@@ -64,6 +65,10 @@ const BackgroundStars = () => {
       </a.div>
     </div>
   );
+};
+
+BackgroundStars.propTypes = {
+  y: PropTypes.any,
 };
 
 export default BackgroundStars;
