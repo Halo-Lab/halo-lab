@@ -1,47 +1,23 @@
-$step: 33.3333%;
-
 .container {
   position: relative;
-  overflow-x: hidden;
+  height: 100px;
+  background-color: skyblue;
 }
 
-.list {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  transition-property: transform;
-  transition-timing-function: linear;
-  will-change: transform;
-}
-
-.item {
-  flex: 1 0 33.3333%;
-  box-sizing: border-box;
-  border: 1px solid grey;
-}
-
-.slide {
-  $size: 50px;
-  height: $size;
-  line-height: $size;
-  text-align: center;
-}
-
-.fieldLeft,
-.fieldRight {
+.asideLeft,
+.asideRight {
   position: absolute;
   top: 0;
+  width: 30%;
+  height: 100%;
   z-index: 10;
-  width: 25%;
-  background-color: red;
-  cursor: pointer;
+  background-color: rgba(black, 0.25);
 }
 
-.fieldLeft {
+.asideLeft {
   left: 0;
 }
 
-.fieldRight {
+.asideRight {
   right: 0;
 }

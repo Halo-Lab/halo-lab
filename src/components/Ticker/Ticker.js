@@ -1,147 +1,84 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
+import { useSpring, animated as a, config } from 'react-spring';
 import PropTypes from 'prop-types';
 
 import styles from './Ticker.module.scss';
 
-const interval = 100;
-let intervalId = null;
+const STEP = 2.5;
+const TIME = 1;
 
-const Ticker = ({ items }) => {
-  const list = useRef(null);
-  const offset = useRef(null);
-  const pseudoItems = [...items, ...items, ...items];
+const iTranslate = value => `translate3d(${value}px, 0, 0)`;
 
-  useEffect(() => {
-    const startPoint = getStartPoint();
+const Ticker = () => {
+  const isRunning = useRef(false);
 
-    offset.current = startPoint;
+  // animation configs -->
 
-    requestedAnimate({
-      duration: 0,
+  const [props, set] = useSpring(() => ({
+    x: 0,
+    config: { duration: TIME, precision: 0 },
+  }));
+
+  // handlers -->
+
+  const go = ({ target }) => {
+    isRunning.current = true;
+
+    const direction = target.getAttribute('data-direction');
+    const offset = direction === 'forward' ? STEP : -STEP;
+
+    set((...attrs) => {
+      const [, controller] = attrs;
+
+      return {
+        to: async next => {
+          await next({
+            x: (controller.props.to || controller.props.from).x + offset,
+          });
+
+          while (isRunning.current) {
+            const x = controller.props.to.x + offset;
+
+            if (x >= 500) {
+              await next({ x: 0, immediate: true });
+            } else if (x <= -10) {
+              await next({ x: 490, immediate: true });
+            } else {
+              await next({ x: x, immediate: false });
+            }
+          }
+
+          await next({
+            x: controller.props.to.x + offset,
+          });
+        },
+      };
     });
-  }, []);
-
-  const getStartPoint = (stepOver = 0) => {
-    const fullWidth = list.current.scrollWidth;
-    // return -(fullWidth / 3 + stepOver);
-    return -(fullWidth / 3);
   };
 
-  const getEndPoint = (stepOver = 0) => {
-    const fullWidth = list.current.scrollWidth;
-    const visibleWidth = list.current.offsetWidth;
-    // return -(fullWidth / 3 + fullWidth / 3 - visibleWidth - stepOver);
-    return -(fullWidth / 3 + fullWidth / 3 - visibleWidth);
-  };
-
-  const getBoundaries = () => {
-    const fullWidth = list.current.scrollWidth;
-    const visibleWidth = list.current.offsetWidth;
-    const listLength = fullWidth / 3;
-    const boundaryLeft = -(listLength - visibleWidth);
-    const boundaryRight = -(listLength + listLength);
-
-    return { left: boundaryLeft, right: boundaryRight };
-  };
-
-  const getStepOver = offset => {
-    const boundaries = getBoundaries();
-    const stepOverLeft = offset - boundaries.left;
-    const stepOverRight = boundaries.right - offset;
-
-    if (stepOverLeft > 0) {
-      return getEndPoint(stepOverLeft);
-    }
-
-    if (stepOverRight > 0) {
-      return getStartPoint(stepOverRight);
-    }
-  };
-
-  const requestedAnimate = ({ duration = interval, animation = '' } = {}) => {
-    // console.log('current', offset.current);
-
-    const animate = () => {
-      list.current.style.transform = `translate3d(${offset.current}px, 0px, 0px)`;
-      list.current.style.transitionDuration = `${duration}ms`;
-      list.current.style.transitionTimingFunction = animation;
-
-      window.requestAnimationFrame(animate);
-    };
-
-    window.requestAnimationFrame(animate);
-  };
-
-  const onMouseEnter = ({ target }) => {
-    const name = target.getAttribute('data-name');
-    let step = name === 'right' ? -25 : 25;
-
-    offset.current += step * 0.5;
-
-    const stepOver = getStepOver(offset.current);
-
-    if (stepOver) {
-      offset.current = stepOver;
-
-      requestedAnimate({
-        duration: 0,
-      });
-    } else {
-      requestedAnimate({
-        // duration: 200,
-        animation: 'ease-in',
-      });
-    }
-
-    intervalId = setInterval(() => {
-      offset.current += step;
-
-      const stepOver = getStepOver(offset.current);
-
-      if (stepOver) {
-        offset.current = stepOver;
-
-        requestedAnimate({
-          duration: 0,
-        });
-      } else {
-        requestedAnimate();
-      }
-    }, interval);
-  };
-
-  const onMouseLeave = ({ target }) => {
-    const name = target.getAttribute('data-name');
-
-    clearInterval(intervalId);
+  const stop = () => {
+    isRunning.current = false;
   };
 
   return (
-    <div className={styles.container}>
-      <ul ref={list} className={styles.list}>
-        {pseudoItems.map(({ title }, index) => {
-          return (
-            <li key={index} className={styles.item}>
-              <div className={styles.slide}>{title}</div>
-            </li>
-          );
-        })}
-      </ul>
-      <div
-        data-name="left"
-        className={styles.fieldLeft}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-      >
-        Left
-      </div>
-      <div
-        data-name="right"
-        className={styles.fieldRight}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-      >
-        Right
+    <div>
+      <div>Ticker</div>
+      <a.div style={{ transform: props.x.interpolate(iTranslate) }}>
+        Hello, world!
+      </a.div>
+      <div className={styles.container}>
+        <div
+          data-direction="back"
+          className={styles.asideLeft}
+          onMouseEnter={go}
+          onMouseLeave={stop}
+        />
+        <div
+          data-direction="forward"
+          className={styles.asideRight}
+          onMouseEnter={go}
+          onMouseLeave={stop}
+        />
       </div>
     </div>
   );
@@ -149,6 +86,7 @@ const Ticker = ({ items }) => {
 
 Ticker.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
+  x: PropTypes.any,
 };
 
 export default Ticker;
