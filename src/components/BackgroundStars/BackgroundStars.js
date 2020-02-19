@@ -31,7 +31,7 @@ const BackgroundStars = () => {
     config: myConfig,
   });
   const containerProps = useSpring({
-    scale: isOpened ? 1.2 : 1,
+    scale: isOpened ? 1.4 : 1,
   });
 
   let scrollPercentage = null;
