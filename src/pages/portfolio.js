@@ -3,7 +3,7 @@ import React from 'react';
 import Providers from '@components/Providers';
 import Layout from '@components/Layout';
 import Head from '@components/Head';
-import BackgroundStars from '@scenes/BackgroundStars';
+import BackgroundStars from '@components/BackgroundStars';
 import PortfolioPage from '@scenes/PortfolioPage';
 
 const Portfolio = () => {
