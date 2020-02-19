@@ -25,6 +25,10 @@ Download all necessary dependencies:
 npm install
 ```
 
+> **Note**
+>
+> You also need `.env` file to start project. You can get it from [Sergey Diniovksiy](https://github.com/lazio), [Eugene Byrlad](https://github.com/eugene-halolab) or [Mikhail Netkachev](https://github.com/mikhailnetkachev-halolab).
+
 ## Development
 
 Start server, watch changes and update build in development mode:
