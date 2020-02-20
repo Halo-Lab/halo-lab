@@ -1,4 +1,5 @@
 import useDribbbleShots from './useDribbbleShots';
+import useGalleryImages from './useGalleryImages';
 import useProjectImages from './useProjectImages';
 import useStaticImages from './useStaticImages';
 import useSiteMetadata from './useSiteMetadata';
@@ -7,6 +8,7 @@ import useWordpressPosts from './useWordpressPosts';
 
 export {
   useDribbbleShots,
+  useGalleryImages,
   useProjectImages,
   useStaticImages,
   useSiteMetadata,

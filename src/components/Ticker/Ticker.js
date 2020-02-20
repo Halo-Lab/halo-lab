@@ -17,6 +17,8 @@ const Ticker = ({ images }) => {
 
   const items = [...images, ...images, ...images]; // NUMBER_OF_LISTS
 
+  // metrics calculation
+
   let fullWidth = null;
   let visibleWidth = null;
   let listWidth = null;
@@ -38,7 +40,7 @@ const Ticker = ({ images }) => {
     set({ x: startPosition });
   }, []);
 
-  // animation configs -->
+  // animation initialize -->
 
   const [props, set] = useSpring(() => ({
     x: 0,
@@ -94,22 +96,24 @@ const Ticker = ({ images }) => {
         style={{ transform: props.x.interpolate(iTranslate) }}
         className={styles.list}
       >
-        {items.map(({ title }, index) => {
+        {items.map(({ url, name }, index) => {
           return (
             <li key={index} className={styles.item}>
-              <div className={styles.card}>{title}</div>
+              <div className={styles.card}>
+                <img src={url} alt={name} draggable="false" />
+              </div>
             </li>
           );
         })}
       </a.ul>
       <div
-        data-direction="back"
+        data-direction="forward"
         className={styles.asideLeft}
         onMouseEnter={go}
         onMouseLeave={stop}
       />
       <div
-        data-direction="forward"
+        data-direction="back"
         className={styles.asideRight}
         onMouseEnter={go}
         onMouseLeave={stop}

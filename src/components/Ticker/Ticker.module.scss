@@ -1,8 +1,6 @@
 .container {
   overflow: hidden;
   position: relative;
-  height: 100px;
-  background-color: skyblue;
 }
 
 .list {
@@ -18,8 +16,23 @@
 }
 
 .card {
+  height: 100%;
   box-sizing: border-box;
-  border: 2px solid grey;
+  padding: 0 20px;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .asideLeft,

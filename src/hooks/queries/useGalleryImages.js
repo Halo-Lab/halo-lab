@@ -21,7 +21,18 @@ const useGalleryImages = () => {
     }
   `);
 
-  return data;
+  const result = data.allFile.edges.map(
+    ({ node: { name, ext, publicURL, relativePath } }) => {
+      return {
+        name,
+        ext,
+        url: publicURL,
+        path: relativePath,
+      };
+    }
+  );
+
+  return result;
 };
 
 export default useGalleryImages;
