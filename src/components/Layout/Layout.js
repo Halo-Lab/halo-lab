@@ -21,9 +21,9 @@ const Layout = ({ children }) => {
         </Helmet>
       ) : null}
       <div className={styles.container}>
-        <div className={styles.header}>
+        <header className={styles.header}>
           <Header />
-        </div>
+        </header>
         <main className={`${styles.main} ${styles.hidden}`}>{children}</main>
         <footer className={`${styles.footer} ${styles.hidden}`}>
           <Footer />
