@@ -8,11 +8,11 @@
   z-index: 30;
   box-sizing: border-box;
   width: 100%;
-  padding: 2rem 0;
+  padding: 2rem 0 1rem;
   background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021e 98%);
 
   @media screen and (min-width: $md) {
-    padding: 2.5rem 0;
+    padding: 2.5rem 0 1rem;
   }
 }
 
