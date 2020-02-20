@@ -4,7 +4,7 @@ export const projectsImage = graphql`
   fragment projectsImage on File {
     childImageSharp {
       fluid(maxWidth: 950, quality: 100) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
@@ -14,7 +14,7 @@ export const projectsAvatar = graphql`
   fragment projectsAvatar on File {
     childImageSharp {
       fluid(maxWidth: 80, quality: 100) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }

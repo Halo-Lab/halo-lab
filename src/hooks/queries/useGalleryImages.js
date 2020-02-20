@@ -4,7 +4,7 @@ export const homeGalleryImage = graphql`
   fragment homeGalleryImage on File {
     childImageSharp {
       fluid(maxWidth: 500, quality: 100) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
