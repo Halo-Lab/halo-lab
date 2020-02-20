@@ -1,5 +1,15 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
+export const homeGalleryImage = graphql`
+  fragment homeGalleryImage on File {
+    childImageSharp {
+      fluid(maxWidth: 500, quality: 100) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`;
+
 const useGalleryImages = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -11,26 +21,18 @@ const useGalleryImages = () => {
       ) {
         edges {
           node {
-            name
-            ext
-            publicURL
-            relativePath
+            ...homeGalleryImage
           }
         }
       }
     }
   `);
 
-  const result = data.allFile.edges.map(
-    ({ node: { name, ext, publicURL, relativePath } }) => {
-      return {
-        name,
-        ext,
-        url: publicURL,
-        path: relativePath,
-      };
-    }
-  );
+  const result = data.allFile.edges.map(({ node: { childImageSharp } }) => {
+    return {
+      childImageSharp,
+    };
+  });
 
   return result;
 };

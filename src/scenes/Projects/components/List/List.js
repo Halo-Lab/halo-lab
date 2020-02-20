@@ -9,7 +9,6 @@ import ProjectScene from './components/ProjectScene';
 import styles from './List.module.scss';
 
 const List = () => {
-  const { preview1, preview2, preview3, avatar1 } = useProjectImages();
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get([
     'partners/forbes.svg',
@@ -19,6 +18,14 @@ const List = () => {
     'partners/vc.ru.svg',
     'partners/angellist.svg',
   ]);
+  const {
+    preview1,
+    preview2,
+    preview3,
+    avatar1,
+    avatar2,
+    avatar3,
+  } = useProjectImages();
 
   const items = [
     {
@@ -47,7 +54,7 @@ const List = () => {
       tags: 'Analytics, UX, UI, Icons, Front-end',
       title: 'Game Analytics wins TechCrunch Disrupt & Raise $2.6M',
       review: {
-        avatar: avatar1,
+        avatar: avatar2,
         author: 'Bogdan Suchyk, CEO',
         text: 'Awesome guys!',
       },
@@ -66,7 +73,7 @@ const List = () => {
       tags: 'Analytics, UX, UI, Front-end',
       title: 'Indiegogo superstar smart clock which ease your life',
       review: {
-        avatar: avatar1,
+        avatar: avatar3,
         author: 'Jon-Paul Wheatley, CPO',
         text: 'Highly recommend!',
       },

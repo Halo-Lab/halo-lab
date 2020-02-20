@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { useSpring, animated as a } from 'react-spring';
+import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 import styles from './Ticker.module.scss';
@@ -96,11 +97,12 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
         style={{ transform: props.x.interpolate(iTranslate) }}
         className={styles.list}
       >
-        {items.map(({ url, name }, index) => {
+        {items.map(({ childImageSharp }, index) => {
           return (
             <li key={index} className={styles.item}>
               <div className={styles.card}>
-                <img src={url} alt={name} draggable="false" />
+                {/* <img src={url} alt={name} draggable="false" /> */}
+                <Img fluid={childImageSharp.fluid} draggable={false} />
               </div>
             </li>
           );

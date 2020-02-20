@@ -5,6 +5,7 @@
 
 .list {
   display: flex;
+  align-items: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -16,23 +17,24 @@
 }
 
 .card {
-  height: 100%;
+  position: relative;
   box-sizing: border-box;
   padding: 0 20px;
+  // height: 100%;
 
-  &:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-  }
+  // &:before {
+  //   content: '';
+  //   display: inline-block;
+  //   height: 100%;
+  //   vertical-align: middle;
+  // }
 
-  img {
-    display: inline-block;
-    vertical-align: middle;
-    width: 100%;
-    height: auto;
-  }
+  // img {
+  //   display: inline-block;
+  //   vertical-align: middle;
+  //   width: 100%;
+  //   height: auto;
+  // }
 }
 
 .asideLeft,

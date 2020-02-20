@@ -57,8 +57,8 @@ const Gallery = () => {
           />
         ) : (
           <Slider settings={settings}>
-            {galleryImages.map(item => {
-              return <Item key={item.name} {...item} />;
+            {galleryImages.map((item, index) => {
+              return <Item key={index} data-name={index} {...item} />;
             })}
           </Slider>
         )}
