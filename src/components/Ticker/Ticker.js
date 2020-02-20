@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { useSpring, animated as a, config } from 'react-spring';
+import { useSpring, animated as a } from 'react-spring';
 import PropTypes from 'prop-types';
 
 import styles from './Ticker.module.scss';
@@ -10,7 +10,7 @@ const NUMBER_OF_LISTS = 3;
 
 const iTranslate = value => `translate3d(${value}px, 0, 0)`;
 
-const Ticker = ({ images }) => {
+const Ticker = ({ images, leftArrow, rightArrow }) => {
   const isRunning = useRef(false);
   const container = useRef(null);
   const list = useRef(null);
@@ -108,12 +108,14 @@ const Ticker = ({ images }) => {
       </a.ul>
       <div
         data-direction="forward"
+        style={{ cursor: `url('${leftArrow.url}'), auto` }}
         className={styles.asideLeft}
         onMouseEnter={go}
         onMouseLeave={stop}
       />
       <div
         data-direction="back"
+        style={{ cursor: `url('${rightArrow.url}'), auto` }}
         className={styles.asideRight}
         onMouseEnter={go}
         onMouseLeave={stop}
@@ -124,6 +126,8 @@ const Ticker = ({ images }) => {
 
 Ticker.propTypes = {
   images: PropTypes.arrayOf(PropTypes.object),
+  leftArrow: PropTypes.object,
+  rightArrow: PropTypes.object,
   x: PropTypes.any,
 };
 

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
+import { GlobalContext } from '@contexts';
 import { useGetBreakpoint } from '@hooks';
 import { useGalleryImages } from '@hooks/queries';
 import Slider from '@components/Slider';
@@ -9,8 +10,18 @@ import Item from './components/Item';
 import styles from './Gallery.module.scss';
 
 const Gallery = () => {
-  const { breakpoint } = useGetBreakpoint();
-  const images = useGalleryImages();
+  const { breakpoint, width } = useGetBreakpoint();
+  const [buildKey, setBuildKey] = useState(null);
+  const { imagesAPI } = useContext(GlobalContext);
+  const icons = imagesAPI.get([
+    'gallery/left-arrow.png',
+    'gallery/right-arrow.png',
+  ]);
+  const galleryImages = useGalleryImages();
+
+  useEffect(() => {
+    setBuildKey(+new Date());
+  }, [width]);
 
   const settings = {
     arrows: false,
@@ -38,10 +49,15 @@ const Gallery = () => {
       <h2 className={styles.title}>We are live</h2>
       <div className={styles.sliderWrapper}>
         {breakpoint === 'desktop' ? (
-          <Ticker images={images} />
+          <Ticker
+            key={buildKey}
+            images={galleryImages}
+            leftArrow={icons['gallery/left-arrow.png']}
+            rightArrow={icons['gallery/right-arrow.png']}
+          />
         ) : (
           <Slider settings={settings}>
-            {images.map(item => {
+            {galleryImages.map(item => {
               return <Item key={item.name} {...item} />;
             })}
           </Slider>
