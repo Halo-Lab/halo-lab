@@ -7,9 +7,11 @@ import Flow from './components/Flow';
 import Industries from './components/Industries';
 import Technologies from './components/Technologies';
 
+import styles from './ServicesPage.module.scss';
+
 const ServicesPage = () => {
   return (
-    <div className="pageWrapper">
+    <div className={`${styles.container} pageWrapper`}>
       <Design />
       <Development />
       <Flow />
