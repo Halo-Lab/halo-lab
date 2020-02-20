@@ -1,16 +1,42 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useSpring, animated as a, config } from 'react-spring';
 import PropTypes from 'prop-types';
 
 import styles from './Ticker.module.scss';
 
-const STEP = 2.5;
+const STEP = 5;
 const TIME = 1;
+const NUMBER_OF_LISTS = 3;
 
 const iTranslate = value => `translate3d(${value}px, 0, 0)`;
 
-const Ticker = () => {
+const Ticker = ({ images }) => {
   const isRunning = useRef(false);
+  const container = useRef(null);
+  const list = useRef(null);
+
+  const items = [...images, ...images, ...images]; // NUMBER_OF_LISTS
+
+  let fullWidth = null;
+  let visibleWidth = null;
+  let listWidth = null;
+  let startPosition = null;
+  let endPosition = null;
+  let leftBorder = null;
+  let rightBorder = null;
+
+  useEffect(() => {
+    fullWidth = list.current.scrollWidth;
+    listWidth = fullWidth / NUMBER_OF_LISTS;
+    visibleWidth = container.current.offsetWidth;
+
+    startPosition = -listWidth;
+    endPosition = -listWidth - listWidth + visibleWidth;
+    leftBorder = -listWidth + visibleWidth;
+    rightBorder = -listWidth - listWidth;
+
+    set({ x: startPosition });
+  }, []);
 
   // animation configs -->
 
@@ -34,15 +60,16 @@ const Ticker = () => {
         to: async next => {
           await next({
             x: (controller.props.to || controller.props.from).x + offset,
+            immediate: false,
           });
 
           while (isRunning.current) {
             const x = controller.props.to.x + offset;
 
-            if (x >= 500) {
-              await next({ x: 0, immediate: true });
-            } else if (x <= -10) {
-              await next({ x: 490, immediate: true });
+            if (x >= leftBorder) {
+              await next({ x: endPosition, immediate: true });
+            } else if (x <= rightBorder) {
+              await next({ x: startPosition, immediate: true });
             } else {
               await next({ x: x, immediate: false });
             }
@@ -61,31 +88,38 @@ const Ticker = () => {
   };
 
   return (
-    <div>
-      <div>Ticker</div>
-      <a.div style={{ transform: props.x.interpolate(iTranslate) }}>
-        Hello, world!
-      </a.div>
-      <div className={styles.container}>
-        <div
-          data-direction="back"
-          className={styles.asideLeft}
-          onMouseEnter={go}
-          onMouseLeave={stop}
-        />
-        <div
-          data-direction="forward"
-          className={styles.asideRight}
-          onMouseEnter={go}
-          onMouseLeave={stop}
-        />
-      </div>
+    <div ref={container} className={styles.container}>
+      <a.ul
+        ref={list}
+        style={{ transform: props.x.interpolate(iTranslate) }}
+        className={styles.list}
+      >
+        {items.map(({ title }, index) => {
+          return (
+            <li key={index} className={styles.item}>
+              <div className={styles.card}>{title}</div>
+            </li>
+          );
+        })}
+      </a.ul>
+      <div
+        data-direction="back"
+        className={styles.asideLeft}
+        onMouseEnter={go}
+        onMouseLeave={stop}
+      />
+      <div
+        data-direction="forward"
+        className={styles.asideRight}
+        onMouseEnter={go}
+        onMouseLeave={stop}
+      />
     </div>
   );
 };
 
 Ticker.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
+  images: PropTypes.arrayOf(PropTypes.object),
   x: PropTypes.any,
 };
 

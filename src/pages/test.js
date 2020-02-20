@@ -1,8 +1,6 @@
 import React from 'react';
 
 import Providers from '@components/Providers';
-import Chain from '@components/MyComponent/Chain';
-import Configs from '@components/MyComponent/Configs';
 import Ticker from '@components/Ticker';
 
 const Test = () => {
@@ -21,7 +19,7 @@ const Test = () => {
     <Providers>
       <div>
         <div>Test</div>
-        <Ticker />
+        <Ticker images={items} />
       </div>
     </Providers>
   );

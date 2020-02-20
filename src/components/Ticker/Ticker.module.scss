@@ -1,7 +1,25 @@
 .container {
+  overflow: hidden;
   position: relative;
   height: 100px;
   background-color: skyblue;
+}
+
+.list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  will-change: transform;
+}
+
+.item {
+  flex: 0 0 25%;
+}
+
+.card {
+  box-sizing: border-box;
+  border: 2px solid grey;
 }
 
 .asideLeft,
