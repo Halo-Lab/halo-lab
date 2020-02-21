@@ -70,7 +70,7 @@ const BackgroundStars = () => {
         className={styles.wrapper}
         style={{ transform: layerProps.y.interpolate(iTranslateBig) }}
       >
-        <a.div
+        <div
           className={styles.layer}
           style={{
             backgroundImage: `url(${images['backgrounds/big-stars.svg'].url})`,
@@ -81,7 +81,7 @@ const BackgroundStars = () => {
         className={styles.wrapper}
         style={{ transform: layerProps.y.interpolate(iTranslateSmall) }}
       >
-        <a.div
+        <div
           className={styles.layer}
           style={{
             backgroundImage: `url(${images['backgrounds/small-stars.svg'].url})`,
