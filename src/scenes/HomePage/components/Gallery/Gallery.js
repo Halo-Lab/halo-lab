@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 
-import { GlobalContext } from '@contexts';
+import { GlobalContext, MenuContext } from '@contexts';
 import { useGetBreakpoint } from '@hooks';
 import { useGalleryImages } from '@hooks/queries';
 import Slider from '@components/Slider';
@@ -13,6 +13,7 @@ const Gallery = () => {
   const { breakpoint, width } = useGetBreakpoint();
   const [buildKey, setBuildKey] = useState(null);
   const { imagesAPI } = useContext(GlobalContext);
+  const { isOpened } = useContext(MenuContext);
   const icons = imagesAPI.get([
     'gallery/left-arrow.png',
     'gallery/right-arrow.png',
@@ -48,20 +49,21 @@ const Gallery = () => {
     <section className={styles.container}>
       <h2 className={styles.title}>We are live</h2>
       <div className={styles.sliderWrapper}>
-        {breakpoint === 'desktop' ? (
+        {breakpoint === 'desktop' && !isOpened ? (
           <Ticker
             key={buildKey}
             images={galleryImages}
             leftArrow={icons['gallery/left-arrow.png']}
             rightArrow={icons['gallery/right-arrow.png']}
           />
-        ) : (
+        ) : null}
+        {breakpoint === 'mobile' || breakpoint === 'tablet' ? (
           <Slider settings={settings}>
             {galleryImages.map((item, index) => {
               return <Item key={index} data-name={index} {...item} />;
             })}
           </Slider>
-        )}
+        ) : null}
       </div>
     </section>
   );

@@ -44,7 +44,7 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
   // animation initialize -->
 
   const [props, set] = useSpring(() => ({
-    x: 0,
+    from: { x: 0 },
     config: { duration: TIME, precision: 0 },
   }));
 
@@ -56,33 +56,29 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
     const direction = target.getAttribute('data-direction');
     const offset = direction === 'forward' ? STEP : -STEP;
 
-    set((...attrs) => {
-      const [, controller] = attrs;
+    set({
+      to: async next => {
+        await next({
+          x: props.x.lastPosition + offset,
+          immediate: false,
+        });
 
-      return {
-        to: async next => {
-          await next({
-            x: (controller.props.to || controller.props.from).x + offset,
-            immediate: false,
-          });
+        while (isRunning.current) {
+          const x = props.x.lastPosition + offset;
 
-          while (isRunning.current) {
-            const x = controller.props.to.x + offset;
-
-            if (x >= leftBorder) {
-              await next({ x: endPosition, immediate: true });
-            } else if (x <= rightBorder) {
-              await next({ x: startPosition, immediate: true });
-            } else {
-              await next({ x: x, immediate: false });
-            }
+          if (x >= leftBorder) {
+            await next({ x: endPosition, immediate: true });
+          } else if (x <= rightBorder) {
+            await next({ x: startPosition, immediate: true });
+          } else {
+            await next({ x: x, immediate: false });
           }
+        }
 
-          await next({
-            x: controller.props.to.x + offset,
-          });
-        },
-      };
+        await next({
+          x: props.x.lastPosition + offset,
+        });
+      },
     });
   };
 
@@ -101,7 +97,6 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
           return (
             <li key={index} className={styles.item}>
               <div className={styles.card}>
-                {/* <img src={url} alt={name} draggable="false" /> */}
                 <Img fluid={childImageSharp.fluid} draggable={false} />
               </div>
             </li>
