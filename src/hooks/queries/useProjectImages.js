@@ -22,7 +22,7 @@ export const projectsAvatar = graphql`
 
 const useProjectImages = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query {
       preview1: file(relativePath: { eq: "project/project1.jpg" }) {
         name
         ...projectsImage

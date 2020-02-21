@@ -9,7 +9,7 @@ const Info = () => {
   const images = imagesAPI.get([
     'cards/upwork-logo.svg',
     'cards/dribbble-logo.svg',
-    'cards/clutch-mini-logo.svg',
+    'cards/clutch-logo.svg',
   ]);
 
   const items = [
@@ -27,7 +27,7 @@ const Info = () => {
     },
     {
       link: '#',
-      image: images['cards/clutch-mini-logo.svg'],
+      image: images['cards/clutch-logo.svg'],
       classes: styles.clutch,
       textStrings: ['4.9/5', 'Average Rating', 'by Our Clients'],
     },
