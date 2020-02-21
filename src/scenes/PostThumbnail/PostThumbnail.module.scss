@@ -146,3 +146,9 @@
     color: inherit;
   }
 }
+
+.hiddenTitle {
+  display: block;
+  height: 0;
+  overflow: hidden;
+}

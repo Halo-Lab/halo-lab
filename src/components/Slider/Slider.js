@@ -13,6 +13,9 @@ const Slider = ({ children, settings, instance }) => {
     prevArrow: <Arrow direction="previous" />,
     nextArrow: <Arrow direction="next" />,
     dotsClass: styles.dots,
+    customPaging: function customDot(i) {
+      return <div>{i}</div>;
+    },
     ...settings,
   };
 

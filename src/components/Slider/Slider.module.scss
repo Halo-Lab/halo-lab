@@ -9,7 +9,7 @@
   margin: 32px 0 0 0;
   padding: 0;
 
-  [class='slick-active'] button {
+  [class='slick-active'] div {
     background: $yellow-color;
   }
 
@@ -21,12 +21,9 @@
     }
   }
 
-  button {
+  div {
     $size: 8px;
 
-    display: block;
-    padding: 0;
-    border: none;
     width: $size;
     height: $size;
     border-radius: 50%;
