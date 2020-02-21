@@ -56,29 +56,33 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
     const direction = target.getAttribute('data-direction');
     const offset = direction === 'forward' ? STEP : -STEP;
 
-    set({
-      to: async next => {
-        await next({
-          x: props.x.lastPosition + offset,
-          immediate: false,
-        });
+    set((...attrs) => {
+      const [, controller] = attrs;
 
-        while (isRunning.current) {
-          const x = props.x.lastPosition + offset;
+      return {
+        to: async next => {
+          await next({
+            x: (controller.props.to || controller.props.from).x + offset,
+            immediate: false,
+          });
 
-          if (x >= leftBorder) {
-            await next({ x: endPosition, immediate: true });
-          } else if (x <= rightBorder) {
-            await next({ x: startPosition, immediate: true });
-          } else {
-            await next({ x: x, immediate: false });
+          while (isRunning.current) {
+            const x = controller.props.to.x + offset;
+
+            if (x >= leftBorder) {
+              await next({ x: endPosition, immediate: true });
+            } else if (x <= rightBorder) {
+              await next({ x: startPosition, immediate: true });
+            } else {
+              await next({ x: x, immediate: false });
+            }
           }
-        }
 
-        await next({
-          x: props.x.lastPosition + offset,
-        });
-      },
+          await next({
+            x: controller.props.to.x + offset,
+          });
+        },
+      };
     });
   };
 
