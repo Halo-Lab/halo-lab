@@ -1,0 +1,31 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  z-index: -10;
+  width: 110%; // +5% to left and +5% to right
+  height: 110%; // +5% to top and +5% to bottom
+}
+
+.layer {
+  height: 200%;
+  // background-image: url('https://via.placeholder.com/900x60?text=THIS+IS+BEAUTIFUL+STARS,+JUST+IMAGINE.');
+  background-repeat: repeat-y;
+  background-size: contain;
+  // opacity: 0.25;
+}

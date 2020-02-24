@@ -1,3 +1,4 @@
+import useBackgrounds from './useBackgrounds';
 import useDribbbleShots from './useDribbbleShots';
 import useProjectImages from './useProjectImages';
 import useStaticImages from './useStaticImages';
@@ -6,6 +7,7 @@ import useSitePages from './useSitePages';
 import useWordpressPosts from './useWordpressPosts';
 
 export {
+  useBackgrounds,
   useDribbbleShots,
   useProjectImages,
   useStaticImages,
