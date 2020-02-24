@@ -21,7 +21,7 @@ const BackgroundStars = () => {
     'backgrounds/small-stars.svg',
   ]);
 
-  // Safari 3.0+ "[object HTMLElementConstructor]"
+  // disable parallax effect in Safari browser -->
   const isSafari =
     /constructor/i.test(window.HTMLElement) ||
     (function(p) {
@@ -41,6 +41,7 @@ const BackgroundStars = () => {
       />
     );
   }
+  // <-- disable parallax effect in Safari browser
 
   const [layerProps, set] = useSpring(() => ({
     from: { y: 0 },
