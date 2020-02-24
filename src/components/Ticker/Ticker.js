@@ -76,8 +76,6 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
 
       return {
         to: async next => {
-          console.log('in');
-
           // await next({
           //   x:
           //     (controller.props.to || controller.props.from).x +
@@ -102,8 +100,6 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
           //   x: controller.props.to.x + offset * STEP_COEFFICIENT,
           //   config: configFinish,
           // });
-
-          console.log('out');
         },
       };
     });
