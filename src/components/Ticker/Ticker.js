@@ -1,13 +1,28 @@
 import React, { useRef, useEffect } from 'react';
 import { useSpring, animated as a } from 'react-spring';
+import { easeQuadIn, easeQuadOut, easeLinear } from 'd3-ease';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 import styles from './Ticker.module.scss';
 
 const STEP = 5;
+const STEP_COEFFICIENT = 20;
 const TIME = 1;
+const TIME_INCREASED = 750;
 const NUMBER_OF_LISTS = 3;
+
+const configStart = {
+  duration: TIME_INCREASED,
+  precision: 0,
+  easing: easeQuadIn,
+};
+const configFinish = {
+  duration: TIME_INCREASED,
+  precision: 0,
+  easing: easeQuadOut,
+};
+const configDefault = { duration: TIME, precision: 0, easing: easeLinear };
 
 const iTranslate = value => `translate3d(${value}px, 0, 0)`;
 
@@ -45,7 +60,7 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
 
   const [props, set] = useSpring(() => ({
     from: { x: 0 },
-    config: { duration: TIME, precision: 0 },
+    config: configDefault,
   }));
 
   // handlers -->
@@ -62,7 +77,10 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
       return {
         to: async next => {
           await next({
-            x: (controller.props.to || controller.props.from).x + offset,
+            x:
+              (controller.props.to || controller.props.from).x +
+              offset * STEP_COEFFICIENT,
+            config: configStart,
             immediate: false,
           });
 
@@ -74,12 +92,13 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
             } else if (x <= rightBorder) {
               await next({ x: startPosition, immediate: true });
             } else {
-              await next({ x: x, immediate: false });
+              await next({ x: x, config: configDefault, immediate: false });
             }
           }
 
           await next({
-            x: controller.props.to.x + offset,
+            x: controller.props.to.x + offset * STEP_COEFFICIENT,
+            config: configFinish,
           });
         },
       };
