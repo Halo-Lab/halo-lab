@@ -76,13 +76,15 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
 
       return {
         to: async next => {
-          await next({
-            x:
-              (controller.props.to || controller.props.from).x +
-              offset * STEP_COEFFICIENT,
-            config: configStart,
-            immediate: false,
-          });
+          console.log('in');
+
+          // await next({
+          //   x:
+          //     (controller.props.to || controller.props.from).x +
+          //     offset * STEP_COEFFICIENT,
+          //   config: configStart,
+          //   immediate: false,
+          // });
 
           while (isRunning.current) {
             const x = controller.props.to.x + offset;
@@ -96,10 +98,12 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
             }
           }
 
-          await next({
-            x: controller.props.to.x + offset * STEP_COEFFICIENT,
-            config: configFinish,
-          });
+          // await next({
+          //   x: controller.props.to.x + offset * STEP_COEFFICIENT,
+          //   config: configFinish,
+          // });
+
+          console.log('out');
         },
       };
     });
