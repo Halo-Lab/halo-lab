@@ -21,6 +21,27 @@ const BackgroundStars = () => {
     'backgrounds/small-stars.svg',
   ]);
 
+  // Safari 3.0+ "[object HTMLElementConstructor]"
+  const isSafari =
+    /constructor/i.test(window.HTMLElement) ||
+    (function(p) {
+      return p.toString() === '[object SafariRemoteNotification]';
+    })(
+      !window['safari'] ||
+        (typeof safari !== 'undefined' && safari.pushNotification)
+    );
+
+  if (isSafari) {
+    return (
+      <div
+        style={{
+          backgroundImage: `url(${images['backgrounds/small-stars.svg'].url})`,
+        }}
+        className={styles.containerStatic}
+      />
+    );
+  }
+
   const [layerProps, set] = useSpring(() => ({
     from: { y: 0 },
     config: myConfig,
@@ -68,7 +89,9 @@ const BackgroundStars = () => {
       />
       <a.div
         className={styles.wrapper}
-        style={{ transform: layerProps.y.interpolate(iTranslateBig) }}
+        style={{
+          transform: isSafari ? '' : layerProps.y.interpolate(iTranslateBig),
+        }}
       >
         <div
           className={styles.layer}
@@ -79,7 +102,9 @@ const BackgroundStars = () => {
       </a.div>
       <a.div
         className={styles.wrapper}
-        style={{ transform: layerProps.y.interpolate(iTranslateSmall) }}
+        style={{
+          transform: isSafari ? '' : layerProps.y.interpolate(iTranslateSmall),
+        }}
       >
         <div
           className={styles.layer}
