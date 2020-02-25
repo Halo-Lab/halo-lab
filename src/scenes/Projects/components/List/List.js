@@ -38,7 +38,7 @@ const List = () => {
       review: {
         avatar: avatar1,
         author: 'Marshall Haas, CEO',
-        text: 'Highly recommend!',
+        text: 'Unwavering expertise!',
       },
       partners: [
         images['partners/forbes.svg'],
@@ -56,7 +56,7 @@ const List = () => {
       review: {
         avatar: avatar2,
         author: 'Bogdan Suchyk, CEO',
-        text: 'Awesome guys!',
+        text: 'Professional and creative!',
       },
       partners: [
         images['partners/forbes.svg'],
@@ -74,8 +74,8 @@ const List = () => {
       title: 'Indiegogo superstar smart clock which ease your life',
       review: {
         avatar: avatar3,
-        author: 'Jon-Paul Wheatley, CPO',
-        text: 'Highly recommend!',
+        author: 'Anton Glance, CEO',
+        text: 'They know what to do!',
       },
       partners: [
         images['partners/forbes.svg'],

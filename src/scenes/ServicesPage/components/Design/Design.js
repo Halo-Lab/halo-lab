@@ -50,7 +50,7 @@ const Design = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>Design</div>
-      <ServicesItem banner={true} items={items} message={message} />
+      <ServicesItem banner={false} items={items} message={message} />
     </div>
   );
 };
