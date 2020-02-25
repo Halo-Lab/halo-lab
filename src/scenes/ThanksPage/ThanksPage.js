@@ -1,26 +1,22 @@
 import React from 'react';
-import { Location } from '@reach/router';
-import { object } from 'prop-types';
-import Title from './components/Title';
-import ErrResponse from './components/ErrResponse';
-const ThanksPage = ({ location }) => {
-  const {
-    state: { status },
-  } = location;
-  // return <div>{status === 200 ? <Title /> : <ErrResponse />}</div>;
+
+import PageMessage from '@components/PageMessage';
+
+import styles from './ThanksPage.module.scss';
+
+const ThanksPage = () => {
+  const title = 'Thank you for your request';
+  const message = `
+    We appreciate your time so will be in touch within 24 hours. Enjoy
+    exploring beautiful design we have created and soon yours will be as
+    great.
+  `;
+
   return (
-    <div>
-      <ErrResponse />
+    <div className={`pageWrapper ${styles.container}`}>
+      <PageMessage title={title} message={message} mail={true} />
     </div>
   );
 };
 
-ThanksPage.propTypes = {
-  location: object,
-};
-
-export default function Wrapper() {
-  return (
-    <Location>{locationProps => <ThanksPage {...locationProps} />}</Location>
-  );
-}
+export default ThanksPage;
