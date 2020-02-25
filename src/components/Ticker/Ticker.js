@@ -34,14 +34,14 @@ const iTranslate = value => `translate3d(${value}px, 0, 0)`;
 const Ticker = ({ images, leftArrow, rightArrow }) => {
   const isRunning = useRef(false);
   const container = useRef(null);
-  const list = useRef(null);
+  const ticker = useRef(null);
 
   const items = [...images, ...images, ...images]; // NUMBER_OF_LISTS
 
   // metrics calculation
 
-  let fullWidth = null;
-  let visibleWidth = null;
+  let containerWidth = null;
+  let tickerWidth = null;
   let listWidth = null;
   let startPosition = null;
   let endPosition = null;
@@ -49,14 +49,14 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
   let rightBorder = null;
 
   useEffect(() => {
-    fullWidth = list.current.scrollWidth;
-    listWidth = fullWidth / NUMBER_OF_LISTS;
-    visibleWidth = container.current.offsetWidth;
+    containerWidth = container.current.offsetWidth;
+    tickerWidth = ticker.current.scrollWidth;
+    listWidth = tickerWidth / NUMBER_OF_LISTS; // width of original list
 
-    startPosition = -listWidth;
-    endPosition = -listWidth - listWidth + visibleWidth;
-    leftBorder = -listWidth + visibleWidth;
-    rightBorder = -listWidth - listWidth;
+    startPosition = -listWidth; // the point where the list moves after crossing the right border
+    endPosition = -listWidth - listWidth + containerWidth; // the point where the list moves after crossing the left border
+    leftBorder = -listWidth + containerWidth; // the point after which the list should quickly move to end position to simulate an infinite line
+    rightBorder = -listWidth - listWidth; // the point after which the list should quickly move to start position to simulate an infinite line
 
     set({ x: startPosition });
   }, []);
@@ -117,9 +117,9 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
   return (
     <div ref={container} className={styles.container}>
       <a.ul
-        ref={list}
+        ref={ticker}
         style={{ transform: props.x.interpolate(iTranslate) }}
-        className={styles.list}
+        className={styles.ticker}
       >
         {items.map(({ childImageSharp }, index) => {
           return (
