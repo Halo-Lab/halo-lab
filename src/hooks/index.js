@@ -1,4 +1,4 @@
-import useGetBreakpoint, { BREAKPOINTS } from './useGetBreakpoint';
+import useBreakpoints, { BREAKPOINTS } from './useBreakpoints';
 import useIsOpened from './useIsOpened';
 
-export { useGetBreakpoint, BREAKPOINTS, useIsOpened };
+export { useBreakpoints, BREAKPOINTS, useIsOpened };

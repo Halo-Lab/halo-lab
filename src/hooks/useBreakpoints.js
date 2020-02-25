@@ -8,7 +8,7 @@ export const BREAKPOINTS = {
   MOBILE: 'mobile',
 };
 
-const getBreakpoint = function(width) {
+const getBreakpoints = function(width) {
   if (width >= 992) {
     return BREAKPOINTS.DESKTOP;
   }
@@ -20,7 +20,7 @@ const getBreakpoint = function(width) {
   return BREAKPOINTS.MOBILE;
 };
 
-const useGetBreakpoint = () => {
+const useBreakpoint = () => {
   const [width, setWidth] = useState(0);
 
   const handleResize = () => {
@@ -38,8 +38,8 @@ const useGetBreakpoint = () => {
 
   return {
     width,
-    breakpoint: getBreakpoint(width),
+    breakpoint: getBreakpoints(width),
   };
 };
 
-export default useGetBreakpoint;
+export default useBreakpoint;
