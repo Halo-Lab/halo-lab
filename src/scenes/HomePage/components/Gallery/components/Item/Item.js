@@ -1,19 +1,19 @@
 import React from 'react';
+import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 import styles from './Item.module.scss';
 
-const Item = ({ url, name }) => {
+const Item = ({ childImageSharp }) => {
   return (
     <div className={styles.container}>
-      <img src={url} alt={name} />
+      <Img fluid={childImageSharp.fluid} />
     </div>
   );
 };
 
 Item.propTypes = {
-  url: PropTypes.string,
-  name: PropTypes.string,
+  childImageSharp: PropTypes.object,
 };
 
 export default Item;

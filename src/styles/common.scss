@@ -2,6 +2,20 @@
 @import '@styles/mixins/all';
 
 .pageWrapper {
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  max-width: 90rem;
+  font-family: $font-sofia-pro;
+
+  @media screen and (min-width: $md) {
+    padding-right: 4.28rem;
+    padding-left: 4.28rem;
+  }
+}
+
+// if all will be o.k., it can be removed -->
+.pageWrapperOld {
   font-family: $font-sofia-pro;
   padding-top: 11.4rem;
   padding-right: 4.28rem;
@@ -40,21 +54,4 @@
     padding-left: 15px;
   }
 }
-
-.menu--open {
-  overflow: hidden;
-}
-
-.hiddenable,
-.menu {
-  transition: opacity 0.2s;
-}
-
-.menu--open .hiddenable {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.main-header .menu {
-  opacity: 0;
-}
+// <-- end

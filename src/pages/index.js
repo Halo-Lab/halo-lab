@@ -2,7 +2,7 @@ import React from 'react';
 
 import Providers from '@components/Providers';
 import Layout from '@components/Layout';
-import BackgroundStars from '@scenes/BackgroundStars';
+import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
 import HomePage from '@scenes/HomePage';
 
@@ -12,7 +12,7 @@ const Home = () => {
       <BackgroundStars />
       <Layout>
         <Head>
-          <title>Главная - Halo Lab Blog</title>
+          <title>Home - Halo Lab Blog</title>
         </Head>
         <HomePage />
       </Layout>

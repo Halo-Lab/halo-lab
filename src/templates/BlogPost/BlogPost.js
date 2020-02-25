@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 import Providers from '@components/Providers';
 import Layout from '@components/Layout';
-import BackgroundStars from '@scenes/BackgroundStars';
+import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
 import MailUs from '@scenes/MailUs';
 import Article from './components/Article';
 import Headline from './components/Headline';
 import Thumbnails from './components/Thumbnails';
+
+import styles from './BlogPost.module.scss';
 
 const BlogPost = ({ pageContext }) => {
   const {
@@ -26,7 +28,7 @@ const BlogPost = ({ pageContext }) => {
         <Head>
           <title>{data.title} - Halo Lab Blog</title>
         </Head>
-        <div className="pageWrapper">
+        <div className={`${styles.container} pageWrapper`}>
           <Headline
             categories={data.categories}
             image={data.featured_media.source_url}
@@ -34,7 +36,7 @@ const BlogPost = ({ pageContext }) => {
           />
         </div>
         <Article content={data.content} />
-        <div style={{ paddingTop: '0' }} className="pageWrapper">
+        <div className="pageWrapper">
           <Thumbnails items={thumbnailsItems} />
           <MailUs />
         </div>
