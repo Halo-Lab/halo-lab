@@ -12,6 +12,11 @@ const TIME = 1;
 const TIME_INCREASED = 750;
 const NUMBER_OF_LISTS = 3;
 
+const DIRECTIONS = {
+  BACKWARD: 'backward',
+  FORWARD: 'forward',
+};
+
 const configStart = {
   duration: TIME_INCREASED,
   precision: 0,
@@ -69,7 +74,7 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
     isRunning.current = true;
 
     const direction = target.getAttribute('data-direction');
-    const offset = direction === 'forward' ? STEP : -STEP;
+    const offset = direction === DIRECTIONS.FORWARD ? STEP : -STEP;
 
     set((...attrs) => {
       const [, controller] = attrs;
@@ -127,14 +132,14 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
         })}
       </a.ul>
       <div
-        data-direction="forward"
+        data-direction={DIRECTIONS.FORWARD}
         style={{ cursor: `url('${leftArrow.url}'), auto` }}
         className={styles.asideLeft}
         onMouseEnter={go}
         onMouseLeave={stop}
       />
       <div
-        data-direction="back"
+        data-direction={DIRECTIONS.BACKWARD}
         style={{ cursor: `url('${rightArrow.url}'), auto` }}
         className={styles.asideRight}
         onMouseEnter={go}
