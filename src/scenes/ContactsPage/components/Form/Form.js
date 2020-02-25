@@ -76,21 +76,14 @@ const Form = () => {
         body: JSON.stringify(formData),
       })
         .then(response => {
-          console.log(response);
           if (response.ok) {
-            navigate('/thanks', {
-              state: {
-                status: response.status,
-              },
-            });
+            navigate('/thanks');
           } else {
-            // eslint-disable-next-line no-console
-            console.log('Server responded with an error!', response);
+            navigate('/error');
           }
         })
-        .catch(response => {
-          // eslint-disable-next-line no-console
-          console.log('Error: No internet connection.', response);
+        .catch(() => {
+          navigate('/error');
         });
   };
 
