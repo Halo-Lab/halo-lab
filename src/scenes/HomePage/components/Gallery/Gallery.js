@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 
 import { GlobalContext, MenuContext } from '@contexts';
-import { useGetBreakpoint } from '@hooks';
+import { useGetBreakpoint, BREAKPOINTS } from '@hooks';
 import { useGalleryImages } from '@hooks/queries';
 import Slider from '@components/Slider';
 import Ticker from '@components/Ticker';
