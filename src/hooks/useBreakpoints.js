@@ -8,7 +8,7 @@ export const BREAKPOINTS = {
   MOBILE: 'mobile',
 };
 
-const getBreakpoints = function(width) {
+const getBreakpoint = function(width) {
   if (width >= 992) {
     return BREAKPOINTS.DESKTOP;
   }
@@ -38,7 +38,7 @@ const useBreakpoints = () => {
 
   return {
     width,
-    breakpoint: getBreakpoints(width),
+    breakpoint: getBreakpoint(width),
   };
 };
 
