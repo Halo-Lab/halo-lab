@@ -21,7 +21,7 @@
     }
   }
 
-  button {
+  .button {
     $size: 8px;
 
     overflow: hidden;
@@ -45,7 +45,7 @@
     }
   }
 
-  span {
+  .title {
     position: absolute;
     left: -9999px;
   }

@@ -15,8 +15,8 @@ const Slider = ({ children, settings, instance }) => {
     dotsClass: styles.dots,
     customPaging: function customDot(i) {
       return (
-        <button>
-          <span>{i}</span>
+        <button className={styles.button}>
+          <span className={styles.title}>{i}</span>
         </button>
       );
     },
