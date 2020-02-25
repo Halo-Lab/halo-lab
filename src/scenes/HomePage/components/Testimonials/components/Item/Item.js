@@ -3,29 +3,24 @@ import PropTypes from 'prop-types';
 
 import './Item.scss';
 
-const Item = ({ stars, clutch, rating }) => {
+const Item = ({ author, companyLogo, rating, text, stars, clutch }) => {
   return (
     <div className="testimonials__item">
       <div className="testimonials__item-body">
         <div className="testimonials__item-header">
-          <span>5.0</span>
+          <span>{rating}</span>
           <img src={stars.url} alt={stars.name} />
         </div>
-        <div className="testimonials__item-text">
-          &#34;They perfectly met my expectations — working with them felt like
-          an extension of my in-house team.&#34;
-        </div>
-        <div className="testimonials__item-author">
-          — Alexander Kozma Ingal, Room Six
-        </div>
+        <div className="testimonials__item-text">&#34;{text}&#34;</div>
+        <div className="testimonials__item-author">— {author}</div>
       </div>
       <a href="#" className="testimonials__item-footer">
         <div className="testimonials__item-author">
           <img src={clutch.url} alt={clutch.name} />
-          <span>— Alexander Kozma Ingal, Room Six</span>
+          <span>— {author}</span>
         </div>
         <div className="testimonials__item-logo">
-          <img src={rating.url} alt={rating.name} />
+          <img src={companyLogo.url} alt={companyLogo.name} />
         </div>
       </a>
     </div>
@@ -33,9 +28,13 @@ const Item = ({ stars, clutch, rating }) => {
 };
 
 Item.propTypes = {
+  author: PropTypes.string,
+  companyLogo: PropTypes.object,
+  rating: PropTypes.string,
+  text: PropTypes.string,
+  // remove -->
   stars: PropTypes.object,
   clutch: PropTypes.object,
-  rating: PropTypes.object,
 };
 
 export default Item;

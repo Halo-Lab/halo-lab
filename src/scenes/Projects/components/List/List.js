@@ -27,8 +27,6 @@ const List = () => {
     avatar3,
   } = useProjectImages();
 
-  console.log(avatar1, avatar2, avatar3);
-
   const items = [
     {
       id: 0,
