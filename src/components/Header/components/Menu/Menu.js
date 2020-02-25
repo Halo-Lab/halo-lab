@@ -1,25 +1,76 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 
-import './Menu.scss';
+import { GlobalContext } from '@contexts';
+
+import styles from './Menu.module.scss';
 
 const Menu = () => {
+  const { imagesAPI } = useContext(GlobalContext);
+  const images = imagesAPI.get([
+    'menu/blog-icon.svg',
+    'menu/blog-stars.svg',
+    'menu/contacts-icon.svg',
+    'menu/contacts-stars.svg',
+    'menu/portfolio-icon.svg',
+    'menu/portfolio-stars.svg',
+    'menu/services-icon.svg',
+    'menu/services-stars.svg',
+  ]);
+
   const items = [
-    { title: 'Projects', href: '/portfolio', classes: 'menu-item__portfolio' },
-    { title: 'Services', href: '/services', classes: 'menu-item__services' },
-    { title: 'Blog', href: '/blog', classes: 'menu-item__blog' },
-    { title: 'Contacts', href: '/contacts', classes: 'menu-item__contacts' },
+    {
+      title: 'Projects',
+      link: '/portfolio',
+      icon: images['menu/portfolio-icon.svg'],
+      stars: images['menu/portfolio-stars.svg'],
+    },
+    {
+      title: 'Services',
+      link: '/services',
+      icon: images['menu/services-icon.svg'],
+      stars: images['menu/services-stars.svg'],
+    },
+    {
+      title: 'Blog',
+      link: '/blog',
+      icon: images['menu/blog-icon.svg'],
+      stars: images['menu/blog-stars.svg'],
+    },
+    {
+      title: 'Contacts',
+      link: '/contacts',
+      icon: images['menu/contacts-icon.svg'],
+      stars: images['menu/contacts-stars.svg'],
+    },
   ];
 
   return (
-    <div className="main-menu">
-      <ul className="menu-menu-1">
-        {items.map(({ classes, href, title }) => {
+    <div className={styles.container}>
+      <ul className={styles.list}>
+        {items.map(({ stars, icon, link, title }, index) => {
           return (
-            <li className={`menu-item ${classes}`} key={href}>
-              <Link to={href} activeClassName="active">
-                <div className="menu-link__circle"></div>
-                <span className="menu-link__text">{title}</span>
+            <li
+              key={title}
+              style={{ animationDelay: `0.${index}s` }}
+              className={styles.item}
+            >
+              <Link
+                to={link}
+                activeClassName={styles.active}
+                className={styles.link}
+              >
+                <div className={styles.circle} data-circle={index + 1}></div>
+                <div className={styles.title}>{title}</div>
+                <div
+                  style={{ backgroundImage: `url('${stars.url}')` }}
+                  className={styles.stars}
+                ></div>
+                <div
+                  style={{ backgroundImage: `url('${icon.url}')` }}
+                  className={styles.icon}
+                  data-icon={index + 1}
+                ></div>
               </Link>
             </li>
           );

@@ -36,8 +36,9 @@ const PostThumbnail = ({ title, slug, featured_media, date }) => {
             <Img fluid={imageOptimized} />
           </div>
         ) : (
-          <img src={imageSource} />
+          <img src={imageSource} alt="post preview" />
         )}
+        <span className={styles.hiddenTitle}>{title}</span>
       </Link>
       <h3 className={styles.title}>
         <Link to={link} dangerouslySetInnerHTML={{ __html: title }}></Link>

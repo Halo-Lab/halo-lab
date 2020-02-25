@@ -21,17 +21,18 @@
     }
   }
 
-  button {
+  .button {
     $size: 8px;
 
+    overflow: hidden;
+    position: relative;
     display: block;
-    padding: 0;
     border: none;
+    padding: 0;
     width: $size;
     height: $size;
     border-radius: 50%;
     background: #32344d;
-    font-size: 0;
     cursor: pointer;
 
     @media screen and (min-width: 2400px) {
@@ -42,5 +43,10 @@
       width: 0.4vw;
       height: 0.4vw;
     }
+  }
+
+  .title {
+    position: absolute;
+    left: -9999px;
   }
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import Providers from '@components/Providers';
 import Layout from '@components/Layout';
 import Head from '@components/Head';
-import BackgroundBlackHole from '@scenes/BackgroundBlackHole';
+import BackgroundBlackHole from '@components/BackgroundBlackHole';
 import NotFoundPage from '@scenes/NotFoundPage';
 
 const NotFound = () => (

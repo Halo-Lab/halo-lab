@@ -17,17 +17,17 @@ const Layout = ({ children }) => {
       {/* TODO: This is very bad, I know. But. */}
       {isOpened ? (
         <Helmet>
-          <body className="menu--open"></body>
+          <body className={styles.locked}></body>
         </Helmet>
       ) : null}
       <div className={styles.container}>
-        <div className={styles.header}>
+        <header className={styles.header}>
           <Header />
-        </div>
-        <main className={`${styles.main} hiddenable`}>{children}</main>
-        <div className={`${styles.footer} hiddenable`}>
+        </header>
+        <main className={`${styles.main} ${styles.hidden}`}>{children}</main>
+        <footer className={`${styles.footer} ${styles.hidden}`}>
           <Footer />
-        </div>
+        </footer>
       </div>
     </>
   );

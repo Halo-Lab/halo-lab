@@ -2,7 +2,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `Halo-Lab`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Experts from all your network providers integrated into one powerful platform.`,
     author: `@halolabteam`,
     email: `mail@halo-lab.com`,
   },
@@ -34,13 +34,28 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Halo-Lab Blog`,
+        short_name: `Halo-Lab`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        background_color: `#02021e`,
+        theme_color: `#02021e`,
+        display: `standalone`,
+        icon: `src/images/meta/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [
+          `/`,
+          `/portfolio/`,
+          `/services/`,
+          `/blog/`,
+          // `/blog/*`,
+          `/contacts/`,
+          `/thanks/`,
+          `/404/`,
+        ],
       },
     },
     {
@@ -69,8 +84,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: 'api.halo-lab.com',
-        protocol: 'http',
+        baseUrl: process.env.WP_API_BASE_URL,
+        protocol: process.env.WP_API_PROTOCOL,
         useACF: false,
         auth: {
           jwt_user: process.env.JWT_USER,
