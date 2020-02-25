@@ -22,28 +22,6 @@ const Item = ({ author, companyLogo, generalLogo, rating, stars, text }) => {
       </div>
     </div>
   );
-
-  // return (
-  //   <div className="testimonials__item">
-  //     <div className="testimonials__item-body">
-  //       <div className="testimonials__item-header">
-  //         <span>{rating}</span>
-  //         <img src={stars.url} alt={stars.name} />
-  //       </div>
-  //       <div className="testimonials__item-text">&#34;{text}&#34;</div>
-  //       <div className="testimonials__item-author">— {author}</div>
-  //     </div>
-  //     <a href="#" className="testimonials__item-footer">
-  //       <div className="testimonials__item-author">
-  //         <img src={clutch.url} alt={clutch.name} />
-  //         <span>— {author}</span>
-  //       </div>
-  //       <div className="testimonials__item-logo">
-  //         <img src={companyLogo.url} alt={companyLogo.name} />
-  //       </div>
-  //     </a>
-  //   </div>
-  // );
 };
 
 Item.propTypes = {
