@@ -3,6 +3,7 @@ import { useSpring, animated as a } from 'react-spring';
 import PropTypes from 'prop-types';
 
 import { GlobalContext, MenuContext } from '@contexts';
+import { checkBrowser } from '@helpers';
 
 import styles from './BackgroundStars.module.scss';
 
@@ -22,14 +23,7 @@ const BackgroundStars = () => {
   ]);
 
   // disable parallax effect in Safari browser -->
-  const isSafari =
-    /constructor/i.test(window.HTMLElement) ||
-    (function(p) {
-      return p.toString() === '[object SafariRemoteNotification]';
-    })(
-      !window['safari'] ||
-        (typeof safari !== 'undefined' && safari.pushNotification)
-    );
+  const { isSafari } = checkBrowser();
 
   if (isSafari) {
     return (
@@ -91,7 +85,7 @@ const BackgroundStars = () => {
       <a.div
         className={styles.wrapper}
         style={{
-          transform: isSafari ? '' : layerProps.y.interpolate(iTranslateBig),
+          transform: layerProps.y.interpolate(iTranslateBig),
         }}
       >
         <div
@@ -104,7 +98,7 @@ const BackgroundStars = () => {
       <a.div
         className={styles.wrapper}
         style={{
-          transform: isSafari ? '' : layerProps.y.interpolate(iTranslateSmall),
+          transform: layerProps.y.interpolate(iTranslateSmall),
         }}
       >
         <div

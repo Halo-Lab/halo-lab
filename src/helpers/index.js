@@ -1,3 +1,4 @@
+import checkBrowser from './checkBrowser';
 import debounce from './debounce';
 
-export { debounce };
+export { checkBrowser, debounce };
