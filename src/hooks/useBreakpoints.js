@@ -20,7 +20,7 @@ const getBreakpoints = function(width) {
   return BREAKPOINTS.MOBILE;
 };
 
-const useBreakpoint = () => {
+const useBreakpoints = () => {
   const [width, setWidth] = useState(0);
 
   const handleResize = () => {
@@ -42,4 +42,4 @@ const useBreakpoint = () => {
   };
 };
 
-export default useBreakpoint;
+export default useBreakpoints;
