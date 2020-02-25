@@ -31,7 +31,7 @@ const Testimonials = () => {
       text: `The value we get from them and their quality work set them apart from others.`,
     },
     {
-      author: `Bogdan Suchyk, Founder Mobalytics`,
+      author: `Bogdan Suchyk, Founder, Mobalytics`,
       companyLogo: companyLogo3,
       rating: '5.0',
       text: `I was most appreciative of their ability to provide us with designers for specific needs.`,
@@ -43,7 +43,7 @@ const Testimonials = () => {
       text: `Halo Lab was transparent about deliverables and any challenges the team was facing.`,
     },
     {
-      author: `Panos Rigopoulos Cofounder, Software Company`,
+      author: `Panos Rigopoulos, Co-founder, Software Company`,
       companyLogo: companyLogo5,
       rating: '5.0',
       text: `Halo Lab works hard to produce good results at a reasonable price.`,

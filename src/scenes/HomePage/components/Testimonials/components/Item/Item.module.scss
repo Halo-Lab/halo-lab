@@ -33,7 +33,20 @@
   display: flex;
   align-items: center;
   font-size: 1.43rem;
-  margin-right: 1.14rem;
+}
+
+.mark {
+}
+
+.stars {
+  display: inline-block;
+  margin-left: 1.14rem;
+  width: 7.33rem;
+  height: auto;
+
+  @media screen and (min-width: $lg) {
+    width: 7.36rem;
+  }
 }
 
 .text {
@@ -57,7 +70,7 @@
   align-items: center;
   padding: 1.1rem 1.7rem;
   text-decoration: none;
-  font-size: 20px;
+
   background: $main-color;
 
   @media screen and (min-width: $md) {
@@ -74,11 +87,29 @@
 }
 
 .name {
-  display: none;
-  margin-left: 1.43rem;
+  font-size: 1.17rem;
+  line-height: 1.5em;
 
   @media screen and (min-width: $md) {
+    font-size: 20px;
+  }
+
+  &.top {
     display: block;
+    margin-top: 2.5rem;
+
+    @media screen and (min-width: $md) {
+      display: none;
+    }
+  }
+
+  &.bottom {
+    display: none;
+    margin-left: 1.43rem;
+
+    @media screen and (min-width: $md) {
+      display: block;
+    }
   }
 }
 
@@ -88,5 +119,5 @@
   width: auto;
   max-width: 70px;
   height: auto;
-  max-height: 70px;
+  max-height: 65px;
 }

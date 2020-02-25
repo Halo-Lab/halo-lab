@@ -9,14 +9,15 @@ const Item = ({ author, companyLogo, generalLogo, rating, stars, text }) => {
     <div className={styles.container}>
       <div className={styles.review}>
         <div className={styles.rating}>
-          <span>{rating}</span>
-          <img src={stars.publicURL} />
+          <span className={styles.mark}>{rating}</span>
+          <img src={stars.publicURL} className={styles.stars} />
         </div>
         <div className={styles.text}>&#34;{text}&#34;</div>
+        <div className={`${styles.name} ${styles.top}`}>- {author}</div>
       </div>
       <div className={styles.author}>
         <img src={generalLogo.publicURL} className={styles.generalLogo} />
-        <span className={styles.name}>- {author}</span>
+        <span className={`${styles.name} ${styles.bottom}`}>- {author}</span>
         <img src={companyLogo.publicURL} className={styles.companyLogo} />
       </div>
     </div>
