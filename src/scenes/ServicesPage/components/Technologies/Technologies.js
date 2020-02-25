@@ -3,12 +3,12 @@ import React, { useContext } from 'react';
 import Switcher from './components/Switcher';
 import List from './components/List';
 import { GlobalContext } from '@contexts';
-import { useGetBreakpoint } from '@hooks';
+import { useBreakpoints, BREAKPOINTS } from '@hooks';
 
 import styles from './Technologies.module.scss';
 
 const Technologies = () => {
-  const { breakpoint } = useGetBreakpoint();
+  const { breakpoint } = useBreakpoints();
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get([
     'services/react.svg',
@@ -83,7 +83,7 @@ const Technologies = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Technologies</h2>
-      {breakpoint === 'mobile' ? (
+      {breakpoint === BREAKPOINTS.MOBILE ? (
         <List items={items} />
       ) : (
         <Switcher items={items} />

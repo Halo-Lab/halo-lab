@@ -3,10 +3,13 @@
 
 .container {
   position: relative;
-  padding-top: 5.2rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+
+  @media screen and (min-width: $md) {
+    padding-top: 5.2rem;
+  }
 
   @media (min-width: 1280px) {
     max-width: 90rem;
@@ -16,11 +19,6 @@
   @include media-breakpoint-down(sm) {
     flex-direction: column;
     align-items: center;
-    padding-top: 6.71rem;
-  }
-
-  @include media-breakpoint-down(xs) {
-    padding-top: 5.01rem;
   }
 
   &:before {

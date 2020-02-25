@@ -2,7 +2,7 @@ import React from 'react';
 
 import Switcher from './components/Switcher';
 import List from './components/List';
-import { useGetBreakpoint } from '@hooks';
+import { useBreakpoints, BREAKPOINTS } from '@hooks';
 
 import styles from './Flow.module.scss';
 
@@ -33,12 +33,12 @@ const Flow = () => {
       message: `6) Halo Lab development process starts with understanding of your project and your needs, bottlenecks, and develop an appropriate estimation and project plan.`,
     },
   ];
-  const { breakpoint } = useGetBreakpoint();
+  const { breakpoint } = useBreakpoints();
 
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Our Flow</h2>
-      {breakpoint === 'desktop' ? (
+      {breakpoint === BREAKPOINTS.DESKTOP ? (
         <Switcher items={items} />
       ) : (
         <List items={items} />

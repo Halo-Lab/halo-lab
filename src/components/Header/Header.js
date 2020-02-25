@@ -1,56 +1,48 @@
 import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 
-import Menu from './components/Menu';
 import { MenuContext, GlobalContext } from '@contexts';
 import { useSiteMetadata } from '@hooks/queries';
+import Menu from './components/Menu';
 
-import './Header.scss';
+import styles from './Header.module.scss';
 
 const Header = () => {
   const metadata = useSiteMetadata();
-
   const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
 
   const { imagesAPI } = useContext(GlobalContext);
   const images = imagesAPI.get(['header-logo.svg']);
 
-  const headerStatusClass = isOpened ? 'main-header--active' : '';
-  const burgerStatusClass = isOpened
-    ? 'burger-menu--open'
-    : 'burger-menu--closed';
+  const menuStatus = isOpened ? 'opened' : 'closed';
 
   return (
-    <header className={`clearfix main-header ${headerStatusClass}`}>
-      <div className="header-container">
-        <div className="header-left">
-          <Link to="/" rel="home">
-            <img
-              className="logo"
-              src={images['header-logo.svg'].url}
-              alt={images['header-logo.svg'].name}
-            />
+    <div className={styles.container}>
+      <div className={`${styles.bar} pageWrapper`}>
+        <div className={styles.logotype}>
+          <Link to="/">
+            <img src={images['header-logo.svg'].url} alt="logotype" />
           </Link>
         </div>
 
-        <div className="header-right">
-          <Menu />
+        <div className={styles.email} data-status={menuStatus}>
+          <a href={`mailto:${metadata.email}`}>{metadata.email}</a>
+        </div>
 
-          <a href={`mailto:${metadata.email}`} className="mail">
-            <span className="desctop_mail">{metadata.email}</span>
-          </a>
+        {isOpened ? <Menu /> : null}
 
+        <div className={styles.menuBar}>
           <button
-            className={`burger-menu ${burgerStatusClass}`}
             type="button"
+            className={styles.menuButton}
             onClick={handleTogglingIsOpened}
           >
-            <span className="bar"></span>
-            <span className="titleHidden">Menu</span>
+            <span className={styles.menuIcon} data-status={menuStatus}></span>
+            <span className={styles.hiddenTitle}>Menu</span>
           </button>
         </div>
       </div>
-    </header>
+    </div>
   );
 };
 

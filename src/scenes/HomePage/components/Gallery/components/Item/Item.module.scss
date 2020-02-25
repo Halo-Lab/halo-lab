@@ -2,19 +2,5 @@
 @import '@styles/mixins/all';
 
 .container {
-  padding: 0 15px;
-
-  @media screen and (min-width: 574px) {
-    padding: 0 20px;
-  }
-
-  @media screen and (min-width: 1023px) {
-    padding: 0 35px;
-  }
-
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+  padding: 0 10px;
 }

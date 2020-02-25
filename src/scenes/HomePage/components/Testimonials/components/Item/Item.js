@@ -2,40 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Item.scss';
+import styles from './Item.module.scss';
 
-const Item = ({ stars, clutch, rating }) => {
+const Item = ({ author, companyLogo, generalLogo, rating, stars, text }) => {
   return (
-    <div className="testimonials__item">
-      <div className="testimonials__item-body">
-        <div className="testimonials__item-header">
-          <span>5.0</span>
-          <img src={stars.url} alt={stars.name} />
+    <div className={styles.container}>
+      <div className={styles.review}>
+        <div className={styles.rating}>
+          <span className={styles.mark}>{rating}</span>
+          <img src={stars.publicURL} className={styles.stars} />
         </div>
-        <div className="testimonials__item-text">
-          &#34;They perfectly met my expectations — working with them felt like
-          an extension of my in-house team.&#34;
-        </div>
-        <div className="testimonials__item-author">
-          — Alexander Kozma Ingal, Room Six
-        </div>
+        <div className={styles.text}>&#34;{text}&#34;</div>
+        <div className={`${styles.name} ${styles.top}`}>- {author}</div>
       </div>
-      <a href="#" className="testimonials__item-footer">
-        <div className="testimonials__item-author">
-          <img src={clutch.url} alt={clutch.name} />
-          <span>— Alexander Kozma Ingal, Room Six</span>
-        </div>
-        <div className="testimonials__item-logo">
-          <img src={rating.url} alt={rating.name} />
-        </div>
-      </a>
+      <div className={styles.author}>
+        <img src={generalLogo.publicURL} className={styles.generalLogo} />
+        <span className={`${styles.name} ${styles.bottom}`}>- {author}</span>
+        <img src={companyLogo.publicURL} className={styles.companyLogo} />
+      </div>
     </div>
   );
 };
 
 Item.propTypes = {
+  author: PropTypes.string,
+  companyLogo: PropTypes.object,
+  generalLogo: PropTypes.object,
+  rating: PropTypes.string,
   stars: PropTypes.object,
-  clutch: PropTypes.object,
-  rating: PropTypes.object,
+  text: PropTypes.string,
 };
 
 export default Item;

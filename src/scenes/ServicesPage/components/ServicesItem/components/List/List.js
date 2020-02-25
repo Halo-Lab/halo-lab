@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import Slider from '@components/Slider';
 import Item from './components/Item';
-import { useGetBreakpoint } from '@hooks';
+import { useBreakpoints, BREAKPOINTS } from '@hooks';
 
 import styles from './List.module.scss';
 
 const List = ({ items }) => {
-  const { breakpoint } = useGetBreakpoint();
+  const { breakpoint } = useBreakpoints();
 
   const settings = {
     arrows: false,
@@ -21,7 +21,8 @@ const List = ({ items }) => {
 
   return (
     <div className={styles.container}>
-      {breakpoint === 'desktop' || breakpoint === 'tablet' ? (
+      {breakpoint === BREAKPOINTS.DESKTOP ||
+      breakpoint === BREAKPOINTS.TABLET ? (
         <ul className={styles.list}>
           {items.map((item, index) => {
             return (
