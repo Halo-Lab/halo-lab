@@ -20,21 +20,6 @@
   position: relative;
   box-sizing: border-box;
   padding: 0 20px;
-  // height: 100%;
-
-  // &:before {
-  //   content: '';
-  //   display: inline-block;
-  //   height: 100%;
-  //   vertical-align: middle;
-  // }
-
-  // img {
-  //   display: inline-block;
-  //   vertical-align: middle;
-  //   width: 100%;
-  //   height: auto;
-  // }
 }
 
 .asideLeft,
@@ -44,7 +29,6 @@
   width: 30%;
   height: 100%;
   z-index: 10;
-  // background-color: rgba(black, 0.25);
 }
 
 .asideLeft {
