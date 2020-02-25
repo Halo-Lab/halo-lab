@@ -9,7 +9,7 @@
   margin: 32px 0 0 0;
   padding: 0;
 
-  [class='slick-active'] div {
+  [class='slick-active'] button {
     background: $yellow-color;
   }
 
@@ -21,14 +21,18 @@
     }
   }
 
-  div {
+  button {
     $size: 8px;
 
+    overflow: hidden;
+    position: relative;
+    display: block;
+    border: none;
+    padding: 0;
     width: $size;
     height: $size;
     border-radius: 50%;
     background: #32344d;
-    font-size: 0;
     cursor: pointer;
 
     @media screen and (min-width: 2400px) {
@@ -39,5 +43,10 @@
       width: 0.4vw;
       height: 0.4vw;
     }
+  }
+
+  span {
+    position: absolute;
+    left: -9999px;
   }
 }
