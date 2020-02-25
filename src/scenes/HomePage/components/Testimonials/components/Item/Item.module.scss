@@ -1,0 +1,92 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 42.69rem;
+
+  @media screen and (min-width: $md) {
+    max-width: 54.29rem;
+  }
+}
+
+.review {
+  padding: 2.26rem 1.72rem 2.5rem;
+  background: linear-gradient(
+    133.78deg,
+    rgba(132, 164, 255, 0.2) 6.69%,
+    rgba(2, 2, 30, 0) 85.43%
+  );
+
+  @media screen and (min-width: $md) {
+    padding: 3.36rem 2.5rem 4.18rem;
+  }
+
+  @media screen and (min-width: $lg) {
+    padding: 3.36rem 4.29rem 4.29rem;
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: 1.43rem;
+  margin-right: 1.14rem;
+}
+
+.text {
+  margin-top: 2.34rem;
+  font-size: 1.5rem;
+  line-height: 1.43em;
+
+  @media screen and (min-width: $md) {
+    font-size: 1.84rem;
+  }
+
+  @media screen and (min-width: $lg) {
+    margin-top: 3.28rem;
+    font-size: 2.14rem;
+    line-height: 1.33em;
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  padding: 1.1rem 1.7rem;
+  text-decoration: none;
+  font-size: 20px;
+  background: $main-color;
+
+  @media screen and (min-width: $md) {
+    padding: 1.43rem 2.14rem;
+  }
+}
+
+.generalLogo {
+  width: 5.58rem;
+
+  @media screen and (min-width: $md) {
+    width: 5.71rem;
+  }
+}
+
+.name {
+  display: none;
+  margin-left: 1.43rem;
+
+  @media screen and (min-width: $md) {
+    display: block;
+  }
+}
+
+.companyLogo {
+  display: inline-block;
+  margin-left: auto;
+  width: auto;
+  max-width: 70px;
+  height: auto;
+  max-height: 70px;
+}
