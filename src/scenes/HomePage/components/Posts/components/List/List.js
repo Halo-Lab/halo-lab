@@ -2,13 +2,13 @@ import React from 'react';
 
 import Slider from '@components/Slider';
 import Item from './components/Item';
-import { useGetBreakpoint } from '@hooks';
+import { useBreakpoints, BREAKPOINTS } from '@hooks';
 import { useWordpressPosts } from '@hooks/queries';
 
 import styles from './List.module.scss';
 
 const List = () => {
-  const { breakpoint } = useGetBreakpoint();
+  const { breakpoint } = useBreakpoints();
   const items = useWordpressPosts().slice(0, 3);
 
   const settings = {
@@ -22,7 +22,7 @@ const List = () => {
 
   return (
     <div className={styles.container}>
-      {breakpoint !== 'mobile' ? (
+      {breakpoint !== BREAKPOINTS.MOBILE ? (
         <>
           {items.map(item => {
             return <Item key={item.path} {...item} />;

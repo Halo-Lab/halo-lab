@@ -111,7 +111,8 @@
 }
 
 .upwork {
-  background: url('./images/upwork-bg.png') no-repeat center;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 
   .cardBody {
@@ -131,7 +132,8 @@
 }
 
 .dribbble {
-  background: url('./images/dribbble-bg.png') no-repeat center;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 
   .cardBody {
@@ -152,7 +154,8 @@
 }
 
 .clutch {
-  background: url('./images/clutch-bg.png') no-repeat center;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 
   .cardBody {

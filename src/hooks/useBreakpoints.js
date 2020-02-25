@@ -1,8 +1,26 @@
 import { useState, useEffect } from 'react';
 
-import { debounce, getBreakpoint } from '@helpers';
+import { debounce } from '@helpers';
 
-const useGetBreakpoint = () => {
+export const BREAKPOINTS = {
+  DESKTOP: 'desktop',
+  TABLET: 'tablet',
+  MOBILE: 'mobile',
+};
+
+const getBreakpoint = function(width) {
+  if (width >= 992) {
+    return BREAKPOINTS.DESKTOP;
+  }
+
+  if (width >= 768) {
+    return BREAKPOINTS.TABLET;
+  }
+
+  return BREAKPOINTS.MOBILE;
+};
+
+const useBreakpoints = () => {
   const [width, setWidth] = useState(0);
 
   const handleResize = () => {
@@ -24,4 +42,4 @@ const useGetBreakpoint = () => {
   };
 };
 
-export default useGetBreakpoint;
+export default useBreakpoints;

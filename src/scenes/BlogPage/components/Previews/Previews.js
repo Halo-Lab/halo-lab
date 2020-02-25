@@ -2,17 +2,17 @@ import React from 'react';
 
 import List from './components/List';
 import Switcher from './components/Switcher';
-import { useGetBreakpoint } from '@hooks';
+import { useBreakpoints, BREAKPOINTS } from '@hooks';
 import { useWordpressPosts } from '@hooks/queries';
 
 const Previews = () => {
-  const { breakpoint } = useGetBreakpoint();
+  const { breakpoint } = useBreakpoints();
   const items = useWordpressPosts();
 
   return (
     <div className="">
       <div></div>
-      {breakpoint !== 'mobile' ? (
+      {breakpoint !== BREAKPOINTS.MOBILE ? (
         <Switcher items={items} />
       ) : (
         <List items={items} />

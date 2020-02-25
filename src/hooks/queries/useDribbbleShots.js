@@ -18,8 +18,8 @@ const useDribbbleShots = () => {
             height
             localCover {
               childImageSharp {
-                fluid(maxWidth: 300) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 300, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

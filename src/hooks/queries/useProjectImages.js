@@ -1,10 +1,20 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-export const responsiveImage = graphql`
-  fragment responsiveImage on File {
+export const projectsImage = graphql`
+  fragment projectsImage on File {
     childImageSharp {
-      fluid(maxWidth: 950) {
-        ...GatsbyImageSharpFluid
+      fluid(maxWidth: 950, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+`;
+
+export const projectsAvatar = graphql`
+  fragment projectsAvatar on File {
+    childImageSharp {
+      fluid(maxWidth: 80, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
@@ -12,22 +22,30 @@ export const responsiveImage = graphql`
 
 const useProjectImages = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query {
       preview1: file(relativePath: { eq: "project/project1.jpg" }) {
         name
-        ...responsiveImage
+        ...projectsImage
       }
       preview2: file(relativePath: { eq: "project/project2.jpg" }) {
         name
-        ...responsiveImage
+        ...projectsImage
       }
       preview3: file(relativePath: { eq: "project/project3.jpg" }) {
         name
-        ...responsiveImage
+        ...projectsImage
       }
-      avatar1: file(relativePath: { eq: "avatar1.jpg" }) {
+      avatar1: file(relativePath: { eq: "project/avatar1.jpg" }) {
         name
-        ...responsiveImage
+        ...projectsAvatar
+      }
+      avatar2: file(relativePath: { eq: "project/avatar2.jpg" }) {
+        name
+        ...projectsAvatar
+      }
+      avatar3: file(relativePath: { eq: "project/avatar3.jpg" }) {
+        name
+        ...projectsAvatar
       }
     }
   `);

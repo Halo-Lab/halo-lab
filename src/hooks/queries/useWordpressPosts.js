@@ -23,8 +23,8 @@ const useWordpressPosts = () => {
                 source_url
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 800) {
-                      ...GatsbyImageSharpFluid
+                    fluid(maxWidth: 800, quality: 100) {
+                      ...GatsbyImageSharpFluid_withWebp
                     }
                   }
                 }

@@ -10,7 +10,7 @@ const ProjectScene = ({ link, preview, reversed, review, tags, title }) => {
       <div className={styles.preview}>
         <a href={link} target="_blank" rel="noopener noreferrer">
           <Img fluid={preview.childImageSharp.fluid} />
-          <div className={styles.hiddenTitle}>{title}</div>
+          <span className={styles.hiddenTitle}>{title}</span>
         </a>
       </div>
       <div className={styles.description}>

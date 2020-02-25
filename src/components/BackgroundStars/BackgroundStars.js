@@ -3,6 +3,7 @@ import { useSpring, animated as a } from 'react-spring';
 import PropTypes from 'prop-types';
 
 import { GlobalContext, MenuContext } from '@contexts';
+import { checkBrowser } from '@helpers';
 
 import styles from './BackgroundStars.module.scss';
 
@@ -20,6 +21,21 @@ const BackgroundStars = () => {
     'backgrounds/big-stars.svg',
     'backgrounds/small-stars.svg',
   ]);
+
+  // disable parallax effect in Safari browser -->
+  const { isSafari } = checkBrowser();
+
+  if (isSafari) {
+    return (
+      <div
+        style={{
+          backgroundImage: `url(${images['backgrounds/small-stars.svg'].url})`,
+        }}
+        className={styles.containerStatic}
+      />
+    );
+  }
+  // <-- disable parallax effect in Safari browser
 
   const [layerProps, set] = useSpring(() => ({
     from: { y: 0 },
@@ -68,9 +84,11 @@ const BackgroundStars = () => {
       />
       <a.div
         className={styles.wrapper}
-        style={{ transform: layerProps.y.interpolate(iTranslateBig) }}
+        style={{
+          transform: layerProps.y.interpolate(iTranslateBig),
+        }}
       >
-        <a.div
+        <div
           className={styles.layer}
           style={{
             backgroundImage: `url(${images['backgrounds/big-stars.svg'].url})`,
@@ -79,9 +97,11 @@ const BackgroundStars = () => {
       </a.div>
       <a.div
         className={styles.wrapper}
-        style={{ transform: layerProps.y.interpolate(iTranslateSmall) }}
+        style={{
+          transform: layerProps.y.interpolate(iTranslateSmall),
+        }}
       >
-        <a.div
+        <div
           className={styles.layer}
           style={{
             backgroundImage: `url(${images['backgrounds/small-stars.svg'].url})`,

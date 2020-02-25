@@ -1,4 +1,4 @@
+import checkBrowser from './checkBrowser';
 import debounce from './debounce';
-import getBreakpoint from './getBreakpoint';
 
-export { debounce, getBreakpoint };
+export { checkBrowser, debounce };
