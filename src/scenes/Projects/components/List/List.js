@@ -27,6 +27,8 @@ const List = () => {
     avatar3,
   } = useProjectImages();
 
+  console.log(avatar1, avatar2, avatar3);
+
   const items = [
     {
       id: 0,
@@ -37,7 +39,7 @@ const List = () => {
       title: 'Reinvented bedding cutting price for 50%',
       review: {
         avatar: avatar1,
-        author: 'Jon-Paul Wheatley, CPO',
+        author: 'Marshall Haas, CEO',
         text: 'Highly recommend!',
       },
       partners: [
@@ -61,7 +63,7 @@ const List = () => {
       partners: [
         images['partners/forbes.svg'],
         images['partners/techcrunch.svg'],
-        images['partners/mashable.svg'],
+        images['partners/vc.ru.svg'],
         images['partners/angellist.svg'],
       ],
     },
@@ -80,7 +82,7 @@ const List = () => {
       partners: [
         images['partners/forbes.svg'],
         images['partners/techcrunch.svg'],
-        images['partners/vc.ru.svg'],
+        images['partners/mashable.svg'],
         images['partners/indiegogo.svg'],
       ],
     },
