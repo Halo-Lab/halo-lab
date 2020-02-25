@@ -42,21 +42,21 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
 
   let containerWidth = null;
   let tickerWidth = null;
-  let listWidth = null;
-  let startPosition = null;
-  let endPosition = null;
-  let leftBorder = null;
-  let rightBorder = null;
+  let listWidth = null; // width of original list
+  let startPosition = null; // the point where the list moves after crossing the right border
+  let endPosition = null; // the point where the list moves after crossing the left border
+  let leftBorder = null; // the point after which the list should quickly move to end position to simulate an infinite line
+  let rightBorder = null; // the point after which the list should quickly move to start position to simulate an infinite line
 
   useEffect(() => {
     containerWidth = container.current.offsetWidth;
     tickerWidth = ticker.current.scrollWidth;
-    listWidth = tickerWidth / NUMBER_OF_LISTS; // width of original list
+    listWidth = tickerWidth / NUMBER_OF_LISTS;
 
-    startPosition = -listWidth; // the point where the list moves after crossing the right border
-    endPosition = -listWidth - listWidth + containerWidth; // the point where the list moves after crossing the left border
-    leftBorder = -listWidth + containerWidth; // the point after which the list should quickly move to end position to simulate an infinite line
-    rightBorder = -listWidth - listWidth; // the point after which the list should quickly move to start position to simulate an infinite line
+    startPosition = -listWidth;
+    endPosition = -listWidth - listWidth + containerWidth;
+    leftBorder = -listWidth + containerWidth;
+    rightBorder = -listWidth - listWidth;
 
     set({ x: startPosition });
   }, []);
