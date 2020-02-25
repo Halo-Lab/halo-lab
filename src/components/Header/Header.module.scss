@@ -188,6 +188,7 @@
   }
 }
 
-.menuTitle {
-  font-size: 0;
+.hiddenTitle {
+  position: absolute;
+  left: -9999px;
 }

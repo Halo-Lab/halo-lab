@@ -38,7 +38,7 @@ const Header = () => {
             onClick={handleTogglingIsOpened}
           >
             <span className={styles.menuIcon} data-status={menuStatus}></span>
-            <span className={styles.menuTitle}>Menu</span>
+            <span className={styles.hiddenTitle}>Menu</span>
           </button>
         </div>
       </div>

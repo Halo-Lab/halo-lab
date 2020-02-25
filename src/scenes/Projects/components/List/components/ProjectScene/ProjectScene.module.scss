@@ -72,7 +72,8 @@
 }
 
 .hiddenTitle {
-  font-size: 0;
+  position: absolute;
+  left: -9999px;
 }
 
 .tags {
