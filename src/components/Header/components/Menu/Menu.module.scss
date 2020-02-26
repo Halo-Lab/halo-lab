@@ -87,12 +87,14 @@
   color: inherit;
 
   &.active {
+    // mobile active item -->
     @media screen and (max-width: 767px) {
       .circle {
         background-color: $grey-color;
       }
     }
 
+    // tablet and desktop active item -->
     @media screen and (min-width: $md) {
       @include expandedLink;
     }
