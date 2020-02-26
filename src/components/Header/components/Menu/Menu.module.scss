@@ -1,6 +1,34 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
+@mixin expandedLink {
+  [data-circle='1'] {
+    transform: scale(1.94);
+  }
+
+  [data-circle='2'],
+  [data-circle='3'] {
+    transform: scale(3.4);
+  }
+
+  [data-circle='4'] {
+    transform: scale(2.564);
+  }
+
+  .stars {
+    opacity: 1;
+    z-index: 1;
+    transform: translate(-50%, -50%) rotate(-20deg);
+    transition-delay: 0.2s;
+  }
+
+  .icon {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0.2s;
+  }
+}
+
 .container {
   position: fixed;
   top: 0;
@@ -59,38 +87,22 @@
   color: inherit;
 
   &.active {
-    .circle {
-      background-color: $grey-color;
+    // mobile active item -->
+    @media screen and (max-width: 767px) {
+      .circle {
+        background-color: $grey-color;
+      }
+    }
+
+    // tablet and desktop active item -->
+    @media screen and (min-width: $md) {
+      @include expandedLink;
     }
   }
 
   @media screen and (min-width: $lg) {
     &:hover {
-      [data-circle='1'] {
-        transform: scale(1.94);
-      }
-
-      [data-circle='2'],
-      [data-circle='3'] {
-        transform: scale(3.4);
-      }
-
-      [data-circle='4'] {
-        transform: scale(2.564);
-      }
-
-      .stars {
-        opacity: 1;
-        z-index: 1;
-        transform: translate(-50%, -50%) rotate(-20deg);
-        transition-delay: 0.2s;
-      }
-
-      .icon {
-        opacity: 1;
-        z-index: 1;
-        transition-delay: 0.2s;
-      }
+      @include expandedLink;
     }
   }
 }

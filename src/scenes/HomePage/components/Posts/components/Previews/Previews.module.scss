@@ -1,0 +1,13 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  margin-top: 6.67rem;
+
+  @media screen and (min-width: $md) {
+    margin-top: 0;
+  }
+}
+
+.list {
+}

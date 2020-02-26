@@ -2,90 +2,36 @@
 @import '@styles/mixins/all';
 
 .container {
-  padding-top: 14.28rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  padding-top: 11.17rem;
 
-  @include media-breakpoint-down(md) {
+  @media screen and (min-width: $md) {
+    flex-direction: row;
     padding-top: 7.5rem;
   }
 
-  @include media-breakpoint-down(sm) {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  @include media-breakpoint-down(xs) {
-    padding-top: 11.17rem;
-  }
-
-  @media (min-width: 1280px) {
-    max-width: 90rem;
-    margin-left: auto;
-    margin-right: auto;
+  @media screen and (min-width: $lg) {
+    padding-top: 14.28rem;
   }
 }
 
-.info {
-  width: 100%;
-  max-width: 22.14rem;
+.aside {
+  flex: 0 0 100%;
 
-  @include media-breakpoint-down(sm) {
-    max-width: none;
-    text-align: center;
+  @media screen and (min-width: $md) {
+    flex-basis: 35%;
+  }
+
+  @media screen and (min-width: $lg) {
+    flex-basis: 25%;
   }
 }
 
-.title {
-  font-size: 2.14rem;
-  margin-bottom: 3rem;
+.main {
+  flex: 1 1 auto;
 
-  @include media-breakpoint-down(md) {
-    font-size: 1.5rem;
-    margin-bottom: 2.34rem;
-  }
-}
-
-.link {
-  position: relative;
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: 1.42em;
-  letter-spacing: 0.36em;
-  text-transform: uppercase;
-  color: $yellow-color;
-  text-decoration: none;
-  transition: color 0.3s;
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: calc(100% + 1.42rem);
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    height: 0;
-    background-color: #3719ca;
-    z-index: -1;
-    transition: height 0.3s;
-  }
-
-  @include media-breakpoint-down(md) {
-    font-size: 1.17rem;
-  }
-
-  @include media-breakpoint-down(sm) {
-    font-size: 1rem;
-    letter-spacing: 3px;
-  }
-
-  &:hover {
-    @include media-breakpoint-up(lg) {
-      color: $white-color;
-      &::before {
-        height: 100%;
-      }
-    }
+  @media screen and (min-width: $md) {
+    margin-left: 10%;
   }
 }
