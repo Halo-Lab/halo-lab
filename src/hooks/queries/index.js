@@ -1,3 +1,4 @@
+import useClientsAssets from './useClientsAssets';
 import useDribbbleShots from './useDribbbleShots';
 import useHeroCards from './useHeroCards.js';
 import useGalleryImages from './useGalleryImages';
@@ -9,6 +10,7 @@ import useTestimonialsAssets from './useTestimonialsAssets';
 import useWordpressPosts from './useWordpressPosts';
 
 export {
+  useClientsAssets,
   useDribbbleShots,
   useHeroCards,
   useGalleryImages,

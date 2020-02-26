@@ -1,32 +1,24 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { GlobalContext } from '@contexts';
+import { useClientsAssets } from '@hooks/queries';
 
 import styles from './Clients.module.scss';
 
 const Clients = () => {
-  const { imagesAPI } = useContext(GlobalContext);
-  const images = imagesAPI.getArray([
-    'partners/angellist.svg',
-    'partners/forbes.svg',
-    'partners/indiegogo.svg',
-    'partners/mashable.svg',
-    'partners/techcrunch.svg',
-    'partners/vc.ru.svg',
-    'partners/indiegogo.svg',
-    'partners/mashable.svg',
-    'partners/techcrunch.svg',
-    'partners/vc.ru.svg',
-  ]);
+  const items = useClientsAssets();
 
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Our Clients</h2>
       <ul className={styles.list}>
-        {images.map(({ url, name }, index) => {
+        {items.map(({ publicURL }) => {
           return (
-            <li key={index} className={styles.item}>
-              <img src={url} alt={name} draggable="false" />
+            <li key={publicURL} className={styles.item}>
+              <img
+                src={publicURL}
+                alt="client company logotype"
+                draggable="false"
+              />
             </li>
           );
         })}
