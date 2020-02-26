@@ -2,6 +2,7 @@ import useClientsAssets from './useClientsAssets';
 import useDribbbleShots from './useDribbbleShots';
 import useHeroCards from './useHeroCards.js';
 import useGalleryImages from './useGalleryImages';
+import useMenuAssets from './useMenuAssets';
 import useProjectImages from './useProjectImages';
 import useStaticImages from './useStaticImages';
 import useSiteMetadata from './useSiteMetadata';
@@ -14,6 +15,7 @@ export {
   useDribbbleShots,
   useHeroCards,
   useGalleryImages,
+  useMenuAssets,
   useProjectImages,
   useStaticImages,
   useSiteMetadata,

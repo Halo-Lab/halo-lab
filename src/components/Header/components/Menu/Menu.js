@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 
 import { GlobalContext } from '@contexts';
+import { useMenuAssets } from '@hooks/queries';
 
 import styles from './Menu.module.scss';
 
@@ -17,6 +18,8 @@ const Menu = () => {
     'menu/services-icon.svg',
     'menu/services-stars.svg',
   ]);
+
+  const menuAssets = useMenuAssets();
 
   const items = [
     {
