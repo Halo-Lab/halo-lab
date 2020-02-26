@@ -1,0 +1,8 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  box-sizing: border-box;
+  padding-top: 88px;
+  height: 100%;
+}
