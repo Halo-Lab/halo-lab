@@ -1,18 +1,16 @@
 import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 
-import { MenuContext, GlobalContext } from '@contexts';
-import { useSiteMetadata } from '@hooks/queries';
+import { MenuContext } from '@contexts';
+import { useSiteMetadata, useHeaderAssets } from '@hooks/queries';
 import Menu from './components/Menu';
 
 import styles from './Header.module.scss';
 
 const Header = () => {
   const metadata = useSiteMetadata();
+  const { logotype } = useHeaderAssets();
   const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
-
-  const { imagesAPI } = useContext(GlobalContext);
-  const images = imagesAPI.get(['header-logo.svg']);
 
   const menuStatus = isOpened ? 'opened' : 'closed';
 
@@ -21,7 +19,7 @@ const Header = () => {
       <div className={`${styles.bar} pageWrapper`}>
         <div className={styles.logotype}>
           <Link to="/">
-            <img src={images['header-logo.svg'].url} alt="logotype" />
+            <img src={logotype.publicURL} alt="Halo-Lab logotype" />
           </Link>
         </div>
 
