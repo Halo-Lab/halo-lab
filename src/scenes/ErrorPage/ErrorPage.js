@@ -5,14 +5,14 @@ import PageMessage from '@components/PageMessage';
 import styles from './ErrorPage.module.scss';
 
 const ErrorPage = () => {
-  const title = 'Ooops';
+  const title = 'Oops';
   const message = `
     Something went wrong =(
   `;
 
   return (
     <div className={`pageWrapper ${styles.container}`}>
-      <PageMessage title={title} message={message} />
+      <PageMessage title={title} large={true} message={message} />
     </div>
   );
 };

@@ -12,13 +12,17 @@
 }
 
 .title {
+  margin-bottom: 0.8em;
   font-family: $font-ratiomodern;
   font-size: 3.57rem;
-  // font-size: 80px;
   font-weight: 400;
   line-height: 1.2;
-  // line-height: 0.8;
-  margin-bottom: 0.8em;
+
+  &.large {
+    margin-bottom: 64px;
+    font-size: 120px;
+    line-height: 0.8;
+  }
 }
 
 .description {
@@ -31,6 +35,11 @@
 
   &:not(:first-of-type) {
     margin-top: 1.5em;
+  }
+
+  &.large {
+    font-size: 30px;
+    line-height: 1;
   }
 }
 
@@ -45,7 +54,7 @@
 }
 
 .button {
-  margin-top: 3.1em;
+  margin-top: 62px;
   font-family: $font-sofia-pro;
   font-size: 1rem;
   font-weight: 700;

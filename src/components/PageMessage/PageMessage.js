@@ -6,13 +6,14 @@ import { useSiteMetadata } from '@hooks/queries';
 
 import styles from './PageMessage.module.scss';
 
-const PageMessage = ({ title, message, mail }) => {
+const PageMessage = ({ title, large, mail, message }) => {
   const metadata = useSiteMetadata();
+  const largeStyles = large ? styles.large : null;
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>{title}</h2>
-      <p className={styles.description}>{message}</p>
+      <h2 className={`${styles.title} ${largeStyles}`}>{title}</h2>
+      <p className={`${styles.description} ${largeStyles}`}>{message}</p>
 
       {mail ? (
         <p className={styles.description}>
@@ -31,6 +32,7 @@ const PageMessage = ({ title, message, mail }) => {
 };
 
 PageMessage.propTypes = {
+  large: PropTypes.bool,
   mail: PropTypes.bool,
   message: PropTypes.string,
   title: PropTypes.string,
