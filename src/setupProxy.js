@@ -6,5 +6,5 @@ const options = {
 };
 
 module.exports = function(app) {
-  app.use('/api', createProxyMiddleware(options));
+  app.use('https://connect.facebook.net/', createProxyMiddleware(options));
 };
