@@ -32,8 +32,6 @@ const List = () => {
     { title: 'E-commerce', image: images[IMAGES.ECOMMERCE] },
   ];
 
-  console.log('items', items);
-
   return (
     <ul className={styles.container}>
       {items.map(({ title, image }) => {
