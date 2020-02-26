@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
+import Info from './components/Info';
 import List from './components/List';
 
 import styles from './Posts.module.scss';
@@ -8,16 +8,13 @@ import styles from './Posts.module.scss';
 const Posts = () => {
   return (
     <section className={styles.container}>
-      <div className={styles.info}>
-        <div className={styles.title}>
-          Front-end &amp; back-end expertise from development to delivery
-        </div>
-        <Link to="/blog" className={styles.link}>
-          MORE BLOG POSTS
-        </Link>
+      <div className={styles.aside}>
+        <Info />
       </div>
-
-      <List />
+      <div className={styles.main}>
+        {/* <List /> */}
+        List
+      </div>
     </section>
   );
 };
