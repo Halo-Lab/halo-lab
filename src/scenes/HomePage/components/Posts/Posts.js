@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Info from './components/Info';
-import List from './components/List';
+import Previews from './components/Previews';
 
 import styles from './Posts.module.scss';
 
@@ -12,8 +12,7 @@ const Posts = () => {
         <Info />
       </div>
       <div className={styles.main}>
-        {/* <List /> */}
-        List
+        <Previews />
       </div>
     </section>
   );

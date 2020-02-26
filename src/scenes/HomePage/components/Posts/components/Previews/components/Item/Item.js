@@ -11,12 +11,12 @@ const Item = ({ path, title, featured_media, date }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.image}>
+      <div className={styles.imageBox}>
         <Link to={link}>
-          <Img fluid={image} alt="preview" />
+          <Img fluid={image} alt="blog post preview" />
         </Link>
       </div>
-      <div className={styles.info}>
+      <div className={styles.description}>
         <div className={styles.date}>{date}</div>
         <h3 className={styles.title}>
           <Link to={link} dangerouslySetInnerHTML={{ __html: title }}></Link>

@@ -5,9 +5,9 @@ import Item from './components/Item';
 import { useBreakpoints, BREAKPOINTS } from '@hooks';
 import { useWordpressPosts } from '@hooks/queries';
 
-import styles from './List.module.scss';
+import styles from './Previews.module.scss';
 
-const List = () => {
+const Previews = () => {
   const { breakpoint } = useBreakpoints();
   const items = useWordpressPosts().slice(0, 3);
 
@@ -22,21 +22,21 @@ const List = () => {
 
   return (
     <div className={styles.container}>
-      {breakpoint !== BREAKPOINTS.MOBILE ? (
-        <>
-          {items.map(item => {
-            return <Item key={item.path} {...item} />;
-          })}
-        </>
-      ) : (
+      {breakpoint === BREAKPOINTS.MOBILE ? (
         <Slider settings={settings}>
           {items.map(item => {
             return <Item key={item.path} {...item} />;
           })}
         </Slider>
+      ) : (
+        <div className={styles.list}>
+          {items.map(item => {
+            return <Item key={item.path} {...item} />;
+          })}
+        </div>
       )}
     </div>
   );
 };
 
-export default List;
+export default Previews;

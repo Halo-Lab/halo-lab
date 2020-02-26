@@ -30,4 +30,8 @@
 
 .main {
   flex: 1 1 auto;
+
+  @media screen and (min-width: $md) {
+    margin-left: 10%;
+  }
 }
