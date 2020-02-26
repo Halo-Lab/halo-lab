@@ -16,7 +16,7 @@ const Design = () => {
 
   const message = {
     text:
-      'We make the collaboration of people and interface more intensive and exiting.',
+      'We make the collaboration of people and interface more intensive and exciting.',
     link: 'NEED A DESIGNER?',
   };
 
@@ -50,7 +50,7 @@ const Design = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>Design</div>
-      <ServicesItem banner={true} items={items} message={message} />
+      <ServicesItem banner={false} items={items} message={message} />
     </div>
   );
 };
