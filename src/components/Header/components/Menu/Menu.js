@@ -21,25 +21,25 @@ const Menu = () => {
   const items = [
     {
       title: 'Projects',
-      link: '/portfolio',
+      link: '/portfolio/',
       icon: images['menu/portfolio-icon.svg'],
       stars: images['menu/portfolio-stars.svg'],
     },
     {
       title: 'Services',
-      link: '/services',
+      link: '/services/',
       icon: images['menu/services-icon.svg'],
       stars: images['menu/services-stars.svg'],
     },
     {
       title: 'Blog',
-      link: '/blog',
+      link: '/blog/',
       icon: images['menu/blog-icon.svg'],
       stars: images['menu/blog-stars.svg'],
     },
     {
       title: 'Contacts',
-      link: '/contacts',
+      link: '/contacts/',
       icon: images['menu/contacts-icon.svg'],
       stars: images['menu/contacts-stars.svg'],
     },
