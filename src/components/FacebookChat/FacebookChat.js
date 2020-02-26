@@ -1,28 +1,43 @@
 import React, { useEffect } from 'react';
 
+let initialized = false;
+
 const FacebookChat = () => {
   useEffect(() => {
-    window.fbAsyncInit = function() {
-      window.FB.init({
-        xfbml: true,
-        version: 'v3.3',
-      });
-    };
+    if (!initialized) {
+      window.fbAsyncInit = function() {
+        window.FB.init({
+          xfbml: true,
+          version: 'v3.3',
+        });
+      };
 
-    const script = document.createElement('script');
-    script.setAttribute('async', 'true');
-    script.src = 'https://connect.facebook.net/en_US/sdk.js';
-    document.body.appendChild(script);
+      const script = document.createElement('script');
+      script.setAttribute('async', 'true');
+      script.src = 'https://connect.facebook.net/en_US/sdk.js';
+      document.body.appendChild(script);
 
-    (function(d, s, id) {
-      var js,
-        fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    })(document, 'script', 'facebook-jssdk');
+      // const chatScript = document.createElement('script');
+      // chatScript.id = 'facebook-jssdk';
+      // chatScript.src =
+      //   'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      // document.body.appendChild(chatScript);
+
+      (function(d, s, id) {
+        // not working -->
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        // <-- not working
+
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, 'script', 'facebook-jssdk');
+
+      initialized = true;
+    }
 
     return () => {
       // const facebookChat = document.getElementById('facebookChat');
