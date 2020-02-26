@@ -16,7 +16,7 @@ const Design = () => {
 
   const message = {
     text:
-      'We make the collaboration of people and interface more intensive and exiting.',
+      'We make the collaboration of people and interface more intensive and exciting.',
     link: 'NEED A DESIGNER?',
   };
 
