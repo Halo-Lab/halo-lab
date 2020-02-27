@@ -5,6 +5,7 @@ import useHomeGalleryAssets from './useHomeGalleryAssets';
 import useHomeHeroAssets from './useHomeHeroAssets.js';
 import useMenuAssets from './useMenuAssets';
 import usePortfolioClientsAssets from './usePortfolioClientsAssets';
+import usePortfolioWorksAssets from './usePortfolioWorksAssets';
 import useProjectsAssets from './useProjectsAssets';
 import useStaticImages from './useStaticImages';
 import useSiteMetadata from './useSiteMetadata';
@@ -20,6 +21,7 @@ export {
   useHomeGalleryAssets,
   useMenuAssets,
   usePortfolioClientsAssets,
+  usePortfolioWorksAssets,
   useProjectsAssets,
   useStaticImages,
   useSiteMetadata,
