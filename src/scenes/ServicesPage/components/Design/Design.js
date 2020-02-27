@@ -49,7 +49,7 @@ const Design = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>Design</div>
-      <ServicesItem banner={false} items={items} message={message} />
+      <ServicesItem items={items} message={message} />
     </div>
   );
 };
