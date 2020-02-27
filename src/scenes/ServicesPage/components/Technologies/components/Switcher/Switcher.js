@@ -30,7 +30,7 @@ const Switcher = ({ items }) => {
                     style={inlineStyles}
                   >
                     <div className={styles.tabContentIcon}>
-                      <img src={image.url} alt={image.name} />
+                      <img src={image.publicURL} alt="technologies item icon" />
                     </div>
                     <div className={styles.tabContentTitle}>{title}</div>
                   </li>
