@@ -23,27 +23,33 @@ export const projectsAvatar = graphql`
 const useProjectImages = () => {
   const data = useStaticQuery(graphql`
     query {
-      preview1: file(relativePath: { eq: "project/project1.jpg" }) {
+      preview1: file(relativePath: { eq: "sections/projects/preview-1.jpg" }) {
         name
         ...projectsImage
       }
-      preview2: file(relativePath: { eq: "project/project2.jpg" }) {
+      preview2: file(relativePath: { eq: "sections/projects/preview-2.jpg" }) {
         name
         ...projectsImage
       }
-      preview3: file(relativePath: { eq: "project/project3.jpg" }) {
+      preview3: file(relativePath: { eq: "sections/projects/preview-3.jpg" }) {
         name
         ...projectsImage
       }
-      avatar1: file(relativePath: { eq: "project/Marshall_Haas_CEO.jpg" }) {
+      avatar1: file(
+        relativePath: { eq: "sections/projects/marshall_haas.jpg" }
+      ) {
         name
         ...projectsAvatar
       }
-      avatar2: file(relativePath: { eq: "project/Bogdan_Suchyk_CEO.jpg" }) {
+      avatar2: file(
+        relativePath: { eq: "sections/projects/bogdan_suchyk.jpg" }
+      ) {
         name
         ...projectsAvatar
       }
-      avatar3: file(relativePath: { eq: "project/Anton_Glance_CEO.png" }) {
+      avatar3: file(
+        relativePath: { eq: "sections/projects/anton_glance.png" }
+      ) {
         name
         ...projectsAvatar
       }
