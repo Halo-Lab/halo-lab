@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-const useClientsAssets = () => {
+const usePortfolioClientsAssets = () => {
   const data = useStaticQuery(graphql`
     query {
       allFile(
@@ -25,4 +25,4 @@ const useClientsAssets = () => {
   return result;
 };
 
-export default useClientsAssets;
+export default usePortfolioClientsAssets;
