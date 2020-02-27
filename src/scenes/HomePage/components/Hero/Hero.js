@@ -1,10 +1,13 @@
 import React from 'react';
 
+import { useHomeHeroAssets } from '@hooks/queries';
 import Info from './components/Info';
 
 import styles from './Hero.module.scss';
 
 const Hero = () => {
+  const { quotes, ...infoAssets } = useHomeHeroAssets();
+
   return (
     <section className={styles.container}>
       <div>
@@ -20,7 +23,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <Info />
+      <Info {...infoAssets} />
     </section>
   );
 };

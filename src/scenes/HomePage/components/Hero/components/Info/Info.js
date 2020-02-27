@@ -1,38 +1,35 @@
 import React from 'react';
-
-import { useHeroCards } from '@hooks/queries';
+import PropTypes from 'prop-types';
 
 import styles from './Info.module.scss';
 
-const Info = () => {
-  const {
-    background1,
-    background2,
-    background3,
-    icon1,
-    icon2,
-    icon3,
-  } = useHeroCards();
-
+const Info = ({
+  clutchBackground,
+  dribbbleBackground,
+  upworkBackground,
+  clutchLogotype,
+  dribbbleLogotype,
+  upworkLogotype,
+}) => {
   const items = [
     {
       link: '#',
-      icon: icon3,
-      image: background3,
+      icon: upworkLogotype,
+      image: upworkBackground,
       classes: styles.upwork,
       textStrings: ['Best', 'Design Agency', '2018 in Ukraine'],
     },
     {
       link: '#',
-      icon: icon2,
-      image: background2,
+      icon: dribbbleLogotype,
+      image: dribbbleBackground,
       classes: styles.dribbble,
       textStrings: ['Top Trending', 'Team with 3m', 'Total Views'],
     },
     {
       link: '#',
-      icon: icon1,
-      image: background1,
+      icon: clutchLogotype,
+      image: clutchBackground,
       classes: styles.clutch,
       textStrings: ['4.9/5', 'Average Rating', 'by Our Clients'],
     },
@@ -75,6 +72,15 @@ const Info = () => {
       <div className={`${styles.circle} ${styles.circleLg}`}></div>
     </div>
   );
+};
+
+Info.propTypes = {
+  clutchBackground: PropTypes.object,
+  dribbbleBackground: PropTypes.object,
+  upworkBackground: PropTypes.object,
+  clutchLogotype: PropTypes.object,
+  dribbbleLogotype: PropTypes.object,
+  upworkLogotype: PropTypes.object,
 };
 
 export default Info;

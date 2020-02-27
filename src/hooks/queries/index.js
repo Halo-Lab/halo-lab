@@ -2,7 +2,7 @@ import useClientsAssets from './useClientsAssets';
 import useDribbbleShots from './useDribbbleShots';
 import useFooterAssets from './useFooterAssets';
 import useHeaderAssets from './useHeaderAssets';
-import useHeroCards from './useHeroCards.js';
+import useHomeHeroAssets from './useHomeHeroAssets.js';
 import useGalleryImages from './useGalleryImages';
 import useMenuAssets from './useMenuAssets';
 import useProjectImages from './useProjectImages';
@@ -17,7 +17,7 @@ export {
   useDribbbleShots,
   useFooterAssets,
   useHeaderAssets,
-  useHeroCards,
+  useHomeHeroAssets,
   useGalleryImages,
   useMenuAssets,
   useProjectImages,
