@@ -1,23 +1,39 @@
-import useClientsAssets from './useClientsAssets';
+import useBackgroundsAssets from './useBackgroundsAssets';
+import useContactsAssets from './useContactsAssets';
 import useDribbbleShots from './useDribbbleShots';
-import useHeroCards from './useHeroCards.js';
-import useGalleryImages from './useGalleryImages';
+import useFooterAssets from './useFooterAssets';
+import useHeaderAssets from './useHeaderAssets';
+import useHomeGalleryAssets from './useHomeGalleryAssets';
+import useHomeHeroAssets from './useHomeHeroAssets.js';
 import useMenuAssets from './useMenuAssets';
-import useProjectImages from './useProjectImages';
-import useStaticImages from './useStaticImages';
+import usePortfolioClientsAssets from './usePortfolioClientsAssets';
+import usePortfolioWorksAssets from './usePortfolioWorksAssets';
+import useProjectsAssets from './useProjectsAssets';
+import useServicesDesignAssets from './useServicesDesignAssets';
+import useServicesDevelopmentAssets from './useServicesDevelopmentAssets';
+import useServicesIndustriesAssets from './useServicesIndustriesAssets';
+import useServicesTechnologiesAssets from './useServicesTechnologiesAssets';
 import useSiteMetadata from './useSiteMetadata';
 import useSitePages from './useSitePages';
 import useTestimonialsAssets from './useTestimonialsAssets';
 import useWordpressPosts from './useWordpressPosts';
 
 export {
-  useClientsAssets,
+  useBackgroundsAssets,
+  useContactsAssets,
   useDribbbleShots,
-  useHeroCards,
-  useGalleryImages,
+  useFooterAssets,
+  useHeaderAssets,
+  useHomeHeroAssets,
+  useHomeGalleryAssets,
   useMenuAssets,
-  useProjectImages,
-  useStaticImages,
+  usePortfolioClientsAssets,
+  usePortfolioWorksAssets,
+  useProjectsAssets,
+  useServicesDesignAssets,
+  useServicesDevelopmentAssets,
+  useServicesIndustriesAssets,
+  useServicesTechnologiesAssets,
   useSiteMetadata,
   useSitePages,
   useTestimonialsAssets,

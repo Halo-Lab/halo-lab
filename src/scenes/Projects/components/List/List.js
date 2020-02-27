@@ -1,32 +1,25 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import { GlobalContext } from '@contexts';
-import { useProjectImages } from '@hooks/queries';
 import Partners from './components/Partners';
 import ProjectScene from './components/ProjectScene';
 
 import styles from './List.module.scss';
 
-const List = () => {
-  const { imagesAPI } = useContext(GlobalContext);
-  const images = imagesAPI.get([
-    'partners/forbes.svg',
-    'partners/mashable.svg',
-    'partners/indiegogo.svg',
-    'partners/techcrunch.svg',
-    'partners/vc.ru.svg',
-    'partners/angellist.svg',
-  ]);
-  const {
-    preview1,
-    preview2,
-    preview3,
-    avatar1,
-    avatar2,
-    avatar3,
-  } = useProjectImages();
-
+const List = ({
+  preview1,
+  preview2,
+  preview3,
+  avatar1,
+  avatar2,
+  avatar3,
+  angellist,
+  forbes,
+  indiegogo,
+  mashable,
+  techcrunch,
+  vcRu,
+}) => {
   const items = [
     {
       id: 0,
@@ -40,11 +33,7 @@ const List = () => {
         author: 'Marshall Haas, CEO',
         text: 'Unwavering expertise!',
       },
-      partners: [
-        images['partners/forbes.svg'],
-        images['partners/mashable.svg'],
-        images['partners/indiegogo.svg'],
-      ],
+      partners: [forbes, mashable, indiegogo],
     },
     {
       id: 1,
@@ -58,12 +47,7 @@ const List = () => {
         author: 'Bogdan Suchyk, CEO',
         text: 'Professional and creative!',
       },
-      partners: [
-        images['partners/forbes.svg'],
-        images['partners/techcrunch.svg'],
-        images['partners/vc.ru.svg'],
-        images['partners/angellist.svg'],
-      ],
+      partners: [forbes, techcrunch, vcRu, angellist],
     },
     {
       id: 2,
@@ -77,12 +61,7 @@ const List = () => {
         author: 'Anton Glance, CEO',
         text: 'They know what to do!',
       },
-      partners: [
-        images['partners/forbes.svg'],
-        images['partners/techcrunch.svg'],
-        images['partners/mashable.svg'],
-        images['partners/indiegogo.svg'],
-      ],
+      partners: [forbes, techcrunch, mashable, indiegogo],
     },
   ];
 
@@ -104,7 +83,18 @@ const List = () => {
 };
 
 List.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
+  preview1: PropTypes.object,
+  preview2: PropTypes.object,
+  preview3: PropTypes.object,
+  avatar1: PropTypes.object,
+  avatar2: PropTypes.object,
+  avatar3: PropTypes.object,
+  angellist: PropTypes.object,
+  forbes: PropTypes.object,
+  indiegogo: PropTypes.object,
+  mashable: PropTypes.object,
+  techcrunch: PropTypes.object,
+  vcRu: PropTypes.object,
 };
 
 export default List;

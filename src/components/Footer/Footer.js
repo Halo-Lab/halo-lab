@@ -1,40 +1,39 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { GlobalContext } from '@contexts';
+import { useFooterAssets } from '@hooks/queries';
 
 import styles from './Footer.module.scss';
 
 const Footer = () => {
-  const { imagesAPI } = useContext(GlobalContext);
-  const images = imagesAPI.get([
-    'logo.svg',
-    'socials/behance.svg',
-    'socials/dribbble.svg',
-    'socials/facebook.svg',
-    'socials/instagram.svg',
-    'socials/twitter.svg',
-  ]);
+  const {
+    logotype,
+    behance,
+    dribbble,
+    facebook,
+    instagram,
+    twitter,
+  } = useFooterAssets();
 
   const socials = [
     {
       href: 'https://twitter.com/halolabteam',
-      image: images['socials/twitter.svg'],
+      image: twitter,
     },
     {
       href: 'https://www.instagram.com/halolabteam/',
-      image: images['socials/instagram.svg'],
+      image: instagram,
     },
     {
       href: 'https://www.facebook.com/halolabteam/',
-      image: images['socials/facebook.svg'],
+      image: facebook,
     },
     {
       href: 'https://www.behance.net/halolab',
-      image: images['socials/behance.svg'],
+      image: behance,
     },
     {
       href: 'https://dribbble.com/halolab',
-      image: images['socials/dribbble.svg'],
+      image: dribbble,
     },
   ];
 
@@ -45,14 +44,14 @@ const Footer = () => {
           return (
             <li key={href}>
               <a href={href} target="_blank" rel="noopener noreferrer">
-                <img src={image.url} alt={image.name} />
+                <img src={image.publicURL} alt="social icon" />
               </a>
             </li>
           );
         })}
       </ul>
       <div className={styles.logotype}>
-        <img src={images['logo.svg'].url} alt={images['logo.svg'].name} />
+        <img src={logotype.publicURL} alt="halo-lab logotype" />
         <span>With Love from Halo Lab</span>
       </div>
     </div>

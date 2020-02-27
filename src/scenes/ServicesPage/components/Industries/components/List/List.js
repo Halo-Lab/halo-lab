@@ -1,35 +1,28 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { GlobalContext } from '@contexts';
+import { useServicesIndustriesAssets } from '@hooks/queries';
 
 import styles from './List.module.scss';
 
-const IMAGES = {
-  HEALTHCARE: 'services/industries/healthcare.svg',
-  FINTECH: 'services/industries/fintech.svg',
-  IOT: 'services/industries/iot.svg',
-  ECOMMERCE: 'services/industries/ecommerce.svg',
-};
-
 const List = () => {
-  const { imagesAPI } = useContext(GlobalContext);
-  const images = imagesAPI.get([
-    IMAGES.HEALTHCARE,
-    IMAGES.FINTECH,
-    IMAGES.IOT,
-    IMAGES.ECOMMERCE,
-  ]);
+  const {
+    eCommerce,
+    fintech,
+    healthCare,
+    internetOfThings,
+  } = useServicesIndustriesAssets();
+
   const items = [
     {
       title: 'Health care',
-      image: images[IMAGES.HEALTHCARE],
+      image: healthCare,
     },
-    { title: 'Fintech', image: images[IMAGES.FINTECH] },
+    { title: 'Fintech', image: fintech },
     {
       title: 'Internet of Things',
-      image: images[IMAGES.IOT],
+      image: internetOfThings,
     },
-    { title: 'E-commerce', image: images[IMAGES.ECOMMERCE] },
+    { title: 'E-commerce', image: eCommerce },
   ];
 
   return (
@@ -37,7 +30,11 @@ const List = () => {
       {items.map(({ title, image }) => {
         return (
           <li key={title} className={styles.item}>
-            <img src={image.url} alt={image.name} draggable="false" />
+            <img
+              src={image.publicURL}
+              alt="industries item icon"
+              draggable="false"
+            />
             <span>{title}</span>
           </li>
         );
