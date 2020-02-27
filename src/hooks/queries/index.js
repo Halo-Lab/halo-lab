@@ -1,3 +1,4 @@
+import useBackgroundsAssets from './useBackgroundsAssets';
 import useContactsAssets from './useContactsAssets';
 import useDribbbleShots from './useDribbbleShots';
 import useFooterAssets from './useFooterAssets';
@@ -19,6 +20,7 @@ import useTestimonialsAssets from './useTestimonialsAssets';
 import useWordpressPosts from './useWordpressPosts';
 
 export {
+  useBackgroundsAssets,
   useContactsAssets,
   useDribbbleShots,
   useFooterAssets,
