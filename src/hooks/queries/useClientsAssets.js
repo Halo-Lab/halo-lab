@@ -6,7 +6,7 @@ const useClientsAssets = () => {
       allFile(
         filter: {
           extension: { regex: "/svg/" }
-          relativeDirectory: { eq: "clients" }
+          relativeDirectory: { eq: "sections/portfolio-clients" }
         }
       ) {
         edges {
