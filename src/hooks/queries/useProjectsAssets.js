@@ -53,6 +53,33 @@ const useProjectsAssets = () => {
         name
         ...projectsAvatar
       }
+      angellist: file(relativePath: { eq: "brands/angellist.svg" }) {
+        publicURL
+      }
+      forbes: file(relativePath: { eq: "brands/forbes.svg" }) {
+        publicURL
+      }
+      indiegogo: file(relativePath: { eq: "brands/indiegogo.svg" }) {
+        publicURL
+      }
+      mashable: file(relativePath: { eq: "brands/mashable.svg" }) {
+        publicURL
+      }
+      techcrunch: file(relativePath: { eq: "brands/techcrunch.svg" }) {
+        publicURL
+      }
+      vcRu: file(relativePath: { eq: "brands/vc.ru.svg" }) {
+        publicURL
+      }
+      jackAndJones: file(relativePath: { eq: "brands/jack-and-jones.svg" }) {
+        publicURL
+      }
+      kklLuzern: file(relativePath: { eq: "brands/kkl-luzern.svg" }) {
+        publicURL
+      }
+      udemy: file(relativePath: { eq: "brands/udemy.svg" }) {
+        publicURL
+      }
     }
   `);
 

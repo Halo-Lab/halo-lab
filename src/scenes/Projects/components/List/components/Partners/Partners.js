@@ -6,10 +6,10 @@ import styles from './Partners.module.scss';
 const Partners = ({ items, reversed }) => {
   return (
     <ul className={`${styles.container} ${reversed ? styles.reversed : ''}`}>
-      {items.map(({ url, name }) => {
+      {items.map(({ publicURL }) => {
         return (
-          <li key={name}>
-            <img src={url} alt={name} />
+          <li key={publicURL}>
+            <img src={publicURL} alt="partner logotype" />
           </li>
         );
       })}
