@@ -1,28 +1,40 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { GlobalContext } from '@contexts';
+import { useServicesIndustriesAssets } from '@hooks/queries';
 
 import styles from './List.module.scss';
 
 const List = () => {
-  const { imagesAPI } = useContext(GlobalContext);
-  const images = imagesAPI.get(['services/industries_icon.svg']);
+  const {
+    eCommerce,
+    fintech,
+    healthCare,
+    internetOfThings,
+  } = useServicesIndustriesAssets();
+
   const items = [
-    { title: 'Health care', image: images['services/industries_icon.svg'] },
-    { title: 'Fintech', image: images['services/industries_icon.svg'] },
+    {
+      title: 'Health care',
+      image: healthCare,
+    },
+    { title: 'Fintech', image: fintech },
     {
       title: 'Internet of Things',
-      image: images['services/industries_icon.svg'],
+      image: internetOfThings,
     },
-    { title: 'E-commmerce', image: images['services/industries_icon.svg'] },
+    { title: 'E-commerce', image: eCommerce },
   ];
 
   return (
     <ul className={styles.container}>
-      {items.map(({ title, image }, index) => {
+      {items.map(({ title, image }) => {
         return (
-          <li key={index} className={styles.item}>
-            <img src={image.url} alt={image.name} draggable="false" />
+          <li key={title} className={styles.item}>
+            <img
+              src={image.publicURL}
+              alt="industries item icon"
+              draggable="false"
+            />
             <span>{title}</span>
           </li>
         );

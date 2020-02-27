@@ -1,47 +1,46 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 
-import { GlobalContext } from '@contexts';
+import { useMenuAssets } from '@hooks/queries';
 
 import styles from './Menu.module.scss';
 
 const Menu = () => {
-  const { imagesAPI } = useContext(GlobalContext);
-  const images = imagesAPI.get([
-    'menu/blog-icon.svg',
-    'menu/blog-stars.svg',
-    'menu/contacts-icon.svg',
-    'menu/contacts-stars.svg',
-    'menu/portfolio-icon.svg',
-    'menu/portfolio-stars.svg',
-    'menu/services-icon.svg',
-    'menu/services-stars.svg',
-  ]);
+  const {
+    blogIcon,
+    blogStars,
+    contactsIcon,
+    contactsStars,
+    portfolioIcon,
+    portfolioStars,
+    servicesIcon,
+    servicesStars,
+  } = useMenuAssets();
 
   const items = [
     {
       title: 'Projects',
-      link: '/portfolio',
-      icon: images['menu/portfolio-icon.svg'],
-      stars: images['menu/portfolio-stars.svg'],
+      link: '/portfolio/',
+      icon: portfolioIcon,
+      stars: portfolioStars,
     },
     {
       title: 'Services',
-      link: '/services',
-      icon: images['menu/services-icon.svg'],
-      stars: images['menu/services-stars.svg'],
+      link: '/services/',
+      icon: servicesIcon,
+      stars: servicesStars,
     },
     {
       title: 'Blog',
-      link: '/blog',
-      icon: images['menu/blog-icon.svg'],
-      stars: images['menu/blog-stars.svg'],
+      link: '/blog/',
+      icon: blogIcon,
+      stars: blogStars,
     },
     {
       title: 'Contacts',
-      link: '/contacts',
-      icon: images['menu/contacts-icon.svg'],
-      stars: images['menu/contacts-stars.svg'],
+      link: '/contacts/',
+      icon: contactsIcon,
+      stars: contactsStars,
     },
   ];
 
@@ -63,11 +62,11 @@ const Menu = () => {
                 <div className={styles.circle} data-circle={index + 1}></div>
                 <div className={styles.title}>{title}</div>
                 <div
-                  style={{ backgroundImage: `url('${stars.url}')` }}
+                  style={{ backgroundImage: `url('${stars.publicURL}')` }}
                   className={styles.stars}
                 ></div>
                 <div
-                  style={{ backgroundImage: `url('${icon.url}')` }}
+                  style={{ backgroundImage: `url('${icon.publicURL}')` }}
                   className={styles.icon}
                   data-icon={index + 1}
                 ></div>

@@ -69,7 +69,7 @@ const Form = () => {
         method: 'POST',
         headers: {
           Accept: 'application/json',
-          'Content-Type': 'application/json',
+          'Content-Type': 'multipart/form-data',
         },
         body: JSON.stringify(formData),
       })
@@ -77,13 +77,11 @@ const Form = () => {
           if (response.ok) {
             navigate('/thanks');
           } else {
-            // eslint-disable-next-line no-console
-            console.log('Server responded with an error!', response);
+            navigate('/error');
           }
         })
-        .catch(response => {
-          // eslint-disable-next-line no-console
-          console.log('Error: ', response);
+        .catch(() => {
+          navigate('/error');
         });
   };
 

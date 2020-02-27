@@ -1,81 +1,80 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
+import { useBreakpoints, BREAKPOINTS } from '@hooks';
+import { useServicesTechnologiesAssets } from '@hooks/queries';
 import Switcher from './components/Switcher';
 import List from './components/List';
-import { GlobalContext } from '@contexts';
-import { useBreakpoints, BREAKPOINTS } from '@hooks';
 
 import styles from './Technologies.module.scss';
 
 const Technologies = () => {
   const { breakpoint } = useBreakpoints();
-  const { imagesAPI } = useContext(GlobalContext);
-  const images = imagesAPI.get([
-    'services/react.svg',
-    'services/angular.svg',
-    'services/vue.svg',
-    'services/HTML5.svg',
-    'services/css3.svg',
-    'services/javascript.svg',
-    'services/typescript.svg',
-    'services/node-js.svg',
-    'services/php-logo.svg',
-    'services/express.svg',
-    'services/wordpress.svg',
-    'services/keystone.svg',
-    'services/native.svg',
-    'services/pwa-logo.svg',
-    'services/nodejs.png',
-    'services/Ionic.svg',
-    'services/cordova.svg',
-    'services/PostgreSQL.svg',
-    'services/mysql.svg',
-    'services/redis-icon.svg',
-    'services/mongodb.svg',
-    'services/elasticsearch.svg',
-  ]);
+  const {
+    angular,
+    cordova,
+    css3,
+    elasticsearch,
+    express,
+    html5,
+    ionic,
+    javascript,
+    keystone,
+    mongodb,
+    mysql,
+    nodejs,
+    php,
+    postgresql,
+    pwa,
+    reactNative,
+    react,
+    redis,
+    typescript,
+    vue,
+    wordpress,
+  } = useServicesTechnologiesAssets();
+
   const items = [
     {
       title: 'Front-end',
       items: [
-        { title: 'React', image: images['services/react.svg'] },
-        { title: 'Angular 7', image: images['services/angular.svg'] },
-        { title: 'Vue', image: images['services/vue.svg'] },
-        { title: 'HTML5', image: images['services/HTML5.svg'] },
-        { title: 'CSS3', image: images['services/css3.svg'] },
-        { title: 'JavaScript', image: images['services/javascript.svg'] },
-        { title: 'TypeScript', image: images['services/typescript.svg'] },
+        { title: 'React', image: react },
+        { title: 'Angular 7', image: angular },
+        { title: 'Vue', image: vue },
+        { title: 'HTML5', image: html5 },
+        { title: 'CSS3', image: css3 },
+        { title: 'JavaScript', image: javascript },
+        { title: 'TypeScript', image: typescript },
       ],
     },
     {
       title: 'Back-end',
       items: [
-        { title: 'Node Js', image: images['services/node-js.svg'] },
-        { title: 'PHP', image: images['services/php-logo.svg'] },
-        { title: 'Express', image: images['services/express.svg'] },
-        { title: 'WordPress', image: images['services/wordpress.svg'] },
-        { title: 'Keystone', image: images['services/keystone.svg'] },
+        { title: 'Node JS', image: nodejs },
+        { title: 'PHP', image: php },
+        { title: 'Express', image: express },
+        { title: 'WordPress', image: wordpress },
+        { title: 'Keystone', image: keystone },
       ],
     },
     {
       title: 'Mobile',
       items: [
-        { title: 'React', image: images['services/react.svg'] },
-        { title: 'React Native', image: images['services/native.svg'] },
-        { title: 'PWA', image: images['services/pwa-logo.svg'] },
-        { title: 'SPA', image: images['services/nodejs.png'] },
-        { title: 'Ionic', image: images['services/Ionic.svg'] },
-        { title: 'Apache Cordova', image: images['services/cordova.svg'] },
+        { title: 'React', image: react },
+        { title: 'React Native', image: reactNative },
+        { title: 'PWA', image: pwa },
+        { title: 'SPA', image: nodejs },
+        { title: 'Ionic', image: ionic },
+        { title: 'Apache Cordova', image: cordova },
       ],
     },
     {
       title: 'Databases',
       items: [
-        { title: 'PostgreSQL', image: images['services/PostgreSQL.svg'] },
-        { title: 'MySQL', image: images['services/mysql.svg'] },
-        { title: 'Redis', image: images['services/redis-icon.svg'] },
-        { title: 'MongoDB', image: images['services/mongodb.svg'] },
-        { title: 'Elasticsearch', image: images['services/elasticsearch.svg'] },
+        { title: 'PostgreSQL', image: postgresql },
+        { title: 'MySQL', image: mysql },
+        { title: 'Redis', image: redis },
+        { title: 'MongoDB', image: mongodb },
+        { title: 'Elasticsearch', image: elasticsearch },
       ],
     },
   ];

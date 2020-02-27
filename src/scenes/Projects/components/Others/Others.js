@@ -1,18 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-
-import { GlobalContext } from '@contexts';
 
 import styles from './Others.module.scss';
 
-const Others = () => {
-  const { imagesAPI } = useContext(GlobalContext);
-  const images = imagesAPI.get([
-    'jackandjones.svg',
-    'udemy.svg',
-    'kkl-luzern.svg',
-  ]);
-
+const Others = ({ jackAndJones, kklLuzern, udemy }) => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -21,19 +13,13 @@ const Others = () => {
       </div>
       <ul className={styles.list}>
         <li className={styles.item}>
-          <img
-            src={images['jackandjones.svg'].url}
-            alt={images['jackandjones.svg'].name}
-          />
+          <img src={jackAndJones.publicURL} alt="partner logotype" />
         </li>
         <li className={styles.item}>
-          <img src={images['udemy.svg'].url} alt={images['udemy.svg'].name} />
+          <img src={udemy.publicURL} alt="partner logotype" />
         </li>
         <li className={styles.item}>
-          <img
-            src={images['kkl-luzern.svg'].url}
-            alt={images['kkl-luzern.svg'].name}
-          />
+          <img src={kklLuzern.publicURL} alt="partner logotype" />
         </li>
         <li className={styles.item}>
           <Link to="/portfolio" className={styles.link}>
@@ -49,6 +35,12 @@ const Others = () => {
       </ul>
     </div>
   );
+};
+
+Others.propTypes = {
+  jackAndJones: PropTypes.object,
+  kklLuzern: PropTypes.object,
+  udemy: PropTypes.object,
 };
 
 export default Others;

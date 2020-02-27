@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
-import { GlobalContext } from '@contexts';
+import React from 'react';
+
+import { useContactsAssets } from '@hooks/queries';
 
 import styles from './Map.module.scss';
 
@@ -9,19 +10,12 @@ const items = [
 ];
 
 const Map = () => {
-  const { imagesAPI } = useContext(GlobalContext);
-  const images = imagesAPI.get([
-    'contacts/contact-map.svg',
-    'contacts/flag-icon.svg',
-  ]);
+  const { map } = useContactsAssets();
 
   return (
     <div className={styles.container}>
       <div className={styles.imageWrapper}>
-        <img
-          src={images['contacts/contact-map.svg'].url}
-          alt={images['contacts/contact-map.svg'].name}
-        />
+        <img src={map.publicURL} alt="map of Ukraine" />
         <div className={styles.mapPin}></div>
       </div>
       <div className={styles.textWrapper}>

@@ -1,15 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { GlobalContext } from '@contexts';
+import { usePortfolioWorksAssets } from '@hooks/queries';
 
 import styles from './Title.module.scss';
 
 const Title = () => {
-  const { imagesAPI } = useContext(GlobalContext);
-  const images = imagesAPI.get([
-    'dribbble-badge.svg',
-    'dribbble-badge-text.svg',
-  ]);
+  const { circledText, dribbbleRed } = usePortfolioWorksAssets();
 
   return (
     <h2 className={styles.container}>
@@ -22,13 +18,13 @@ const Title = () => {
       >
         <img
           className={styles.icon}
-          src={images['dribbble-badge.svg'].url}
-          alt={images['dribbble-badge.svg'].name}
+          src={circledText.publicURL}
+          alt="applications mobile illustrations websites"
         />
         <img
           className={styles.image}
-          src={images['dribbble-badge-text.svg'].url}
-          alt={images['dribbble-badge-text.svg'].name}
+          src={dribbbleRed.publicURL}
+          alt="dribbble logotype"
         />
       </a>
     </h2>

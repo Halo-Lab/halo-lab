@@ -15,7 +15,7 @@ const List = ({ items }) => {
                 return (
                   <li key={index} className={styles.subitem}>
                     <div className={styles.icon}>
-                      <img src={image.url} alt={image.name} />
+                      <img src={image.publicURL} alt="technologies item icon" />
                     </div>
                     <div className={styles.subitemTitle}>{title}</div>
                   </li>

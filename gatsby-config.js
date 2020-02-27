@@ -40,7 +40,7 @@ module.exports = {
         background_color: `#02021e`,
         theme_color: `#02021e`,
         display: `standalone`,
-        icon: `src/images/meta/icon.png`, // This path is relative to the root of the site.
+        icon: `static/icon.png`, // This path is relative to the root of the site.
       },
     },
     {
