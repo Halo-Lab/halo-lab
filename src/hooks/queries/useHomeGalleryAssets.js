@@ -10,13 +10,13 @@ export const homeGalleryImage = graphql`
   }
 `;
 
-const useGalleryImages = () => {
+const useHomeGalleryAssets = () => {
   const data = useStaticQuery(graphql`
     query {
       allFile(
         filter: {
           extension: { regex: "/jpg/" }
-          relativeDirectory: { eq: "gallery" }
+          relativeDirectory: { eq: "sections/home-gallery" }
         }
       ) {
         edges {
@@ -37,4 +37,4 @@ const useGalleryImages = () => {
   return result;
 };
 
-export default useGalleryImages;
+export default useHomeGalleryAssets;

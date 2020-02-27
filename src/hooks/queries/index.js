@@ -2,8 +2,8 @@ import useClientsAssets from './useClientsAssets';
 import useDribbbleShots from './useDribbbleShots';
 import useFooterAssets from './useFooterAssets';
 import useHeaderAssets from './useHeaderAssets';
+import useHomeGalleryAssets from './useHomeGalleryAssets';
 import useHomeHeroAssets from './useHomeHeroAssets.js';
-import useGalleryImages from './useGalleryImages';
 import useMenuAssets from './useMenuAssets';
 import useProjectImages from './useProjectImages';
 import useStaticImages from './useStaticImages';
@@ -18,7 +18,7 @@ export {
   useFooterAssets,
   useHeaderAssets,
   useHomeHeroAssets,
-  useGalleryImages,
+  useHomeGalleryAssets,
   useMenuAssets,
   useProjectImages,
   useStaticImages,

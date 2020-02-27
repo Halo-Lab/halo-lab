@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 
 import { GlobalContext, MenuContext } from '@contexts';
 import { useBreakpoints, BREAKPOINTS } from '@hooks';
-import { useGalleryImages } from '@hooks/queries';
+import { useHomeGalleryAssets } from '@hooks/queries';
 import Slider from '@components/Slider';
 import Ticker from '@components/Ticker';
 import Item from './components/Item';
@@ -18,7 +18,7 @@ const Gallery = () => {
     'gallery/left-arrow.png',
     'gallery/right-arrow.png',
   ]);
-  const galleryImages = useGalleryImages();
+  const galleryImages = useHomeGalleryAssets();
 
   useEffect(() => {
     setBuildKey(+new Date());
