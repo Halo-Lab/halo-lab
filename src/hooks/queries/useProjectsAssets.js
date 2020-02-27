@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-export const projectsImage = graphql`
-  fragment projectsImage on File {
+export const projectsPreview = graphql`
+  fragment projectsPreview on File {
     childImageSharp {
       fluid(maxWidth: 950, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
@@ -20,20 +20,20 @@ export const projectsAvatar = graphql`
   }
 `;
 
-const useProjectImages = () => {
+const useProjectsAssets = () => {
   const data = useStaticQuery(graphql`
     query {
       preview1: file(relativePath: { eq: "sections/projects/preview-1.jpg" }) {
         name
-        ...projectsImage
+        ...projectsPreview
       }
       preview2: file(relativePath: { eq: "sections/projects/preview-2.jpg" }) {
         name
-        ...projectsImage
+        ...projectsPreview
       }
       preview3: file(relativePath: { eq: "sections/projects/preview-3.jpg" }) {
         name
-        ...projectsImage
+        ...projectsPreview
       }
       avatar1: file(
         relativePath: { eq: "sections/projects/marshall_haas.jpg" }
@@ -59,4 +59,4 @@ const useProjectImages = () => {
   return data;
 };
 
-export default useProjectImages;
+export default useProjectsAssets;

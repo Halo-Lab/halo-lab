@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import { GlobalContext } from '@contexts';
-import { useProjectImages } from '@hooks/queries';
+import { useProjectsAssets } from '@hooks/queries';
 import Partners from './components/Partners';
 import ProjectScene from './components/ProjectScene';
 
@@ -25,7 +25,7 @@ const List = () => {
     avatar1,
     avatar2,
     avatar3,
-  } = useProjectImages();
+  } = useProjectsAssets();
 
   const items = [
     {

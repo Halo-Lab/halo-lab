@@ -5,7 +5,7 @@ import useHeaderAssets from './useHeaderAssets';
 import useHomeGalleryAssets from './useHomeGalleryAssets';
 import useHomeHeroAssets from './useHomeHeroAssets.js';
 import useMenuAssets from './useMenuAssets';
-import useProjectImages from './useProjectImages';
+import useProjectsAssets from './useProjectsAssets';
 import useStaticImages from './useStaticImages';
 import useSiteMetadata from './useSiteMetadata';
 import useSitePages from './useSitePages';
@@ -20,7 +20,7 @@ export {
   useHomeHeroAssets,
   useHomeGalleryAssets,
   useMenuAssets,
-  useProjectImages,
+  useProjectsAssets,
   useStaticImages,
   useSiteMetadata,
   useSitePages,
