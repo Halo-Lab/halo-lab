@@ -13,7 +13,6 @@ import useServicesDesignAssets from './useServicesDesignAssets';
 import useServicesDevelopmentAssets from './useServicesDevelopmentAssets';
 import useServicesIndustriesAssets from './useServicesIndustriesAssets';
 import useServicesTechnologiesAssets from './useServicesTechnologiesAssets';
-import useStaticImages from './useStaticImages';
 import useSiteMetadata from './useSiteMetadata';
 import useSitePages from './useSitePages';
 import useTestimonialsAssets from './useTestimonialsAssets';
@@ -35,7 +34,6 @@ export {
   useServicesDevelopmentAssets,
   useServicesIndustriesAssets,
   useServicesTechnologiesAssets,
-  useStaticImages,
   useSiteMetadata,
   useSitePages,
   useTestimonialsAssets,
