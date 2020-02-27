@@ -7,6 +7,8 @@ import useMenuAssets from './useMenuAssets';
 import usePortfolioClientsAssets from './usePortfolioClientsAssets';
 import usePortfolioWorksAssets from './usePortfolioWorksAssets';
 import useProjectsAssets from './useProjectsAssets';
+import useServicesDesignAssets from './useServicesDesignAssets';
+import useServicesDevelopmentAssets from './useServicesDevelopmentAssets';
 import useServicesIndustriesAssets from './useServicesIndustriesAssets';
 import useServicesTechnologiesAssets from './useServicesTechnologiesAssets';
 import useStaticImages from './useStaticImages';
@@ -25,6 +27,8 @@ export {
   usePortfolioClientsAssets,
   usePortfolioWorksAssets,
   useProjectsAssets,
+  useServicesDesignAssets,
+  useServicesDevelopmentAssets,
   useServicesIndustriesAssets,
   useServicesTechnologiesAssets,
   useStaticImages,
