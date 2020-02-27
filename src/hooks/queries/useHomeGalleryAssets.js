@@ -13,7 +13,7 @@ export const homeGalleryImage = graphql`
 const useHomeGalleryAssets = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(
+      photos: allFile(
         filter: {
           extension: { regex: "/jpg/" }
           relativeDirectory: { eq: "sections/home-gallery" }
@@ -25,16 +25,28 @@ const useHomeGalleryAssets = () => {
           }
         }
       }
+      arrowLeft: file(
+        relativePath: { eq: "sections/home-gallery/arrow-left.png" }
+      ) {
+        publicURL
+      }
+      arrowRight: file(
+        relativePath: { eq: "sections/home-gallery/arrow-right.png" }
+      ) {
+        publicURL
+      }
     }
   `);
 
-  const result = data.allFile.edges.map(({ node: { childImageSharp } }) => {
+  const photos = data.photos.edges.map(({ node: { childImageSharp } }) => {
     return {
       childImageSharp,
     };
   });
+  const arrowLeft = data.arrowLeft;
+  const arrowRight = data.arrowRight;
 
-  return result;
+  return { photos, arrowLeft, arrowRight };
 };
 
 export default useHomeGalleryAssets;

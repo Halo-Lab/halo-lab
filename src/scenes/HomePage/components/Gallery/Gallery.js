@@ -1,24 +1,19 @@
 import React, { useState, useEffect, useContext } from 'react';
 
-import { GlobalContext, MenuContext } from '@contexts';
+import { MenuContext } from '@contexts';
 import { useBreakpoints, BREAKPOINTS } from '@hooks';
 import { useHomeGalleryAssets } from '@hooks/queries';
-import Slider from '@components/Slider';
 import Ticker from '@components/Ticker';
+import Slider from '@components/Slider';
 import Item from './components/Item';
 
 import styles from './Gallery.module.scss';
 
 const Gallery = () => {
-  const { breakpoint, width } = useBreakpoints();
   const [buildKey, setBuildKey] = useState(null);
-  const { imagesAPI } = useContext(GlobalContext);
+  const { breakpoint, width } = useBreakpoints();
   const { isOpened } = useContext(MenuContext);
-  const icons = imagesAPI.get([
-    'gallery/left-arrow.png',
-    'gallery/right-arrow.png',
-  ]);
-  const galleryImages = useHomeGalleryAssets();
+  const { photos, arrowLeft, arrowRight } = useHomeGalleryAssets();
 
   useEffect(() => {
     setBuildKey(+new Date());
@@ -52,15 +47,15 @@ const Gallery = () => {
         {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
           <Ticker
             key={buildKey}
-            images={galleryImages}
-            leftArrow={icons['gallery/left-arrow.png']}
-            rightArrow={icons['gallery/right-arrow.png']}
+            images={photos}
+            arrowLeft={arrowLeft}
+            arrowRight={arrowRight}
           />
         ) : null}
         {breakpoint === BREAKPOINTS.MOBILE ||
         breakpoint === BREAKPOINTS.TABLET ? (
           <Slider settings={settings}>
-            {galleryImages.map((item, index) => {
+            {photos.map((item, index) => {
               return <Item key={index} data-name={index} {...item} />;
             })}
           </Slider>
