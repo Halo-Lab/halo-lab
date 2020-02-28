@@ -1,7 +1,7 @@
 # Halo Lab Website
 
 <a href="https://www.halo-lab.com/?utm_source=halo-lab-website">
-  <img src="https://api.halo-lab.com/wp-content/uploads/dev_halo.svg"
+  <img src="http://api.halo-lab.com/wp-content/uploads/dev_halo.svg"
        alt="Developed in Halo lab" width="236" height="54">
 </a>
 
