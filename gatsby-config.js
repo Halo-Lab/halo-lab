@@ -60,29 +60,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-alias-imports`,
-      options: {
-        alias: {
-          '@src': 'src',
-          '@components': 'src/components',
-          '@pages': 'src/pages',
-          '@scenes': 'src/scenes',
-          '@hooks': 'src/hooks',
-          '@contexts': 'src/contexts',
-          '@services': 'src/services',
-          '@helpers': 'src/helpers',
-          '@styles': 'src/styles',
-          '@images': 'src/images',
-        },
-        extensions: ['js', 'sass', 'scss'],
-      },
-    },
-
-    /*
-     * Gatsby's data processing layer begins with “source”
-     * plugins. Here the site sources its data from WordPress.
-     */
-    {
       resolve: 'gatsby-source-wordpress',
       options: {
         baseUrl: process.env.WP_API_BASE_URL,
@@ -100,6 +77,48 @@ module.exports = {
           '**/media',
           '**/taxonomies',
         ],
+      },
+    },
+    // {
+    //   resolve: `gatsby-plugin-gtag`,
+    //   options: {
+    //     trackingId: process.env.GTAG_TRACKING_ID,
+    //     head: true,
+    //     anonymize: false,
+    //   },
+    // },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.GTAG_TRACKING_ID],
+        gtagConfig: {
+          // optimize_id: 'OPT_CONTAINER_ID',
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+          // exclude: ['/preview/**', '/do-not-track/me/too/'],
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@src': 'src',
+          '@components': 'src/components',
+          '@pages': 'src/pages',
+          '@scenes': 'src/scenes',
+          '@hooks': 'src/hooks',
+          '@contexts': 'src/contexts',
+          '@services': 'src/services',
+          '@helpers': 'src/helpers',
+          '@styles': 'src/styles',
+          '@images': 'src/images',
+        },
+        extensions: ['js', 'sass', 'scss'],
       },
     },
     {
