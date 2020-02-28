@@ -1,11 +1,17 @@
 # Halo Lab Website
 
-## What we should take in consideration during development:
+It's an open sourced version of [www.halo-lab.com](https://www.halo-lab.com/?utm_source=github-halo-lab) website. 
 
-1. It's a public repo, so no private data should be commited
-2. We already have this app implemented, we need to re-use as many code as possible.
-3. This app should be fast. Integrate Lighthouse from the very beginning. Our goal is 100 points on each category
-4. We shouldn't touch back-end of the existing app. All blog data should live in wordpress, we will retrieve it with gatsby wordpress plugin
+<a href="https://www.halo-lab.com/?utm_source=github-halo-lab">
+  <img src="http://api.halo-lab.com/wp-content/uploads/dev_halo.svg"
+       alt="Developed in Halo lab" height="60">
+</a>
+<br/><br/>
+
+> **Note**
+>
+> To run this project you need `.env`. We'll add test `.env` file with test tokens later on, for now you can request it from [Sergey Diniovksiy](https://github.com/lazio), [Eugene Byrlad](https://github.com/eugene-halolab) or [Mikhail Netkachev](https://github.com/mikhailnetkachev-halolab).
+
 
 ## Prerequisites
 
@@ -24,10 +30,6 @@ Download all necessary dependencies:
 ```
 npm install
 ```
-
-> **Note**
->
-> You also need `.env` file to start project. You can get it from [Sergey Diniovksiy](https://github.com/lazio), [Eugene Byrlad](https://github.com/eugene-halolab) or [Mikhail Netkachev](https://github.com/mikhailnetkachev-halolab).
 
 ## Development
 
