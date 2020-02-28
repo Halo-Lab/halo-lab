@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { useClientsAssets } from '@hooks/queries';
+import { usePortfolioClientsAssets } from '@hooks/queries';
 
 import styles from './Clients.module.scss';
 
 const Clients = () => {
-  const items = useClientsAssets();
+  const items = usePortfolioClientsAssets();
 
   return (
     <div className={styles.container}>

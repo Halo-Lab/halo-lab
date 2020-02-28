@@ -6,17 +6,16 @@ import List from './components/List';
 
 import styles from './ServicesItem.module.scss';
 
-const ServicesItem = ({ banner, items, message }) => {
+const ServicesItem = ({ items, message }) => {
   return (
     <div className={styles.container}>
-      <Block banner={banner} message={message} />
+      <Block message={message} />
       <List items={items} />
     </div>
   );
 };
 
 ServicesItem.propTypes = {
-  banner: PropTypes.bool,
   items: PropTypes.arrayOf(PropTypes.object),
   message: PropTypes.object,
 };

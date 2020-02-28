@@ -31,7 +31,7 @@ const configDefault = { duration: TIME, precision: 0, easing: easeLinear };
 
 const iTranslate = value => `translate3d(${value}px, 0, 0)`;
 
-const Ticker = ({ images, leftArrow, rightArrow }) => {
+const Ticker = ({ images, arrowLeft, arrowRight }) => {
   const isRunning = useRef(false);
   const container = useRef(null);
   const ticker = useRef(null);
@@ -133,14 +133,14 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
       </a.ul>
       <div
         data-direction={DIRECTIONS.FORWARD}
-        style={{ cursor: `url('${leftArrow.url}'), auto` }}
+        style={{ cursor: `url('${arrowLeft.publicURL}'), auto` }}
         className={styles.asideLeft}
         onMouseEnter={go}
         onMouseLeave={stop}
       />
       <div
         data-direction={DIRECTIONS.BACKWARD}
-        style={{ cursor: `url('${rightArrow.url}'), auto` }}
+        style={{ cursor: `url('${arrowRight.publicURL}'), auto` }}
         className={styles.asideRight}
         onMouseEnter={go}
         onMouseLeave={stop}
@@ -151,8 +151,8 @@ const Ticker = ({ images, leftArrow, rightArrow }) => {
 
 Ticker.propTypes = {
   images: PropTypes.arrayOf(PropTypes.object),
-  leftArrow: PropTypes.object,
-  rightArrow: PropTypes.object,
+  arrowLeft: PropTypes.object,
+  arrowRight: PropTypes.object,
   x: PropTypes.any,
 };
 

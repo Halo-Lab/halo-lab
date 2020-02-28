@@ -2,7 +2,8 @@ import React, { useEffect, useContext } from 'react';
 import { useSpring, animated as a } from 'react-spring';
 import PropTypes from 'prop-types';
 
-import { GlobalContext, MenuContext } from '@contexts';
+import { MenuContext } from '@contexts';
+import { useBackgroundsAssets } from '@hooks/queries';
 import { checkBrowser } from '@helpers';
 
 import styles from './BackgroundStars.module.scss';
@@ -14,13 +15,8 @@ const iTranslateSmall = y => `translate3d(0, ${y / 1.5}%, 0)`;
 const iScale = value => `scale(${value})`;
 
 const BackgroundStars = () => {
-  const { imagesAPI } = useContext(GlobalContext);
+  const { starsBig, starsSmall } = useBackgroundsAssets();
   const { isOpened } = useContext(MenuContext);
-
-  const images = imagesAPI.get([
-    'backgrounds/big-stars.svg',
-    'backgrounds/small-stars.svg',
-  ]);
 
   // disable parallax effect in Safari browser -->
   const { isSafari } = checkBrowser();
@@ -29,7 +25,7 @@ const BackgroundStars = () => {
     return (
       <div
         style={{
-          backgroundImage: `url(${images['backgrounds/small-stars.svg'].url})`,
+          backgroundImage: `url(${starsSmall.publicURL})`,
         }}
         className={styles.containerStatic}
       />
@@ -79,7 +75,7 @@ const BackgroundStars = () => {
         style={{
           opacity: hiddenStarsProps.opacity,
           transform: hiddenStarsProps.scale.interpolate(iScale),
-          backgroundImage: `url(${images['backgrounds/small-stars.svg'].url})`,
+          backgroundImage: `url(${starsSmall.publicURL})`,
         }}
       />
       <a.div
@@ -91,7 +87,7 @@ const BackgroundStars = () => {
         <div
           className={styles.layer}
           style={{
-            backgroundImage: `url(${images['backgrounds/big-stars.svg'].url})`,
+            backgroundImage: `url(${starsBig.publicURL})`,
           }}
         />
       </a.div>
@@ -104,7 +100,7 @@ const BackgroundStars = () => {
         <div
           className={styles.layer}
           style={{
-            backgroundImage: `url(${images['backgrounds/small-stars.svg'].url})`,
+            backgroundImage: `url(${starsSmall.publicURL})`,
           }}
         />
       </a.div>

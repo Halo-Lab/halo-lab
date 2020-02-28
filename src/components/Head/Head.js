@@ -1,14 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import { GlobalContext } from '@contexts';
 import { useSiteMetadata } from '@hooks/queries';
 
 const Head = ({ children }) => {
   const metadata = useSiteMetadata();
-  const { imagesAPI } = useContext(GlobalContext);
-  const images = imagesAPI.get(['meta/tile.256.png', 'meta/tile.512.png']);
+
   // eslint-disable-next-line no-unused-vars
   const schema = {
     '@context': 'https://schema.org',
@@ -93,10 +91,7 @@ const Head = ({ children }) => {
         content="We are a full-stack design & development team who focuses on digital products whatever they are."
         name="twitter:description"
       />
-      <meta
-        content={`https://halo-lab.com${images['meta/tile.256.png'].url}`}
-        name="twitter:image"
-      />
+      <meta content="https://halo-lab.com/tile-256.png" name="twitter:image" />
       <meta content="https://halo-lab.com" name="twitter:url" />
 
       {/* <!-- Facebook meta --> */}
@@ -107,10 +102,7 @@ const Head = ({ children }) => {
         property="og:description"
       />
       <meta content="website" property="og:type" />
-      <meta
-        content={`https://halo-lab.com${images['meta/tile.512.png'].url}`}
-        property="og:image"
-      />
+      <meta content="https://halo-lab.com/tile-512.png" property="og:image" />
       <meta content="https://halo-lab.com" property="og:url" />
       <meta property="og:locale" content="en_US" />
 
