@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { navigate } from 'gatsby';
 
 import styles from './Form.module.scss';
 
 const Form = () => {
+  const attachmentInput = useRef(null);
   const [data, setData] = useState({
     name: {
       value: '',
@@ -33,7 +34,7 @@ const Form = () => {
     }));
   };
 
-  const [isValid, setisValid] = useState(true);
+  const [isValid, setIsValid] = useState(true);
   const [filesList, setFilesList] = useState([]);
 
   const fileAccept =
@@ -52,25 +53,22 @@ const Form = () => {
       isCompanyEmailValid(data.email.value) &&
       data.message.valid;
 
-    setisValid(valid);
-
-    const formData = {
-      'quote-name': data.name.value,
-      'quote-company': data.company.value,
-      'quote-email': data.email.value,
-      'quote-message': data.message.value,
-    };
+    setIsValid(valid);
 
     const url = 'https://getform.io/f/4707dc47-7be9-4932-b3b9-3ff95d3e87d3';
+    const formData = new FormData();
+
+    formData.append('quote-name', data.name.value);
+    formData.append('quote-company', data.company.value);
+    formData.append('quote-email', data.email.value);
+    formData.append('quote-message', data.message.value);
+    formData.append('file', attachmentInput.current.files[0] || '');
 
     valid &&
       fetch(url, {
         method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        headers: {},
+        body: formData,
       })
         .then(response => {
           if (response.ok) {
@@ -172,6 +170,7 @@ const Form = () => {
               type="file"
               name="quote-file"
               id="attachment-file"
+              ref={attachmentInput}
               accept={fileAccept}
               onChange={handleInputFileChange}
             ></input>
