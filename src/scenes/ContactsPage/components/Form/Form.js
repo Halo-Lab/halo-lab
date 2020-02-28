@@ -61,15 +61,14 @@ const Form = () => {
       'quote-message': data.message.value,
     };
 
-    // const urlHalo = 'http://api.halo-lab.com/wp-json/contact-form-7/v1/contact-forms/288/feedback';
-    const url = 'https://getform.io/f/2812474b-d85f-48db-ad59-fcaf9e8a4920';
+    const url = 'https://getform.io/f/4707dc47-7be9-4932-b3b9-3ff95d3e87d3';
 
     valid &&
       fetch(url, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       })
