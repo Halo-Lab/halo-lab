@@ -1,6 +1,6 @@
 # Halo Lab Website
 
-It's an open sourced version of [www.halo-lab.com](https://www.halo-lab.com) website. 
+It's an open sourced version of [www.halo-lab.com](https://www.halo-lab.com/?utm_source=github-halo-lab) website. 
 
 <a href="https://www.halo-lab.com/?utm_source=github-halo-lab">
   <img src="http://api.halo-lab.com/wp-content/uploads/dev_halo.svg"
