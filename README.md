@@ -2,15 +2,14 @@
 
 It's an open sourced version of [www.halo-lab.com](https://www.halo-lab.com) website. 
 
-> **Note**
->
-> To run this project you need `.env`. We'll add test `.env` file with test tokens later on, for now you can request it from [Sergey Diniovksiy](https://github.com/lazio), [Eugene Byrlad](https://github.com/eugene-halolab) or [Mikhail Netkachev](https://github.com/mikhailnetkachev-halolab).
-
-
 <a href="https://www.halo-lab.com/?utm_source=github-halo-lab">
   <img src="http://api.halo-lab.com/wp-content/uploads/dev_halo.svg"
        alt="Developed in Halo lab" height="60">
 </a>
+
+> **Note**
+>
+> To run this project you need `.env`. We'll add test `.env` file with test tokens later on, for now you can request it from [Sergey Diniovksiy](https://github.com/lazio), [Eugene Byrlad](https://github.com/eugene-halolab) or [Mikhail Netkachev](https://github.com/mikhailnetkachev-halolab).
 
 
 ## Prerequisites
