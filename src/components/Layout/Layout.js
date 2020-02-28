@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Header from '@components/Header';
 import Footer from '@components/Footer';
+import CustomerChat from '@components/CustomerChat';
 import { MenuContext } from '@contexts';
 
 import styles from './Layout.module.scss';
@@ -20,6 +21,7 @@ const Layout = ({ children }) => {
           <body className={styles.locked}></body>
         </Helmet>
       ) : null}
+      <CustomerChat />
       <div className={styles.container}>
         <header className={styles.header}>
           <Header />
