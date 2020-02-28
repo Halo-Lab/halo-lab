@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `Halo-Lab`,
