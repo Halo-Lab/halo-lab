@@ -1,11 +1,10 @@
 # Halo Lab Website
 
-## What we should take in consideration during development:
+<a href="https://www.halo-lab.com/?utm_source=halo-lab-website">
+  <img src="https://api.halo-lab.com/wp-content/uploads/dev_halo.svg"
+       alt="Developed in Halo lab" width="236" height="54">
+</a>
 
-1. It's a public repo, so no private data should be commited
-2. We already have this app implemented, we need to re-use as many code as possible.
-3. This app should be fast. Integrate Lighthouse from the very beginning. Our goal is 100 points on each category
-4. We shouldn't touch back-end of the existing app. All blog data should live in wordpress, we will retrieve it with gatsby wordpress plugin
 
 ## Prerequisites
 
