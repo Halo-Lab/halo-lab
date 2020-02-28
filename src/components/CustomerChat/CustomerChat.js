@@ -2,10 +2,6 @@ import React from 'react';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const config = {
-  // required -->
-  appId: '',
-  pageId: '546681475406388',
-  // not required -->
   autoLogAppEvents: true,
   greetingDialogDisplay: 'hide',
   themeColor: '#3719CA',
@@ -14,7 +10,13 @@ const config = {
 };
 
 const CustomerChat = () => {
-  return <MessengerCustomerChat {...config} />;
+  return (
+    <MessengerCustomerChat
+      pageId={process.env.GATSBY_FACEBOOK_PAGE_ID}
+      appId={process.env.GATSBY_FACEBOOK_APP_ID}
+      {...config}
+    />
+  );
 };
 
 export default CustomerChat;
