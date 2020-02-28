@@ -62,7 +62,6 @@ const Form = () => {
     };
 
     const url = 'https://getform.io/f/4707dc47-7be9-4932-b3b9-3ff95d3e87d3';
-    const body = new FormData();
 
     valid &&
       fetch(url, {
