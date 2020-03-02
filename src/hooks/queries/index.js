@@ -16,6 +16,7 @@ import useServicesTechnologiesAssets from './useServicesTechnologiesAssets';
 import useSiteMetadata from './useSiteMetadata';
 import useSitePages from './useSitePages';
 import useTestimonialsAssets from './useTestimonialsAssets';
+import useWordPressMedia from './useWordPressMedia';
 import useWordpressPosts from './useWordpressPosts';
 
 export {
@@ -37,5 +38,6 @@ export {
   useSiteMetadata,
   useSitePages,
   useTestimonialsAssets,
+  useWordPressMedia,
   useWordpressPosts,
 };

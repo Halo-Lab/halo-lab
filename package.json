@@ -20,6 +20,7 @@
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-source-wordpress": "^3.1.57",
     "gatsby-transformer-sharp": "^2.3.7",
+    "html-react-parser": "^0.10.1",
     "jquery": "^3.4.1",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
