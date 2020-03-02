@@ -11,6 +11,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-optimize-svgs`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-dribbble`,
@@ -79,14 +80,6 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-gtag`,
-    //   options: {
-    //     trackingId: process.env.GTAG_TRACKING_ID,
-    //     head: true,
-    //     anonymize: false,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
