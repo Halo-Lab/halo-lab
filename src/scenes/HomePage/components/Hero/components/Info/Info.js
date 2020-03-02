@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 
 import styles from './Info.module.scss';
 
+const getSrc = source => {
+  const result =
+    source.childImageSharp.fluid.srcWebp || source.childImageSharp.fluid.src;
+
+  return result;
+};
+
 const Info = ({
   clutchBackground,
   dribbbleBackground,
@@ -38,6 +45,8 @@ const Info = ({
   return (
     <div className={styles.container}>
       {items.map(({ link, icon, image, classes, textStrings }, index) => {
+        const imageSrc = getSrc(image);
+
         return (
           <div key={index} className={styles.cardWrapper}>
             <a
@@ -45,7 +54,7 @@ const Info = ({
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                backgroundImage: `url('${image.childImageSharp.fluid.src}')`,
+                backgroundImage: `url('${imageSrc}')`,
               }}
               className={`${styles.card} ${classes}`}
             >
