@@ -55,14 +55,19 @@ const Form = () => {
 
     setIsValid(valid);
 
-    const url = 'https://getform.io/f/4707dc47-7be9-4932-b3b9-3ff95d3e87d3';
+    // const url = 'https://getform.io/f/4707dc47-7be9-4932-b3b9-3ff95d3e87d3';
+    const url =
+      'https://formsubmit.io/send/ee771531-fe21-4984-9f7d-89ff931a0913';
     const formData = new FormData();
 
-    formData.append('quote-name', data.name.value);
-    formData.append('quote-company', data.company.value);
-    formData.append('quote-email', data.email.value);
-    formData.append('quote-message', data.message.value);
-    formData.append('file', attachmentInput.current.files[0] || '');
+    formData.append('name', data.name.value);
+    formData.append('company', data.company.value);
+    formData.append('email', data.email.value);
+    formData.append('message', data.message.value);
+    // formData.append('file', attachmentInput.current.files[0] || '');
+    formData.append('_formsubmit_id', undefined); // anti-spam field
+
+    console.log(typeof formData.get('_formsubmit_id'));
 
     valid &&
       fetch(url, {
@@ -71,13 +76,15 @@ const Form = () => {
         body: formData,
       })
         .then(response => {
+          console.dir(response);
           if (response.ok) {
             navigate('/thanks');
           } else {
             navigate('/error');
           }
         })
-        .catch(() => {
+        .catch(error => {
+          console.dir(error);
           navigate('/error');
         });
   };
