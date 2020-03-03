@@ -7,7 +7,6 @@ import { useSiteMetadata } from '@hooks/queries';
 const Head = ({ children }) => {
   const metadata = useSiteMetadata();
 
-  // eslint-disable-next-line no-unused-vars
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -106,43 +105,14 @@ const Head = ({ children }) => {
       <meta content="https://halo-lab.com" property="og:url" />
       <meta property="og:locale" content="en_US" />
 
-      {/* <!-- Analytics --> */}
-
-      {/* <!-- Hotjat --> */}
-      {/* <script
-        async=""
-        src="https://static.hotjar.com/c/hotjar-1373557.js?sv=6"
-      ></script>
-      <script
-        async=""
-        src="https://script.hotjar.com/modules.58256f2231d5f12d5589.js"
-        charset="utf-8"
-      ></script> */}
-
-      {/* <!-- Google --> */}
+      {/* <!-- Verification --> */}
       <meta
         content="KaWJr5sGtZ__QgG_cgjeVJ-BtUEvLAv7XFF1xXUb7yA"
         name="google-site-verification"
       />
 
-      {/* Search result */}
-
-      {/* Micro-marking */}
+      {/* Micro data */}
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
-
-      {/* Control the display of content in Google Search results */}
-      {/* <meta
-        name="robots"
-        content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-      /> */}
-
-      {/* Semantic navigation */}
-      {/* <link
-        rel="alternate"
-        type="application/rss+xml"
-        title="Halo Lab » Portfolio"
-        href="https://halo-lab.com/portfolio/"
-      ></link> */}
 
       {/* Default title */}
       <title>{metadata.title}</title>
