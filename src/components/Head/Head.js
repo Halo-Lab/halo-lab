@@ -23,9 +23,9 @@ const Head = ({ children }) => {
         logo: {
           '@type': 'ImageObject',
           '@id': 'https://halo-lab.com/#logo',
-          url: 'https://halo-lab.com/wp-content/uploads/2019/04/New-Logo.png',
-          width: 133,
-          height: 34,
+          url: 'https://halo-lab.com/tile-512.png',
+          width: 120,
+          height: 60,
           caption: 'Halo lab',
         },
         image: { '@id': 'https://halo-lab.com/#logo' },
@@ -128,7 +128,7 @@ const Head = ({ children }) => {
       {/* Search result */}
 
       {/* Micro-marking */}
-      {/* <script type="application/ld+json">{JSON.stringify(schema)}</script> */}
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
       {/* Control the display of content in Google Search results */}
       {/* <meta
