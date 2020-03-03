@@ -36,13 +36,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Halo-Lab Blog`,
-        short_name: `Halo-Lab`,
+        name: `Halo Lab`,
+        short_name: `Halo Lab`,
         start_url: `/`,
         background_color: `#02021e`,
         theme_color: `#02021e`,
-        display: `standalone`,
-        icon: `static/icon.png`, // This path is relative to the root of the site.
+        display: `minimal-ui`,
+        icon: `static/icon.png`,
+        description: `Experts from all your network providers integrated into one powerful platform.`,
       },
     },
     {
