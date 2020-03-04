@@ -54,7 +54,7 @@ module.exports = {
           `/portfolio/`,
           `/services/`,
           `/blog/`,
-          // `/blog/*`,
+          `/blog/*`,
           `/contacts/`,
           `/thanks/`,
           `/404/`,
