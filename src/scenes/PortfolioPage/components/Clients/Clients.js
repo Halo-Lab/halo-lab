@@ -17,6 +17,7 @@ const Clients = () => {
               <img
                 src={publicURL}
                 alt="client company logotype"
+                loading="lazy"
                 draggable="false"
               />
             </li>

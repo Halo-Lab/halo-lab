@@ -59,7 +59,7 @@ const Info = ({
               className={`${styles.card} ${classes}`}
             >
               <div className={styles.cardBody}>
-                <img src={icon.publicURL} alt={'icon'} />
+                <img src={icon.publicURL} alt={'icon'} loading="lazy" />
                 <div>
                   {textStrings.map((item, index) => {
                     return (

@@ -41,6 +41,7 @@ const List = ({ icon, items }) => {
             <img
               src={icon.publicURL}
               alt="arrow down icon"
+              loading="lazy"
               className={styles.icon}
             />
           </a>
@@ -50,6 +51,7 @@ const List = ({ icon, items }) => {
             <img
               src={icon.publicURL}
               alt="arrow down icon"
+              loading="lazy"
               className={styles.icon}
             />
           </button>
