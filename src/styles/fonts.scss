@@ -113,3 +113,41 @@
   font-style: normal;
   font-weight: 700;
 }
+
+// Gramatika 
+
+// Black
+@font-face {
+  font-family: 'Gramatika-Black';
+  src: url('../assets/fonts/Gramatika-Black.woff2')
+      format('woff2'),
+    url('../assets/fonts/Gramatika-Black.woff')
+      format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+//medium
+@font-face {
+  font-family: 'Gramatika';
+  src: url('../assets/fonts/Gramatika-Medium.woff2')
+      format('woff2'),
+    url('../assets/fonts/Gramatika-Medium.woff')
+      format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+//Bold
+@font-face {
+  font-family: 'Gramatika';
+  src: url('../assets/fonts/Gramatika-Bold.woff2')
+      format('woff2'),
+    url('../assets/fonts/Gramatika-Bold.woff')
+      format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
