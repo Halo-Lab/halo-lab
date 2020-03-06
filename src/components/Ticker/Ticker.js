@@ -128,7 +128,7 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
 
   // handlers -->
 
-  const go = ({ target }) => {
+  const run = ({ target }) => {
     if (!isFinished.current || isRunning.current) {
       return;
     }
@@ -166,14 +166,14 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
         data-direction={DIRECTIONS.FORWARD}
         style={{ cursor: `url('${arrowLeft.publicURL}'), auto` }}
         className={styles.asideLeft}
-        onMouseEnter={go}
+        onMouseEnter={run}
         onMouseLeave={stop}
       />
       <div
         data-direction={DIRECTIONS.BACKWARD}
         style={{ cursor: `url('${arrowRight.publicURL}'), auto` }}
         className={styles.asideRight}
-        onMouseEnter={go}
+        onMouseEnter={run}
         onMouseLeave={stop}
       />
     </div>
