@@ -68,19 +68,15 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
     config: configDefault,
   }));
 
-  // handlers -->
+  // animation engine -->
 
-  const go = ({ target }) => {
-    isRunning.current = true;
-
-    const direction = target.getAttribute('data-direction');
-    const offset = direction === DIRECTIONS.FORWARD ? STEP : -STEP;
-
+  const move = offset => {
     set((...attrs) => {
       const [, controller] = attrs;
 
       return {
         to: async next => {
+          // start
           await next({
             x:
               (controller.props.to || controller.props.from).x +
@@ -89,6 +85,7 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
             immediate: false,
           });
 
+          // running
           while (isRunning.current) {
             const x = controller.props.to.x + offset;
 
@@ -101,6 +98,7 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
             }
           }
 
+          // finish
           await next({
             x: controller.props.to.x + offset * STEP_COEFFICIENT,
             config: configFinish,
@@ -108,6 +106,22 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
         },
       };
     });
+  };
+
+  // handlers -->
+
+  const go = ({ target }) => {
+    if (isRunning.current) {
+      isRunning.current = false;
+      return;
+    }
+
+    isRunning.current = true;
+
+    const direction = target.getAttribute('data-direction');
+    const offset = direction === DIRECTIONS.FORWARD ? STEP : -STEP;
+
+    move(offset);
   };
 
   const stop = () => {
