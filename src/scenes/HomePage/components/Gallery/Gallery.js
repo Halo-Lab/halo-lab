@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 
 import { MenuContext } from '@contexts';
 import { useBreakpoints, BREAKPOINTS } from '@hooks';
@@ -10,14 +10,9 @@ import Item from './components/Item';
 import styles from './Gallery.module.scss';
 
 const Gallery = () => {
-  const [buildKey, setBuildKey] = useState(null);
-  const { breakpoint, width } = useBreakpoints();
+  const { breakpoint } = useBreakpoints();
   const { isOpened } = useContext(MenuContext);
   const { photos, arrowLeft, arrowRight } = useHomeGalleryAssets();
-
-  useEffect(() => {
-    setBuildKey(+new Date());
-  }, [width]);
 
   const settings = {
     arrows: false,
@@ -46,7 +41,6 @@ const Gallery = () => {
       <div className={styles.sliderWrapper}>
         {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
           <Ticker
-            key={buildKey}
             images={photos}
             arrowLeft={arrowLeft}
             arrowRight={arrowRight}

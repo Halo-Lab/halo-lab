@@ -1,8 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSpring, animated as a } from 'react-spring';
 import { easeQuadIn, easeQuadOut, easeLinear } from 'd3-ease';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
+
+import { useBreakpoints } from '@hooks';
 
 import styles from './Ticker.module.scss';
 
@@ -35,31 +37,42 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
   const isRunning = useRef(false);
   const container = useRef(null);
   const ticker = useRef(null);
+  const initialMetrics = {
+    containerWidth: 0,
+    tickerWidth: 0,
+    listWidth: 0, // width of original list
+    startPosition: 0, // the point where the list moves after crossing the right border
+    endPosition: 0, // the point where the list moves after crossing the left border
+    leftBorder: 0, // the point after which the list should quickly move to end position to simulate an infinite line
+    rightBorder: 0, // the point after which the list should quickly move to start position to simulate an infinite line
+  };
+  const [
+    { startPosition, endPosition, leftBorder, rightBorder },
+    setMetrics,
+  ] = useState(initialMetrics);
+  const { width } = useBreakpoints();
 
   const items = [...images, ...images, ...images]; // NUMBER_OF_LISTS
 
   // metrics calculation
 
-  let containerWidth = null;
-  let tickerWidth = null;
-  let listWidth = null; // width of original list
-  let startPosition = null; // the point where the list moves after crossing the right border
-  let endPosition = null; // the point where the list moves after crossing the left border
-  let leftBorder = null; // the point after which the list should quickly move to end position to simulate an infinite line
-  let rightBorder = null; // the point after which the list should quickly move to start position to simulate an infinite line
+  const updatedMetrics = () => {
+    const containerWidth = container.current.offsetWidth;
+    const tickerWidth = ticker.current.scrollWidth;
+    const listWidth = tickerWidth / NUMBER_OF_LISTS;
+
+    const startPosition = -listWidth;
+    const endPosition = -listWidth - listWidth + containerWidth;
+    const leftBorder = -listWidth + containerWidth;
+    const rightBorder = -listWidth - listWidth;
+
+    setMetrics({ startPosition, endPosition, leftBorder, rightBorder });
+    set({ x: startPosition, immediate: true });
+  };
 
   useEffect(() => {
-    containerWidth = container.current.offsetWidth;
-    tickerWidth = ticker.current.scrollWidth;
-    listWidth = tickerWidth / NUMBER_OF_LISTS;
-
-    startPosition = -listWidth;
-    endPosition = -listWidth - listWidth + containerWidth;
-    leftBorder = -listWidth + containerWidth;
-    rightBorder = -listWidth - listWidth;
-
-    set({ x: startPosition });
-  }, []);
+    updatedMetrics();
+  }, [width]);
 
   // animation initialize -->
 
