@@ -1,0 +1,12 @@
+@mixin col-width($from:1, $to:64) {
+  grid-column-start: $from;
+  grid-column-end: $to;
+  @include media-breakpoint-up(md) {
+    grid-row: 1;
+  }
+}
+
+@mixin grid-template(){
+  display: grid;
+  grid-template-columns: repeat(63, calc(100%/63));
+}

@@ -1,0 +1,47 @@
+@function extract-unit($number) {
+  @return $number * 0 + 1;
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / extract-unit($number);
+  }
+
+  @return $number;
+}
+
+@function single-unit-rem($value, $font-size-base) {
+  @if (extract-unit($value) != 1px) {
+    @return $value;
+  }
+
+  $converted: $value / $font-size-base;
+
+  @return strip-unit($converted) * 1rem;
+}
+
+@function px-to-rem($px, $font-size-base: 16px) {
+  @if type-of($px) == 'number' {
+    @return single-unit-rem($px, $font-size-base);
+  } @else {
+    @return $px;
+  }
+}
+
+@function single-unit-em($value, $font-size-base) {
+  @if (extract-unit($value) != 1px) {
+    @return $value;
+  }
+
+  $converted: $value / $font-size-base;
+
+  @return strip-unit($converted) * 1em;
+}
+
+@function px-to-em($px, $font-size-base: 16px) {
+  @if type-of($px) == 'number' {
+    @return single-unit-em($px, $font-size-base);
+  } @else {
+    @return $px;
+  }
+}

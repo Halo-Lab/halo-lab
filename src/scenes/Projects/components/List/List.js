@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import Partners from './components/Partners';
@@ -66,19 +66,19 @@ const List = ({
   ];
 
   return (
-    <ul className={styles.container}>
+    <Fragment>
       {items.map((item, index) => {
         const isReversed = !((index + 1) % 2);
         const { id, partners, ...sceneProperties } = item;
 
         return (
-          <li key={id} className={styles.item}>
+          <div key={id} className={styles.item}>
             <ProjectScene {...sceneProperties} reversed={isReversed} />
             <Partners items={partners} reversed={isReversed} />
-          </li>
+          </div>
         );
       })}
-    </ul>
+    </Fragment>
   );
 };
 

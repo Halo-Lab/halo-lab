@@ -109,7 +109,7 @@ module.exports = {
           '@services': 'src/services',
           '@helpers': 'src/helpers',
           '@styles': 'src/styles',
-          '@images': 'src/images',
+          '@functions': 'src/styles/functions',
         },
         extensions: ['js', 'sass', 'scss'],
       },

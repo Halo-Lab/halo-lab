@@ -7,13 +7,13 @@ import styles from './ProjectScene.module.scss';
 const ProjectScene = ({ link, preview, reversed, review, tags, title }) => {
   return (
     <div className={`${styles.container} ${reversed ? styles.reversed : ''}`}>
-      <div className={styles.preview}>
+      <div className={`${styles.preview} box`}>
         <a href={link} target="_blank" rel="noopener noreferrer">
-          <Img fluid={preview.childImageSharp.fluid} />
+          <Img fluid={preview.childImageSharp.fluid} draggable={false} />
           <span className={styles.hiddenTitle}>{title}</span>
         </a>
       </div>
-      <div className={styles.description}>
+      <div className={`${styles.description} box`}>
         <div className={styles.tags}>{tags}</div>
         <div className={styles.title}>
           <a href={link} target="_blank" rel="noopener noreferrer">

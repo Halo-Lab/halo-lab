@@ -2,29 +2,21 @@
 @import '@styles/mixins/all';
 
 .container {
-  display: flex;
-  flex-direction: column;
-
-  @media screen and (min-width: $md) {
-    flex-direction: row;
-    align-items: center;
-  }
-
+  @include grid-template();
+  
   &.reversed {
-    @media screen and (min-width: $md) {
-      flex-direction: row-reverse;
-    }
 
     .preview {
       @media screen and (min-width: $md) {
-        margin-right: -60px;
+        @include col-width(22,64);
+        margin-right: -80px;
         margin-left: 0;
       }
     }
 
     .description {
       @media screen and (min-width: $md) {
-        margin-right: -40px;
+        @include col-width(4,26);
         margin-left: 0;
       }
     }
@@ -32,9 +24,13 @@
 }
 
 .preview {
-  flex: 1 1 auto;
+  @include col-width();
+  margin-left: -15px;
+  margin-right: -15px;
 
   @media screen and (min-width: $md) {
+    @include col-width(1,41);
+    margin-right: 0;
     margin-left: -60px;
   }
 
@@ -60,14 +56,16 @@
 }
 
 .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   z-index: 10;
-  flex: 0 0 auto;
   margin-top: 40px;
+  @include col-width();
 
   @media screen and (min-width: $md) {
-    flex-basis: 40%;
+    @include col-width(39,64);
     margin-top: 0;
-    margin-left: -40px;
   }
 }
 
@@ -160,12 +158,14 @@
 }
 
 .avatar {
-  $size: 80px;
+  $size: 42px;
 
   overflow: hidden;
   border-radius: 50%;
   width: $size;
-  height: $size;
+  @media screen and (min-width: $lg) {
+    width: 5rem;
+  }
 }
 
 .reviewContent {
