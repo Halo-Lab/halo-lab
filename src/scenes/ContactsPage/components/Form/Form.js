@@ -55,6 +55,7 @@ const Form = () => {
 
     setIsValid(valid);
 
+    // const id = process.env.GATSBY_CONTACT_FORM_ID;
     const id = 'q2SCcZ73tL2W190WUs0LO';
     const url = `https://submit-form.com/${id}`;
 
