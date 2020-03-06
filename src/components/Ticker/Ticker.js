@@ -35,6 +35,7 @@ const iTranslate = value => `translate3d(${value}px, 0, 0)`;
 
 const Ticker = ({ images, arrowLeft, arrowRight }) => {
   const isRunning = useRef(false);
+  const isFinished = useRef(true);
   const container = useRef(null);
   const ticker = useRef(null);
   const initialMetrics = {
@@ -89,6 +90,8 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
 
       return {
         to: async next => {
+          isFinished.current = false;
+
           // start
           await next({
             x:
@@ -111,6 +114,8 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
             }
           }
 
+          isFinished.current = true;
+
           // finish
           await next({
             x: controller.props.to.x + offset * STEP_COEFFICIENT,
@@ -124,8 +129,7 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
   // handlers -->
 
   const go = ({ target }) => {
-    if (isRunning.current) {
-      isRunning.current = false;
+    if (!isFinished.current || isRunning.current) {
       return;
     }
 
