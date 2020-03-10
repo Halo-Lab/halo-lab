@@ -10,7 +10,12 @@ const Item = ({ author, companyLogo, generalLogo, rating, stars, text }) => {
       <div className={styles.review}>
         <div className={styles.rating}>
           <span className={styles.mark}>{rating}</span>
-          <img src={stars.publicURL} alt="stars" className={styles.stars} />
+          <img
+            src={stars.publicURL}
+            alt="stars"
+            loading="lazy"
+            className={styles.stars}
+          />
         </div>
         <div className={styles.text}>&#34;{text}&#34;</div>
         <div className={`${styles.name} ${styles.top}`}>- {author}</div>
@@ -19,12 +24,14 @@ const Item = ({ author, companyLogo, generalLogo, rating, stars, text }) => {
         <img
           src={generalLogo.publicURL}
           alt="general logotype"
+          loading="lazy"
           className={styles.generalLogo}
         />
         <span className={`${styles.name} ${styles.bottom}`}>- {author}</span>
         <img
           src={companyLogo.publicURL}
           alt="company logotype"
+          loading="lazy"
           className={styles.companyLogo}
         />
       </div>

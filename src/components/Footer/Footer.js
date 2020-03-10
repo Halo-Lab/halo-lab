@@ -44,14 +44,14 @@ const Footer = () => {
           return (
             <li key={href}>
               <a href={href} target="_blank" rel="noopener noreferrer">
-                <img src={image.publicURL} alt="social icon" />
+                <img src={image.publicURL} alt="social icon" loading="lazy" />
               </a>
             </li>
           );
         })}
       </ul>
       <div className={styles.logotype}>
-        <img src={logotype.publicURL} alt="halo-lab logotype" />
+        <img src={logotype.publicURL} alt="halo-lab logotype" loading="lazy" />
         <span>With Love from Halo Lab</span>
       </div>
     </div>

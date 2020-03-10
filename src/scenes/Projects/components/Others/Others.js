@@ -13,13 +13,21 @@ const Others = ({ jackAndJones, kklLuzern, udemy }) => {
       </div>
       <ul className={styles.list}>
         <li className={styles.item}>
-          <img src={jackAndJones.publicURL} alt="partner logotype" />
+          <img
+            src={jackAndJones.publicURL}
+            alt="partner logotype"
+            loading="lazy"
+          />
         </li>
         <li className={styles.item}>
-          <img src={udemy.publicURL} alt="partner logotype" />
+          <img src={udemy.publicURL} alt="partner logotype" loading="lazy" />
         </li>
         <li className={styles.item}>
-          <img src={kklLuzern.publicURL} alt="partner logotype" />
+          <img
+            src={kklLuzern.publicURL}
+            alt="partner logotype"
+            loading="lazy"
+          />
         </li>
         <li className={styles.item}>
           <Link to="/portfolio" className={styles.link}>
