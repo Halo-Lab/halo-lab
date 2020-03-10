@@ -16,7 +16,11 @@ const List = ({ icon, items }) => {
       <ul className={styles.list}>
         {items.map((item, index) => {
           return numberOfRendered > index ? (
-            <li key={item.url} className={styles.item}>
+            <li
+              key={item.url}
+              className={styles.item}
+              data-list="dribble-shots"
+            >
               <a
                 href={item.url}
                 title={item.title}
