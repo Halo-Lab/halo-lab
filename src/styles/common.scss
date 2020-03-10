@@ -4,9 +4,13 @@
 
 
 :root {
-  --unit: calc(100vw / 64);
+  --col-width: calc(100vw / 64);
+  --unit: 10px;
+  @media screen and (min-width: $lg) {
+    --unit: 20px;
+  }
   @media screen and (min-width: 1600px) {
-    --unit: calc(1600px / 64);
+    --col-width: calc(1600px / 64);
   }
 }
 

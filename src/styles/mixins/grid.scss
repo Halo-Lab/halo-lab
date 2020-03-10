@@ -10,3 +10,18 @@
   display: grid;
   grid-template-columns: repeat(63, calc(100%/63));
 }
+
+@mixin hl-margin-top($offset: 1, $coef: 1) {
+  margin-top: calc(var(--unit) * #{$offset} * #{$coef});
+}
+
+@mixin hl-margin-bottom($offset: 1, $coef: 1) {
+  margin-bottom: calc(var(--unit) * #{$offset} * #{$coef});
+}
+
+@mixin hl-margin-left($offset: 1, $coef: 1) {
+  margin-left: calc(var(--unit) * #{$offset} * #{$coef});
+}
+@mixin hl-margin-right($offset: 1, $coef: 1) {
+  margin-right: calc(var(--unit) * #{$offset} * #{$coef});
+}

@@ -20,6 +20,8 @@
   @media screen and (min-width: $lg) {
     // max-width: 40rem;
     @include col-width(6,36);
+    margin-top: calc(var(--unit) * 2);
+
   }
 
   img {
