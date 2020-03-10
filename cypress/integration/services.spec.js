@@ -1,30 +1,17 @@
 describe('services page', function() {
   it('Check page rendering', function() {
-    cy.visit('http://localhost:8000/services/');
-    cy.contains('With Love from Halo Lab').scrollIntoView({
-      duration: 2000,
-    });
+    cy.visit(`${Cypress.env('host')}services/`);
+    cy.contains('With Love from Halo Lab').scrollIntoView();
   });
   it('check flow tabs', function() {
-    cy.contains('Our Flow').scrollIntoView({ duration: 1500 });
-    cy.wait(800);
-    cy.contains('Development').click();
-    cy.wait(800);
     cy.contains('Testing').click();
-    cy.wait(800);
-    cy.contains('Support').click();
-    cy.wait(800);
-    cy.contains('Design').click();
+    cy.contains('Testing').click(); //maybe this is problem react-tabs, but click don't work without double click
+    cy.contains(
+      'The most important stage of any product creation is testing. The main types of testing: QA, responsive testing for all devices and code-review. '
+    ).should('be.visible');
   });
   it('check technologies tabs', function() {
-    cy.contains('Technologies').scrollIntoView({ duration: 1500 });
-    cy.wait(800);
-    cy.contains('Mobile').click();
-    cy.wait(800);
-    cy.contains('Front-end').click();
-    cy.wait(800);
     cy.contains('Databases').click();
-    cy.wait(800);
-    cy.contains('Back-end').click();
+    cy.contains('MongoDB').should('be.visible');
   });
 });

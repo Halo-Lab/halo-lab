@@ -1,6 +1,6 @@
 describe('contacts page', function() {
   it('form send', function() {
-    cy.visit('http://localhost:8000/contacts/');
+    cy.visit(`${Cypress.env('host')}contacts/`);
     cy.contains('REQUEST A QUOTE').scrollIntoView();
     cy.contains('Full Name')
       .click()
@@ -15,5 +15,6 @@ describe('contacts page', function() {
       .click()
       .type('Some charming message');
     cy.contains('submit').click();
+    cy.contains('Thank you for your request').should('be.visible');
   });
 });

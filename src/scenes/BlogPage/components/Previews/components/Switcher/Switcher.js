@@ -71,7 +71,11 @@ const Switcher = ({ items, location }) => {
               <ul className={styles.tabContentList}>
                 {items.map(item => {
                   return (
-                    <li key={item.id} className={styles.tabContentItem}>
+                    <li
+                      data-list-item="articles"
+                      key={item.id}
+                      className={styles.tabContentItem}
+                    >
                       <PostThumbnail {...item} />
                     </li>
                   );
