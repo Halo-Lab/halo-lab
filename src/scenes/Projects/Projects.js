@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import { useProjectsAssets } from '@hooks/queries';
@@ -12,12 +12,14 @@ const Projects = ({ title, navigation }) => {
   const othersAssets = { jackAndJones, kklLuzern, udemy };
 
   return (
-    <div className={styles.container}>
+    // <div className={styles.container}>
+    <Fragment>
       <div className={styles.title}>{title}</div>
       <List {...listAssets} />
 
       {navigation ? <Others {...othersAssets} /> : null}
-    </div>
+    </Fragment>
+    // </div>
   );
 };
 

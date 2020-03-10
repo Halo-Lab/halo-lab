@@ -20,7 +20,7 @@
   @return strip-unit($converted) * 1rem;
 }
 
-@function px-to-rem($px, $font-size-base: 16px) {
+@function px-to-rem($px, $font-size-base: 14px) {
   @if type-of($px) == 'number' {
     @return single-unit-rem($px, $font-size-base);
   } @else {
@@ -38,10 +38,15 @@
   @return strip-unit($converted) * 1em;
 }
 
-@function px-to-em($px, $font-size-base: 16px) {
+@function px-to-em($px, $font-size-base: 14px) {
   @if type-of($px) == 'number' {
     @return single-unit-em($px, $font-size-base);
   } @else {
     @return $px;
   }
+}
+
+// count width for grid inside element, we take inner container width in columns and element width in columns, function return ele,ent width in percent
+@function elem-width($elWidth, $allWidth) {
+  @return $elWidth * (100 / $allWidth) * 1%;
 }

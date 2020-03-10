@@ -1,57 +1,59 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
+@import '@functions/functions';
+
+
+:root {
+  --unit: calc(100vw / 64);
+  @media screen and (min-width: 1600px) {
+    --unit: calc(1600px / 64);
+  }
+}
 
 .pageWrapper {
   margin: 0 auto;
-  padding-right: 15px;
-  padding-left: 15px;
-  max-width: 90rem;
+  max-width: 1600px;
   font-family: $font-sofia-pro;
-
-  @media screen and (min-width: $md) {
-    padding-right: 4.28rem;
-    padding-left: 4.28rem;
-  }
 }
 
-// if all will be o.k., it can be removed -->
-.pageWrapperOld {
-  font-family: $font-sofia-pro;
-  padding-top: 11.4rem;
-  padding-right: 4.28rem;
-  padding-left: 4.28rem;
+// // if all will be o.k., it can be removed -->
+// .pageWrapperOld {
+//   font-family: $font-sofia-pro;
+//   padding-top: 11.4rem;
+//   padding-right: 4.28rem;
+//   padding-left: 4.28rem;
 
-  @media screen and (max-width: 1300px) {
-    padding-right: 4.28rem;
-    padding-left: 4.28rem;
-  }
-  @media screen and (max-width: 1024px) {
-    padding-right: 5rem;
-    padding-left: 5rem;
-  }
-  @include media-breakpoint-down(sm) {
-    padding-right: 60px;
-    padding-left: 60px;
-  }
-  @include media-breakpoint-down(xs) {
-    padding-right: 1.67rem;
-    padding-left: 1.67rem;
-  }
+//   @media screen and (max-width: 1300px) {
+//     padding-right: 4.28rem;
+//     padding-left: 4.28rem;
+//   }
+//   @media screen and (max-width: 1024px) {
+//     padding-right: 5rem;
+//     padding-left: 5rem;
+//   }
+//   @include media-breakpoint-down(sm) {
+//     padding-right: 60px;
+//     padding-left: 60px;
+//   }
+//   @include media-breakpoint-down(xs) {
+//     padding-right: 1.67rem;
+//     padding-left: 1.67rem;
+//   }
 
-  @include media-breakpoint-down(md) {
-    max-width: 59rem;
-    margin-right: auto;
-    margin-left: auto;
-  }
+//   @include media-breakpoint-down(md) {
+//     max-width: 59rem;
+//     margin-right: auto;
+//     margin-left: auto;
+//   }
 
-  @media (min-width: 1280px) {
-    max-width: 90rem;
-    margin: 0 auto;
-  }
+//   @media (min-width: 1280px) {
+//     max-width: 90rem;
+//     margin: 0 auto;
+//   }
 
-  @include media-breakpoint-down(xs) {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-// <-- end
+//   @include media-breakpoint-down(xs) {
+//     padding-right: 15px;
+//     padding-left: 15px;
+//   }
+// }
+// // <-- end

@@ -1,9 +1,9 @@
 @mixin col-width($from:1, $to:64) {
   grid-column-start: $from;
   grid-column-end: $to;
-  @include media-breakpoint-up(md) {
-    grid-row: 1;
-  }
+  // @include media-breakpoint-up(md) {
+  //   grid-row: 1;
+  // }
 }
 
 @mixin grid-template(){

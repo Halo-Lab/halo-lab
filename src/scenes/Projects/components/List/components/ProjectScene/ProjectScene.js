@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 import styles from './ProjectScene.module.scss';
 
-const ProjectScene = ({ link, preview, reversed, review, tags, title }) => {
+const ProjectScene = ({
+  link,
+  linkTitle,
+  preview,
+  reversed,
+  review,
+  tags,
+  title,
+}) => {
   return (
-    <div className={`${styles.container} ${reversed ? styles.reversed : ''}`}>
-      <div className={`${styles.preview} box`}>
+    // <div className={`${styles.container} ${reversed ? styles.reversed : ''}`}>
+    <Fragment>
+      <div className={`${styles.preview} ${reversed ? styles.reversed : ''}`}>
         <a href={link} target="_blank" rel="noopener noreferrer">
           <Img fluid={preview.childImageSharp.fluid} draggable={false} />
           <span className={styles.hiddenTitle}>{title}</span>
         </a>
       </div>
-      <div className={`${styles.description} box`}>
+      <div
+        className={`${styles.description} ${reversed ? styles.reversed : ''}`}
+      >
         <div className={styles.tags}>{tags}</div>
         <div className={styles.title}>
           <a href={link} target="_blank" rel="noopener noreferrer">
@@ -22,12 +33,15 @@ const ProjectScene = ({ link, preview, reversed, review, tags, title }) => {
         </div>
         <div className={styles.descriptionLink}>
           <a href={link} target="_blank" rel="noopener noreferrer">
-            More info
+            {linkTitle}
           </a>
         </div>
         <div className={styles.review}>
           <div className={styles.avatar}>
-            <Img fluid={review.avatar.childImageSharp.fluid} />
+            <Img
+              fluid={review.avatar.childImageSharp.fluid}
+              draggable={false}
+            />
           </div>
           <div className={styles.reviewContent}>
             <div className={styles.reviewText}>{review.text}</div>
@@ -35,12 +49,14 @@ const ProjectScene = ({ link, preview, reversed, review, tags, title }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Fragment>
+    // </div>
   );
 };
 
 ProjectScene.propTypes = {
   link: PropTypes.string,
+  linkTitle: PropTypes.string,
   preview: PropTypes.object,
   reversed: PropTypes.bool,
   review: PropTypes.object,

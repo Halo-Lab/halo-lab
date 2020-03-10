@@ -6,27 +6,33 @@
   justify-content: space-between;
   align-items: center;
   list-style-type: none;
-  margin: 2.34rem 0 0 4.4rem;
+  margin: 2.9rem 0 0 4.4rem;
   padding: 0;
-  max-width: 30rem;
+  // max-width: 30rem;
+  margin-left: 0;
 
   @media screen and (min-width: $md) {
     display: flex;
+    grid-row: 2;
+    @include col-width(4,36);
   }
 
   @media screen and (min-width: $lg) {
-    max-width: 40rem;
+    // max-width: 40rem;
+    @include col-width(6,36);
   }
 
   img {
     display: block;
     width: auto;
     height: auto;
-    max-width: 80px;
-    max-height: 50px;
+    // max-width: 80px;
+    // max-height: 50px;
   }
 
   &.reversed {
-    margin-left: auto;
+    // margin-left: auto;
+    @include col-width(27,59);
+
   }
 }

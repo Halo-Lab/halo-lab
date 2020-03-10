@@ -80,6 +80,12 @@ const useProjectsAssets = () => {
       udemy: file(relativePath: { eq: "brands/udemy.svg" }) {
         publicURL
       }
+      kickstarter: file(relativePath: { eq: "brands/kickstarter.svg" }) {
+        publicURL
+      }
+      huffpost: file(relativePath: { eq: "brands/huffpost.svg" }) {
+        publicURL
+      }
     }
   `);
 

@@ -1,5 +1,6 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
+@import '@functions/functions';
 
 .container {
   list-style-type: none;
@@ -8,11 +9,13 @@
 }
 
 .item {
+  @include grid-template();
+
   &:not(:first-child) {
-    margin-top: 6.67rem;
+    margin-top: px-to-rem(60,12);
 
     @media screen and (min-width: $md) {
-      margin-top: 8.57rem;
+      margin-top: px-to-rem(160);
     }
   }
 }
