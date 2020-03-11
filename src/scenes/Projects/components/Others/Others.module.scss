@@ -58,6 +58,8 @@
     // flex-basis: 70%;
     flex-wrap: nowrap;
     margin-top: 0;
+    grid-row: 1;
+
   }
 
   @media screen and (min-width: $lg) {

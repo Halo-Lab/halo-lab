@@ -13,7 +13,6 @@
   font-weight: 400;
   margin-bottom: calc(var(--unit) * 6);
   text-align: center;
-
   @include media-breakpoint-down(md) {
     font-size: 6.25rem;
     line-height: 1.46em;
