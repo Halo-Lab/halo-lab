@@ -49,7 +49,7 @@ const List = ({
       review: {
         avatar: avatar2,
         author: 'Bogdan Suchyk, CEO',
-        text: 'Professional and creative!',
+        text: 'Pro and creative!',
       },
       partners: [forbes, vcRu, angellist],
     },

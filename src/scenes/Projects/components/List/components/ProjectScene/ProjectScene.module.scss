@@ -43,7 +43,7 @@
   flex-direction: column;
   justify-content: center;
   z-index: 10;
-  margin-top: calc(var(--unit) * 2);
+  margin-top: calc(var(--unit-vertical) * 2);
   @include col-width(4,60);
 
 
@@ -67,7 +67,7 @@
 
 .tags {
   // font-size: px-to-rem(14,12);
-  font-size: calc(var(--unit) * 0.9);
+  font-size: calc(var(--unit-sm-text) * 0.9);
   font-weight: 300;
   line-height: 1.6em;
   letter-spacing: 0.5px;
@@ -85,8 +85,8 @@
 
 .title {
   // @include hl-margin-top(2);
-  margin-top: calc(var(--unit) * 2);
-  font-size: calc(var(--unit) * 1.8);
+  margin-top: calc(var(--unit-vertical) * 2);
+  font-size: calc(var(--unit-font-title) * 1.8);
   // font-size: px-to-rem(26,12);
   line-height: 1.25em;
   font-family: $font-gramatika;
@@ -117,8 +117,8 @@
 .descriptionLink {
   position: relative;
   // @include hl-margin-top(3);
-  margin-top: calc(var(--unit) * 3);
-  font-size: calc(var(--unit) * 0.7);
+  margin-top: calc(var(--unit-vertical) * 3);
+  font-size: calc(var(--unit-sm-text) * 0.7);
 
   // margin-top: 2rem;
   // font-size: 1rem;
@@ -172,7 +172,7 @@
   align-items: center;
   // margin-top: px-to-rem(58,12);
   // @include hl-margin-top(6);
-  margin-top: calc(var(--unit) * 6);
+  margin-top: calc(var(--unit-vertical) * 6);
 
 
   @media screen and (min-width: $md) {
@@ -200,17 +200,17 @@
 
 .reviewContent {
   // @include hl-margin-left(1.5);
-  margin-left: calc(var(--unit) * 1.5);
-  font-size: calc(var(--unit) * 1.1);
+  margin-left: calc(var(--unit-vertical) * 1.5);
+  // font-size: calc(var(--unit) * 1.1);
 
   // margin-left: 1.67rem;
 }
 
 .reviewText {
   // font-size: px-to-rem(16,12);
-  font-size: calc(var(--unit) * 0.8);
+  font-size: calc(var(--unit-sm-text) * 1.1);
   font-weight: 600;
-  line-height: 2em;
+  line-height: 1.45em;
   letter-spacing: 0.5px;
 
   @media screen and (min-width: $md) {
@@ -220,6 +220,7 @@
 
 .reviewAuthor {
   // font-size: px-to-rem(12,12);
+  font-size: calc(var(--unit-sm-text) * 0.8);
   color: #ccccd2;
   font-weight: 300;
 
