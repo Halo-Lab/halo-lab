@@ -9,29 +9,30 @@
   // margin: 2.9rem 0 0 4.4rem;
   margin-top: calc(var(--unit-vertical) * 2);
   padding: 0;
-  justify-content: center;
+  // justify-content: center;
   // max-width: 30rem;
   // margin-left: 0;
 
   @media screen and (min-width: $md) {
     display: flex;
     grid-row: 2;
-    @include col-width(4,41);
+    @include col-width(4,36);
   }
 
   @media screen and (min-width: $lg) {
     // max-width: 40rem;
-    @include col-width(1,41);
+    @include col-width(7,36);
+    // margin-top: calc(var(--unit) * 2);
 
   }
 
   li {
-    width: 25%;
+    // width: 25%;
   }
   img {
     display: block;
     width: auto;
-    height: auto;
+    height: calc(var(--unit) * 2);
     margin: 0 auto;
     // max-width: 80px;
     // max-height: 50px;
@@ -39,7 +40,7 @@
 
   &.reversed {
     // margin-left: auto;
-    @include col-width(27,59);
+    @include col-width(28,59);
 
   }
 }

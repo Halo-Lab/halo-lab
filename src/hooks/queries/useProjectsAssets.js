@@ -36,7 +36,7 @@ const useProjectsAssets = () => {
         ...projectsPreview
       }
       avatar1: file(
-        relativePath: { eq: "sections/projects/anton_glance.jpg" }
+        relativePath: { eq: "sections/projects/anton_glance.png" }
       ) {
         name
         ...projectsAvatar
