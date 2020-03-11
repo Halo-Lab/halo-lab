@@ -43,7 +43,7 @@
   flex-direction: column;
   justify-content: center;
   z-index: 10;
-  margin-top: calc(var(--unit) * 4);
+  margin-top: calc(var(--unit) * 2);
   @include col-width(4,60);
 
 
@@ -66,27 +66,28 @@
 }
 
 .tags {
-  font-size: px-to-rem(14,12);
+  // font-size: px-to-rem(14,12);
+  font-size: calc(var(--unit) * 0.9);
   font-weight: 300;
   line-height: 1.6em;
   letter-spacing: 0.5px;
   color: #ccccd2;
 
   @media screen and (min-width: $md) {
-    font-size: 1.5rem;
+    // font-size: 1.5rem;
   }
 
   @media screen and (min-width: $lg) {
     // font-size: 1.43rem;
-    font-size: px-to-rem(18);
+    // font-size: px-to-rem(18);
   }
 }
 
 .title {
   // @include hl-margin-top(2);
   margin-top: calc(var(--unit) * 2);
-
-  font-size: px-to-rem(26,12);
+  font-size: calc(var(--unit) * 1.8);
+  // font-size: px-to-rem(26,12);
   line-height: 1.25em;
   font-family: $font-gramatika;
   font-weight: 700;
@@ -97,7 +98,7 @@
   // }
 
   @media screen and (min-width: $lg) {
-    font-size: px-to-rem(36);
+    // font-size: px-to-rem(36);
     // margin-top: px-to-em(20, 36);
     // @include hl-margin-top();
     // margin-top: calc(var(--unit));
@@ -117,8 +118,10 @@
   position: relative;
   // @include hl-margin-top(3);
   margin-top: calc(var(--unit) * 3);
+  font-size: calc(var(--unit) * 0.7);
+
   // margin-top: 2rem;
-  font-size: 1rem;
+  // font-size: 1rem;
   font-weight: 600;
   line-height: 1.42em;
   letter-spacing: 10px;
@@ -129,14 +132,14 @@
 
   @media screen and (min-width: $md) {
     // margin-top: 3.35rem;
-    font-size: 1.17rem;
+    // font-size: 1.17rem;
     color: $white-color;
   }
 
   @media screen and (min-width: $lg) {
     // margin-top: px-to-rem(60);
     // margin-top: calc(var(--unit) * 3);
-    font-size: 1rem;
+    // font-size: 1rem;
 
     &:hover {
       color: $yellow-color;
@@ -185,39 +188,42 @@
 .avatar {
   overflow: hidden;
   border-radius: 50%;
-  width: calc(var(--col-width) * 9);
+  width: calc(var(--unit) * 4);
   @media screen and (min-width: $md) {
-    width: calc(var(--col-width) * 5);
+    // width: calc(var(--unit) * 5);
   }
 
   @media screen and (min-width: $lg) {
-    width: calc(var(--col-width) * 4);
+    // width: calc(var(--unit) * 4);
   }
 }
 
 .reviewContent {
   // @include hl-margin-left(1.5);
   margin-left: calc(var(--unit) * 1.5);
+  font-size: calc(var(--unit) * 1.1);
+
   // margin-left: 1.67rem;
 }
 
 .reviewText {
-  font-size: px-to-rem(16,12);
+  // font-size: px-to-rem(16,12);
+  font-size: calc(var(--unit) * 0.8);
   font-weight: 600;
   line-height: 2em;
   letter-spacing: 0.5px;
 
   @media screen and (min-width: $md) {
-    font-size: 1.43rem;
+    // font-size: 1.43rem;
   }
 }
 
 .reviewAuthor {
-  font-size: px-to-rem(12,12);
+  // font-size: px-to-rem(12,12);
   color: #ccccd2;
   font-weight: 300;
 
   @media screen and (min-width: $md) {
-    font-size: 1.14rem;
+    // font-size: 1.14rem;
   }
 }

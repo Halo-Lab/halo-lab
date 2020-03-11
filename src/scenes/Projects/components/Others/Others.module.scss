@@ -18,7 +18,9 @@
 .title {
   font-family: $font-gramatika;
   font-weight: 700;
-  font-size: 1.84rem;
+  // font-size: 1.84rem;
+  font-size: calc(var(--unit) * 1.8);
+
   text-align: center;
   @include col-width(4,60);
   grid-row: 1;
@@ -29,8 +31,9 @@
   }
 
   @media screen and (min-width: $lg) {
-    font-size: 2.86rem;
+    // font-size: 2.86rem;
     @include col-width(9,15);
+
   }
 
   br {
@@ -104,7 +107,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
+  // font-size: 1.3rem;
   line-height: 1.67em;
   letter-spacing: 0.5em;
   text-decoration: none;
@@ -112,12 +115,15 @@
   background: $main-color;
   color: inherit;
 
+  font-size: calc(var(--unit) * 0.7);
+
+
   @media screen and (min-width: $md) {
-    font-size: 1rem;
+    // font-size: 1rem;
   }
 
   @media screen and (min-width: $lg) {
-    font-size: 1.3rem;
+    // font-size: 1.3rem;
     line-height: 2.14em;
     letter-spacing: 0.71em;
   }

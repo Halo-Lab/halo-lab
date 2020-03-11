@@ -7,19 +7,20 @@
 
 .title {
   font-family: $font-gramatika-black;
-  font-size: px-to-rem(80);
+  // font-size: px-to-rem(80);
+  font-size: calc(var(--unit) * 4);
   line-height: 1.25em;
   color: $white-color;
   font-weight: 400;
   margin-bottom: calc(var(--unit) * 6);
   text-align: center;
   @include media-breakpoint-down(md) {
-    font-size: 6.25rem;
+    // font-size: 6.25rem;
     line-height: 1.46em;
     // margin-bottom: 5rem;
   }
   @include media-breakpoint-down(sm) {
-    font-size: 4.5rem;
+    // font-size: 4.5rem;
     line-height: 1.1em;
     // margin-bottom: 2.5rem;
   }
