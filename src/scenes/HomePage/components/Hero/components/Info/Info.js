@@ -1,95 +1,51 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Info.module.scss';
 
-const getSrc = source => {
-  const result =
-    source.childImageSharp.fluid.srcWebp || source.childImageSharp.fluid.src;
-
-  return result;
-};
-
 const Info = ({
-  clutchBackground,
-  dribbbleBackground,
-  upworkBackground,
-  clutchLogotype,
-  dribbbleLogotype,
-  upworkLogotype,
+  clutchLaurel,
+  dribbbleLaurel,
+  upworkLaurel,
 }) => {
   const items = [
     {
-      link: '#',
-      icon: upworkLogotype,
-      image: upworkBackground,
+      icon: upworkLaurel,
       classes: styles.upwork,
-      textStrings: ['Best', 'Design Agency', '2018 in Ukraine'],
+      textStrings: 'Awarded as Best Design & Creative',
     },
     {
-      link: '#',
-      icon: dribbbleLogotype,
-      image: dribbbleBackground,
+      icon: dribbbleLaurel,
       classes: styles.dribbble,
-      textStrings: ['Top Trending', 'Team with 3m', 'Total Views'],
+      textStrings: 'We regullarly hit Top-5 Trending Teams',
     },
     {
-      link: '#',
-      icon: clutchLogotype,
-      image: clutchBackground,
+      icon: clutchLaurel,
       classes: styles.clutch,
-      textStrings: ['4.9/5', 'Average Rating', 'by Our Clients'],
+      textStrings: 'Top User Experience Agency'
     },
   ];
 
   return (
-    <div className={styles.container}>
-      {items.map(({ link, icon, image, classes, textStrings }, index) => {
-        const imageSrc = getSrc(image);
-
+    <Fragment>
+      {items.map(({ icon, textStrings, classes }, index) => {
         return (
-          <div key={index} className={styles.cardWrapper}>
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                backgroundImage: `url('${imageSrc}')`,
-              }}
-              className={`${styles.card} ${classes}`}
-            >
-              <div className={styles.cardBody}>
-                <img src={icon.publicURL} alt={'icon'} />
-                <div>
-                  {textStrings.map((item, index) => {
-                    return (
-                      <span key={index}>
-                        {item} <br />
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-            </a>
+          <div key={index} className={`${styles.item} ${classes}`}>
+            <img src={icon.publicURL} alt={'icon'} />
+            <span>
+              {textStrings}
+            </span>
           </div>
         );
       })}
-
-      <div className={`${styles.circle} ${styles.circleSm1}`}></div>
-      <div className={`${styles.circle} ${styles.circleSm2}`}></div>
-      <div className={`${styles.circle} ${styles.circleMd}`}></div>
-      <div className={`${styles.circle} ${styles.circleLg}`}></div>
-    </div>
+    </Fragment>
   );
 };
 
 Info.propTypes = {
-  clutchBackground: PropTypes.object,
-  dribbbleBackground: PropTypes.object,
-  upworkBackground: PropTypes.object,
-  clutchLogotype: PropTypes.object,
-  dribbbleLogotype: PropTypes.object,
-  upworkLogotype: PropTypes.object,
+  clutchLaurel: PropTypes.object,
+  dribbbleLaurel: PropTypes.object,
+  upworkLaurel: PropTypes.object,
 };
 
 export default Info;

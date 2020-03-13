@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Item.scss';
 import styles from './Item.module.scss';
 
-const Item = ({ author, companyLogo, generalLogo, rating, stars, text }) => {
+const Item = ({ author, generalLogo, rating, stars, text }) => {
   return (
     <div className={styles.container}>
       <div className={styles.rating}>
