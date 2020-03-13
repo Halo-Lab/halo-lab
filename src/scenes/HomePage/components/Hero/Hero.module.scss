@@ -24,7 +24,7 @@
   margin:  0 auto calc(var(--unit-vertical) * 4);
 
   @include media-breakpoint-down(md) {
-    font-size: calc(var(--unit-font-title) * 3.5);
+    font-size: calc(var(--unit-font-title) * 4);
   }
   @include media-breakpoint-down(xs) {
     font-size: calc(var(--unit-font-title) * 2.7);

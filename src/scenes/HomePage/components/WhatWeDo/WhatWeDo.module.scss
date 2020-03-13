@@ -2,83 +2,31 @@
 @import '@styles/mixins/all';
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 16.43rem;
-  padding-bottom: 11rem;
-
-  @include media-breakpoint-down(xs) {
-    padding-bottom: 6.67rem;
-  }
-
-  @include media-breakpoint-down(md) {
-    padding-top: 8.35rem;
-  }
-
-  @include media-breakpoint-down(sm) {
-    padding-top: 18.35rem;
-    padding-bottom: 8.33rem;
-  }
-
-  @include media-breakpoint-down(sm) {
-    padding-top: 15.85rem;
-  }
-}
-
-.inner {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 68.57rem;
-
-  @include media-breakpoint-down(sm) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  @include grid-template();
+  margin-top: calc(var(--unit-vertical) * 10);
+  margin-bottom: calc(var(--unit-vertical) * 10);
 }
 
 .title {
-  max-width: 21.43rem;
-  font-size: 2.14rem;
-
-  @include media-breakpoint-down(md) {
-    font-size: 1.83rem;
-  }
-
+  font-family: $font-gramatika-black;
+  font-size: calc(var(--unit-font-title) * 1.5);
+  @include col-width(9,24);
+  
   @include media-breakpoint-down(sm) {
-    max-width: none;
-    text-align: center;
-  }
-
-  @include media-breakpoint-down(xs) {
-    font-size: 1.67rem;
-    line-height: 1.5em;
+    @include col-width(4,60);
+    margin-bottom: calc(var(--unit-vertical) * 3);
   }
 }
 
 .description {
-  max-width: 37.86rem;
-  font-size: 1.57rem;
+  font-size: calc(var(--unit-sm-text) * 0.9);
   font-weight: 300;
-
-  @include media-breakpoint-down(md) {
-    margin-left: 4.17rem;
-    font-size: 1.5rem;
-  }
+  line-height: 1.6;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+  @include col-width(30,57);
 
   @include media-breakpoint-down(sm) {
-    max-width: none;
-    margin-top: 40px;
-    margin-left: 0;
-    text-align: center;
-  }
-
-  @include media-breakpoint-down(xs) {
-    margin-top: 20px;
-    font-size: 1.33rem;
-    line-height: 1.38em;
+    @include col-width(4,60);
   }
 }
