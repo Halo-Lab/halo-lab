@@ -2,13 +2,12 @@
 @import '@styles/mixins/all';
 @import '@functions/functions';
 
-
 :root {
   --col-width: calc(100vw / 64);
 
-  --coef:0.8;
-  --coef-font-title:0.8;
-  --coef-vertical:0.5;
+  --coef: 0.8;
+  --coef-font-title: 0.8;
+  --coef-vertical: 0.5;
   --coef-sm-text: 1;
 
   --unit: calc(20px * var(--coef, 1));
@@ -16,28 +15,27 @@
   --unit-font-title: calc(20px * var(--coef-font-title, 1));
   --unit-sm-text: calc(20px * var(--coef-sm-text, 1));
 
-  
   @media screen and (min-width: $md) {
     // --coef: 0.7;
   }
   @media screen and (min-width: 1024px) {
     // --coef: 0.8;
+    --coef-vertical: 1;
   }
   @media screen and (min-width: $xl) {
-    --coef:1;
-    --coef-font-title:1;
-    --coef-vertical:1;
+    --coef: 1;
+    --coef-font-title: 1;
+    --coef-vertical: 1;
     --coef-sm-text: 1;
 
     // --unit: calc(var(--col-width) * var(--coef, 1));
   }
   @media screen and (min-width: 1600px) {
     --col-width: calc(1600px / 64);
-    --coef:1.25;
-    --coef-font-title:1.25;
-    --coef-vertical:1.25;
+    --coef: 1.25;
+    --coef-font-title: 1.25;
+    --coef-vertical: 1.25;
     --coef-sm-text: 1.25;
-
   }
 }
 

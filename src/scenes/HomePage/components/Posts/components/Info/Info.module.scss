@@ -2,61 +2,63 @@
 @import '@styles/mixins/all';
 
 .container {
-  text-align: center;
-
-  @media screen and (min-width: $md) {
-    text-align: left;
-  }
-}
-
-.title {
-  font-size: 2.14rem;
-  margin-bottom: 3rem;
-
-  @include media-breakpoint-down(md) {
-    font-size: 1.5rem;
-    margin-bottom: 2.34rem;
-  }
-}
-
-.link {
   position: relative;
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: 1.42em;
-  letter-spacing: 0.36em;
-  text-transform: uppercase;
-  color: $yellow-color;
-  text-decoration: none;
-  transition: color 0.3s;
+  padding-top: calc(var(--unit-vertical) * 5);
 
   &::before {
     content: '';
     position: absolute;
-    width: calc(100% + 1.42rem);
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    height: 0;
-    background-color: #3719ca;
+    width: calc(var(--unit-vertical) * 3);
+    height: calc(var(--unit-vertical) * 3);
+    border-radius: 50%;
+    background-image: url('../../../../../../assets/images/sections/home-testimonials/logo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0;
+    left: 0;
+  }
+}
+
+.title {
+  font-family: $font-gramatika-black;
+  font-size: calc(var(--unit-font-title) * 1.5);
+  margin-bottom: calc(var(--unit-vertical) * 3);
+}
+
+.link {
+  position: relative;
+  font-weight: 600;
+  font-size: calc(var(--unit-sm-text) * 0.7);
+  line-height: 1.4em;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $white-color;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 42%;
+    left: 0;
+    bottom: -10px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      #e7a28f 1.59%,
+      #fbddb0 50%,
+      #fbfefd 98.41%
+    );
     z-index: -1;
-    transition: height 0.3s;
+    transition: width 0.3s;
   }
-
-  @include media-breakpoint-down(md) {
-    font-size: 1.17rem;
-  }
-
   @include media-breakpoint-down(sm) {
-    font-size: 1rem;
-    letter-spacing: 3px;
+    display: none;
   }
 
   &:hover {
     @include media-breakpoint-up(lg) {
-      color: $white-color;
       &::before {
-        height: 100%;
+        width: 100%;
       }
     }
   }

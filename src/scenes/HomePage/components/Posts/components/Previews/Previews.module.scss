@@ -1,13 +1,35 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
-.container {
-  margin-top: 6.67rem;
+.link {
+  position: relative;
+  font-weight: 600;
+  font-size: calc(var(--unit-sm-text) * 0.7);
+  line-height: 1.4em;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $white-color;
+  margin-top: 2.5rem;
+  display: inline-block;
 
-  @media screen and (min-width: $md) {
-    margin-top: 0;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 42%;
+    left: 0;
+    bottom: -10px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      #e7a28f 1.59%,
+      #fbddb0 50%,
+      #fbfefd 98.41%
+    );
+    z-index: -1;
+    transition: width 0.3s;
   }
-}
-
-.list {
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
 }

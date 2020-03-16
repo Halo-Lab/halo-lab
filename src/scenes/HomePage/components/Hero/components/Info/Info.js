@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Info.module.scss';
 
-const Info = ({
-  clutchLaurel,
-  dribbbleLaurel,
-  upworkLaurel,
-}) => {
+const Info = ({ clutchLaurel, dribbbleLaurel, upworkLaurel }) => {
   const items = [
     {
       icon: upworkLaurel,
@@ -22,7 +18,7 @@ const Info = ({
     {
       icon: clutchLaurel,
       classes: styles.clutch,
-      textStrings: 'Top User Experience Agency'
+      textStrings: 'Top User Experience Agency',
     },
   ];
 
@@ -32,9 +28,7 @@ const Info = ({
         return (
           <div key={index} className={`${styles.item} ${classes}`}>
             <img src={icon.publicURL} alt={'icon'} />
-            <span>
-              {textStrings}
-            </span>
+            <span>{textStrings}</span>
           </div>
         );
       })}
