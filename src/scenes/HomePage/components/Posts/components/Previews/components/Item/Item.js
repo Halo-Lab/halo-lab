@@ -32,6 +32,7 @@ Item.propTypes = {
   title: PropTypes.string,
   featured_media: PropTypes.object,
   date: PropTypes.string,
+  categories: PropTypes.array,
 };
 
 export default Item;

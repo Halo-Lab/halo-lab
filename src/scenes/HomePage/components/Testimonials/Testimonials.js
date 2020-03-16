@@ -58,6 +58,7 @@ const Testimonials = () => {
     slidesToScroll: 1,
     variableWidth: true,
     centerMode: true,
+    centerPadding: '10px',
   };
 
   return (

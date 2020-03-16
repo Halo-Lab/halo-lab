@@ -11,8 +11,8 @@
   margin-top: calc(var(--unit-vertical) * 10);
   padding-top: calc(var(--unit-vertical) * 10);
   padding-bottom: calc(var(--unit-vertical) * 10);
-  padding-left: calc(var(--unit-vertical) * 4);
-  padding-right: calc(var(--unit-vertical) * 4);
+  padding-left: calc(var(--unit-vertical) * 2);
+  padding-right: calc(var(--unit-vertical) * 2);
 
   &::before {
     content: '';
@@ -48,6 +48,10 @@
     transform: translate(-50%, -50%);
     z-index: -1;
     transition: all 0.3s;
+    @include media-breakpoint-down(sm) {
+      width: calc(var(--unit) * 16);
+      height: calc(var(--unit) * 16);
+    }
   }
 }
 
