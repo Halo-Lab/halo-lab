@@ -17,13 +17,19 @@
   &::before {
     content: '';
     position: absolute;
-    width: 100%;
-    height: calc(100% + 126px);
+    width: 100vw;
+    height: calc(
+      100% + calc(var(--unit) * 2.5) + (calc(var(--unit-vertical)) * 4)
+    );
     background: linear-gradient(0deg, #3719ca, #3719ca),
       linear-gradient(89.64deg, #3719ca 0.16%, #8161fe 99.8%);
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     top: 0;
     z-index: -1;
+    @include media-breakpoint-down(md) {
+      height: calc(100% + 128px);
+    }
   }
   &::after {
     content: '';

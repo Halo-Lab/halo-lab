@@ -2,19 +2,11 @@
 @import '@styles/mixins/all';
 
 .container {
-  margin-top: 12.14rem;
+  margin-top: calc(var(--unit-vertical) * 10);
 
   @media (min-width: 1280px) {
-    max-width: 90rem;
+    max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  @include media-breakpoint-down(md) {
-    margin-top: 8.34rem;
-  }
-
-  @include media-breakpoint-down(xs) {
-    margin-top: 6.67rem;
   }
 }

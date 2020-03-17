@@ -6,7 +6,7 @@ import styles from './Footer.module.scss';
 
 const Footer = () => {
   const {
-    logotype,
+    // logotype,
     behance,
     dribbble,
     facebook,
@@ -39,6 +39,9 @@ const Footer = () => {
 
   return (
     <div className={`pageWrapper ${styles.container}`}>
+      <div className={styles.logotype}>
+        With Love from <b>Halo Lab</b>
+      </div>
       <ul className={styles.socials}>
         {socials.map(({ href, image }) => {
           return (
@@ -50,10 +53,6 @@ const Footer = () => {
           );
         })}
       </ul>
-      <div className={styles.logotype}>
-        <img src={logotype.publicURL} alt="halo-lab logotype" />
-        <span>With Love from Halo Lab</span>
-      </div>
     </div>
   );
 };
