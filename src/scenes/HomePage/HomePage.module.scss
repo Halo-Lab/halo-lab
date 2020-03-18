@@ -2,6 +2,9 @@
 @import '@styles/mixins/all';
 
 .container {
-  padding-top: 11.4rem;
+  padding-top: calc(var(--unit-vertical) * 7);
   font-family: $font-sofia-pro-soft;
+  @include media-breakpoint-down(md) {
+    padding-top: calc(var(--unit-vertical) * 10);
+  }
 }

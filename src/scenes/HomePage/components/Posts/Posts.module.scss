@@ -8,12 +8,12 @@
 }
 
 .aside {
-  @include col-width(7, 22);
+  @include col-width(7, 23);
   @include media-breakpoint-down(md) {
     @include col-width(4, 22);
   }
   @include media-breakpoint-down(sm) {
-    @include col-width(5, 59);
+    @include col-width(5, 61);
   }
 }
 

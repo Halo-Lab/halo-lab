@@ -42,7 +42,7 @@ const Gallery = () => {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>We are live</h2>
+      <h2 className={styles.title}>Creative Atmosphere</h2>
       <div className={styles.sliderWrapper}>
         {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
           <Ticker

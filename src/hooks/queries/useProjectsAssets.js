@@ -56,6 +56,9 @@ const useProjectsAssets = () => {
       angellist: file(relativePath: { eq: "brands/angellist.svg" }) {
         publicURL
       }
+      auth: file(relativePath: { eq: "brands/auth0.svg" }) {
+        publicURL
+      }
       forbes: file(relativePath: { eq: "brands/forbes.svg" }) {
         publicURL
       }

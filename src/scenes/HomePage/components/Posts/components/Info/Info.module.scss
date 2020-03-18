@@ -23,6 +23,7 @@
   font-family: $font-gramatika-black;
   font-size: calc(var(--unit-font-title) * 1.5);
   margin-bottom: calc(var(--unit-vertical) * 3);
+  line-height: 1.35;
 }
 
 .link {
@@ -34,11 +35,12 @@
   text-transform: uppercase;
   text-decoration: none;
   color: $white-color;
+  letter-spacing: 10px;
 
   &::before {
     content: '';
     position: absolute;
-    width: 42%;
+    width: 45%;
     left: 0;
     bottom: -10px;
     height: 1px;

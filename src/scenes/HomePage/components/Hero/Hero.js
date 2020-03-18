@@ -13,7 +13,7 @@ const Hero = () => {
     <section className={styles.container}>
       <div className={styles.wrapper}>
         <h2 className={styles.title}>
-          <span>Design driven </span>
+          <span>Design-driven </span>
           <br />
           development of
           <br />

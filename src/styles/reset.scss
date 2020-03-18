@@ -27,6 +27,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size: 18px;
+  -webkit-font-smoothing: antialiased;
 
   @include fluid-type(1920px, 5120px, 18px, 20px);
 
@@ -72,7 +73,7 @@ img {
     display: flex;
     align-items: center;
     height: 100%;
-    transform: scaleY(0.7);
+    transform: scaleY(0.8);
     transition: transform 0.5s;
   }
   &.slick-active {

@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 import styles from './Others.module.scss';
 
-const Others = ({ jackAndJones, kklLuzern, udemy }) => {
+const Others = ({ auth, kklLuzern, udemy }) => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -13,7 +13,7 @@ const Others = ({ jackAndJones, kklLuzern, udemy }) => {
       </div>
       <ul className={styles.list}>
         <li className={styles.item}>
-          <img src={jackAndJones.publicURL} alt="partner logotype" />
+          <img src={auth.publicURL} alt="partner logotype" />
         </li>
         <li className={styles.item}>
           <img src={udemy.publicURL} alt="partner logotype" />
@@ -38,7 +38,7 @@ const Others = ({ jackAndJones, kklLuzern, udemy }) => {
 };
 
 Others.propTypes = {
-  jackAndJones: PropTypes.object,
+  auth: PropTypes.object,
   kklLuzern: PropTypes.object,
   udemy: PropTypes.object,
 };

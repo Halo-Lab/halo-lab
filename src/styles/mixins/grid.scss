@@ -1,4 +1,4 @@
-@mixin col-width($from:1, $to:64) {
+@mixin col-width($from: 1, $to: 64) {
   grid-column-start: $from;
   grid-column-end: $to;
   // @include media-breakpoint-up(md) {
@@ -6,9 +6,9 @@
   // }
 }
 
-@mixin grid-template(){
+@mixin grid-template() {
   display: grid;
-  grid-template-columns: repeat(63, calc(100%/63));
+  grid-template-columns: repeat(64, calc(100% / 64));
 }
 
 @mixin hl-margin-top($offset: 1, $coef: 1) {

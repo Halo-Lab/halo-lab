@@ -3,7 +3,7 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(42, calc(100% / 42));
+  grid-template-columns: repeat(44, calc(100% / 44));
   position: relative;
   box-sizing: border-box;
   margin-left: 65px;
@@ -14,8 +14,8 @@
     rgba(132, 164, 255, 0.2) 6.69%,
     rgba(2, 2, 30, 0) 85.43%
   );
-  max-width: calc(var(--col-width) * 43);
-  padding: calc(var(--unit-vertical) * 3) 0;
+  max-width: calc(var(--col-width) * 44);
+  padding: calc(var(--unit-vertical) * 2.2) 0;
   height: 100%;
   &::before {
     content: '';
@@ -69,7 +69,7 @@
 .mark {
   font-family: $font-gramatika;
   font-weight: 700;
-  font-size: calc(var(--unit-font-title) * 2.8);
+  font-size: calc(var(--unit-font-title) * 2.9);
   line-height: 1.25;
   margin-bottom: calc(var(--unit-vertical) * 0.5);
   margin-top: auto;
@@ -91,32 +91,28 @@
   font-family: $font-gramatika;
   font-weight: 700;
   font-size: calc(var(--unit-font-title) * 1.8);
-  padding-top: 1.4em;
-  margin-bottom: calc(var(--unit-vertical) * 4);
+  line-height: 1.25;
+  padding-top: 1.6em;
+  margin-bottom: calc(var(--unit-vertical) * 3.5);
   &::before {
     content: '';
     position: absolute;
-    width: calc(var(--unit-font-title) * 1.5);
-    height: calc(var(--unit-font-title) * 1.5);
+    width: calc(var(--unit-font-title) * 2.1);
+    height: calc(var(--unit-font-title) * 2.2);
     background-image: url('../../../../../../assets/images/sections/home-testimonials/qoute.svg');
     background-repeat: no-repeat;
     background-size: contain;
     top: 0;
-    left: 0;
+    left: -4px;
   }
 }
 
 .name {
   font-size: calc(var(--unit-sm-text) * 0.9);
   color: $light-grey-color;
-  // margin-top: auto;
 }
 
-.companyLogo {
-  display: inline-block;
-  margin-left: auto;
-  width: auto;
-  max-width: 70px;
+.generalLogo {
+  width: calc(var(--unit) * 3);
   height: auto;
-  max-height: 65px;
 }

@@ -6,7 +6,7 @@
   @include col-width();
 
   @media screen and (min-width: $md) {
-    @include col-width(1,41);
+    @include col-width(1, 42);
     grid-row: 1;
     margin-right: 0;
   }
@@ -32,7 +32,7 @@
   }
   &.reversed {
     @media screen and (min-width: $md) {
-      @include col-width(22,64);
+      @include col-width(24, 65);
       margin-left: 0;
     }
   }
@@ -44,17 +44,16 @@
   justify-content: center;
   z-index: 10;
   margin-top: calc(var(--unit-vertical) * 2);
-  @include col-width(4,60);
-
+  @include col-width(4, 60);
 
   @media screen and (min-width: $md) {
-    @include col-width(38,58);
+    @include col-width(39, 58);
     grid-row: 1;
     margin-top: 0;
   }
   &.reversed {
     @media screen and (min-width: $md) {
-      @include col-width(7,26);
+      @include col-width(8, 26);
       margin-left: 0;
     }
   }
@@ -66,46 +65,19 @@
 }
 
 .tags {
-  // font-size: px-to-rem(14,12);
   font-size: calc(var(--unit-sm-text) * 0.9);
   font-weight: 300;
   line-height: 1.6em;
   letter-spacing: 0.5px;
   color: #ccccd2;
-
-  @media screen and (min-width: $md) {
-    // font-size: 1.5rem;
-  }
-
-  @media screen and (min-width: $lg) {
-    // font-size: 1.43rem;
-    // font-size: px-to-rem(18);
-  }
 }
 
 .title {
-  // @include hl-margin-top(2);
-  margin-top: calc(var(--unit-vertical) * 2);
+  margin-top: calc(var(--unit-vertical) * 1);
   font-size: calc(var(--unit-font-title) * 1.8);
-  // font-size: px-to-rem(26,12);
   line-height: 1.25em;
   font-family: $font-gramatika;
   font-weight: 700;
-
-  // @media screen and (min-width: $md) {
-  //   margin-top: 1.9rem;
-  //   font-size: 1.83rem;
-  // }
-
-  @media screen and (min-width: $lg) {
-    // font-size: px-to-rem(36);
-    // margin-top: px-to-em(20, 36);
-    // @include hl-margin-top();
-    // margin-top: calc(var(--unit));
-
-
-    // margin-top: calc(var(--unit))
-  }
 
   > a {
     display: block;
@@ -116,38 +88,16 @@
 
 .descriptionLink {
   position: relative;
-  // @include hl-margin-top(3);
   margin-top: calc(var(--unit-vertical) * 3);
   font-size: calc(var(--unit-sm-text) * 0.7);
 
-  // margin-top: 2rem;
-  // font-size: 1rem;
   font-weight: 600;
   line-height: 1.42em;
   letter-spacing: 10px;
   text-transform: uppercase;
   transition: color 0.3s;
-  color: $yellow-color;
+  color: $white-color;
   width: fit-content;
-
-  @media screen and (min-width: $md) {
-    // margin-top: 3.35rem;
-    // font-size: 1.17rem;
-    color: $white-color;
-  }
-
-  @media screen and (min-width: $lg) {
-    // margin-top: px-to-rem(60);
-    // margin-top: calc(var(--unit) * 3);
-    // font-size: 1rem;
-
-    &:hover {
-      color: $yellow-color;
-      &:before {
-        width: 95%;
-      }
-    }
-  }
 
   > a {
     display: block;
@@ -161,70 +111,48 @@
     width: 45%;
     left: 0;
     bottom: -12px;
-    background-color: $yellow-color;
+    background: linear-gradient(
+      90deg,
+      #e7a28f 1.59%,
+      #fbddb0 50%,
+      #fbfefd 98.41%
+    );
     transition: width 0.3s;
-
+  }
+  &:hover {
+    &:before {
+      width: 95%;
+    }
   }
 }
 
 .review {
   display: flex;
   align-items: center;
-  // margin-top: px-to-rem(58,12);
-  // @include hl-margin-top(6);
-  margin-top: calc(var(--unit-vertical) * 6);
-
-
-  @media screen and (min-width: $md) {
-    // margin-top: 5rem;
-  }
-  @media screen and (min-width: $lg) {
-    // @include hl-margin-top(9);
-    // margin-top: calc(var(--unit) * 9);
-    // margin-top: px-to-rem(190);
-  }
+  margin-top: calc(var(--unit-vertical) * 9);
 }
 
 .avatar {
   overflow: hidden;
   border-radius: 50%;
   width: calc(var(--unit) * 4);
-  @media screen and (min-width: $md) {
-    // width: calc(var(--unit) * 5);
-  }
-
-  @media screen and (min-width: $lg) {
-    // width: calc(var(--unit) * 4);
-  }
 }
 
 .reviewContent {
-  // @include hl-margin-left(1.5);
   margin-left: calc(var(--unit-vertical) * 1.5);
-  // font-size: calc(var(--unit) * 1.1);
-
-  // margin-left: 1.67rem;
 }
 
 .reviewText {
-  // font-size: px-to-rem(16,12);
   font-size: calc(var(--unit-sm-text) * 1.1);
   font-weight: 600;
   line-height: 1.45em;
-  letter-spacing: 0.5px;
 
   @media screen and (min-width: $md) {
-    // font-size: 1.43rem;
   }
 }
 
 .reviewAuthor {
-  // font-size: px-to-rem(12,12);
   font-size: calc(var(--unit-sm-text) * 0.8);
   color: #ccccd2;
   font-weight: 300;
-
-  @media screen and (min-width: $md) {
-    // font-size: 1.14rem;
-  }
 }

@@ -21,7 +21,7 @@ const Testimonials = () => {
     {
       author: `Alexander Kozma Ingal, Room Six`,
       companyLogo: companyLogo1,
-      rating: '5.0',
+      rating: '4.8',
       text: `They perfectly met my expectations — working with them felt like an extension of my in-house team.`,
     },
     {

@@ -4,27 +4,26 @@
 .container {
   align-items: center;
   @include grid-template();
-  margin-top: calc(var(--unit-vertical) * 6);
-
+  margin-top: calc(var(--unit-vertical) * 7.3);
 }
 
 .title {
   font-family: $font-gramatika;
   font-weight: 700;
   font-size: calc(var(--unit-font-title) * 1.8);
+  line-height: 1.25;
 
   text-align: center;
-  @include col-width(4,60);
+  @include col-width(4, 60);
   grid-row: 1;
 
-
   @media screen and (min-width: $md) {
-    @include col-width(9,15);
+    @include col-width(9, 15);
     text-align: left;
   }
 
   @media screen and (min-width: $lg) {
-    @include col-width(9,15);
+    @include col-width(9, 15);
   }
 
   br {
@@ -45,19 +44,18 @@
   margin-top: calc(var(--unit-vertical) * 3);
   box-shadow: inset 1px 1px 0px 0.25px #32344d;
   padding: 0;
-  @include col-width(4,60);
+  @include col-width(4, 60);
   grid-row: 2;
 
   @media screen and (min-width: $md) {
-    @include col-width(22,64);
+    @include col-width(22, 65);
     flex-wrap: nowrap;
     margin-top: 0;
     grid-row: 1;
-
   }
 
   @media screen and (min-width: $lg) {
-    @include col-width(22,64);
+    @include col-width(22, 65);
   }
 
   li {

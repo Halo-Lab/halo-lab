@@ -19,6 +19,10 @@
   line-height: 1.25em;
   color: $white-color;
   text-align: center;
+  letter-spacing: -2px;
+  @include media-breakpoint-down(md) {
+    font-size: calc(var(--unit-font-title) * 3);
+  }
 }
 
 .sliderWrapper {

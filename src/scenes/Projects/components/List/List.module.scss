@@ -11,12 +11,7 @@
 .item {
   @include grid-template();
 
-
   & + .item {
-    // margin-top: px-to-rem(60,12);
-    margin-top: calc(var(--unit-vertical) * 8);
-    // @media screen and (min-width: $md) {
-    //   margin-top: calc(var(--unit) * 8);
-    // }
+    margin-top: calc(var(--unit-vertical) * 7.3);
   }
 }

@@ -1,8 +1,6 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
-
-
 .item {
   display: flex;
   flex-direction: column;
@@ -18,36 +16,35 @@
     margin-bottom: var(--unit-vertical);
   }
   span {
-    max-width: 180px;
+    max-width: calc(var(--unit-vertical) * 9);
     font-weight: 300;
     font-size: calc(var(--unit-sm-text) * 0.8);
     line-height: 1.5;
     opacity: 0.5;
+    @include media-breakpoint-down(md) {
+      max-width: 180px;
+    }
   }
 }
 
 .upwork {
-  @include col-width(11,20);
+  @include col-width(11, 20);
   @include media-breakpoint-down(md) {
-    @include col-width(2,31);  
+    @include col-width(2, 31);
   }
 }
 .dribbble {
-  @include col-width(28,37);
+  @include col-width(29, 37);
   padding-bottom: 4rem;
   @include media-breakpoint-down(md) {
-    @include col-width(32,62);  
+    @include col-width(32, 62);
     padding-bottom: 0;
   }
 }
 
 .clutch {
-  @include col-width(45,53);
+  @include col-width(47, 55);
   @include media-breakpoint-down(md) {
     display: none;
   }
 }
-
-
-
-

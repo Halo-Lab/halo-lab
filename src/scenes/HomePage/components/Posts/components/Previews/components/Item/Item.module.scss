@@ -5,7 +5,18 @@
   display: flex;
   flex-direction: column;
   &:not(:first-child) {
-    margin-top: 40px;
+    position: relative;
+    margin-top: calc(var(--unit-vertical) * 4);
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + calc(var(--unit-vertical) * 2));
+      height: 1px;
+      top: calc(var(--unit-vertical) * (-2));
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #32344d;
+    }
   }
 
   @media screen and (min-width: $md) {

@@ -3,30 +3,33 @@
 
 .container {
   @include grid-template();
-  margin-top: calc(var(--unit-vertical) * 10);
+  margin-top: calc(var(--unit-vertical) * 8.7);
   margin-bottom: calc(var(--unit-vertical) * 10);
 }
 
 .title {
+  @include col-width(9, 24);
   font-family: $font-gramatika-black;
   font-size: calc(var(--unit-font-title) * 1.5);
-  @include col-width(9,24);
-  
+  line-height: 1.33em;
+
   @include media-breakpoint-down(sm) {
-    @include col-width(4,60);
+    @include col-width(4, 60);
     margin-bottom: calc(var(--unit-vertical) * 3);
   }
 }
 
 .description {
+  @include col-width(30, 57);
   font-size: calc(var(--unit-sm-text) * 0.9);
   font-weight: 300;
   line-height: 1.6;
   opacity: 0.9;
   letter-spacing: 0.5px;
-  @include col-width(30,57);
+  margin-top: -4px;
 
   @include media-breakpoint-down(sm) {
-    @include col-width(4,60);
+    @include col-width(4, 60);
+    margin: 0;
   }
 }
