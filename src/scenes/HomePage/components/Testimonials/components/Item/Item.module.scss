@@ -39,8 +39,8 @@
     flex-direction: column;
     margin-left: 5px;
     margin-right: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     &::before {
       display: none;
     }
@@ -109,7 +109,7 @@
     left: -4px;
   }
   @include media-breakpoint-down(sm) {
-    font-size: calc(var(--unit-font-title) * 1.5);
+    font-size: calc(var(--unit-font-title) * 1.4);
   }
 }
 
@@ -117,6 +117,9 @@
   margin-top: auto;
   font-size: calc(var(--unit-sm-text) * 0.9);
   color: $light-grey-color;
+  @include media-breakpoint-down(sm) {
+    font-size: calc(var(--unit-sm-text) * 0.7);
+  }
 }
 
 .generalLogo {
