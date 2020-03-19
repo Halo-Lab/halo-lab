@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Slider from '@components/Slider';
 import Item from './components/Item';
 import { useTestimonialsAssets } from '@hooks/queries';
-
+import Swiper from 'react-id-swiper';
 import styles from './Testimonials.module.scss';
+import './Testimonials.scss';
 
 const Testimonials = () => {
   const {
@@ -49,21 +49,24 @@ const Testimonials = () => {
       text: `Halo Lab works hard to produce good results at a reasonable price.`,
     },
   ];
-
-  const settings = {
-    dots: true,
-    infinite: true,
+  const params = {
+    slidesPerView: 'auto',
+    loop: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    variableWidth: true,
-    centerMode: true,
-    centerPadding: '10px',
+    centeredSlides: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.next',
+      prevEl: '.prev',
+    },
   };
 
   return (
-    <section className={styles.container}>
-      <Slider settings={settings}>
+    <section className={`${styles.container} slider`}>
+      <Swiper {...params}>
         {items.map(item => {
           return (
             <Item
@@ -74,7 +77,7 @@ const Testimonials = () => {
             />
           );
         })}
-      </Slider>
+      </Swiper>
     </section>
   );
 };

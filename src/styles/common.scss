@@ -15,11 +15,7 @@
   --unit-font-title: calc(20px * var(--coef-font-title, 1));
   --unit-sm-text: calc(20px * var(--coef-sm-text, 1));
 
-  @media screen and (min-width: $md) {
-    // --coef: 0.7;
-  }
   @media screen and (min-width: 1024px) {
-    // --coef: 0.8;
     --coef-vertical: 1;
   }
   @media screen and (min-width: $xl) {
@@ -27,8 +23,6 @@
     --coef-font-title: 1;
     --coef-vertical: 1;
     --coef-sm-text: 1;
-
-    // --unit: calc(var(--col-width) * var(--coef, 1));
   }
   @media screen and (min-width: 1600px) {
     --col-width: calc(1600px / 64);
@@ -44,45 +38,3 @@
   max-width: 1600px;
   font-family: $font-sofia-pro;
 }
-
-// // if all will be o.k., it can be removed -->
-// .pageWrapperOld {
-//   font-family: $font-sofia-pro;
-//   padding-top: 11.4rem;
-//   padding-right: 4.28rem;
-//   padding-left: 4.28rem;
-
-//   @media screen and (max-width: 1300px) {
-//     padding-right: 4.28rem;
-//     padding-left: 4.28rem;
-//   }
-//   @media screen and (max-width: 1024px) {
-//     padding-right: 5rem;
-//     padding-left: 5rem;
-//   }
-//   @include media-breakpoint-down(sm) {
-//     padding-right: 60px;
-//     padding-left: 60px;
-//   }
-//   @include media-breakpoint-down(xs) {
-//     padding-right: 1.67rem;
-//     padding-left: 1.67rem;
-//   }
-
-//   @include media-breakpoint-down(md) {
-//     max-width: 59rem;
-//     margin-right: auto;
-//     margin-left: auto;
-//   }
-
-//   @media (min-width: 1280px) {
-//     max-width: 90rem;
-//     margin: 0 auto;
-//   }
-
-//   @include media-breakpoint-down(xs) {
-//     padding-right: 15px;
-//     padding-left: 15px;
-//   }
-// }
-// // <-- end

@@ -17,8 +17,8 @@ const HomePage = () => {
         <Hero />
         <WhatWeDo />
         <Projects title="Projects" navigation={true} />
-        <Testimonials />
       </div>
+      <Testimonials />
       <Gallery />
       <div className="pageWrapper">
         <Posts />

@@ -61,24 +61,23 @@ img {
   height: auto;
 }
 
-.pageWrapper .slick-track {
+.slider .slick-track {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.pageWrapper .slick-slide {
+.slider .slick-slide {
   float: none;
   height: auto;
   & > div {
     display: flex;
     align-items: center;
-    height: 100%;
     transform: scaleY(0.8);
-    transition: transform 0.5s;
+    transition: 0.5s;
   }
   &.slick-active {
     > div {
-      transform: scale(1);
+      transform: scaleY(1);
     }
   }
 }

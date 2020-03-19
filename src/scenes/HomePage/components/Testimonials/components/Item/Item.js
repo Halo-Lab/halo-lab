@@ -5,7 +5,7 @@ import styles from './Item.module.scss';
 
 const Item = ({ author, generalLogo, rating, stars, text }) => {
   return (
-    <div className={styles.container}>
+    <div className={`swiper-slide	 ${styles.container}`}>
       <div className={styles.rating}>
         <span className={styles.mark}>{rating}</span>
         <img src={stars.publicURL} alt="stars" className={styles.stars} />

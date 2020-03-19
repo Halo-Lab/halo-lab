@@ -3,10 +3,4 @@
 
 .container {
   margin-top: calc(var(--unit-vertical) * 10);
-
-  @media (min-width: 1280px) {
-    max-width: 1600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
