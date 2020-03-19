@@ -33,6 +33,7 @@ const List = () => {
             <img
               src={image.publicURL}
               alt="industries item icon"
+              loading="lazy"
               draggable="false"
             />
             <span>{title}</span>

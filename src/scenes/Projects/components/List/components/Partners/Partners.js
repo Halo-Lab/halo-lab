@@ -9,7 +9,7 @@ const Partners = ({ items, reversed }) => {
       {items.map(({ publicURL }) => {
         return (
           <li key={publicURL}>
-            <img src={publicURL} alt="partner logotype" />
+            <img src={publicURL} alt="partner logotype" loading="lazy" />
           </li>
         );
       })}

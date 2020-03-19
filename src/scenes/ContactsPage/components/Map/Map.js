@@ -15,7 +15,7 @@ const Map = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imageWrapper}>
-        <img src={map.publicURL} alt="map of Ukraine" />
+        <img src={map.publicURL} alt="map of Ukraine" loading="lazy" />
         <div className={styles.mapPin}></div>
       </div>
       <div className={styles.textWrapper}>

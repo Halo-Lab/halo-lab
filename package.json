@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
+    "cypress": "^4.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-loader": "^3.0.3",
@@ -57,7 +58,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "cypress run --headless",
+    "test:open": "cypress open"
   },
   "repository": {
     "type": "git",

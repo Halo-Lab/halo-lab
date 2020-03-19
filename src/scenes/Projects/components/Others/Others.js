@@ -16,10 +16,14 @@ const Others = ({ auth, kklLuzern, udemy }) => {
           <img src={auth.publicURL} alt="partner logotype" />
         </li>
         <li className={styles.item}>
-          <img src={udemy.publicURL} alt="partner logotype" />
+          <img src={udemy.publicURL} alt="partner logotype" loading="lazy" />
         </li>
         <li className={styles.item}>
-          <img src={kklLuzern.publicURL} alt="partner logotype" />
+          <img
+            src={kklLuzern.publicURL}
+            alt="partner logotype"
+            loading="lazy"
+          />
         </li>
         <li className={styles.item}>
           <Link to="/portfolio" className={styles.link}>

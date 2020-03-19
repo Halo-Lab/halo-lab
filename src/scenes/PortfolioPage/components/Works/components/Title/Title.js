@@ -14,14 +14,16 @@ const Title = ({ icon, signature }) => {
         rel="noopener noreferrer"
       >
         <img
-          className={styles.icon}
           src={signature.publicURL}
           alt="applications mobile illustrations websites"
+          loading="lazy"
+          className={styles.icon}
         />
         <img
-          className={styles.image}
           src={icon.publicURL}
           alt="dribbble logotype"
+          loading="lazy"
+          className={styles.image}
         />
       </a>
     </h2>

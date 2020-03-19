@@ -12,6 +12,7 @@ const Item = ({ author, generalLogo, rating, stars, text }) => {
         <img
           src={generalLogo.publicURL}
           alt="general logotype"
+          loading="lazy"
           className={styles.generalLogo}
         />
       </div>

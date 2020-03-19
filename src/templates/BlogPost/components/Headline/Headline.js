@@ -13,7 +13,12 @@ const Headline = ({ categories, title, image }) => {
         dangerouslySetInnerHTML={{ __html: title }}
         className={styles.title}
       ></h2>
-      <img src={image} alt="article image" className={styles.image} />
+      <img
+        src={image}
+        alt="article image"
+        loading="lazy"
+        className={styles.image}
+      />
     </div>
   );
 };

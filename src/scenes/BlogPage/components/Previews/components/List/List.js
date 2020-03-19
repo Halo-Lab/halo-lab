@@ -20,7 +20,12 @@ const List = ({ items }) => {
     const inlineStyles = { animationDelay: `0.${i}s` };
 
     postsToRender.push(
-      <li key={items[i].id} style={inlineStyles} className={styles.item}>
+      <li
+        data-list-item="articles"
+        key={items[i].id}
+        style={inlineStyles}
+        className={styles.item}
+      >
         <PostThumbnail {...items[i]} />
       </li>
     );

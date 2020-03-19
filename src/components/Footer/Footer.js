@@ -47,7 +47,7 @@ const Footer = () => {
           return (
             <li key={href}>
               <a href={href} target="_blank" rel="noopener noreferrer">
-                <img src={image.publicURL} alt="social icon" />
+                <img src={image.publicURL} alt="social icon" loading="lazy" />
               </a>
             </li>
           );

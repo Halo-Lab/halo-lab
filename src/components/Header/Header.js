@@ -19,7 +19,11 @@ const Header = () => {
       <div className={`${styles.bar} pageWrapper`}>
         <div className={styles.logotype}>
           <Link to="/">
-            <img src={logotype.publicURL} alt="halo-Lab logotype" />
+            <img
+              src={logotype.publicURL}
+              alt="halo-Lab logotype"
+              loading="lazy"
+            />
           </Link>
         </div>
 
