@@ -90,7 +90,7 @@
     }
   }
   .next {
-    right: calc(50% - (var(--col-width) * 29));
+    right: calc(50% - (var(--unit) * 29));
 
     &:before {
       border-color: rgba(#fff, 0) rgba(#fff, 1) rgba(#fff, 1) rgba(#fff, 0);
@@ -99,7 +99,7 @@
   }
 
   .prev {
-    left: calc(50% - (var(--col-width) * 29));
+    left: calc(50% - (var(--unit) * 29));
 
     &:before {
       border-color: rgba(#fff, 0) rgba(#fff, 0) rgba(#fff, 1) rgba(#fff, 1);
