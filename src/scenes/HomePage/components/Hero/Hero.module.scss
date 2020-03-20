@@ -21,6 +21,7 @@
   font-family: $font-gramatika-black;
   @include hl-font-size-title(96px);
   line-height: 0.89em;
+  letter-spacing: -2px;
   margin: 0 auto;
   @include hl-margin(bottom, 80px);
 
@@ -55,20 +56,14 @@
 }
 
 .circleSm1 {
-  // width: calc(var(--unit));
-  // height: calc(var(--unit));
   @include hl-width(20px);
   @include hl-height(20px);
   background: #ddebfa;
-  // top: calc(var(--col-width) * 18);
-  // right: calc(var(--col-width) * 10);
   top: hl-offset(18);
-  right: hl-offset(10);
+  right: hl-offset(7);
 }
 
 .circleSm2 {
-  // width: calc(var(--unit) * 2);
-  // height: calc(var(--unit) * 2);
   @include hl-width(40px);
   @include hl-height(40px);
   background: linear-gradient(
@@ -76,21 +71,16 @@
     rgba(16, 8, 74, 0) 16.94%,
     #83a4ff 87.08%
   );
-  // top: calc(var(--col-width) * 3);
-  // right: calc(var(--col-width) * 7);
   top: hl-offset(3);
-  right: hl-offset(7);
+  right: hl-offset(4);
 }
 
 .circleMd {
   background: linear-gradient(156.8deg, #ffffff 15%, #79b0e8 75.42%);
-  // width: calc(var(--unit) * 3);
-  // height: calc(var(--unit) * 3);
   @include hl-width(60px);
   @include hl-height(60px);
   top: 0;
-  // left: calc(var(--col-width) * 8);
-  left: hl-offset(8);
+  left: hl-offset(6);
 }
 
 .circleLg {
@@ -99,10 +89,14 @@
     rgba(1, 1, 18, 0) 27.49%,
     #262147 78.93%
   );
-  // width: calc(var(--unit) * 6);
-  // height: calc(var(--unit) * 6);
   @include hl-width(120px);
   @include hl-height(120px);
   bottom: -4%;
-  left: 2%;
+  left: -2%;
+}
+
+.mobile {
+  @media screen and (min-width: $sm) {
+    display: none;
+  }
 }

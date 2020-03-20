@@ -51,7 +51,7 @@ const List = ({
         author: 'Bogdan Suchyk, CEO',
         text: 'Pro and creative!',
       },
-      partners: [forbes, vcRu, angellist],
+      partners: [forbes, techcrunch, vcRu, angellist],
     },
     {
       id: 2,

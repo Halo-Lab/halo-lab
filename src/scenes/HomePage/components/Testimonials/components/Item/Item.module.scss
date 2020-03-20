@@ -16,9 +16,8 @@
     rgba(2, 2, 30, 0) 85.43%
   );
   max-width: calc(var(--coef-size) * 860px);
-  @include hl-padding(top, 44px);
-  @include hl-padding(bottom, 44px);
-  // padding: calc(var(--unit-vertical) * 2.2) 0;
+  @include hl-padding(top, 40px);
+  @include hl-padding(bottom, 60px);
   height: auto;
   &::after {
     content: '';

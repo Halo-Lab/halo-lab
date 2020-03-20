@@ -39,9 +39,9 @@
   img {
     display: inline-block;
     width: auto;
-    max-height: 38px;
+    max-height: 40px;
     @media screen and (min-width: $lg) {
-      @include hl-height(38px);
+      @include hl-height(40px);
       max-height: 100%;
     }
   }

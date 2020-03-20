@@ -15,9 +15,9 @@ const Hero = () => {
         <h2 className={styles.title}>
           <span>Design-driven </span>
           <br />
-          development of
+          development of <span className={styles.mobile}>&nbsp;</span>
           <br />
-          &nbsp;your <span>web product</span> <br />
+          your <span>web product</span> <br />
           for years
         </h2>
         <div className={`${styles.circle} ${styles.circleSm1}`}></div>
