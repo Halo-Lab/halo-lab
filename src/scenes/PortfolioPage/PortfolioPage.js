@@ -10,7 +10,7 @@ import styles from './PortfolioPage.module.scss';
 const PortfolioPage = () => {
   return (
     <div className={`${styles.container} pageWrapper`}>
-      <Projects title="Portfolio" navigation={false} />
+      <Projects title="Projects" navigation={false} />
       <Clients />
       <Works />
       <MailUs />

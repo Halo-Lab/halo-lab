@@ -8,7 +8,7 @@ import styles from './ContactsPage.module.scss';
 
 const ContactsPage = () => {
   return (
-    <div className={`pageWrapper ${styles.container}`}>
+    <div className={`oldPageWrapper ${styles.container}`}>
       <Description />
       <Form />
       <Map />

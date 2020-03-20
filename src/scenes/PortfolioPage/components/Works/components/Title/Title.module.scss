@@ -2,15 +2,16 @@
 @import '@styles/mixins/all';
 
 .container {
-  font-family: $font-ratiomodern;
+  font-family: $font-gramatika-black;
   color: $white-color;
-  font-weight: 400;
   text-align: center;
   display: inline-flex;
   position: relative;
-  font-size: 4.58rem;
-  line-height: 1.598em;
+  font-size: 6.7rem;
+  line-height: 1.25em;
   margin-bottom: 5.57rem;
+  letter-spacing: -2px;
+  text-transform: capitalize;
 
   @include media-breakpoint-down(md) {
     font-size: 3.67rem;
@@ -31,7 +32,7 @@
 }
 
 .link {
-  display: block;
+  display: none;
   position: absolute;
   left: 100%;
   bottom: 100%;
