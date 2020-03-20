@@ -3,13 +3,16 @@
 
 .container {
   position: relative;
-  padding-top: calc(var(--unit-vertical) * 5);
+  @include hl-padding(top, 100px);
+  @media screen and (max-width: $md) {
+    --coef-indent: 0.7;
+  }
 
   &::before {
     content: '';
     position: absolute;
-    width: calc(var(--unit-vertical) * 3);
-    height: calc(var(--unit-vertical) * 3);
+    @include hl-width(60px);
+    @include hl-height(60px);
     border-radius: 50%;
     background-image: url('../../../../../../assets/images/sections/home-testimonials/logo.svg');
     background-repeat: no-repeat;
@@ -21,15 +24,15 @@
 
 .title {
   font-family: $font-gramatika-black;
-  font-size: calc(var(--unit-font-title) * 1.5);
-  margin-bottom: calc(var(--unit-vertical) * 3);
+  @include hl-font-size-title(30px);
+  @include hl-margin(bottom, 60px);
   line-height: 1.35;
 }
 
 .link {
   position: relative;
   font-weight: 600;
-  font-size: calc(var(--unit-sm-text) * 0.7);
+  @include hl-font-size-text(14px);
   line-height: 1.4em;
   letter-spacing: 0.36em;
   text-transform: uppercase;
@@ -53,12 +56,12 @@
     z-index: -1;
     transition: width 0.3s;
   }
-  @include media-breakpoint-down(sm) {
+  @media screen and (max-width: $sm) {
     display: none;
   }
 
   &:hover {
-    @include media-breakpoint-up(lg) {
+    @media screen and (max-width: $lg) {
       &::before {
         width: 100%;
       }

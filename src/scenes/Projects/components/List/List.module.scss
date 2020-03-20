@@ -12,6 +12,6 @@
   @include grid-template();
 
   & + .item {
-    margin-top: calc(var(--unit-vertical) * 7.3);
+    @include hl-margin(top, 140px);
   }
 }

@@ -8,26 +8,24 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: calc(var(--unit-vertical) * 10);
-  padding-top: calc(var(--unit-vertical) * 9);
-  padding-bottom: calc(var(--unit-vertical) * 8);
-  padding-left: calc(var(--unit-vertical) * 2);
-  padding-right: calc(var(--unit-vertical) * 2);
+  @include hl-margin(top, 200px);
+  @include hl-padding(top, 180px);
+  @include hl-padding(bottom, 160px);
+  @include hl-padding(left, 40px);
+  @include hl-padding(right, 40px);
 
   &::before {
     content: '';
     position: absolute;
     width: 100vw;
-    height: calc(
-      100% + calc(var(--unit) * 2.5) + (calc(var(--unit-vertical)) * 4)
-    );
+    height: calc(100% + (var(--coef-indent) * 130px));
     background: linear-gradient(0deg, #3719ca, #3719ca),
       linear-gradient(89.64deg, #3719ca 0.16%, #8161fe 99.8%);
     left: 50%;
     transform: translateX(-50%);
     top: 0;
     z-index: -1;
-    @include media-breakpoint-down(md) {
+    @media screen and (max-width: $md) {
       height: calc(100% + 128px);
     }
   }
@@ -36,8 +34,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: calc(var(--unit) * 20);
-    height: calc(var(--unit) * 20);
+    @include hl-width(400px);
+    @include hl-height(400px);
+
     border-radius: 50%;
     background: linear-gradient(
         258.52deg,
@@ -54,9 +53,8 @@
     transform: translate(-50%, -50%);
     z-index: -1;
     transition: all 0.3s;
-    @include media-breakpoint-down(sm) {
-      width: calc(var(--unit) * 16);
-      height: calc(var(--unit) * 16);
+    @media screen and (max-width: $md) {
+      --coef-size: 0.75;
     }
   }
 }
@@ -65,20 +63,19 @@
   position: relative;
   color: $white-color;
   font-family: $font-gramatika-black;
-  font-size: calc(var(--unit-font-title) * 4.8);
+  @include hl-font-size-title(96px);
   line-height: 0.8em;
   letter-spacing: -2px;
   margin: 0;
-
-  @include media-breakpoint-down(md) {
-    font-size: calc(var(--unit-font-title) * 4);
+  @media screen and (max-width: $md) {
+    --coef-title: 0.75;
     &::before,
     &::after {
       display: none;
     }
   }
-  @include media-breakpoint-down(xs) {
-    font-size: calc(var(--unit-font-title) * 2.7);
+  @media screen and (max-width: $xs) {
+    --coef-title: 0.65;
   }
   span {
     background: linear-gradient(
@@ -94,8 +91,8 @@
   &::before {
     content: '';
     position: absolute;
-    width: calc(var(--unit) * 3);
-    height: calc(var(--unit) * 3);
+    @include hl-width(60px);
+    @include hl-height(60px);
     background: linear-gradient(156.8deg, #ffffff 15%, #79b0e8 75.42%);
     top: -51%;
     right: -17%;
@@ -104,8 +101,8 @@
   &::after {
     content: '';
     position: absolute;
-    width: calc(var(--unit) * 1);
-    height: calc(var(--unit) * 1);
+    @include hl-width(20px);
+    @include hl-height(20px);
     background: #ddebfa;
     bottom: -85%;
     left: -11%;
@@ -116,13 +113,13 @@
 .link {
   position: relative;
   font-family: $font-sofia-pro;
-  font-size: calc(var(--unit-sm-text) * 0.7);
+  @include hl-font-size-text(14px);
   line-height: 2;
   letter-spacing: 3px;
   text-transform: uppercase;
   text-decoration: none;
   color: $white-color;
-  margin-top: calc(var(--unit-vertical) * 2.6);
+  @include hl-margin(top, 52px);
   z-index: 10;
   &::before {
     content: '';

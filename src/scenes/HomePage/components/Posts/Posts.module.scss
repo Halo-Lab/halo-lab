@@ -4,7 +4,7 @@
 
 .container {
   @include grid-template();
-  margin-top: calc(var(--unit-vertical) * 10);
+  @include hl-margin(top, 200px);
 }
 
 .aside {

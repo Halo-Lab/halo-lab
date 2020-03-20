@@ -7,11 +7,11 @@
 
 .title {
   font-family: $font-gramatika-black;
-  font-size: calc(var(--unit-font-title) * 4.5);
+  @include hl-font-size-title(86px);
   line-height: 1.25em;
   color: $white-color;
   font-weight: 400;
-  margin-bottom: calc(var(--unit-vertical) * 5);
+  @include hl-margin(bottom, 100px);
   text-align: center;
   letter-spacing: -2px;
   @include media-breakpoint-down(md) {

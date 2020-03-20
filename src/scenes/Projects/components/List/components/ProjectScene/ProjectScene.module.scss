@@ -43,7 +43,7 @@
   flex-direction: column;
   justify-content: center;
   z-index: 10;
-  margin-top: calc(var(--unit-vertical) * 2);
+  @include hl-margin(top, 40px);
   @include col-width(4, 60);
 
   @media screen and (min-width: $md) {
@@ -65,7 +65,7 @@
 }
 
 .tags {
-  font-size: calc(var(--unit-sm-text) * 0.9);
+  @include hl-font-size-text(18px);
   font-weight: 300;
   line-height: 1.6em;
   letter-spacing: 0.5px;
@@ -73,8 +73,9 @@
 }
 
 .title {
-  margin-top: calc(var(--unit-vertical) * 1);
-  font-size: calc(var(--unit-font-title) * 1.8);
+  @include hl-margin(top, 20px);
+  @include hl-font-size-title(36px);
+
   line-height: 1.25em;
   font-family: $font-gramatika;
   font-weight: 700;
@@ -88,8 +89,8 @@
 
 .descriptionLink {
   position: relative;
-  margin-top: calc(var(--unit-vertical) * 3);
-  font-size: calc(var(--unit-sm-text) * 0.7);
+  @include hl-margin(top, 60px);
+  @include hl-font-size-text(14px);
 
   font-weight: 600;
   line-height: 1.42em;
@@ -129,30 +130,27 @@
 .review {
   display: flex;
   align-items: center;
-  margin-top: calc(var(--unit-vertical) * 9);
+  @include hl-margin(top, 180px);
 }
 
 .avatar {
   overflow: hidden;
   border-radius: 50%;
-  width: calc(var(--unit) * 4);
+  @include hl-width(80px);
 }
 
 .reviewContent {
-  margin-left: calc(var(--unit-vertical) * 1.5);
+  @include hl-margin(left, 30px);
 }
 
 .reviewText {
-  font-size: calc(var(--unit-sm-text) * 1.1);
+  @include hl-font-size-text(22px);
   font-weight: 600;
   line-height: 1.45em;
-
-  @media screen and (min-width: $md) {
-  }
 }
 
 .reviewAuthor {
-  font-size: calc(var(--unit-sm-text) * 0.8);
+  @include hl-font-size-text(16px);
   color: #ccccd2;
   font-weight: 300;
 }

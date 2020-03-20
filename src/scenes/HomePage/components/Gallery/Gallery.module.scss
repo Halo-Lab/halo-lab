@@ -2,7 +2,7 @@
 @import '@styles/mixins/all';
 
 .container {
-  margin-top: calc(var(--unit-vertical) * 10);
+  @include hl-margin(top, 200px);
   text-align: center;
 
   @media (min-width: 1280px) {
@@ -13,14 +13,14 @@
 
 .title {
   font-family: $font-gramatika-black;
-  font-size: calc(var(--unit-font-title) * 4);
-  margin-bottom: calc(var(--unit-vertical) * 5.5);
+  @include hl-font-size-title(80px);
+  @include hl-margin(bottom, 110px);
+  letter-spacing: -2px;
   line-height: 1.25em;
   color: $white-color;
   text-align: center;
-  letter-spacing: -2px;
   @include media-breakpoint-down(md) {
-    font-size: calc(var(--unit-font-title) * 3);
+    --coef-title: 0.6;
   }
 }
 

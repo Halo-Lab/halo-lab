@@ -1,11 +1,13 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
+@import '@functions/functions';
 
 .container {
   display: flex;
   align-items: center;
-  padding-top: calc(var(--unit-vertical) * 2);
-  padding-bottom: calc(var(--unit-vertical) * 2);
+  @include hl-padding(top, 40px);
+  @include hl-padding(bottom, 40px);
+
   @include media-breakpoint-down(md) {
     flex-direction: column;
   }
@@ -23,7 +25,7 @@
 
   li {
     &:not(:first-child) {
-      margin-left: calc(var(--unit-vertical) * 1.5);
+      @include hl-margin(left, 30px);
     }
   }
 
@@ -34,8 +36,8 @@
     box-sizing: border-box;
     border: 1px solid rgba($white-color, $alpha: 0.25);
     border-radius: 50%;
-    width: calc(var(--unit) * 2.5);
-    height: calc(var(--unit) * 2.5);
+    @include hl-width(50px);
+    @include hl-height(50px);
     text-align: center;
     transition: background-color 0.2s, border-color 0.2s;
 
@@ -53,9 +55,9 @@
 
 .logotype {
   position: absolute;
-  left: calc(var(--col-width) * 4);
+  left: hl-offset(4);
   font-family: $font-sofia-pro-soft;
-  font-size: calc(var(--unit-sm-text) * 0.8);
+  @include hl-font-size-text(16px);
   font-weight: 300;
   line-height: 1.56em;
 

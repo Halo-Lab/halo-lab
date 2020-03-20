@@ -2,5 +2,5 @@
 @import '@styles/mixins/all';
 
 .container {
-  margin-top: calc(var(--unit-vertical) * 10);
+  @include hl-margin(top, 200px);
 }

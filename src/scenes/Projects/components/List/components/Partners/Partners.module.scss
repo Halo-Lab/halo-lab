@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   list-style-type: none;
-  margin-top: calc(var(--unit-vertical) * 2);
+  @include hl-margin(top, 40px);
   padding: 0;
 
   @media screen and (min-width: $md) {
@@ -22,7 +22,7 @@
   img {
     display: block;
     width: auto;
-    height: calc(var(--unit) * 2);
+    @include hl-height(40px);
     margin: 0 auto;
   }
 

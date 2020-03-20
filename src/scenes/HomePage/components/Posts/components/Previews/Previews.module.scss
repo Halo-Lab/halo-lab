@@ -4,7 +4,7 @@
 .link {
   position: relative;
   font-weight: 600;
-  font-size: calc(var(--unit-sm-text) * 0.7);
+  @include hl-font-size-text(14px);
   line-height: 1.4em;
   letter-spacing: 0.36em;
   text-transform: uppercase;

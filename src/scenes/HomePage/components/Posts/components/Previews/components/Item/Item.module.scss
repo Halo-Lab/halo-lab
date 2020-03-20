@@ -6,16 +6,22 @@
   flex-direction: column;
   &:not(:first-child) {
     position: relative;
-    margin-top: calc(var(--unit-vertical) * 4);
+    @include hl-margin(top, 80px);
     &::before {
       content: '';
       position: absolute;
-      width: calc(100% + calc(var(--unit-vertical) * 2));
+      width: calc(100% + 40px);
       height: 1px;
-      top: calc(var(--unit-vertical) * (-2));
+      top: -40px;
       left: 50%;
       transform: translateX(-50%);
       background-color: #32344d;
+      @media screen and (max-width: $md) {
+        top: -30px;
+      }
+      @media screen and (max-width: $sm) {
+        display: none;
+      }
     }
   }
 
@@ -30,7 +36,7 @@
   width: 100%;
 
   @media screen and (min-width: $md) {
-    width: calc(var(--unit) * 9);
+    @include hl-width(180px);
   }
 
   a {
@@ -56,7 +62,7 @@
 .tag {
   font-family: $font-gramatika;
   font-weight: 700;
-  font-size: calc(var(--unit-sm-text) * 0.6);
+  @include hl-font-size-text(12px);
   margin-bottom: 0.7em;
   color: $light-grey-color;
   opacity: 0.5;
@@ -66,7 +72,7 @@
 .title {
   font-family: $font-sofia-pro;
   font-weight: 600;
-  font-size: calc(var(--unit-font-title) * 1.1);
+  @include hl-font-size-title(22px);
   line-height: 1.4em;
   font-weight: 400;
 

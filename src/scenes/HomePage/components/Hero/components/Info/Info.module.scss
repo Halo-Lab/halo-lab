@@ -11,18 +11,17 @@
     align-items: center;
   }
   img {
-    height: calc(var(--unit) * 2);
+    @include hl-height(40px);
     opacity: 0.5;
-    margin-bottom: var(--unit-vertical);
+    @include hl-margin(bottom, 20px);
   }
   span {
-    max-width: calc(var(--unit-vertical) * 9);
     font-weight: 300;
-    font-size: calc(var(--unit-sm-text) * 0.8);
+    @include hl-font-size-text(16px);
     line-height: 1.5;
     opacity: 0.5;
     @include media-breakpoint-down(md) {
-      max-width: 180px;
+      --coef-size: 1;
     }
   }
 }
@@ -35,7 +34,7 @@
 }
 .dribbble {
   @include col-width(29, 37);
-  padding-bottom: 4rem;
+  padding-bottom: 4.5rem;
   @include media-breakpoint-down(md) {
     @include col-width(32, 62);
     padding-bottom: 0;
@@ -43,7 +42,7 @@
 }
 
 .clutch {
-  @include col-width(47, 55);
+  @include col-width(46, 55);
   @include media-breakpoint-down(md) {
     display: none;
   }

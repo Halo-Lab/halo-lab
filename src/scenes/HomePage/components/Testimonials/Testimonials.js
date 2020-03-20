@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Item from './components/Item';
 import { useTestimonialsAssets } from '@hooks/queries';
+import { useBreakpoints } from '@hooks';
 import Swiper from 'react-id-swiper';
 import styles from './Testimonials.module.scss';
 import './Testimonials.scss';
@@ -16,6 +17,13 @@ const Testimonials = () => {
     companyLogo5,
     stars,
   } = useTestimonialsAssets();
+
+  const [buildKey, setBuildKey] = useState();
+  const { width } = useBreakpoints();
+
+  useEffect(() => {
+    setBuildKey(+new Date());
+  }, [width]);
 
   const items = [
     {
@@ -66,7 +74,7 @@ const Testimonials = () => {
 
   return (
     <section className={`${styles.container} slider`}>
-      <Swiper {...params}>
+      <Swiper {...params} key={buildKey}>
         {items.map(item => {
           return (
             <Item

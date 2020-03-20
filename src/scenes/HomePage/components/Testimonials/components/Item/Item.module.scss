@@ -1,5 +1,6 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
+@import '@functions/functions';
 
 .container {
   display: grid;
@@ -7,14 +8,17 @@
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  margin: 0 calc(var(--unit-vertical) * 3);
+  @include hl-margin(left, 60px);
+  @include hl-margin(right, 60px);
   background: linear-gradient(
     126.47deg,
     rgba(132, 164, 255, 0.2) 6.69%,
     rgba(2, 2, 30, 0) 85.43%
   );
-  max-width: calc(var(--unit) * 43);
-  padding: calc(var(--unit-vertical) * 2.2) 0;
+  max-width: calc(var(--coef-size) * 860px);
+  @include hl-padding(top, 44px);
+  @include hl-padding(bottom, 44px);
+  // padding: calc(var(--unit-vertical) * 2.2) 0;
   height: auto;
   &::after {
     content: '';
@@ -24,14 +28,14 @@
     background-color: #32344d;
     opacity: 0.5;
     top: 5%;
-    left: calc(var(--col-width) * 11);
+    left: hl-offset(11);
   }
   @include media-breakpoint-down(md) {
     margin-left: 15px;
     margin-right: 15px;
     max-width: 80%;
     &::after {
-      left: calc(var(--col-width) * 14);
+      left: hl-offset(14);
     }
   }
   @include media-breakpoint-down(sm) {
@@ -69,23 +73,22 @@
 .mark {
   font-family: $font-gramatika;
   font-weight: 700;
-  font-size: calc(var(--unit-font-title) * 2.9);
+  @include hl-font-size-title(58px);
   line-height: 1.25;
-  margin-bottom: calc(var(--unit-vertical) * 0.5);
+  @include hl-margin(bottom, 10px);
   margin-top: auto;
   @include media-breakpoint-down(sm) {
-    font-size: calc(var(--unit-font-title) * 2.5);
+    --coef-title: 0.7;
   }
 }
 
 .stars {
   display: block;
   height: auto;
-  width: calc(var(--unit) * 5);
+  @include hl-width(100px);
   margin-bottom: auto;
   @include media-breakpoint-down(sm) {
     margin-bottom: 16px;
-    width: calc(var(--unit) * 7);
   }
 }
 
@@ -93,15 +96,15 @@
   position: relative;
   font-family: $font-gramatika;
   font-weight: 700;
-  font-size: calc(var(--unit-font-title) * 1.8);
+  @include hl-font-size-title(36px);
   line-height: 1.25;
   padding-top: 1.6em;
-  margin-bottom: calc(var(--unit-vertical) * 3.5);
+  @include hl-margin(bottom, 70px);
   &::before {
     content: '';
     position: absolute;
-    width: calc(var(--unit-font-title) * 2.1);
-    height: calc(var(--unit-font-title) * 2.2);
+    @include hl-width(42px);
+    @include hl-height(44px);
     background-image: url('../../../../../../assets/images/sections/home-testimonials/qoute.svg');
     background-repeat: no-repeat;
     background-size: contain;
@@ -109,20 +112,23 @@
     left: -4px;
   }
   @include media-breakpoint-down(sm) {
-    font-size: calc(var(--unit-font-title) * 1.4);
+    --coef-title: 0.7;
   }
 }
 
 .name {
   margin-top: auto;
-  font-size: calc(var(--unit-sm-text) * 0.9);
+  @include hl-font-size-text(18px);
   color: $light-grey-color;
   @include media-breakpoint-down(sm) {
-    font-size: calc(var(--unit-sm-text) * 0.7);
+    --coef-text: 0.8;
   }
 }
 
 .generalLogo {
-  width: calc(var(--unit) * 3);
+  @include hl-width(60px);
   height: auto;
+  @media screen and (max-width: $md) {
+    --coef-size: 1;
+  }
 }

@@ -4,13 +4,13 @@
 .container {
   align-items: center;
   @include grid-template();
-  margin-top: calc(var(--unit-vertical) * 7.3);
+  @include hl-margin(top, 140px);
 }
 
 .title {
   font-family: $font-gramatika;
   font-weight: 700;
-  font-size: calc(var(--unit-font-title) * 1.8);
+  @include hl-font-size-title(36px);
   line-height: 1.25;
 
   text-align: center;
@@ -41,7 +41,7 @@
   list-style-type: none;
   box-sizing: border-box;
   margin: 0;
-  margin-top: calc(var(--unit-vertical) * 3);
+  @include hl-margin(top, 60px);
   box-shadow: inset 1px 1px 0px 0.25px #32344d;
   padding: 0;
   @include col-width(4, 60);
