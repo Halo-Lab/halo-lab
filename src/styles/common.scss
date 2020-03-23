@@ -1,57 +1,49 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
+@import '@functions/functions';
+
+:root {
+  --coef-indent: 1; // for margin and padding
+  --coef-title: 1; // for title font-size
+  --coef-text: 1; // for regular text which size less than 20px font-size
+  --coef-size: 1; // for element width, height
+
+  @media screen and (max-width: 1024px) {
+    --coef-title: 0.9;
+    --coef-text: 0.9;
+  }
+
+  @media screen and (max-width: $md) {
+    --coef-indent: 0.7;
+    --coef-title: 0.8;
+    --coef-size: 0.8;
+  }
+  @media screen and (max-width: $sm) {
+    --coef-indent: 0.5;
+    --coef-size: 0.7;
+  }
+
+  @media screen and (min-width: 1600px) {
+    --coef-indent: 1.25;
+    --coef-title: 1.25;
+    --coef-text: 1.25;
+    --coef-size: 1.25;
+  }
+}
 
 .pageWrapper {
+  margin: 0 auto;
+  max-width: 1600px;
+  font-family: $font-sofia-pro;
+}
+
+.oldPageWrapper {
   margin: 0 auto;
   padding-right: 15px;
   padding-left: 15px;
   max-width: 90rem;
-  font-family: $font-sofia-pro;
-
-  @media screen and (min-width: $md) {
+  @media screen and (min-width: 768px) {
     padding-right: 4.28rem;
     padding-left: 4.28rem;
   }
 }
-
-// if all will be o.k., it can be removed -->
-.pageWrapperOld {
-  font-family: $font-sofia-pro;
-  padding-top: 11.4rem;
-  padding-right: 4.28rem;
-  padding-left: 4.28rem;
-
-  @media screen and (max-width: 1300px) {
-    padding-right: 4.28rem;
-    padding-left: 4.28rem;
-  }
-  @media screen and (max-width: 1024px) {
-    padding-right: 5rem;
-    padding-left: 5rem;
-  }
-  @include media-breakpoint-down(sm) {
-    padding-right: 60px;
-    padding-left: 60px;
-  }
-  @include media-breakpoint-down(xs) {
-    padding-right: 1.67rem;
-    padding-left: 1.67rem;
-  }
-
-  @include media-breakpoint-down(md) {
-    max-width: 59rem;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  @media (min-width: 1280px) {
-    max-width: 90rem;
-    margin: 0 auto;
-  }
-
-  @include media-breakpoint-down(xs) {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-// <-- end

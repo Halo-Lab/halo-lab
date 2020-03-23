@@ -1,103 +1,100 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
+@import '@functions/functions';
 
 .container {
   position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  @include grid-template();
+}
 
-  @media screen and (min-width: $md) {
-    padding-top: 5.2rem;
-  }
-
-  @media (min-width: 1280px) {
-    max-width: 90rem;
-    margin: 0 auto;
-  }
-
-  @include media-breakpoint-down(sm) {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &:before {
-    content: '';
-    display: block;
-    width: 2px;
-    height: 1px;
-    position: absolute;
-    border-radius: 15%;
-    top: 0;
-    left: 91%;
-    z-index: -1;
-    box-shadow: 0px 0px 279px 513.1px rgba(77, 54, 208, 0.3);
-  }
+.wrapper {
+  position: relative;
+  @include col-width(4, 60);
+  text-align: center;
+  @include hl-padding(top, 20px);
 }
 
 .title {
-  color: #fff;
-  display: table-cell;
-  font-family: $font-ratiomodern;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 4.57rem;
-  line-height: 1.14em;
-  height: 100%;
-  padding: 0;
-  vertical-align: middle;
-  white-space: pre-wrap;
-
-  @media screen and (max-width: 1024px) {
-    font-size: 4.17rem;
-  }
+  display: block;
+  color: $white-color;
+  font-family: $font-gramatika-black;
+  @include hl-font-size-title(96px);
+  line-height: 0.89em;
+  letter-spacing: -2px;
+  margin: 0 auto;
+  @include hl-margin(bottom, 80px);
 
   @include media-breakpoint-down(md) {
-    font-size: 3.34rem;
   }
-
-  @include media-breakpoint-down(sm) {
-    font-size: 3.7rem;
-    line-height: 1.5;
+  @include media-breakpoint-down(xs) {
+    --coef-title: 0.5;
     br {
       display: none;
     }
   }
-  @include media-breakpoint-down(xs) {
-    font-size: 2.5rem;
-  }
   span {
-    color: #84a4ff;
+    background: linear-gradient(
+      90deg,
+      #e7a28f 1.59%,
+      #fbddb0 50%,
+      #fbfefd 78.41%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
-.subtitle {
-  position: relative;
-  max-width: 25.7rem;
-  font-size: 1.43rem;
-  line-height: 1.5em;
-  padding-left: 5em;
-  margin-top: 7.86rem;
-
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
   @include media-breakpoint-down(sm) {
-    margin-top: 5.86rem;
-  }
-
-  @include media-breakpoint-down(xs) {
     display: none;
   }
+}
 
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 3.5em;
-    height: 2.5em;
-    background: url('./images/quotes.svg') no-repeat center;
-    background-size: contain;
-    margin: auto;
+.circleSm1 {
+  @include hl-width(20px);
+  @include hl-height(20px);
+  background: #ddebfa;
+  top: hl-grid-multiplier(18);
+  right: hl-grid-multiplier(7);
+}
+
+.circleSm2 {
+  @include hl-width(40px);
+  @include hl-height(40px);
+  background: linear-gradient(
+    37.94deg,
+    rgba(16, 8, 74, 0) 16.94%,
+    #83a4ff 87.08%
+  );
+  top: hl-grid-multiplier(3);
+  right: hl-grid-multiplier(4);
+}
+
+.circleMd {
+  background: linear-gradient(156.8deg, #ffffff 15%, #79b0e8 75.42%);
+  @include hl-width(60px);
+  @include hl-height(60px);
+  top: 0;
+  left: hl-grid-multiplier(6);
+}
+
+.circleLg {
+  background: linear-gradient(
+    36.94deg,
+    rgba(1, 1, 18, 0) 27.49%,
+    #262147 78.93%
+  );
+  @include hl-width(120px);
+  @include hl-height(120px);
+  bottom: -4%;
+  left: -2%;
+}
+
+.mobile {
+  @media screen and (min-width: $sm) {
+    display: none;
   }
 }

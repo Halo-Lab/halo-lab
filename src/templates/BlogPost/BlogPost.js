@@ -36,7 +36,7 @@ const BlogPost = ({ pageContext }) => {
           />
         </div>
         <Article content={data.content} />
-        <div className="pageWrapper">
+        <div className="oldPageWrapper">
           <Thumbnails items={thumbnailsItems} />
           <MailUs />
         </div>

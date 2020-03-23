@@ -4,26 +4,39 @@
 .container {
   display: flex;
   flex-direction: column;
+  &:not(:first-child) {
+    position: relative;
+    @include hl-margin(top, 80px);
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 40px);
+      height: 1px;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #32344d;
+      @media screen and (max-width: $md) {
+        top: -30px;
+      }
+      @media screen and (max-width: $sm) {
+        display: none;
+      }
+    }
+  }
 
   @media screen and (min-width: $md) {
     flex-direction: row;
     align-items: center;
-
-    &:not(:first-child) {
-      margin-top: 40px;
-    }
   }
 }
 
 .imageBox {
   flex: 0 0 auto;
+  width: 100%;
 
   @media screen and (min-width: $md) {
-    width: 120px;
-  }
-
-  @media screen and (min-width: $lg) {
-    width: 200px;
+    @include hl-width(180px);
   }
 
   a {
@@ -34,7 +47,7 @@
 }
 
 .description {
-  margin-top: 3.33rem;
+  margin-top: 2rem;
 
   @media screen and (min-width: $md) {
     margin-top: 0;
@@ -46,34 +59,22 @@
   }
 }
 
-.date {
-  font-size: 0.86rem;
-  line-height: 1.17em;
+.tag {
+  font-family: $font-gramatika;
   font-weight: 700;
-  margin-bottom: 0.71rem;
-
-  @include media-breakpoint-down(md) {
-    font-size: 1rem;
-  }
-
-  @include media-breakpoint-down(sm) {
-    font-size: 1.17rem;
-  }
+  @include hl-font-size-text(12px);
+  margin-bottom: 0.7em;
+  color: $light-grey-color;
+  opacity: 0.5;
+  text-transform: uppercase;
 }
 
 .title {
-  font-family: $font-ratiomodern;
-  font-size: 2.14rem;
-  line-height: 1.17em;
+  font-family: $font-sofia-pro;
+  font-weight: 600;
+  @include hl-font-size-title(22px);
+  line-height: 1.4em;
   font-weight: 400;
-
-  @include media-breakpoint-down(md) {
-    font-size: 1.33rem;
-  }
-
-  @include media-breakpoint-down(sm) {
-    font-size: 1.5rem;
-  }
 
   a {
     text-decoration: none;

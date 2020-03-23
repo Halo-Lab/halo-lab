@@ -5,9 +5,10 @@ import PropTypes from 'prop-types';
 
 import styles from './Item.module.scss';
 
-const Item = ({ path, title, featured_media, date }) => {
+const Item = ({ path, title, featured_media, categories }) => {
   const link = path;
   const image = featured_media.localFile.childImageSharp.fluid;
+  const tag = categories[0].slug;
 
   return (
     <div className={styles.container}>
@@ -17,7 +18,7 @@ const Item = ({ path, title, featured_media, date }) => {
         </Link>
       </div>
       <div className={styles.description}>
-        <div className={styles.date}>{date}</div>
+        <div className={styles.tag}>#{tag}</div>
         <h3 className={styles.title}>
           <Link to={link} dangerouslySetInnerHTML={{ __html: title }}></Link>
         </h3>
@@ -31,6 +32,7 @@ Item.propTypes = {
   title: PropTypes.string,
   featured_media: PropTypes.object,
   date: PropTypes.string,
+  categories: PropTypes.array,
 };
 
 export default Item;

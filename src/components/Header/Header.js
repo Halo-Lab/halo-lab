@@ -27,9 +27,15 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className={styles.email} data-status={menuStatus}>
-          <a href={`mailto:${metadata.email}`}>{metadata.email}</a>
-        </div>
+        {/* <div className={styles.email} data-status={menuStatus}> */}
+        <a
+          className={styles.email}
+          data-status={menuStatus}
+          href={`mailto:${metadata.email}`}
+        >
+          Contact
+        </a>
+        {/* </div> */}
 
         {isOpened ? <Menu /> : null}
 

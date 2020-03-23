@@ -2,27 +2,28 @@
 @import '@styles/mixins/all';
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 9.57rem;
-
-  @media screen and (min-width: $md) {
-    flex-direction: row;
-    align-items: center;
-  }
+  align-items: center;
+  @include grid-template();
+  @include hl-margin(top, 140px);
 }
 
 .title {
-  font-size: 1.84rem;
+  font-family: $font-gramatika;
+  font-weight: 700;
+  @include hl-font-size-title(36px);
+  line-height: 1.25;
+
   text-align: center;
+  @include col-width(4, 60);
+  grid-row: 1;
 
   @media screen and (min-width: $md) {
+    @include col-width(9, 15);
     text-align: left;
   }
 
   @media screen and (min-width: $lg) {
-    font-size: 2.86rem;
+    @include col-width(9, 15);
   }
 
   br {
@@ -40,18 +41,21 @@
   list-style-type: none;
   box-sizing: border-box;
   margin: 0;
-  margin-top: 2.5rem;
+  @include hl-margin(top, 60px);
   box-shadow: inset 1px 1px 0px 0.25px #32344d;
   padding: 0;
+  @include col-width(4, 60);
+  grid-row: 2;
 
   @media screen and (min-width: $md) {
-    flex-basis: 70%;
+    @include col-width(22, 65);
     flex-wrap: nowrap;
     margin-top: 0;
+    grid-row: 1;
   }
 
   @media screen and (min-width: $lg) {
-    margin-right: -60px;
+    @include col-width(22, 65);
   }
 
   li {
@@ -92,7 +96,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
+  font-weight: 600;
   line-height: 1.67em;
   letter-spacing: 0.5em;
   text-decoration: none;
@@ -100,12 +104,9 @@
   background: $main-color;
   color: inherit;
 
-  @media screen and (min-width: $md) {
-    font-size: 1rem;
-  }
+  font-size: calc(var(--unit-sm-text) * 0.7);
 
   @media screen and (min-width: $lg) {
-    font-size: 1.3rem;
     line-height: 2.14em;
     letter-spacing: 0.71em;
   }
