@@ -90,7 +90,7 @@
     }
   }
   .next {
-    right: calc(50% - (var(--coef-size) * 580px));
+    right: calc(50% - (var(--coef-size) * 575px));
 
     &:before {
       border-color: rgba(#fff, 0) rgba(#fff, 1) rgba(#fff, 1) rgba(#fff, 0);

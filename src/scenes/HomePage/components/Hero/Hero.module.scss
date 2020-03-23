@@ -41,7 +41,6 @@
       #fbfefd 78.41%
     );
     background-clip: text;
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
@@ -59,8 +58,8 @@
   @include hl-width(20px);
   @include hl-height(20px);
   background: #ddebfa;
-  top: hl-offset(18);
-  right: hl-offset(7);
+  top: hl-grid-multiplier(18);
+  right: hl-grid-multiplier(7);
 }
 
 .circleSm2 {
@@ -71,8 +70,8 @@
     rgba(16, 8, 74, 0) 16.94%,
     #83a4ff 87.08%
   );
-  top: hl-offset(3);
-  right: hl-offset(4);
+  top: hl-grid-multiplier(3);
+  right: hl-grid-multiplier(4);
 }
 
 .circleMd {
@@ -80,7 +79,7 @@
   @include hl-width(60px);
   @include hl-height(60px);
   top: 0;
-  left: hl-offset(6);
+  left: hl-grid-multiplier(6);
 }
 
 .circleLg {

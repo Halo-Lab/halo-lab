@@ -6,7 +6,7 @@
   display: flex !important;
   justify-content: center;
   align-items: center;
-  margin: calc(var(--unit-vertical) * 2.5) 0 0 0;
+  @include hl-margin(top, 50px);
   padding: 0;
 
   [class='slick-active'] button {

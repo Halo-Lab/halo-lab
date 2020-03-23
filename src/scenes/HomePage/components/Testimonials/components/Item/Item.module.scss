@@ -27,14 +27,14 @@
     background-color: #32344d;
     opacity: 0.5;
     top: 5%;
-    left: hl-offset(11);
+    left: hl-grid-multiplier(11);
   }
   @include media-breakpoint-down(md) {
     margin-left: 15px;
     margin-right: 15px;
     max-width: 80%;
     &::after {
-      left: hl-offset(14);
+      left: hl-grid-multiplier(14);
     }
   }
   @include media-breakpoint-down(sm) {
@@ -104,7 +104,7 @@
     position: absolute;
     @include hl-width(42px);
     @include hl-height(44px);
-    background-image: url('../../../../../../assets/images/sections/home-testimonials/qoute.svg');
+    background-image: url('./images/qoute.svg');
     background-repeat: no-repeat;
     background-size: contain;
     top: 0;

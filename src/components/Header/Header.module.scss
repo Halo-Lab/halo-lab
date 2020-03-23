@@ -50,50 +50,39 @@
 .email {
   display: none;
   font-family: $font-sofia-pro-soft;
-  @include hl-font-size-text(20px);
+  @include hl-font-size-text(18px);
   font-weight: 300;
-  line-height: 2.8rem;
   transition: 0.2s;
-  padding-bottom: 11px;
+  height: 100%;
+  @include hl-width(180px);
+  @include hl-height(60px);
+  border: 1px solid $dark-grey-color;
+  border-radius: 100px;
+  text-decoration: none;
+  color: $white-color;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
 
   @media screen and (min-width: $md) {
-    display: block;
-  }
-
-  a {
-    position: relative;
-    text-decoration: none;
-    color: inherit;
-
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      z-index: -10;
-      width: 100%;
-      height: 2px;
-      background: $main_color;
-      transition: 0.2s;
-    }
-
-    &:hover {
-      &:after {
-        height: 150%;
-      }
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &[data-status='opened'] {
     opacity: 0;
     pointer-events: none;
   }
+
+  &:hover {
+    background-color: $main-color;
+  }
 }
 
 .menuBar {
   position: relative;
   z-index: 50;
-  margin-left: 2.86rem;
+  @include hl-margin(left, 20px);
 }
 
 .menuButton {

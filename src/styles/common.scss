@@ -8,9 +8,15 @@
   --coef-text: 1; // for regular text which size less than 20px font-size
   --coef-size: 1; // for element width, height
 
+  @media screen and (max-width: 1024) {
+    --coef-title: 0.9;
+    --coef-text: 0.9;
+  }
+
   @media screen and (max-width: $md) {
     --coef-indent: 0.7;
     --coef-title: 0.8;
+    --coef-size: 0.8;
   }
   @media screen and (max-width: $sm) {
     --coef-indent: 0.5;

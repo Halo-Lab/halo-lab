@@ -12,8 +12,8 @@
   background: none;
   border: none;
   border-radius: 50%;
-  width: calc(var(--unit) * 3);
-  height: calc(var(--unit) * 3);
+  @include hl-width(60px);
+  @include hl-height(60px);
   box-shadow: inset 0 0 0 1px #32344d;
   transition: 0.4s;
   cursor: pointer;

@@ -3,6 +3,7 @@
 @import '@functions/functions';
 
 .container {
+  position: relative;
   display: flex;
   align-items: center;
   @include hl-padding(top, 40px);
@@ -42,11 +43,14 @@
     transition: background-color 0.2s, border-color 0.2s;
 
     &:hover {
-      background-color: $main-color;
-      border-color: $main-color;
+      background-color: $white-color;
+      border-color: $white-color;
+      path {
+        fill: $main-color;
+      }
     }
 
-    @include media-breakpoint-down(md) {
+    @media screen and (max-width: $md) {
       width: 40px;
       height: 40px;
     }
@@ -55,7 +59,7 @@
 
 .logotype {
   position: absolute;
-  left: hl-offset(4);
+  left: calc(var(--coef-size) * 80px);
   font-family: $font-sofia-pro-soft;
   @include hl-font-size-text(16px);
   font-weight: 300;
@@ -71,10 +75,13 @@
     height: 1rem;
     top: -0.5rem;
     right: -1.4rem;
-    background: url('../../assets/images/ui/start-footer.svg') no-repeat;
+    background: url('./images/start-footer.svg') no-repeat;
     background-size: contain;
   }
-  @include media-breakpoint-down(md) {
+  @media screen and (min-width: 1600px) {
+    left: 0;
+  }
+  @media screen and (max-width: $md) {
     position: relative;
     left: 0;
     order: 1;

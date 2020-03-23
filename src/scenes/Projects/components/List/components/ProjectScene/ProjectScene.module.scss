@@ -41,20 +41,31 @@
 .description {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   z-index: 10;
-  @include hl-margin(top, 40px);
+  @include hl-padding(top, 60px);
+  @include hl-padding(bottom, 60px);
+
   @include col-width(4, 60);
 
   @media screen and (min-width: $md) {
-    @include col-width(39, 58);
+    @include col-width(39, 62);
     grid-row: 1;
     margin-top: 0;
   }
+  @media screen and (min-width: $lg) {
+    @include col-width(39, 58);
+  }
+  @media screen and (max-width: $sm) {
+    padding-bottom: 0;
+  }
   &.reversed {
     @media screen and (min-width: $md) {
-      @include col-width(8, 26);
+      @include col-width(4, 28);
+      grid-row: 1;
       margin-left: 0;
+    }
+    @media screen and (min-width: $lg) {
+      @include col-width(8, 28);
     }
   }
 }
@@ -111,7 +122,7 @@
     height: 1px;
     width: 45%;
     left: 0;
-    bottom: -12px;
+    bottom: -8px;
     background: linear-gradient(
       90deg,
       #e7a28f 1.59%,
@@ -130,7 +141,10 @@
 .review {
   display: flex;
   align-items: center;
-  @include hl-margin(top, 160px);
+  margin-top: auto;
+  @media screen and (max-width: $md) {
+    margin-top: 30px;
+  }
 }
 
 .avatar {
@@ -144,7 +158,7 @@
 }
 
 .reviewText {
-  @include hl-font-size-text(22px);
+  @include hl-font-size-title(22px);
   font-weight: 600;
   line-height: 1.45em;
 }

@@ -51,6 +51,6 @@
   @return $elWidth * (100 / $allWidth) * 1%;
 }
 
-@function hl-offset($offset) {
-  @return 100vw / 64 * $offset;
+@function hl-grid-multiplier($value) {
+  @return 100vw / 64 * $value;
 }
