@@ -64,6 +64,8 @@
   @include hl-font-size-text(16px);
   font-weight: 300;
   line-height: 1.56em;
+  top: 50%;
+  transform: translateY(-50%);
 
   b {
     font-weight: 700;

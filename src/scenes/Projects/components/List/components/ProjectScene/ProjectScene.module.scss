@@ -142,7 +142,7 @@
   display: flex;
   align-items: center;
   margin-top: auto;
-  @media screen and (max-width: $md) {
+  @media screen and (max-width: 1024px) {
     margin-top: 30px;
   }
 }
@@ -151,6 +151,9 @@
   overflow: hidden;
   border-radius: 50%;
   @include hl-width(80px);
+  @media screen and (max-width: 1024px) {
+    --coef-size: 0.8;
+  }
 }
 
 .reviewContent {

@@ -8,7 +8,7 @@
   --coef-text: 1; // for regular text which size less than 20px font-size
   --coef-size: 1; // for element width, height
 
-  @media screen and (max-width: 1024) {
+  @media screen and (max-width: 1024px) {
     --coef-title: 0.9;
     --coef-text: 0.9;
   }
