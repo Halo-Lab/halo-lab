@@ -11,7 +11,6 @@
   position: relative;
   @include col-width(4, 60);
   text-align: center;
-  // padding-top: calc(var(--unit-vertical) * 1);
   @include hl-padding(top, 20px);
 }
 

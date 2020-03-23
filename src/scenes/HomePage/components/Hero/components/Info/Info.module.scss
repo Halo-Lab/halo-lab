@@ -10,12 +10,12 @@
     justify-content: flex-start;
     align-items: center;
   }
-  img {
+  .images {
     @include hl-height(40px);
     opacity: 0.5;
     @include hl-margin(bottom, 20px);
   }
-  span {
+  .text {
     font-weight: 300;
     @include hl-font-size-text(16px);
     line-height: 1.5;
