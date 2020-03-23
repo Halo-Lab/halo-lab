@@ -5,7 +5,6 @@ import { useTestimonialsAssets } from '@hooks/queries';
 import { useBreakpoints } from '@hooks';
 import Swiper from 'react-id-swiper';
 import styles from './Testimonials.module.scss';
-import './Testimonials.scss';
 
 const Testimonials = () => {
   const {
