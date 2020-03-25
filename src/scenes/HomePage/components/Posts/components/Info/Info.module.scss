@@ -61,10 +61,8 @@
   }
 
   &:hover {
-    @media screen and (max-width: $lg) {
-      &::before {
-        width: 100%;
-      }
+    &::before {
+      width: 100%;
     }
   }
 }
