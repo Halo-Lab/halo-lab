@@ -90,3 +90,7 @@
 @mixin hl-height($size) {
   height: calc(#{$size} * var(--coef-size));
 }
+
+@mixin hl-max-width($size) {
+  max-width: calc(#{$size} * var(--coef-size));
+}

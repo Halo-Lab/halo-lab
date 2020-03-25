@@ -1,0 +1,27 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+@import '@functions/functions';
+
+.item {
+  flex: 0 0 100%;
+  max-width: hl-grid-multiplier(31);
+  &.item {
+    margin-right: hl-grid-multiplier(1);
+  }
+  &:nth-child(2n) {
+    max-width: hl-grid-multiplier(20);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .image:first-child {
+      margin-bottom: hl-grid-multiplier(1);
+    }
+    .image:nth-child(n + 2) {
+      width: calc(50% - (1 / 2 * 100vw / 64));
+    }
+  }
+}
+
+.image {
+  width: 100%;
+}

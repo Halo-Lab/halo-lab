@@ -1,4 +1,5 @@
 @import '@styles/mixins/all';
+@import '@functions/functions';
 
 .container {
   overflow: hidden;
@@ -41,4 +42,40 @@
 
 .asideRight {
   right: 0;
+}
+
+.itemWorks {
+  flex: 0 0 100%;
+  max-width: hl-grid-multiplier(31);
+  &.itemWorks {
+    margin-right: hl-grid-multiplier(1);
+  }
+  &:nth-child(2n) {
+    max-width: hl-grid-multiplier(20);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .image:first-child {
+      margin-bottom: hl-grid-multiplier(1);
+    }
+    .image:nth-child(n + 2) {
+      width: calc(50% - (1 / 2 * 100vw / 64));
+    }
+  }
+  @media screen and (min-width: 1600px) {
+    @include hl-max-width(620px);
+    &.itemWorks {
+      @include hl-margin(right, 20px);
+    }
+    &:nth-child(2n) {
+      @include hl-max-width(400px);
+    }
+    image:nth-child(n + 2) {
+      width: calc(50% - (var(--coef-indent) * 10px));
+    }
+  }
+}
+
+.image {
+  width: 100%;
 }

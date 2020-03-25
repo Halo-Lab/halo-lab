@@ -33,7 +33,7 @@ const configDefault = { duration: TIME, precision: 0, easing: easeLinear };
 
 const iTranslate = value => `translate3d(${value}px, 0, 0)`;
 
-const Ticker = ({ images, arrowLeft, arrowRight }) => {
+const Ticker = ({ images, arrowLeft, arrowRight, type }) => {
   const isRunning = useRef(false);
   const isFinished = useRef(true);
   const container = useRef(null);
@@ -52,7 +52,6 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
     setMetrics,
   ] = useState(initialMetrics);
   const { width } = useBreakpoints();
-
   const items = [...images, ...images, ...images]; // NUMBER_OF_LISTS
 
   // metrics calculation
@@ -144,7 +143,6 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
   const stop = () => {
     isRunning.current = false;
   };
-
   return (
     <div ref={container} className={styles.container}>
       <a.ul
@@ -152,15 +150,32 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
         style={{ transform: props.x.interpolate(iTranslate) }}
         className={styles.ticker}
       >
-        {items.map(({ childImageSharp }, index) => {
-          return (
-            <li key={index} className={styles.item}>
-              <div className={styles.card}>
-                <Img fluid={childImageSharp.fluid} draggable={false} />
-              </div>
-            </li>
-          );
-        })}
+        {type === 'works'
+          ? items.map((item, index) => {
+              return (
+                <li className={styles.itemWorks} key={item + index}>
+                  {item.map((image, index) => {
+                    return (
+                      <Img
+                        key={image.childImageSharp.fluid + index}
+                        className={styles.image}
+                        fluid={image.childImageSharp.fluid}
+                        draggable={false}
+                      />
+                    );
+                  })}
+                </li>
+              );
+            })
+          : items.map(({ childImageSharp }, index) => {
+              return (
+                <li key={index} className={styles.item}>
+                  <div className={styles.card}>
+                    <Img fluid={childImageSharp.fluid} draggable={false} />
+                  </div>
+                </li>
+              );
+            })}
       </a.ul>
       <div
         data-direction={DIRECTIONS.FORWARD}
@@ -185,6 +200,7 @@ Ticker.propTypes = {
   arrowLeft: PropTypes.object,
   arrowRight: PropTypes.object,
   x: PropTypes.any,
+  type: PropTypes.string,
 };
 
 export default Ticker;
