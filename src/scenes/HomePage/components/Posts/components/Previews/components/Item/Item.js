@@ -9,11 +9,12 @@ const Item = ({ path, title, featured_media, categories }) => {
   const link = path;
   const image = featured_media.localFile.childImageSharp.fluid;
   const tag = categories[0].slug;
+  const postUrl = 'blog/' + link;
 
   return (
     <div className={styles.container}>
       <div className={styles.imageBox}>
-        <Link to={link}>
+        <Link to={postUrl}>
           <Img fluid={image} alt="blog post preview" />
         </Link>
       </div>
