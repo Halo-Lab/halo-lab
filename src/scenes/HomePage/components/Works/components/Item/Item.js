@@ -7,10 +7,10 @@ import styles from './Item.module.scss';
 const Item = ({ images }) => {
   return (
     <div className={`${styles.item} swiper-slide`}>
-      {images.map(({ childImageSharp }, index) => {
+      {images.map(({ childImageSharp }) => {
         return (
           <Img
-            key={childImageSharp.fluid.src + index}
+            key={childImageSharp.fluid.src}
             className={styles.image}
             fluid={childImageSharp.fluid}
             draggable={false}
