@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import styles from './Item.module.scss';
 
 const Item = ({ path, title, featured_media, date }) => {
-  const link = path;
+  const link = 'blog/' + path;
   const image = featured_media.localFile.childImageSharp.fluid;
 
   return (
