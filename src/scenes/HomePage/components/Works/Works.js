@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+// import Img from 'gatsby-image';
 
 import {
   useHomeWorksAssets,
@@ -50,22 +51,24 @@ const Works = () => {
     containerClass: styles.slider,
   };
 
+  const images = imageList.map(image => {
+    return {
+      name: `${image[0].name}`,
+      element: <Item images={image} />,
+    };
+  });
+
   return (
     <div className={styles.container}>
       <Title icon={dribbbleRed} signature={textCircled} />
       {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
-        <Ticker
-          images={imageList}
-          arrowLeft={arrowLeft}
-          arrowRight={arrowRight}
-          type="works"
-        />
+        <Ticker images={images} arrowLeft={arrowLeft} arrowRight={arrowRight} />
       ) : null}
       {breakpoint === BREAKPOINTS.MOBILE ||
       breakpoint === BREAKPOINTS.TABLET ? (
         <Swiper {...params}>
           {imageList.map((item, index) => {
-            return <Item images={item} key={item[0] + index} />;
+            return <Item images={item} key={item[0].name + index} />;
           })}
         </Swiper>
       ) : null}

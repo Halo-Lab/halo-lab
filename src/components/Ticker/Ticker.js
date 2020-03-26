@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { useSpring, animated as a } from 'react-spring';
 import { easeQuadIn, easeQuadOut, easeLinear } from 'd3-ease';
-import Img from 'gatsby-image';
+
 import PropTypes from 'prop-types';
 
 import { useBreakpoints } from '@hooks';
@@ -33,7 +33,7 @@ const configDefault = { duration: TIME, precision: 0, easing: easeLinear };
 
 const iTranslate = value => `translate3d(${value}px, 0, 0)`;
 
-const Ticker = ({ images, arrowLeft, arrowRight, type }) => {
+const Ticker = ({ images, arrowLeft, arrowRight }) => {
   const isRunning = useRef(false);
   const isFinished = useRef(true);
   const container = useRef(null);
@@ -150,32 +150,9 @@ const Ticker = ({ images, arrowLeft, arrowRight, type }) => {
         style={{ transform: props.x.interpolate(iTranslate) }}
         className={styles.ticker}
       >
-        {type === 'works'
-          ? items.map((item, index) => {
-              return (
-                <li className={styles.itemWorks} key={item + index}>
-                  {item.map((image, index) => {
-                    return (
-                      <Img
-                        key={image.childImageSharp.fluid + index}
-                        className={styles.image}
-                        fluid={image.childImageSharp.fluid}
-                        draggable={false}
-                      />
-                    );
-                  })}
-                </li>
-              );
-            })
-          : items.map(({ childImageSharp }, index) => {
-              return (
-                <li key={index} className={styles.item}>
-                  <div className={styles.card}>
-                    <Img fluid={childImageSharp.fluid} draggable={false} />
-                  </div>
-                </li>
-              );
-            })}
+        {items.map(({ name, element }, index) => {
+          return <Fragment key={name + index}>{element}</Fragment>;
+        })}
       </a.ul>
       <div
         data-direction={DIRECTIONS.FORWARD}
@@ -200,7 +177,6 @@ Ticker.propTypes = {
   arrowLeft: PropTypes.object,
   arrowRight: PropTypes.object,
   x: PropTypes.any,
-  type: PropTypes.string,
 };
 
 export default Ticker;
