@@ -67,8 +67,8 @@ const Works = () => {
       {breakpoint === BREAKPOINTS.MOBILE ||
       breakpoint === BREAKPOINTS.TABLET ? (
         <Swiper {...params}>
-          {imageList.map((item, index) => {
-            return <Item images={item} key={item[0].name + index} />;
+          {imageList.map(item => {
+            return <Item images={item} key={item[0].name} />;
           })}
         </Swiper>
       ) : null}
