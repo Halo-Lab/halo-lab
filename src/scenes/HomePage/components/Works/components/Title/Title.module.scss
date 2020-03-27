@@ -1,5 +1,6 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
+@import '@functions/functions';
 
 .container {
   text-align: center;
@@ -7,7 +8,7 @@
   flex-direction: column;
   position: relative;
   @include hl-margin(bottom, 100px);
-  @include hl-padding(top, 90px);
+  @include hl-padding(top, 75px);
   @media screen and (max-width: $md) {
     padding: 0 20px;
   }
@@ -29,11 +30,13 @@
 .link {
   display: block;
   position: absolute;
-  left: 70%;
+  left: hl-grid-multiplier(51);
   top: 0;
-  transform: translate(6%, 0);
   line-height: 0;
   @include hl-width(120px);
+  @media screen and (min-width: 1280px) {
+    left: calc(50% + 380px);
+  }
 
   @media screen and (max-width: $md) {
     display: none;

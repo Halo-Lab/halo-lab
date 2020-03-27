@@ -14,7 +14,7 @@
   line-height: 1.25;
 
   text-align: center;
-  @include col-width(4, 60);
+  @include col-width(5, 61);
   grid-row: 1;
 
   @media screen and (min-width: $md) {
@@ -44,7 +44,7 @@
   @include hl-margin(top, 60px);
   box-shadow: inset 1px 1px 0px 0.25px #32344d;
   padding: 0;
-  @include col-width(4, 60);
+  @include col-width(5, 61);
   grid-row: 2;
 
   @media screen and (min-width: $md) {

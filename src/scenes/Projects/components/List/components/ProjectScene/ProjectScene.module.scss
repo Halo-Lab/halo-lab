@@ -45,7 +45,7 @@
   @include hl-padding(top, 60px);
   @include hl-padding(bottom, 60px);
 
-  @include col-width(4, 60);
+  @include col-width(5, 61);
 
   @media screen and (min-width: $md) {
     @include col-width(39, 62);

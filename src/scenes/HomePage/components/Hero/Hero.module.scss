@@ -9,7 +9,7 @@
 
 .wrapper {
   position: relative;
-  @include col-width(4, 60);
+  @include col-width(3, 61);
   text-align: center;
   @include hl-padding(top, 20px);
 }
@@ -58,7 +58,7 @@
   @include hl-height(20px);
   background: #ddebfa;
   top: hl-grid-multiplier(18);
-  right: hl-grid-multiplier(7);
+  right: hl-grid-multiplier(8);
 }
 
 .circleSm2 {
@@ -70,7 +70,7 @@
     #83a4ff 87.08%
   );
   top: hl-grid-multiplier(3);
-  right: hl-grid-multiplier(4);
+  right: hl-grid-multiplier(5);
 }
 
 .circleMd {
@@ -78,19 +78,7 @@
   @include hl-width(60px);
   @include hl-height(60px);
   top: 0;
-  left: hl-grid-multiplier(6);
-}
-
-.circleLg {
-  background: linear-gradient(
-    36.94deg,
-    rgba(1, 1, 18, 0) 27.49%,
-    #262147 78.93%
-  );
-  @include hl-width(120px);
-  @include hl-height(120px);
-  bottom: -4%;
-  left: -2%;
+  left: hl-grid-multiplier(7);
 }
 
 .mobile {
