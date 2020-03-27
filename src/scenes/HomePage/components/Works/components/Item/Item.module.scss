@@ -17,7 +17,7 @@
       margin-bottom: hl-grid-multiplier(1);
     }
     .image:nth-child(n + 2) {
-      width: calc(50% - (1 / 2 * 100vw / 64));
+      width: calc(50% - var(--column-width) / 2);
     }
   }
 }
