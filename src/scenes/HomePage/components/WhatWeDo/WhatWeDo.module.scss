@@ -3,7 +3,7 @@
 
 .container {
   @include grid-template();
-  @include hl-margin(top, 174px);
+  @include hl-margin(top, 200px);
   @include hl-margin(bottom, 200px);
 }
 
@@ -11,7 +11,7 @@
   @include col-width(9, 24);
   font-family: $font-gramatika-black;
   @include hl-font-size-title(30px);
-  line-height: 1.33em;
+  line-height: 1.53em;
 
   @include media-breakpoint-down(sm) {
     @include col-width(5, 61);
