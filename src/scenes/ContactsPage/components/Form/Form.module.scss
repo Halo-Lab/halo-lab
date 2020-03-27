@@ -2,75 +2,72 @@
 @import '@styles/mixins/all';
 
 .container {
-  max-width: 45.7rem;
-  margin: 0 auto 12.2rem;
-  text-align: left;
+  @include hl-margin(top, 100px);
+  @include hl-margin(bottom, 60px);
+}
 
-  @include media-breakpoint-down(sm) {
-    margin-bottom: 5rem;
-  }
+.form {
+  @include grid-template();
 }
 
 .formTitle {
+  @include col-width(12, 54);
   font-family: $font-sofia-pro;
-  margin-bottom: 2.14em;
-  font-size: 1rem;
+  @include hl-font-size-text(14px);
   font-weight: 700;
-  color: $grey-color;
+  color: $white-color;
   text-transform: uppercase;
   letter-spacing: 10px;
+  @include hl-margin(bottom, 18px);
 
-  @include media-breakpoint-down(md) {
-    margin-bottom: 2em;
-    font-size: 0.83rem;
-  }
-}
-
-.formTitleMobile {
-  @include media-breakpoint-down(md) {
-    display: none;
+  @include media-breakpoint-down(sm) {
+    @include col-width(5, 61);
   }
 }
 
 .inputWrapper {
   position: relative;
-  margin-bottom: 2.14rem;
+  @include hl-margin(bottom, 40px);
+}
 
-  @include media-breakpoint-down(md) {
-    margin-bottom: 1.7rem;
+.nameWrapper {
+  @include col-width(12, 32);
+
+  @include media-breakpoint-down(sm) {
+    @include col-width(5, 61);
   }
+}
 
-  &:last-of-type {
-    margin-bottom: 3.5rem;
-    @include media-breakpoint-down(md) {
-      margin-bottom: 1.7rem;
-    }
+.companyWrapper {
+  @include col-width(34, 54);
+
+  @include media-breakpoint-down(sm) {
+    @include col-width(5, 61);
+  }
+}
+
+.emailWrapper {
+  @include col-width(12, 54);
+  @include hl-margin(bottom, 60px);
+
+  @include media-breakpoint-down(sm) {
+    @include col-width(5, 61);
   }
 }
 
 .input {
-  padding: 0 10rem 0 1.45rem;
+  @include hl-padding(left, 40px);
+  @include hl-padding(right, 40px);
   box-sizing: border-box;
-  border: 1px solid $white-color;
+  border: 1px solid $dark-grey-color;
   background: transparent;
   width: 100%;
-  padding-top: 20px;
-  height: 70px;
-  border-color: $dark-grey-color;
+  @include hl-height(80px);
   color: $dark-blue-color;
-  font-size: 1.3rem;
+  @include hl-font-size-text(18px);
   font-weight: 300;
-  font-family: $font-sofia-pro-soft;
+  font-family: $font-sofia-pro;
   transition: background-color 0.2s;
-  border-width: 2px;
-
-  @include media-breakpoint-up(xxl) {
-    font-size: 1rem;
-  }
-
-  @include media-breakpoint-down(md) {
-    font-size: 1.25rem;
-  }
 
   &:focus,
   &.focused {
@@ -82,23 +79,18 @@
 .textarea {
   box-sizing: border-box;
   width: 100%;
-  min-height: 12.3rem;
-  padding: 2rem 1.4rem 0 1.4rem;
+  min-height: 130px;
+  @include hl-padding(left, 40px);
+  @include hl-padding(right, 40px);
+  @include hl-padding(top, 40px);
   background-color: transparent;
-  border: 2px solid $dark-grey-color;
+  border: 1px solid $dark-grey-color;
   border-bottom: none;
-  font-size: 1.3rem;
+  @include hl-font-size-text(18px);
   color: $dark-blue-color;
   font-weight: 300;
   font-family: $font-sofia-pro;
   resize: none;
-
-  @include media-breakpoint-up(xxl) {
-    font-size: 1rem;
-  }
-  @include media-breakpoint-down(md) {
-    min-height: 12.5rem;
-  }
 
   &:focus {
     background-color: $white-color;
@@ -114,11 +106,12 @@
 .placeholder {
   position: absolute;
   color: $grey-color;
-  font-size: 16px;
-  font-family: $font-sofia-pro-soft;
+  @include hl-font-size-text(18px);
+  font-family: $font-sofia-pro;
   font-weight: 300;
   top: 50%;
-  left: 1.45rem;
+  left: 0;
+  @include hl-padding(left, 40px);
   transform: translateY(-50%);
   transition: all 0.3s;
   z-index: 2;
@@ -130,7 +123,7 @@
 
 .input:focus + .placeholder,
 .input.focused + .placeholder {
-  font-size: 14px;
+  @include hl-font-size-text(14px);
   transform: translate(0);
   top: 10px;
 }
@@ -142,13 +135,28 @@
 
 .textareaWrapper {
   position: relative;
-  margin-bottom: 3rem;
+  @include col-width(12, 54);
+  @include hl-margin(bottom, 60px);
+
+  @include media-breakpoint-down(sm) {
+    @include col-width(5, 61);
+  }
+}
+
+.buttonWrap {
+  @include col-width(12, 54);
+  display: flex;
+  justify-content: center;
+
+  @include media-breakpoint-down(sm) {
+    @include col-width(5, 61);
+  }
 }
 
 .block {
-  margin-top: -6px;
-  height: 4.4rem;
-  border: 2px solid $dark-grey-color;
+  margin-top: -8px;
+  height: 90px;
+  border: 1px solid $dark-grey-color;
   border-top: none;
 }
 
@@ -172,33 +180,38 @@
   align-items: center;
   box-sizing: border-box;
   width: calc(100% - 4px);
-  padding-left: 1.4rem;
-  top: 2rem;
+  top: 40px;
+  @include hl-padding(left, 40px);
   left: 2px;
   z-index: 2;
   transition: font-size 0.3s, top 0.3s;
+
+  @media screen and (max-width: $sm) {
+    top: 30px;
+  }
 }
 
 .textarea:focus + .placeholder,
 .textarea.focused + .placeholder {
-  font-size: 14px;
+  @include hl-font-size-text(14px);
   top: 20px;
   background-color: $white-color;
-  height: 28px;
-  @include media-breakpoint-up(xxl) {
-    font-size: 0.8rem;
+  @include hl-height(40px);
+
+  @media screen and (max-width: $sm) {
+    height: 20px;
   }
 }
 
 .attachmentWrapper {
   position: absolute;
-  bottom: 1.4rem;
+  bottom: 40px;
   left: 0;
 
   &.attached {
     position: relative;
     display: flex;
-    height: 2.8rem;
+    height: 40px;
     align-items: center;
     margin-top: 30px;
     top: 0;
@@ -263,9 +276,9 @@
 
 .attachmentLabel {
   position: absolute;
-  width: 2.8rem;
-  height: 2.8rem;
-  left: 1.4rem;
+  width: 40px;
+  height: 40px;
+  left: 40px;
   bottom: 0;
   right: 0;
   padding: 0;
@@ -294,7 +307,7 @@
   align-items: center;
   height: 100%;
   font-family: $font-sofia-pro;
-  font-size: 1.4rem;
+  @include hl-font-size-text(18px);
   color: #ccccd2;
   font-weight: 300;
   padding-left: 60px;
@@ -311,44 +324,37 @@
 }
 
 .button {
+  position: relative;
   font-family: $font-sofia-pro;
-  font-size: 1rem;
-  font-weight: 700;
-  color: $white-color;
-  letter-spacing: 0.3rem;
-  line-height: 1.43rem;
-  text-indent: 0.3rem;
-  background: transparent;
-  min-width: 9.5rem;
-  text-decoration: none;
-  text-align: center;
+  @include hl-font-size-text(14px);
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  height: 60px;
-  background-color: $main-color;
-  border: none;
-  padding: 0 2.2em;
-  transition: box-shadow 0.5s ease;
+  text-decoration: none;
+  color: $white-color;
   cursor: pointer;
-
-  @include media-breakpoint-down(md) {
-    display: block;
-    width: 100%;
-    max-width: 280px;
-    margin: 0 auto;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  @include hl-width(140px);
+  z-index: 10;
+  &::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 20px);
+    height: 50%;
+    background-color: $main-color;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    transition: 0.3s;
   }
-
   &:hover {
-    box-shadow: 0 0 45px 0 rgba(43, 0, 255, 0.75);
-    background: #5d59e8;
-    border-color: #5d59e8;
-  }
-
-  &.active {
-    box-shadow: none;
-    opacity: 0.8;
+    &::before {
+      height: 100%;
+    }
   }
 }

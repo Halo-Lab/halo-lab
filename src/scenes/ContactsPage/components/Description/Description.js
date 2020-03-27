@@ -6,27 +6,25 @@ import styles from './Description.module.scss';
 const Description = () => {
   const data = useSiteMetadata();
   return (
-    <>
+    <div className={styles.wrapper}>
       <div className={styles.title}>Contacts</div>
-      <div className={styles.description}>
+      <div className={styles.container}>
         <h2>
-          Got a project in mind? Fill in the form or send us a&nbsp;
+          Email us: <br />
           <a href={`mailto:${data.email}`} className={styles.mail}>
-            direct email
+            mail@halo-lab.com
           </a>
-          .
         </h2>
         <p>
-          The team is open for your ideas, questions and needs. Our partners get
+          The team is open for your ideas, questions and needs. Our clients get
           the superior results when a short-term acquaintance turns into a
           long-term collaboration.
         </p>
+
+        <div className={`${styles.circle} ${styles.circleSm}`}></div>
+        <div className={`${styles.circle} ${styles.circleLg}`}></div>
       </div>
-      <div className={styles.contactMail}>
-        <p>You can mail us directly:</p>
-        <a href={`mailto:${data.email}`}>{data.email}</a>
-      </div>
-    </>
+    </div>
   );
 };
 

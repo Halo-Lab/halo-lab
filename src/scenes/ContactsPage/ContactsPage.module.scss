@@ -1,6 +1,12 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+@import '@functions/functions';
+
 .container {
-  padding-top: 11.4rem;
-  max-width: 68.5rem;
-  margin: 0 auto;
-  text-align: center;
+  position: relative;
+  @include hl-padding(top, 180px);
+  font-family: $font-sofia-pro-soft;
+  @include media-breakpoint-down(md) {
+    @include hl-padding(top, 200px);
+  }
 }
