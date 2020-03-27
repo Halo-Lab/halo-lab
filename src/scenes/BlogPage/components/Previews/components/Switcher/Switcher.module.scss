@@ -10,8 +10,8 @@
   align-items: center;
   list-style-type: none;
   margin: 0;
-  margin-bottom: 5.5rem;
   padding: 0;
+  @include hl-margin(bottom, 40px);
 }
 
 .tabItem {
@@ -19,16 +19,16 @@
     margin-left: 18px;
 
     @media screen and (min-width: $lg) {
-      margin-left: 35px;
+      @include hl-margin(left, 70px);
     }
   }
 
   &[aria-selected='true'] {
     > div {
       &:after {
-        height: 100%;
-        width: 100%;
-        bottom: 0rem;
+        height: 65%;
+        width: 120%;
+        // bottom: 0rem;
       }
     }
   }
@@ -36,24 +36,19 @@
   > div {
     position: relative;
     font-family: $font-sofia-pro;
-    font-size: 1rem;
+    @include hl-font-size-text(14px);
     font-weight: bold;
-    line-height: 1.43rem;
-    letter-spacing: 0.7rem;
-    text-indent: 0.7rem;
+    line-height: 1.47;
+    letter-spacing: 10px;
     text-transform: uppercase;
     cursor: pointer;
-
-    @include media-breakpoint-down(md) {
-      letter-spacing: 0.5rem;
-      text-indent: 0.5rem;
-    }
 
     &:after {
       content: '';
       position: absolute;
       bottom: -0.3rem;
-      left: 0;
+      left: 40%;
+      transform: translateX(-50%);
       z-index: -1;
       height: 2px;
       width: 0;
@@ -63,7 +58,7 @@
 
     &:hover {
       &:after {
-        width: 100%;
+        width: 120%;
       }
     }
   }

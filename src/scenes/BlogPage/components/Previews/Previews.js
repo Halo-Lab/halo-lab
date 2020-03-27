@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import List from './components/List';
 import Switcher from './components/Switcher';
@@ -10,14 +10,13 @@ const Previews = () => {
   const items = useWordpressPosts();
 
   return (
-    <div className="">
-      <div></div>
+    <Fragment>
       {breakpoint !== BREAKPOINTS.MOBILE ? (
         <Switcher items={items} />
       ) : (
         <List items={items} />
       )}
-    </div>
+    </Fragment>
   );
 };
 
