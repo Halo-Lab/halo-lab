@@ -12,7 +12,7 @@
   background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021e 98%);
 
   @media screen and (min-width: $md) {
-    @include hl-padding(top, 30px);
+    @include hl-padding(top, 38px);
     @include hl-padding(left, 80px);
     @include hl-padding(right, 80px);
     @include hl-padding(bottom, 20px);
