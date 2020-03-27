@@ -52,7 +52,14 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
     setMetrics,
   ] = useState(initialMetrics);
   const { width } = useBreakpoints();
-  const items = [...images, ...images, ...images]; // NUMBER_OF_LISTS
+  const items = [...images, ...images, ...images].map(
+    ({ name, element }, index) => {
+      return {
+        name: name + index,
+        element,
+      };
+    }
+  ); // NUMBER_OF_LISTS
 
   // metrics calculation
 
@@ -150,8 +157,8 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
         style={{ transform: props.x.interpolate(iTranslate) }}
         className={styles.ticker}
       >
-        {items.map(({ name, element }, index) => {
-          return <Fragment key={name + index}>{element}</Fragment>;
+        {items.map(({ name, element }) => {
+          return <Fragment key={name}>{element}</Fragment>;
         })}
       </a.ul>
       <div
