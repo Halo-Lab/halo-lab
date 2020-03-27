@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { useSpring, animated as a } from 'react-spring';
 import { easeQuadIn, easeQuadOut, easeLinear } from 'd3-ease';
-import Img from 'gatsby-image';
+
 import PropTypes from 'prop-types';
 
 import { useBreakpoints } from '@hooks';
@@ -52,8 +52,14 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
     setMetrics,
   ] = useState(initialMetrics);
   const { width } = useBreakpoints();
-
-  const items = [...images, ...images, ...images]; // NUMBER_OF_LISTS
+  const items = [...images, ...images, ...images].map(
+    ({ name, element }, index) => {
+      return {
+        name: name + index,
+        element,
+      };
+    }
+  ); // NUMBER_OF_LISTS
 
   // metrics calculation
 
@@ -144,7 +150,6 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
   const stop = () => {
     isRunning.current = false;
   };
-
   return (
     <div ref={container} className={styles.container}>
       <a.ul
@@ -152,14 +157,8 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
         style={{ transform: props.x.interpolate(iTranslate) }}
         className={styles.ticker}
       >
-        {items.map(({ childImageSharp }, index) => {
-          return (
-            <li key={index} className={styles.item}>
-              <div className={styles.card}>
-                <Img fluid={childImageSharp.fluid} draggable={false} />
-              </div>
-            </li>
-          );
+        {items.map(({ name, element }) => {
+          return <Fragment key={name}>{element}</Fragment>;
         })}
       </a.ul>
       <div

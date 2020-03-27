@@ -1,4 +1,5 @@
 @import '@styles/mixins/all';
+@import '@functions/functions';
 
 .container {
   overflow: hidden;
@@ -12,18 +13,6 @@
   margin: 0;
   padding: 0;
   will-change: transform;
-}
-
-.item {
-  flex: 0 0 32%;
-}
-
-.card {
-  position: relative;
-  box-sizing: border-box;
-  padding: 0;
-  @include hl-padding(left, 40px);
-  @include hl-padding(right, 40px);
 }
 
 .asideLeft,
