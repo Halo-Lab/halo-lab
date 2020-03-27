@@ -6,8 +6,8 @@ import styles from './BlogPage.module.scss';
 
 const BlogPage = () => {
   return (
-    <div className={`oldPageWrapper ${styles.container}`}>
-      <div className={styles.title}>Our Blog</div>
+    <div className={`pageWrapper ${styles.container}`}>
+      <h1 className={styles.title}>Our Blog</h1>
       <Previews />
     </div>
   );

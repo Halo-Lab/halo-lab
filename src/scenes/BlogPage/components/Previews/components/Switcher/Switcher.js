@@ -31,9 +31,9 @@ const Switcher = ({ items, location }) => {
   const itemsNews = [];
   const allCategories = [
     { title: 'All', items },
-    { title: 'Agency', items: itemsAgency },
-    { title: 'Case Studies', items: itemsCaseStudies },
-    { title: 'News', items: itemsNews },
+    { title: '#Agency', items: itemsAgency },
+    { title: '#Case Studies', items: itemsCaseStudies },
+    { title: '#News', items: itemsNews },
   ];
 
   items.forEach(item => {
