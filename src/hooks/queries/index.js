@@ -5,6 +5,7 @@ import useFooterAssets from './useFooterAssets';
 import useHeaderAssets from './useHeaderAssets';
 import useHomeGalleryAssets from './useHomeGalleryAssets';
 import useHomeHeroAssets from './useHomeHeroAssets.js';
+import useHomeWorksAssets from './useHomeWorksAssets.js';
 import useMenuAssets from './useMenuAssets';
 import usePortfolioClientsAssets from './usePortfolioClientsAssets';
 import usePortfolioWorksAssets from './usePortfolioWorksAssets';
@@ -25,6 +26,7 @@ export {
   useFooterAssets,
   useHeaderAssets,
   useHomeHeroAssets,
+  useHomeWorksAssets,
   useHomeGalleryAssets,
   useMenuAssets,
   usePortfolioClientsAssets,

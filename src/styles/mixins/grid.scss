@@ -8,51 +8,6 @@
   grid-template-columns: repeat(64, calc(100% / 64));
 }
 
-@mixin hl-margin-top($offset: 1) {
-  --coef-margin: 1;
-  margin-top: calc(20px * #{$offset} * var(--coef-margin));
-  @include media-breakpoint-down(md) {
-    --coef-margin: 0.7;
-  }
-  @include media-breakpoint-down(sm) {
-    --coef-margin: 0.5;
-  }
-}
-
-@mixin hl-margin-bottom($offset: 1) {
-  --coef-margin: 1;
-  margin-bottom: calc(20px * #{$offset} * var(--coef-margin));
-}
-
-@mixin hl-margin-left($offset: 1, $coef: 1) {
-  margin-left: calc(var(--unit) * #{$offset} * #{$coef});
-}
-@mixin hl-margin-right($offset: 1, $coef: 1) {
-  margin-right: calc(var(--unit) * #{$offset} * #{$coef});
-}
-
-@mixin hl-margin($type, $offset: 1) {
-  --coef-margin: 1;
-  @include media-breakpoint-down(md) {
-    --coef-margin: 0.7;
-  }
-  @include media-breakpoint-down(sm) {
-    --coef-margin: 0.5;
-  }
-  @if $type == top {
-    margin-top: calc(20px * #{$offset} * var(--coef-margin));
-  }
-  @if $type == bottom {
-    margin-bottom: calc(20px * #{$offset} * var(--coef-margin));
-  }
-  @if $type == left {
-    margin-left: calc(20px * #{$offset} * var(--coef-margin));
-  }
-  @if $type == right {
-    margin-right: calc(20px * #{$offset} * var(--coef-margin));
-  }
-}
-
 @mixin hl-margin($type, $size: 1px) {
   @if $type == top {
     margin-top: calc(#{$size} * var(--coef-indent));
@@ -89,4 +44,8 @@
 
 @mixin hl-height($size) {
   height: calc(#{$size} * var(--coef-size));
+}
+
+@mixin hl-max-width($size) {
+  max-width: calc(#{$size} * var(--coef-size));
 }

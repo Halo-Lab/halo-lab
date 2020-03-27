@@ -1,0 +1,74 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  @include hl-margin(bottom, 100px);
+  @include hl-padding(top, 90px);
+  @media screen and (max-width: $md) {
+    padding: 0 20px;
+  }
+}
+
+.title {
+  font-family: $font-gramatika-black;
+  color: $white-color;
+  @include hl-font-size-title(86px);
+  line-height: 1.25em;
+  letter-spacing: -2px;
+  text-transform: capitalize;
+  @media screen and (max-width: $sm) {
+    order: 1;
+    --coef-title: 0.65;
+  }
+}
+
+.link {
+  display: block;
+  position: absolute;
+  left: 70%;
+  top: 0;
+  transform: translate(6%, 0);
+  line-height: 0;
+  @include hl-width(120px);
+
+  @media screen and (max-width: $md) {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &:hover {
+    .image,
+    .icon {
+      animation-play-state: running;
+    }
+  }
+}
+
+.image {
+  animation: dribbleAnimationRotate 10s infinite linear;
+  animation-play-state: paused;
+}
+
+.icon {
+  position: absolute;
+  max-width: 3.18rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes dribbleAnimationRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
