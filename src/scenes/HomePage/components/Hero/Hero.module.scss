@@ -9,7 +9,7 @@
 
 .wrapper {
   position: relative;
-  @include col-width(4, 60);
+  @include col-width(5, 61);
   text-align: center;
   @include hl-padding(top, 20px);
 }
