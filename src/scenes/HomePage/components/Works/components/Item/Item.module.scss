@@ -20,6 +20,21 @@
       width: calc(50% - var(--column-width) / 2);
     }
   }
+  @media screen and (min-width: 1600px) {
+    @include hl-max-width(620px);
+    &.item {
+      @include hl-margin(right, 20px);
+    }
+    &:nth-child(2n) {
+      @include hl-max-width(400px);
+      .image:first-child {
+        @include hl-margin(bottom, 20px);
+      }
+      .image:nth-child(n + 2) {
+        width: calc(50% - 10px * var(--coef-size));
+      }
+    }
+  }
 }
 
 .image {
