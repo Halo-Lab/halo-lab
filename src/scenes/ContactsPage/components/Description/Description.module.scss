@@ -38,14 +38,6 @@
   @include hl-margin(bottom, 100px);
   text-align: center;
   letter-spacing: -2px;
-  background: linear-gradient(
-    125.56deg,
-    #e7a28f 3.52%,
-    #f9d6ac 41.89%,
-    #fbfefc 96.77%
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 
   @include media-breakpoint-down(xs) {
     --coef-title: 0.5;
@@ -93,14 +85,6 @@
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
-  background: linear-gradient(
-    130.51deg,
-    #e7a28f 3.52%,
-    #f9d6ac 41.89%,
-    #fbfefc 96.77%
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .circle {
