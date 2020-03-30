@@ -79,9 +79,21 @@
     z-index: 10;
     display: block;
     width: 100%;
-    height: 100%;
-    max-width: 50%;
-    max-height: 20%;
+    height: auto;
+    @media screen and (max-width: $md) {
+      --coef-size: 0.9;
+    }
+  }
+
+  li:nth-of-type(1) img {
+    @include hl-width(112px);
+  }
+  li:nth-of-type(2) img {
+    @include hl-width(83px);
+  }
+  li:nth-of-type(3) img {
+    @include hl-width(92px);
+    // @include hl-height(92px);
   }
 }
 
