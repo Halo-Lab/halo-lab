@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: calc(100vh - (var(--coef-indent) * 130px));
+  height: calc(100vh - (var(--coef-indent) * 120px));
   box-sizing: border-box;
   @include hl-margin(top, 200px);
   @include hl-padding(top, 150px);
@@ -23,7 +23,7 @@
     content: '';
     position: absolute;
     width: 100vw;
-    height: calc(100% + (var(--coef-indent) * 130px));
+    height: calc(100% + (var(--coef-indent) * 140px));
     background: linear-gradient(0deg, #3719ca, #3719ca),
       linear-gradient(89.64deg, #3719ca 0.16%, #8161fe 99.8%);
     left: 50%;
@@ -140,7 +140,7 @@
   }
   &:hover {
     &::before {
-      height: 130%;
+      height: 140%;
     }
   }
 }
