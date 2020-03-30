@@ -26,10 +26,10 @@ const PostThumbnail = ({ title, slug, featured_media, date }) => {
 
   return (
     <article className={styles.container}>
-      <div className={styles.date}>
+      {/* <div className={styles.date}>
         <div>{day}</div>
         <div>{month}</div>
-      </div>
+      </div> */}
       <Link to={link} className={styles.link}>
         {imageOptimized ? (
           <div>

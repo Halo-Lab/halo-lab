@@ -52,9 +52,11 @@ const Switcher = ({ items, location }) => {
     }
   });
 
+  const newItems = items.slice(0, 4);
+
   return (
     <div className={styles.container}>
-      <Tabs defaultIndex={defaultIndex}>
+      <Tabs defaultIndex={defaultIndex} className={styles.tabsContainer}>
         <TabList className={styles.tabList}>
           {allCategories.map(({ title }) => {
             return (
@@ -67,9 +69,9 @@ const Switcher = ({ items, location }) => {
 
         {allCategories.map(({ title, items }) => {
           return (
-            <TabPanel key={title}>
+            <TabPanel key={title} className={styles.tabsContentContainer}>
               <ul className={styles.tabContentList}>
-                {items.map(item => {
+                {newItems.map(item => {
                   return (
                     <li
                       data-list-item="articles"

@@ -4,9 +4,14 @@
 .container {
 }
 
+.tabsContainer {
+  @include grid-template();
+}
+
 .tabList {
+  @include col-width(13, 52);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   list-style-type: none;
   margin: 0;
@@ -15,20 +20,11 @@
 }
 
 .tabItem {
-  &:not(:first-child) {
-    margin-left: 18px;
-
-    @media screen and (min-width: $lg) {
-      @include hl-margin(left, 70px);
-    }
-  }
-
   &[aria-selected='true'] {
     > div {
       &:after {
         height: 65%;
         width: 120%;
-        // bottom: 0rem;
       }
     }
   }
@@ -37,6 +33,7 @@
     position: relative;
     font-family: $font-sofia-pro;
     @include hl-font-size-text(14px);
+    padding-left: 10px;
     font-weight: bold;
     line-height: 1.47;
     letter-spacing: 10px;
@@ -47,7 +44,7 @@
       content: '';
       position: absolute;
       bottom: -0.3rem;
-      left: 40%;
+      left: 50%;
       transform: translateX(-50%);
       z-index: -1;
       height: 2px;
@@ -64,12 +61,17 @@
   }
 }
 
+.tabsContentContainer {
+  @include col-width(4, 62);
+}
+
 .tabContentList {
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: calc(40px * var(--coef-indent));
   list-style-type: none;
-  margin: 0 -22px;
   padding: 0;
 
   @media screen and (min-width: $lg) {
@@ -79,10 +81,15 @@
 }
 
 .tabContentItem {
-  flex-basis: 50%;
+  &:first-child {
+    grid-column: 1/4;
+    @include hl-height(420px);
+  }
+  overflow: hidden;
+  @include hl-height(360px);
+  border: 1px solid $dark-grey-color;
   position: relative;
   box-sizing: border-box;
-  padding: 0 22px 120px;
   animation-name: apperancing;
   animation-duration: 1s;
   animation-fill-mode: forwards;
