@@ -60,7 +60,7 @@
     @include hl-font-size-title(30px);
     font-weight: 700;
     font-family: $font-gramatika-black;
-    line-height: 1.33em;
+    line-height: 1.63em;
     text-align: left;
     @include col-width(12, 31);
 
@@ -75,7 +75,7 @@
     margin: 0;
     @include hl-font-size-text(18px);
     font-weight: 300;
-    line-height: 1.6;
+    line-height: 1.65em;
     font-family: $font-sofia-pro;
     text-align: left;
     letter-spacing: 0.5px;
@@ -120,8 +120,8 @@
     rgba(16, 8, 74, 0) 16.94%,
     #83a4ff 87.08%
   );
-  top: -160%;
-  left: 9%;
+  top: -171%;
+  left: 8%;
 }
 
 .circleLg {

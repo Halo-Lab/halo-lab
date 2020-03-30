@@ -14,6 +14,7 @@
   @include col-width(12, 54);
   font-family: $font-sofia-pro;
   @include hl-font-size-text(14px);
+  line-height: 1.8em;
   font-weight: 700;
   color: $white-color;
   text-transform: uppercase;
@@ -68,6 +69,7 @@
   font-weight: 300;
   font-family: $font-sofia-pro;
   transition: background-color 0.2s;
+  letter-spacing: 0.5px;
 
   &:focus,
   &.focused {
@@ -91,6 +93,7 @@
   font-weight: 300;
   font-family: $font-sofia-pro;
   resize: none;
+  letter-spacing: 0.5px;
 
   &:focus {
     background-color: $white-color;
@@ -115,6 +118,7 @@
   transform: translateY(-50%);
   transition: all 0.3s;
   z-index: 2;
+  letter-spacing: 0.5px;
 
   @include media-breakpoint-up(xxl) {
     font-size: 1rem;
@@ -136,7 +140,7 @@
 .textareaWrapper {
   position: relative;
   @include col-width(12, 54);
-  @include hl-margin(bottom, 60px);
+  @include hl-margin(bottom, 56px);
 
   @include media-breakpoint-down(sm) {
     @include col-width(5, 61);
@@ -180,7 +184,7 @@
   align-items: center;
   box-sizing: border-box;
   width: calc(100% - 4px);
-  top: 40px;
+  top: 32px;
   @include hl-padding(left, 40px);
   left: 2px;
   z-index: 2;
@@ -329,7 +333,7 @@
   @include hl-font-size-text(14px);
   font-weight: 600;
   line-height: 2;
-  letter-spacing: 3px;
+  letter-spacing: 10px;
   text-transform: uppercase;
   text-decoration: none;
   color: $white-color;
@@ -338,7 +342,7 @@
   border: none;
   outline: none;
   padding: 0;
-  @include hl-width(140px);
+  @include hl-width(180px);
   z-index: 10;
   &::before {
     content: '';
