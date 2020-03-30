@@ -23,7 +23,6 @@ const Hero = () => {
         <div className={`${styles.circle} ${styles.circleSm1}`}></div>
         <div className={`${styles.circle} ${styles.circleSm2}`}></div>
         <div className={`${styles.circle} ${styles.circleMd}`}></div>
-        <div className={`${styles.circle} ${styles.circleLg}`}></div>
       </div>
 
       <Info {...infoAssets} />

@@ -27,14 +27,14 @@
 }
 
 .upwork {
-  @include col-width(11, 20);
+  @include col-width(10, 19);
   @include media-breakpoint-down(md) {
     @include col-width(2, 31);
   }
 }
 .dribbble {
-  @include col-width(29, 37);
-  padding-bottom: 4.5rem;
+  @include col-width(28, 37);
+  padding-bottom: 2.5rem;
   @include media-breakpoint-down(md) {
     @include col-width(32, 62);
     padding-bottom: 0;
