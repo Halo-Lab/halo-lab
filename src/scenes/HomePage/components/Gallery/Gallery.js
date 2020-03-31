@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { MenuContext } from '@contexts';
 import { useBreakpoints, BREAKPOINTS } from '@hooks';
 import { useHomeGalleryAssets } from '@hooks/queries';
 import Ticker from '@components/Ticker';
@@ -12,7 +11,6 @@ import styles from './Gallery.module.scss';
 
 const Gallery = () => {
   const { breakpoint } = useBreakpoints();
-  const { isOpened } = useContext(MenuContext);
   const { photos, arrowLeft, arrowRight } = useHomeGalleryAssets();
 
   const settings = {
@@ -53,7 +51,7 @@ const Gallery = () => {
     <section className={styles.container}>
       <h2 className={styles.title}>Creative Atmosphere</h2>
       <div className={styles.sliderWrapper}>
-        {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
+        {breakpoint === BREAKPOINTS.DESKTOP ? (
           <Ticker
             images={photosList}
             arrowLeft={arrowLeft}

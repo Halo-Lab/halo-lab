@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 // import Img from 'gatsby-image';
 
 import {
@@ -12,13 +12,11 @@ import Swiper from 'react-id-swiper';
 import Item from './components/Item';
 
 import { useBreakpoints, BREAKPOINTS } from '@hooks';
-import { MenuContext } from '@contexts';
 
 import styles from './Works.module.scss';
 
 const Works = () => {
   const { breakpoint } = useBreakpoints();
-  const { isOpened } = useContext(MenuContext);
   const { dribbbleRed, textCircled } = usePortfolioWorksAssets();
   const {
     Art,
@@ -61,7 +59,7 @@ const Works = () => {
   return (
     <div className={styles.container}>
       <Title icon={dribbbleRed} signature={textCircled} />
-      {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
+      {breakpoint === BREAKPOINTS.DESKTOP ? (
         <Ticker images={images} arrowLeft={arrowLeft} arrowRight={arrowRight} />
       ) : null}
       {breakpoint === BREAKPOINTS.MOBILE ||
