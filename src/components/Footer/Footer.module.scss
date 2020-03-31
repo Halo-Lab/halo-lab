@@ -37,8 +37,8 @@
     box-sizing: border-box;
     border: 1px solid rgba($white-color, $alpha: 0.25);
     border-radius: 50%;
-    @include hl-width(50px);
-    @include hl-height(50px);
+    @include hl-width(60px);
+    @include hl-height(60px);
     text-align: center;
     transition: background-color 0.2s, border-color 0.2s;
 
@@ -88,5 +88,7 @@
     left: 0;
     order: 1;
     margin-top: 2rem;
+    top: 0;
+    transform: translateY(0);
   }
 }
