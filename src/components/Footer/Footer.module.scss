@@ -1,11 +1,16 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
+@import '@functions/functions';
 
 .container {
-  padding: 3rem 0 1.7rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  @include hl-padding(top, 40px);
+  @include hl-padding(bottom, 40px);
 
-  @media screen and (min-width: $md) {
-    padding: 4rem 0 1.85rem;
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
   }
 }
 
@@ -15,89 +20,75 @@
   justify-content: center;
   align-items: center;
   list-style-type: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   z-index: 10;
 
   li {
     &:not(:first-child) {
-      margin-left: 1.2rem;
+      @include hl-margin(left, 30px);
     }
   }
 
   a {
-    $size: 3.755rem;
-
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
-    border: 1px solid $dark-blue-color;
+    border: 1px solid rgba($white-color, $alpha: 0.25);
     border-radius: 50%;
-    width: $size;
-    height: $size;
+    @include hl-width(60px);
+    @include hl-height(60px);
     text-align: center;
     transition: background-color 0.2s, border-color 0.2s;
 
-    &:before {
-      content: '';
-      display: inline-block;
-      height: 100%;
-      vertical-align: middle;
-    }
-
     &:hover {
-      background-color: $main-color;
-      border-color: $main-color;
+      background-color: $white-color;
+      border-color: $white-color;
+      path {
+        fill: $main-color;
+      }
     }
 
-    @media screen and (min-width: $lg) {
-      $size: 3.21rem;
-
-      width: $size;
-      height: $size;
+    @media screen and (max-width: $md) {
+      width: 40px;
+      height: 40px;
     }
-  }
-
-  img {
-    display: inline-block;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    vertical-align: middle;
   }
 }
 
 .logotype {
-  margin-top: 34px;
+  position: absolute;
+  left: calc(var(--coef-size) * 80px);
   font-family: $font-sofia-pro-soft;
-  font-size: 1.14rem;
+  @include hl-font-size-text(16px);
   font-weight: 300;
   line-height: 1.56em;
+  top: 50%;
+  transform: translateY(-50%);
 
-  &:before {
+  b {
+    font-weight: 700;
+  }
+  &::before {
     content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: -0.5rem;
+    right: -1.4rem;
+    background: url('./images/start-footer.svg') no-repeat;
+    background-size: contain;
   }
-
-  @media screen and (min-width: $lg) {
-    margin-top: -34px;
+  @media screen and (min-width: 1600px) {
+    left: 0;
   }
-
-  img,
-  span {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  img {
-    $size: 34px;
-    max-height: $size;
-    max-width: $size;
-  }
-
-  span {
-    margin-left: 1.42rem;
+  @media screen and (max-width: $md) {
+    position: relative;
+    left: 0;
+    order: 1;
+    margin-top: 2rem;
+    top: 0;
+    transform: translateY(0);
   }
 }

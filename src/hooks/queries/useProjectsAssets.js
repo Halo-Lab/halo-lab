@@ -36,7 +36,7 @@ const useProjectsAssets = () => {
         ...projectsPreview
       }
       avatar1: file(
-        relativePath: { eq: "sections/projects/marshall_haas.jpg" }
+        relativePath: { eq: "sections/projects/anton_glance.png" }
       ) {
         name
         ...projectsAvatar
@@ -48,12 +48,15 @@ const useProjectsAssets = () => {
         ...projectsAvatar
       }
       avatar3: file(
-        relativePath: { eq: "sections/projects/anton_glance.png" }
+        relativePath: { eq: "sections/projects/marshall_haas.jpg" }
       ) {
         name
         ...projectsAvatar
       }
       angellist: file(relativePath: { eq: "brands/angellist.svg" }) {
+        publicURL
+      }
+      auth: file(relativePath: { eq: "brands/auth0.svg" }) {
         publicURL
       }
       forbes: file(relativePath: { eq: "brands/forbes.svg" }) {
@@ -78,6 +81,12 @@ const useProjectsAssets = () => {
         publicURL
       }
       udemy: file(relativePath: { eq: "brands/udemy.svg" }) {
+        publicURL
+      }
+      kickstarter: file(relativePath: { eq: "brands/kickstarter.svg" }) {
+        publicURL
+      }
+      huffpost: file(relativePath: { eq: "brands/huffpost.svg" }) {
         publicURL
       }
     }

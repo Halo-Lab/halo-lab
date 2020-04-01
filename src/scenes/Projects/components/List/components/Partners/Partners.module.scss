@@ -6,27 +6,27 @@
   justify-content: space-between;
   align-items: center;
   list-style-type: none;
-  margin: 2.34rem 0 0 4.4rem;
+  @include hl-margin(top, 40px);
   padding: 0;
-  max-width: 30rem;
 
   @media screen and (min-width: $md) {
     display: flex;
+    grid-row: 2;
+    @include col-width(4, 36);
   }
 
   @media screen and (min-width: $lg) {
-    max-width: 40rem;
+    @include col-width(7, 36);
   }
 
   img {
     display: block;
     width: auto;
-    height: auto;
-    max-width: 80px;
-    max-height: 50px;
+    @include hl-height(40px);
+    margin: 0 auto;
   }
 
   &.reversed {
-    margin-left: auto;
+    @include col-width(30, 59);
   }
 }

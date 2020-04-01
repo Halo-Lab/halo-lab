@@ -1,8 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { useSpring, animated as a } from 'react-spring';
 import { easeQuadIn, easeQuadOut, easeLinear } from 'd3-ease';
-import Img from 'gatsby-image';
+
 import PropTypes from 'prop-types';
+
+import { useBreakpoints } from '@hooks';
 
 import styles from './Ticker.module.scss';
 
@@ -33,33 +35,51 @@ const iTranslate = value => `translate3d(${value}px, 0, 0)`;
 
 const Ticker = ({ images, arrowLeft, arrowRight }) => {
   const isRunning = useRef(false);
+  const isFinished = useRef(true);
   const container = useRef(null);
   const ticker = useRef(null);
-
-  const items = [...images, ...images, ...images]; // NUMBER_OF_LISTS
+  const initialMetrics = {
+    containerWidth: 0,
+    tickerWidth: 0,
+    listWidth: 0, // width of original list
+    startPosition: 0, // the point where the list moves after crossing the right border
+    endPosition: 0, // the point where the list moves after crossing the left border
+    leftBorder: 0, // the point after which the list should quickly move to end position to simulate an infinite line
+    rightBorder: 0, // the point after which the list should quickly move to start position to simulate an infinite line
+  };
+  const [
+    { startPosition, endPosition, leftBorder, rightBorder },
+    setMetrics,
+  ] = useState(initialMetrics);
+  const { width } = useBreakpoints();
+  const items = [...images, ...images, ...images].map(
+    ({ name, element }, index) => {
+      return {
+        name: name + index,
+        element,
+      };
+    }
+  ); // NUMBER_OF_LISTS
 
   // metrics calculation
 
-  let containerWidth = null;
-  let tickerWidth = null;
-  let listWidth = null; // width of original list
-  let startPosition = null; // the point where the list moves after crossing the right border
-  let endPosition = null; // the point where the list moves after crossing the left border
-  let leftBorder = null; // the point after which the list should quickly move to end position to simulate an infinite line
-  let rightBorder = null; // the point after which the list should quickly move to start position to simulate an infinite line
+  const updatedMetrics = () => {
+    const containerWidth = container.current.offsetWidth;
+    const tickerWidth = ticker.current.scrollWidth;
+    const listWidth = tickerWidth / NUMBER_OF_LISTS;
+
+    const startPosition = -listWidth;
+    const endPosition = -listWidth - listWidth + containerWidth;
+    const leftBorder = -listWidth + containerWidth;
+    const rightBorder = -listWidth - listWidth;
+
+    setMetrics({ startPosition, endPosition, leftBorder, rightBorder });
+    set({ x: startPosition, immediate: true });
+  };
 
   useEffect(() => {
-    containerWidth = container.current.offsetWidth;
-    tickerWidth = ticker.current.scrollWidth;
-    listWidth = tickerWidth / NUMBER_OF_LISTS;
-
-    startPosition = -listWidth;
-    endPosition = -listWidth - listWidth + containerWidth;
-    leftBorder = -listWidth + containerWidth;
-    rightBorder = -listWidth - listWidth;
-
-    set({ x: startPosition });
-  }, []);
+    updatedMetrics();
+  }, [width]);
 
   // animation initialize -->
 
@@ -68,19 +88,17 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
     config: configDefault,
   }));
 
-  // handlers -->
+  // animation engine -->
 
-  const go = ({ target }) => {
-    isRunning.current = true;
-
-    const direction = target.getAttribute('data-direction');
-    const offset = direction === DIRECTIONS.FORWARD ? STEP : -STEP;
-
+  const move = offset => {
     set((...attrs) => {
       const [, controller] = attrs;
 
       return {
         to: async next => {
+          isFinished.current = false;
+
+          // start
           await next({
             x:
               (controller.props.to || controller.props.from).x +
@@ -89,6 +107,7 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
             immediate: false,
           });
 
+          // running
           while (isRunning.current) {
             const x = controller.props.to.x + offset;
 
@@ -101,6 +120,9 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
             }
           }
 
+          isFinished.current = true;
+
+          // finish
           await next({
             x: controller.props.to.x + offset * STEP_COEFFICIENT,
             config: configFinish,
@@ -110,10 +132,24 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
     });
   };
 
+  // handlers -->
+
+  const run = ({ target }) => {
+    if (!isFinished.current || isRunning.current) {
+      return;
+    }
+
+    isRunning.current = true;
+
+    const direction = target.getAttribute('data-direction');
+    const offset = direction === DIRECTIONS.FORWARD ? STEP : -STEP;
+
+    move(offset);
+  };
+
   const stop = () => {
     isRunning.current = false;
   };
-
   return (
     <div ref={container} className={styles.container}>
       <a.ul
@@ -121,28 +157,22 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
         style={{ transform: props.x.interpolate(iTranslate) }}
         className={styles.ticker}
       >
-        {items.map(({ childImageSharp }, index) => {
-          return (
-            <li key={index} className={styles.item}>
-              <div className={styles.card}>
-                <Img fluid={childImageSharp.fluid} draggable={false} />
-              </div>
-            </li>
-          );
+        {items.map(({ name, element }) => {
+          return <Fragment key={name}>{element}</Fragment>;
         })}
       </a.ul>
       <div
         data-direction={DIRECTIONS.FORWARD}
         style={{ cursor: `url('${arrowLeft.publicURL}'), auto` }}
         className={styles.asideLeft}
-        onMouseEnter={go}
+        onMouseEnter={run}
         onMouseLeave={stop}
       />
       <div
         data-direction={DIRECTIONS.BACKWARD}
         style={{ cursor: `url('${arrowRight.publicURL}'), auto` }}
         className={styles.asideRight}
-        onMouseEnter={go}
+        onMouseEnter={run}
         onMouseLeave={stop}
       />
     </div>

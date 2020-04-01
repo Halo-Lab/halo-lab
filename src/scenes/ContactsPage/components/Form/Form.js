@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { navigate } from 'gatsby';
 
 import styles from './Form.module.scss';
 
 const Form = () => {
+  const attachmentInput = useRef(null);
   const [data, setData] = useState({
     name: {
       value: '',
@@ -33,7 +34,7 @@ const Form = () => {
     }));
   };
 
-  const [isValid, setisValid] = useState(true);
+  const [isValid, setIsValid] = useState(true);
   const [filesList, setFilesList] = useState([]);
 
   const fileAccept =
@@ -52,25 +53,22 @@ const Form = () => {
       isCompanyEmailValid(data.email.value) &&
       data.message.valid;
 
-    setisValid(valid);
-
-    const formData = {
-      'quote-name': data.name.value,
-      'quote-company': data.company.value,
-      'quote-email': data.email.value,
-      'quote-message': data.message.value,
-    };
+    setIsValid(valid);
 
     const url = 'https://getform.io/f/4707dc47-7be9-4932-b3b9-3ff95d3e87d3';
+    const formData = new FormData();
+
+    formData.append('quote-name', data.name.value);
+    formData.append('quote-company', data.company.value);
+    formData.append('quote-email', data.email.value);
+    formData.append('quote-message', data.message.value);
+    formData.append('file', attachmentInput.current.files[0] || '');
 
     valid &&
       fetch(url, {
         method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        headers: {},
+        body: formData,
       })
         .then(response => {
           if (response.ok) {
@@ -97,7 +95,7 @@ const Form = () => {
     <div className={styles.container}>
       <form className={styles.form} onSubmit={e => handleSubmit(e)}>
         <h3 className={styles.formTitle}>REQUEST A QUOTE</h3>
-        <div className={styles.inputWrapper}>
+        <div className={`${styles.inputWrapper} ${styles.nameWrapper}`}>
           <input
             className={`${styles.input} ${
               !isValid && !data.name.valid ? styles.error : ''
@@ -112,7 +110,7 @@ const Form = () => {
             Full Name
           </label>
         </div>
-        <div className={styles.inputWrapper}>
+        <div className={`${styles.inputWrapper} ${styles.companyWrapper}`}>
           <input
             className={`${styles.input} ${
               data.company.valid ? styles.focused : ''
@@ -126,7 +124,7 @@ const Form = () => {
             Company
           </label>
         </div>
-        <div className={styles.inputWrapper}>
+        <div className={`${styles.inputWrapper} ${styles.emailWrapper}`}>
           <input
             className={`${styles.input} ${
               !isValid && !data.email.valid ? styles.error : ''
@@ -172,6 +170,7 @@ const Form = () => {
               type="file"
               name="quote-file"
               id="attachment-file"
+              ref={attachmentInput}
               accept={fileAccept}
               onChange={handleInputFileChange}
             ></input>
@@ -185,9 +184,11 @@ const Form = () => {
             </div>
           </div>
         </div>
-        <button className={styles.button} type="submit">
-          submit
-        </button>
+        <div className={styles.buttonWrap}>
+          <button className={styles.button} type="submit">
+            submit
+          </button>
+        </div>
       </form>
     </div>
   );

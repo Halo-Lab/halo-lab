@@ -1,101 +1,81 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
+@import '@functions/functions';
 
-.title {
-  font-family: $font-ratiomodern;
-  font-size: 10rem;
-  line-height: 1.2;
-  color: $white-color;
-  font-weight: 400;
-  margin-bottom: 5.7rem;
-  text-align: center;
+.wrapper {
+  position: relative;
 
-  @include media-breakpoint-down(md) {
-    font-size: 6.25rem;
-    line-height: 1.46em;
-    margin-bottom: 5rem;
-  }
-  @include media-breakpoint-down(sm) {
-    font-size: 4.5rem;
-    line-height: 1.1em;
-    margin-bottom: 2.5rem;
+  &:before {
+    content: '';
+    display: block;
+    @include hl-width(1185px);
+    @include hl-height(1076px);
+    position: absolute;
+    top: -245%;
+    left: -11%;
+    border-radius: 50%;
+    z-index: -1;
+    background: radial-gradient(
+      41.38% 40.85% at 56.08% 46.24%,
+      #3719ca 0%,
+      rgba(55, 25, 202, 0) 100%
+    );
+    opacity: 0.4;
+    filter: blur(150px);
+
+    @media screen and (max-width: $md) {
+      display: none;
+    }
   }
 }
 
-.description {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 11.4rem;
+.title {
+  display: block;
+  font-family: $font-gramatika-black;
+  @include hl-font-size-title(96px);
+  line-height: 1.04em;
+  color: $white-color;
+  @include hl-margin(bottom, 100px);
+  text-align: center;
+  letter-spacing: -2px;
 
-  @include media-breakpoint-down(md) {
-    display: none;
+  @include media-breakpoint-down(xs) {
+    --coef-title: 0.5;
   }
+}
+
+.container {
+  position: relative;
+  @include grid-template();
 
   h2 {
-    max-width: 23.8rem;
-    margin-right: 1.5rem;
-    font-size: 2.14rem;
-    font-weight: 400;
-    font-family: $font-sofia-pro;
+    @include hl-font-size-title(30px);
+    font-weight: 700;
+    font-family: $font-gramatika-black;
+    line-height: 1.63em;
     text-align: left;
+    @include col-width(12, 31);
 
-    @include media-breakpoint-down(md) {
-      font-size: 22px;
-      line-height: 30px;
-      font-weight: 400;
-      width: 35%;
-    }
     @include media-breakpoint-down(sm) {
-      width: 100%;
-      max-width: 310px;
-      margin-bottom: 15px;
-      font-size: 20px;
-      line-height: 28px;
+      @include col-width(5, 61);
+      @include hl-margin(bottom, 60px);
     }
   }
 
   p {
-    max-width: 40rem;
+    @include col-width(34, 54);
     margin: 0;
-    margin-top: 0.5rem;
-    font-size: 1.43rem;
+    @include hl-font-size-text(18px);
     font-weight: 300;
+    line-height: 1.65em;
     font-family: $font-sofia-pro;
     text-align: left;
+    letter-spacing: 0.5px;
 
-    @include media-breakpoint-down(md) {
-      font-weight: 300;
-      font-size: 20px;
-      line-height: 30px;
-    }
     @include media-breakpoint-down(sm) {
-      width: 100%;
-      font-size: 18px;
-      line-height: 26px;
+      @include col-width(5, 61);
+      margin: 0;
     }
-  }
-}
-
-.contactMail {
-  display: none;
-
-  @include media-breakpoint-down(md) {
-    display: block;
-    margin-bottom: 5rem;
-  }
-
-  p,
-  a {
-    margin: 0;
-    font-size: 1.7rem;
-    line-height: 1.3em;
-    font-family: $font-sofia-pro-soft;
-  }
-
-  a {
-    color: #84a4ff;
-    text-decoration: none;
-    line-height: 1.5em;
   }
 }
 
@@ -105,23 +85,38 @@
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
+}
 
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    left: 0;
-    bottom: -3px;
-    background-color: $main-color;
-    transition: height 0.5s;
-    z-index: -1;
-    transition: height 0.3s;
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  @include media-breakpoint-down(sm) {
+    display: none;
   }
+}
 
-  &:hover {
-    &:before {
-      height: 100%;
-    }
-  }
+.circleSm {
+  @include hl-width(40px);
+  @include hl-height(40px);
+  background: linear-gradient(
+    37.94deg,
+    rgba(16, 8, 74, 0) 16.94%,
+    #83a4ff 87.08%
+  );
+  top: -171%;
+  left: 8%;
+}
+
+.circleLg {
+  @include hl-width(100px);
+  @include hl-height(100px);
+  background: linear-gradient(
+    37.21deg,
+    rgba(1, 1, 18, 0) 27.49%,
+    #262147 78.93%
+  );
+  top: -100%;
+  right: 6%;
+  transform: rotate(-90deg);
 }

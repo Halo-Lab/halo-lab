@@ -37,6 +37,21 @@ const useHomeHeroAssets = () => {
       upworkLogotype: file(relativePath: { eq: "brands/upwork.svg" }) {
         publicURL
       }
+      clutchLaurel: file(
+        relativePath: { eq: "sections/home-hero/clutch-icon.svg" }
+      ) {
+        publicURL
+      }
+      dribbbleLaurel: file(
+        relativePath: { eq: "sections/home-hero/dribbble-icon.svg" }
+      ) {
+        publicURL
+      }
+      upworkLaurel: file(
+        relativePath: { eq: "sections/home-hero/upwork-icon.svg" }
+      ) {
+        publicURL
+      }
       quotes: file(relativePath: { eq: "ui/quotes.svg" }) {
         publicURL
       }

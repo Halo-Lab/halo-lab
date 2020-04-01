@@ -27,6 +27,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size: 18px;
+  -webkit-font-smoothing: antialiased;
 
   @include fluid-type(1920px, 5120px, 18px, 20px);
 
@@ -58,4 +59,25 @@ h6 {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.slider .slick-track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.slider .slick-slide {
+  float: none;
+  height: auto;
+  & > div {
+    display: flex;
+    align-items: center;
+    transform: scaleY(0.8);
+    transition: 0.5s;
+  }
+  &.slick-active {
+    > div {
+      transform: scaleY(1);
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 
 import { MenuContext } from '@contexts';
 import { useBreakpoints, BREAKPOINTS } from '@hooks';
@@ -6,18 +6,14 @@ import { useHomeGalleryAssets } from '@hooks/queries';
 import Ticker from '@components/Ticker';
 import Slider from '@components/Slider';
 import Item from './components/Item';
+import Img from 'gatsby-image';
 
 import styles from './Gallery.module.scss';
 
 const Gallery = () => {
-  const [buildKey, setBuildKey] = useState(null);
-  const { breakpoint, width } = useBreakpoints();
+  const { breakpoint } = useBreakpoints();
   const { isOpened } = useContext(MenuContext);
   const { photos, arrowLeft, arrowRight } = useHomeGalleryAssets();
-
-  useEffect(() => {
-    setBuildKey(+new Date());
-  }, [width]);
 
   const settings = {
     arrows: false,
@@ -40,14 +36,26 @@ const Gallery = () => {
     ],
   };
 
+  const photosList = photos.map(({ childImageSharp }) => {
+    return {
+      name: childImageSharp.fluid.src,
+      element: (
+        <li className={styles.item}>
+          <div className={styles.card}>
+            <Img fluid={childImageSharp.fluid} draggable={false} />
+          </div>
+        </li>
+      ),
+    };
+  });
+
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>We are live</h2>
+      <h2 className={styles.title}>Creative Atmosphere</h2>
       <div className={styles.sliderWrapper}>
         {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
           <Ticker
-            key={buildKey}
-            images={photos}
+            images={photosList}
             arrowLeft={arrowLeft}
             arrowRight={arrowRight}
           />

@@ -20,6 +20,7 @@ const Slider = ({ children, settings, instance }) => {
         </button>
       );
     },
+    lazyLoad: true,
     ...settings,
   };
 

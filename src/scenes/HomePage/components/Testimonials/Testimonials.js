@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import Slider from '@components/Slider';
 import Item from './components/Item';
 import { useTestimonialsAssets } from '@hooks/queries';
-
+import { useBreakpoints } from '@hooks';
+import Swiper from 'react-id-swiper';
 import styles from './Testimonials.module.scss';
 
 const Testimonials = () => {
@@ -17,11 +17,18 @@ const Testimonials = () => {
     stars,
   } = useTestimonialsAssets();
 
+  const [buildKey, setBuildKey] = useState();
+  const { width } = useBreakpoints();
+
+  useEffect(() => {
+    setBuildKey(+new Date());
+  }, [width]);
+
   const items = [
     {
       author: `Alexander Kozma Ingal, Room Six`,
       companyLogo: companyLogo1,
-      rating: '5.0',
+      rating: '4.8',
       text: `They perfectly met my expectations — working with them felt like an extension of my in-house team.`,
     },
     {
@@ -49,18 +56,24 @@ const Testimonials = () => {
       text: `Halo Lab works hard to produce good results at a reasonable price.`,
     },
   ];
-
-  const settings = {
-    dots: true,
-    infinite: true,
+  const params = {
+    slidesPerView: 'auto',
+    loop: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    centeredSlides: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.next',
+      prevEl: '.prev',
+    },
   };
 
   return (
-    <section className={styles.container}>
-      <Slider settings={settings}>
+    <section className={`${styles.container} slider`}>
+      <Swiper {...params} key={buildKey}>
         {items.map(item => {
           return (
             <Item
@@ -71,7 +84,7 @@ const Testimonials = () => {
             />
           );
         })}
-      </Slider>
+      </Swiper>
     </section>
   );
 };

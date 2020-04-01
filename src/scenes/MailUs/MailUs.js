@@ -9,9 +9,13 @@ const MailUs = () => {
 
   return (
     <div className={styles.container}>
-      <p className={styles.title}>Time to create your star</p>
+      <p className={styles.title}>
+        Ready to create
+        <br />
+        <span>your star?</span>
+      </p>
       <a href={`mailto:${metadata.email}`} className={styles.link}>
-        {metadata.email}
+        contact us
       </a>
     </div>
   );

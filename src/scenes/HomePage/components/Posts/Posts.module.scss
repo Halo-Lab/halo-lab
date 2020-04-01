@@ -1,37 +1,28 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
+@import '@functions/functions';
 
 .container {
-  display: flex;
-  flex-direction: column;
-  padding-top: 11.17rem;
-
-  @media screen and (min-width: $md) {
-    flex-direction: row;
-    padding-top: 7.5rem;
-  }
-
-  @media screen and (min-width: $lg) {
-    padding-top: 14.28rem;
-  }
+  @include grid-template();
+  @include hl-margin(top, 200px);
 }
 
 .aside {
-  flex: 0 0 100%;
-
-  @media screen and (min-width: $md) {
-    flex-basis: 35%;
+  @include col-width(7, 23);
+  @include media-breakpoint-down(md) {
+    @include col-width(4, 22);
   }
-
-  @media screen and (min-width: $lg) {
-    flex-basis: 25%;
+  @include media-breakpoint-down(sm) {
+    @include col-width(5, 61);
   }
 }
 
 .main {
-  flex: 1 1 auto;
-
-  @media screen and (min-width: $md) {
-    margin-left: 10%;
+  @include col-width(28, 59);
+  @include media-breakpoint-down(md) {
+    @include col-width(28, 61);
+  }
+  @include media-breakpoint-down(sm) {
+    @include col-width(5, 59);
   }
 }

@@ -2,13 +2,12 @@ import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 
 import { MenuContext } from '@contexts';
-import { useSiteMetadata, useHeaderAssets } from '@hooks/queries';
+import { useHeaderAssets } from '@hooks/queries';
 import Menu from './components/Menu';
 
 import styles from './Header.module.scss';
 
 const Header = () => {
-  const metadata = useSiteMetadata();
   const { logotype } = useHeaderAssets();
   const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
 
@@ -19,13 +18,21 @@ const Header = () => {
       <div className={`${styles.bar} pageWrapper`}>
         <div className={styles.logotype}>
           <Link to="/">
-            <img src={logotype.publicURL} alt="halo-Lab logotype" />
+            <img
+              src={logotype.publicURL}
+              alt="halo-Lab logotype"
+              loading="lazy"
+            />
           </Link>
         </div>
 
-        <div className={styles.email} data-status={menuStatus}>
-          <a href={`mailto:${metadata.email}`}>{metadata.email}</a>
-        </div>
+        <Link
+          to="/contacts/"
+          className={styles.contact}
+          data-status={menuStatus}
+        >
+          Contact
+        </Link>
 
         {isOpened ? <Menu /> : null}
 

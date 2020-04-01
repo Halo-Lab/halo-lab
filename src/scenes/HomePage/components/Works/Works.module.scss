@@ -1,0 +1,19 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+@import '@functions/functions';
+
+.container {
+  text-align: center;
+  @include hl-margin(bottom, 200px);
+  [class='swiper-container'] {
+    @include hl-padding(left, 20px);
+  }
+}
+.slider {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  z-index: 1;
+  padding-left: hl-grid-multiplier(1);
+}

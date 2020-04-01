@@ -7,80 +7,140 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 14.28rem 0;
-  height: 20rem;
-
-  @include media-breakpoint-down(xs) {
-    padding: 0;
-    margin: 11.25rem 0 5rem;
-    height: 17.4rem;
-  }
-}
-
-.title {
-  font-family: $font-ratiomodern;
-  font-weight: 400;
-  font-size: 2.1rem;
-  color: #ffffff;
-  letter-spacing: 0;
-  line-height: 3rem;
-  margin: 0;
-
-  @include media-breakpoint-down(xs) {
-    font-size: 1.67rem;
-    line-height: 2.5rem;
-    margin-bottom: 1.67rem;
-  }
-}
-
-.link {
-  font-family: $font-sofia-pro;
-  font-weight: 400;
-  font-size: 5rem;
-  color: #ffffff;
-  letter-spacing: 0;
-  line-height: 6rem;
-  text-decoration: none;
-  transition: color 0.3s;
-
-  @include media-breakpoint-down(sm) {
-    font-size: 3.8rem;
+  text-align: center;
+  height: calc(100vh - (var(--coef-indent) * 120px));
+  box-sizing: border-box;
+  @include hl-margin(top, 200px);
+  @include hl-padding(top, 150px);
+  @include hl-padding(bottom, 160px);
+  @include hl-padding(left, 40px);
+  @include hl-padding(right, 40px);
+  @media screen and (max-width: $md) {
+    height: calc(100vh - 142px);
   }
 
-  @include media-breakpoint-down(xs) {
-    font-size: 2.5rem;
-    line-height: 3.4rem;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: calc(100% + (var(--coef-indent) * 140px));
+    background: linear-gradient(0deg, #3719ca, #3719ca),
+      linear-gradient(89.64deg, #3719ca 0.16%, #8161fe 99.8%);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    z-index: -1;
+    @media screen and (max-width: $md) {
+      height: calc(100% + 142px);
+    }
   }
-
-  &:before {
+  &::after {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 20rem;
-    height: 20rem;
+    @include hl-width(400px);
+    @include hl-height(400px);
+
     border-radius: 50%;
-    background-color: $main-color;
+    background: linear-gradient(
+        258.52deg,
+        #3719ca -132.34%,
+        rgba(55, 25, 202, 0) 22.57%
+      ),
+      linear-gradient(
+        283.68deg,
+        rgba(235, 174, 149, 0) 45.54%,
+        rgba(235, 174, 149, 0.19) 130.68%
+      ),
+      linear-gradient(3.27deg, #02021e 13.68%, #262147 142.62%);
+    box-shadow: 0px 50.1359px 100.272px rgba(2, 2, 30, 0.2);
     transform: translate(-50%, -50%);
     z-index: -1;
     transition: all 0.3s;
-
-    @include media-breakpoint-down(xs) {
-      width: 17.4rem;
-      height: 17.4rem;
+    @media screen and (max-width: $md) {
+      --coef-size: 0.75;
     }
   }
+}
 
+.title {
+  position: relative;
+  color: $white-color;
+  font-family: $font-gramatika-black;
+  @include hl-font-size-title(96px);
+  line-height: 1;
+  letter-spacing: -2px;
+  margin: 0;
+  @media screen and (max-width: $md) {
+    --coef-title: 0.75;
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+  @media screen and (max-width: $xs) {
+    --coef-title: 0.65;
+  }
+  span {
+    background: linear-gradient(
+      124.11deg,
+      #e7a28f 3.52%,
+      #f9d6ac 41.89%,
+      #fbfefc 96.77%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    @include hl-width(60px);
+    @include hl-height(60px);
+    background: linear-gradient(156.8deg, #ffffff 15%, #79b0e8 75.42%);
+    top: -32%;
+    right: -17%;
+    border-radius: 50%;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    @include hl-width(20px);
+    @include hl-height(20px);
+    background: #ddebfa;
+    bottom: -56%;
+    left: -14%;
+    border-radius: 50%;
+  }
+}
+
+.link {
+  position: relative;
+  font-family: $font-sofia-pro;
+  @include hl-font-size-text(14px);
+  line-height: 1.25;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $white-color;
+  padding-left: 10px;
+  @include hl-margin(top, 52px);
+  z-index: 10;
+  &::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 20px);
+    height: 70%;
+    background-color: $main-color;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    transition: 0.3s;
+  }
   &:hover {
-    color: $yellow-color;
-
-    &:before {
-      width: 27.15rem;
-      height: 27.15rem;
-      @include media-breakpoint-down(xs) {
-        width: 20rem;
-        height: 20rem;
-      }
+    &::before {
+      height: 140%;
     }
   }
 }

@@ -6,15 +6,15 @@
   display: flex !important;
   justify-content: center;
   align-items: center;
-  margin: 32px 0 0 0;
+  @include hl-margin(top, 50px);
   padding: 0;
 
   [class='slick-active'] button {
-    background: $yellow-color;
+    background: $white-color;
   }
 
   li {
-    margin: 0 6px;
+    margin: 0 8px;
 
     @media screen and (min-width: 2400px) {
       margin: 0 0.25vw;
@@ -22,7 +22,7 @@
   }
 
   .button {
-    $size: 8px;
+    $size: 10px;
 
     overflow: hidden;
     position: relative;

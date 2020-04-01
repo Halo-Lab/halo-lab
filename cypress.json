@@ -1,0 +1,7 @@
+{
+  "defaultCommandTimeout": 8000,
+  "video": false,
+  "env": {
+    "host": "http://localhost:8000/"
+  }
+}

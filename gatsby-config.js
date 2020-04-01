@@ -11,6 +11,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-optimize-svgs`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-dribbble`,
@@ -22,26 +23,27 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `fonts`,
-        path: `${__dirname}/src/fonts/`,
+        path: `${__dirname}/src/assets/fonts/`,
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Halo-Lab Blog`,
-        short_name: `Halo-Lab`,
+        name: `Halo Lab`,
+        short_name: `Halo Lab`,
         start_url: `/`,
         background_color: `#02021e`,
         theme_color: `#02021e`,
-        display: `standalone`,
-        icon: `static/icon.png`, // This path is relative to the root of the site.
+        display: `minimal-ui`,
+        icon: `static/icon.png`,
+        description: `Experts from all your network providers integrated into one powerful platform.`,
       },
     },
     {
@@ -52,7 +54,7 @@ module.exports = {
           `/portfolio/`,
           `/services/`,
           `/blog/`,
-          // `/blog/*`,
+          `/blog/*`,
           `/contacts/`,
           `/thanks/`,
           `/404/`,
@@ -79,14 +81,6 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-gtag`,
-    //   options: {
-    //     trackingId: process.env.GTAG_TRACKING_ID,
-    //     head: true,
-    //     anonymize: false,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
@@ -116,7 +110,7 @@ module.exports = {
           '@services': 'src/services',
           '@helpers': 'src/helpers',
           '@styles': 'src/styles',
-          '@images': 'src/images',
+          '@functions': 'src/styles/functions',
         },
         extensions: ['js', 'sass', 'scss'],
       },
@@ -137,6 +131,14 @@ module.exports = {
         options: {
           emitWarning: true,
           failOnError: false,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
         },
       },
     },

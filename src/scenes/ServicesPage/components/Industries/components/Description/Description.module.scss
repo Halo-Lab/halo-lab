@@ -17,8 +17,8 @@
   }
 
   h4 {
+    font-family: $font-gramatika-black;
     width: 31%;
-    font-weight: 400;
     font-size: 2.14rem;
     line-height: 1.33em;
     @include media-breakpoint-down(md) {
