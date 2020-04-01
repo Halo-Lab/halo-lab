@@ -2,13 +2,12 @@ import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 
 import { MenuContext } from '@contexts';
-import { useSiteMetadata, useHeaderAssets } from '@hooks/queries';
+import { useHeaderAssets } from '@hooks/queries';
 import Menu from './components/Menu';
 
 import styles from './Header.module.scss';
 
 const Header = () => {
-  const metadata = useSiteMetadata();
   const { logotype } = useHeaderAssets();
   const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
 
