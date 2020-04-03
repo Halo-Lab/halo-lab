@@ -2,6 +2,7 @@ import React from 'react';
 import { Location } from '@reach/router';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Subscribe from '../Subscribe';
 
 import PostThumbnail from '@scenes/PostThumbnail';
 
@@ -53,6 +54,7 @@ const Switcher = ({ items, location }) => {
   });
 
   const newItems = items.slice(0, 4);
+  const moreItems = items.slice(5, 8);
 
   return (
     <div className={styles.container}>
@@ -67,11 +69,31 @@ const Switcher = ({ items, location }) => {
           })}
         </TabList>
 
-        {allCategories.map(({ title, items }) => {
+        {allCategories.map(({ title }) => {
           return (
             <TabPanel key={title} className={styles.tabsContentContainer}>
               <ul className={styles.tabContentList}>
-                {newItems.map(item => {
+                {newItems.map((item, index) => {
+                  const isFirst = index === 0;
+                  const styleForFirstItem = isFirst
+                    ? styles.tabContentItemFirst
+                    : '';
+
+                  return (
+                    <li
+                      data-list-item="articles"
+                      key={item.id}
+                      className={`${styles.tabContentItem} ${styleForFirstItem}`}
+                    >
+                      <PostThumbnail {...item} isFirst={isFirst} />
+                    </li>
+                  );
+                })}
+              </ul>
+              <Subscribe />
+
+              <ul className={styles.tabContentList}>
+                {moreItems.map(item => {
                   return (
                     <li
                       data-list-item="articles"

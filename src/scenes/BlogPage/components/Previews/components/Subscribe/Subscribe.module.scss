@@ -1,0 +1,109 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+@import '@functions/functions';
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(64, calc(100% / 57));
+  @include hl-padding(top, 200px);
+  @include hl-padding(bottom, 200px);
+  @include col-width(1, 65);
+  &::before {
+    content: '';
+    position: absolute;
+    @include hl-width(100px);
+    @include hl-height(100px);
+    border-radius: 50%;
+    background: linear-gradient(
+        35.65deg,
+        rgba(1, 1, 18, 0) 22.19%,
+        rgba(128, 97, 254, 0.63) 79.06%
+      ),
+      #02021e;
+    transform: matrix(0, -1, 1, 0, 0, 0);
+    bottom: hl-grid-multiplier(7);
+    right: hl-grid-multiplier(-5);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    @include hl-width(40px);
+    @include hl-height(40px);
+    border-radius: 50%;
+    background: linear-gradient(
+      37.89deg,
+      rgba(16, 8, 74, 0) 16.94%,
+      rgba(61, 57, 255, 0.63) 87.08%
+    );
+    transform: matrix(0.99, 0.15, -0.15, 0.99, 0, 0);
+    bottom: hl-grid-multiplier(6);
+    left: hl-grid-multiplier(-4);
+  }
+}
+
+.block {
+  position: relative;
+  @include col-width(6, 53);
+  @include hl-padding(bottom, 40px);
+  @include hl-padding(top, 50px);
+  @include hl-padding(right, 100px);
+  @include hl-padding(left, 100px);
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(88.91deg, #3719ca 0.16%, #8161fe 99.8%);
+  &::before {
+    content: '';
+    position: absolute;
+    @include hl-width(100px);
+    @include hl-height(100px);
+    border-radius: 50%;
+    background: linear-gradient(156.8deg, #ffffff 15%, #79b0e8 75.42%);
+    top: -40px;
+    left: -40px;
+  }
+}
+
+.title {
+  font-family: $font-gramatika-black;
+  @include hl-font-size-title(30px);
+  line-height: 1.5;
+  width: 40%;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  @include hl-width(360px);
+  padding-top: 9px;
+}
+.label {
+  @include hl-font-size-text(14px);
+  line-height: 1.7;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  @include hl-font-size-text(16px);
+  border-bottom: 1px solid $white-color;
+  color: $white-color;
+  height: 33px;
+}
+
+.smPlanet {
+  &::before {
+    content: '';
+    position: absolute;
+    @include hl-width(15px);
+    @include hl-height(15px);
+    border-radius: 50%;
+    background: #ddebfa;
+    top: hl-grid-multiplier(5);
+    right: hl-grid-multiplier(1.1);
+  }
+}

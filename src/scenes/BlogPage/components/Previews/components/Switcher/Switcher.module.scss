@@ -16,7 +16,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  @include hl-margin(bottom, 40px);
+  @include hl-margin(bottom, 44px);
 }
 
 .tabItem {
@@ -66,13 +66,13 @@
 }
 
 .tabContentList {
-  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: repeat(auto-fill);
   grid-gap: calc(40px * var(--coef-indent));
   list-style-type: none;
   padding: 0;
+  margin: 0;
 
   @media screen and (min-width: $lg) {
     flex-wrap: wrap;
@@ -81,19 +81,18 @@
 }
 
 .tabContentItem {
-  &:first-child {
-    grid-column: 1/4;
-    @include hl-height(420px);
-  }
-  overflow: hidden;
-  @include hl-height(360px);
-  border: 1px solid $dark-grey-color;
+  @include hl-height(500px);
   position: relative;
   box-sizing: border-box;
   animation-name: apperancing;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   opacity: 0;
+}
+
+.tabContentItemFirst {
+  grid-column: 1/4;
+  @include hl-height(420px);
 }
 
 @keyframes apperancing {

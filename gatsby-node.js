@@ -34,6 +34,12 @@ exports.createPages = async ({ graphql, actions }) => {
             featured_media {
               source_url
             }
+            categories {
+              name
+              id
+              count
+              slug
+            }
           }
           previous {
             slug
@@ -41,6 +47,12 @@ exports.createPages = async ({ graphql, actions }) => {
             date(formatString: "MMM DD, YYYY")
             featured_media {
               source_url
+            }
+            categories {
+              name
+              id
+              count
+              slug
             }
           }
         }
