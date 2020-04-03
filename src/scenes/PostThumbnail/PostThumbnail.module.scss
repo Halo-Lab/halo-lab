@@ -25,6 +25,10 @@
     min-width: 100%;
     min-height: 100%;
   }
+  @media screen and (max-width: $sm) {
+    overflow: hidden;
+    max-height: 200px;
+  }
 }
 
 .title {
@@ -59,23 +63,25 @@
 }
 
 .firstArticle {
-  .link {
-    overflow: hidden;
-    height: 100%;
-  }
-  .title {
-    font-family: $font-gramatika;
-    font-weight: 700;
-    @include hl-font-size-title(36px);
-    line-height: 1.4;
-    position: absolute;
-    top: 230px;
-    left: 60px;
-    @include hl-width(380px);
-  }
-  .tag {
-    position: absolute;
-    top: 180px;
-    left: 60px;
+  @media screen and (min-width: $sm) {
+    .link {
+      overflow: hidden;
+      height: 100%;
+    }
+    .title {
+      font-family: $font-gramatika;
+      font-weight: 700;
+      @include hl-font-size-title(36px);
+      line-height: 1.4;
+      position: absolute;
+      top: calc(var(--coef-indent) * 230px);
+      left: calc(var(--coef-indent) * 60px);
+      @include hl-width(380px);
+    }
+    .tag {
+      position: absolute;
+      top: calc(var(--coef-indent) * 180px);
+      left: calc(var(--coef-indent) * 60px);
+    }
   }
 }

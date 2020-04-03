@@ -52,6 +52,7 @@ const Switcher = ({ items, location }) => {
       itemsNews.push(item);
     }
   });
+  console.log(items);
 
   const newItems = items.slice(0, 4);
   const moreItems = items.slice(5, 8);

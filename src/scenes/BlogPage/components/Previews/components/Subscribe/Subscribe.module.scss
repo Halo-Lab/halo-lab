@@ -24,6 +24,9 @@
     transform: matrix(0, -1, 1, 0, 0, 0);
     bottom: hl-grid-multiplier(7);
     right: hl-grid-multiplier(-5);
+    @media screen and (max-width: $md) {
+      display: none;
+    }
   }
 
   &::after {
@@ -40,6 +43,12 @@
     transform: matrix(0.99, 0.15, -0.15, 0.99, 0, 0);
     bottom: hl-grid-multiplier(6);
     left: hl-grid-multiplier(-4);
+    @media screen and (max-width: $md) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: $sm) {
+    display: block;
   }
 }
 
@@ -62,6 +71,19 @@
     background: linear-gradient(156.8deg, #ffffff 15%, #79b0e8 75.42%);
     top: -40px;
     left: -40px;
+    @media screen and (max-width: $sm) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: $md) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: $sm) {
+    // width: 100%;
+    margin-left: hl-grid-multiplier(-3);
+    margin-right: hl-grid-multiplier(-3);
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -70,13 +92,21 @@
   @include hl-font-size-title(30px);
   line-height: 1.5;
   width: 40%;
+  @media screen and (max-width: $md) {
+    width: 100%;
+    @include hl-margin(bottom, 40px);
+  }
 }
 
 .inputWrapper {
   display: flex;
   flex-direction: column;
   @include hl-width(360px);
-  padding-top: 9px;
+  @include hl-padding(top, 9px);
+  @media screen and (max-width: $sm) {
+    width: 100%;
+    padding: 0;
+  }
 }
 .label {
   @include hl-font-size-text(14px);
@@ -105,5 +135,8 @@
     background: #ddebfa;
     top: hl-grid-multiplier(5);
     right: hl-grid-multiplier(1.1);
+  }
+  @media screen and (max-width: $sm) {
+    display: none;
   }
 }
