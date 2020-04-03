@@ -15,13 +15,26 @@
 }
 
 .title {
-  display: block;
+  display: inline-block;
   color: $white-color;
   font-family: $font-gramatika-black;
   @include hl-font-size-title(96px);
   line-height: 0.89em;
   letter-spacing: -2px;
   margin: 0 auto;
+  background-image: radial-gradient(
+    circle at 50% 800%,
+    #ffffff 50%,
+    #79b0e8 60%,
+    #02021e 100%
+  );
+  background-size: 100% 100%;
+  background-position: 50% 0%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: Gradient 3.5s 0s ease-in-out, Scale 2.4s 0s linear;
+  animation-fill-mode: forwards;
+  will-change: transform;
   @include hl-margin(bottom, 80px);
 
   @include media-breakpoint-down(md) {
@@ -33,14 +46,10 @@
     }
   }
   span {
-    background: linear-gradient(
-      90deg,
-      #e7a28f 1.59%,
-      #fbddb0 50%,
-      #fbfefd 78.41%
-    );
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: gradient-x 1s 2.6s ease-in-out;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -59,6 +68,8 @@
   background: #ddebfa;
   top: hl-grid-multiplier(18);
   right: hl-grid-multiplier(8);
+  transform-origin: 0% 0%;
+  animation: Scale-sm 2.5s linear;
 }
 
 .circleSm2 {
@@ -71,6 +82,8 @@
   );
   top: hl-grid-multiplier(3);
   right: hl-grid-multiplier(5);
+  transform-origin: 0% 75%;
+  animation: Scale-sm 2.5s linear;
 }
 
 .circleMd {
@@ -79,10 +92,74 @@
   @include hl-height(60px);
   top: 0;
   left: hl-grid-multiplier(7);
+  transform-origin: 100% 75%;
+  animation: Scale-sm 2.5s linear;
 }
 
 .mobile {
   @media screen and (min-width: $sm) {
     display: none;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 50% 0%;
+    background-size: 100% 100%;
+    transform: scale(0.8);
+  }
+  100% {
+    background-position: 50% 0%;
+    background-size: 1200% 100%;
+    transform: scale(1);
+  }
+}
+
+@keyframes Scale {
+  0% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes Scale-sm {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes gradient-x {
+  0% {
+    display: inline-block;
+    background: linear-gradient(
+      90deg,
+      #e7a28f 0.03%,
+      #f9d6ac 41.15%,
+      #fbfefc 99.97%
+    );
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-position: -50% 0%;
+  }
+  100% {
+    display: inline-block;
+    background: linear-gradient(
+      90deg,
+      #e7a28f 0.03%,
+      #f9d6ac 41.15%,
+      #fbfefc 99.97%
+    );
+    background-size: 200% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-position: -160% 100%;
   }
 }
