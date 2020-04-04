@@ -1,4 +1,8 @@
 describe('contacts page', function() {
+  before(function() {
+    // runs once before all tests in the block
+  });
+
   it('form send', function() {
     cy.visit(`${Cypress.env('host')}contacts/`);
     cy.contains('REQUEST A QUOTE').scrollIntoView();
