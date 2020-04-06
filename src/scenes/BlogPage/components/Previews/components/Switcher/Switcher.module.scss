@@ -17,7 +17,7 @@
   margin: 0;
   padding: 0;
   @include hl-margin(bottom, 44px);
-  @media screen and (max-width: $md) {
+  @media screen and (max-width: $lg) {
     @include col-width(4, 62);
   }
   @media screen and (max-width: $sm) {
@@ -84,7 +84,7 @@
     flex-wrap: wrap;
     flex-direction: row;
   }
-  @media screen and (max-width: $md) {
+  @media screen and (max-width: $lg) {
     grid-template-columns: 1fr 1fr;
   }
   @media screen and (max-width: $sm) {
@@ -108,7 +108,7 @@
 .tabContentItemFirst {
   grid-column: 1/4;
   @include hl-height(420px);
-  @media screen and (max-width: $md) {
+  @media screen and (max-width: $lg) {
     grid-column: 1/3;
   }
   @media screen and (max-width: $sm) {

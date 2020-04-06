@@ -75,7 +75,7 @@
       display: none;
     }
   }
-  @media screen and (max-width: $md) {
+  @media screen and (max-width: $lg) {
     flex-direction: column;
   }
   @media screen and (max-width: $sm) {
@@ -92,7 +92,7 @@
   @include hl-font-size-title(30px);
   line-height: 1.5;
   width: 40%;
-  @media screen and (max-width: $md) {
+  @media screen and (max-width: $lg) {
     width: 100%;
     @include hl-margin(bottom, 40px);
   }
