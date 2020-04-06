@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { navigate } from 'gatsby';
+// import { navigate } from 'gatsby';
 
 import styles from './Subscribe.module.scss';
 
@@ -10,7 +10,7 @@ const Subscribe = () => {
       valid: false,
     },
   });
-  const [isValid, setIsValid] = useState(true);
+  // const [isValid, setIsValid] = useState(true);
 
   const isCompanyEmailValid = email => {
     const regexp = new RegExp(/[^@]+@[^.]+\..+/g);
@@ -32,7 +32,7 @@ const Subscribe = () => {
 
     const valid = isCompanyEmailValid(data.email.value);
 
-    setIsValid(valid);
+    // setIsValid(valid);
 
     const url = 'https://getform.io/f/f79c95ff-15f5-45a8-87a6-259ef80cf1c5';
     const formData = new FormData();
