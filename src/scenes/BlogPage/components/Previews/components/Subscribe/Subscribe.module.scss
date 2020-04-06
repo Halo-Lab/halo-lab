@@ -125,6 +125,10 @@
   height: 33px;
 }
 
+.input.error {
+  border-bottom: 1px solid $red-color;
+}
+
 .smPlanet {
   &::before {
     content: '';
