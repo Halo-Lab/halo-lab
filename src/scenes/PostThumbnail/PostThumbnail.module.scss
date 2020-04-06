@@ -22,8 +22,8 @@
     display: block;
     width: auto;
     height: auto;
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
+    height: 100%;
   }
   @media screen and (max-width: $sm) {
     overflow: hidden;
@@ -65,23 +65,39 @@
 .firstArticle {
   @media screen and (min-width: $sm) {
     .link {
+      position: relative;
       overflow: hidden;
       height: 100%;
+
+      div {
+        width: 54.4%;
+        margin-left: auto;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          142.15deg,
+          rgba(132, 164, 255, 0.2) 8.42%,
+          rgba(2, 2, 30, 0) 76.6%
+        );
+        opacity: 0.6;
+      }
+    }
+    .wrapper {
+      position: absolute;
+      left: calc(var(--coef-indent) * 60px);
+      bottom: calc(var(--coef-indent) * 40px);
+      max-width: 34%;
     }
     .title {
       font-family: $font-gramatika;
       font-weight: 700;
       @include hl-font-size-title(36px);
       line-height: 1.4;
-      position: absolute;
-      top: calc(var(--coef-indent) * 230px);
-      left: calc(var(--coef-indent) * 60px);
-      @include hl-width(380px);
-    }
-    .tag {
-      position: absolute;
-      top: calc(var(--coef-indent) * 180px);
-      left: calc(var(--coef-indent) * 60px);
     }
   }
 }

@@ -25,26 +25,24 @@ const PostThumbnail = ({
     <article className={`${styles.container} ${firstArticle}`}>
       <Link to={link} className={styles.link}>
         {imageOptimized ? (
-          <Img
-            fluid={imageOptimized}
-            objectFit="contain"
-            objectPosition="50% 50%"
-          />
+          <Img fluid={imageOptimized} />
         ) : (
           <img src={imageSource} alt="post preview" loading="lazy" />
         )}
         <span className={styles.hiddenTitle}>{title}</span>
       </Link>
-      {categories.map(category => {
-        return (
-          <p className={styles.tag} key={category.id}>
-            #{category.name}
-          </p>
-        );
-      })}
-      <h3 className={styles.title}>
-        <Link to={link}>{title}</Link>
-      </h3>
+      <div className={styles.wrapper}>
+        {categories.map(category => {
+          return (
+            <p className={styles.tag} key={category.id}>
+              #{category.name}
+            </p>
+          );
+        })}
+        <h3 className={styles.title}>
+          <Link to={link}>{title}</Link>
+        </h3>
+      </div>
     </article>
   );
 };
