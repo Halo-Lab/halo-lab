@@ -5,8 +5,7 @@ describe('services page', function() {
 
   it('check flow tabs', function() {
     cy.contains('With Love from Halo Lab').scrollIntoView();
-
-    //maybe this is problem react-tabs, but click don't work without double click
+    //maybe this is problem react-tabs, but click doesn't work without double click
     cy.contains('Testing')
       .click()
       .click();

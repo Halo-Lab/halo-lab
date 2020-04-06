@@ -72,7 +72,7 @@ const Switcher = ({ items, location }) => {
                 {items.map(item => {
                   return (
                     <li
-                      data-list-item="articles"
+                      data-automation="articles"
                       key={item.id}
                       className={styles.tabContentItem}
                     >

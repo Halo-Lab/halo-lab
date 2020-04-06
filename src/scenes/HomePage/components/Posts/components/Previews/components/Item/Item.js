@@ -12,7 +12,7 @@ const Item = ({ path, title, featured_media, categories }) => {
   const postUrl = '/blog' + link;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-automation="post-preview">
       <div className={styles.imageBox}>
         <Link to={postUrl}>
           <Img fluid={image} alt="blog post preview" />
@@ -21,7 +21,7 @@ const Item = ({ path, title, featured_media, categories }) => {
       <div className={styles.description}>
         <div className={styles.tag}>#{tag}</div>
         <h3 className={styles.title}>
-          <Link to={link} dangerouslySetInnerHTML={{ __html: title }}></Link>
+          <Link to={postUrl} dangerouslySetInnerHTML={{ __html: title }}></Link>
         </h3>
       </div>
     </div>

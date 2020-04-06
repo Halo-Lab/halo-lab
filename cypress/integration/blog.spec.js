@@ -12,7 +12,7 @@ describe('blog page', function() {
 
   //this test throw mistake if use async await
   it('check one post render', function() {
-    cy.get('[data-list-item="articles"] h3 a').then(posts => {
+    cy.get('[data-automation="articles"] h3 a').then(posts => {
       const postTitle = posts[0].innerText;
       cy.contains(postTitle).click();
       cy.get('h2').should(el => expect(el.first()).to.contain(postTitle));

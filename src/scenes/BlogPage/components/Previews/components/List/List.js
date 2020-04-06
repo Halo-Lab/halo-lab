@@ -21,7 +21,7 @@ const List = ({ items }) => {
 
     postsToRender.push(
       <li
-        data-list-item="articles"
+        data-automation="articles"
         key={items[i].id}
         style={inlineStyles}
         className={styles.item}
