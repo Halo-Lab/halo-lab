@@ -1,12 +1,12 @@
 describe('blog page', function() {
-  it('Check page rendering', function() {
-    cy.visit(`/blog/`, { timeout: 80000 });
-    cy.contains('With Love from Halo Lab').scrollIntoView();
+  beforeEach(function() {
+    cy.visit('/blog/');
   });
 
   it('check articles render', function() {
     cy.contains('Our Blog').scrollIntoView();
     cy.contains('Agency').click();
+
     cy.get('article').should('be.visible');
   });
 
