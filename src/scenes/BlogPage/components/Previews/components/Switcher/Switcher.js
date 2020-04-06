@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Location } from '@reach/router';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -25,7 +25,10 @@ const getDefaultTabIndex = search => {
   }
 };
 
+const STEP_VALUE = 3;
+
 const Switcher = ({ items, location }) => {
+  const [numberOfRendered, setNumberOfRendered] = useState(STEP_VALUE);
   const defaultIndex = getDefaultTabIndex(location.search);
   const itemsAgency = [];
   const itemsCaseStudies = [];
@@ -52,10 +55,11 @@ const Switcher = ({ items, location }) => {
       itemsNews.push(item);
     }
   });
-  console.log(items);
 
-  const newItems = items.slice(0, 4);
-  const moreItems = items.slice(5, 8);
+  const handleClick = () => {
+    const value = numberOfRendered + STEP_VALUE;
+    setNumberOfRendered(value > items.length ? items.length : value);
+  };
 
   return (
     <div className={styles.container}>
@@ -70,7 +74,9 @@ const Switcher = ({ items, location }) => {
           })}
         </TabList>
 
-        {allCategories.map(({ title }) => {
+        {allCategories.map(({ title, items }) => {
+          const newItems = items.slice(0, 4);
+          const moreItems = items.slice(5, 5 + numberOfRendered);
           return (
             <TabPanel key={title} className={styles.tabsContentContainer}>
               <ul className={styles.tabContentList}>
@@ -106,6 +112,12 @@ const Switcher = ({ items, location }) => {
                   );
                 })}
               </ul>
+
+              {moreItems.length && numberOfRendered <= moreItems.length ? (
+                <button className={styles.button} onClick={handleClick}>
+                  Load more
+                </button>
+              ) : null}
             </TabPanel>
           );
         })}

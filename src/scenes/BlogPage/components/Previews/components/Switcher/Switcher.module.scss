@@ -117,6 +117,44 @@
   }
 }
 
+.button {
+  display: block;
+  position: relative;
+  font-family: $font-sofia-pro;
+  @include hl-font-size-text(14px);
+  padding-left: 10px;
+  color: $white-color;
+  font-weight: bold;
+  line-height: 1.25;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 auto;
+  @include hl-margin(top, 100px);
+  @include hl-margin(bottom, 100px);
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -0.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    height: 65%;
+    width: 120%;
+    background: #3719ca;
+    transition: 0.2s;
+  }
+
+  &:hover {
+    &:after {
+      height: 120%;
+    }
+  }
+}
+
 @keyframes apperancing {
   from {
     opacity: 0;
