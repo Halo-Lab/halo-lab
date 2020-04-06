@@ -7,6 +7,7 @@ import WhatWeDo from './components/WhatWeDo';
 import Testimonials from './components/Testimonials';
 import Gallery from './components/Gallery';
 import Posts from './components/Posts';
+import Works from './components/Works';
 
 import styles from './HomePage.module.scss';
 
@@ -16,6 +17,9 @@ const HomePage = () => {
       <div className="pageWrapper">
         <Hero />
         <WhatWeDo />
+      </div>
+      <Works />
+      <div className="pageWrapper">
         <Projects title="Projects" navigation={true} />
       </div>
       <Testimonials />

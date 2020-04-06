@@ -95,7 +95,7 @@ const Form = () => {
     <div className={styles.container}>
       <form className={styles.form} onSubmit={e => handleSubmit(e)}>
         <h3 className={styles.formTitle}>REQUEST A QUOTE</h3>
-        <div className={styles.inputWrapper}>
+        <div className={`${styles.inputWrapper} ${styles.nameWrapper}`}>
           <input
             className={`${styles.input} ${
               !isValid && !data.name.valid ? styles.error : ''
@@ -110,7 +110,7 @@ const Form = () => {
             Full Name
           </label>
         </div>
-        <div className={styles.inputWrapper}>
+        <div className={`${styles.inputWrapper} ${styles.companyWrapper}`}>
           <input
             className={`${styles.input} ${
               data.company.valid ? styles.focused : ''
@@ -124,7 +124,7 @@ const Form = () => {
             Company
           </label>
         </div>
-        <div className={styles.inputWrapper}>
+        <div className={`${styles.inputWrapper} ${styles.emailWrapper}`}>
           <input
             className={`${styles.input} ${
               !isValid && !data.email.valid ? styles.error : ''
@@ -184,9 +184,11 @@ const Form = () => {
             </div>
           </div>
         </div>
-        <button className={styles.button} type="submit">
-          submit
-        </button>
+        <div className={styles.buttonWrap}>
+          <button className={styles.button} type="submit">
+            submit
+          </button>
+        </div>
       </form>
     </div>
   );

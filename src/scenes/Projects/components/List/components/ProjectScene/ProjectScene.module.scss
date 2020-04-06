@@ -45,7 +45,7 @@
   @include hl-padding(top, 60px);
   @include hl-padding(bottom, 60px);
 
-  @include col-width(4, 60);
+  @include col-width(5, 61);
 
   @media screen and (min-width: $md) {
     @include col-width(39, 62);
@@ -101,8 +101,10 @@
 .descriptionLink {
   position: relative;
   @include hl-margin(top, 60px);
+  @include hl-margin(bottom, 10px);
   @include hl-font-size-text(14px);
 
+  padding-bottom: 8px;
   font-weight: 600;
   line-height: 1.42em;
   letter-spacing: 10px;
@@ -122,7 +124,7 @@
     height: 1px;
     width: 45%;
     left: 0;
-    bottom: -8px;
+    bottom: 0;
     background: linear-gradient(
       90deg,
       #e7a28f 1.59%,
@@ -143,7 +145,7 @@
   align-items: center;
   margin-top: auto;
   @media screen and (max-width: 1024px) {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 

@@ -29,6 +29,7 @@
   line-height: 1.35;
 }
 
+// TODO: Create component for this element
 .link {
   position: relative;
   font-weight: 600;
@@ -61,10 +62,8 @@
   }
 
   &:hover {
-    @media screen and (max-width: $lg) {
-      &::before {
-        width: 100%;
-      }
+    &::before {
+      width: 100%;
     }
   }
 }

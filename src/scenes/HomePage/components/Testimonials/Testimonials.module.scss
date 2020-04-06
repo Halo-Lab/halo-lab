@@ -59,7 +59,7 @@
     .next,
     .prev {
       position: absolute;
-      top: 50%;
+      top: calc(50% - 25px);
       z-index: 10;
       transform: translateY(-50%);
       display: none;

@@ -6,6 +6,7 @@ import { useHomeGalleryAssets } from '@hooks/queries';
 import Ticker from '@components/Ticker';
 import Slider from '@components/Slider';
 import Item from './components/Item';
+import Img from 'gatsby-image';
 
 import styles from './Gallery.module.scss';
 
@@ -35,13 +36,26 @@ const Gallery = () => {
     ],
   };
 
+  const photosList = photos.map(({ childImageSharp }) => {
+    return {
+      name: childImageSharp.fluid.src,
+      element: (
+        <li className={styles.item}>
+          <div className={styles.card}>
+            <Img fluid={childImageSharp.fluid} draggable={false} />
+          </div>
+        </li>
+      ),
+    };
+  });
+
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>Creative Atmosphere</h2>
       <div className={styles.sliderWrapper}>
         {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
           <Ticker
-            images={photos}
+            images={photosList}
             arrowLeft={arrowLeft}
             arrowRight={arrowRight}
           />
