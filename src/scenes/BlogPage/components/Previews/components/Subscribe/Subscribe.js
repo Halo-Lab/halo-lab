@@ -9,7 +9,7 @@ const Subscribe = () => {
       valid: false,
     },
   });
-  const [isValid, setIsValid] = useState(true);
+  // const [isValid, setIsValid] = useState(true);
 
   const isCompanyEmailValid = email => {
     const regexp = new RegExp(/[^@]+@[^.]+\..+/g);
@@ -17,7 +17,6 @@ const Subscribe = () => {
   };
 
   const handleChange = ({ target: { name, value } }) => {
-    console.log(value);
     setData(data => ({
       ...data,
       [name]: {
@@ -38,7 +37,9 @@ const Subscribe = () => {
             </label>
             <input
               className={`${styles.input} ${
-                !data.email.valid ? styles.error : ''
+                !data.email.valid && data.email.value.length > 0
+                  ? styles.error
+                  : ''
               }`}
               type="text"
               name="email"

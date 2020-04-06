@@ -118,7 +118,8 @@
 }
 
 .button {
-  display: block;
+  display: flex;
+  align-items: center;
   position: relative;
   font-family: $font-sofia-pro;
   @include hl-font-size-text(14px);
@@ -134,6 +135,12 @@
   margin: 0 auto;
   @include hl-margin(top, 100px);
   @include hl-margin(bottom, 100px);
+
+  &::before {
+    content: url('./image/button-icon.svg');
+    margin-right: 20px;
+    height: 22px;
+  }
 
   &:after {
     content: '';

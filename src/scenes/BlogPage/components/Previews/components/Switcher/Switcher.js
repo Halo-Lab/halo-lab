@@ -75,7 +75,7 @@ const Switcher = ({ items, location }) => {
         </TabList>
 
         {allCategories.map(({ title, items }) => {
-          const newItems = items.slice(0, 4);
+          const newItems = items.slice(0, 4); // take the first four articles
           const moreItems = items.slice(5, 5 + numberOfRendered);
           return (
             <TabPanel key={title} className={styles.tabsContentContainer}>
