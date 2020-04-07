@@ -3,7 +3,7 @@
 @import '@functions/functions';
 
 .container {
-  @include hl-padding(top, 200px);
+  @include hl-padding(top, 210px);
 }
 
 .title {
@@ -11,14 +11,6 @@
   font-family: $font-gramatika-black;
   font-weight: 400;
   @include hl-font-size-title(96px);
-  background: linear-gradient(
-    137.81deg,
-    #e7a28f 3.52%,
-    #f9d6ac 41.89%,
-    #fbfefc 96.77%
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   letter-spacing: -2px;
   line-height: 1;
   @include hl-padding(bottom, 60px);

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { navigate } from 'gatsby';
+import { isValidEmail } from '@helpers';
 
 import styles from './Form.module.scss';
 
@@ -28,7 +29,7 @@ const Form = () => {
     setData(data => ({
       ...data,
       [name]: {
-        valid: name === 'email' ? isCompanyEmailValid(value) : value,
+        valid: name === 'email' ? isValidEmail(value) : value,
         value: value,
       },
     }));
@@ -40,18 +41,11 @@ const Form = () => {
   const fileAccept =
     '.png,.jpg,.pdf,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document';
 
-  const isCompanyEmailValid = email => {
-    const regexp = new RegExp(/[^@]+@[^.]+\..+/g);
-    return regexp.test(email);
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
 
     const valid =
-      data.name.valid &&
-      isCompanyEmailValid(data.email.value) &&
-      data.message.valid;
+      data.name.valid && isValidEmail(data.email.value) && data.message.valid;
 
     setIsValid(valid);
 
