@@ -19,7 +19,7 @@ const List = ({ icon, items }) => {
             <li
               key={item.url}
               className={styles.item}
-              data-list="dribble-shots"
+              data-automation="dribble-shots"
             >
               <a
                 href={item.url}

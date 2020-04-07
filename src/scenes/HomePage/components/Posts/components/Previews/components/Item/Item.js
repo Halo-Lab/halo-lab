@@ -12,7 +12,7 @@ const Item = ({ path, title, featured_media, categories }) => {
   const postUrl = '/blog' + link;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-automation="post-preview">
       <div className={styles.imageBox}>
         <Link to={postUrl}>
           <Img fluid={image} alt="blog post preview" />
