@@ -15,7 +15,7 @@ describe('blog page', function() {
     cy.get('[data-automation="articles"] h3 a').then(posts => {
       const postTitle = posts[0].innerText;
       cy.contains(postTitle).click();
-      cy.get('h2').should(el => expect(el.first()).to.contain(postTitle));
+      cy.get('h2').should(el => expect(el.first()).to.contain('kek'));
     });
   });
 });
