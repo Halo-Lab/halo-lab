@@ -22,19 +22,17 @@
   line-height: 0.89em;
   letter-spacing: -2px;
   margin: 0 auto;
-  background-image: radial-gradient(
-    circle at 50% 800%,
-    #ffffff 50%,
-    #79b0e8 60%,
-    #02021e 100%
-  );
-  background-size: 100% 100%;
-  background-position: 50% 0%;
+  background-image: url('./images/gradient.png');
+  background-color: #070728;
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: Gradient 4.5s 0s ease-in-out, Scale 2.2s 0s linear;
+  animation: Gradient 5s 0s ease-in-out, position 5s 0s ease-out,
+    title-scale 2.2s linear;
   animation-fill-mode: forwards;
-  will-change: transform;
+  padding-bottom: 0.5em;
   @include hl-margin(bottom, 80px);
 
   @include media-breakpoint-down(md) {
@@ -45,10 +43,11 @@
       display: none;
     }
   }
+
   span {
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradient-x 1s 2.2s ease-in-out;
+    animation: gradient-x 1.5s 2.3s ease-in;
     animation-fill-mode: forwards;
   }
 }
@@ -104,13 +103,28 @@
 
 @keyframes Gradient {
   0% {
-    background-position: 50% 0%;
-    background-size: 100% 100%;
+    background-size: 50% 50%;
+  }
+
+  100% {
+    background-size: 400% 400%;
+  }
+}
+
+@keyframes position {
+  0% {
+    background-position: 50% 150%;
+  }
+  60% {
+    background-position: 50% 50%;
+  }
+}
+
+@keyframes title-scale {
+  0% {
     transform: scale(0.8);
   }
   100% {
-    background-position: 50% 0%;
-    background-size: 2500% 100%;
     transform: scale(1);
   }
 }
