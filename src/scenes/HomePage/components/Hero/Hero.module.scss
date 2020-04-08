@@ -29,9 +29,9 @@
   background-position: 50% 50%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: Gradient 5s 0s ease-in-out, position 5s 0s ease-out,
-    title-scale 2.2s linear;
-  animation-fill-mode: forwards;
+  animation: Gradient 5s 0.5s ease-in-out, position 5s 0.5s ease-out,
+    title-scale 2.2s 0.5s linear;
+  animation-fill-mode: both;
   padding-bottom: 0.5em;
   @include hl-margin(bottom, 80px);
 
@@ -47,7 +47,7 @@
   span {
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradient-x 1.5s 2.3s ease-in;
+    animation: gradient-x 1.5s 2.8s ease-in;
     animation-fill-mode: forwards;
   }
 }
