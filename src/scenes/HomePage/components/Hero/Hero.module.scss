@@ -22,15 +22,22 @@
   line-height: 0.89em;
   letter-spacing: -2px;
   margin: 0 auto;
-  background-image: url('./images/gradient.png');
+  background-image: radial-gradient(
+    28.85% 28.85% at 50% 50%,
+    #ffffff 5.89%,
+    rgba(212, 233, 255, 0.67) 32.91%,
+    rgba(144, 188, 232, 0.28) 64.67%,
+    rgba(167, 199, 232, 0) 100%
+  );
   background-color: #070728;
   background-size: 600% 600%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: Gradient 5s 0.5s ease-in-out, position 5s 0.5s ease-out,
-    title-scale 2.2s 0.5s linear;
+  animation: Gradient 1s 0.4s cubic-bezier(0.45, 0, 0.55, 1),
+    position 1s 0.4s cubic-bezier(0.45, 0, 0.55, 1),
+    title-scale 0.8s 0.4s cubic-bezier(0.45, 0, 0.55, 1);
   animation-fill-mode: both;
   padding-bottom: 0.5em;
   @include hl-margin(bottom, 80px);
@@ -47,9 +54,16 @@
   span {
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradient-x 1.5s 2.8s ease-in;
     animation-fill-mode: forwards;
   }
+}
+
+.first-span {
+  animation: gradient-x 0.2s 1.2s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.second-span {
+  animation: gradient-x 0.2s 1.3s cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 .circle {
@@ -68,7 +82,8 @@
   top: hl-grid-multiplier(18);
   right: hl-grid-multiplier(8);
   transform-origin: 0% 0%;
-  animation: Scale-sm 2.2s linear;
+  animation: scale 0.8s 0.7s cubic-bezier(0.45, 0, 0.55, 1),
+    opacity 0.8s 0.7s both cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 .circleSm2 {
@@ -82,7 +97,8 @@
   top: hl-grid-multiplier(3);
   right: hl-grid-multiplier(5);
   transform-origin: 0% 75%;
-  animation: Scale-sm 2.2s linear;
+  animation: scale 0.8s 0.6s cubic-bezier(0.45, 0, 0.55, 1),
+    opacity 0.8s 0.6s both cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 .circleMd {
@@ -92,7 +108,8 @@
   top: 0;
   left: hl-grid-multiplier(7);
   transform-origin: 100% 75%;
-  animation: Scale-sm 2.2s linear;
+  animation: scale 0.8s 0.5s cubic-bezier(0.45, 0, 0.55, 1),
+    opacity 0.8s 0.5s both cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 .mobile {
@@ -106,8 +123,12 @@
     background-size: 50% 50%;
   }
 
-  100% {
+  80% {
     background-size: 600% 600%;
+  }
+
+  100% {
+    background-size: 1000% 1000%;
   }
 }
 
@@ -115,12 +136,27 @@
   0% {
     background-position: 50% 150%;
   }
-  60% {
+  45% {
     background-position: 50% 50%;
   }
 }
 
 @keyframes title-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale {
   0% {
     transform: scale(0.8);
   }
@@ -129,21 +165,12 @@
   }
 }
 
-@keyframes Scale {
+@keyframes opacity {
   0% {
-    transform: scale(0.85);
+    opacity: 0;
   }
   100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes Scale-sm {
-  0% {
-    transform: scale(0.5);
-  }
-  100% {
-    transform: scale(1);
+    opacity: 1;
   }
 }
 

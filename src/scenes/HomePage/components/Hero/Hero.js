@@ -26,11 +26,11 @@ const Hero = () => {
     >
       <div className={styles.wrapper}>
         <h2 className={styles.title}>
-          <span className={styles.gradient}>Design-driven </span>
+          <span className={styles.firstSpan}>Design-driven </span>
           <br />
           development of <span className={styles.mobile}>&nbsp;</span>
           <br />
-          your <span className={styles.gradient}>web product</span> <br />
+          your <span className={styles.secondSpan}>web product</span> <br />
           for years
         </h2>
         <animated.div

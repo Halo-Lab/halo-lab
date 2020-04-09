@@ -10,6 +10,7 @@
   width: 100%;
   padding: 2rem 2rem 1rem;
   background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021e 98%);
+  animation: appear 0.3s 0.2s both cubic-bezier(0.76, 0, 0.24, 1);
 
   @media screen and (min-width: $md) {
     @include hl-padding(top, 38px);
@@ -192,4 +193,15 @@
 .hiddenTitle {
   position: absolute;
   left: -9999px;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-110%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
