@@ -28,7 +28,7 @@
 
 .upwork {
   @include col-width(10, 19);
-  animation: scale 0.4s 1.5s both cubic-bezier(0.76, 0, 0.24, 1);
+  animation: scale 1.4s 1s both cubic-bezier(0.76, 0, 0.24, 1);
   @include media-breakpoint-down(md) {
     @include col-width(2, 31);
   }
@@ -36,7 +36,7 @@
 .dribbble {
   @include col-width(28, 37);
   padding-bottom: 2.5rem;
-  animation: scale 0.4s 1.4s both cubic-bezier(0.76, 0, 0.24, 1);
+  animation: scale 1.4s 0.85s both cubic-bezier(0.76, 0, 0.24, 1);
   @include media-breakpoint-down(md) {
     @include col-width(32, 62);
     padding-bottom: 0;
@@ -45,7 +45,7 @@
 
 .clutch {
   @include col-width(46, 55);
-  animation: scale 0.4s 1.5s both cubic-bezier(0.76, 0, 0.24, 1);
+  animation: scale 1.4s 1s both cubic-bezier(0.76, 0, 0.24, 1);
   @include media-breakpoint-down(md) {
     display: none;
   }
@@ -54,7 +54,7 @@
 @keyframes scale {
   0% {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.95);
   }
   100% {
     opacity: 1;

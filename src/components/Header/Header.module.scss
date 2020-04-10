@@ -10,10 +10,10 @@
   width: 100%;
   padding: 2rem 2rem 1rem;
   background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021e 98%);
-  animation: appear 0.3s 0.2s both cubic-bezier(0.76, 0, 0.24, 1);
+  animation: appear 1s 0.5s both cubic-bezier(0.76, 0, 0.24, 1);
 
   @media screen and (min-width: $md) {
-    @include hl-padding(top, 38px);
+    @include hl-padding(top, 18px);
     @include hl-padding(left, 80px);
     @include hl-padding(right, 80px);
     @include hl-padding(bottom, 20px);
@@ -198,7 +198,7 @@
 @keyframes appear {
   0% {
     opacity: 0;
-    transform: translateY(-110%);
+    transform: translateY(-25%);
   }
   100% {
     opacity: 1;
