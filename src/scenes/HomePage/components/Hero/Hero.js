@@ -13,11 +13,13 @@ const Hero = () => {
     <section className={styles.container}>
       <div className={styles.wrapper}>
         <h2 className={styles.title}>
-          <span>Design-driven </span>
+          <span className={styles.highlightedText}>Design-driven </span>
           <br />
           development of <span className={styles.mobile}>&nbsp;</span>
           <br />
-          your <span>web product</span> <br />
+          your <span className={styles.highlightedText}>web product</span>
+          <span className={styles.mobile}>&nbsp;</span>
+          <br />
           for years
         </h2>
         <div className={`${styles.circle} ${styles.circleSm1}`}></div>
