@@ -32,7 +32,8 @@
       display: none;
     }
   }
-  span {
+  .highlightedText {
+    display: inline-block;
     background: linear-gradient(
       90deg,
       #e7a28f 1.59%,
