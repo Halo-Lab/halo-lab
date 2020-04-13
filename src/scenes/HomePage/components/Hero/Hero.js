@@ -15,7 +15,7 @@ const Hero = () => {
         <h2 className={styles.title}>
           <span className={styles.highlightedText}>Design-driven </span>
           <br />
-          development of <span className={styles.mobile}>&nbsp;</span>
+          development of<span className={styles.mobile}>&nbsp;</span>
           <br />
           your <span className={styles.highlightedText}>web product</span>
           <span className={styles.mobile}>&nbsp;</span>
