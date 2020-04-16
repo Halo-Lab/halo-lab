@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "halo-lab",
+  "private": false,
+  "description": "Halo lab website",
+  "version": "1.0.0",
+  "author": "Halo lab",
   "dependencies": {
     "d3-ease": "^1.0.6",
     "gatsby": "^2.18.12",
@@ -47,10 +47,16 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "gatsby-plugin-eslint": "^2.0.8",
+    "husky": "^4.2.5",
     "prettier": "^1.19.1"
   },
   "keywords": [
-    "gatsby"
+    "halo",
+    "halo lab",
+    "halo lab website",
+    "design agency",
+    "design and development agency",
+    "design driven development agency"
   ],
   "license": "MIT",
   "scripts": {
@@ -60,9 +66,11 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "cypress run --headless",
-    "test-file": "cypress run --headless --spec",
-    "test:open": "cypress open"
+    "eslint": "eslint src/",
+    "test": "npm run eslint && npm run test:headless",
+    "test:file": "cypress run --headless --spec",
+    "test:open": "cypress open",
+    "test:headless": "cypress run --headless"
   },
   "repository": {
     "type": "git",
@@ -70,5 +78,10 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
   }
 }
