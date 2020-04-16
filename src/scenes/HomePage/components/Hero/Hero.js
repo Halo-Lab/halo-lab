@@ -5,7 +5,7 @@ import Info from './components/Info';
 
 import styles from './Hero.module.scss';
 
-const Hero = kek => {
+const Hero = () => {
   // eslint-disable-next-line no-unused-vars
   const { quotes, ...infoAssets } = useHomeHeroAssets();
 
