@@ -12,10 +12,8 @@ const Hero = () => {
     <section className={styles.container}>
       <div className={styles.wrapper}>
         <h2 className={styles.title}>
-          <span className={styles.firstSpan}>Design-driven </span>
-          <br />
-          development of <span className={styles.mobile}>&nbsp;</span>
-          <br />
+          <span className={styles.firstSpan}>Design-driven</span> <br />
+          development of <br />
           your <span className={styles.secondSpan}>web product</span> <br />
           for years
         </h2>
