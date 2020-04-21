@@ -20,6 +20,7 @@ const Item = ({ images }) => {
             draggable={false}
             loading="eager"
             fadeIn={false}
+            alt="dribbble portfolio pic"
           />
         );
       })}
