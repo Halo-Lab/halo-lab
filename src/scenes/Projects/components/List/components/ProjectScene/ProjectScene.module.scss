@@ -17,12 +17,6 @@
       > div {
         transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
       }
-
-      &:hover {
-        > div {
-          transform: scale(0.9);
-        }
-      }
     }
     // <-- hover
   }

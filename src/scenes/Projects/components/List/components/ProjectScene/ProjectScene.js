@@ -1,9 +1,18 @@
 import React, { Fragment } from 'react';
+import { useSpring, animated } from 'react-spring';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
-
 import styles from './ProjectScene.module.scss';
-
+const calc = (x, y, reversed) => [
+  -(y - window.innerWidth / 4) / 100,
+  reversed
+    ? (x - (window.innerWidth / 4) * 2.8) / 100
+    : (x - window.innerWidth / 3) / 100,
+  1.05,
+];
+const trans = (x, y, s) => {
+  return `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+};
 const ProjectScene = ({
   link,
   linkTitle,
@@ -13,15 +22,25 @@ const ProjectScene = ({
   tags,
   title,
 }) => {
+  const [props, set] = useSpring(() => ({
+    xys: [0, 0, 1],
+    config: { mass: 10, tension: 450, friction: 50 },
+  }));
   return (
-    // <div className={`${styles.container} ${reversed ? styles.reversed : ''}`}>
     <Fragment>
-      <div className={`${styles.preview} ${reversed ? styles.reversed : ''}`}>
+      <animated.div
+        className={`${styles.preview} ${reversed ? styles.reversed : ''}`}
+        onMouseMove={({ clientX: x, clientY: y }) =>
+          set({ xys: calc(x, y, reversed) })
+        }
+        onMouseLeave={() => set({ xys: [0, 0, 1] })}
+        style={{ transform: props.xys.interpolate(trans) }}
+      >
         <a href={link} target="_blank" rel="noopener noreferrer">
           <Img fluid={preview.childImageSharp.fluid} draggable={false} />
           <span className={styles.hiddenTitle}>{title}</span>
         </a>
-      </div>
+      </animated.div>
       <div
         className={`${styles.description} ${reversed ? styles.reversed : ''}`}
       >
@@ -50,10 +69,8 @@ const ProjectScene = ({
         </div>
       </div>
     </Fragment>
-    // </div>
   );
 };
-
 ProjectScene.propTypes = {
   link: PropTypes.string,
   linkTitle: PropTypes.string,
@@ -62,6 +79,6 @@ ProjectScene.propTypes = {
   review: PropTypes.object,
   tags: PropTypes.string,
   title: PropTypes.string,
+  xys: PropTypes.any,
 };
-
 export default ProjectScene;
