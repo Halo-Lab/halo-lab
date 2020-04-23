@@ -49,7 +49,7 @@ const Form = () => {
 
     setIsValid(valid);
 
-    const url = 'https://getform.io/f/4707dc47-7be9-4932-b3b9-3ff95d3e87d3';
+    const url = process.env.GATSBY_FORM_CONTACT_URL;
     const formData = new FormData();
 
     formData.append('quote-name', data.name.value);
