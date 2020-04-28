@@ -3,6 +3,7 @@ import { Location } from '@reach/router';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Subscribe from '../Subscribe';
+import classNames from 'classnames';
 
 import PostThumbnail from '@scenes/PostThumbnail';
 
@@ -82,15 +83,15 @@ const Switcher = ({ items, location }) => {
               <ul className={styles.tabContentList}>
                 {newItems.map((item, index) => {
                   const isFirst = index === 0;
-                  const styleForFirstItem = isFirst
-                    ? styles.tabContentItemFirst
-                    : '';
+                  const tabItemClass = classNames(styles.tabContentItem, {
+                    [styles.tabContentItemFirst]: isFirst,
+                  });
 
                   return (
                     <li
                       data-list-item="articles"
                       key={item.id}
-                      className={`${styles.tabContentItem} ${styleForFirstItem}`}
+                      className={tabItemClass}
                     >
                       <PostThumbnail {...item} isFirst={isFirst} />
                     </li>

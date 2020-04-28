@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import styles from './PostThumbnail.module.scss';
 
@@ -19,10 +20,12 @@ const PostThumbnail = ({
     featured_media.localFile.childImageSharp.fluid;
   const link = `/blog/${slug}`;
 
-  const firstArticle = isFirst ? styles.firstArticle : '';
+  const articleClass = classNames(styles.container, {
+    [styles.firstArticle]: isFirst,
+  });
 
   return (
-    <article className={`${styles.container} ${firstArticle}`}>
+    <article className={articleClass}>
       <Link to={link} className={styles.link}>
         {imageOptimized ? (
           <Img fluid={imageOptimized} />

@@ -27,14 +27,18 @@ const Subscribe = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    const valid = isValidEmail(data.email.value);
+    const isValid = isValidEmail(data.email.value);
 
-    const url = process.env.GATSBY_FORM_SUBSCTIBE_URL;
+    if (!isValid) {
+      return;
+    }
+
+    const url = process.env.GATSBY_FORM_SUBSCRIBE_URL;
     const formData = new FormData();
 
     formData.append('quote-email', data.email.value);
 
-    valid &&
+    isValid &&
       fetch(url, {
         method: 'POST',
         headers: {},
