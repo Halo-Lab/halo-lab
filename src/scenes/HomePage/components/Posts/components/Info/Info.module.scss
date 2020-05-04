@@ -1,5 +1,5 @@
-@import '@styles/variables/all';
-@import '@styles/mixins/all';
+@import "@styles/variables/all";
+@import "@styles/mixins/all";
 
 .container {
   position: relative;
@@ -9,12 +9,12 @@
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     @include hl-width(60px);
     @include hl-height(60px);
     border-radius: 50%;
-    background-image: url('./images/logo.svg');
+    background-image: url("./images/logo.svg");
     background-repeat: no-repeat;
     background-size: contain;
     top: 0;
@@ -41,10 +41,9 @@
   color: $white-color;
   letter-spacing: 10px;
 
-  &::before {
-    content: '';
+  .underline {
     position: absolute;
-    width: 45%;
+    width: 0;
     left: 0;
     bottom: -10px;
     height: 1px;
@@ -55,7 +54,7 @@
       #fbfefd 98.41%
     );
     z-index: -1;
-    transition: width 0.3s;
+    transition: width 0.1s linear;
   }
   @media screen and (max-width: $sm) {
     display: none;
