@@ -1,23 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'gatsby';
 
 import styles from './Info.module.scss';
-import MagneticHover from '../../../../../../helpers/MagneticHover/magneticHover';
+import HoverUnderline from '../../../../../../components/HoverUnderline';
 
 const Info = () => {
   const linkEl = useRef(null);
-  const [lineWidth, setLineWidth] = useState(20);
-  function showDistance(distance) {
-    // console.log(distance);
-    setLineWidth(100 - distance);
-  }
+
   useEffect(() => {
-    new MagneticHover({
-      element: linkEl.current,
-      radius: 100,
-      callback: showDistance,
-    });
-  }, [lineWidth]);
+    // console.log(linkEl.current);
+  }, [linkEl]);
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -25,10 +18,9 @@ const Info = () => {
       </div>
       <Link to="/blog" className={styles.link} ref={linkEl}>
         MORE BLOG POSTS
-        <span
-          className={styles.underline}
-          style={{ width: lineWidth + '%' }}
-        ></span>
+        {linkEl !== null ? (
+          <HoverUnderline element={linkEl} radius={100} />
+        ) : null}
       </Link>
     </div>
   );
