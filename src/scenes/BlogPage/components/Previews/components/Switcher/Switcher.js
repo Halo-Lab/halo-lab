@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Location } from '@reach/router';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Subscribe from '../Subscribe';
+import classNames from 'classnames';
 
 import PostThumbnail from '@scenes/PostThumbnail';
 
@@ -24,16 +26,19 @@ const getDefaultTabIndex = search => {
   }
 };
 
+const STEP_VALUE = 3;
+
 const Switcher = ({ items, location }) => {
+  const [numberOfRendered, setNumberOfRendered] = useState(STEP_VALUE);
   const defaultIndex = getDefaultTabIndex(location.search);
   const itemsAgency = [];
   const itemsCaseStudies = [];
   const itemsNews = [];
   const allCategories = [
     { title: 'All', items },
-    { title: 'Agency', items: itemsAgency },
-    { title: 'Case Studies', items: itemsCaseStudies },
-    { title: 'News', items: itemsNews },
+    { title: '#Agency', items: itemsAgency },
+    { title: '#Case Studies', items: itemsCaseStudies },
+    { title: '#News', items: itemsNews },
   ];
 
   items.forEach(item => {
@@ -52,9 +57,14 @@ const Switcher = ({ items, location }) => {
     }
   });
 
+  const handleClick = () => {
+    const value = numberOfRendered + STEP_VALUE;
+    setNumberOfRendered(value > items.length ? items.length : value);
+  };
+
   return (
     <div className={styles.container}>
-      <Tabs defaultIndex={defaultIndex}>
+      <Tabs defaultIndex={defaultIndex} className={styles.tabsContainer}>
         <TabList className={styles.tabList}>
           {allCategories.map(({ title }) => {
             return (
@@ -66,10 +76,32 @@ const Switcher = ({ items, location }) => {
         </TabList>
 
         {allCategories.map(({ title, items }) => {
+          const newItems = items.slice(0, 4); // take the first four articles
+          const moreItems = items.slice(5, 5 + numberOfRendered);
           return (
-            <TabPanel key={title}>
+            <TabPanel key={title} className={styles.tabsContentContainer}>
               <ul className={styles.tabContentList}>
-                {items.map(item => {
+                {newItems.map((item, index) => {
+                  const isFirst = index === 0;
+                  const tabItemClass = classNames(styles.tabContentItem, {
+                    [styles.tabContentItemFirst]: isFirst,
+                  });
+
+                  return (
+                    <li
+                      data-list-item="articles"
+                      key={item.id}
+                      className={tabItemClass}
+                    >
+                      <PostThumbnail {...item} isFirst={isFirst} />
+                    </li>
+                  );
+                })}
+              </ul>
+              <Subscribe />
+
+              <ul className={styles.tabContentList}>
+                {moreItems.map(item => {
                   return (
                     <li
                       data-automation="articles"
@@ -81,6 +113,12 @@ const Switcher = ({ items, location }) => {
                   );
                 })}
               </ul>
+
+              {moreItems.length && numberOfRendered <= moreItems.length ? (
+                <button className={styles.button} onClick={handleClick}>
+                  Load more
+                </button>
+              ) : null}
             </TabPanel>
           );
         })}

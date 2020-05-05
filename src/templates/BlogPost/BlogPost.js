@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import Providers from '@components/Providers';
 import Layout from '@components/Layout';
@@ -21,6 +22,8 @@ const BlogPost = ({ pageContext }) => {
   if (next) thumbnailsItems.push(next);
   if (previous) thumbnailsItems.push(previous);
 
+  const pageWrapperClass = classNames(styles.container, 'pageWrapper');
+
   return (
     <Providers>
       <BackgroundStars />
@@ -28,7 +31,7 @@ const BlogPost = ({ pageContext }) => {
         <Head>
           <title>{data.title} - Halo Lab Blog</title>
         </Head>
-        <div className={`${styles.container} pageWrapper`}>
+        <div className={pageWrapperClass}>
           <Headline
             categories={data.categories}
             image={data.featured_media.source_url}
