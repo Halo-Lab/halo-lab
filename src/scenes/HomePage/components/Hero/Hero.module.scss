@@ -75,6 +75,7 @@
   animation: title-scale 1s 0s cubic-bezier(0.45, 0, 0.55, 1);
   padding-bottom: 0.5em;
   max-width: 800px;
+  padding: 0 50px;
   margin: 0 auto;
   @include hl-margin(top, 30px);
   @include hl-margin(bottom, 80px);
