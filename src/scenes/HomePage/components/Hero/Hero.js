@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useHomeHeroAssets } from '@hooks/queries';
 import Info from './components/Info';
-import Title from './images/title.inline.svg';
+import Title from './images/headline.inline.svg';
 
 import styles from './Hero.module.scss';
 

@@ -74,6 +74,8 @@
 .title {
   animation: title-scale 1s 0s cubic-bezier(0.45, 0, 0.55, 1);
   padding-bottom: 0.5em;
+  max-width: 665px;
+  margin: 0 auto;
   @include hl-margin(bottom, 80px);
 }
 
@@ -84,15 +86,6 @@
 
 .title-svg {
   width: 100%;
-}
-
-.title-svg :global {
-  path {
-    fill: #fff;
-  }
-  .gradient path {
-    fill: tomato;
-  }
 }
 
 // .first-span {
