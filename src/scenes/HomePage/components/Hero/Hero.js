@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useHomeHeroAssets } from '@hooks/queries';
 import Info from './components/Info';
+import Title from './images/title.inline.svg';
 
 import styles from './Hero.module.scss';
 
@@ -11,12 +12,12 @@ const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
-        <h2 className={styles.title}>
-          <span className={styles.firstSpan}>Design-driven</span> <br />
-          development of <br />
-          your <span className={styles.secondSpan}>web product</span> <br />
-          for years
-        </h2>
+        <div className={styles.title}>
+          <h2 className={styles.titleText}>
+            development of your web product for years
+          </h2>
+          <Title className={styles.titleSvg} />
+        </div>
         <div className={`${styles.circle} ${styles.circleSm1}`} />
         <div className={`${styles.circle} ${styles.circleSm2}`} />
         <div className={`${styles.circle} ${styles.circleMd}`} />
