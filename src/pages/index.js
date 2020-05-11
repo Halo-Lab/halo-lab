@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Providers>
       <BackgroundStars />
-      <Layout>
+      <Layout isGlow={false}>
         <Head>
           <title>Home - Halo Lab Blog</title>
         </Head>

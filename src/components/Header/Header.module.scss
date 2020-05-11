@@ -9,7 +9,6 @@
   box-sizing: border-box;
   width: 100%;
   padding: 2rem 2rem 1rem;
-  background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021e 98%);
   animation: appear 1s 0.5s both cubic-bezier(0.76, 0, 0.24, 1);
 
   @media screen and (min-width: $md) {
@@ -17,6 +16,14 @@
     @include hl-padding(left, 80px);
     @include hl-padding(right, 80px);
     @include hl-padding(bottom, 20px);
+  }
+
+  &:not(.blend) {
+    background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021e 98%);
+  }
+
+  &.blend {
+    mix-blend-mode: difference;
   }
 }
 

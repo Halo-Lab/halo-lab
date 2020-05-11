@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import { MenuContext } from '@contexts';
 import { useHeaderAssets } from '@hooks/queries';
@@ -7,15 +9,20 @@ import Menu from './components/Menu';
 
 import styles from './Header.module.scss';
 
-const Header = () => {
+const Header = ({ isBlend }) => {
   const { logotype } = useHeaderAssets();
   const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
 
   const menuStatus = isOpened ? 'opened' : 'closed';
 
+  const containerStyles = classNames(styles.container, {
+    [styles.blend]: isBlend,
+  });
+  const barStyles = classNames(styles.bar, 'pageWrapper');
+
   return (
-    <div className={styles.container}>
-      <div className={`${styles.bar} pageWrapper`}>
+    <div className={containerStyles}>
+      <div className={barStyles}>
         <div className={styles.logotype}>
           <Link to="/">
             <img
@@ -49,6 +56,14 @@ const Header = () => {
       </div>
     </div>
   );
+};
+
+Header.defaultProps = {
+  isBlend: false,
+};
+
+Header.propTypes = {
+  isBlend: PropTypes.bool,
 };
 
 export default Header;
