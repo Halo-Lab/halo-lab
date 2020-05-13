@@ -11,7 +11,7 @@
       format('woff2'),
     url('https://use.typekit.net/af/572508/00000000000000003b9b1a96/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
       format('woff');
-  // font-display: swap;
+  font-display: swap;
   font-style: normal;
   font-weight: 300;
 }
@@ -90,7 +90,7 @@
   font-family: 'Gramatika-Black';
   src: url('../assets/fonts/Gramatika-Black.woff2') format('woff2'),
     url('../assets/fonts/Gramatika-Black.woff') format('woff');
-  font-display: block;
+  font-display: swap;
   font-style: normal;
   font-weight: 700;
 }

@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import styles from './Subscribe.module.scss';
 import { isValidEmail } from '@helpers';
 import Arrow from './images/arrow.inline.svg';
+
 const Subscribe = () => {
   const [data, setData] = useState({
     email: {
