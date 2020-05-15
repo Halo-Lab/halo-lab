@@ -3,6 +3,7 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 import styles from './ProjectScene.module.scss';
+import MagneticLink from '@components/MagneticLink';
 
 const ProjectScene = ({
   link,
@@ -32,9 +33,7 @@ const ProjectScene = ({
           </a>
         </div>
         <div className={styles.descriptionLink}>
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            {linkTitle}
-          </a>
+          <MagneticLink to={link} text={linkTitle} radius={100} />
         </div>
         <div className={styles.review}>
           <div className={styles.avatar}>

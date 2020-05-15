@@ -31,38 +31,7 @@
 
 // TODO: Create component for this element
 .link {
-  position: relative;
-  font-weight: 600;
-  @include hl-font-size-text(14px);
-  line-height: 1.4em;
-  letter-spacing: 0.36em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: $white-color;
-  letter-spacing: 10px;
-
-  .underline {
-    position: absolute;
-    width: 0;
-    left: 0;
-    bottom: -10px;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      #e7a28f 1.59%,
-      #fbddb0 50%,
-      #fbfefd 98.41%
-    );
-    z-index: -1;
-    transition: width 0.1s linear;
-  }
   @media screen and (max-width: $sm) {
     display: none;
-  }
-
-  &:hover {
-    &::before {
-      width: 100%;
-    }
   }
 }

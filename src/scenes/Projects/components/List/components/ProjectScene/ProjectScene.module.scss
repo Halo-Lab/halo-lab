@@ -1,6 +1,6 @@
-@import '@styles/variables/all';
-@import '@styles/mixins/all';
-@import '@functions/functions';
+@import "@styles/variables/all";
+@import "@styles/mixins/all";
+@import "@functions/functions";
 
 .preview {
   @include col-width();
@@ -99,45 +99,8 @@
 }
 
 .descriptionLink {
-  position: relative;
   @include hl-margin(top, 60px);
   @include hl-margin(bottom, 10px);
-  @include hl-font-size-text(14px);
-
-  padding-bottom: 8px;
-  font-weight: 600;
-  line-height: 1.42em;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  transition: color 0.3s;
-  color: $white-color;
-  width: fit-content;
-
-  > a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 45%;
-    left: 0;
-    bottom: 0;
-    background: linear-gradient(
-      90deg,
-      #e7a28f 1.59%,
-      #fbddb0 50%,
-      #fbfefd 98.41%
-    );
-    transition: width 0.3s;
-  }
-  &:hover {
-    &:before {
-      width: 95%;
-    }
-  }
 }
 
 .review {
