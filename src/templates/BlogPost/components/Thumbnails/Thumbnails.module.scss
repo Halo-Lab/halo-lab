@@ -1,5 +1,5 @@
-@import '@styles/variables/all';
-@import '@styles/mixins/all';
+@import "@styles/variables/all";
+@import "@styles/mixins/all";
 
 .container {
   margin-bottom: 140px;
@@ -32,8 +32,8 @@
 .item {
   flex-basis: 100%;
   box-sizing: border-box;
-  padding: 0 24px 120px;
-
+  padding: 0 24px;
+  @include hl-height(500px);
   @media screen and (min-width: $lg) {
     flex-basis: 50%;
   }
