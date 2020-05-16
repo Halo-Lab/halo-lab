@@ -25,3 +25,103 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
+.wrapper {
+  & > :not(figure) {
+    width: 100%;
+    margin: auto;
+    max-width: 700px;
+    @include media-breakpoint-up(xxl) {
+      max-width: 900px;
+    }
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+    }
+  }
+
+  blockquote {
+    font-family: $font-gramatika;
+    font-size: 2.3rem;
+    line-height: 2.9rem;
+    color: $main-color;
+    max-width: 40rem;
+    margin: 5.7rem auto 5rem;
+
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+    }
+    @include media-breakpoint-down(xs) {
+      margin: 3.7rem auto;
+    }
+  }
+
+  h2 {
+    margin-top: 3.7rem;
+    margin-bottom: 1rem;
+    @include media-breakpoint-down(xs) {
+      margin-top: 3rem;
+      margin-bottom: 0.7rem;
+    }
+  }
+
+  h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    @include media-breakpoint-down(xs) {
+      font-size: 1.5rem;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: 0.9rem;
+      position: relative;
+      &:before {
+        content: '•';
+        margin-right: 0.4rem;
+      }
+    }
+  }
+  ol {
+    margin-bottom: 1.5rem;
+    li {
+      margin-bottom: 0.9rem;
+    }
+  }
+
+  figure {
+    margin: 2.7rem 0;
+    @include media-breakpoint-down(xs) {
+      margin: 2.5rem 0;
+    }
+  }
+
+  figcaption {
+    font-size: 1.15rem;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  a {
+    // text-decoration: none;
+    color: rgb(0, 0, 238);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}

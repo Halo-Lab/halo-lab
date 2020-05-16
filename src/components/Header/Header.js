@@ -9,19 +9,16 @@ import Menu from './components/Menu';
 
 import styles from './Header.module.scss';
 
-const Header = ({ isBlend }) => {
+const Header = () => {
   const { logotype } = useHeaderAssets();
   const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
 
   const menuStatus = isOpened ? 'opened' : 'closed';
 
-  const containerStyles = classNames(styles.container, {
-    [styles.blend]: isBlend,
-  });
   const barStyles = classNames(styles.bar, 'pageWrapper');
 
   return (
-    <div className={containerStyles}>
+    <div className={styles.container}>
       <div className={barStyles}>
         <div className={styles.logotype}>
           <Link to="/">
@@ -56,14 +53,6 @@ const Header = ({ isBlend }) => {
       </div>
     </div>
   );
-};
-
-Header.defaultProps = {
-  isBlend: false,
-};
-
-Header.propTypes = {
-  isBlend: PropTypes.bool,
 };
 
 export default Header;
