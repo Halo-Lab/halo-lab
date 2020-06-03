@@ -36,6 +36,7 @@
   display: flex;
   flex-direction: column;
   z-index: 10;
+  transform: perspective(600px) translateZ(525px) rotateX(0deg) rotateY(0deg) scale(0.15);
   @include hl-padding(top, 60px);
   @include hl-padding(bottom, 60px);
 

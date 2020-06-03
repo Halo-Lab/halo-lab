@@ -11,7 +11,7 @@ const calc = (x, y, reversed) => [
   1.05,
 ];
 const trans = (x, y, s) => {
-  return `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+  return `perspective(600px) translateZ(500px) rotateX(${x}deg) rotateY(${y}deg) scale(0.16)`;
 };
 const ProjectScene = ({
   link,
