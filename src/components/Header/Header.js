@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { MenuContext } from '@contexts';
