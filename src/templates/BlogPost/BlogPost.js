@@ -16,11 +16,19 @@ import styles from './BlogPost.module.scss';
 const BlogPost = ({ pageContext }) => {
   const {
     data,
+    recommendedPosts,
     recent: { previous, next },
   } = pageContext;
-  const thumbnailsItems = [];
-  if (next) thumbnailsItems.push(next);
-  if (previous) thumbnailsItems.push(previous);
+
+  //selection of recommended posts in the current post
+  const RECOMMENDED_POSTS_LIMIT = 3;
+  let filteredPosts = recommendedPosts.filter( post => post.id !== data.id )//trying get 3 post, where 'current post != recommended'
+  filteredPosts.length = RECOMMENDED_POSTS_LIMIT;
+ 
+
+  // const thumbnailsItems = [];
+  // if (next) thumbnailsItems.push(next);
+  // if (previous) thumbnailsItems.push(previous);
 
   const pageWrapperClass = classNames(styles.container, 'pageWrapper');
 
@@ -40,7 +48,7 @@ const BlogPost = ({ pageContext }) => {
         </div>
         <Article content={data.content} />
         <div className="oldPageWrapper">
-          <Thumbnails items={thumbnailsItems} />
+          <Thumbnails items={filteredPosts} />
           <MailUs />
         </div>
       </Layout>
