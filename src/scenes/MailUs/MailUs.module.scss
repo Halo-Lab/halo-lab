@@ -19,20 +19,17 @@
     height: calc(100vh - 142px);
   }
 
-  &::before {
-    content: '';
+  .background {
+    display: inline-block;
     position: absolute;
-    width: 100vw;
-    height: calc(100% + (var(--coef-indent) * 140px));
+    width: 100%;
+    height: calc(100% + (var(--coef-indent) * 450px));
     background: linear-gradient(0deg, #3719ca, #3719ca),
-      linear-gradient(89.64deg, #3719ca 0.16%, #8161fe 99.8%);
-    left: 50%;
-    transform: translateX(-50%);
+                linear-gradient(89.64deg, #3719ca 0.16%, #8161fe 99.8%);
+    left: 0;
     top: 0;
+    right: 0;
     z-index: -1;
-    @media screen and (max-width: $md) {
-      height: calc(100% + 142px);
-    }
   }
   &::after {
     content: '';

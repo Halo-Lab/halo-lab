@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Projects from '@scenes/Projects';
 import MailUs from '@scenes/MailUs';
 import Hero from './components/Hero';
@@ -28,8 +27,8 @@ const HomePage = ({ animation }) => {
       <Gallery />
       <div className="pageWrapper">
         <Posts />
-        <MailUs />
       </div>
+      <MailUs />
     </div>
   );
 };
