@@ -3,12 +3,12 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 import Header from '@components/Header';
-import Footer from '@components/Footer';
 import CustomerChat from '@components/CustomerChat';
 import { MenuContext } from '@contexts';
 
 import styles from './Layout.module.scss';
 import '@styles/index.scss';
+import Footer from '../Footer';
 
 const Layout = ({ children }) => {
   const { isOpened } = useContext(MenuContext);

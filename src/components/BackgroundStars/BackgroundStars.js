@@ -52,7 +52,6 @@ const BackgroundStars = () => {
     scrollPercentage = Math.ceil(
       (100 / document.body.scrollHeight) * -window.pageYOffset
     );
-
     set({ y: scrollPercentage, immediate: isImmediate });
   };
 

@@ -9,7 +9,7 @@ import Behance from '../../assets/images/brands/behance.inline.svg';
 
 const Footer = () => {
   return (
-    <div className={`pageWrapper ${styles.container}`}>
+    <div className={`oldPageWrapper ${styles.container}`}>
       <div className={styles.logotype}>
         With Love from <b>Halo Lab</b>
       </div>

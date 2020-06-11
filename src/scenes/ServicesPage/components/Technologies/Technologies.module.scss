@@ -3,6 +3,8 @@
 
 .container {
   margin-top: 11.42rem;
+  padding-left: 15px;
+  padding-right: 15px;
 
   @include media-breakpoint-down(md) {
     margin-top: 8.33rem;
@@ -28,7 +30,8 @@
   }
 
   @include media-breakpoint-down(sm) {
-    margin-bottom: 60px;
-    font-size: 48px;
+    font-size: 3.5rem;
+    line-height: 1.1em;
+    margin-bottom: 2.5rem;
   }
 }

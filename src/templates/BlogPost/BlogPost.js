@@ -41,6 +41,8 @@ const BlogPost = ({ pageContext }) => {
         <Article content={data.content} />
         <div className="oldPageWrapper">
           <Thumbnails items={thumbnailsItems} />
+        </div>
+        <div className="pageWrapper">
           <MailUs />
         </div>
       </Layout>

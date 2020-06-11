@@ -11,7 +11,7 @@ import styles from './ServicesPage.module.scss';
 
 const ServicesPage = () => {
   return (
-    <div className={`${styles.container} oldPageWrapper`}>
+    <div className={`${styles.container} pageWrapper`}>
       <Design />
       <Development />
       <Flow />
