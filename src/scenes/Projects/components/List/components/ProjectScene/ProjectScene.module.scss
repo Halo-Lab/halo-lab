@@ -39,8 +39,12 @@
   transform: perspective(600px) translateZ(525px) rotateX(0deg) rotateY(0deg) scale(0.15);
   @include hl-padding(top, 60px);
   @include hl-padding(bottom, 60px);
-
   @include col-width(5, 61);
+
+  @media screen and (min-width: $xl) {
+    @include hl-padding(top, 132px);
+    @include hl-padding(bottom, 118px);
+  }
 
   @media screen and (min-width: $md) {
     @include col-width(39, 62);
@@ -98,6 +102,11 @@
   @include hl-margin(top, 60px);
   @include hl-margin(bottom, 10px);
   @include hl-font-size-text(14px);
+
+  @media screen and (min-width: $xl) {
+    @include hl-margin(top, 40px);
+    @include hl-margin(bottom, 30px);
+  }
 
   padding-bottom: 8px;
   font-weight: 600;
