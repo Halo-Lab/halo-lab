@@ -39,7 +39,7 @@
   transform: perspective(600px) translateZ(525px) rotateX(0deg) rotateY(0deg) scale(0.15);
   @include hl-padding(top, 60px);
   @include hl-padding(bottom, 60px);
-  @include col-width(5, 61);
+  @include col-width(8, 58);
 
   @media screen and (min-width: $xl) {
     @include hl-padding(top, 132px);
