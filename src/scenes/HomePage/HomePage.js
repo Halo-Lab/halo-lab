@@ -11,11 +11,11 @@ import Works from './components/Works';
 
 import styles from './HomePage.module.scss';
 
-const HomePage = () => {
+const HomePage = ({animation}) => {
   return (
     <div className={styles.container}>
       <div className="pageWrapper">
-        <Hero />
+        <Hero animation={animation}/>
         <WhatWeDo />
       </div>
       <Works />
