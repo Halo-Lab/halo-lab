@@ -16,6 +16,8 @@ const MagneticLink = ({ radius = 100, text, to }) => {
       callback: distance => {
         if (defaultWidth < 100 - distance) {
           setLineWidth(100 - distance);
+        } else {
+          setLineWidth(defaultWidth);
         }
       },
     });
