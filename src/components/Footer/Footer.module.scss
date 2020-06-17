@@ -41,6 +41,7 @@
     @include hl-height(60px);
     text-align: center;
     transition: background-color 0.2s, border-color 0.2s;
+    text-indent: -9999px;
 
     &:hover {
       background-color: $white-color;
