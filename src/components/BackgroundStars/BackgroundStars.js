@@ -14,9 +14,10 @@ const iTranslateBig = y => `translate3d(0, ${y}%, 0)`;
 const iTranslateSmall = y => `translate3d(0, ${y / 1.5}%, 0)`;
 const iScale = value => `scale(${value})`;
 
-const transition = (x, y) => `translate3d(${x / 50}px,${y / 50}px,0)`
+const transition = (x, y) => `translate3d(${x / 50}px,${y / 50}px,0)`;
 
-const BackgroundStars = ({animation}) => {
+const BackgroundStars = ({ animation }) => {
+  const animationStars = animation ? animation.xy.interpolate(transition) : '';
   const { starsBig, starsSmall } = useBackgroundsAssets();
   const { isOpened } = useContext(MenuContext);
 
@@ -90,7 +91,7 @@ const BackgroundStars = ({animation}) => {
           className={styles.layer}
           style={{
             backgroundImage: `url(${starsBig.publicURL})`,
-            transform: animation.xy.interpolate(transition)
+            transform: animationStars,
           }}
         />
       </a.div>
@@ -104,7 +105,7 @@ const BackgroundStars = ({animation}) => {
           className={styles.layer}
           style={{
             backgroundImage: `url(${starsSmall.publicURL})`,
-            transform: animation.xy.interpolate(transition)
+            transform: animationStars,
           }}
         />
       </a.div>
@@ -113,7 +114,7 @@ const BackgroundStars = ({animation}) => {
 };
 
 BackgroundStars.propTypes = {
-  y: PropTypes.any,
+  animation: PropTypes.any,
 };
 
 export default BackgroundStars;
