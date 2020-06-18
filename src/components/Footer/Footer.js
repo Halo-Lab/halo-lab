@@ -60,7 +60,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Dribble
+            Dribbble
             <Dribbble />
           </a>
         </li>
