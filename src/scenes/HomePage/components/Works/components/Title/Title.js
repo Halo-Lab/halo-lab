@@ -4,6 +4,13 @@ import PropTypes from 'prop-types';
 import styles from './Title.module.scss';
 
 const Title = ({ icon, signature }) => {
+  const logo = React.useRef();
+  const handleScroll = () => {
+    logo.current.style.transform = `rotate(${window.pageYOffset / 3}deg)`;
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Recent works</h2>
@@ -24,6 +31,7 @@ const Title = ({ icon, signature }) => {
           alt="dribbble logotype"
           loading="lazy"
           className={styles.image}
+          ref={logo}
         />
       </a>
     </div>
