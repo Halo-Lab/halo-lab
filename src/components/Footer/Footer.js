@@ -20,6 +20,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
+            Twitter
             <Twitter />
           </a>
         </li>
@@ -29,6 +30,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
+            Instagram
             <Instagram />
           </a>
         </li>
@@ -38,6 +40,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
+            Facebook
             <Facebook />
           </a>
         </li>
@@ -47,6 +50,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
+            Behance
             <Behance />
           </a>
         </li>
@@ -56,6 +60,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
+            Dribbble
             <Dribbble />
           </a>
         </li>
