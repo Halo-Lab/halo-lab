@@ -105,14 +105,27 @@
   @include media-breakpoint-down(sm) {
     display: none;
   }
+  &-Wrapper {
+    position: absolute;
+  }
+  &-Sm1Pos {
+    top: hl-grid-multiplier(18);
+    right: hl-grid-multiplier(8);
+  }
+  &-Sm2Pos {
+    top: hl-grid-multiplier(3);
+    right: hl-grid-multiplier(5);
+  }
+  &-MdPos {
+    top: 0;
+    left: hl-grid-multiplier(7);
+  }
 }
 
 .circleSm1 {
   @include hl-width(20px);
   @include hl-height(20px);
   background: #ddebfa;
-  top: hl-grid-multiplier(18);
-  right: hl-grid-multiplier(8);
   transform-origin: 0% 0%;
   animation: scale 1s 0.7s cubic-bezier(0.45, 0, 0.55, 1),
     opacity 1s 0.7s both cubic-bezier(0.45, 0, 0.55, 1);
@@ -126,8 +139,6 @@
     rgba(16, 8, 74, 0) 16.94%,
     #83a4ff 87.08%
   );
-  top: hl-grid-multiplier(3);
-  right: hl-grid-multiplier(5);
   transform-origin: 0% 75%;
   animation: scale 1s 0.8s cubic-bezier(0.45, 0, 0.55, 1),
     opacity 1s 0.8s both cubic-bezier(0.45, 0, 0.55, 1);
@@ -137,8 +148,6 @@
   background: linear-gradient(156.8deg, #ffffff 15%, #79b0e8 75.42%);
   @include hl-width(60px);
   @include hl-height(60px);
-  top: 0;
-  left: hl-grid-multiplier(7);
   transform-origin: 100% 75%;
   animation: scale 1s 0.7s cubic-bezier(0.45, 0, 0.55, 1),
     opacity 1s 0.7s both cubic-bezier(0.45, 0, 0.55, 1);
