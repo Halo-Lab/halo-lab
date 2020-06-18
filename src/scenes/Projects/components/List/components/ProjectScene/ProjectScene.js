@@ -10,7 +10,7 @@ const calc = (x, y, reversed) => [
     : (x - window.innerWidth / 3) / 100,
   1.05,
 ];
-const trans = (x, y, s) => {
+const trans = (x, y) => {
   return `perspective(600px) translateZ(500px) rotateX(${x}deg) rotateY(${y}deg) scale(0.16)`;
 };
 const ProjectScene = ({
