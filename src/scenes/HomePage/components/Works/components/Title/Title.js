@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Title.module.scss';
 
 const Title = ({ icon, signature }) => {
-  const logo = React.useRef();
+  const [dribbleTextTransform, setDribbleTextTransform] = useState(null);
   const handleScroll = () => {
-    logo.current.style.transform = `rotate(${window.pageYOffset / 3}deg)`;
+    setDribbleTextTransform({
+      transform: `rotate(${window.pageYOffset / 3}deg)`,
+    });
   };
 
-  window.addEventListener('scroll', handleScroll);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return function remove() {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -31,7 +38,7 @@ const Title = ({ icon, signature }) => {
           alt="dribbble logotype"
           loading="lazy"
           className={styles.image}
-          ref={logo}
+          style={dribbleTextTransform}
         />
       </a>
     </div>
