@@ -16,7 +16,7 @@ export default class MagneticHover {
    */
   constructor(options) {
     this._checkArguments(options);
-    const callback = options.callback || (distance => console.log(distance));
+    const callback = options.callback;
     this.element = options.element;
     this.radius = options.radius;
     this.cb = callback;
