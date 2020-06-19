@@ -45,6 +45,7 @@ const Layout = ({ children, isGlow, headerIsWhite }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   isGlow: PropTypes.bool,
+  headerIsWhite: PropTypes.bool,
 };
 
 Layout.defaultProps = {
