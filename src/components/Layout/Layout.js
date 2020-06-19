@@ -11,7 +11,7 @@ import { MenuContext } from '@contexts';
 import styles from './Layout.module.scss';
 import '@styles/index.scss';
 
-const Layout = ({ children, isGlow }) => {
+const Layout = ({ children, isGlow, headerIsWhite }) => {
   const { isOpened } = useContext(MenuContext);
 
   const containerClasses = classNames(styles.container, {
@@ -31,7 +31,7 @@ const Layout = ({ children, isGlow }) => {
       <CustomerChat />
       <div className={containerClasses}>
         <header className={styles.header}>
-          <Header />
+          <Header headerIsWhite={headerIsWhite} />
         </header>
         <main className={mainClasses}>{children}</main>
         <footer className={footerClasses}>

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
+import { ReactSVG } from 'react-svg';
 
 import { MenuContext } from '@contexts';
 import { useHeaderAssets } from '@hooks/queries';
@@ -8,23 +9,21 @@ import Menu from './components/Menu';
 
 import styles from './Header.module.scss';
 
-const Header = () => {
+const Header = ({headerIsWhite}) => {
   const { logotype } = useHeaderAssets();
   const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
 
   const menuStatus = isOpened ? 'opened' : 'closed';
 
   const barStyles = classNames(styles.bar, 'pageWrapper');
-
+  const headerStyles = classNames(styles.container, {[styles.isWhite]: headerIsWhite && !isOpened})
   return (
-    <div className={styles.container}>
+    <div className={headerStyles}>
       <div className={barStyles}>
         <div className={styles.logotype}>
           <Link to="/">
-            <img
+            <ReactSVG
               src={logotype.publicURL}
-              alt="halo-Lab logotype"
-              loading="lazy"
             />
           </Link>
         </div>

@@ -22,36 +22,48 @@ const BlogPost = ({ pageContext }) => {
 
   //selection of recommended posts in the current post
   const RECOMMENDED_POSTS_LIMIT = 3;
-  let filteredPosts = recommendedPosts.filter( post => post.id !== data.id )//trying get 3 post, where 'current post != recommended'
+  let filteredPosts = recommendedPosts.filter(post => post.id !== data.id); //trying get 3 post, where 'current post != recommended'
   filteredPosts.length = RECOMMENDED_POSTS_LIMIT;
- 
-
-  // const thumbnailsItems = [];
-  // if (next) thumbnailsItems.push(next);
-  // if (previous) thumbnailsItems.push(previous);
-
+  const [headerIsWhite, setHeaderIsWhite] = React.useState(false);
+  const thumbnailsItems = [];
+  if (next) thumbnailsItems.push(next);
+  if (previous) thumbnailsItems.push(previous);
   const pageWrapperClass = classNames(styles.container, 'pageWrapper');
+  const articleRef = React.useRef(null);
+  function scrollHandler() {
+    const pos = articleRef.current.getBoundingClientRect();
+    if (pos.y <= 0 && -pos.y < pos.height) {
+      setHeaderIsWhite(true);
+      return;
+    }
 
+    setHeaderIsWhite(false);
+  }
+  React.useEffect(() => {
+    window.addEventListener('scroll', scrollHandler);
+    return () => window.removeEventListener('scroll', scrollHandler);
+  }, []);
   return (
     <Providers>
       <BackgroundStars />
-      <Layout>
+      <Layout headerIsWhite={headerIsWhite}>
         <Head>
-          <title>{data.title} - Halo Lab Blog</title>
-        </Head>
+          <title> {data.title} - Halo Lab Blog </title>{' '}
+        </Head>{' '}
         <div className={pageWrapperClass}>
           <Headline
             categories={data.categories}
             image={data.featured_media.source_url}
             title={data.title}
-          />
-        </div>
-        <Article content={data.content} />
+          />{' '}
+        </div>{' '}
+        <div ref={articleRef}>
+          <Article content={data.content} />{' '}
+        </div>{' '}
         <div className="oldPageWrapper">
-          <Thumbnails items={filteredPosts} />
-          <MailUs />
-        </div>
-      </Layout>
+          <Thumbnails items={filteredPosts} /> <MailUs />
+        </div>{' '}
+      </Layout>{' '}
     </Providers>
   );
 };
