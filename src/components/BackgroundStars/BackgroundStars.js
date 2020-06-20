@@ -14,7 +14,7 @@ const iTranslateBig = y => `translate3d(0, ${y}%, 0)`;
 const iTranslateSmall = y => `translate3d(0, ${y / 1.5}%, 0)`;
 const iScale = value => `scale(${value})`;
 
-const transition = (x, y) => `translate3d(${x / 50}px,${y / 50}px,0)`;
+const transition = (x, y) => `translate3d(${x / 100}px,${y / 100}px,0)`;
 
 const BackgroundStars = ({ animation }) => {
   const animationStars = animation ? animation.xy.interpolate(transition) : '';
