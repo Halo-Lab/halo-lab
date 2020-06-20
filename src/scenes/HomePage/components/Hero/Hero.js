@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Hero.module.scss';
 
-const trans1 = (x, y) => `translate3d(${x / 80}px,${y / 80}px,0)`;
+const trans1 = (x, y) => `translate3d(${x / 60}px,${y / 60}px,0)`;
 const trans2 = (x, y) => `translate3d(${x / 40}px,${y / 40}px,0)`;
 const trans3 = (x, y) => `translate3d(${x / 20}px,${y / 20}px,0)`;
 
