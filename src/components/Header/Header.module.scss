@@ -9,8 +9,8 @@
   box-sizing: border-box;
   width: 100%;
   padding: 2rem 2rem 1rem;
-  background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021e 98%);
   animation: appear 1s 0.5s both cubic-bezier(0.76, 0, 0.24, 1);
+  background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021e 98%);
 
   @media screen and (min-width: $md) {
     @include hl-padding(top, 18px);
@@ -99,6 +99,11 @@
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
+
+  // fix for safari bug when overflow hidden doesn't work for round corners
+  // https://forum.webflow.com/t/overflow-hidden-round-corners-not-working-on-safari/67805
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 
   &:after {
     content: '';
