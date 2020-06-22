@@ -17,8 +17,6 @@
 }
 
 .list {
-  display: flex;
-  flex-direction: column;
   list-style-type: none;
   margin: 0 -24px -120px;
   padding: 0;
@@ -30,11 +28,7 @@
 }
 
 .item {
-  flex-basis: 100%;
   box-sizing: border-box;
   padding: 0 24px;
   @include hl-height(500px);
-  @media screen and (min-width: $lg) {
-    flex-basis: 50%;
-  }
 }

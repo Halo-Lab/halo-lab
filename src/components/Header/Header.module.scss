@@ -12,7 +12,6 @@ $header-transition: all 1s;
   width: 100%;
   padding: 2rem 2rem 1rem;
   animation: appear 1s 0.5s both cubic-bezier(0.76, 0, 0.24, 1);
-  background: linear-gradient(0deg, rgba(2, 2, 30, 0.0001) 0%, #02021e 98%);
 
   .contact {
     transition: $header-transition;
