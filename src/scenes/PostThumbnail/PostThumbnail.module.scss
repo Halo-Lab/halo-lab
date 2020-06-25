@@ -13,7 +13,11 @@
   color: inherit;
   height: 72%;
   border: 1px solid #323453;
-  background: linear-gradient(123.69deg, #0A0C2D 28.53%, rgba(10, 12, 45, 0) 93.53%);
+  background: linear-gradient(
+    123.69deg,
+    #0a0c2d 28.53%,
+    rgba(10, 12, 45, 0) 93.53%
+  );
 
   > div,
   > img {
@@ -33,7 +37,7 @@
 }
 
 .image {
-  background: linear-gradient(89.69deg, #3719CA 0.16%, #8161FE 99.8%);
+  background: linear-gradient(89.69deg, #3719ca 0.16%, #8161fe 99.8%);
   mix-blend-mode: normal;
 }
 
