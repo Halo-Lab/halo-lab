@@ -26,12 +26,14 @@ const Headline = ({ categories, title, image }) => {
           </h1>
         </div>
       </div>
-      <img
-        src={image}
-        alt="article image"
-        loading="lazy"
-        className={styles.image}
-      />
+      <div className={styles.imageBox}>
+        <img
+          src={image}
+          alt="blog post main image"
+          loading="lazy"
+          className={styles.image}
+        />
+      </div>
     </div>
   );
 };
