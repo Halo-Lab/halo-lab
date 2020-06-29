@@ -1,32 +1,89 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
+@import '@functions/functions';
 
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(64, calc(100% / 64));
+  @include col-width(1, 65);
 }
 
-.title {
-  margin-top: 42px;
-  font-family: $font-gramatika-black;
-  font-size: 3.6rem;
-  font-weight: 400;
-  line-height: 4.3rem;
-  letter-spacing: 0;
-  text-align: center;
+.planets-wrapper {
+  position: relative;
 
-  @include media-breakpoint-down(xs) {
-    font-size: 2.5rem;
-    line-height: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(64, calc(100% / 64));
+  @include col-width(4, 62);
+
+  .planet {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+
+    @media screen and (max-width: $sm) {
+      display: none;
+    }
+  }
+
+  .planet-jupiter {
+    @include hl-width(100px);
+    @include hl-height(100px);
+    background: linear-gradient(
+      36.99deg,
+      rgba(1, 1, 18, 0) 27.49%,
+      #262147 78.93%
+    );
+    left: hl-grid-multiplier(2);
+    bottom: hl-grid-multiplier(-1);
+  }
+
+  .planet-neptune {
+    @include hl-width(40px);
+    @include hl-height(40px);
+    background: linear-gradient(
+      37.98deg,
+      rgba(16, 8, 74, 0) 16.94%,
+      #83a4ff 87.08%
+    );
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    right: hl-grid-multiplier(9);
+    top: hl-grid-multiplier(-1);
+  }
+
+  .planet-uranus {
+    @include hl-width(14px);
+    @include hl-height(14px);
+    background: #ddebfa;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    right: hl-grid-multiplier(4);
+    bottom: hl-grid-multiplier(-1);
   }
 }
 
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: 56px;
-  background: linear-gradient(89.69deg, #3719CA 0.16%, #8161FE 99.8%);
+.text-align {
+  @include col-width(5, 61);
+}
+
+.title {
+  @include hl-margin('top', 26px);
+  @include hl-font-size-title(52px);
+  font-family: $font-gramatika-black;
+  line-height: 1.25em;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+.image-box {
+  @include hl-margin('top', 65px);
+  @include col-width(4, 62);
+
+  background: linear-gradient(89.69deg, #3719ca 0.16%, #8161fe 99.8%);
   position: relative;
-  mix-blend-mode: normal;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  max-height: 500px;
 }

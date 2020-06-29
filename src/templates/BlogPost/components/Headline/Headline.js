@@ -1,24 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import Categories from './components/Categories';
+import GradientText from '@components/GradientText';
 
 import styles from './Headline.module.scss';
 
 const Headline = ({ categories, title, image }) => {
+  const uranus = classNames(styles.planet, styles.planetUranus);
+  const neptune = classNames(styles.planet, styles.planetNeptune);
+  const jupiter = classNames(styles.planet, styles.planetJupiter);
+
   return (
     <div className={styles.container}>
-      <Categories items={categories} />
-      <h2
-        dangerouslySetInnerHTML={{ __html: title }}
-        className={styles.title}
-      ></h2>
-      <img
-        src={image}
-        alt="article image"
-        loading="lazy"
-        className={styles.image}
-      />
+      <div className={styles.planetsWrapper}>
+        <div className={jupiter} />
+        <div className={neptune} />
+        <div className={uranus} />
+
+        <div className={styles.textAlign}>
+          <Categories items={categories} />
+          <h1 className={styles.title}>
+            <GradientText text={title} />
+          </h1>
+        </div>
+      </div>
+      <div className={styles.imageBox}>
+        <img
+          src={image}
+          alt="blog post main image"
+          loading="lazy"
+          className={styles.image}
+        />
+      </div>
     </div>
   );
 };

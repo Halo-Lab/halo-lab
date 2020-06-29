@@ -1,4 +1,8 @@
 .text {
+  color: tomato;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  // this one fixes gradient text line breaks safari bug: https://zellwk.com/blog/multi-line-gradient-links/
+  -webkit-box-decoration-break: clone;
 }
