@@ -23,7 +23,7 @@ const BlogPost = ({ pageContext }) => {
   if (previous) thumbnailsItems.push(previous);
 
   const pageWrapperClass = classNames(styles.container, 'pageWrapper');
-  const excr = data.excerpt.substr(3, data.excerpt.length - 8);
+  const excr = data.excerpt.replace(/(<([^>]+)>)/gi, '');
 
   return (
     <Providers>

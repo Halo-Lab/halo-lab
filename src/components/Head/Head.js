@@ -4,7 +4,11 @@ import Helmet from 'react-helmet';
 
 import { useSiteMetadata } from '@hooks/queries';
 
-const Head = ({ children, title, description }) => {
+const Head = ({
+  children,
+  title = 'Page title',
+  description = 'Page Description',
+}) => {
   const metadata = useSiteMetadata();
 
   const schema = {
@@ -114,8 +118,8 @@ const Head = ({ children, title, description }) => {
 
 Head.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.node.isRequired,
-  description: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default Head;
