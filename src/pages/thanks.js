@@ -8,11 +8,12 @@ import ThanksPage from '@scenes/ThanksPage';
 
 const Thanks = () => {
   const title = `Thanks - Halo Lab`;
+  const description = `Let us say thank you for your cosmic request on this page. We can't wait anymore to reply to it through our Universe`;
   return (
     <Providers>
       <BackgroundStars />
       <Layout>
-        <Head title={title}></Head>
+        <Head title={title} description={description}></Head>
         <ThanksPage />
       </Layout>
     </Providers>
