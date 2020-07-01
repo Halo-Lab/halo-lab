@@ -114,6 +114,8 @@ const Head = ({ children, title, description }) => {
 
 Head.propTypes = {
   children: PropTypes.node.isRequired,
+  title: PropTypes.node.isRequired,
+  description: PropTypes.node.isRequired,
 };
 
 export default Head;
