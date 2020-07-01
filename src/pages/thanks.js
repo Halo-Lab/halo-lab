@@ -12,7 +12,7 @@ const Thanks = () => {
       <BackgroundStars />
       <Layout>
         <Head>
-          <title>Thanks - Halo Lab Blog</title>
+          <title>Thanks - Halo Lab</title>
         </Head>
         <ThanksPage />
       </Layout>

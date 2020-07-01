@@ -11,7 +11,7 @@ const NotFound = () => (
     <BackgroundBlackHole />
     <Layout>
       <Head>
-        <title>404 - Halo Lab Blog</title>
+        <title>404 - Halo Lab</title>
       </Head>
       <NotFoundPage />
     </Layout>

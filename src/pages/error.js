@@ -12,7 +12,7 @@ const Error = () => {
       <BackgroundStars />
       <Layout>
         <Head>
-          <title>Error - Halo Lab Blog</title>
+          <title>Error - Halo Lab</title>
         </Head>
         <ErrorPage />
       </Layout>

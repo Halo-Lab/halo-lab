@@ -16,6 +16,8 @@ const Home = () => {
     config: { mass: 10, tension: 550, friction: 140 },
   }));
 
+  const title = 'Home Page - Halo Lab';
+  const description = `Halo Lab Team brings the design-driven development of your digital product to reality. We are working with a variety of projects, from the strict insurance website to a dynamic music application.`;
   return (
     <Providers>
       <div
@@ -23,9 +25,7 @@ const Home = () => {
       >
         <BackgroundStars animation={props} />
         <Layout>
-          <Head>
-            <title>Home - Halo Lab Blog</title>
-          </Head>
+          <Head title={title} description={description}></Head>
           <HomePage animation={props} />
         </Layout>
       </div>

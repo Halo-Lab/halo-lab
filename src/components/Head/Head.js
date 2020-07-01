@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 import { useSiteMetadata } from '@hooks/queries';
 
-const Head = ({ children }) => {
+const Head = ({ children, title, description }) => {
   const metadata = useSiteMetadata();
 
   const schema = {
@@ -72,37 +72,29 @@ const Head = ({ children }) => {
         name="viewport"
       />
 
-      {/* General meta */}
-      <meta
-        content="We are a full-stack design & development team who focuses on digital products whatever they are."
-        name="description"
-      />
       <meta
         content="ui/ux agency, design agency, ux agency, design and development, design and development agency, design studio, design and development studio, design company, design and development company, design consultant, ui ux agency, ux ui design agency, ui design company, ux design consultancy, ui company, ux design company, ui ux design firm, ui design agency, user interface design company, ui ux company, ui ux design agency, ui design firm, ui studio, best design studios, best design and development studios, top development agencies, reactjs development, gatsbyjs development, websites, web development, front-end development"
         name="keywords"
       />
       <meta content={metadata.title} name="author" />
 
+      <title>{title}</title>
+      <meta content={description} name="description" />
+
       {/* <!-- Twitter meta --> */}
       <meta content="summary" name="twitter:card" />
-      <meta content={metadata.title} name="twitter:title" />
-      <meta
-        content="We are a full-stack design & development team who focuses on digital products whatever they are."
-        name="twitter:description"
-      />
+      <meta content={title} name="twitter:title" />
+      <meta content={description} name="twitter:description" />
       <meta content="https://halo-lab.com/tile-256.png" name="twitter:image" />
-      <meta content="https://halo-lab.com" name="twitter:url" />
+      <meta content={metadata.website} name="twitter:url" />
 
       {/* <!-- Facebook meta --> */}
-      <meta content="https://halo-lab.com" property="og:site_name" />
-      <meta content="Home — Halo Lab" property="og:title" />
-      <meta
-        content="We are a full-stack design & development team who focuses on digital products whatever they are."
-        property="og:description"
-      />
+      <meta content={metadata.website} property="og:site_name" />
+      <meta content={title} property="og:title" />
+      <meta сontent={description} property="og:description" />
       <meta content="website" property="og:type" />
       <meta content="https://halo-lab.com/tile-512.png" property="og:image" />
-      <meta content="https://halo-lab.com" property="og:url" />
+      <meta content={metadata.website} property="og:url" />
       <meta property="og:locale" content="en_US" />
 
       {/* <!-- Verification --> */}
@@ -113,9 +105,6 @@ const Head = ({ children }) => {
 
       {/* Micro data */}
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
-
-      {/* Default title */}
-      <title>{metadata.title}</title>
 
       {/* Additional tags */}
       {children}

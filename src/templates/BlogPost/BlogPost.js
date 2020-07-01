@@ -23,14 +23,13 @@ const BlogPost = ({ pageContext }) => {
   if (previous) thumbnailsItems.push(previous);
 
   const pageWrapperClass = classNames(styles.container, 'pageWrapper');
+  const excr = data.excerpt.substr(3, data.excerpt.length - 8);
 
   return (
     <Providers>
       <BackgroundStars />
       <Layout>
-        <Head>
-          <title>{data.title} - Halo Lab Blog</title>
-        </Head>
+        <Head title={`${data.title} - Halo Lab Blog`} description={excr}></Head>
         <div className={pageWrapperClass}>
           <Headline
             categories={data.categories}
