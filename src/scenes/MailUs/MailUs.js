@@ -3,28 +3,26 @@ import { useSpring, animated as a } from 'react-spring';
 import { useSiteMetadata } from '@hooks/queries';
 import styles from './MailUs.module.scss';
 
-const myConfig = { mass: 1, tension: 200, friction: 60 };
+const myConfig = { mass: 1, tension: 280, friction: 120 };
 
 const MailUs = () => {
   const metadata = useSiteMetadata();
-
   const elRef = React.useRef(null);
+  const elStartPosition = 20;
+  let elParams = null;
   let elPosition = null;
-  let elHeight = null;
   const [blockProps, set] = useSpring(() => ({
-    from: { y: 10 },
+    from: { y: elStartPosition },
     config: myConfig,
   }));
-  const moveTop = y => `translate(0, ${y}%)`;
-  const toPercent = val => Math.ceil((100 / document.body.scrollHeight) * val);
+  const moveTop = y => `translate3d(0, ${y}%, 0)`;
+  const toPercent = val => Math.round((100 / document.body.scrollHeight) * val);
 
   const moveBackground = ({ isImmediate = false }) => {
-    elPosition = toPercent(
-      elRef.current.getBoundingClientRect().top - window.innerHeight
-    );
-    elHeight = elRef.current.getBoundingClientRect().height;
-    if (elPosition + toPercent(elHeight / 5) <= 0) {
-      set({ y: Math.ceil(elPosition * 1.5), immediate: isImmediate });
+    elParams = elRef.current.getBoundingClientRect();
+    elPosition = toPercent(elParams.top - window.innerHeight);
+    if (elPosition <= 0) {
+      set({ y: elStartPosition + elPosition * 5, immediate: isImmediate });
     }
   };
 
