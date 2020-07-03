@@ -3,6 +3,7 @@
 @import '@functions/functions';
 
 .preview {
+
   @include col-width();
 
   @media screen and (min-width: $md) {
@@ -21,9 +22,15 @@
     // <-- hover
   }
 
-  > a {
+  & > a {
     display: block;
+    perspective-origin: center;
+    perspective: 600px;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    will-change: transform;
   }
+
   &.reversed {
     @media screen and (min-width: $md) {
       @include col-width(24, 65);
@@ -36,7 +43,7 @@
   display: flex;
   flex-direction: column;
   z-index: 10;
-  transform: perspective(600px) translateZ(525px) rotateX(0deg) rotateY(0deg) scale(0.15);
+  pointer-events: none;
   @include hl-padding(top, 60px);
   @include hl-padding(bottom, 60px);
   @include col-width(8, 58);
@@ -75,6 +82,7 @@
 }
 
 .tags {
+  pointer-events: auto;
   @include hl-font-size-text(18px);
   font-weight: 300;
   line-height: 1.6em;
@@ -83,6 +91,7 @@
 }
 
 .title {
+  pointer-events: auto;
   @include hl-margin(top, 20px);
   @include hl-font-size-title(36px);
 
@@ -99,6 +108,7 @@
 
 .descriptionLink {
   position: relative;
+  pointer-events: auto;
   @include hl-margin(top, 60px);
   @include hl-margin(bottom, 10px);
   @include hl-font-size-text(14px);
@@ -148,6 +158,7 @@
   display: flex;
   align-items: center;
   margin-top: auto;
+  pointer-events: auto;
   @media screen and (max-width: 1024px) {
     margin-top: 20px;
   }

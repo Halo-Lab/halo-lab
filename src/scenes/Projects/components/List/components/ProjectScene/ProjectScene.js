@@ -3,16 +3,22 @@ import { useSpring, animated } from 'react-spring';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import styles from './ProjectScene.module.scss';
-const calc = (x, y, reversed) => [
-  -(y - window.innerWidth / 4) / 100,
-  reversed
-    ? (x - (window.innerWidth / 4) * 2.8) / 100
-    : (x - window.innerWidth / 3) / 100,
-  1.05,
-];
-const trans = (x, y) => {
-  return `perspective(600px) translateZ(500px) rotateX(${x}deg) rotateY(${y}deg) scale(0.16)`;
+
+const calc = (x, y, reversed, el) => {
+  const elParams = el.current.getBoundingClientRect();
+  return [
+    reversed
+      ? (-(y - elParams.height / 2) * 1.35) / 55
+      : (-(y - elParams.top - elParams.height / 2) * 1.35) / 55,
+    reversed
+      ? (x - elParams.left - elParams.width / 2) / 60
+      : (x - elParams.width / 2) / 60,
+    0.95,
+  ];
 };
+const trans = (x, y, s) => `
+  rotateX(${x}deg) rotateY(${y}deg) scale(${s}) translateZ(200px)`;
+
 const ProjectScene = ({
   link,
   linkTitle,
@@ -24,23 +30,31 @@ const ProjectScene = ({
 }) => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
-    config: { mass: 10, tension: 450, friction: 50 },
+    config: { mass: 5, tension: 350, friction: 40 },
   }));
+
+  const elRef = React.useRef(null);
+
   return (
     <Fragment>
-      <animated.div
+      <div
         className={`${styles.preview} ${reversed ? styles.reversed : ''}`}
         onMouseMove={({ clientX: x, clientY: y }) =>
-          set({ xys: calc(x, y, reversed) })
+          set({ xys: calc(x, y, reversed, elRef) })
         }
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
-        style={{ transform: props.xys.interpolate(trans) }}
+        ref={elRef}
       >
-        <a href={link} target="_blank" rel="noopener noreferrer">
+        <animated.a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ transform: props.xys.interpolate(trans) }}
+        >
           <Img fluid={preview.childImageSharp.fluid} draggable={false} />
           <span className={styles.hiddenTitle}>{title}</span>
-        </a>
-      </animated.div>
+        </animated.a>
+      </div>
       <div
         className={`${styles.description} ${reversed ? styles.reversed : ''}`}
       >
