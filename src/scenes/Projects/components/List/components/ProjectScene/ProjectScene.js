@@ -1,18 +1,8 @@
 import React, { Fragment } from 'react';
-import { useSpring, animated } from 'react-spring';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import styles from './ProjectScene.module.scss';
-const calc = (x, y, reversed) => [
-  -(y - window.innerWidth / 4) / 100,
-  reversed
-    ? (x - (window.innerWidth / 4) * 2.8) / 100
-    : (x - window.innerWidth / 3) / 100,
-  1.05,
-];
-const trans = (x, y) => {
-  return `perspective(600px) translateZ(500px) rotateX(${x}deg) rotateY(${y}deg) scale(0.16)`;
-};
+
 const ProjectScene = ({
   link,
   linkTitle,
@@ -22,25 +12,14 @@ const ProjectScene = ({
   tags,
   title,
 }) => {
-  const [props, set] = useSpring(() => ({
-    xys: [0, 0, 1],
-    config: { mass: 10, tension: 450, friction: 50 },
-  }));
   return (
     <Fragment>
-      <animated.div
-        className={`${styles.preview} ${reversed ? styles.reversed : ''}`}
-        onMouseMove={({ clientX: x, clientY: y }) =>
-          set({ xys: calc(x, y, reversed) })
-        }
-        onMouseLeave={() => set({ xys: [0, 0, 1] })}
-        style={{ transform: props.xys.interpolate(trans) }}
-      >
+      <div className={`${styles.preview} ${reversed ? styles.reversed : ''}`}>
         <a href={link} target="_blank" rel="noopener noreferrer">
           <Img fluid={preview.childImageSharp.fluid} draggable={false} />
           <span className={styles.hiddenTitle}>{title}</span>
         </a>
-      </animated.div>
+      </div>
       <div
         className={`${styles.description} ${reversed ? styles.reversed : ''}`}
       >

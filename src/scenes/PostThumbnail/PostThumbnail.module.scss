@@ -57,9 +57,9 @@
   font-family: $font-gramatika;
   font-weight: 700;
   line-height: 1.5;
-  @include hl-font-size-text(12px);
-  @include hl-margin(top, 20px);
-  @include hl-margin(bottom, 20px);
+  @include hl-font-size-text(11px);
+  @include hl-margin(top, 35px);
+  @include hl-margin(bottom, 10px);
   color: #cdcbd3;
   text-transform: uppercase;
 }

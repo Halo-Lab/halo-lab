@@ -6,13 +6,7 @@ import classNames from 'classnames';
 
 import styles from './PostThumbnail.module.scss';
 
-const PostThumbnail = ({
-  title,
-  slug,
-  featured_media,
-  categories,
-  isFirst,
-}) => {
+const PostThumbnail = ({ title, slug, featured_media, categories }) => {
   const imageSource = featured_media.source_url;
   const imageOptimized =
     featured_media.localFile &&
@@ -20,9 +14,7 @@ const PostThumbnail = ({
     featured_media.localFile.childImageSharp.fluid;
   const link = `/blog/${slug}`;
 
-  const articleClass = classNames(styles.container, {
-    [styles.firstArticle]: isFirst,
-  });
+  const articleClass = classNames(styles.container);
 
   return (
     <article className={articleClass}>
