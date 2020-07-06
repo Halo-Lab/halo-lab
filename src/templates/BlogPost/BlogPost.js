@@ -63,9 +63,7 @@ const BlogPost = ({ pageContext }) => {
         <div className="oldPageWrapper">
           <Thumbnails items={filteredPosts} />
         </div>{' '}
-        <div className="pageWrapper">
-          <MailUs />
-        </div>
+        <MailUs />
       </Layout>{' '}
     </Providers>
   );
