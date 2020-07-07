@@ -118,7 +118,7 @@ Head.defaultProps = {
 
 Head.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   description: PropTypes.string,
 };
 
