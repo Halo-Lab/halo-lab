@@ -5,11 +5,9 @@ import Layout from '@components/Layout';
 import Head from '@components/Head';
 import BackgroundStars from '@components/BackgroundStars';
 import ServicesPage from '@scenes/ServicesPage';
+import PropTypes from 'prop-types';
 
-const Services = () => {
-  const title = 'Services - Halo Lab';
-  const description = `We offer to get acquainted with tools that we use in our studio to create the wonders of the digital world.`;
-
+const Services = ({ title, description }) => {
   return (
     <Providers>
       <BackgroundStars />
@@ -19,6 +17,16 @@ const Services = () => {
       </Layout>
     </Providers>
   );
+};
+
+Services.defaultProps = {
+  title: `Services - Halo Lab`,
+  description: `We offer to get acquainted with tools that we use in our studio to create the wonders of the digital world.`,
+};
+
+Services.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default Services;
