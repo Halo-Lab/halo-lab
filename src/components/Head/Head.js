@@ -4,11 +4,7 @@ import Helmet from 'react-helmet';
 
 import { useSiteMetadata } from '@hooks/queries';
 
-const Head = ({
-  children,
-  title = 'Page title',
-  description = 'Page Description',
-}) => {
+const Head = ({ children, title, description }) => {
   const metadata = useSiteMetadata();
 
   const schema = {
@@ -116,10 +112,14 @@ const Head = ({
   );
 };
 
+Head.defaultProps = {
+  description: `Halo Lab Team brings the design-driven development of your digital product to reality. We are working with a variety of projects, from the strict insurance website to a dynamic music application.`,
+};
+
 Head.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
 };
 
 export default Head;

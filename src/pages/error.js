@@ -8,12 +8,11 @@ import ErrorPage from '@scenes/ErrorPage';
 
 const Error = () => {
   const title = `Error - Halo Lab`;
-  const description = `Oops, it seems like something went wrong, and you found a black hole. We'll try to fix it.`;
   return (
     <Providers>
       <BackgroundStars />
       <Layout>
-        <Head title={title} description={description}></Head>
+        <Head title={title}></Head>
         <ErrorPage />
       </Layout>
     </Providers>
