@@ -76,9 +76,9 @@
 
 .image-box {
   @include hl-margin('top', 65px);
-  @include col-width(4, 62);
+  @include col-width(12, 54);
 
-  background: linear-gradient(89.69deg, #3719ca 0.16%, #8161fe 99.8%);
+  background: transparent;
   position: relative;
   display: flex;
   justify-content: center;
