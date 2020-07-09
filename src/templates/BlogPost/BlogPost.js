@@ -29,7 +29,11 @@ const BlogPost = ({ pageContext }) => {
     <Providers>
       <BackgroundStars />
       <Layout>
-        <Head title={`${data.title} - Halo Lab Blog`} description={excr}></Head>
+        <Head
+          title={`${data.title} - Halo Lab Blog`}
+          description={excr}
+          image={data.featured_media.source_url}
+        />
         <div className={pageWrapperClass}>
           <Headline
             categories={data.categories}

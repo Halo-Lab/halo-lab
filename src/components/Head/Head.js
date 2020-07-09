@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 import { useSiteMetadata } from '@hooks/queries';
 
-const Head = ({ children, title, description }) => {
+const Head = ({ children, title, description, image }) => {
   const metadata = useSiteMetadata();
 
   const schema = {
@@ -85,7 +85,7 @@ const Head = ({ children, title, description }) => {
       <meta content="summary" name="twitter:card" />
       <meta content={title} name="twitter:title" />
       <meta content={description} name="twitter:description" />
-      <meta content="https://halo-lab.com/tile-256.png" name="twitter:image" />
+      <meta content={image} name="twitter:image" />
       <meta content={metadata.website} name="twitter:url" />
 
       {/* <!-- Facebook meta --> */}
@@ -93,7 +93,7 @@ const Head = ({ children, title, description }) => {
       <meta content={title} property="og:title" />
       <meta сontent={description} property="og:description" />
       <meta content="website" property="og:type" />
-      <meta content="https://halo-lab.com/tile-512.png" property="og:image" />
+      <meta content={image} property="og:image" />
       <meta content={metadata.website} property="og:url" />
       <meta property="og:locale" content="en_US" />
 
@@ -114,12 +114,14 @@ const Head = ({ children, title, description }) => {
 
 Head.defaultProps = {
   description: `Halo Lab Team brings the design-driven development of your digital product to reality. We are working with a variety of projects, from the strict insurance website to a dynamic music application.`,
+  image: 'https://halo-lab.com/tile-512.png',
 };
 
 Head.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
+  image: PropTypes.image,
 };
 
 export default Head;
