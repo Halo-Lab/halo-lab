@@ -21,8 +21,17 @@
     // <-- hover
   }
 
-  > a {
+  & > a {
     display: block;
+
+    & > div {
+      transform: scale(1);
+      transition: transform .6s cubic-bezier(.075,.82,.165,1);
+    }
+
+    &:hover > div {
+      transform: scale(0.9);
+    }
   }
   &.reversed {
     @media screen and (min-width: $md) {
@@ -36,7 +45,6 @@
   display: flex;
   flex-direction: column;
   z-index: 10;
-  transform: perspective(600px) translateZ(525px) rotateX(0deg) rotateY(0deg) scale(0.15);
   @include hl-padding(top, 60px);
   @include hl-padding(bottom, 60px);
   @include col-width(8, 58);

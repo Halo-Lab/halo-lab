@@ -17,24 +17,18 @@
 }
 
 .list {
-  display: flex;
-  flex-direction: column;
   list-style-type: none;
   margin: 0 -24px -120px;
   padding: 0;
 
   @media screen and (min-width: $lg) {
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .item {
-  flex-basis: 100%;
   box-sizing: border-box;
   padding: 0 24px;
   @include hl-height(500px);
-  @media screen and (min-width: $lg) {
-    flex-basis: 50%;
-  }
 }

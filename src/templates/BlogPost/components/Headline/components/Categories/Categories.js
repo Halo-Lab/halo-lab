@@ -7,13 +7,23 @@ import styles from './Categories.module.scss';
 const Categories = ({ items }) => {
   return (
     <ul className={styles.container}>
+      <li key="all posts" className={styles.allPostsItem}>
+        <Link to="/blog" className={styles.link}>
+          All blog posts
+        </Link>
+      </li>
       {items.map(item => {
         const link = `/blog?category=${item.slug}`;
 
         return (
-          <li key={item.id} className={styles.item}>
-            <Link to={link}>{item.name}</Link>
-          </li>
+          <>
+            <li>&nbsp;/&nbsp;</li>
+            <li key={item.id} className={styles.item}>
+              <Link to={link} className={styles.link}>
+                {item.name}
+              </Link>
+            </li>
+          </>
         );
       })}
     </ul>

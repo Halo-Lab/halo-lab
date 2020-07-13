@@ -61,11 +61,14 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  const RECOMMENDED_POSTS_LIMIT = 4;
+  let recommendedPosts = result.data.allWordpressPost.edges.map(({ node }) => node).reverse().slice(0,RECOMMENDED_POSTS_LIMIT);
+
   result.data.allWordpressPost.edges.forEach(({ node, previous, next }) => {
     createPage({
       path: `/blog/${node.slug}`,
       component: require.resolve(`./src/templates/BlogPost`),
-      context: { data: node, recent: { previous, next } },
+      context: { data: node, recommendedPosts, recent: { previous, next} },
     });
   });
 };

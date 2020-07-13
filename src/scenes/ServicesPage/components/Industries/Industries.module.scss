@@ -2,6 +2,8 @@
 @import '@styles/mixins/all';
 
 .container {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .title {
@@ -19,7 +21,7 @@
     margin-bottom: 5rem;
   }
   @include media-breakpoint-down(sm) {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     line-height: 1.1em;
     margin-bottom: 2.5rem;
   }

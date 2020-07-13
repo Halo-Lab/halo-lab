@@ -10,7 +10,7 @@ const Article = ({ content }) => {
     <div className={styles.container}>
       <div
         dangerouslySetInnerHTML={{ __html: content }}
-        className={`${styles.wrapper} post`}
+        className={styles.wrapper}
       ></div>
     </div>
   );

@@ -9,24 +9,31 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-family: $font-sofia-pro;
+  font-weight: 700;
+  line-height: 1.55em;
+  text-transform: uppercase;
+  @include hl-font-size-text(12px);
+}
+
+.all-posts-item {
+  .link {
+    color: #414162;
+  }
 }
 
 .item {
   margin-top: 16px 8px 0;
 
-  a {
-    font-family: $font-sofia-pro;
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.43rem;
-    letter-spacing: 10px;
-    text-decoration: none;
-    text-transform: uppercase;
+  .link {
     color: white;
-    transition: 0.4s;
+  }
+}
 
-    &:hover {
-      color: $yellow-color;
-    }
+.link {
+  text-decoration: none;
+  &:hover {
+    color: $yellow-color;
+    transition: 0.4s;
   }
 }

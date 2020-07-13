@@ -58,7 +58,7 @@ const Switcher = ({ items, location }) => {
   });
 
   const handleClick = () => {
-    const value = numberOfRendered + STEP_VALUE;
+    const value = numberOfRendered + STEP_VALUE * 3;
     setNumberOfRendered(value > items.length ? items.length : value);
   };
 
@@ -76,24 +76,20 @@ const Switcher = ({ items, location }) => {
         </TabList>
 
         {allCategories.map(({ title, items }) => {
-          const newItems = items.slice(0, 4); // take the first four articles
-          const moreItems = items.slice(5, 5 + numberOfRendered);
+          const newItems = items.slice(0, 3); // take the first four articles
+          const moreItems = items.slice(3, 3 + numberOfRendered);
           return (
             <TabPanel key={title} className={styles.tabsContentContainer}>
               <ul className={styles.tabContentList}>
-                {newItems.map((item, index) => {
-                  const isFirst = index === 0;
-                  const tabItemClass = classNames(styles.tabContentItem, {
-                    [styles.tabContentItemFirst]: isFirst,
-                  });
-
+                {newItems.map(item => {
+                  const tabItemClass = classNames(styles.tabContentItem);
                   return (
                     <li
                       data-list-item="articles"
                       key={item.id}
                       className={tabItemClass}
                     >
-                      <PostThumbnail {...item} isFirst={isFirst} />
+                      <PostThumbnail {...item} />
                     </li>
                   );
                 })}
