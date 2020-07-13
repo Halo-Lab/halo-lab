@@ -13,6 +13,7 @@ const useWordpressPosts = () => {
               slug
               date(formatString: "MMM DD, YYYY")
               content
+              excerpt
               categories {
                 name
                 id

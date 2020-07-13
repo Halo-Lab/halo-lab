@@ -29,6 +29,7 @@ const BlogPost = ({ pageContext }) => {
   if (next) thumbnailsItems.push(next);
   if (previous) thumbnailsItems.push(previous);
   const pageWrapperClass = classNames(styles.container, 'pageWrapper');
+  const excr = data.excerpt.replace(/(<([^>]+)>)/gi, '');
   const articleRef = React.useRef(null);
   function scrollHandler() {
     const pos = articleRef.current.getBoundingClientRect();
@@ -47,9 +48,7 @@ const BlogPost = ({ pageContext }) => {
     <Providers>
       <BackgroundStars />
       <Layout headerIsWhite={headerIsWhite}>
-        <Head>
-          <title> {data.title} - Halo Lab Blog </title>{' '}
-        </Head>{' '}
+        <Head title={`${data.title} - Halo Lab Blog`} description={excr}></Head>
         <div className={pageWrapperClass}>
           <Headline
             categories={data.categories}

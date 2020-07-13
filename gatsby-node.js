@@ -17,6 +17,7 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             date(formatString: "MMM DD, YYYY")
             content
+            excerpt
             categories {
               name
               id
