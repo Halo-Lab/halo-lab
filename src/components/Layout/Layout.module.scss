@@ -16,11 +16,12 @@
     width: 100%;
     max-width: 1185px;
     height: 1076px;
-    background: radial-gradient(41.38% 40.85% at 56.08% 46.24%,
-        #3719ca 0%,
-        rgba(55, 25, 202, 0) 100%);
+    background: radial-gradient(
+      41.38% 40.85% at 56.08% 46.24%,
+      #3719ca 0%,
+      rgba(55, 25, 202, 0) 100%
+    );
     opacity: 0.4;
-    filter: blur(250px);
     top: -756px;
   }
 }
