@@ -9,10 +9,12 @@ module.exports = {
     strict: 0,
     'no-console': 1,
   },
+  plugins: ['cypress'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
+    'plugin:cypress/recommended',
   ],
   settings: {
     react: {

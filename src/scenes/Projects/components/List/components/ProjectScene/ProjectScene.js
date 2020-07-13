@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
-
 import styles from './ProjectScene.module.scss';
 
 const ProjectScene = ({
@@ -14,7 +13,6 @@ const ProjectScene = ({
   title,
 }) => {
   return (
-    // <div className={`${styles.container} ${reversed ? styles.reversed : ''}`}>
     <Fragment>
       <div className={`${styles.preview} ${reversed ? styles.reversed : ''}`}>
         <a href={link} target="_blank" rel="noopener noreferrer">
@@ -50,10 +48,8 @@ const ProjectScene = ({
         </div>
       </div>
     </Fragment>
-    // </div>
   );
 };
-
 ProjectScene.propTypes = {
   link: PropTypes.string,
   linkTitle: PropTypes.string,
@@ -62,6 +58,6 @@ ProjectScene.propTypes = {
   review: PropTypes.object,
   tags: PropTypes.string,
   title: PropTypes.string,
+  xys: PropTypes.any,
 };
-
 export default ProjectScene;

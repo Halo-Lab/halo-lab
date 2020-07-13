@@ -5,46 +5,47 @@ import PropTypes from 'prop-types';
 
 import styles from './PostThumbnail.module.scss';
 
-const getDateEntries = date => {
-  if (!date) {
-    return ['Jan', '01'];
-  }
-  const datePartial = date.split(',')[0];
-  const dateEntries = datePartial.split(' ');
-
-  return dateEntries;
-};
-
-const PostThumbnail = ({ title, slug, featured_media, date }) => {
+const PostThumbnail = ({ title, slug, featured_media, categories }) => {
   const imageSource = featured_media.source_url;
   const imageOptimized =
     featured_media.localFile &&
     featured_media.localFile.childImageSharp &&
     featured_media.localFile.childImageSharp.fluid;
-  const [month, day] = getDateEntries(date);
   const link = `/blog/${slug}`;
 
   return (
     <article className={styles.container}>
-      <div className={styles.date}>
-        <div>{day}</div>
-        <div>{month}</div>
-      </div>
       <Link to={link} className={styles.link}>
         {imageOptimized ? (
-          <div>
-            <Img fluid={imageOptimized} />
-          </div>
+          <Img fluid={imageOptimized} />
         ) : (
-          <img src={imageSource} alt="post preview" loading="lazy" />
+          <img
+            src={imageSource}
+            className={styles.image}
+            alt="post preview"
+            loading="lazy"
+          />
         )}
         <span className={styles.hiddenTitle}>{title}</span>
       </Link>
-      <h3 className={styles.title}>
-        <Link to={link} dangerouslySetInnerHTML={{ __html: title }}></Link>
-      </h3>
+      <div className={styles.wrapper}>
+        {categories.map(category => {
+          return (
+            <p className={styles.tag} key={category.id}>
+              #{category.name}
+            </p>
+          );
+        })}
+        <h3 className={styles.title}>
+          <Link to={link}>{title}</Link>
+        </h3>
+      </div>
     </article>
   );
+};
+
+PostThumbnail.defaultProps = {
+  categories: [],
 };
 
 PostThumbnail.propTypes = {
@@ -52,6 +53,8 @@ PostThumbnail.propTypes = {
   slug: PropTypes.string,
   date: PropTypes.string,
   featured_media: PropTypes.object,
+  categories: PropTypes.array,
+  isFirst: PropTypes.bool,
 };
 
 export default PostThumbnail;

@@ -2,9 +2,6 @@
 @import '@styles/mixins/all';
 @import '@functions/functions';
 
-.container {
-}
-
 .title {
   font-family: $font-gramatika-black;
   @include hl-font-size-title(86px);

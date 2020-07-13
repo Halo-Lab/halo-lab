@@ -21,8 +21,6 @@
       rgba(55, 25, 202, 0) 100%
     );
     opacity: 0.4;
-    filter: blur(150px);
-
     @media screen and (max-width: $md) {
       display: none;
     }

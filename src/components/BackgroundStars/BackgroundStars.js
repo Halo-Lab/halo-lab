@@ -14,7 +14,10 @@ const iTranslateBig = y => `translate3d(0, ${y}%, 0)`;
 const iTranslateSmall = y => `translate3d(0, ${y / 1.5}%, 0)`;
 const iScale = value => `scale(${value})`;
 
-const BackgroundStars = () => {
+const transition = (x, y) => `translate3d(${x / 100}px,${y / 100}px,0)`;
+
+const BackgroundStars = ({ animation }) => {
+  const animationStars = animation ? animation.xy.interpolate(transition) : '';
   const { starsBig, starsSmall } = useBackgroundsAssets();
   const { isOpened } = useContext(MenuContext);
 
@@ -52,7 +55,6 @@ const BackgroundStars = () => {
     scrollPercentage = Math.ceil(
       (100 / document.body.scrollHeight) * -window.pageYOffset
     );
-
     set({ y: scrollPercentage, immediate: isImmediate });
   };
 
@@ -84,10 +86,11 @@ const BackgroundStars = () => {
           transform: layerProps.y.interpolate(iTranslateBig),
         }}
       >
-        <div
+        <a.div
           className={styles.layer}
           style={{
             backgroundImage: `url(${starsBig.publicURL})`,
+            transform: animationStars,
           }}
         />
       </a.div>
@@ -97,10 +100,11 @@ const BackgroundStars = () => {
           transform: layerProps.y.interpolate(iTranslateSmall),
         }}
       >
-        <div
+        <a.div
           className={styles.layer}
           style={{
             backgroundImage: `url(${starsSmall.publicURL})`,
+            transform: animationStars,
           }}
         />
       </a.div>
@@ -109,7 +113,7 @@ const BackgroundStars = () => {
 };
 
 BackgroundStars.propTypes = {
-  y: PropTypes.any,
+  animation: PropTypes.any,
 };
 
 export default BackgroundStars;

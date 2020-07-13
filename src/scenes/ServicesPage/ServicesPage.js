@@ -11,12 +11,14 @@ import styles from './ServicesPage.module.scss';
 
 const ServicesPage = () => {
   return (
-    <div className={`${styles.container} oldPageWrapper`}>
-      <Design />
-      <Development />
-      <Flow />
-      <Industries />
-      <Technologies />
+    <div className={`${styles.container}`}>
+      <div className="pageWrapper">
+        <Design />
+        <Development />
+        <Flow />
+        <Industries />
+        <Technologies />
+      </div>
       <MailUs />
     </div>
   );
