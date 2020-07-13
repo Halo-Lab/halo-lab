@@ -11,6 +11,8 @@ import Article from './components/Article';
 import Headline from './components/Headline';
 import Thumbnails from './components/Thumbnails';
 
+import { useStaticQuery, graphql } from 'gatsby';
+
 import styles from './BlogPost.module.scss';
 
 const BlogPost = ({ pageContext }) => {
@@ -24,6 +26,35 @@ const BlogPost = ({ pageContext }) => {
 
   const pageWrapperClass = classNames(styles.container, 'pageWrapper');
   const excr = data.excerpt.replace(/(<([^>]+)>)/gi, '');
+  const image = data.featured_media.source_url;
+
+  console.log(image)
+
+  // const projectsAvatar = graphql`
+  //   fragment projectsAvatar on File {
+  //     childImageSharp {
+  //       fluid(maxWidth: 256, quality: 100) {
+  //         ...GatsbyImageSharpFluid_withWebp
+  //       }
+  //     }
+  //   }
+  // `;
+
+  // const useProjectsAssets = () => {
+  //   const data = useStaticQuery(graphql`
+  //     query {
+  //       preview1: file(
+  //         relativePath: { eq: ${data.featured_media.source_url} }
+  //       ) {
+  //         name
+  //         ...projectsAvatar
+  //       }
+  //     }
+  //   `);
+  //   return data;
+  // };
+
+  console.log(useProjectsAssets);
 
   return (
     <Providers>
