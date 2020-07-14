@@ -10,7 +10,7 @@ const useSiteMetadata = () => {
             description
             author
             email
-            website
+            siteUrl
           }
         }
       }
