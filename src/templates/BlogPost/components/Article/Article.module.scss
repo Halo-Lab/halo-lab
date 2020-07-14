@@ -100,8 +100,14 @@
     }
   }
 
+  .alignleft {
+    float: left;
+    margin: 0 30px 0 0;
+  }
+
   figure {
     margin: 2.7rem 0;
+    
     @include media-breakpoint-down(xs) {
       margin: 2.5rem 0;
     }
