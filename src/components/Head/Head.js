@@ -86,15 +86,15 @@ const Head = ({ children, title, description }) => {
       <meta content={title} name="twitter:title" />
       <meta content={description} name="twitter:description" />
       <meta content="https://halo-lab.com/tile-256.png" name="twitter:image" />
-      <meta content={metadata.website} name="twitter:url" />
+      <meta content={metadata.siteUrl} name="twitter:url" />
 
       {/* <!-- Facebook meta --> */}
-      <meta content={metadata.website} property="og:site_name" />
+      <meta content={metadata.siteUrl} property="og:site_name" />
       <meta content={title} property="og:title" />
       <meta сontent={description} property="og:description" />
       <meta content="website" property="og:type" />
       <meta content="https://halo-lab.com/tile-512.png" property="og:image" />
-      <meta content={metadata.website} property="og:url" />
+      <meta content={metadata.siteUrl} property="og:url" />
       <meta property="og:locale" content="en_US" />
 
       {/* <!-- Verification --> */}
