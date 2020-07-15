@@ -94,7 +94,6 @@ const Switcher = ({ items, location }) => {
                   );
                 })}
               </ul>
-              <Subscribe />
 
               <ul className={styles.tabContentList}>
                 {moreItems.map(item => {
@@ -115,6 +114,8 @@ const Switcher = ({ items, location }) => {
                   Load more
                 </button>
               ) : null}
+
+              <Subscribe />
             </TabPanel>
           );
         })}
