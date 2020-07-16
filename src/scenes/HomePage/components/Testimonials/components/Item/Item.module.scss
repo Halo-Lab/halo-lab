@@ -51,6 +51,11 @@
       display: none;
     }
   }
+  @include media-breakpoint-up(xxl) {
+    &::after {
+      left: 300px;
+    }
+  }
 }
 
 .review {
