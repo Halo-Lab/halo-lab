@@ -47,17 +47,10 @@
   }
 
   &:hover {
-    .image,
     .icon {
-      animation-play-state: running;
+      transform: rotate(360deg);
     }
   }
-}
-
-.icon {
-  animation: dribbleAnimationRotate 10s infinite linear;
-  animation-play-state: paused;
-  transform-origin: center center;
 }
 
 .icon {
@@ -68,6 +61,8 @@
   right: 0;
   bottom: 0;
   margin: auto;
+  transition: all 1s ease;
+  will-change: transform;
 }
 
 @keyframes dribbleAnimationRotate {
