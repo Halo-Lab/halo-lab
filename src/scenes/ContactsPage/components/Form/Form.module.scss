@@ -57,8 +57,9 @@
 }
 
 .input {
-  @include hl-padding(left, 40px);
-  @include hl-padding(right, 40px);
+  @include hl-padding(left, 20px);
+  @include hl-padding(right, 20px);
+  padding-top: 18px;
   box-sizing: border-box;
   border: 1px solid $dark-grey-color;
   background: transparent;
@@ -76,14 +77,23 @@
     border-color: $main-color;
     background-color: $white-color;
   }
+
+  @media screen and (max-width: $lg) {
+    padding-top: 15px;
+  }
+
+  @media screen and (max-width: $md) {
+    --coef-size: 0.8;
+    padding-top: 14px;
+  }
 }
 
 .textarea {
   box-sizing: border-box;
   width: 100%;
   min-height: 130px;
-  @include hl-padding(left, 40px);
-  @include hl-padding(right, 40px);
+  @include hl-padding(left, 20px);
+  @include hl-padding(right, 20px);
   @include hl-padding(top, 40px);
   background-color: transparent;
   border: 1px solid $dark-grey-color;
@@ -104,6 +114,10 @@
     border-color: $main-color;
     background-color: $white-color;
   }
+
+  @media screen and (max-width: $md) {
+    @include hl-padding(top, 80px);
+  }
 }
 
 .placeholder {
@@ -112,9 +126,9 @@
   @include hl-font-size-text(18px);
   font-family: $font-sofia-pro;
   font-weight: 300;
-  top: 50%;
+  top: 47%;
   left: 0;
-  @include hl-padding(left, 40px);
+  @include hl-padding(left, 20px);
   transform: translateY(-50%);
   transition: all 0.3s;
   z-index: 2;
@@ -129,7 +143,15 @@
 .input.focused + .placeholder {
   @include hl-font-size-text(14px);
   transform: translate(0);
-  top: 10px;
+  top: 16px;
+
+  @media screen and (max-width: $lg) {
+    top: 11px;
+  }
+
+  @media screen and (max-width: $md) {
+    top: 9px;
+  }
 }
 
 .input.error + .placeholder,
@@ -185,7 +207,7 @@
   box-sizing: border-box;
   width: calc(100% - 4px);
   top: 32px;
-  @include hl-padding(left, 40px);
+  @include hl-padding(left, 20px);
   left: 2px;
   z-index: 2;
   transition: font-size 0.3s, top 0.3s;
@@ -198,9 +220,8 @@
 .textarea:focus + .placeholder,
 .textarea.focused + .placeholder {
   @include hl-font-size-text(14px);
-  top: 20px;
+  top: 28px;
   background-color: $white-color;
-  @include hl-height(40px);
 
   @media screen and (max-width: $sm) {
     height: 20px;

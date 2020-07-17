@@ -30,7 +30,7 @@
   @include col-width(10, 19);
   animation: scale 1.4s 1s both cubic-bezier(0.76, 0, 0.24, 1);
   @include media-breakpoint-down(md) {
-    @include col-width(2, 31);
+    @include col-width(3, 31);
   }
 }
 .dribbble {
@@ -38,7 +38,7 @@
   padding-bottom: 2.5rem;
   animation: scale 1.4s 0.85s both cubic-bezier(0.76, 0, 0.24, 1);
   @include media-breakpoint-down(md) {
-    @include col-width(32, 62);
+    @include col-width(35, 62);
     padding-bottom: 0;
   }
 }
