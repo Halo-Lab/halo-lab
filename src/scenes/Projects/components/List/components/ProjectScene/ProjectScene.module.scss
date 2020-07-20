@@ -50,8 +50,12 @@
   @include col-width(8, 58);
 
   @media screen and (min-width: $xl) {
-    @include hl-padding(top, 132px);
-    @include hl-padding(bottom, 118px);
+    @include hl-padding(top, 80px);
+    @include hl-padding(bottom, 64px);
+  }
+
+  @media screen and (min-width: $lg) {
+    @include col-width(39, 58);
   }
 
   @media screen and (min-width: $md) {
@@ -59,12 +63,11 @@
     grid-row: 1;
     margin-top: 0;
   }
-  @media screen and (min-width: $lg) {
-    @include col-width(39, 58);
-  }
+
   @media screen and (max-width: $sm) {
     padding-bottom: 0;
   }
+
   &.reversed {
     @media screen and (min-width: $md) {
       @include col-width(4, 28);
@@ -114,6 +117,11 @@
   @media screen and (min-width: $xl) {
     @include hl-margin(top, 40px);
     @include hl-margin(bottom, 30px);
+  }
+
+  @media screen and (max-width: $lg) {
+    @include hl-margin(top, 30px);
+    @include hl-margin(bottom, 40px);
   }
 
   padding-bottom: 8px;
