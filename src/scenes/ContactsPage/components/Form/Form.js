@@ -3,24 +3,6 @@ import { navigate } from 'gatsby';
 import { isValidEmail } from '@helpers';
 
 import styles from './Form.module.scss';
-/**
- * I'm sorry for this function, but I can't do this better than that
- * this func jump to next form field
- */
-function autoTab() {
-  const fields = document.querySelectorAll('input, textarea');
-  const activeElement = document.activeElement;
-  if (
-    !activeElement.classList.contains(styles.error) &&
-    activeElement.value !== ''
-  ) {
-    const index = [...fields].indexOf(activeElement);
-
-    if (index < fields.length) {
-      fields[index + 1].focus();
-    }
-  }
-}
 
 const Form = () => {
   const attachmentInput = useRef(null);
@@ -66,8 +48,6 @@ const Form = () => {
       data.name.valid && isValidEmail(data.email.value) && data.message.valid;
 
     setIsValid(valid);
-
-    autoTab();
 
     const url = process.env.GATSBY_FORM_CONTACT_URL;
     const formData = new FormData();
@@ -118,6 +98,7 @@ const Form = () => {
             name="name"
             id="name"
             require="true"
+            required
             onChange={handleChange}
           />
           <label className={styles.placeholder} htmlFor="name">
@@ -147,6 +128,7 @@ const Form = () => {
             name="email"
             id="email"
             require="true"
+            required
             onChange={handleChange}
           />
           <label className={styles.placeholder} htmlFor="email">
@@ -164,6 +146,7 @@ const Form = () => {
             name="message"
             id="message"
             require="true"
+            required
             onChange={handleChange}
           ></textarea>
           <label className={styles.placeholder} htmlFor="message">
