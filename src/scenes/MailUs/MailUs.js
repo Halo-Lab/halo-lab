@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSiteMetadata } from '@hooks/queries';
 import styles from './MailUs.module.scss';
+import classNames from 'classnames';
 
 const MailUs = () => {
   const metadata = useSiteMetadata();
@@ -32,14 +33,12 @@ const MailUs = () => {
     return () => window.removeEventListener('scroll', moveBackground);
   }, []);
 
+  const linkIsHovered = classNames(styles.container, {
+    [styles.ishovered]: isHovered,
+  });
+
   return (
-    <div
-      // className={styles.container}
-      ref={elRef}
-      className={
-        isHovered ? `${styles.container} ishovered` : `${styles.container}`
-      }
-    >
+    <div ref={elRef} className={linkIsHovered}>
       <span className={styles.background} style={backgroundParallax} />
       <p className={styles.title}>
         Ready to create

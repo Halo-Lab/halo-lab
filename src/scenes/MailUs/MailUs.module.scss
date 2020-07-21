@@ -141,11 +141,9 @@
   }
 }
 
-:global {
-  .ishovered {
-    &:after {
-      @include hl-width(420px);
-      @include hl-height(420px);
-    }
+.ishovered {
+  &:after {
+    @include hl-width(420px);
+    @include hl-height(420px);
   }
 }
