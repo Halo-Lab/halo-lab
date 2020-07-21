@@ -74,7 +74,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "eslint": "eslint src/",
-    "bump-patch": "npm version patch && webpack-bundle-analyzer report.json",
+    "bump-patch": "npm version patch && wwebpack-bundle-analyzer  report.json  public -r",
     "test": "npm run eslint && npm run test:headless",
     "test:file": "cypress run --headless --spec",
     "test:open": "cypress open",
