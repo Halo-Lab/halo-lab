@@ -15,6 +15,12 @@ module.exports = {
     `gatsby-plugin-optimize-svgs`,
     `gatsby-plugin-sass`,
     {
+      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      options: {
+        analyzerMode: 'static',
+      },
+    },
+    {
       resolve: `gatsby-source-dribbble`,
       options: {
         access_token: process.env.DRIBBBLE_TOKEN,
