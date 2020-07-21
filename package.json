@@ -2,7 +2,7 @@
   "name": "halo-lab",
   "private": false,
   "description": "Halo lab website",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": "Halo lab",
   "dependencies": {
     "classnames": "^2.2.6",
