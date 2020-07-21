@@ -14,6 +14,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-optimize-svgs`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-preact`,
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',
       options: {
