@@ -8,6 +8,10 @@ const MailUs = () => {
   let elParams = null;
   let elPosition = null;
   const [backgroundParallax, setBackgroundParallax] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
 
   const moveBackground = () => {
     elParams = elRef.current.getBoundingClientRect();
@@ -29,14 +33,25 @@ const MailUs = () => {
   }, []);
 
   return (
-    <div className={styles.container} ref={elRef}>
+    <div
+      // className={styles.container}
+      ref={elRef}
+      className={
+        isHovered ? `${styles.container} ishovered` : `${styles.container}`
+      }
+    >
       <span className={styles.background} style={backgroundParallax} />
       <p className={styles.title}>
         Ready to create
         <br />
         <span>your star?</span>
       </p>
-      <a href={`mailto:${metadata.email}`} className={styles.link}>
+      <a
+        href={`mailto:${metadata.email}`}
+        className={styles.link}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         contact us
       </a>
     </div>
