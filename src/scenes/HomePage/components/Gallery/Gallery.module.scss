@@ -19,13 +19,6 @@
   line-height: 1.25em;
   color: $white-color;
   text-align: center;
-  @include media-breakpoint-down(md) {
-    --coef-title: 0.6;
-  }
-}
-
-.sliderWrapper {
-  cursor: pointer;
 }
 
 .item {

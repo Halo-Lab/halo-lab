@@ -22,7 +22,8 @@
   @include hl-margin(bottom, 60px);
 
   @include media-breakpoint-down(sm) {
-    padding:  0 20px;
+    padding: 0 20px;
+    max-width: 85%;
     @include hl-margin(bottom, 80px);
   }
 }

@@ -21,10 +21,6 @@
   line-height: 1.25em;
   letter-spacing: -2px;
   text-transform: capitalize;
-  @media screen and (max-width: $sm) {
-    order: 1;
-    --coef-title: 0.65;
-  }
 }
 
 .link {
@@ -47,24 +43,22 @@
   }
 
   &:hover {
-    .image,
     .icon {
-      animation-play-state: running;
+      transform: rotate(360deg);
     }
   }
 }
 
-// .image {
-//   animation: dribbleAnimationRotate 10s infinite linear;
-//   animation-play-state: paused;
-// }
-
 .icon {
   position: absolute;
   max-width: 3.18rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transition: all 1s ease;
+  will-change: transform;
 }
 
 @keyframes dribbleAnimationRotate {

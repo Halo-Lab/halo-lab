@@ -1,24 +1,24 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
-@mixin expandedLink {
+@mixin expandedLink($scale: 1, $starsScale: 1) {
   [data-circle='1'] {
-    transform: scale(1.94);
+    transform: scale(1.94 * $scale);
   }
 
   [data-circle='2'],
   [data-circle='3'] {
-    transform: scale(3.4);
+    transform: scale(3.4 * $scale);
   }
 
   [data-circle='4'] {
-    transform: scale(2.564);
+    transform: scale(2.564 * $scale);
   }
 
   .stars {
     opacity: 1;
     z-index: 1;
-    transform: translate(-50%, -50%) rotate(-20deg);
+    transform: translate(-50%, -50%) rotate(-20deg) scale(1 * $starsScale);
     transition-delay: 0.2s;
   }
 
@@ -26,6 +26,11 @@
     opacity: 1;
     z-index: 1;
     transition-delay: 0.2s;
+    transform: translate(-50%, -50%) scale(0.8);
+
+    @media screen and (max-width: $md) {
+      display: none;
+    }
   }
 }
 
@@ -48,14 +53,19 @@
   justify-content: space-between;
   align-items: flex-start;
   list-style-type: none;
-  margin: 5% 0 0 -8%;
+  margin-top: -80px;
   padding: 0;
-  width: 50%;
-  height: 65%;
+  width: 60%;
+  height: 59%;
 
-  @media screen and (min-width: $md) {
-    margin-left: 0;
-    width: 60%;
+  @media screen and (min-width: $lg) {
+    margin-top: 0;
+    height: 65%;
+  }
+
+  @media screen and (max-width: $md) {
+    margin-left: -8%;
+    width: 50%;
   }
 }
 
@@ -73,8 +83,12 @@
       margin-left: 20%;
     }
 
+    &:nth-child(3) {
+      margin-top: 50px;
+    }
+
     &:nth-child(4) {
-      margin-right: 20%;
+      margin-right: 26%;
     }
   }
 }
@@ -89,9 +103,7 @@
   &.active {
     // mobile active item -->
     @media screen and (max-width: 767px) {
-      .circle {
-        background-color: $grey-color;
-      }
+      @include expandedLink(0.7, 0.5);
     }
 
     // tablet and desktop active item -->

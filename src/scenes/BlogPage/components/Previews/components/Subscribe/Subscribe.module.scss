@@ -6,8 +6,8 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(64, calc(100% / 57));
-  @include hl-padding(top, 200px);
-  @include hl-padding(bottom, 200px);
+  @include hl-padding(top, 150px);
+  @include hl-padding(bottom, 120px);
   @include col-width(1, 65);
   &::before {
     content: '';

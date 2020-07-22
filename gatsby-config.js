@@ -6,7 +6,7 @@ module.exports = {
     description: `Experts from all your network providers integrated into one powerful platform.`,
     author: `@halolabteam`,
     email: `mail@halo-lab.com`,
-    website: `https://halo-lab.com`,
+    siteUrl: `https://halo-lab.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -143,5 +143,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
   ],
 };
