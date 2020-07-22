@@ -6,7 +6,8 @@ describe('services page', function() {
   it('check flow tabs', function() {
     cy.contains('With Love from Halo Lab').scrollIntoView();
     //maybe this is problem react-tabs, but click doesn't work without double click
-    cy.contains('Testing')
+    cy.get('.react-tabs')
+      .contains('Testing')
       .click()
       .click();
     cy.contains(
@@ -15,7 +16,8 @@ describe('services page', function() {
   });
 
   it('check technologies tabs', function() {
-    cy.contains('Databases')
+    cy.get('.react-tabs')
+      .contains('Databases')
       .click()
       .click();
     cy.contains('MongoDB').should('be.visible');
