@@ -18,10 +18,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',
       options: {
-        analyzerMode: 'json',
         generateStatsFile: true,
-        openAnalyzer: false,
-        reportFilename: 'reportVersion.html',
       },
     },
     {
