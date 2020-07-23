@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSiteMetadata } from '@hooks/queries';
 import styles from './MailUs.module.scss';
+import classNames from 'classnames';
 
 const MailUs = () => {
   const metadata = useSiteMetadata();
@@ -8,6 +9,10 @@ const MailUs = () => {
   let elParams = null;
   let elPosition = null;
   const [backgroundParallax, setBackgroundParallax] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
 
   const moveBackground = () => {
     elParams = elRef.current.getBoundingClientRect();
@@ -28,15 +33,24 @@ const MailUs = () => {
     return () => window.removeEventListener('scroll', moveBackground);
   }, []);
 
+  const linkIsHovered = classNames(styles.container, {
+    [styles.ishovered]: isHovered,
+  });
+
   return (
-    <div className={styles.container} ref={elRef}>
+    <div ref={elRef} className={linkIsHovered}>
       <span className={styles.background} style={backgroundParallax} />
       <p className={styles.title}>
         Ready to create
         <br />
         <span>your star?</span>
       </p>
-      <a href={`mailto:${metadata.email}`} className={styles.link}>
+      <a
+        href={`mailto:${metadata.email}`}
+        className={styles.link}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         contact us
       </a>
     </div>

@@ -34,7 +34,11 @@
 .imageBox {
   flex: 0 0 auto;
   width: 100%;
-  background: linear-gradient(123.69deg, #0A0C2D 28.53%, rgba(10, 12, 45, 0) 93.53%);
+  background: linear-gradient(
+    123.69deg,
+    #0a0c2d 28.53%,
+    rgba(10, 12, 45, 0) 93.53%
+  );
   border: 1px solid #323453;
 
   @media screen and (min-width: $md) {
@@ -74,7 +78,7 @@
 .title {
   font-family: $font-sofia-pro;
   font-weight: 600;
-  @include hl-font-size-title(22px);
+  @include hl-font-size-text(22px);
   line-height: 1.4em;
   font-weight: 400;
 

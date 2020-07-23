@@ -21,10 +21,6 @@
   line-height: 1.25em;
   letter-spacing: -2px;
   text-transform: capitalize;
-  @media screen and (max-width: $sm) {
-    order: 1;
-    --coef-title: 0.65;
-  }
 }
 
 .link {
