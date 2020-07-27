@@ -36,7 +36,11 @@ const MailUs = () => {
   }, []);
 
   const { removeBoxShadow } = useContext(BoxShadowContext);
-  window.addEventListener('scroll', () => removeBoxShadow(elRef));
+  useEffect(() => {
+    let k = removeBoxShadow(elRef);
+    window.addEventListener('scroll', () => k);
+    return () => window.removeEventListener('scroll', k);
+  });
   const linkIsHovered = classNames(styles.container, {
     [styles.ishovered]: isHovered,
   });
