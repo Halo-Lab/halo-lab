@@ -59,4 +59,5 @@ export default Header;
 
 Header.propTypes = {
   headerIsWhite: PropTypes.bool,
+  forwardedRef: PropTypes.object,
 };
