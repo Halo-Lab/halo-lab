@@ -98,6 +98,7 @@ const Form = () => {
             name="name"
             id="name"
             require="true"
+            required
             onChange={handleChange}
           />
           <label className={styles.placeholder} htmlFor="name">
@@ -127,6 +128,7 @@ const Form = () => {
             name="email"
             id="email"
             require="true"
+            required
             onChange={handleChange}
           />
           <label className={styles.placeholder} htmlFor="email">
@@ -144,6 +146,7 @@ const Form = () => {
             name="message"
             id="message"
             require="true"
+            required
             onChange={handleChange}
           ></textarea>
           <label className={styles.placeholder} htmlFor="message">

@@ -14,7 +14,7 @@ const Contacts = () => {
     <Providers>
       <BackgroundStars />
       <Layout>
-        <Head title={title} description={description}></Head>
+        <Head title={title} description={description} />
         <ContactsPage />
       </Layout>
     </Providers>
