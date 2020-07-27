@@ -286,3 +286,11 @@ $header-transition: all 0.3s;
     transform: translateY(0);
   }
 }
+
+:global {
+  .boxshadow-out > div {
+    &:before {
+      display: none;
+    }
+  }
+}
