@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import Helmet from 'react-helmet';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import Header from '@components/Header';
 import CustomerChat from '@components/CustomerChat';
-import { MenuContext } from '@contexts';
+import { MenuContext, BoxShadowContext } from '@contexts';
 
 import styles from './Layout.module.scss';
 import '@styles/index.scss';
@@ -20,25 +20,40 @@ const Layout = ({ children, isGlow, headerIsWhite }) => {
   const mainClasses = classNames(styles.main, styles.hidden);
   const footerClasses = classNames(styles.footer, styles.hidden);
 
+  const childRef = useRef(null);
+
+  const [remBoxShadow, useRemBoxShadow] = React.useState(null);
+
+  function removeBoxShadow(MailUs) {
+    const el = MailUs.current.getBoundingClientRect().top;
+    return el < 120 ? useRemBoxShadow(true) : useRemBoxShadow(false);
+  }
+
+  const activeStyles = classNames(styles.header, {
+    'boxshadow-out': remBoxShadow,
+  });
+
   return (
-    <>
-      {/* TODO: This is very bad, I know. But. */}
-      {isOpened ? (
-        <Helmet>
-          <body className={styles.locked}></body>
-        </Helmet>
-      ) : null}
-      <CustomerChat />
-      <div className={containerClasses}>
-        <header className={styles.header}>
-          <Header headerIsWhite={headerIsWhite} />
-        </header>
-        <main className={mainClasses}>{children}</main>
-        <footer className={footerClasses}>
-          <Footer />
-        </footer>
-      </div>
-    </>
+    <BoxShadowContext.Provider value={{ removeBoxShadow }}>
+      <>
+        {/* TODO: This is very bad, I know. But. */}
+        {isOpened ? (
+          <Helmet>
+            <body className={styles.locked}></body>
+          </Helmet>
+        ) : null}
+        <CustomerChat />
+        <div className={containerClasses}>
+          <header className={activeStyles}>
+            <Header headerIsWhite={headerIsWhite} forwardedRef={childRef} />
+          </header>
+          <main className={mainClasses}>{children}</main>
+          <footer className={footerClasses}>
+            <Footer />
+          </footer>
+        </div>
+      </>
+    </BoxShadowContext.Provider>
   );
 };
 

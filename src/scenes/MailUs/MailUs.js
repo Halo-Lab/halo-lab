@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useSiteMetadata } from '@hooks/queries';
 import styles from './MailUs.module.scss';
+import { BoxShadowContext } from '@contexts';
 
 const MailUs = () => {
   const metadata = useSiteMetadata();
   const elRef = React.useRef(null);
   let elParams = null;
   let elPosition = null;
+
   const [backgroundParallax, setBackgroundParallax] = useState(null);
 
   const moveBackground = () => {
@@ -27,6 +29,9 @@ const MailUs = () => {
     window.addEventListener('scroll', moveBackground);
     return () => window.removeEventListener('scroll', moveBackground);
   }, []);
+
+  const { removeBoxShadow } = useContext(BoxShadowContext);
+  window.addEventListener('scroll', () => removeBoxShadow(elRef));
 
   return (
     <div className={styles.container} ref={elRef}>
