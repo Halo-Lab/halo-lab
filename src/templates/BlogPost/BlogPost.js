@@ -13,17 +13,33 @@ import Thumbnails from './components/Thumbnails';
 
 import styles from './BlogPost.module.scss';
 
+function filterPost(posts, currentPost) {
+  //selection of recommended posts in the current post
+  const RECOMMENDED_POSTS_LIMIT = 3;
+  let filteredPosts = posts.filter(post => post.id !== currentPost.id); //trying get 3 post, where 'current post != recommended'
+  filteredPosts.length = RECOMMENDED_POSTS_LIMIT;
+  return filteredPosts;
+}
+// this function takes an element on at the time of finding which callback will be returned
+function scrollHandler(ref, callback) {
+  return function() {
+    const pos = ref.getBoundingClientRect();
+    if (pos.y <= 0 && -pos.y < pos.height) {
+      return callback(true);
+    }
+    callback(false);
+  };
+}
+
 const BlogPost = ({ pageContext }) => {
   const {
     data,
     recommendedPosts,
     recent: { previous, next },
   } = pageContext;
+  //get filtered post
+  const filteredPosts = filterPost(recommendedPosts, data);
 
-  //selection of recommended posts in the current post
-  const RECOMMENDED_POSTS_LIMIT = 3;
-  let filteredPosts = recommendedPosts.filter(post => post.id !== data.id); //trying get 3 post, where 'current post != recommended'
-  filteredPosts.length = RECOMMENDED_POSTS_LIMIT;
   const [headerIsWhite, setHeaderIsWhite] = React.useState(false);
   const thumbnailsItems = [];
   if (next) thumbnailsItems.push(next);
@@ -31,19 +47,13 @@ const BlogPost = ({ pageContext }) => {
   const pageWrapperClass = classNames(styles.container, 'pageWrapper');
   const excr = data.excerpt.replace(/(<([^>]+)>)/gi, '');
   const articleRef = React.useRef(null);
-  function scrollHandler() {
-    const pos = articleRef.current.getBoundingClientRect();
-    if (pos.y <= 0 && -pos.y < pos.height) {
-      setHeaderIsWhite(true);
-      return;
-    }
 
-    setHeaderIsWhite(false);
-  }
   React.useEffect(() => {
-    window.addEventListener('scroll', scrollHandler);
-    return () => window.removeEventListener('scroll', scrollHandler);
+    const handler = scrollHandler(articleRef.current, setHeaderIsWhite);
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
   }, []);
+
   return (
     <Providers>
       <BackgroundStars />
@@ -54,16 +64,16 @@ const BlogPost = ({ pageContext }) => {
             categories={data.categories}
             image={data.featured_media.source_url}
             title={data.title}
-          />{' '}
-        </div>{' '}
+          />
+        </div>
         <div ref={articleRef}>
-          <Article content={data.content} />{' '}
-        </div>{' '}
+          <Article content={data.content} />
+        </div>
         <div className="oldPageWrapper">
           <Thumbnails items={filteredPosts} />
-        </div>{' '}
+        </div>
         <MailUs />
-      </Layout>{' '}
+      </Layout>
     </Providers>
   );
 };
