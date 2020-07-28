@@ -39,7 +39,7 @@ const Layout = ({ children, isGlow, headerIsWhite }) => {
             <Header
               headerIsWhite={headerIsWhite}
               forwardedRef={headerRef}
-              backgroundGradient={isHeaderGradient}
+              withoutGradient={isHeaderGradient}
             />
           </header>
           <main className={mainClasses}>{children}</main>
