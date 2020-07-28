@@ -11,7 +11,7 @@ import styles from './Header.module.scss';
 
 import { ReactSVG } from 'react-svg';
 
-const Header = ({ headerIsWhite, forwardedRef }) => {
+const Header = ({ headerIsWhite, forwardedRef, backgroundGradient }) => {
   const { logotype } = useHeaderAssets();
   const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
 
@@ -21,8 +21,12 @@ const Header = ({ headerIsWhite, forwardedRef }) => {
     [styles.isWhite]: headerIsWhite && !isOpened,
   });
 
+  const setBackgroundGradient = classNames(headerStyles, {
+    [styles.gradientIsRemoved]: backgroundGradient,
+  });
+
   return (
-    <div className={headerStyles} ref={forwardedRef}>
+    <div className={setBackgroundGradient} ref={forwardedRef} data-atr="3">
       <div className={barStyles}>
         <div className={styles.logotype}>
           <Link to="/">
@@ -60,4 +64,5 @@ export default Header;
 Header.propTypes = {
   headerIsWhite: PropTypes.bool,
   forwardedRef: PropTypes.object,
+  backgroundGradient: PropTypes.bool,
 };

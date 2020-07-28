@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useSiteMetadata } from '@hooks/queries';
 import styles from './MailUs.module.scss';
-import { BoxShadowContext } from '@contexts';
+import { HeaderGradientContext } from '@contexts';
 import classNames from 'classnames';
 
 const MailUs = () => {
@@ -35,12 +35,19 @@ const MailUs = () => {
     return () => window.removeEventListener('scroll', moveBackground);
   }, []);
 
-  const { removeBoxShadow } = useContext(BoxShadowContext);
+  const { setIsHeaderGradient } = useContext(HeaderGradientContext);
+
   useEffect(() => {
-    let k = removeBoxShadow(elRef);
-    window.addEventListener('scroll', () => k);
-    return () => window.removeEventListener('scroll', k);
+    function removeGradient(MailUsRef) {
+      const el = MailUsRef.current.getBoundingClientRect().top;
+      return el < 120 ? setIsHeaderGradient(true) : setIsHeaderGradient(false);
+    }
+
+    let removeGradientOnScroll = removeGradient(elRef);
+    window.addEventListener('scroll', () => removeGradientOnScroll);
+    return () => window.removeEventListener('scroll', removeGradientOnScroll);
   });
+
   const linkIsHovered = classNames(styles.container, {
     [styles.ishovered]: isHovered,
   });

@@ -287,10 +287,8 @@ $header-transition: all 0.3s;
   }
 }
 
-:global {
-  .boxshadow-out > div {
-    &:before {
-      display: none;
-    }
+.gradient-is-removed {
+  &:before {
+    display: none;
   }
 }
