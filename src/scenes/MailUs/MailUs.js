@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useSiteMetadata } from '@hooks/queries';
 import styles from './MailUs.module.scss';
+import { HeaderGradientContext } from '@contexts';
 import classNames from 'classnames';
 
 const MailUs = () => {
@@ -8,6 +9,7 @@ const MailUs = () => {
   const elRef = React.useRef(null);
   let elParams = null;
   let elPosition = null;
+
   const [backgroundParallax, setBackgroundParallax] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -32,6 +34,21 @@ const MailUs = () => {
     window.addEventListener('scroll', moveBackground);
     return () => window.removeEventListener('scroll', moveBackground);
   }, []);
+
+  const { setIsHeaderWithoutGradient } = useContext(HeaderGradientContext);
+
+  useEffect(() => {
+    function removeGradient(MailUsRef) {
+      const el = MailUsRef.current.getBoundingClientRect().top;
+      return el < 120
+        ? setIsHeaderWithoutGradient(true)
+        : setIsHeaderWithoutGradient(false);
+    }
+
+    let removeGradientOnScroll = removeGradient(elRef);
+    window.addEventListener('scroll', () => removeGradientOnScroll);
+    return () => window.removeEventListener('scroll', removeGradientOnScroll);
+  });
 
   const linkIsHovered = classNames(styles.container, {
     [styles.ishovered]: isHovered,

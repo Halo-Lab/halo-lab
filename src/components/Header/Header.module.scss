@@ -286,3 +286,9 @@ $header-transition: all 0.3s;
     transform: translateY(0);
   }
 }
+
+.gradient-is-removed {
+  &:before {
+    display: none;
+  }
+}

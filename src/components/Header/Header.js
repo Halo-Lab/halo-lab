@@ -11,18 +11,19 @@ import styles from './Header.module.scss';
 
 import { ReactSVG } from 'react-svg';
 
-const Header = ({ headerIsWhite }) => {
+const Header = ({ headerIsWhite, forwardedRef, withoutGradient }) => {
   const { logotype } = useHeaderAssets();
   const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
 
   const menuStatus = isOpened ? 'opened' : 'closed';
-
   const barStyles = classNames(styles.bar, 'pageWrapper');
   const headerStyles = classNames(styles.container, {
     [styles.isWhite]: headerIsWhite && !isOpened,
+    [styles.gradientIsRemoved]: withoutGradient,
   });
+
   return (
-    <div className={headerStyles}>
+    <div className={headerStyles} ref={forwardedRef}>
       <div className={barStyles}>
         <div className={styles.logotype}>
           <Link to="/">
@@ -59,4 +60,6 @@ export default Header;
 
 Header.propTypes = {
   headerIsWhite: PropTypes.bool,
+  forwardedRef: PropTypes.object,
+  withoutGradient: PropTypes.bool,
 };
