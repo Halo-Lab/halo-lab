@@ -19,14 +19,11 @@ const Header = ({ headerIsWhite, forwardedRef, backgroundGradient }) => {
   const barStyles = classNames(styles.bar, 'pageWrapper');
   const headerStyles = classNames(styles.container, {
     [styles.isWhite]: headerIsWhite && !isOpened,
-  });
-
-  const setBackgroundGradient = classNames(headerStyles, {
     [styles.gradientIsRemoved]: backgroundGradient,
   });
 
   return (
-    <div className={setBackgroundGradient} ref={forwardedRef} data-atr="3">
+    <div className={headerStyles} ref={forwardedRef}>
       <div className={barStyles}>
         <div className={styles.logotype}>
           <Link to="/">

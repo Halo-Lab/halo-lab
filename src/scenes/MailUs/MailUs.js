@@ -35,12 +35,14 @@ const MailUs = () => {
     return () => window.removeEventListener('scroll', moveBackground);
   }, []);
 
-  const { setIsHeaderGradient } = useContext(HeaderGradientContext);
+  const { setIsHeaderWithoutGradient } = useContext(HeaderGradientContext);
 
   useEffect(() => {
     function removeGradient(MailUsRef) {
       const el = MailUsRef.current.getBoundingClientRect().top;
-      return el < 120 ? setIsHeaderGradient(true) : setIsHeaderGradient(false);
+      return el < 120
+        ? setIsHeaderWithoutGradient(true)
+        : setIsHeaderWithoutGradient(false);
     }
 
     let removeGradientOnScroll = removeGradient(elRef);

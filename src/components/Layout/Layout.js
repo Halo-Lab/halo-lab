@@ -22,10 +22,10 @@ const Layout = ({ children, isGlow, headerIsWhite }) => {
 
   const headerRef = useRef(null);
 
-  const [isHeaderGradient, setIsHeaderGradient] = React.useState(null);
+  const [isHeaderGradient, setIsHeaderWithoutGradient] = React.useState(null);
 
   return (
-    <HeaderGradientContext.Provider value={{ setIsHeaderGradient }}>
+    <HeaderGradientContext.Provider value={{ setIsHeaderWithoutGradient }}>
       <>
         {/* TODO: This is very bad, I know. But. */}
         {isOpened ? (
