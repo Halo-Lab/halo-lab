@@ -42,7 +42,14 @@ const Gallery = () => {
       element: (
         <li className={styles.item}>
           <div className={styles.card}>
-            <Img fluid={childImageSharp.fluid} draggable={false} />
+            <Img
+              fluid={childImageSharp.fluid}
+              draggable={false}
+              style={{
+                height: childImageSharp.fluid.height,
+                width: childImageSharp.fluid.width,
+              }}
+            />
           </div>
         </li>
       ),
