@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import useBreakpoints from 'use-breakpoints-width';
 // import Img from 'gatsby-image';
 
 import {
@@ -11,7 +12,7 @@ import Ticker from '@components/Ticker';
 import Swiper from 'react-id-swiper';
 import Item from './components/Item';
 
-import { useBreakpoints, BREAKPOINTS } from '@hooks';
+import { BREAKPOINTS } from '@constants';
 import { MenuContext } from '@contexts';
 
 import styles from './Works.module.scss';

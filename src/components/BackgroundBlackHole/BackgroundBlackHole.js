@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-
-import { useBreakpoints } from '@hooks';
+import useBreakpoints from 'use-breakpoints-width';
 
 import styles from './BackgroundBlackHole.module.scss';
 
