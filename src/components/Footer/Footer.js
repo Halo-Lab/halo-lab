@@ -1,11 +1,11 @@
 import React from 'react';
 
 import styles from './Footer.module.scss';
-import Twitter from '../../assets/images/brands/twitter.inline.svg';
 import Dribbble from '../../assets/images/brands/dribbble.inline.svg';
-import Facebook from '../../assets/images/brands/facebook.inline.svg';
 import Instagram from '../../assets/images/brands/instagram.inline.svg';
 import Behance from '../../assets/images/brands/behance.inline.svg';
+import Github from '../../assets/images/brands/github.inline.svg';
+import NPM from '../../assets/images/brands/npm.inline.svg';
 
 const Footer = () => {
   return (
@@ -16,12 +16,22 @@ const Footer = () => {
       <ul className={styles.socials}>
         <li>
           <a
-            href="https://twitter.com/halolabteam"
+            href="https://github.com/Halo-Lab"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Twitter
-            <Twitter />
+            Github
+            <Github />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.npmjs.com/~halolab"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            NPM
+            <NPM />
           </a>
         </li>
         <li>
@@ -32,16 +42,6 @@ const Footer = () => {
           >
             Instagram
             <Instagram />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.facebook.com/halolabteam/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Facebook
-            <Facebook />
           </a>
         </li>
         <li>

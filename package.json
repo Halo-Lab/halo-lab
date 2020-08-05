@@ -10,6 +10,7 @@
     "gatsby": "^2.21.17",
     "gatsby-image": "^2.4.3",
     "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-css-modules-emoji": "^1.0.12",
     "gatsby-plugin-google-gtag": "^1.2.1",
     "gatsby-plugin-hotjar": "^1.0.1",
     "gatsby-plugin-manifest": "^2.4.2",
@@ -37,7 +38,8 @@
     "react-svg": "^11.0.27",
     "react-tabs": "^3.1.0",
     "slick-carousel": "^1.8.1",
-    "swiper": "^5.3.8"
+    "swiper": "^5.3.8",
+    "use-breakpoints-width": "^1.0.6"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

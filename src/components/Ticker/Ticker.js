@@ -1,10 +1,9 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { useSpring, animated as a } from 'react-spring';
 import { easeQuadIn, easeQuadOut, easeLinear } from 'd3-ease';
+import useBreakpoints from 'use-breakpoints-width';
 
 import PropTypes from 'prop-types';
-
-import { useBreakpoints } from '@hooks';
 
 import styles from './Ticker.module.scss';
 
