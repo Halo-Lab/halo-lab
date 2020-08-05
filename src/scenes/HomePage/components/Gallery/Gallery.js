@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
+import useBreakpoints from 'use-breakpoints-width';
 
 import { MenuContext } from '@contexts';
-import { useBreakpoints, BREAKPOINTS } from '@hooks';
+import { BREAKPOINTS } from '@constants';
 import { useHomeGalleryAssets } from '@hooks/queries';
 import Ticker from '@components/Ticker';
 import Slider from '@components/Slider';

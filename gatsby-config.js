@@ -112,6 +112,7 @@ module.exports = {
           '@helpers': 'src/helpers',
           '@styles': 'src/styles',
           '@functions': 'src/styles/functions',
+          '@constants': 'src/constants',
         },
         extensions: ['js', 'sass', 'scss'],
       },
