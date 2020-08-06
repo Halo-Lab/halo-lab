@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -13,12 +13,25 @@ import Thumbnails from './components/Thumbnails';
 
 import styles from './BlogPost.module.scss';
 
-function filterPost(posts, currentPost) {
-  //selection of recommended posts in the current post
+function getRecommendedPosts(allPosts, currentPost) {
   const RECOMMENDED_POSTS_LIMIT = 3;
-  let filteredPosts = posts.filter(post => post.id !== currentPost.id); //trying get 3 post, where 'current post != recommended'
-  filteredPosts.length = RECOMMENDED_POSTS_LIMIT;
-  return filteredPosts;
+  const recommendedPosts = [];
+
+  while (
+    recommendedPosts.length < RECOMMENDED_POSTS_LIMIT ||
+    allPosts.length < 3
+  ) {
+    const random = Math.floor(Math.random() * allPosts.length);
+
+    if (
+      !recommendedPosts.includes(allPosts[random]) &&
+      allPosts[random].id !== currentPost.id
+    ) {
+      recommendedPosts.push(allPosts[random]);
+    }
+  }
+
+  return recommendedPosts;
 }
 // this function takes an element on at the time of finding which callback will be returned
 function scrollHandler(ref, callback) {
@@ -34,11 +47,13 @@ function scrollHandler(ref, callback) {
 const BlogPost = ({ pageContext }) => {
   const {
     data,
-    recommendedPosts,
+    allPosts,
     recent: { previous, next },
   } = pageContext;
-  //get filtered post
-  const filteredPosts = filterPost(recommendedPosts, data);
+  const recommendedPosts = useMemo(() => getRecommendedPosts(allPosts, data), [
+    allPosts,
+    data,
+  ]);
 
   const [headerIsWhite, setHeaderIsWhite] = React.useState(false);
   const thumbnailsItems = [];
@@ -70,7 +85,7 @@ const BlogPost = ({ pageContext }) => {
           <Article content={data.content} />
         </div>
         <div className="oldPageWrapper">
-          <Thumbnails items={filteredPosts} />
+          <Thumbnails items={recommendedPosts} />
         </div>
         <MailUs />
       </Layout>
