@@ -19,7 +19,7 @@ function getRecommendedPosts(allPosts, currentPost) {
 
   while (
     recommendedPosts.length < RECOMMENDED_POSTS_LIMIT ||
-    allPosts.length < 3
+    allPosts.length < RECOMMENDED_POSTS_LIMIT
   ) {
     const random = Math.floor(Math.random() * allPosts.length);
 
