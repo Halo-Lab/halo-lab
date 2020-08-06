@@ -13,7 +13,7 @@ import Thumbnails from './components/Thumbnails';
 
 import styles from './BlogPost.module.scss';
 
-function getRecommendedPosts(allPosts, currentPost) {
+function getRecommendedPosts(allPosts = [], currentPost) {
   const RECOMMENDED_POSTS_LIMIT = 3;
   const recommendedPosts = [];
 
