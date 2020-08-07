@@ -1,9 +1,29 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-export const homeWorks = graphql`
-  fragment homeWorks on File {
+export const homeWorksBigImage = graphql`
+  fragment homeWorksBigImage on File {
     childImageSharp {
-      fluid(maxWidth: 950, quality: 100) {
+      fluid(maxWidth: 775, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+`;
+
+export const homeWorksMiddleImage = graphql`
+  fragment homeWorksMiddleImage on File {
+    childImageSharp {
+      fluid(maxWidth: 500, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+`;
+
+export const homeWorksSmallImage = graphql`
+  fragment homeWorksSmallImage on File {
+    childImageSharp {
+      fluid(maxWidth: 500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
@@ -17,23 +37,23 @@ const useHomeWorksAssets = () => {
         relativePath: { eq: "sections/home-works/Art-Investments-Platform.jpg" }
       ) {
         name
-        ...homeWorks
+        ...homeWorksMiddleImage
       }
       eScooter: file(
         relativePath: { eq: "sections/home-works/eScooter-Booking.jpg" }
       ) {
         name
-        ...homeWorks
+        ...homeWorksBigImage
       }
       Web: file(relativePath: { eq: "sections/home-works/Web.jpg" }) {
         name
-        ...homeWorks
+        ...homeWorksBigImage
       }
       Hommy: file(
         relativePath: { eq: "sections/home-works/Hommy-dashboard.jpg" }
       ) {
         name
-        ...homeWorks
+        ...homeWorksSmallImage
       }
       Investments: file(
         relativePath: {
@@ -41,45 +61,45 @@ const useHomeWorksAssets = () => {
         }
       ) {
         name
-        ...homeWorks
+        ...homeWorksMiddleImage
       }
       Lazy: file(
         relativePath: { eq: "sections/home-works/Lazy-Daisy-Mobile.jpg" }
       ) {
         name
-        ...homeWorks
+        ...homeWorksSmallImage
       }
       Starbank: file(relativePath: { eq: "sections/home-works/Starbank.jpg" }) {
         name
-        ...homeWorks
+        ...homeWorksSmallImage
       }
       Teampoint: file(
         relativePath: { eq: "sections/home-works/Teampoint.jpg" }
       ) {
         name
-        ...homeWorks
+        ...homeWorksSmallImage
       }
       Travel: file(
         relativePath: { eq: "sections/home-works/Travel-Agency-Website.jpg" }
       ) {
         name
-        ...homeWorks
+        ...homeWorksSmallImage
       }
       Tude: file(relativePath: { eq: "sections/home-works/Tude-Website.jpg" }) {
         name
-        ...homeWorks
+        ...homeWorksSmallImage
       }
       Realty: file(
         relativePath: { eq: "sections/home-works/Realty-Web-Dasboard.jpg" }
       ) {
         name
-        ...homeWorks
+        ...homeWorksMiddleImage
       }
       North: file(
         relativePath: { eq: "sections/home-works/North-Face-Shop.jpg" }
       ) {
         name
-        ...homeWorks
+        ...homeWorksBigImage
       }
     }
   `);
