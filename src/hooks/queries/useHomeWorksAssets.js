@@ -23,7 +23,7 @@ export const homeWorksMiddleImage = graphql`
 export const homeWorksSmallImage = graphql`
   fragment homeWorksSmallImage on File {
     childImageSharp {
-      fluid(maxWidth: 500, quality: 100) {
+      fluid(maxWidth: 238, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
