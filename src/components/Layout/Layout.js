@@ -2,14 +2,19 @@ import React, { useContext, useRef } from 'react';
 import Helmet from 'react-helmet';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import Loadable from 'react-loadable';
 
 import Header from '@components/Header';
-import CustomerChat from '@components/CustomerChat';
 import { MenuContext, HeaderGradientContext } from '@contexts';
 
 import styles from './Layout.module.scss';
 import '@styles/index.scss';
 import Footer from '../Footer';
+
+const CustomerChat = Loadable({
+  loader: () => import('@components/CustomerChat'),
+  loading: () => null,
+});
 
 const Layout = ({ children, isGlow, headerIsWhite }) => {
   const { isOpened } = useContext(MenuContext);
