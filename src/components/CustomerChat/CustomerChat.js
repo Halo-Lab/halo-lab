@@ -1,19 +1,19 @@
 import React from 'react';
-import MessengerCustomerChat from 'react-messenger-customer-chat';
-
-const config = {
-  greetingDialogDisplay: 'hide',
-  themeColor: '#3719CA',
-  version: '3.3',
-};
+import { FacebookProvider, CustomChat } from 'react-facebook';
 
 const CustomerChat = () => {
   return (
-    <MessengerCustomerChat
-      pageId={process.env.GATSBY_FACEBOOK_PAGE_ID}
+    <FacebookProvider
       appId={process.env.GATSBY_FACEBOOK_APP_ID}
-      {...config}
-    />
+      chatSupport
+      wait
+    >
+      <CustomChat
+        pageId={process.env.GATSBY_FACEBOOK_PAGE_ID}
+        greetingDialogDisplay="hide"
+        themeColor="#3719CA"
+      />
+    </FacebookProvider>
   );
 };
 
