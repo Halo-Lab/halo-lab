@@ -14,6 +14,7 @@ import Footer from '../Footer';
 const CustomerChat = Loadable({
   loader: () => import('@components/CustomerChat'),
   loading: () => null,
+  timeout: 1000,
 });
 
 const Layout = ({ children, isGlow, headerIsWhite }) => {
