@@ -3,11 +3,7 @@ import { FacebookProvider, CustomChat } from 'react-facebook';
 
 const CustomerChat = () => {
   return (
-    <FacebookProvider
-      appId={process.env.GATSBY_FACEBOOK_APP_ID}
-      chatSupport
-      wait
-    >
+    <FacebookProvider appId={process.env.GATSBY_FACEBOOK_APP_ID} chatSupport>
       <CustomChat
         pageId={process.env.GATSBY_FACEBOOK_PAGE_ID}
         greetingDialogDisplay="hide"
