@@ -3,11 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 export const homeWorksBigImage = graphql`
   fragment homeWorksBigImage on File {
     childImageSharp {
-      fluid(
-        maxWidth: 775
-        srcSetBreakpoints: [100, 200, 320, 480, 560, 775]
-        quality: 85
-      ) {
+      fluid(maxWidth: 775, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
@@ -17,11 +13,7 @@ export const homeWorksBigImage = graphql`
 export const homeWorksMiddleImage = graphql`
   fragment homeWorksMiddleImage on File {
     childImageSharp {
-      fluid(
-        maxWidth: 500
-        srcSetBreakpoints: [100, 200, 320, 480, 500]
-        quality: 85
-      ) {
+      fluid(maxWidth: 500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
@@ -31,7 +23,7 @@ export const homeWorksMiddleImage = graphql`
 export const homeWorksSmallImage = graphql`
   fragment homeWorksSmallImage on File {
     childImageSharp {
-      fluid(maxWidth: 238, srcSetBreakpoints: [100, 160, 238], quality: 85) {
+      fluid(maxWidth: 238, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }

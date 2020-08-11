@@ -18,7 +18,6 @@ const Item = ({ images }) => {
             className={styles.image}
             fluid={childImageSharp.fluid}
             draggable={false}
-            loading="eager"
             fadeIn={false}
             alt="dribbble portfolio pic"
           />
