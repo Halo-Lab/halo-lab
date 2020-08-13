@@ -35,16 +35,6 @@ const Form = () => {
     }));
   };
 
-  function encode(data) {
-    const formData = new FormData();
-
-    for (const key of Object.keys(data)) {
-      formData.append(key, data[key]);
-    }
-
-    return formData;
-  }
-
   const [isValid, setIsValid] = useState(true);
   const [filesList, setFilesList] = useState([]);
 
@@ -72,11 +62,10 @@ const Form = () => {
     valid &&
       fetch('/', {
         method: 'POST',
-        headers: {},
-        body: encode({
+        body: {
           'form-name': form.getAttribute('name'),
           ...formData,
-        }),
+        },
       })
         .then(() => navigate('/thanks'))
         .catch(() => navigate('/error'));
