@@ -49,7 +49,6 @@ const Form = () => {
 
     setIsValid(valid);
 
-    const url = process.env.GATSBY_FORM_CONTACT_URL;
     const formData = new FormData();
 
     formData.append('quote-name', data.name.value);
@@ -59,21 +58,13 @@ const Form = () => {
     formData.append('file', attachmentInput.current.files[0] || '');
 
     valid &&
-      fetch(url, {
+      fetch('/', {
         method: 'POST',
         headers: {},
         body: formData,
       })
-        .then(response => {
-          if (response.ok) {
-            navigate('/thanks');
-          } else {
-            navigate('/error');
-          }
-        })
-        .catch(() => {
-          navigate('/error');
-        });
+        .then(() => navigate('/thanks'))
+        .catch(() => navigate('/error'));
   };
 
   const handleInputFileChange = async e => {
