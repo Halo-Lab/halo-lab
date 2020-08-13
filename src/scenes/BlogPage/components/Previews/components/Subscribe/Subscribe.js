@@ -71,6 +71,7 @@ const Subscribe = () => {
           data-netlify="true"
           name="subscribe form"
         >
+          <input type="hidden" name="form-name" value="subscribe form" />
           <div className={inputWrapperClass}>
             {!isSubmitted ? (
               <Fragment>

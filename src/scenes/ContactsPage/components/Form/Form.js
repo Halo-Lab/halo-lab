@@ -94,7 +94,7 @@ const Form = () => {
         data-netlify="true"
         name="contacts"
       >
-        <input type="hidden" name="form-name" value="file-upload" />
+        <input type="hidden" name="form-name" value="contacts" />
         <h3 className={styles.formTitle}>REQUEST A QUOTE</h3>
         <div className={`${styles.inputWrapper} ${styles.nameWrapper}`}>
           <input
