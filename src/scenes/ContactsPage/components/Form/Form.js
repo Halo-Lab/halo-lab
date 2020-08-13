@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { navigate } from 'gatsby';
 
 import styles from './Form.module.scss';
@@ -10,16 +10,18 @@ function encode(data) {
 }
 
 const Form = () => {
-  const [state, setState] = useState({});
+  const [form, setForm] = useState({});
   const [filesList, setFilesList] = useState([]);
+  const attachmentInput = useRef(null);
 
   const handleChange = e => {
-    setState({ ...state, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleInputFileChange = async e => {
+  const handleInputFileChange = e => {
     const mergedFilesList = [...e.target.files];
     setFilesList(mergedFilesList);
+    setForm({ ...form, [e.target.name]: e.target.files[0] });
   };
 
   const handleFileClear = async () => {
@@ -34,18 +36,23 @@ const Form = () => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
         'form-name': form.getAttribute('name'),
-        ...state,
+        ...form,
       }),
     })
       .then(() => navigate(form.getAttribute('action')))
       .catch(error => alert(error));
   };
 
+  const fileAccept =
+    '.png,.jpg,.pdf,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+
+  console.log(form);
+
   return (
     <div className={styles.container}>
       <form
         className={styles.form}
-        onSubmit={e => handleSubmit(e)}
+        onSubmit={handleSubmit}
         name="contact"
         data-netlify="true"
         action="/thanks/"
@@ -118,6 +125,8 @@ const Form = () => {
               type="file"
               name="quote-file"
               id="attachment-file"
+              ref={attachmentInput}
+              accept={fileAccept}
               onChange={handleInputFileChange}
             ></input>
             <div className={styles.attachmentName}>
