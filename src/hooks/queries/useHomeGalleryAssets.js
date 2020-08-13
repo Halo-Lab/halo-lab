@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 export const homeGalleryImage = graphql`
   fragment homeGalleryImage on File {
     childImageSharp {
-      fluid(maxWidth: 500, quality: 100) {
+      fluid(maxWidth: 1980, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }

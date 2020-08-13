@@ -37,6 +37,7 @@ const Gallery = () => {
   };
 
   const photosList = photos.map(({ childImageSharp }) => {
+    console.log(childImageSharp);
     return {
       name: childImageSharp.fluid.src,
       element: (
