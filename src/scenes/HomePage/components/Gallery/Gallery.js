@@ -19,21 +19,8 @@ const Gallery = () => {
     arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
+    variableWidth: true,
+    slidesToShow: 1,
   };
 
   const photosList = photos.map(({ childImageSharp }) => {
