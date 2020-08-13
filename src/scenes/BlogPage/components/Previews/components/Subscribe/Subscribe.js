@@ -37,7 +37,8 @@ const Subscribe = () => {
     const url = process.env.GATSBY_FORM_SUBSCRIBE_URL;
     const formData = new FormData();
 
-    formData.append('quote-email', data.email.value);
+    formData.append('form-name', 'subscribe form');
+    formData.append('email', data.email.value);
 
     isValid &&
       fetch(url, {
