@@ -87,7 +87,12 @@ const Form = () => {
 
   return (
     <div className={styles.container}>
-      <form className={styles.form} onSubmit={e => handleSubmit(e)}>
+      <form
+        className={styles.form}
+        onSubmit={e => handleSubmit(e)}
+        name="contact"
+        netlify
+      >
         <h3 className={styles.formTitle}>REQUEST A QUOTE</h3>
         <div className={`${styles.inputWrapper} ${styles.nameWrapper}`}>
           <input
