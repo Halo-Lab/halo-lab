@@ -28,6 +28,8 @@ const Subscribe = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
+    const form = e.target;
+
     const isValid = isValidEmail(data.email.value);
 
     if (!isValid) {
@@ -36,13 +38,12 @@ const Subscribe = () => {
 
     const formData = new FormData();
 
-    formData.append('form-name', 'subscribe form');
+    formData.append('form-name', form.getAttribute('name'));
     formData.append('email', data.email.value);
 
     isValid &&
       fetch('/', {
         method: 'POST',
-        headers: {},
         body: formData,
       })
         .then(() => {
@@ -64,7 +65,12 @@ const Subscribe = () => {
     <div className={styles.container}>
       <div className={styles.block}>
         <h2 className={styles.title}>Subscribe and be on the course!</h2>
-        <form className={styles.form} onSubmit={e => handleSubmit(e)}>
+        <form
+          className={styles.form}
+          onSubmit={e => handleSubmit(e)}
+          data-netlify="true"
+          name="subscribe form"
+        >
           <div className={inputWrapperClass}>
             {!isSubmitted ? (
               <Fragment>
