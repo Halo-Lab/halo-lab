@@ -35,6 +35,16 @@ const Form = () => {
     }));
   };
 
+  function encode(data) {
+    const formData = new FormData();
+
+    for (const key of Object.keys(data)) {
+      formData.append(key, data[key]);
+    }
+
+    return formData;
+  }
+
   const [isValid, setIsValid] = useState(true);
   const [filesList, setFilesList] = useState([]);
 
@@ -43,6 +53,8 @@ const Form = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    const form = e.target;
 
     const valid =
       data.name.valid && isValidEmail(data.email.value) && data.message.valid;
@@ -61,7 +73,10 @@ const Form = () => {
       fetch('/', {
         method: 'POST',
         headers: {},
-        body: formData,
+        body: encode({
+          'form-name': form.getAttribute('name'),
+          ...formData,
+        }),
       })
         .then(() => navigate('/thanks'))
         .catch(() => navigate('/error'));
@@ -81,9 +96,8 @@ const Form = () => {
       <form
         className={styles.form}
         onSubmit={e => handleSubmit(e)}
-        action="/thanks/"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        name="contacts"
       >
         <input type="hidden" name="form-name" value="file-upload" />
         <h3 className={styles.formTitle}>REQUEST A QUOTE</h3>
