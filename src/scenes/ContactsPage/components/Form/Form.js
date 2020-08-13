@@ -25,8 +25,6 @@ const Form = () => {
     },
   });
 
-  const [state, setState] = useState({});
-
   const handleChange = ({ target: { name, value } }) => {
     setData(data => ({
       ...data,
@@ -35,7 +33,6 @@ const Form = () => {
         value: value,
       },
     }));
-    setState({ ...state, [name]: value });
   };
 
   const [isValid, setIsValid] = useState(true);
@@ -57,16 +54,15 @@ const Form = () => {
     const formData = new FormData();
 
     formData.append('form-name', form.getAttribute('name'));
-    formData.append('quote-name', data.name.value);
-    formData.append('quote-company', data.company.value);
-    formData.append('quote-email', data.email.value);
-    formData.append('quote-message', data.message.value);
-    formData.append('file', attachmentInput.current.files[0] || '');
+    formData.append('name', data.name.value);
+    formData.append('company', data.company.value);
+    formData.append('email', data.email.value);
+    formData.append('message', data.message.value);
+    formData.append('attachment', attachmentInput.current.files[0] || '');
 
     valid &&
       fetch('/', {
         method: 'POST',
-        headers: {},
         body: formData,
       })
         .then(response => {
@@ -84,7 +80,6 @@ const Form = () => {
   const handleInputFileChange = async e => {
     const mergedFilesList = [...e.target.files];
     setFilesList(mergedFilesList);
-    setState({ ...state, [e.target.name]: e.target.files[0] });
   };
 
   const handleFileClear = async () => {
@@ -177,7 +172,7 @@ const Form = () => {
             <input
               className={styles.attachmentFile}
               type="file"
-              name="quote-file"
+              name="attachment"
               id="attachment-file"
               ref={attachmentInput}
               accept={fileAccept}
