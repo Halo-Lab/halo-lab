@@ -25,6 +25,8 @@ const Form = () => {
     },
   });
 
+  const [state, setState] = useState({});
+
   const handleChange = ({ target: { name, value } }) => {
     setData(data => ({
       ...data,
@@ -33,6 +35,7 @@ const Form = () => {
         value: value,
       },
     }));
+    setState({ ...state, [name]: value });
   };
 
   const [isValid, setIsValid] = useState(true);
@@ -53,6 +56,7 @@ const Form = () => {
 
     const formData = new FormData();
 
+    formData.append('form-name', form.getAttribute('name'));
     formData.append('quote-name', data.name.value);
     formData.append('quote-company', data.company.value);
     formData.append('quote-email', data.email.value);
@@ -62,18 +66,25 @@ const Form = () => {
     valid &&
       fetch('/', {
         method: 'POST',
-        body: {
-          'form-name': form.getAttribute('name'),
-          ...formData,
-        },
+        headers: {},
+        body: formData,
       })
-        .then(() => navigate('/thanks'))
-        .catch(() => navigate('/error'));
+        .then(response => {
+          if (response.ok) {
+            navigate('/thanks');
+          } else {
+            navigate('/error');
+          }
+        })
+        .catch(() => {
+          navigate('/error');
+        });
   };
 
   const handleInputFileChange = async e => {
     const mergedFilesList = [...e.target.files];
     setFilesList(mergedFilesList);
+    setState({ ...state, [e.target.name]: e.target.files[0] });
   };
 
   const handleFileClear = async () => {
