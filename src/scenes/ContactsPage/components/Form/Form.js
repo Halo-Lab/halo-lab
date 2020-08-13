@@ -46,8 +46,6 @@ const Form = () => {
   const fileAccept =
     '.png,.jpg,.pdf,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document';
 
-  console.log(form);
-
   return (
     <div className={styles.container}>
       <form
