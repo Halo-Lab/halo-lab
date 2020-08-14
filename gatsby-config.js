@@ -112,6 +112,7 @@ module.exports = {
           '@helpers': 'src/helpers',
           '@styles': 'src/styles',
           '@functions': 'src/styles/functions',
+          '@constants': 'src/constants',
         },
         extensions: ['js', 'sass', 'scss'],
       },
@@ -145,5 +146,12 @@ module.exports = {
     },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
+    {
+      resolve: `gatsby-plugin-css-modules-emoji`,
+      options: {
+        enableOnDevelopment: false,
+        selectorLength: 7,
+      },
+    },
   ],
 };

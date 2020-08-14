@@ -102,6 +102,7 @@
 
   figure {
     margin: 2.7rem 0;
+    
     @include media-breakpoint-down(xs) {
       margin: 2.5rem 0;
     }
@@ -123,5 +124,17 @@
 
   strong {
     font-weight: 600;
+  }
+
+  :global {
+    .alignleft {
+      float: left;
+      margin: 0 30px 30px 0;
+      text-align: center;
+      @include media-breakpoint-down(sm) {
+        float: none;
+        margin: 15px 0;
+      }
+    }
   }
 }

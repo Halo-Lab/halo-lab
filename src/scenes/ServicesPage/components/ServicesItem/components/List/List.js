@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useBreakpoints from 'use-breakpoints-width';
 
 import Slider from '@components/Slider';
 import Item from './components/Item';
-import { useBreakpoints, BREAKPOINTS } from '@hooks';
+import { BREAKPOINTS } from '@constants';
 
 import styles from './List.module.scss';
 

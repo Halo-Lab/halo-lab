@@ -53,7 +53,7 @@
     box-shadow: 70px 120px 150px -30px rgba(2, 2, 30, 0.6);
     transform: translate(-50%, -50%);
     z-index: -1;
-    transition: all 0.3s;
+    transition: all 1s;
     @media screen and (max-width: $md) {
       --coef-size: 0.75;
     }
@@ -138,5 +138,12 @@
     &::before {
       height: 140%;
     }
+  }
+}
+
+.ishovered {
+  &::after {
+    @include hl-width(420px);
+    @include hl-height(420px);
   }
 }

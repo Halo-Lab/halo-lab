@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import useBreakpoints from 'use-breakpoints-width';
 
 import Item from './components/Item';
 import { useTestimonialsAssets } from '@hooks/queries';
-import { useBreakpoints } from '@hooks';
 import Swiper from 'react-id-swiper';
 import styles from './Testimonials.module.scss';
 
