@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
+import useBreakpoints from 'use-breakpoints-width';
 
 import { MenuContext } from '@contexts';
-import { useBreakpoints, BREAKPOINTS } from '@hooks';
+import { BREAKPOINTS } from '@constants';
 import { useHomeGalleryAssets } from '@hooks/queries';
 import Ticker from '@components/Ticker';
 import Slider from '@components/Slider';
@@ -19,21 +20,8 @@ const Gallery = () => {
     arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
+    variableWidth: true,
+    slidesToShow: 1,
   };
 
   const photosList = photos.map(({ childImageSharp }) => {
@@ -42,7 +30,14 @@ const Gallery = () => {
       element: (
         <li className={styles.item}>
           <div className={styles.card}>
-            <Img fluid={childImageSharp.fluid} draggable={false} />
+            <Img
+              fluid={childImageSharp.fluid}
+              draggable={false}
+              style={{
+                height: childImageSharp.fluid.height,
+                width: childImageSharp.fluid.width,
+              }}
+            />
           </div>
         </li>
       ),

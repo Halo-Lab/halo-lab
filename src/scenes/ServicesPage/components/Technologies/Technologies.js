@@ -1,6 +1,7 @@
 import React from 'react';
+import useBreakpoints from 'use-breakpoints-width';
 
-import { useBreakpoints, BREAKPOINTS } from '@hooks';
+import { BREAKPOINTS } from '@constants';
 import { useServicesTechnologiesAssets } from '@hooks/queries';
 import Switcher from './components/Switcher';
 import List from './components/List';

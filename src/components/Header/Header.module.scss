@@ -286,3 +286,17 @@ $header-transition: all 0.3s;
     transform: translateY(0);
   }
 }
+
+.gradient-is-removed {
+  &:before {
+    display: none;
+  }
+
+  .contact:hover {
+    border-color: rgba(#fff, 0.6);
+  }
+
+  .menuButton:hover {
+    box-shadow: inset 0 0 0 1px rgba(#fff, 0.6);
+  }
+}
