@@ -13,6 +13,7 @@ const Gallery = () => {
     setScrollDistance({
       transform: `translate3d(-${window.pageYOffset /
         STEP_COEFFICIENT}px, 0, 0)`,
+      transition: 'all 1.3s ease',
     });
   };
 
