@@ -27,7 +27,7 @@ const Others = ({ auth, kklLuzern, udemy }) => {
         </li>
         <li className={styles.item}>
           <Link to="/portfolio" className={styles.link}>
-            <span>
+            <span className={styles.linkText}>
               View
               <br />
               All

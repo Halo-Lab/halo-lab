@@ -1,6 +1,15 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
+.wrapper {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  will-change: transform;
+}
+
 .container {
   @include hl-margin(top, 200px);
   text-align: center;
@@ -8,6 +17,11 @@
   @media (min-width: 1280px) {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  :global(.slick-track) {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -29,6 +43,8 @@
   position: relative;
   box-sizing: border-box;
   padding: 0;
+  display: flex;
+  justify-content: center;
   @include hl-padding(left, 40px);
   @include hl-padding(right, 40px);
 }

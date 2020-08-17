@@ -15,7 +15,7 @@ It's an open sourced version of [www.halo-lab.com](https://www.halo-lab.com/?utm
 
 ## Prerequisites
 
-The application was built with Node `10.8`
+The application was built with Node `12.16.1`
 
 Run this command if you're using nvm
 

@@ -32,7 +32,7 @@
     .swiper-slide-next,
     .swiper-slide-prev {
       position: relative;
-      transform: scaleY(0.8);
+      transform: scale(0.8);
       & > div {
         opacity: 0;
         transition: 0.5s;
