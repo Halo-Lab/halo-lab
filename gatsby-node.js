@@ -5,23 +5,23 @@
  */
 
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const packageJsonFile = require('./package.json');
+const { version } = require('./package.json');
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   if (stage === 'build-javascript') {
-    const defaultOptions = {
-      statsFilename: `../reports/stats_v${packageJsonFile.version}.json`,
-      reportFilename: `../reports/report_v${packageJsonFile.version}.html`,
-      openAnalyzer: false,
-      analyzerMode: 'static',
-      generateStatsFile: true,
-      statsOptions: {
-        source: false,
-      },
-    };
-
     actions.setWebpackConfig({
-      plugins: [new BundleAnalyzerPlugin(defaultOptions)],
+      plugins: [
+        new BundleAnalyzerPlugin({
+          statsFilename: `../reports/stats_v${version}.json`,
+          reportFilename: `../reports/report_v${version}.html`,
+          openAnalyzer: false,
+          analyzerMode: 'static',
+          generateStatsFile: true,
+          statsOptions: {
+            source: false,
+          },
+        }),
+      ],
     });
   }
 };
