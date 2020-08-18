@@ -4,8 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const packageJsonFile = require('./package.json');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const packageJsonFile = require('./package.json');
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   if (stage === 'build-javascript') {
