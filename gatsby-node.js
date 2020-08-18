@@ -3,6 +3,15 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+const { RelativeCiAgentWebpackPlugin } = require('@relative-ci/agent');
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage === 'build-javascript') {
+    actions.setWebpackConfig({
+      plugins: [new RelativeCiAgentWebpackPlugin()],
+    });
+  }
+};
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
