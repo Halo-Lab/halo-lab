@@ -6,14 +6,16 @@ import styles from './Gallery.module.scss';
 
 const Gallery = () => {
   const { photos } = useHomeGalleryAssets();
-  const STEP_COEFFICIENT = 5;
+  const STEP_COEFFICIENT = 4;
 
   const [scrollDistance, setScrollDistance] = useState(null);
   const handleScroll = () => {
     setScrollDistance({
-      transform: `translate3d(-${window.pageYOffset /
-        STEP_COEFFICIENT}px, 0, 0)`,
-      transition: 'all 1.3s ease',
+      // transform: `translate3d(-${window.pageYOffset /
+      //   STEP_COEFFICIENT}px, 0, 0)`,
+      // transition: 'all 1.3s ease',
+      transform: `matrix(1, 0, 0, 1, -${window.pageYOffset /
+        STEP_COEFFICIENT}, 0)`,
     });
   };
 
