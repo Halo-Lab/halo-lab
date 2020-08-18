@@ -53,7 +53,8 @@
     "eslint-plugin-react": "^7.19.0",
     "gatsby-plugin-eslint": "^2.0.8",
     "husky": "^4.2.5",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "webpack-bundle-analyzer": "^3.8.0"
   },
   "keywords": [
     "halo",
