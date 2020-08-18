@@ -6,7 +6,7 @@ import styles from './Gallery.module.scss';
 
 const Gallery = () => {
   const { photos } = useHomeGalleryAssets();
-  const STEP_COEFFICIENT = 4;
+  const STEP_COEFFICIENT = 7;
 
   const [scrollDistance, setScrollDistance] = useState(null);
   const handleScroll = () => {
