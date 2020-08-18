@@ -1,34 +1,38 @@
-import React, { useContext } from 'react';
-import useBreakpoints from 'use-breakpoints-width';
-
-import { MenuContext } from '@contexts';
-import { BREAKPOINTS } from '@constants';
+import React, { useEffect, useState } from 'react';
 import { useHomeGalleryAssets } from '@hooks/queries';
-import Ticker from '@components/Ticker';
-import Slider from '@components/Slider';
-import Item from './components/Item';
 import Img from 'gatsby-image';
 
 import styles from './Gallery.module.scss';
 
 const Gallery = () => {
-  const { breakpoint } = useBreakpoints();
-  const { isOpened } = useContext(MenuContext);
-  const { photos, arrowLeft, arrowRight } = useHomeGalleryAssets();
+  const { photos } = useHomeGalleryAssets();
+  const STEP_COEFFICIENT = 7;
 
-  const settings = {
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    variableWidth: true,
-    slidesToShow: 1,
+  const [scrollDistance, setScrollDistance] = useState(null);
+  const handleScroll = () => {
+    let scrollWidth = -window.pageYOffset / STEP_COEFFICIENT;
+    setScrollDistance({
+      '-webkit-transform': `matrix(1, 0, 0, 1, ${scrollWidth.toFixed(0)}, 0)`,
+      // '-webkit-transform': `translate3d(${scrollWidth.toFixed(0)}px, 0, 0)`,
+      // 'webkit-backface-visibility': 'hidden',
+      // position: 'relative',
+      // left: `${scrollWidth.toFixed(0)}px`,
+      // transition: 'all 1s ease',
+    });
   };
 
-  const photosList = photos.map(({ childImageSharp }) => {
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return function remove() {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const photosList = photos.map(({ childImageSharp }, index) => {
     return {
       name: childImageSharp.fluid.src,
       element: (
-        <li className={styles.item}>
+        <li className={styles.item} key={index}>
           <div className={styles.card}>
             <Img
               fluid={childImageSharp.fluid}
@@ -47,22 +51,10 @@ const Gallery = () => {
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>Creative Atmosphere</h2>
-      <div className={styles.sliderWrapper}>
-        {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
-          <Ticker
-            images={photosList}
-            arrowLeft={arrowLeft}
-            arrowRight={arrowRight}
-          />
-        ) : null}
-        {breakpoint === BREAKPOINTS.MOBILE ||
-        breakpoint === BREAKPOINTS.TABLET ? (
-          <Slider settings={settings}>
-            {photos.map((item, index) => {
-              return <Item key={index} data-name={index} {...item} />;
-            })}
-          </Slider>
-        ) : null}
+      <div className={styles.wrapper} style={scrollDistance}>
+        {photosList.map(({ element }) => {
+          return element;
+        })}
       </div>
     </section>
   );
