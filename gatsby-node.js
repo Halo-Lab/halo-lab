@@ -4,28 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const { version } = require('./package.json');
-
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  if (stage === 'build-javascript') {
-    actions.setWebpackConfig({
-      plugins: [
-        new BundleAnalyzerPlugin({
-          statsFilename: `../reports/stats_v${version}.json`,
-          reportFilename: `../reports/report_v${version}.html`,
-          openAnalyzer: false,
-          analyzerMode: 'static',
-          generateStatsFile: true,
-          statsOptions: {
-            source: false,
-          },
-        }),
-      ],
-    });
-  }
-};
-
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
