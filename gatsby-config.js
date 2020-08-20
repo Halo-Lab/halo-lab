@@ -158,11 +158,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {
-        disable: false,
+        disable: !process.env.npm_config_report,
         devMode: false,
         analyzerMode: 'static',
         reportFilename: `../reports/report_v${version}_${nanoid(5)}.html`,
-        openAnalyzer: false,
+        openAnalyzer: true,
       },
     },
   ],
