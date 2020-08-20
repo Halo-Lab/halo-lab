@@ -13,11 +13,8 @@ const Gallery = () => {
     let scrollWidth = -window.pageYOffset / STEP_COEFFICIENT;
     setScrollDistance({
       '-webkit-transform': `matrix(1, 0, 0, 1, ${scrollWidth.toFixed(0)}, 0)`,
+      '-webkit-overflow-scrolling': 'touch',
       // '-webkit-transform': `translate3d(${scrollWidth.toFixed(0)}px, 0, 0)`,
-      // 'webkit-backface-visibility': 'hidden',
-      // position: 'relative',
-      // left: `${scrollWidth.toFixed(0)}px`,
-      // transition: 'all 1s ease',
     });
   };
 

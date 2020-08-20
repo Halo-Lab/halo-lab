@@ -1,6 +1,6 @@
 import useBackgroundsAssets from './useBackgroundsAssets';
 import useContactsAssets from './useContactsAssets';
-import useDribbbleShots from './useDribbbleShots';
+// import useDribbbleShots from './useDribbbleShots';
 import useFooterAssets from './useFooterAssets';
 import useHeaderAssets from './useHeaderAssets';
 import useHomeGalleryAssets from './useHomeGalleryAssets';
@@ -22,7 +22,7 @@ import useWordpressPosts from './useWordpressPosts';
 export {
   useBackgroundsAssets,
   useContactsAssets,
-  useDribbbleShots,
+  // useDribbbleShots,
   useFooterAssets,
   useHeaderAssets,
   useHomeHeroAssets,

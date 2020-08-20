@@ -15,20 +15,7 @@ import styles from './HomePage.module.scss';
 const HomePage = ({ animation }) => {
   return (
     <div className={styles.container}>
-      <div className="pageWrapper">
-        <Hero animation={animation} />
-        <WhatWeDo />
-      </div>
-      <Works />
-      <div className="pageWrapper">
-        <Projects title="Projects" navigation={true} />
-      </div>
-      <Testimonials />
       <Gallery />
-      <div className="pageWrapper">
-        <Posts />
-      </div>
-      <MailUs />
     </div>
   );
 };

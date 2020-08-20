@@ -13,6 +13,7 @@
 .container {
   @include hl-margin(top, 200px);
   text-align: center;
+  height: 2000px;
 
   @media (min-width: 1280px) {
     margin-left: auto;
