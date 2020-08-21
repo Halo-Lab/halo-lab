@@ -1,14 +1,11 @@
 import React, { Fragment, useRef, useEffect, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { easePolyOut } from 'd3-ease';
 import { useSpring, animated } from 'react-spring';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
-import styles from './ProjectScene.module.scss';
 
-const settings = {
-  delay: '2s',
-  ease: 'cubic-bezier(0.16, 1, 0.3, 1)',
-};
+import styles from './ProjectScene.module.scss';
 
 function thresholdList() {
   let thresholds = [];
@@ -39,6 +36,21 @@ function debounce(func, wait = 5, immediate = false) {
   };
 }
 
+const config = {
+  small: 80,
+  middle: 120,
+  big: 160,
+};
+
+const easeConfig = {
+  config: {
+    easing: easePolyOut.exponent(0.5),
+    mass: 1,
+    tension: 500,
+    friction: 100,
+  },
+};
+
 const ProjectScene = ({
   link,
   linkTitle,
@@ -53,18 +65,18 @@ const ProjectScene = ({
   const startPosition = useRef(0);
 
   const [smallTranslate, setSmallTranslate] = useSpring(() => ({
-    transform: `translate3d(0, 80px, 0)`,
-    transition: `transform ${settings.delay} ${settings.ease}`,
+    transform: `translate3d(0, ${config.small}px, 0)`,
+    ...easeConfig,
   }));
 
   const [middleTranslate, setMiddleTranslate] = useSpring(() => ({
-    transform: `translate3d(0, 120px, 0)`,
-    transition: `transform ${settings.delay} ${settings.ease}`,
+    transform: `translate3d(0, ${config.middle}px, 0)`,
+    ...easeConfig,
   }));
 
   const [bigTranslate, setBigTranslate] = useSpring(() => ({
-    transform: `translate3d(0, 160px, 0)`,
-    transition: `transform ${settings.delay} ${settings.ease}`,
+    transform: `translate3d(0, ${config.big}px, 0)`,
+    ...easeConfig,
   }));
 
   useEffect(() => {
@@ -95,22 +107,21 @@ const ProjectScene = ({
     return result;
   };
 
-  const squeezeText = useCallback(() => {
-    console.log('render');
+  const squeezeText = () => {
     if (inView) {
       distanceToTop.current = elRef.current.getBoundingClientRect().top;
       coef.current = getCoef(distanceToTop.current, startPosition.current);
 
       setSmallTranslate({
-        transform: `translate3d(0, ${80 * coef.current}px, 0)`,
+        transform: `translate3d(0, ${config.small * coef.current}px, 0)`,
       });
 
       setMiddleTranslate({
-        transform: `translate3d(0, ${120 * coef.current}px, 0)`,
+        transform: `translate3d(0, ${config.middle * coef.current}px, 0)`,
       });
 
       setBigTranslate({
-        transform: `translate3d(0, ${160 * coef.current}px, 0)`,
+        transform: `translate3d(0, ${config.big * coef.current}px, 0)`,
       });
 
       if (startPositionFlag.current === false && inView) {
@@ -118,10 +129,11 @@ const ProjectScene = ({
         startPosition.current = distanceToTop.current;
       }
     }
-  }, [inView]);
+  };
+
+  const squeezeTextDebounced = useCallback(debounce(squeezeText, 200));
 
   useEffect(() => {
-    const squeezeTextDebounced = debounce(squeezeText, 200);
     window.addEventListener('scroll', squeezeTextDebounced);
     return () => window.removeEventListener('scroll', squeezeTextDebounced);
   }, [squeezeText]);
@@ -130,16 +142,12 @@ const ProjectScene = ({
     <Fragment>
       <animated.div
         ref={blockRef}
-        style={middleTranslate}
+        style={smallTranslate}
         className={`${styles.preview} ${reversed ? styles.reversed : ''}`}
       >
         <a href={link} target="_blank" rel="noopener noreferrer">
-          <Img
-            fluid={preview.childImageSharp.fluid}
-            loading="eager"
-            draggable={false}
-          />
-          <animated.span style={smallTranslate} className={styles.hiddenTitle}>
+          <Img fluid={preview.childImageSharp.fluid} draggable={false} />
+          <animated.span style={middleTranslate} className={styles.hiddenTitle}>
             {title}
           </animated.span>
         </a>
@@ -150,7 +158,7 @@ const ProjectScene = ({
         <animated.div
           ref={elRef}
           className={styles.tags}
-          style={smallTranslate}
+          style={middleTranslate}
         >
           {tags}
         </animated.div>
