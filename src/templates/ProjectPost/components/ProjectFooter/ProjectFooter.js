@@ -7,7 +7,7 @@ import GradientText from '@components/GradientText';
 
 import style from './ProjectFooter.module.scss';
 
-const ProjectFooter = ({ nextPost, status }) => {
+const ProjectFooter = ({ nextPost }) => {
   const { slug, featured_media, title } = nextPost;
   const link = `/portfolio/${slug}`;
 
