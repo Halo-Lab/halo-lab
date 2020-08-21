@@ -43,9 +43,11 @@ const Layout = ({ children, isGlow, headerIsWhite }) => {
             />
           </header>
           <main className={mainClasses}>{children}</main>
-          <footer className={footerClasses}>
-            <Footer />
-          </footer>
+          {!location.pathname.includes('/portfolio') ? (
+            <footer className={footerClasses}>
+              <Footer />
+            </footer>
+          ) : null}
         </div>
       </>
     </HeaderGradientContext.Provider>

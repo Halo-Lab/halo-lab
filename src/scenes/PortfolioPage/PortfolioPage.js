@@ -3,7 +3,7 @@ import React from 'react';
 import Projects from '@scenes/Projects';
 import MailUs from '@scenes/MailUs';
 import Clients from './components/Clients';
-import Works from './components/Works';
+// import Works from './components/Works';
 
 import styles from './PortfolioPage.module.scss';
 
@@ -13,7 +13,7 @@ const PortfolioPage = () => {
       <div className="pageWrapper">
         <Projects title="Projects" navigation={false} />
         <Clients />
-        <Works />
+        {/* <Works /> */}
       </div>
       <MailUs />
     </div>

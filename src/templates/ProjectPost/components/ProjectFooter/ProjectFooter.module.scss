@@ -1,0 +1,64 @@
+.footer {
+  padding-top: 6.3rem;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.container__content {
+  max-width: 700px;
+}
+
+.content {
+  text-align: center;
+
+  & > a {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+.description {
+  margin-bottom: 20px;
+
+  & > p {
+    font-family: 'Gramatika', sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.title {
+  margin-bottom: 6.3rem;
+
+  & > h3 {
+    font-family: 'Gramatika', sans-serif;
+    font-size: 52px;
+    line-height: 65px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-transform: capitalize;
+
+    & > span {
+      display: block;
+    }
+  }
+}
+
+.thumbnail {
+  max-height: 180px;
+  max-width: 100%;
+
+  & > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}

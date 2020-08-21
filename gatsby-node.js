@@ -70,4 +70,12 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { data: node, allPosts, recent: { previous, next } },
     });
   });
+
+  result.data.allWordpressPost.edges.forEach(({ node, previous, next }) => {
+    createPage({
+      path: `/portfolio/${node.slug}`,
+      component: require.resolve(`./src/templates/ProjectPost`),
+      context: { data: node, allPosts, recent: { previous, next } },
+    });
+  });
 };

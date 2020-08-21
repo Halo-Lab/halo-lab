@@ -153,5 +153,6 @@ module.exports = {
         selectorLength: 7,
       },
     },
+    `gatsby-plugin-transition-link`,
   ],
 };
