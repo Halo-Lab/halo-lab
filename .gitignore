@@ -37,6 +37,9 @@ node_modules/
 jspm_packages/
 .idea
 
+# VSCode
+.vscode
+
 # Typescript v1 declaration files
 typings/
 
