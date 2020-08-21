@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { useHomeGalleryAssets } from '@hooks/queries';
+import { useSpring, animated } from 'react-spring';
 import Img from 'gatsby-image';
+
+import { debounce } from '@helpers';
 
 import styles from './Gallery.module.scss';
 
 const Gallery = () => {
-  const { photos } = useHomeGalleryAssets();
-  const STEP_COEFFICIENT = 7;
-
-  const [scrollDistance, setScrollDistance] = useState(null);
-  const handleScroll = () => {
-    let scrollWidth = -window.pageYOffset / STEP_COEFFICIENT;
-    setScrollDistance({
-      '-webkit-transform': `matrix(1, 0, 0, 1, ${scrollWidth.toFixed(0)}, 0)`,
-      '-webkit-overflow-scrolling': 'touch',
-      // '-webkit-transform': `translate3d(${scrollWidth.toFixed(0)}px, 0, 0)`,
-    });
-  };
-
+  const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return function remove() {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', debounce(handleScroll));
+    return () => window.removeEventListener('scroll', debounce(handleScroll));
+  }, [debounce]);
+
+  const [{ springscrollY }, springsetScrollY] = useSpring(() => ({
+    springscrollY: 0,
+  }));
+  const STEP = 5;
+  springsetScrollY({ springscrollY: scrollY });
+  const interpHeader = springscrollY.interpolate(
+    o => `translateX(-${o / STEP}px)`
+  );
+
+  const { photos } = useHomeGalleryAssets();
 
   const photosList = photos.map(({ childImageSharp }, index) => {
     return {
@@ -48,11 +49,14 @@ const Gallery = () => {
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>Creative Atmosphere</h2>
-      <div className={styles.wrapper} style={scrollDistance}>
+      <animated.div
+        className={styles.wrapper}
+        style={{ transform: interpHeader }}
+      >
         {photosList.map(({ element }) => {
           return element;
         })}
-      </div>
+      </animated.div>
     </section>
   );
 };
