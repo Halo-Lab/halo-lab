@@ -3,7 +3,7 @@ import { useHomeGalleryAssets } from '@hooks/queries';
 import { useSpring, animated } from 'react-spring';
 import Img from 'gatsby-image';
 
-import { debounce } from '@helpers';
+import { springDebounce } from '@helpers';
 
 import styles from './Gallery.module.scss';
 
@@ -11,9 +11,10 @@ const Gallery = () => {
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', debounce(handleScroll));
-    return () => window.removeEventListener('scroll', debounce(handleScroll));
-  }, [debounce]);
+    window.addEventListener('scroll', springDebounce(handleScroll));
+    return () =>
+      window.removeEventListener('scroll', springDebounce(handleScroll));
+  }, [springDebounce]);
 
   const [{ springscrollY }, springsetScrollY] = useSpring(() => ({
     springscrollY: 0,

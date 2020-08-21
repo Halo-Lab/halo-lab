@@ -1,4 +1,4 @@
-function debounce(func, wait = 1, immediate = false) {
+function springDebounce(func, wait = 1, immediate = false) {
   let timeout;
   return function() {
     const context = this;
@@ -14,4 +14,4 @@ function debounce(func, wait = 1, immediate = false) {
   };
 }
 
-export default debounce;
+export default springDebounce;
