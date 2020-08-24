@@ -1,18 +1,18 @@
 import React, { Fragment, useRef, useEffect, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { easePolyOut } from 'd3-ease';
 import { useSpring, animated } from 'react-spring';
-import Img from 'gatsby-image';
+import useBreakpoints from 'use-breakpoints-width';
+import { BREAKPOINTS } from '@constants';
 import PropTypes from 'prop-types';
 
 import styles from './ProjectScene.module.scss';
+import Img from 'gatsby-image';
 
-function thresholdList() {
+function thresholdList(size = 10) {
   let thresholds = [];
-  let numSteps = 20;
 
-  for (let i = 1.0; i <= numSteps; i++) {
-    let ratio = i / numSteps;
+  for (let i = 1.0; i <= size; i++) {
+    let ratio = i / size;
     thresholds.push(ratio);
   }
 
@@ -22,10 +22,10 @@ function thresholdList() {
 
 function debounce(func, wait = 5, immediate = false) {
   let timeout;
-  return function() {
+  return function () {
     const context = this;
     const args = arguments;
-    const later = function() {
+    const later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
@@ -37,18 +37,10 @@ function debounce(func, wait = 5, immediate = false) {
 }
 
 const config = {
-  small: 80,
-  middle: 120,
-  big: 160,
-};
-
-const easeConfig = {
-  config: {
-    easing: easePolyOut.exponent(0.5),
-    mass: 1,
-    tension: 500,
-    friction: 100,
-  },
+  big: 180,
+  middle: 160,
+  small: 100,
+  base: 60,
 };
 
 const ProjectScene = ({
@@ -63,21 +55,71 @@ const ProjectScene = ({
   const elRef = useRef(null);
   const distanceToTop = useRef(0);
   const startPosition = useRef(0);
+  const startPositionFlag = useRef(false);
+  const ratio = useRef(0);
+  const { breakpoint } = useBreakpoints();
 
-  const [smallTranslate, setSmallTranslate] = useSpring(() => ({
-    transform: `translate3d(0, ${config.small}px, 0)`,
-    ...easeConfig,
-  }));
+  const translate = (base, ratio = 1, disable = false) => ({
+    transform: `translate3d(0, ${base * ratio}px, 0)`,
+    config: {
+      mass: 10,
+      tension: 350,
+      friction: 150,
+    },
+    immediate: disable,
+  });
 
-  const [middleTranslate, setMiddleTranslate] = useSpring(() => ({
-    transform: `translate3d(0, ${config.middle}px, 0)`,
-    ...easeConfig,
-  }));
+  const [baseMove, setBaseMove] = useSpring(() => translate(config.base));
+  const [smallMove, setSmallMove] = useSpring(() => translate(config.small));
+  const [middleMove, setMiddleMove] = useSpring(() => translate(config.middle));
+  const [bigMove, setBigMove] = useSpring(() => translate(config.big));
 
-  const [bigTranslate, setBigTranslate] = useSpring(() => ({
-    transform: `translate3d(0, ${config.big}px, 0)`,
-    ...easeConfig,
-  }));
+  const [blockRef, inView] = useInView({
+    threshold: thresholdList(20),
+  });
+
+  const getCoef = (distToTop, startPos, correction = 0) => {
+    const result = distToTop / startPos - correction;
+
+    if (!startPos || result < 0 - correction) {
+      return 0 - correction;
+    }
+
+    if (result > 1 + correction) {
+      return 1 + correction;
+    }
+
+    return result;
+  };
+
+  const squeezeText = () => {
+    if (inView && BREAKPOINTS.MOBILE !== breakpoint) {
+      distanceToTop.current = elRef.current.getBoundingClientRect().top;
+      ratio.current = getCoef(
+        distanceToTop.current,
+        startPosition.current,
+        0.35
+      );
+
+      setBaseMove(translate(config.base, ratio.current));
+      setSmallMove(translate(config.small, ratio.current));
+      setMiddleMove(translate(config.middle, ratio.current));
+      setBigMove(translate(config.big, ratio.current));
+
+      if (startPositionFlag.current === false && inView) {
+        startPositionFlag.current = true;
+        startPosition.current = distanceToTop.current;
+      }
+    }
+    if (BREAKPOINTS.MOBILE === breakpoint) {
+      setBaseMove(translate(0, 1, true));
+      setSmallMove(translate(0, 1, true));
+      setMiddleMove(translate(0, 1, true));
+      setBigMove(translate(0, 1, true));
+    }
+  };
+
+  const squeezeTextDebounced = useCallback(debounce(squeezeText, 10));
 
   useEffect(() => {
     if (startPositionFlag.current === false && inView) {
@@ -85,53 +127,6 @@ const ProjectScene = ({
       startPosition.current = distanceToTop.current;
     }
   }, []);
-
-  const startPositionFlag = useRef(false);
-  const coef = useRef(0);
-
-  const [blockRef, inView] = useInView({
-    threshold: thresholdList(),
-  });
-
-  const getCoef = (distToTop, startPos) => {
-    const result = distToTop / startPos;
-
-    if (!startPos || result < 0) {
-      return 0;
-    }
-
-    if (result > 1) {
-      return 1;
-    }
-
-    return result;
-  };
-
-  const squeezeText = () => {
-    if (inView) {
-      distanceToTop.current = elRef.current.getBoundingClientRect().top;
-      coef.current = getCoef(distanceToTop.current, startPosition.current);
-
-      setSmallTranslate({
-        transform: `translate3d(0, ${config.small * coef.current}px, 0)`,
-      });
-
-      setMiddleTranslate({
-        transform: `translate3d(0, ${config.middle * coef.current}px, 0)`,
-      });
-
-      setBigTranslate({
-        transform: `translate3d(0, ${config.big * coef.current}px, 0)`,
-      });
-
-      if (startPositionFlag.current === false && inView) {
-        startPositionFlag.current = true;
-        startPosition.current = distanceToTop.current;
-      }
-    }
-  };
-
-  const squeezeTextDebounced = useCallback(debounce(squeezeText, 200));
 
   useEffect(() => {
     window.addEventListener('scroll', squeezeTextDebounced);
@@ -142,12 +137,12 @@ const ProjectScene = ({
     <Fragment>
       <animated.div
         ref={blockRef}
-        style={smallTranslate}
+        style={baseMove}
         className={`${styles.preview} ${reversed ? styles.reversed : ''}`}
       >
         <a href={link} target="_blank" rel="noopener noreferrer">
           <Img fluid={preview.childImageSharp.fluid} draggable={false} />
-          <animated.span style={middleTranslate} className={styles.hiddenTitle}>
+          <animated.span style={middleMove} className={styles.hiddenTitle}>
             {title}
           </animated.span>
         </a>
@@ -155,24 +150,20 @@ const ProjectScene = ({
       <div
         className={`${styles.description} ${reversed ? styles.reversed : ''}`}
       >
-        <animated.div
-          ref={elRef}
-          className={styles.tags}
-          style={middleTranslate}
-        >
+        <animated.div ref={elRef} style={smallMove} className={styles.tags}>
           {tags}
         </animated.div>
-        <animated.div className={styles.title} style={middleTranslate}>
+        <animated.div className={styles.title} style={middleMove}>
           <a href={link} target="_blank" rel="noopener noreferrer">
             {title}
           </a>
         </animated.div>
-        <animated.div className={styles.descriptionLink} style={bigTranslate}>
+        <animated.div className={styles.descriptionLink} style={middleMove}>
           <a href={link} target="_blank" rel="noopener noreferrer">
             {linkTitle}
           </a>
         </animated.div>
-        <animated.div className={styles.review} style={bigTranslate}>
+        <animated.div style={bigMove} className={styles.review}>
           <div className={styles.avatar}>
             <Img
               fluid={review.avatar.childImageSharp.fluid}
