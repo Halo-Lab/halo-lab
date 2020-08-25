@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import styles from './ProjectScene.module.scss';
+import SlideHover from '@components/SlideHover';
 
 const ProjectScene = ({
   link,
@@ -29,11 +30,13 @@ const ProjectScene = ({
             {title}
           </a>
         </div>
-        <div className={styles.descriptionLink}>
+
+        <SlideHover className={styles.descriptionLink}>
           <a href={link} target="_blank" rel="noopener noreferrer">
             {linkTitle}
           </a>
-        </div>
+        </SlideHover>
+
         <div className={styles.review}>
           <div className={styles.avatar}>
             <Img
