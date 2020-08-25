@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSiteMetadata } from '@hooks/queries';
-import GradientText from '../../../../components/GradientText';
+import GradientText from '@components/GradientText';
 import SlideHover from '@components/SlideHover';
 
 import styles from './Description.module.scss';
