@@ -27,11 +27,11 @@ const Gallery = () => {
 
   const { photos } = useHomeGalleryAssets();
 
-  const photosList = photos.map(({ childImageSharp }, index) => {
+  const photosList = photos.map(({ childImageSharp }) => {
     return {
       name: childImageSharp.fluid.src,
       element: (
-        <li className={styles.item} key={index}>
+        <li className={styles.item} key={childImageSharp.fluid.src}>
           <div className={styles.card}>
             <Img
               fluid={childImageSharp.fluid}
