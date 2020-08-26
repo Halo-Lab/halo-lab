@@ -10,12 +10,12 @@ describe('blog page', function() {
     cy.get('article').should('be.visible');
   });
 
-  //this test throw mistake if use async await
-  // it('check one post render', function() {
-  //   cy.get('[data-automation="articles"] h3 a').then(posts => {
-  //     const postTitle = posts[0].innerText;
-  //     cy.contains(postTitle).click();
-  //     cy.get('h1').should(el => expect(el.first()).to.contain(postTitle));
-  //   });
-  // });
+  // this test throw mistake if use async await
+  it('check one post render', function() {
+    cy.get('[data-list-item="articles"] h3 a').then(posts => {
+      const postTitle = posts[0].innerText;
+      cy.contains(postTitle).click();
+      cy.get('h1').should(el => expect(el.first()).to.contain(postTitle));
+    });
+  });
 });
