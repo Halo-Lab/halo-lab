@@ -33,7 +33,11 @@ const Works = () => {
   return (
     <div className={styles.container}>
       <Title icon={dribbbleRed} signature={textCircled} />
-      <ScrollGallery items={imageList} step={5} Item={Item} />
+      <ScrollGallery step={5}>
+        {imageList.map(item => {
+          return <Item images={item} key={item[0].name} />;
+        })}
+      </ScrollGallery>
     </div>
   );
 };

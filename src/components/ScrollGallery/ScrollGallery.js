@@ -5,7 +5,7 @@ import { springDebounce } from '@helpers';
 
 import styles from './Styles.module.scss';
 
-const Gallery = ({ items, step, Item }) => {
+const Gallery = ({ children, step }) => {
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -25,17 +25,14 @@ const Gallery = ({ items, step, Item }) => {
 
   return (
     <animated.div className={styles.items} style={{ transform: interpHeader }}>
-      {items.map(item => {
-        return <Item images={item} key={item[0].name} />;
-      })}
+      {children}
     </animated.div>
   );
 };
 
 Gallery.propTypes = {
-  items: PropTypes.array,
   step: PropTypes.number,
-  Item: PropTypes.array,
+  children: PropTypes.array,
 };
 
 export default Gallery;
