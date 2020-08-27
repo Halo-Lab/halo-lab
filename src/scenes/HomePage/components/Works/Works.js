@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHomeWorksAssets, usePortfolioWorksAssets } from '@hooks/queries';
 import Title from './components/Title';
-import ScrollGallery from '../../../../components/ScrollGallery/ScrollGallery';
+import ScrollGallery from '@components/ScrollGallery/ScrollGallery';
 import styles from './Works.module.scss';
 import Item from './components/Item';
 
