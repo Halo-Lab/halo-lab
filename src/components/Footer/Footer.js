@@ -56,6 +56,7 @@ const Footer = () => {
         </li>
         <li>
           <a
+            className={styles.dribbbleIcon}
             href="https://dribbble.com/halolab"
             target="_blank"
             rel="noopener noreferrer"
