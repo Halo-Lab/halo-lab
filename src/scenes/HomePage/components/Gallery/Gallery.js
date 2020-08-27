@@ -1,30 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useHomeGalleryAssets } from '@hooks/queries';
-import { useSpring, animated } from 'react-spring';
 import Img from 'gatsby-image';
-
-import { springDebounce } from '@helpers';
+import ScrollGallery from '@components/ScrollGallery/ScrollGallery';
 
 import styles from './Gallery.module.scss';
 
 const Gallery = () => {
-  const [scrollY, setScrollY] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', springDebounce(handleScroll));
-    return () =>
-      window.removeEventListener('scroll', springDebounce(handleScroll));
-  }, [springDebounce]);
-
-  const [{ springscrollY }, springsetScrollY] = useSpring(() => ({
-    springscrollY: 0,
-  }));
-  const STEP = 5;
-  springsetScrollY({ springscrollY: scrollY });
-  const interpHeader = springscrollY.interpolate(
-    o => `translateX(-${o / STEP}px)`
-  );
-
   const { photos } = useHomeGalleryAssets();
 
   const photosList = photos.map(({ childImageSharp }) => {
@@ -50,14 +31,11 @@ const Gallery = () => {
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>Creative Atmosphere</h2>
-      <animated.div
-        className={styles.wrapper}
-        style={{ transform: interpHeader }}
-      >
+      <ScrollGallery step={5}>
         {photosList.map(({ element }) => {
           return element;
         })}
-      </animated.div>
+      </ScrollGallery>
     </section>
   );
 };
