@@ -1,34 +1,37 @@
-import React, { useContext } from 'react';
-import useBreakpoints from 'use-breakpoints-width';
-
-import { MenuContext } from '@contexts';
-import { BREAKPOINTS } from '@constants';
+import React, { useEffect, useState } from 'react';
 import { useHomeGalleryAssets } from '@hooks/queries';
-import Ticker from '@components/Ticker';
-import Slider from '@components/Slider';
-import Item from './components/Item';
+import { useSpring, animated } from 'react-spring';
 import Img from 'gatsby-image';
+
+import { springDebounce } from '@helpers';
 
 import styles from './Gallery.module.scss';
 
 const Gallery = () => {
-  const { breakpoint } = useBreakpoints();
-  const { isOpened } = useContext(MenuContext);
-  const { photos, arrowLeft, arrowRight } = useHomeGalleryAssets();
+  const [scrollY, setScrollY] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', springDebounce(handleScroll));
+    return () =>
+      window.removeEventListener('scroll', springDebounce(handleScroll));
+  }, [springDebounce]);
 
-  const settings = {
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    variableWidth: true,
-    slidesToShow: 1,
-  };
+  const [{ springscrollY }, springsetScrollY] = useSpring(() => ({
+    springscrollY: 0,
+  }));
+  const STEP = 5;
+  springsetScrollY({ springscrollY: scrollY });
+  const interpHeader = springscrollY.interpolate(
+    o => `translateX(-${o / STEP}px)`
+  );
+
+  const { photos } = useHomeGalleryAssets();
 
   const photosList = photos.map(({ childImageSharp }) => {
     return {
       name: childImageSharp.fluid.src,
       element: (
-        <li className={styles.item}>
+        <li className={styles.item} key={childImageSharp.fluid.src}>
           <div className={styles.card}>
             <Img
               fluid={childImageSharp.fluid}
@@ -47,23 +50,14 @@ const Gallery = () => {
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>Creative Atmosphere</h2>
-      <div className={styles.sliderWrapper}>
-        {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
-          <Ticker
-            images={photosList}
-            arrowLeft={arrowLeft}
-            arrowRight={arrowRight}
-          />
-        ) : null}
-        {breakpoint === BREAKPOINTS.MOBILE ||
-        breakpoint === BREAKPOINTS.TABLET ? (
-          <Slider settings={settings}>
-            {photos.map((item, index) => {
-              return <Item key={index} data-name={index} {...item} />;
-            })}
-          </Slider>
-        ) : null}
-      </div>
+      <animated.div
+        className={styles.wrapper}
+        style={{ transform: interpHeader }}
+      >
+        {photosList.map(({ element }) => {
+          return element;
+        })}
+      </animated.div>
     </section>
   );
 };

@@ -1,6 +1,15 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
+.wrapper {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  will-change: transform;
+}
+
 .container {
   @include hl-margin(top, 200px);
   text-align: center;
