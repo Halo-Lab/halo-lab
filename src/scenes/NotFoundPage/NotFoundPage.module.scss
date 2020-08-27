@@ -3,6 +3,39 @@
 
 .container {
   box-sizing: border-box;
-  padding-top: 200px;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.decor {
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 100px);
+  height: 0;
+  margin: 0 auto;
+  opacity: 0.5;
+  min-width: 1000px;
+
+  @media screen and (min-width: $md) {
+    bottom: 230px;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    padding-bottom: 100%;
+    background: radial-gradient(
+      41.38% 40.85% at 56.08% 46.24%,
+      #3719ca 0%,
+      rgba(55, 25, 202, 0) 100%
+    );
+  }
 }
