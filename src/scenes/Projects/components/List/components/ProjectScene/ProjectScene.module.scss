@@ -124,27 +124,20 @@
     @include hl-margin(bottom, 40px);
   }
 
-  margin-right: -10px;
-  padding-bottom: 8px;
+  a {
+    margin-right: -10px;
+    padding-bottom: 8px;
 
-  display: block;
+    color: $white-color;
 
-  @include hl-font-size-text(14px);
-  letter-spacing: 10px;
-  font-weight: 600;
-  line-height: 1.42em;
-  text-decoration: none;
-  text-transform: uppercase;
-
-  color: $white-color;
-
-  transition: color 0.3s;
-
-  > a {
-    display: block;
-    color: inherit;
+    @include hl-font-size-text(14px);
+    letter-spacing: 10px;
+    font-weight: 600;
+    line-height: 1.42em;
     text-decoration: none;
-    margin-right: inherit;
+    text-transform: uppercase;
+
+    transition: color 0.3s;
   }
 }
 

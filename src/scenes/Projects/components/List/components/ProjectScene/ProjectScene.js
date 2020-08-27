@@ -31,11 +31,13 @@ const ProjectScene = ({
           </a>
         </div>
 
-        <SlideHover className={styles.descriptionLink}>
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            {linkTitle}
-          </a>
-        </SlideHover>
+        <div className={styles.descriptionLink}>
+          <SlideHover>
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              {linkTitle}
+            </a>
+          </SlideHover>
+        </div>
 
         <div className={styles.review}>
           <div className={styles.avatar}>
