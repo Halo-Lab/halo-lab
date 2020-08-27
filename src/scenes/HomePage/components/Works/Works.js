@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useHomeWorksAssets, usePortfolioWorksAssets } from '@hooks/queries';
-import { useSpring, animated } from 'react-spring';
 import Title from './components/Title';
-import Item from './components/Item';
-
-import { springDebounce } from '@helpers';
-
+import ScrollGallery from '../../../../components/ScrollGallery/ScrollGallery';
 import styles from './Works.module.scss';
+import Item from './components/Item';
 
 const Works = () => {
   const { dribbbleRed, textCircled } = usePortfolioWorksAssets();
@@ -33,34 +30,10 @@ const Works = () => {
     [Realty, Hommy, Tude],
   ];
 
-  const [scrollY, setScrollY] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', springDebounce(handleScroll));
-    return () =>
-      window.removeEventListener('scroll', springDebounce(handleScroll));
-  }, [springDebounce]);
-
-  const [{ springscrollY }, springsetScrollY] = useSpring(() => ({
-    springscrollY: 0,
-  }));
-  const STEP = 5;
-  springsetScrollY({ springscrollY: scrollY });
-  const interpHeader = springscrollY.interpolate(
-    o => `translateX(-${o / STEP}px)`
-  );
-
   return (
     <div className={styles.container}>
       <Title icon={dribbbleRed} signature={textCircled} />
-      <animated.div
-        className={styles.items}
-        style={{ transform: interpHeader }}
-      >
-        {imageList.map(item => {
-          return <Item images={item} key={item[0].name} />;
-        })}
-      </animated.div>
+      <ScrollGallery items={imageList} step={5} Item={Item} />
     </div>
   );
 };
