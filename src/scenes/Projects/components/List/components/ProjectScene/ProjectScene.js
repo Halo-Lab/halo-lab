@@ -32,10 +32,15 @@ const ProjectScene = ({
           href={link}
           target="_blank"
           rel="noopener noreferrer"
+          className={styles.imageLink}
           onMouseOver={handleHoverOn}
           onMouseLeave={handleHoverOut}
         >
-          <Img fluid={preview.childImageSharp.fluid} draggable={false} />
+          <Img
+            fluid={preview.childImageSharp.fluid}
+            draggable={false}
+            className={styles.image}
+          />
           <span className={styles.hiddenTitle}>{title}</span>
         </a>
       </div>

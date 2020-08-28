@@ -11,28 +11,6 @@
     margin-right: 0;
   }
 
-  @media screen and (min-width: $lg) {
-    // hover: the link remains the same size, but the picture becomes smaller -->
-    > a {
-      > div {
-        transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-      }
-    }
-    // <-- hover
-  }
-
-  & > a {
-    display: block;
-
-    & > div {
-      transform: scale(1);
-      transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-      min-height: 460px;
-      @media screen and (max-width: $md) {
-        min-height: auto;
-      }
-    }
-  }
   &.reversed {
     @media screen and (min-width: $md) {
       @include col-width(24, 65);
@@ -41,8 +19,25 @@
   }
 }
 
+.imageLink {
+  display: block;
+}
+
+.image {
+  transform: scale(1);
+  transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  min-height: 460px;
+  @media screen and (max-width: $md) {
+    min-height: auto;
+  }
+
+  @media screen and (min-width: $lg) {
+    transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+}
+
 .hovered {
-  & > a > div {
+  .image {
     transform: scale(0.9);
   }
 }
