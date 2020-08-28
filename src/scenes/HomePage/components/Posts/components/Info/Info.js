@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
+import SlideHover from '@components/SlideHover';
 import styles from './Info.module.scss';
 
 const Info = () => {
@@ -9,9 +9,11 @@ const Info = () => {
       <div className={styles.title}>
         Front-end &amp; back-end expertise from development to delivery
       </div>
-      <Link to="/blog" className={styles.link}>
-        MORE BLOG POSTS
-      </Link>
+      <SlideHover>
+        <Link to="/blog" className={styles.link}>
+          MORE BLOG POSTS
+        </Link>
+      </SlideHover>
     </div>
   );
 };
