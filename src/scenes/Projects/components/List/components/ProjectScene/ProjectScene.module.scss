@@ -113,54 +113,31 @@
 }
 
 .descriptionLink {
-  position: relative;
   @include hl-margin(top, 60px);
   @include hl-margin(bottom, 10px);
-  @include hl-font-size-text(14px);
-
   @media screen and (min-width: $xl) {
     @include hl-margin(top, 40px);
     @include hl-margin(bottom, 30px);
   }
-
   @media screen and (max-width: $lg) {
     @include hl-margin(top, 30px);
     @include hl-margin(bottom, 40px);
   }
 
-  padding-bottom: 8px;
-  font-weight: 600;
-  line-height: 1.42em;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  transition: color 0.3s;
-  color: $white-color;
-  width: fit-content;
+  a {
+    margin-right: -10px;
+    padding-bottom: 8px;
 
-  > a {
-    display: block;
-    color: inherit;
+    color: $white-color;
+
+    @include hl-font-size-text(14px);
+    letter-spacing: 10px;
+    font-weight: 600;
+    line-height: 1.42em;
     text-decoration: none;
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 45%;
-    left: 0;
-    bottom: 0;
-    background: linear-gradient(
-      90deg,
-      #e7a28f 1.59%,
-      #fbddb0 50%,
-      #fbfefd 98.41%
-    );
-    transition: width 0.3s;
-  }
-  &:hover {
-    &:before {
-      width: 95%;
-    }
+    text-transform: uppercase;
+
+    transition: color 0.3s;
   }
 }
 
