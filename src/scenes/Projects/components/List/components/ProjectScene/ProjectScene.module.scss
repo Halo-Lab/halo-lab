@@ -101,15 +101,18 @@
   line-height: 1.25em;
   font-family: $font-gramatika;
   font-weight: 700;
+  cursor: pointer;
+}
 
-  > a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
+.titleLink {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
 .descriptionLink {
+  width: fit-content;
+
   @include hl-margin(top, 60px);
   @include hl-margin(bottom, 10px);
   @media screen and (min-width: $xl) {
@@ -120,22 +123,23 @@
     @include hl-margin(top, 30px);
     @include hl-margin(bottom, 40px);
   }
+}
 
-  a {
-    margin-right: -10px;
-    padding-bottom: 8px;
+.slideLink {
+  white-space: nowrap;
+  margin-right: -10px;
+  padding-bottom: 8px;
 
-    color: $white-color;
+  color: $white-color;
 
-    @include hl-font-size-text(14px);
-    letter-spacing: 10px;
-    font-weight: 600;
-    line-height: 1.42em;
-    text-decoration: none;
-    text-transform: uppercase;
+  @include hl-font-size-text(14px);
+  letter-spacing: 10px;
+  font-weight: 600;
+  line-height: 1.42em;
+  text-decoration: none;
+  text-transform: uppercase;
 
-    transition: color 0.3s;
-  }
+  transition: color 0.3s;
 }
 
 .review {

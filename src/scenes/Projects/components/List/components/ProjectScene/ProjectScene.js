@@ -53,7 +53,12 @@ const ProjectScene = ({
           onMouseOver={handleHoverOn}
           onMouseLeave={handleHoverOut}
         >
-          <a href={link} target="_blank" rel="noopener noreferrer">
+          <a
+            href={link}
+            className={styles.titleLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {title}
           </a>
         </div>
@@ -64,7 +69,12 @@ const ProjectScene = ({
           onMouseLeave={handleHoverOut}
         >
           <SlideHover>
-            <a href={link} target="_blank" rel="noopener noreferrer">
+            <a
+              href={link}
+              className={styles.slideLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {linkTitle}
             </a>
           </SlideHover>
