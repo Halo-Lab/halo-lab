@@ -32,16 +32,18 @@
         min-height: auto;
       }
     }
-
-    &:hover > div {
-      transform: scale(0.9);
-    }
   }
   &.reversed {
     @media screen and (min-width: $md) {
       @include col-width(24, 65);
       margin-left: 0;
     }
+  }
+}
+
+.hovered {
+  & > a > div {
+    transform: scale(0.9);
   }
 }
 
