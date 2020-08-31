@@ -55,9 +55,10 @@ const BlogPost = ({ pageContext }) => {
     data,
   ]);
 
-  const imageURL = data.featured_media.source_url
-    ? data.featured_media.source_url
-    : '';
+  const imageURL =
+    data.featured_media && data.featured_media.source_url
+      ? data.featured_media.source_url
+      : '';
 
   const [headerIsWhite, setHeaderIsWhite] = React.useState(false);
   const thumbnailsItems = [];
