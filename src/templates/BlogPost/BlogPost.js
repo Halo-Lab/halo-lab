@@ -55,6 +55,10 @@ const BlogPost = ({ pageContext }) => {
     data,
   ]);
 
+  const imageURL = data.featured_media.source_url
+    ? data.featured_media.source_url
+    : '';
+
   const [headerIsWhite, setHeaderIsWhite] = React.useState(false);
   const thumbnailsItems = [];
   if (next) thumbnailsItems.push(next);
@@ -77,7 +81,7 @@ const BlogPost = ({ pageContext }) => {
         <div className={pageWrapperClass}>
           <Headline
             categories={data.categories}
-            image={data.featured_media.source_url}
+            image={imageURL}
             title={data.title}
           />
         </div>
