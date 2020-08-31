@@ -97,17 +97,20 @@
 .title {
   @include hl-margin(top, 20px);
   @include hl-font-size-title(36px);
-
   line-height: 1.25em;
   font-family: $font-gramatika;
   font-weight: 700;
-  cursor: pointer;
 }
 
 .titleLink {
   display: block;
   color: inherit;
   text-decoration: none;
+  cursor: default;
+}
+
+.titleLinkText {
+  cursor: pointer;
 }
 
 .descriptionLink {

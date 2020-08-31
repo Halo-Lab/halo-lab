@@ -48,18 +48,20 @@ const ProjectScene = ({
         className={`${styles.description} ${reversed ? styles.reversed : ''}`}
       >
         <div className={styles.tags}>{tags}</div>
-        <div
-          className={styles.title}
-          onMouseOver={handleHoverOn}
-          onMouseLeave={handleHoverOut}
-        >
+        <div className={styles.title}>
           <a
             href={link}
             className={styles.titleLink}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {title}
+            <span
+              className={styles.titleLinkText}
+              onMouseOver={handleHoverOn}
+              onMouseLeave={handleHoverOut}
+            >
+              {title}
+            </span>
           </a>
         </div>
 
