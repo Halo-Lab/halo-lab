@@ -11,6 +11,7 @@ const PostThumbnail = ({ title, slug, featured_media, categories }) => {
       ? featured_media.source_url
       : '';
   const imageOptimized =
+    featured_media &&
     featured_media.localFile &&
     featured_media.localFile.childImageSharp &&
     featured_media.localFile.childImageSharp.fluid;
