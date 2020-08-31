@@ -6,7 +6,9 @@ import PropTypes from 'prop-types';
 import styles from './PostThumbnail.module.scss';
 
 const PostThumbnail = ({ title, slug, featured_media, categories }) => {
-  const imageSource = featured_media.source_url;
+  const imageSource = featured_media.source_url
+    ? featured_media.source_url
+    : '';
   const imageOptimized =
     featured_media.localFile &&
     featured_media.localFile.childImageSharp &&
