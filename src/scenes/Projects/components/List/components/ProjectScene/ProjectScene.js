@@ -37,10 +37,10 @@ function debounce(func, wait = 5, immediate = false) {
 }
 
 const config = {
-  big: 180,
-  middle: 160,
-  small: 100,
-  base: 60,
+  big: 120,
+  middle: 106,
+  small: 66.6,
+  base: 40,
 };
 
 const ProjectScene = ({
@@ -98,7 +98,7 @@ const ProjectScene = ({
       ratio.current = getCoef(
         distanceToTop.current,
         startPosition.current,
-        0.35
+        0.4
       );
 
       setBaseMove(translate(config.base, ratio.current));
