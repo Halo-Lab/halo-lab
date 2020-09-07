@@ -9,7 +9,6 @@
   height: 100%;
 
   @media screen and (max-width: $lg) {
-    align-items: flex-end;
     padding: 0 24px;
   }
 
@@ -19,18 +18,29 @@
 }
 
 .message {
-  @media screen and (min-width: $lg) {
-    margin-top: -10px;
-    max-width: 33rem;
-  }
-
-  @media screen and (min-width: $lg) {
-    margin-right: -50%;
-  }
+  position: relative;
+  z-index: 10;
 }
 
 .textWrap {
-  position: relative;
+  position: absolute;
+  width: 36vw;
+  max-width: 640px;
+  left: 140px;
+  top: calc(-4.4rem * var(--coef-title));
+
+  @media screen and (max-width: $lg) {
+    left: 80px;
+  }
+
+  @media screen and (max-width: $md) {
+    top: -20px;
+  }
+
+  @media screen and (max-width: $sm) {
+    position: static;
+    width: auto;
+  }
 }
 
 .text {
@@ -58,43 +68,20 @@
   color: $white-color;
   text-decoration: none;
   text-transform: uppercase;
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 45%;
-    left: 0;
-    bottom: -10px;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      #e7a28f 1.59%,
-      #fbddb0 50%,
-      #fbfefd 98.41%
-    );
-    z-index: -1;
-    transition: width 0.3s;
-  }
-  @media screen and (max-width: $sm) {
-    display: none;
-  }
-
-  &:hover {
-    &::before {
-      width: 100%;
-    }
-  }
+  display: block;
+  margin-top: 8px;
 }
 
 .imageWrap {
-  position: absolute;
-  left: -60px;
-  transform: translate(-100%, -50%);
-  top: 60%;
   width: 80px;
   height: 80px;
   border-radius: 50%;
   overflow: hidden;
+
+  @media screen and (max-width: $lg) {
+    width: 60px;
+    height: 60px;
+  }
 
   @media screen and (max-width: $sm) {
     display: none;
@@ -105,4 +92,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.linkWrap {
+  display: flex;
+  align-items: center;
+}
+
+.emoji {
+  margin-left: 10px;
 }
