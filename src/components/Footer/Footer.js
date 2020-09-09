@@ -1,13 +1,12 @@
 import React from 'react';
+import { ReactSVG } from 'react-svg';
+
+import { useFooterAssets } from '@hooks/queries';
 
 import styles from './Footer.module.scss';
-import Dribbble from '../../assets/images/brands/dribbble.inline.svg';
-import Instagram from '../../assets/images/brands/instagram.inline.svg';
-import Behance from '../../assets/images/brands/behance.inline.svg';
-import Github from '../../assets/images/brands/github.inline.svg';
-import NPM from '../../assets/images/brands/npm.inline.svg';
 
 const Footer = () => {
+  const { github, npm, instagram, behance, dribbble } = useFooterAssets();
   return (
     <div className={`oldPageWrapper ${styles.container}`}>
       <div className={styles.logotype}>
@@ -21,7 +20,7 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             Github
-            <Github />
+            <ReactSVG src={github.publicURL} />
           </a>
         </li>
         <li>
@@ -31,7 +30,7 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             NPM
-            <NPM />
+            <ReactSVG src={npm.publicURL} />
           </a>
         </li>
         <li>
@@ -41,7 +40,7 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             Instagram
-            <Instagram />
+            <ReactSVG src={instagram.publicURL} />
           </a>
         </li>
         <li>
@@ -51,7 +50,7 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             Behance
-            <Behance />
+            <ReactSVG src={behance.publicURL} />
           </a>
         </li>
         <li>
@@ -61,7 +60,7 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             Dribbble
-            <Dribbble />
+            <ReactSVG src={dribbble.publicURL} />
           </a>
         </li>
       </ul>

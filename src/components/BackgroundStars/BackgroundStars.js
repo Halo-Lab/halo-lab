@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import { useSpring, animated as a } from 'react-spring';
 import PropTypes from 'prop-types';
 
-import { MenuContext } from '@contexts';
+import ThemeContext from '@context/ThemeContext';
 import { useBackgroundsAssets } from '@hooks/queries';
 import { checkBrowser } from '@helpers';
 
@@ -17,9 +17,10 @@ const iScale = value => `scale(${value})`;
 const transition = (x, y) => `translate3d(${x / 100}px,${y / 100}px,0)`;
 
 const BackgroundStars = ({ animation }) => {
-  const animationStars = animation ? animation.xy.interpolate(transition) : '';
   const { starsBig, starsSmall } = useBackgroundsAssets();
-  const { isOpened } = useContext(MenuContext);
+  const { themeState } = useContext(ThemeContext);
+
+  const animationStars = animation ? animation.xy.interpolate(transition) : '';
 
   // disable parallax effect in Safari browser -->
   const { isSafari } = checkBrowser();
@@ -41,12 +42,12 @@ const BackgroundStars = ({ animation }) => {
     config: myConfig,
   }));
   const hiddenStarsProps = useSpring({
-    opacity: isOpened ? 1 : 0,
-    scale: isOpened ? 1.4 : 0.8,
+    opacity: themeState.menu.isOpen ? 1 : 0,
+    scale: themeState.menu.isOpen ? 1.4 : 0.8,
     config: myConfig,
   });
   const containerProps = useSpring({
-    scale: isOpened ? 1.2 : 1,
+    scale: themeState.menu.isOpen ? 1.2 : 1,
   });
 
   let scrollPercentage = null;

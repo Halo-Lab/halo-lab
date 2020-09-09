@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
   height: calc(100vh - (var(--coef-indent) * 120px));
   box-sizing: border-box;
   @include hl-margin(top, 200px);
@@ -50,7 +51,7 @@
         rgba(235, 174, 149, 0.19) 130.68%
       ),
       linear-gradient(3.27deg, #02021e 13.68%, #262147 142.62%);
-    box-shadow: 70px 120px 150px -30px rgba(2, 2, 30, 0.6);
+    box-shadow: 70px 80px 110px -30px rgba(2, 2, 30, 0.6);
     transform: translate(-50%, -50%);
     z-index: -1;
     transition: all 1s;

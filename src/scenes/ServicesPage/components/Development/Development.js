@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useServicesDevelopmentAssets } from '@hooks/queries';
-import ServicesItem from '../ServicesItem';
+import ServiceItem from '../ServiceItem';
 
 import styles from './Development.module.scss';
 
@@ -47,7 +47,7 @@ const Development = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>Development</div>
-      <ServicesItem items={items} message={message} />
+      <ServiceItem items={items} message={message} />
     </div>
   );
 };

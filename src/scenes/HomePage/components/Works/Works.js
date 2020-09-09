@@ -1,25 +1,28 @@
 import React, { useContext } from 'react';
+import Swiper from 'react-id-swiper';
 import useBreakpoints from 'use-breakpoints-width';
-// import Img from 'gatsby-image';
+
+import { BREAKPOINTS } from '@constants';
+
+import ThemeContext from '@context/ThemeContext';
 
 import {
   useHomeWorksAssets,
   usePortfolioWorksAssets,
   useHomeGalleryAssets,
 } from '@hooks/queries';
-import Title from './components/Title';
-import Ticker from '@components/Ticker';
-import Swiper from 'react-id-swiper';
-import Item from './components/Item';
 
-import { BREAKPOINTS } from '@constants';
-import { MenuContext } from '@contexts';
+import Ticker from '@components/Ticker';
+
+import Title from './components/Title';
+import Item from './components/Item';
 
 import styles from './Works.module.scss';
 
 const Works = () => {
   const { breakpoint } = useBreakpoints();
-  const { isOpened } = useContext(MenuContext);
+  const { themeState } = useContext(ThemeContext);
+
   const { dribbbleRed, textCircled } = usePortfolioWorksAssets();
   const {
     Art,
@@ -62,7 +65,7 @@ const Works = () => {
   return (
     <div className={styles.container}>
       <Title icon={dribbbleRed} signature={textCircled} />
-      {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
+      {breakpoint === BREAKPOINTS.DESKTOP && !themeState.menu.isOpen ? (
         <Ticker images={images} arrowLeft={arrowLeft} arrowRight={arrowRight} />
       ) : null}
       {breakpoint === BREAKPOINTS.MOBILE ||

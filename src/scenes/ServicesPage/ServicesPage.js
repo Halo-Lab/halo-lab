@@ -1,6 +1,9 @@
 import React from 'react';
 
 import MailUs from '@scenes/MailUs';
+
+import BackgroundStars from '@components/BackgroundStars';
+
 import Design from './components/Design';
 import Development from './components/Development';
 import Flow from './components/Flow';
@@ -11,16 +14,19 @@ import styles from './ServicesPage.module.scss';
 
 const ServicesPage = () => {
   return (
-    <div className={`${styles.container}`}>
-      <div className="pageWrapper">
-        <Design />
-        <Development />
-        <Flow />
-        <Industries />
-        <Technologies />
+    <>
+      <BackgroundStars />
+      <div className={`${styles.container}`}>
+        <div className="pageWrapper">
+          <Design />
+          <Development />
+          <Flow />
+          <Industries />
+          <Technologies />
+        </div>
+        <MailUs />
       </div>
-      <MailUs />
-    </div>
+    </>
   );
 };
 

@@ -1,9 +1,10 @@
 import React from 'react';
 import useBreakpoints from 'use-breakpoints-width';
 
+import { BREAKPOINTS } from '@constants';
+
 import Switcher from './components/Switcher';
 import List from './components/List';
-import { BREAKPOINTS } from '@constants';
 
 import styles from './Flow.module.scss';
 

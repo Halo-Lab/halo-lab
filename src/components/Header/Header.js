@@ -1,30 +1,38 @@
 import React, { useContext } from 'react';
+import { ReactSVG } from 'react-svg';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 
-import { MenuContext } from '@contexts';
+import ThemeContext from '@context/ThemeContext';
+
 import { useHeaderAssets } from '@hooks/queries';
+
 import Menu from './components/Menu';
 
 import styles from './Header.module.scss';
 
-import { ReactSVG } from 'react-svg';
-
-const Header = ({ headerIsWhite, forwardedRef, withoutGradient }) => {
+const Header = () => {
   const { logotype } = useHeaderAssets();
-  const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
+  const { themeState, setThemeState } = useContext(ThemeContext);
 
-  const menuStatus = isOpened ? 'opened' : 'closed';
-  const barStyles = classNames(styles.bar, 'pageWrapper');
-  const headerStyles = classNames(styles.container, {
-    [styles.isWhite]: headerIsWhite && !isOpened,
-    [styles.gradientIsRemoved]: withoutGradient,
-  });
+  const handleClick = () => {
+    document.body.classList.toggle('locked');
+    setThemeState(state => ({
+      ...state,
+      menu: {
+        isOpen: !state.menu.isOpen,
+      },
+    }));
+  };
 
   return (
-    <div className={headerStyles} ref={forwardedRef}>
-      <div className={barStyles}>
+    <div
+      className={classNames(styles.container, {
+        [styles.isWhite]: themeState.header.isWhite && !themeState.menu.isOpen,
+        [styles.gradientIsRemoved]: themeState.header.isGradient,
+      })}
+    >
+      <div className={classNames(styles.bar, 'pageWrapper')}>
         <div className={styles.logotype}>
           <Link to="/">
             <ReactSVG src={logotype.publicURL} />
@@ -34,20 +42,23 @@ const Header = ({ headerIsWhite, forwardedRef, withoutGradient }) => {
         <Link
           to="/contacts/"
           className={styles.contact}
-          data-status={menuStatus}
+          data-status={themeState.menu.isOpen ? 'opened' : 'closed'}
         >
           Contact
         </Link>
 
-        {isOpened ? <Menu /> : null}
+        {themeState.menu.isOpen ? <Menu /> : null}
 
         <div className={styles.menuBar}>
           <button
             type="button"
             className={styles.menuButton}
-            onClick={handleTogglingIsOpened}
+            onClick={handleClick}
           >
-            <span className={styles.menuIcon} data-status={menuStatus}></span>
+            <span
+              className={styles.menuIcon}
+              data-status={themeState.menu.isOpen ? 'opened' : 'closed'}
+            ></span>
             <span className={styles.hiddenTitle}>Menu</span>
           </button>
         </div>
@@ -57,9 +68,3 @@ const Header = ({ headerIsWhite, forwardedRef, withoutGradient }) => {
 };
 
 export default Header;
-
-Header.propTypes = {
-  headerIsWhite: PropTypes.bool,
-  forwardedRef: PropTypes.object,
-  withoutGradient: PropTypes.bool,
-};

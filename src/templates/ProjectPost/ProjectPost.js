@@ -1,24 +1,27 @@
-import React from 'react';
-import { object } from 'prop-types';
+import React, { useContext } from 'react';
+import propTypes from 'prop-types';
 import { TransitionState } from 'gatsby-plugin-transition-link';
 
-import Providers from '@components/Providers';
-import Layout from '@components/Layout';
 import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
+
+import ThemeContext from '@context/ThemeContext';
 
 import ProjectHeader from './components/ProjectHeader';
 import ProjectMain from './components/ProjectMain';
 import ProjectFooter from './components/ProjectFooter';
 
-function scrollHandler(ref, callback) {
-  return function() {
-    const pos = ref.getBoundingClientRect();
-    if (pos.y <= 0 && -pos.y < pos.height) {
-      return callback(true);
-    }
-    callback(false);
-  };
+import style from './ProjectPost.module.scss';
+
+function getStatus(status) {
+  switch (status) {
+    case 'exiting':
+    case 'exited':
+      return false;
+    case 'entering':
+    case 'entered':
+      return true;
+  }
 }
 
 const ProjectPost = ({ pageContext }) => {
@@ -30,46 +33,71 @@ const ProjectPost = ({ pageContext }) => {
 
   const articleRef = React.useRef(null);
 
-  const [headerIsWhite, setHeaderIsWhite] = React.useState(false);
+  let onElem = false;
+
+  const { setThemeState } = useContext(ThemeContext);
+
+  const scrollHandler = () => {
+    const elProps = articleRef.current.getBoundingClientRect();
+    if (elProps.y < 0 && !onElem) {
+      onElem = true;
+      setThemeState(state => ({
+        ...state,
+        header: {
+          isWhite: !state.header.isWhite,
+        },
+      }));
+    }
+    if (elProps.y > 0 && onElem) {
+      onElem = false;
+      setThemeState(state => ({
+        ...state,
+        header: {
+          isWhite: !state.header.isWhite,
+        },
+      }));
+    }
+  };
 
   React.useEffect(() => {
-    const handler = scrollHandler(articleRef.current, setHeaderIsWhite);
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
+    window.addEventListener('scroll', scrollHandler);
+    return () => window.removeEventListener('scroll', scrollHandler);
   }, []);
 
   return (
-    <Providers>
+    <>
+      <Head title={`${data.title}`} description={`${data.description}`} />
       <BackgroundStars />
-      <Layout headerIsWhite={headerIsWhite}>
-        <Head title={`${data.title}`} description={`${data.description}`} />
+      <div className={style.project}>
         <TransitionState>
-          {({ status }) => (
+          {({ transitionStatus }) => (
             <article>
               <ProjectHeader
                 categories={data.categories}
                 title={data.title}
                 thumbnail={data.featured_media}
+                status={getStatus(transitionStatus)}
               />
               <ProjectMain
                 refName={articleRef}
                 description={data.excerpt}
                 content={data.content}
+                status={getStatus(transitionStatus)}
               />
               <ProjectFooter
                 nextPost={next === null ? allPosts[0] : next}
-                status={status}
+                status={getStatus(transitionStatus)}
               />
             </article>
           )}
         </TransitionState>
-      </Layout>
-    </Providers>
+      </div>
+    </>
   );
 };
 
 ProjectPost.propTypes = {
-  pageContext: object.isRequired,
+  pageContext: propTypes.object,
 };
 
 export default ProjectPost;

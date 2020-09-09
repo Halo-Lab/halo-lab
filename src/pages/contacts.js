@@ -1,9 +1,7 @@
 import React from 'react';
 
-import Providers from '@components/Providers';
-import Layout from '@components/Layout';
 import Head from '@components/Head';
-import BackgroundStars from '@components/BackgroundStars';
+
 import ContactsPage from '@scenes/ContactsPage';
 
 const Contacts = () => {
@@ -11,13 +9,10 @@ const Contacts = () => {
   const description = `If you want to create a product or you would like to discuss how it could be realized, you're exactly where you're supposed to be to receive advice from experienced specialists.`;
 
   return (
-    <Providers>
-      <BackgroundStars />
-      <Layout>
-        <Head title={title} description={description} />
-        <ContactsPage />
-      </Layout>
-    </Providers>
+    <>
+      <Head title={title} description={description} />
+      <ContactsPage />
+    </>
   );
 };
 

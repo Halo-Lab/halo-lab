@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Item from './components/Item';
 import { useWordpressPosts } from '@hooks/queries';
+
+import Item from './components/Item';
 
 import styles from './Previews.module.scss';
 

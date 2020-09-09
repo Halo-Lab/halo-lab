@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { string, array, object } from 'prop-types';
+import { string, array, object, bool } from 'prop-types';
 import classNames from 'classnames';
 
 import GradientText from '@components/GradientText';
@@ -46,6 +46,7 @@ ProjectHeader.propTypes = {
   thumbnail: object.isRequired,
   title: string.isRequired,
   categories: array.isRequired,
+  status: bool.isRequired,
 };
 
 export default ProjectHeader;

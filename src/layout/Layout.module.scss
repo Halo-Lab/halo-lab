@@ -41,7 +41,12 @@
 }
 
 .hidden {
+  transition: opacity 0.2s;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s;
+}
+
+.gradient {
+  background: linear-gradient(180deg, #3719ca, #3719ca),
+    linear-gradient(89.64deg, #3719ca 0.16%, #8161fe 99.8%);
 }

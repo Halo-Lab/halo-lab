@@ -33,6 +33,17 @@
   }
 }
 
+body {
+  &.locked {
+    overflow: hidden;
+
+    .hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
 .pageWrapper {
   margin: 0 auto;
   max-width: 1600px;

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { navigate } from 'gatsby';
+
 import { isValidEmail } from '@helpers';
 
 import styles from './Form.module.scss';

@@ -3,22 +3,19 @@ import { useStaticQuery, graphql } from 'gatsby';
 const useFooterAssets = () => {
   const data = useStaticQuery(graphql`
     query {
-      logotype: file(relativePath: { eq: "halo-lab/logotype.svg" }) {
+      github: file(relativePath: { eq: "brands/github.inline.svg" }) {
         publicURL
       }
-      behance: file(relativePath: { eq: "brands/behance.svg" }) {
+      npm: file(relativePath: { eq: "brands/npm.inline.svg" }) {
         publicURL
       }
-      dribbble: file(relativePath: { eq: "brands/dribbble.svg" }) {
+      instagram: file(relativePath: { eq: "brands/instagram.inline.svg" }) {
         publicURL
       }
-      facebook: file(relativePath: { eq: "brands/facebook.svg" }) {
+      behance: file(relativePath: { eq: "brands/behance.inline.svg" }) {
         publicURL
       }
-      instagram: file(relativePath: { eq: "brands/instagram.svg" }) {
-        publicURL
-      }
-      twitter: file(relativePath: { eq: "brands/twitter.svg" }) {
+      dribbble: file(relativePath: { eq: "brands/dribbble.inline.svg" }) {
         publicURL
       }
     }

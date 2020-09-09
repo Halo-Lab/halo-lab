@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { useServicesDesignAssets } from '@hooks/queries';
-import ServicesItem from '../ServicesItem';
+
+import ServiceItem from '../ServiceItem';
 
 import styles from './Design.module.scss';
 
@@ -49,7 +50,7 @@ const Design = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>Design</div>
-      <ServicesItem items={items} message={message} />
+      <ServiceItem items={items} message={message} />
     </div>
   );
 };

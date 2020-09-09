@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import Block from './components/Block';
 import List from './components/List';
 
-import styles from './ServicesItem.module.scss';
+import styles from './ServiceItem.module.scss';
 
-const ServicesItem = ({ items, message }) => {
+const ServiceItem = ({ items, message }) => {
   return (
     <div className={styles.container}>
       <Block message={message} />
@@ -15,9 +15,9 @@ const ServicesItem = ({ items, message }) => {
   );
 };
 
-ServicesItem.propTypes = {
+ServiceItem.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
   message: PropTypes.object,
 };
 
-export default ServicesItem;
+export default ServiceItem;

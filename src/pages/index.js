@@ -2,10 +2,8 @@ import React from 'react';
 
 import { useSpring } from 'react-spring';
 
-import Providers from '@components/Providers';
-import Layout from '@components/Layout';
-import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
+
 import HomePage from '@scenes/HomePage';
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
@@ -17,19 +15,14 @@ const Home = () => {
   }));
 
   const title = 'Home Page - Halo Lab';
-  const description = `Halo Lab Team brings the design-driven development of your digital product to reality. We are working with a variety of projects, from the strict insurance website to a dynamic music application.`;
+  const description =
+    'Halo Lab Team brings the design-driven development of your digital product to reality. We are working with a variety of projects, from the strict insurance website to a dynamic music application.';
+
   return (
-    <Providers>
-      <div
-        onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
-      >
-        <BackgroundStars animation={props} />
-        <Layout>
-          <Head title={title} description={description}></Head>
-          <HomePage animation={props} />
-        </Layout>
-      </div>
-    </Providers>
+    <div onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
+      <Head title={title} description={description}></Head>
+      <HomePage animation={props} />
+    </div>
   );
 };
 

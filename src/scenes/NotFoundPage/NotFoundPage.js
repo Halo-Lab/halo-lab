@@ -1,14 +1,19 @@
 import React from 'react';
 
+import BackgroundBlackHole from '@components/BackgroundBlackHole';
+
 import Title from './components/Title';
 
 import styles from './NotFoundPage.module.scss';
 
 const NotFoundPage = () => {
   return (
-    <div className={styles.container}>
-      <Title />
-    </div>
+    <>
+      <BackgroundBlackHole />
+      <div className={styles.container}>
+        <Title />
+      </div>
+    </>
   );
 };
 

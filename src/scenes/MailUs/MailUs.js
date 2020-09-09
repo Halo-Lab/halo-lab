@@ -1,12 +1,20 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useSiteMetadata } from '@hooks/queries';
-import styles from './MailUs.module.scss';
-import { HeaderGradientContext } from '@contexts';
 import classNames from 'classnames';
 
+import { useSiteMetadata } from '@hooks/queries';
+
+import ThemeContext from '@context/ThemeContext';
+
+import styles from './MailUs.module.scss';
+
+const POSITION_TO_TOP = 150;
+
 const MailUs = () => {
+  const { setThemeState } = useContext(ThemeContext);
   const metadata = useSiteMetadata();
   const elRef = React.useRef(null);
+
+  let onElem = false;
   let elParams = null;
   let elPosition = null;
 
@@ -16,6 +24,19 @@ const MailUs = () => {
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
 
+  const setColoredBackground = colored => {
+    onElem = colored;
+    setThemeState(state => ({
+      ...state,
+      header: {
+        isGradient: !state.header.isGradient,
+      },
+      footer: {
+        isGradient: !state.footer.isGradient,
+      },
+    }));
+  };
+
   const moveBackground = () => {
     elParams = elRef.current.getBoundingClientRect();
     elPosition = elParams.top - window.innerHeight;
@@ -23,6 +44,12 @@ const MailUs = () => {
       setBackgroundParallax({
         transform: `translate3d(0, ${elParams.height + elPosition}px, 0)`,
       });
+      if (elParams.top < POSITION_TO_TOP && !onElem) {
+        setColoredBackground(true);
+      }
+      if (elParams.top > POSITION_TO_TOP && onElem) {
+        setColoredBackground(false);
+      }
     }
   };
 
@@ -35,27 +62,13 @@ const MailUs = () => {
     return () => window.removeEventListener('scroll', moveBackground);
   }, []);
 
-  const { setIsHeaderWithoutGradient } = useContext(HeaderGradientContext);
-
-  useEffect(() => {
-    function removeGradient(MailUsRef) {
-      const el = MailUsRef.current.getBoundingClientRect().top;
-      return el < 120
-        ? setIsHeaderWithoutGradient(true)
-        : setIsHeaderWithoutGradient(false);
-    }
-
-    let removeGradientOnScroll = removeGradient(elRef);
-    window.addEventListener('scroll', () => removeGradientOnScroll);
-    return () => window.removeEventListener('scroll', removeGradientOnScroll);
-  });
-
-  const linkIsHovered = classNames(styles.container, {
-    [styles.ishovered]: isHovered,
-  });
-
   return (
-    <div ref={elRef} className={linkIsHovered}>
+    <div
+      ref={elRef}
+      className={classNames(styles.container, {
+        [styles.ishovered]: isHovered,
+      })}
+    >
       <span className={styles.background} style={backgroundParallax} />
       <p className={styles.title}>
         Ready to create

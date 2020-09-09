@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import useBreakpoints from 'use-breakpoints-width';
+import Swiper from 'react-id-swiper';
+
+import { useTestimonialsAssets } from '@hooks/queries';
 
 import Item from './components/Item';
-import { useTestimonialsAssets } from '@hooks/queries';
-import Swiper from 'react-id-swiper';
+
 import styles from './Testimonials.module.scss';
 
 const Testimonials = () => {

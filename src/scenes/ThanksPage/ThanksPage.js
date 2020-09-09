@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PageMessage from '@components/PageMessage';
+import BackgroundStars from '@components/BackgroundStars';
 
 import styles from './ThanksPage.module.scss';
 
@@ -13,9 +14,12 @@ const ThanksPage = () => {
   `;
 
   return (
-    <div className={`pageWrapper ${styles.container}`}>
-      <PageMessage title={title} message={message} mail={true} />
-    </div>
+    <>
+      <BackgroundStars />
+      <div className={`pageWrapper ${styles.container}`}>
+        <PageMessage title={title} message={message} mail={true} />
+      </div>
+    </>
   );
 };
 

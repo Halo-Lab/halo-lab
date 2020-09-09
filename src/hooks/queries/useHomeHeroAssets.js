@@ -52,6 +52,11 @@ const useHomeHeroAssets = () => {
       ) {
         publicURL
       }
+      titleSvg: file(
+        relativePath: { eq: "sections/home-hero/headline.inline.svg" }
+      ) {
+        publicURL
+      }
       quotes: file(relativePath: { eq: "ui/quotes.svg" }) {
         publicURL
       }

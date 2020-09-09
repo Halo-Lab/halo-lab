@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
+
 import styles from './ProjectScene.module.scss';
 
 const ProjectScene = ({

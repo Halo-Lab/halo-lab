@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Info.module.scss';
@@ -23,7 +23,7 @@ const Info = ({ clutchLaurel, dribbbleLaurel, upworkLaurel }) => {
   ];
 
   return (
-    <Fragment>
+    <>
       {items.map(({ icon, textStrings, classes }, index) => {
         return (
           <div key={index} className={`${styles.item} ${classes}`}>
@@ -32,7 +32,7 @@ const Info = ({ clutchLaurel, dribbbleLaurel, upworkLaurel }) => {
           </div>
         );
       })}
-    </Fragment>
+    </>
   );
 };
 

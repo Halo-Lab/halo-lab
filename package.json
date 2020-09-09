@@ -13,6 +13,7 @@
     "gatsby-plugin-css-modules-emoji": "^1.0.12",
     "gatsby-plugin-google-gtag": "^1.2.1",
     "gatsby-plugin-hotjar": "^1.0.1",
+    "gatsby-plugin-layout": "^1.3.10",
     "gatsby-plugin-manifest": "^2.4.2",
     "gatsby-plugin-offline": "^3.2.1",
     "gatsby-plugin-optimize-svgs": "^1.0.4",

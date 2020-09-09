@@ -1,19 +1,23 @@
 import React, { useContext } from 'react';
 import useBreakpoints from 'use-breakpoints-width';
+import Img from 'gatsby-image';
 
-import { MenuContext } from '@contexts';
 import { BREAKPOINTS } from '@constants';
+
+import ThemeContext from '@context/ThemeContext';
+
 import { useHomeGalleryAssets } from '@hooks/queries';
+
 import Ticker from '@components/Ticker';
 import Slider from '@components/Slider';
+
 import Item from './components/Item';
-import Img from 'gatsby-image';
 
 import styles from './Gallery.module.scss';
 
 const Gallery = () => {
   const { breakpoint } = useBreakpoints();
-  const { isOpened } = useContext(MenuContext);
+  const { themeState } = useContext(ThemeContext);
   const { photos, arrowLeft, arrowRight } = useHomeGalleryAssets();
 
   const settings = {
@@ -48,7 +52,7 @@ const Gallery = () => {
     <section className={styles.container}>
       <h2 className={styles.title}>Creative Atmosphere</h2>
       <div className={styles.sliderWrapper}>
-        {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
+        {breakpoint === BREAKPOINTS.DESKTOP && !themeState.menu.isOpen ? (
           <Ticker
             images={photosList}
             arrowLeft={arrowLeft}

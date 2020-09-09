@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PageMessage from '@components/PageMessage';
+import BackgroundStars from '@components/BackgroundStars';
 
 import styles from './ErrorPage.module.scss';
 
@@ -11,9 +12,12 @@ const ErrorPage = () => {
   `;
 
   return (
-    <div className={`pageWrapper ${styles.container}`}>
-      <PageMessage title={title} large={true} message={message} />
-    </div>
+    <>
+      <BackgroundStars />
+      <div className={`pageWrapper ${styles.container}`}>
+        <PageMessage title={title} large={true} message={message} />
+      </div>
+    </>
   );
 };
 

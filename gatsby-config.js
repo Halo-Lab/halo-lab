@@ -107,6 +107,8 @@ module.exports = {
           '@pages': 'src/pages',
           '@scenes': 'src/scenes',
           '@hooks': 'src/hooks',
+          '@context': 'src/context',
+          '@layout': 'src/layout',
           '@contexts': 'src/contexts',
           '@services': 'src/services',
           '@helpers': 'src/helpers',
@@ -154,5 +156,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-transition-link`,
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`${__dirname}/src/layout/Layout.js`),
+      },
+    },
   ],
 };
