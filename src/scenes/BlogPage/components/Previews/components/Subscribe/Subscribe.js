@@ -64,7 +64,9 @@ const Subscribe = () => {
   return (
     <div className={styles.container}>
       <div className={styles.block}>
-        <h2 className={styles.title}>Subscribe and be on the course!</h2>
+        <div className={styles.title}>
+          <h2>Subscribe and be on the course!</h2>
+        </div>
         <form
           className={styles.form}
           onSubmit={e => handleSubmit(e)}
@@ -76,7 +78,7 @@ const Subscribe = () => {
             {!isSubmitted ? (
               <Fragment>
                 <input
-                  placeholder="Type your email"
+                  placeholder="Enter your email to subscribe"
                   className={styles.input}
                   type="text"
                   name="email"
@@ -84,12 +86,13 @@ const Subscribe = () => {
                   require="true"
                   onChange={handleChange}
                 />
+                <label htmlFor="email">Email</label>
                 <button className={btnClass}>
                   <Arrow />
                 </button>
               </Fragment>
             ) : (
-              <p className={styles.successMessage}>EMAIL SENT, THANKS!</p>
+              <p className={styles.successMessage}>Email sent, thanks!</p>
             )}
           </div>
         </form>
