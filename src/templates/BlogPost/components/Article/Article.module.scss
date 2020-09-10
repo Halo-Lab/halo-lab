@@ -3,7 +3,7 @@
 
 .container {
   @include hl-margin('top', -160px);
-  @include hl-padding('top', 190px);
+  @include hl-padding('top', 220px);
   @include hl-padding('bottom', 100px);
   @include hl-font-size-text(18px);
   background-color: #fff;
@@ -20,7 +20,7 @@
 }
 
 .wrapper {
-  @include hl-max-width(720px);
+  @include hl-max-width(760px);
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0 20px;
@@ -28,9 +28,9 @@
 
 .wrapper {
   & > :not(figure) {
-    width: 100%;
+    width: auto;
     margin: auto;
-    max-width: 700px;
+    max-width: 720px;
     @include media-breakpoint-up(xxl) {
       max-width: 900px;
     }
@@ -45,7 +45,7 @@
     line-height: 2.9rem;
     color: $main-color;
     max-width: 40rem;
-    margin: 5.7rem auto 5rem;
+    margin: 5.7rem auto 4.3rem;
 
     @include media-breakpoint-down(md) {
       max-width: 100%;
@@ -53,11 +53,46 @@
     @include media-breakpoint-down(xs) {
       margin: 3.7rem auto;
     }
+
+    p {
+      font-family: $font-sofia-pro;
+      font-weight: 300;
+      line-height: 150%;
+      letter-spacing: 0.5px;
+      font-size: 1.7rem;
+    }
+    cite {
+      display: flex;
+      align-items: center;
+      font-family: $font-sofia-pro;
+      font-weight: 300;
+      line-height: 160%;
+      color: rgba($dark-color, 0.8);
+      letter-spacing: 0.5px;
+      font-size: 1.3rem;
+      font-style: normal;
+
+      > span {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 1rem;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 
   h2 {
-    margin-top: 3.7rem;
-    margin-bottom: 1rem;
+    margin-top: 4.3rem;
+    margin-bottom: 1.42rem;
+    line-height: 150%;
     @include media-breakpoint-down(xs) {
       margin-top: 3rem;
       margin-bottom: 0.7rem;
@@ -65,8 +100,12 @@
   }
 
   h3 {
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
+    margin-top: 4.3rem;
+    margin-bottom: 1.45rem;
+    font-size: 1.6rem;
+    @include media-breakpoint-down(xs) {
+      margin-top: 2.5rem;
+    }
   }
 
   h4 {
@@ -75,34 +114,49 @@
   }
 
   p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.92rem;
     @include media-breakpoint-down(xs) {
       font-size: 1.5rem;
+      margin-bottom: 1.5rem;
     }
   }
 
   ul {
     list-style: none;
     padding: 0;
+    margin-left: 1.6rem;
+
+    @include media-breakpoint-down(md) {
+      margin-left: 0.6rem;
+    }
     li {
-      margin-bottom: 0.9rem;
+      margin-bottom: 1.72rem;
       position: relative;
+      text-indent: -1.9rem;
+      padding-left: 1.3rem;
       &:before {
         content: '•';
-        margin-right: 0.4rem;
+        margin-right: 1.3rem;
       }
     }
   }
   ol {
     margin-bottom: 1.5rem;
+    padding-left: 2.4rem;
+
+    @include media-breakpoint-down(md) {
+      padding-left: 1.6rem;
+    }
     li {
-      margin-bottom: 0.9rem;
+      margin-bottom: 1.72rem;
+
+      padding-left: 0.4rem;
     }
   }
 
   figure {
-    margin: 2.7rem 0;
-    
+    margin: 5.7rem 0;
+
     @include media-breakpoint-down(xs) {
       margin: 2.5rem 0;
     }
@@ -115,7 +169,6 @@
   }
 
   a {
-    // text-decoration: none;
     color: rgb(0, 0, 238);
     &:hover {
       text-decoration: underline;
@@ -134,6 +187,39 @@
       @include media-breakpoint-down(sm) {
         float: none;
         margin: 15px 0;
+      }
+    }
+
+    .headtext {
+      font-size: 1.57rem;
+    }
+
+    .wp-block-pullquote {
+      position: relative;
+      z-index: 1;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(94.03deg, #ebf3fe 2.92%, #faf0f4 102.25%);
+        opacity: 0.7;
+        z-index: -1;
+      }
+      blockquote {
+        padding: 3.6rem 4.3rem;
+
+        @include media-breakpoint-down(xs) {
+          padding: 3.6rem 2.3rem;
+        }
+
+        p {
+          margin: 0;
+        }
       }
     }
   }
