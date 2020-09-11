@@ -209,3 +209,23 @@
     }
   }
 }
+
+.separator {
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+    margin-top: 2.5rem !important;
+    margin-bottom: 2.5rem !important;
+    
+    & > span {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      background-color: $dark-color;
+      margin-right: 20px;
+  
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
