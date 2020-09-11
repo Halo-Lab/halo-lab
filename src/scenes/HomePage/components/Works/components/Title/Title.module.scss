@@ -15,7 +15,8 @@
 }
 
 .title {
-  font-family: $font-gramatika-black;
+  font-family: $font-gramatika;
+  font-weight: 900;
   color: $white-color;
   @include hl-font-size-title(86px);
   line-height: 1.25em;

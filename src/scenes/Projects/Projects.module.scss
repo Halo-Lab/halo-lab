@@ -3,11 +3,11 @@
 @import '@functions/functions';
 
 .title {
-  font-family: $font-gramatika-black;
+  font-family: $font-gramatika;
   @include hl-font-size-title(86px);
   line-height: 1.25em;
   color: $white-color;
-  font-weight: 400;
+  font-weight: 900;
   @include hl-margin(bottom, 100px);
   text-align: center;
   letter-spacing: -2px;

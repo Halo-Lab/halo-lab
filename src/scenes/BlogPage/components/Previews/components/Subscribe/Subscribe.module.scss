@@ -96,7 +96,8 @@ $layoutSwitchResolution: 1100px;
   max-width: 320px;
 
   & > h2 {
-    font-family: $font-gramatika-black;
+    font-family: $font-gramatika;
+    font-weight: 900;
     @include hl-font-size-title(30px);
     line-height: 45px;
   }
@@ -120,7 +121,7 @@ $layoutSwitchResolution: 1100px;
     top: 9px;
     left: 0;
     display: inline-block;
-    font-family: 'Gramatika', sans-serif;
+    font-family: $font-gramatika;
     font-size: 12px;
     line-height: 18px;
     font-weight: bold;
@@ -145,7 +146,7 @@ $layoutSwitchResolution: 1100px;
 }
 
 .input {
-  font-family: 'Sofia-Pro', sans-serif;
+  font-family: $font-sofia-pro;
   background: transparent;
   border: none;
   @include hl-font-size-text(18px);
