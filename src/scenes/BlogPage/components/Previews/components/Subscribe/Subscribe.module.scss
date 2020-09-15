@@ -64,10 +64,7 @@ $layoutSwitchResolution: 1100px;
   display: flex;
   justify-content: space-between;
   background: linear-gradient(88.91deg, #3719ca 0.16%, #8161fe 99.8%);
-  & > form {
-    display: block;
-    max-width: 100%;
-  }
+
   &::before {
     content: '';
     position: absolute;
@@ -144,6 +141,11 @@ $layoutSwitchResolution: 1100px;
   }
 }
 
+.form {
+  display: block;
+  max-width: 100%;
+}
+
 .input {
   font-family: 'Sofia-Pro', sans-serif;
   background: transparent;
@@ -174,6 +176,20 @@ $layoutSwitchResolution: 1100px;
   }
 }
 
+.svg {
+  & circle {
+    transition: all 0.3s ease-in-out;
+    fill: transparent;
+    stroke: white;
+  }
+
+  & path {
+    transition: all 0.3s ease-in-out;
+    stroke: white;
+    fill: white;
+  }
+}
+
 .inputWrapper.error {
   border-bottom: 2px solid $red-on-blue-color;
 }
@@ -186,27 +202,13 @@ $layoutSwitchResolution: 1100px;
   font-size: 0;
   line-height: 0;
 
-  & > svg {
-    & > circle {
-      transition: all 0.3s ease-in-out;
-      fill: transparent;
-      stroke: white;
-    }
-
-    & > path {
-      transition: all 0.3s ease-in-out;
-      stroke: white;
-      fill: white;
-    }
-  }
-
   &:hover {
-    & > svg {
-      & > circle {
+    & .svg {
+      & circle {
         fill: white;
       }
 
-      & > path {
+      & path {
         stroke: #7f5ffc;
         fill: #7f5ffc;
       }
