@@ -18,7 +18,6 @@ const Headline = ({ categories, title, image }) => {
         <div className={jupiter} />
         <div className={neptune} />
         <div className={uranus} />
-
         <div className={styles.textAlign}>
           <Categories items={categories} />
           <h1 className={styles.title}>

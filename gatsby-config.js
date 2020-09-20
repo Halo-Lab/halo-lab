@@ -124,6 +124,7 @@ module.exports = {
         sv: process.env.HOTJAR_SNIPPET_VERSION,
       },
     },
+
     {
       resolve: 'gatsby-plugin-eslint',
       options: {

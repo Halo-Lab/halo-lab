@@ -10,7 +10,7 @@ const BlogPage = () => {
   return (
     <div className={pageWrapperClass}>
       <h1 className={styles.title}>
-        <GradientText text="Our Blog" />
+        <GradientText text="Our Blogsesfefe" />
       </h1>
       <Previews />
     </div>
@@ -18,3 +18,5 @@ const BlogPage = () => {
 };
 
 export default BlogPage;
+
+
