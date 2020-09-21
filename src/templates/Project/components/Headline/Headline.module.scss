@@ -1,0 +1,141 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+@import '@functions/functions';
+
+.headline{
+   padding-top: 11.4rem;
+}
+.headline-truncated{
+   padding-top: 7.5rem;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(64, calc(100% / 64));
+  @include col-width(1, 65);
+}
+
+.planets-wrapper {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(64, calc(100% / 64));
+  @include col-width(4, 62);
+
+  .planet {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+
+    @media screen and (max-width: $sm) {
+      display: none;
+    }
+  }
+
+  .planet-jupiter {
+    @include hl-width(100px);
+    @include hl-height(100px);
+    background: linear-gradient(
+      36.99deg,
+      rgba(1, 1, 18, 0) 27.49%,
+      #262147 78.93%
+    );
+    left: hl-grid-multiplier(2);
+    bottom: hl-grid-multiplier(-1);
+  }
+
+  .planet-neptune {
+    @include hl-width(40px);
+    @include hl-height(40px);
+    background: linear-gradient(
+      37.98deg,
+      rgba(16, 8, 74, 0) 16.94%,
+      #83a4ff 87.08%
+    );
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    right: hl-grid-multiplier(9);
+    top: hl-grid-multiplier(-1);
+  }
+
+  .planet-uranus {
+    @include hl-width(14px);
+    @include hl-height(14px);
+    background: #ddebfa;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    right: hl-grid-multiplier(4);
+    bottom: hl-grid-multiplier(-1);
+  }
+}
+
+.title-category-wrap{
+  @include col-width(5, 61);
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.text-align {
+  @include col-width(5, 61);
+}
+
+.max-width-headline{
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.next-project-link{
+  font-family: "Gramatika";
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 155%;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+
+  &:hover {
+    color: $yellow-color;
+    transition: 0.4s;
+  }
+}
+
+
+.title {
+  @include hl-margin('top', 26px);
+  @include hl-font-size-title(52px);
+  font-family: $font-gramatika-black;
+  line-height: 1.25em;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+.image-box {
+  @include hl-margin('top', 65px);
+  @include col-width(5, 61);
+
+  background: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.next-image-box{
+  height: 180px;
+  overflow: hidden;
+}
+.next-image-box .picture{
+  position:absolute;
+}
+
+.picture {
+  max-width: 1120px;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+

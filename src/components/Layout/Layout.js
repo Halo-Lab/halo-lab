@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import { Helmet } from 'react-helmet';
+import Helmet from 'react-helmet';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -11,7 +11,7 @@ import styles from './Layout.module.scss';
 import '@styles/index.scss';
 import Footer from '../Footer';
 
-const Layout = ({ children, isGlow, headerIsWhite }) => {
+const Layout = ({ children, isGlow, headerIsWhite, footerIsHide }) => {
   const { isOpened } = useContext(MenuContext);
 
   const containerClasses = classNames(styles.container, {
@@ -23,6 +23,12 @@ const Layout = ({ children, isGlow, headerIsWhite }) => {
   const headerRef = useRef(null);
 
   const [isHeaderGradient, setIsHeaderWithoutGradient] = React.useState(null);
+
+  const footer = footerIsHide ? null : (
+    <footer className={footerClasses}>
+      <Footer />
+    </footer>
+  );
 
   return (
     <HeaderGradientContext.Provider value={{ setIsHeaderWithoutGradient }}>
@@ -43,9 +49,7 @@ const Layout = ({ children, isGlow, headerIsWhite }) => {
             />
           </header>
           <main className={mainClasses}>{children}</main>
-          <footer className={footerClasses}>
-            <Footer />
-          </footer>
+          {footer}
         </div>
       </>
     </HeaderGradientContext.Provider>
@@ -60,6 +64,7 @@ Layout.propTypes = {
 
 Layout.defaultProps = {
   isGlow: true,
+  footerIsHide: false,
 };
 
 export default Layout;
