@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
