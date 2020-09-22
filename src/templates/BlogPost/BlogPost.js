@@ -10,6 +10,7 @@ import MailUs from '@scenes/MailUs';
 import Article from './components/Article';
 import Headline from './components/Headline';
 import Thumbnails from './components/Thumbnails';
+import Subscribe from './components/Subscribe';
 
 import styles from './BlogPost.module.scss';
 
@@ -85,6 +86,7 @@ const BlogPost = ({ pageContext }) => {
           <Article content={data.content} />
         </div>
         <div className="oldPageWrapper">
+          <Subscribe />
           <Thumbnails items={recommendedPosts} />
         </div>
         <MailUs />
