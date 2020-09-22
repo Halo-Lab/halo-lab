@@ -15,15 +15,22 @@ const ProjectScene = ({
   title,
 }) => {
   const [isHover, setIsHover] = useState(false);
+  const [isSpanHover, setIsSpanHover] = useState(false);
 
   const previewClassnames = classnames(styles.preview, {
     [styles.reversed]: reversed,
     [styles.hovered]: isHover,
   });
 
-  const handleHoverOn = () => setIsHover(true);
+  const handleHoverOn = () => {
+    setIsSpanHover(true); 
+    setIsHover(true);
+  };
 
-  const handleHoverOut = () => setIsHover(false);
+  const handleHoverOut = () => {
+    setIsHover(false);
+    setIsSpanHover(false);
+  };
 
   return (
     <Fragment>
@@ -51,14 +58,19 @@ const ProjectScene = ({
         <div className={styles.title}>
           <a
             href={link}
+            onClick={(ev) => {
+              if (!isSpanHover) {
+                ev.preventDefault();
+              };
+            }}
             className={styles.titleLink}
             target="_blank"
             rel="noopener noreferrer"
-          >
+          > 
             <span
+              onMouseEnter={handleHoverOn}
+              onMouseOut={handleHoverOut}
               className={styles.titleLinkText}
-              onMouseOver={handleHoverOn}
-              onMouseLeave={handleHoverOut}
             >
               {title}
             </span>

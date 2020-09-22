@@ -103,14 +103,18 @@
 }
 
 .titleLink {
-  display: block;
+  width: fit-content;
   color: inherit;
+  height: auto;
   text-decoration: none;
   cursor: default;
+  display: block;
 }
 
 .titleLinkText {
   cursor: pointer;
+  position: relative;
+  border-bottom: 0.75rem solid rgba(0, 0, 0, 0);
 }
 
 .descriptionLink {
@@ -177,4 +181,12 @@
   @include hl-font-size-text(16px);
   color: #ccccd2;
   font-weight: 300;
+}
+
+@media screen and (max-width: 910px) and (min-width: 767px) {
+  .titleLinkText {
+    &::before {
+      height: 0;
+    }
+  }
 }
