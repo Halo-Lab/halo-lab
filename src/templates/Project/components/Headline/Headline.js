@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import Categories from './components/Categories';
 import GradientText from '@components/GradientText';
 
-import styles from '@src/templates/styles/Headline.module.scss';
+import styles from '@templates/styles/Headline.module.scss';
 
 const NextProjectCategory = () => (
   <div className={styles.nextProjectCategory}>Next Project</div>
