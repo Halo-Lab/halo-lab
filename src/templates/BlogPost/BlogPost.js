@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 import Providers from '@components/Providers';
 import Layout from '@components/Layout';
@@ -11,8 +10,6 @@ import Article from './components/Article';
 import Headline from './components/Headline';
 import Thumbnails from './components/Thumbnails';
 import { useHeaderIsWhite } from '@src/hooks';
-
-import styles from './BlogPost.module.scss';
 
 function getRecommendedPosts(allPosts = [], currentPost) {
   const RECOMMENDED_POSTS_LIMIT = 3;
@@ -52,7 +49,6 @@ const BlogPost = ({ pageContext }) => {
   const thumbnailsItems = [];
   if (next) thumbnailsItems.push(next);
   if (previous) thumbnailsItems.push(previous);
-  const pageWrapperClass = classNames(styles.container, 'pageWrapper');
   const excr = data.excerpt.replace(/(<([^>]+)>)/gi, '');
 
   return (
@@ -60,13 +56,11 @@ const BlogPost = ({ pageContext }) => {
       <BackgroundStars />
       <Layout headerIsWhite={headerIsWhite}>
         <Head title={`${data.title} - Halo Lab Blog`} description={excr}></Head>
-        <div className={pageWrapperClass}>
-          <Headline
-            categories={data.categories}
-            image={data.featured_media.source_url}
-            title={data.title}
-          />
-        </div>
+        <Headline
+          categories={data.categories}
+          image={data.featured_media.source_url}
+          title={data.title}
+        />
         <div ref={articleRef}>
           <Article content={data.content} />
         </div>

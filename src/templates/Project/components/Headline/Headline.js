@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import Categories from './components/Categories';
 import GradientText from '@components/GradientText';
 
-import styles from './Headline.module.scss';
+import styles from '@src/templates/styles/Headline.module.scss';
 
 const NextProjectCategory = () => (
   <div className={styles.nextProjectCategory}>Next Project</div>
@@ -19,7 +19,7 @@ const Headline = ({ data, truncated }) => {
   const { categories, title } = data;
 
   // Classnames
-  const styleImageBox = classNames(styles.imageBox, {
+  const styleImageBox = classNames(styles.projectImageBox, {
     [styles.nextImageBox]: truncated,
   });
 
@@ -35,7 +35,7 @@ const Headline = ({ data, truncated }) => {
     <div className={styleHeadline}>
       <div className={styles.container}>
         <div className={styles.planetsWrapper}>
-          <div className={styles.titleCategoryWrap}>
+          <div className={styles.textAlign}>
             {links}
             <h1 className={styles.title}>
               <GradientText text={title} />
@@ -47,7 +47,7 @@ const Headline = ({ data, truncated }) => {
             src={data.featured_media.source_url}
             alt="project picture"
             loading="lazy"
-            className={styles.picture}
+            className={styles.projectPicture}
           />
         </div>
       </div>

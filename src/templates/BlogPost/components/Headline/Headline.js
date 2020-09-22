@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import Categories from './components/Categories';
 import GradientText from '@components/GradientText';
 
-import styles from './Headline.module.scss';
+import styles from '@src/templates/styles/Headline.module.scss';
 
 const Headline = ({ categories, title, image }) => {
   const uranus = classNames(styles.planet, styles.planetUranus);
@@ -13,26 +13,28 @@ const Headline = ({ categories, title, image }) => {
   const jupiter = classNames(styles.planet, styles.planetJupiter);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.planetsWrapper}>
-        <div className={jupiter} />
-        <div className={neptune} />
-        <div className={uranus} />
+    <div className={styles.headline}>
+      <div className={styles.container}>
+        <div className={styles.planetsWrapper}>
+          <div className={jupiter} />
+          <div className={neptune} />
+          <div className={uranus} />
 
-        <div className={styles.textAlign}>
-          <Categories items={categories} />
-          <h1 className={styles.title}>
-            <GradientText text={title} />
-          </h1>
+          <div className={styles.textAlign}>
+            <Categories items={categories} />
+            <h1 className={styles.title}>
+              <GradientText text={title} />
+            </h1>
+          </div>
         </div>
-      </div>
-      <div className={styles.imageBox}>
-        <img
-          src={image}
-          alt="blog post main image"
-          loading="lazy"
-          className={styles.image}
-        />
+        <div className={styles.postImageBox}>
+          <img
+            src={image}
+            alt="blog post main image"
+            loading="lazy"
+            className={styles.postPicture}
+          />
+        </div>
       </div>
     </div>
   );
