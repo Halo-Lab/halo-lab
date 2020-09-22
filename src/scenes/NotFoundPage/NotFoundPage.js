@@ -8,6 +8,7 @@ const NotFoundPage = () => {
   return (
     <div className={styles.container}>
       <Title />
+      <div className={styles.decor}></div>
     </div>
   );
 };

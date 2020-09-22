@@ -33,38 +33,19 @@
 // TODO: Create component for this element
 .link {
   position: relative;
+
+  margin-right: -10px;
+
+  color: $white-color;
+
   font-weight: 600;
   @include hl-font-size-text(14px);
   line-height: 1.4em;
-  letter-spacing: 0.36em;
   text-transform: uppercase;
   text-decoration: none;
-  color: $white-color;
   letter-spacing: 10px;
 
-  &::before {
-    content: '';
-    position: absolute;
-    width: 45%;
-    left: 0;
-    bottom: -10px;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      #e7a28f 1.59%,
-      #fbddb0 50%,
-      #fbfefd 98.41%
-    );
-    z-index: -1;
-    transition: width 0.3s;
-  }
-  @media screen and (max-width: $sm) {
+  @media screen and (max-width: $md) {
     display: none;
-  }
-
-  &:hover {
-    &::before {
-      width: 100%;
-    }
   }
 }
