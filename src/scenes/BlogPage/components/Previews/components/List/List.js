@@ -34,7 +34,6 @@ const List = ({ items }) => {
   return (
     <div className={styles.container}>
       <ul className={styles.list}>{postsToRender}</ul>
-
       {numberOfRendered < items.length ? (
         <div className={styles.buttonWrapper}>
           <button className={styles.button} onClick={handleClick}>

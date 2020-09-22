@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSiteMetadata } from '@hooks/queries';
-import GradientText from '../../../../components/GradientText';
+import GradientText from '@components/GradientText';
+import SlideHover from '@components/SlideHover';
 
 import styles from './Description.module.scss';
 
@@ -22,17 +23,19 @@ const Description = () => {
       <div className={styles.container}>
         <h2>
           Email us: <br />
-          <a href={`mailto:${data.email}`} className={styles.mail}>
-            <GradientText
-              text={data.email}
-              background="linear-gradient(
+          <SlideHover>
+            <a href={`mailto:${data.email}`} className={styles.mail}>
+              <GradientText
+                text={data.email}
+                background="linear-gradient(
                 130.51deg,
                 #e7a28f 3.52%,
                 #f9d6ac 41.89%,
                 #fbfefc 96.77%
               )"
-            />
-          </a>
+              />
+            </a>
+          </SlideHover>
         </h2>
         <p>
           The team is open for your ideas, questions and needs. Our clients get
