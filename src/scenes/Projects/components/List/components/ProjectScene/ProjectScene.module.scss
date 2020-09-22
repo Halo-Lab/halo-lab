@@ -104,8 +104,8 @@
 
 .titleLink {
   width: fit-content;
-  color: inherit;
   height: auto;
+  color: inherit;
   text-decoration: none;
   cursor: default;
   display: block;
@@ -181,12 +181,4 @@
   @include hl-font-size-text(16px);
   color: #ccccd2;
   font-weight: 300;
-}
-
-@media screen and (max-width: 910px) and (min-width: 767px) {
-  .titleLinkText {
-    &::before {
-      height: 0;
-    }
-  }
 }
