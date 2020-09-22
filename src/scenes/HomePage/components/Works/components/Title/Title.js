@@ -10,7 +10,6 @@ const Title = ({ icon, signature }) => {
       transform: `rotate(${window.pageYOffset / 3}deg)`,
     });
   };
-  console.log(styles.svg)
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return function remove() {
@@ -38,7 +37,7 @@ const Title = ({ icon, signature }) => {
           alt="dribbble logotype"
           loading="lazy"
           className={styles.svg}
-          // style={dribbleTextTransform}
+          style={dribbleTextTransform}
         />
       </a>
     </div>
