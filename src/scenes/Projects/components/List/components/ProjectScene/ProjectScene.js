@@ -23,7 +23,7 @@ const ProjectScene = ({
   });
 
   const handleHoverOn = () => {
-    setIsSpanHover(true); 
+    setIsSpanHover(true);
     setIsHover(true);
   };
 
@@ -58,15 +58,15 @@ const ProjectScene = ({
         <div className={styles.title}>
           <a
             href={link}
-            onClick={(ev) => {
+            onClick={ev => {
               if (!isSpanHover) {
                 ev.preventDefault();
-              };
+              }
             }}
             className={styles.titleLink}
             target="_blank"
             rel="noopener noreferrer"
-          > 
+          >
             <span
               onMouseEnter={handleHoverOn}
               onMouseOut={handleHoverOut}
