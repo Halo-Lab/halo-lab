@@ -34,7 +34,12 @@ const Description = ({ data }) => {
         </div>
 
         <div className={styles.moreInfo}>
-          <a className={styles.moreInfoLink} href={site.link} target="_blank">
+          <a
+            className={styles.moreInfoLink}
+            href={site.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {site.name}
           </a>
         </div>
