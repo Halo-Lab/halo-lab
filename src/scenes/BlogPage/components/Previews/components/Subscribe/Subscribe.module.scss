@@ -89,7 +89,8 @@ $layoutSwitchResolution: 1100px;
 }
 
 .title {
-  font-family: $font-gramatika-black;
+  font-family: $font-gramatika;
+  font-weight: 900;
   @include hl-font-size-title(30px);
   line-height: 1.3;
   width: 40%;
