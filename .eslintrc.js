@@ -8,6 +8,7 @@ module.exports = {
   rules: {
     strict: 0,
     'no-console': 1,
+    semi: 0,
   },
   plugins: ['cypress'],
   extends: [

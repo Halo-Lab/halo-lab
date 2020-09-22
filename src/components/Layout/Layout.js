@@ -11,12 +11,19 @@ import styles from './Layout.module.scss';
 import '@styles/index.scss';
 import Footer from '../Footer';
 
-const Layout = ({ children, isGlow, headerIsWhite }) => {
+const Layout = ({ children, isGlow, headerIsWhite, footerIsHide }) => {
   const { isOpened } = useContext(MenuContext);
 
   const containerClasses = classNames(styles.container, {
     [styles.glow]: isGlow,
   });
+
+  const footer = !footerIsHide && (
+    <footer className={footerClasses}>
+      <Footer />
+    </footer>
+  );
+
   const mainClasses = classNames(styles.main, styles.hidden);
   const footerClasses = classNames(styles.footer, styles.hidden);
 
@@ -43,9 +50,8 @@ const Layout = ({ children, isGlow, headerIsWhite }) => {
             />
           </header>
           <main className={mainClasses}>{children}</main>
-          <footer className={footerClasses}>
-            <Footer />
-          </footer>
+
+          {footer}
         </div>
       </>
     </HeaderGradientContext.Provider>
@@ -56,10 +62,12 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   isGlow: PropTypes.bool,
   headerIsWhite: PropTypes.bool,
+  footerIsHide: PropTypes.bool,
 };
 
 Layout.defaultProps = {
   isGlow: true,
+  footerIsHide: false,
 };
 
 export default Layout;
