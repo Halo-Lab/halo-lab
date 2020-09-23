@@ -5,25 +5,27 @@ import PropTypes from 'prop-types';
 import styles from './Categories.module.scss';
 
 const Categories = ({ items }) => {
+  if (items && items.length < 1) return null;
+
   return (
-    <ul className={styles.container}>
-      <li key="all posts" className={styles.allPostsItem}>
-        <Link to="/blog" className={styles.link}>
-          All blog posts
+    <ul className={styles.categoryList}>
+      <li key="All projects">
+        <Link to="/portfolio" className={styles.categoryLink}>
+          Portfolio
         </Link>
       </li>
       {items.map(item => {
-        const link = `/blog?category=${item.slug}`;
+        let link = `/portfolio?category=${item.slug}`;
 
         return (
-          <React.Fragment key={item.slug}>
-            <li>&nbsp;/&nbsp;</li>
-            <li className={styles.item}>
-              <Link to={link} className={styles.link}>
+          <Fragment key={item.slug}>
+            <li className={styles.categorySeparator}>/</li>
+            <li key={item.id}>
+              <Link to={link} className={styles.categoryLink}>
                 {item.name}
               </Link>
             </li>
-          </React.Fragment>
+          </Fragment>
         );
       })}
     </ul>
