@@ -7,9 +7,10 @@ import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
 import MailUs from '@scenes/MailUs';
 import Article from './components/Article';
-import Headline from './components/Headline';
+import BlogHeadline from './components/BlogHeadline';
 import Thumbnails from './components/Thumbnails';
 import { useHeaderIsWhite } from '@src/hooks';
+import { getCategories } from '@src/helpers/utils';
 
 function getRecommendedPosts(allPosts = [], currentPost) {
   const RECOMMENDED_POSTS_LIMIT = 3;
@@ -37,11 +38,19 @@ const BlogPost = ({ pageContext }) => {
     data,
     allPosts,
     recent: { previous, next },
+    baseUrl,
   } = pageContext;
+
   const recommendedPosts = useMemo(() => getRecommendedPosts(allPosts, data), [
     allPosts,
     data,
   ]);
+
+  const mainCategory = {
+    id: '6485',
+    name: 'All Blog Posts',
+    link: baseUrl,
+  };
 
   const articleRef = React.useRef(null);
   const headerIsWhite = useHeaderIsWhite(articleRef);
@@ -51,13 +60,17 @@ const BlogPost = ({ pageContext }) => {
   if (previous) thumbnailsItems.push(previous);
   const excr = data.excerpt.replace(/(<([^>]+)>)/gi, '');
 
+  const categories = getCategories(mainCategory, data.categories);
+  const title = `${data.title} - Halo Lab Blog`;
+
   return (
     <Providers>
       <BackgroundStars />
       <Layout headerIsWhite={headerIsWhite}>
-        <Head title={`${data.title} - Halo Lab Blog`} description={excr}></Head>
-        <Headline
-          categories={data.categories}
+        <Head title={title} description={excr} />
+
+        <BlogHeadline
+          categories={categories}
           image={data.featured_media.source_url}
           title={data.title}
         />

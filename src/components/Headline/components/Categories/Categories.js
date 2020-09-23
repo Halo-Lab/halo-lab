@@ -5,23 +5,14 @@ import PropTypes from 'prop-types';
 import styles from './Categories.module.scss';
 
 const Categories = ({ items }) => {
-  if (items && items.length < 1) return null;
-
   return (
     <ul className={styles.categoryList}>
-      <li key="All projects">
-        <Link to="/portfolio" className={styles.categoryLink}>
-          Portfolio
-        </Link>
-      </li>
-      {items.map(item => {
-        let link = `/portfolio?category=${item.slug}`;
-
+      {items.map((item, index) => {
         return (
-          <Fragment key={item.slug}>
-            <li className={styles.categorySeparator}>/</li>
+          <Fragment key={item.id}>
+            {index > 0 && <li className={styles.categorySeparator}>/</li>}
             <li key={item.id}>
-              <Link to={link} className={styles.categoryLink}>
+              <Link to={item.link} className={styles.categoryLink}>
                 {item.name}
               </Link>
             </li>
