@@ -63,9 +63,7 @@ const Subscribe = () => {
   return (
     <div className={styles.container}>
       <div className={styles.block}>
-        <div className={styles.title}>
-          <h2>Subscribe and be on the course!</h2>
-        </div>
+        <h2 className={styles.title}>Subscribe and be on the course!</h2>
         <form
           className={styles.form}
           onSubmit={e => handleSubmit(e)}
@@ -85,7 +83,9 @@ const Subscribe = () => {
                   require="true"
                   onChange={handleChange}
                 />
-                <label htmlFor="email">Email</label>
+                <label className={styles.label} htmlFor="email">
+                  Email
+                </label>
                 <button className={btnClass}>
                   <Arrow className={styles.svg} />
                 </button>

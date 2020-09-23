@@ -91,12 +91,10 @@ $layoutSwitchResolution: 1100px;
 
 .title {
   max-width: 320px;
-
-  & > h2 {
-    font-family: $font-gramatika-black;
-    @include hl-font-size-title(30px);
-    line-height: 45px;
-  }
+  font-family: $font-gramatika;
+  font-weight: 900;
+  @include hl-font-size-title(30px);
+  line-height: 45px;
 
   @media screen and (max-width: $layoutSwitchResolution) {
     max-width: 100%;
@@ -112,29 +110,11 @@ $layoutSwitchResolution: 1100px;
   @include hl-padding(bottom, 15px);
   border-bottom: 2px solid $white-color;
 
-  & > label {
-    position: absolute;
-    top: 9px;
-    left: 0;
-    display: inline-block;
-    font-family: 'Gramatika', sans-serif;
-    font-size: 12px;
-    line-height: 18px;
-    font-weight: bold;
-    color: white;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-  }
-
   @media screen and (max-width: $layoutSwitchResolution) {
     max-width: 100%;
     width: 100%;
     padding-top: 18px;
     padding-bottom: 10px;
-
-    & > label {
-      top: 0;
-    }
   }
   @media screen and (max-width: $sm) {
     width: 100%;
@@ -170,9 +150,27 @@ $layoutSwitchResolution: 1100px;
       opacity: 0;
     }
 
-    & ~ label {
+    & ~ .label {
       opacity: 0.5;
     }
+  }
+}
+
+.label {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  display: inline-block;
+  font-family: 'Gramatika', sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
+  color: white;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+
+  @media screen and (max-width: $layoutSwitchResolution) {
+    top: 0;
   }
 }
 
