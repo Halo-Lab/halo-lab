@@ -17,15 +17,14 @@ const Layout = ({ children, isGlow, headerIsWhite, footerIsHide }) => {
   const containerClasses = classNames(styles.container, {
     [styles.glow]: isGlow,
   });
+  const mainClasses = classNames(styles.main, styles.hidden);
+  const footerClasses = classNames(styles.footer, styles.hidden);
 
   const footer = !footerIsHide && (
     <footer className={footerClasses}>
       <Footer />
     </footer>
   );
-
-  const mainClasses = classNames(styles.main, styles.hidden);
-  const footerClasses = classNames(styles.footer, styles.hidden);
 
   const headerRef = useRef(null);
 

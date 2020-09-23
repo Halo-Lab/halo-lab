@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Location } from '@reach/router';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import Subscribe from '../Subscribe';
+import Subscribe from '@components/Subscribe';
 import classNames from 'classnames';
 
 import PostThumbnail from '@scenes/PostThumbnail';

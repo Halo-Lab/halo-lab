@@ -18,7 +18,7 @@ const Categories = ({ items }) => {
         return (
           <React.Fragment key={item.slug}>
             <li>&nbsp;/&nbsp;</li>
-            <li key={item.id} className={styles.item}>
+            <li className={styles.item}>
               <Link to={link} className={styles.link}>
                 {item.name}
               </Link>
