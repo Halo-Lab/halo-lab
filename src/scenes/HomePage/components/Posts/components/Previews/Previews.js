@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Item from './components/Item';
+import SlideHover from '@components/SlideHover';
 import { useWordpressPosts } from '@hooks/queries';
 
 import styles from './Previews.module.scss';
@@ -16,9 +17,11 @@ const Previews = () => {
           return <Item key={item.path} {...item} />;
         })}
       </div>
-      <Link to="/blog" className={styles.link}>
-        MORE BLOG POSTS
-      </Link>
+      <SlideHover>
+        <Link to="/blog" className={styles.link}>
+          MORE BLOG POSTS
+        </Link>
+      </SlideHover>
     </div>
   );
 };

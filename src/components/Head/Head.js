@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import { useSiteMetadata } from '@hooks/queries';
 
@@ -54,13 +54,6 @@ const Head = ({ children, title, description }) => {
       },
     ],
   };
-
-  // eslint-disable-next-line no-console
-  console.log(`
-    Warning "componentWillMount has been renamed" maked by Head Component.
-    Helmet issue: https://github.com/nfl/react-helmet/issues/499.
-    Solution: update package to 6.0.0 version when it will be available. 
-  `);
 
   return (
     <Helmet>
