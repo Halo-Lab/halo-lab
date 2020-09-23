@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
@@ -16,14 +16,14 @@ const Categories = ({ items }) => {
         const link = `/blog?category=${item.slug}`;
 
         return (
-          <>
+          <Fragment key={item.id}>
             <li>&nbsp;/&nbsp;</li>
-            <li key={item.id} className={styles.item}>
+            <li className={styles.item}>
               <Link to={link} className={styles.link}>
                 {item.name}
               </Link>
             </li>
-          </>
+          </Fragment>
         );
       })}
     </ul>

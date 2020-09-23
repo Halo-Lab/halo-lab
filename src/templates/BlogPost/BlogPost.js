@@ -7,10 +7,10 @@ import Layout from '@components/Layout';
 import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
 import MailUs from '@scenes/MailUs';
+import Subscribe from '@components/Subscribe';
 import Article from './components/Article';
 import Headline from './components/Headline';
 import Thumbnails from './components/Thumbnails';
-import Subscribe from './components/Subscribe';
 
 import styles from './BlogPost.module.scss';
 
