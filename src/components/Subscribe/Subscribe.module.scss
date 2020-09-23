@@ -127,7 +127,7 @@ $layoutSwitchResolution: 1100px;
 }
 
 .input {
-  font-family: 'Sofia-Pro', sans-serif;
+  font-family: $font-sofia-pro;
   background: transparent;
   border: none;
   @include hl-font-size-text(18px);
@@ -161,7 +161,7 @@ $layoutSwitchResolution: 1100px;
   top: 9px;
   left: 0;
   display: inline-block;
-  font-family: 'Gramatika', sans-serif;
+  font-family: $font-gramatika;
   font-size: 12px;
   line-height: 18px;
   font-weight: bold;
