@@ -62,6 +62,8 @@ const Switcher = ({ items, location }) => {
     setNumberOfRendered(value > items.length ? items.length : value);
   };
 
+  const columnItems = classNames(styles.tabContentList, styles.tabItemsColumn);
+
   return (
     <div className={styles.container}>
       <Tabs defaultIndex={defaultIndex} className={styles.tabsContainer}>
@@ -76,13 +78,20 @@ const Switcher = ({ items, location }) => {
         </TabList>
 
         {allCategories.map(({ title, items }) => {
-          const newItems = items.slice(0, 6); // take the first six articles
-          const moreItems = items.slice(6, 3 + numberOfRendered);
+          const mainItem = items.slice(0, 1);
+          const secondaryItems = items.slice(1, 3); // take the first six articles
+          const moreItems = items.slice(3, 3 + numberOfRendered);
+          console.log('main', mainItem);
+          console.log('secondaryItems', secondaryItems);
+          console.log('moreItems', moreItems);
           return (
             <TabPanel key={title} className={styles.tabsContentContainer}>
               <ul className={styles.tabContentList}>
-                {newItems.map(item => {
-                  const tabItemClass = classNames(styles.tabContentItem);
+                {mainItem.map(item => {
+                  const tabItemClass = classNames(
+                    styles.tabContentItem,
+                    styles.mainItem
+                  );
                   return (
                     <li
                       data-list-item="articles"
@@ -93,9 +102,21 @@ const Switcher = ({ items, location }) => {
                     </li>
                   );
                 })}
+                <ul className={columnItems}>
+                  {secondaryItems.map(item => {
+                    return (
+                      <li
+                        data-automation="articles"
+                        key={item.id}
+                        className={styles.tabContentItem}
+                      >
+                        <PostThumbnail {...item} />
+                      </li>
+                    );
+                  })}
+                </ul>
               </ul>
-
-              <ul className={styles.tabContentList}>
+              <ul className={styles.tabContentItem}>
                 {moreItems.map(item => {
                   return (
                     <li
@@ -108,7 +129,9 @@ const Switcher = ({ items, location }) => {
                   );
                 })}
               </ul>
-              {moreItems.length && numberOfRendered >= items.length ? null : (
+
+              {secondaryItems.length &&
+              numberOfRendered >= items.length ? null : (
                 <button className={styles.button} onClick={handleClick}>
                   Load more
                 </button>

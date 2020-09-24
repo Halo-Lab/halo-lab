@@ -29,13 +29,6 @@ const PostThumbnail = ({ title, slug, featured_media, categories }) => {
         <span className={styles.hiddenTitle}>{title}</span>
       </Link>
       <div className={styles.wrapper}>
-        {categories.map(category => {
-          return (
-            <p className={styles.tag} key={category.id}>
-              #{category.name}
-            </p>
-          );
-        })}
         <h3 className={styles.title}>
           <Link to={link}>{title}</Link>
         </h3>
