@@ -1,0 +1,37 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.category-list {
+  @include hl-font-size-text(12px);
+  font-family: $font-sofia-pro;
+  font-weight: 700;
+  line-height: 1.55em;
+  text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-separator {
+  @include hl-margin('right', 8px);
+  @include hl-margin('left', 8px);
+
+  @media screen and (max-width: $sm) {
+    @include hl-margin('right', 12px);
+    @include hl-margin('left', 12px);
+  }
+}
+
+.category-link {
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    color: $yellow-color;
+    transition: 0.4s;
+  }
+}

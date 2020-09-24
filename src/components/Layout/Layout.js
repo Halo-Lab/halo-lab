@@ -14,14 +14,22 @@ import '@styles/index.scss';
 
 let oldScrollPosition = 0;
 
-const Layout = ({ children, isGlow, headerIsWhite }) => {
+const Layout = ({ children, isGlow, headerIsWhite, footerIsHide }) => {
   const { isOpened } = useContext(MenuContext);
   const headerRef = useRef(null);
+  let scrollPosition = null;
 
   const [isHeaderGradient, setIsHeaderWithoutGradient] = useState(null);
   const [isHeaderShow, setIsHeaderShow] = useState(null);
 
-  let scrollPosition = null;
+  const mainClasses = classNames(styles.main, styles.hidden);
+  const footerClasses = classNames(styles.footer, styles.hidden);
+
+  const footer = !footerIsHide && (
+    <footer className={footerClasses}>
+      <Footer />
+    </footer>
+  );
 
   const handleScroll = () => {
     scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -62,12 +70,9 @@ const Layout = ({ children, isGlow, headerIsWhite }) => {
               forwardedRef={headerRef}
             />
           </header>
-          <main className={classNames(styles.main, styles.hidden)}>
-            {children}
-          </main>
-          <footer className={classNames(styles.footer, styles.hidden)}>
-            <Footer />
-          </footer>
+          <main className={mainClasses}>{children}</main>
+
+          {footer}
         </div>
       </>
     </HeaderGradientContext.Provider>
@@ -78,11 +83,13 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   isGlow: PropTypes.bool,
   headerIsWhite: PropTypes.bool,
+  footerIsHide: PropTypes.bool,
 };
 
 Layout.defaultProps = {
   isGlow: true,
   isHeaderReady: true,
+  footerIsHide: false,
 };
 
 export default Layout;

@@ -1,5 +1,5 @@
 import checkBrowser from './checkBrowser';
-import debounce from './debounce';
+import springDebounce from './springDebounce';
 import isValidEmail from './utils';
 
-export { checkBrowser, debounce, isValidEmail };
+export { checkBrowser, springDebounce, isValidEmail };

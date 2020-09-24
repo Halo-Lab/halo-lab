@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Location } from '@reach/router';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import Subscribe from '../Subscribe';
+import Subscribe from '@components/Subscribe';
 import classNames from 'classnames';
 
 import PostThumbnail from '@scenes/PostThumbnail';
@@ -76,8 +76,8 @@ const Switcher = ({ items, location }) => {
         </TabList>
 
         {allCategories.map(({ title, items }) => {
-          const newItems = items.slice(0, 3); // take the first four articles
-          const moreItems = items.slice(3, 3 + numberOfRendered);
+          const newItems = items.slice(0, 6); // take the first six articles
+          const moreItems = items.slice(6, 3 + numberOfRendered);
           return (
             <TabPanel key={title} className={styles.tabsContentContainer}>
               <ul className={styles.tabContentList}>
@@ -108,13 +108,11 @@ const Switcher = ({ items, location }) => {
                   );
                 })}
               </ul>
-
-              {moreItems.length && numberOfRendered <= moreItems.length ? (
+              {moreItems.length && numberOfRendered >= items.length ? null : (
                 <button className={styles.button} onClick={handleClick}>
                   Load more
                 </button>
-              ) : null}
-
+              )}
               <Subscribe />
             </TabPanel>
           );
