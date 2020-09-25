@@ -72,10 +72,6 @@
 }
 
 .tabContentList {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  // grid-template-rows: repeat(auto-fill);
-  // grid-gap: calc(40px * var(--coef-indent));
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -88,6 +84,17 @@
   @media screen and (max-width: $sm) {
     grid-template-columns: 1fr;
   }
+}
+
+.moreItems {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(auto-fill);
+  grid-gap: calc(40px * var(--coef-indent));
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 90px;
 }
 
 .tabContentItem {
@@ -110,9 +117,8 @@
 .tabItemsColumn {
   display: flex;
   flex-direction: column;
-  .tabContentItem {
-    max-width: 360px;
-  }
+  max-width: 31%;
+  width: 100%;
   h3 {
     @include hl-font-size-text(24px);
   }
@@ -187,8 +193,9 @@
 }
 
 .mainItem {
-  max-width: 740px;
+  max-width: 64%;
   width: 100%;
+  margin-right: 60px;
   img {
     height: 700px;
   }

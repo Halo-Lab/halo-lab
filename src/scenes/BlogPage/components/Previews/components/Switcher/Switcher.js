@@ -63,6 +63,7 @@ const Switcher = ({ items, location }) => {
   };
 
   const columnItems = classNames(styles.tabContentList, styles.tabItemsColumn);
+  const moreItemsWrapper = classNames(styles.tabContentItem, styles.moreItems);
 
   return (
     <div className={styles.container}>
@@ -81,9 +82,6 @@ const Switcher = ({ items, location }) => {
           const mainItem = items.slice(0, 1);
           const secondaryItems = items.slice(1, 3); // take the first six articles
           const moreItems = items.slice(3, 3 + numberOfRendered);
-          console.log('main', mainItem);
-          console.log('secondaryItems', secondaryItems);
-          console.log('moreItems', moreItems);
           return (
             <TabPanel key={title} className={styles.tabsContentContainer}>
               <ul className={styles.tabContentList}>
@@ -116,7 +114,7 @@ const Switcher = ({ items, location }) => {
                   })}
                 </ul>
               </ul>
-              <ul className={styles.tabContentItem}>
+              <ul className={moreItemsWrapper}>
                 {moreItems.map(item => {
                   return (
                     <li
