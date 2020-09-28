@@ -60,7 +60,6 @@ const Subscribe = () => {
   const btnClass = classNames(styles.button, {
     [styles.valid]: !data.email.isValid,
   });
-
   return (
     <div className={styles.container}>
       <div className={styles.block}>
@@ -84,8 +83,11 @@ const Subscribe = () => {
                   require="true"
                   onChange={handleChange}
                 />
+                <label className={styles.label} htmlFor="email">
+                  Email
+                </label>
                 <button className={btnClass}>
-                  <Arrow />
+                  <Arrow className={styles.svg} />
                 </button>
               </Fragment>
             ) : (
