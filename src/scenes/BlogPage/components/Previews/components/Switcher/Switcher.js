@@ -80,7 +80,7 @@ const Switcher = ({ items, location }) => {
 
         {allCategories.map(({ title, items }) => {
           const mainItem = items.slice(0, 1);
-          const secondaryItems = items.slice(1, 3); // take the first six articles
+          const secondaryItems = items.slice(1, 3);
           const moreItems = items.slice(3, 3 + numberOfRendered);
           return (
             <TabPanel key={title} className={styles.tabsContentContainer}>
