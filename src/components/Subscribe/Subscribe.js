@@ -75,7 +75,7 @@ const Subscribe = () => {
             {!isSubmitted ? (
               <Fragment>
                 <input
-                  placeholder="Enter your email to subscribe"
+                  placeholder="Type your email"
                   className={styles.input}
                   type="text"
                   name="email"
@@ -91,7 +91,7 @@ const Subscribe = () => {
                 </button>
               </Fragment>
             ) : (
-              <p className={styles.successMessage}>Email sent, thanks!</p>
+              <p className={styles.successMessage}>EMAIL SENT, THANKS!</p>
             )}
           </div>
         </form>

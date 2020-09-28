@@ -1,1 +1,0 @@
-We can not create a build without fonts folder.

@@ -57,14 +57,13 @@ $layoutSwitchResolution: 1100px;
 .block {
   position: relative;
   @include col-width(6, 53);
-  @include hl-padding(bottom, 45px);
-  @include hl-padding(top, 45px);
+  @include hl-padding(bottom, 60px);
+  @include hl-padding(top, 50px);
   @include hl-padding(right, 100px);
   @include hl-padding(left, 100px);
   display: flex;
   justify-content: space-between;
   background: linear-gradient(88.91deg, #3719ca 0.16%, #8161fe 99.8%);
-
   &::before {
     content: '';
     position: absolute;
@@ -97,14 +96,14 @@ $layoutSwitchResolution: 1100px;
   line-height: 45px;
 
   @media screen and (max-width: $layoutSwitchResolution) {
-    max-width: 100%;
+    width: 100%;
+    @include hl-margin(bottom, 40px);
   }
 }
 
 .inputWrapper {
   display: flex;
   align-items: center;
-  position: relative;
   @include hl-width(360px);
   @include hl-padding(top, 28px);
   @include hl-padding(bottom, 15px);
@@ -118,6 +117,7 @@ $layoutSwitchResolution: 1100px;
   }
   @media screen and (max-width: $sm) {
     width: 100%;
+    padding: 0;
   }
 }
 
@@ -130,22 +130,22 @@ $layoutSwitchResolution: 1100px;
   font-family: $font-sofia-pro;
   background: transparent;
   border: none;
-  @include hl-font-size-text(18px);
-  line-height: 30px;
-  font-weight: 300;
+  @include hl-font-size-text(16px);
   color: $white-color;
-  letter-spacing: 0.5px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
   width: 100%;
-  padding: 0 10px 0 0;
-
+  padding-right: 10px;
   &::placeholder {
     @include hl-font-size-text(14px);
-    letter-spacing: 0.5px;
+    line-height: 1.7;
+    letter-spacing: 10px;
+    text-transform: uppercase;
     opacity: 0.5;
     transition: opacity 0.2s ease-out;
   }
 
-  &:focus {
+  &:hover {
     &::placeholder {
       opacity: 0;
     }
@@ -189,7 +189,7 @@ $layoutSwitchResolution: 1100px;
 }
 
 .inputWrapper.error {
-  border-bottom: 2px solid $red-on-blue-color;
+  border-bottom: 1px solid $red-on-blue-color;
 }
 
 .button {
@@ -216,10 +216,9 @@ $layoutSwitchResolution: 1100px;
 
 .successMessage {
   position: relative;
-  font-size: 18px;
-  line-height: 30px;
-  font-weight: 300;
-  letter-spacing: 0.5px;
+  font-size: 14px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
   width: 100%;
   margin: 0;
   &::before {
@@ -229,7 +228,6 @@ $layoutSwitchResolution: 1100px;
     height: 20px;
     background-image: url('./images/success-icon.svg');
     background-size: contain;
-    top: 5px;
     right: 0;
   }
 }

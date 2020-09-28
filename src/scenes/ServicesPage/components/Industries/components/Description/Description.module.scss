@@ -17,14 +17,14 @@
   }
 
   h4 {
-    font-family: $font-gramatika-black;
+    font-family: $font-gramatika;
+    font-weight: 900;
     width: 31%;
     font-size: 2.14rem;
     line-height: 1.33em;
     @include media-breakpoint-down(md) {
       font-size: 22px;
       line-height: 30px;
-      font-weight: 400;
       width: 35%;
     }
     @include media-breakpoint-down(sm) {
