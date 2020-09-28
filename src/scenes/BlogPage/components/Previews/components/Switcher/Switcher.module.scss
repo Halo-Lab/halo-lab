@@ -16,7 +16,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  @include hl-margin(bottom, 44px);
+  @include hl-margin(bottom, 70px);
   @media screen and (max-width: $lg) {
     @include col-width(4, 62);
   }
@@ -73,47 +73,44 @@
 
 .tabContentList {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(auto-fill);
-  grid-gap: calc(40px * var(--coef-indent));
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: dense;
+  grid-gap: 40px;
   list-style-type: none;
   padding: 0;
   margin: 0;
 
-  @media screen and (min-width: $lg) {
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
   @media screen and (max-width: $lg) {
     grid-template-columns: 1fr 1fr;
   }
-  @media screen and (max-width: $sm) {
+
+  @media screen and (max-width: $md) {
+    grid-gap: 70px;
     grid-template-columns: 1fr;
   }
 }
 
 .tabContentItem {
-  @include hl-height(500px);
-  position: relative;
   box-sizing: border-box;
   animation-name: apperancing;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   opacity: 0;
-  @media screen and (max-width: $sm) {
-    height: auto;
-  }
-}
 
-.tabContentItemFirst {
-  grid-column: 1/4;
-  @include hl-height(420px);
-  @media screen and (max-width: $lg) {
-    grid-column: 1/3;
+  &:first-of-type {
+    grid-row: span 2;
+    grid-column: span 2;
+
+    & h3 {
+      @include hl-font-size-text(34px);
+    }
   }
-  @media screen and (max-width: $sm) {
-    grid-column: 1;
-    height: auto;
+
+  @media screen and (max-width: $lg) {
+    &:first-of-type {
+      grid-row: initial;
+      grid-column: initial;
+    }
   }
 }
 

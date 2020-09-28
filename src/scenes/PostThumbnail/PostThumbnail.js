@@ -19,12 +19,14 @@ const PostThumbnail = ({ title, slug, featured_media, categories }) => {
         {imageOptimized ? (
           <Img fluid={imageOptimized} />
         ) : (
-          <img
-            src={imageSource}
-            className={styles.image}
-            alt="post preview"
-            loading="lazy"
-          />
+          <div className={styles.thumbnail}>
+            <img
+              src={imageSource}
+              className={styles.image}
+              alt="post preview"
+              loading="lazy"
+            />
+          </div>
         )}
         <span className={styles.hiddenTitle}>{title}</span>
       </Link>
