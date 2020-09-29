@@ -1,0 +1,187 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+
+.project-description {
+  @include hl-margin('top', -160px);
+  @include hl-padding('top', 300px);
+  @include hl-padding('bottom', 150px);
+  @include hl-font-size-text(18px);
+  @include grid-template();
+  @include col-width(1, 65);
+  font-family: $font-sofia-pro;
+  font-weight: 300;
+  line-height: 1.6em;
+  letter-spacing: 0.5px;
+  background-color: #fff;
+  color: $dark-color;
+
+  @media screen and (max-width: $md) {
+    @include hl-padding('bottom', 200px);
+  }
+}
+
+.container {
+  @include col-width(5, 61);
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.technologies {
+  @include hl-font-size-text(12px);
+  @include hl-margin('bottom', 20px);
+  font-family: $font-gramatika;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $dark-color;
+  opacity: 0.5;
+  margin-bottom: 20px;
+  margin: 0;
+
+  @media screen and (max-width: $md) {
+    @include hl-margin('bottom', 10px);
+  }
+  @media screen and (max-width: $sm) {
+    @include hl-font-size-text(11px);
+    @include hl-margin('bottom', 5px);
+  }
+}
+
+.flex-wrap {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: $md) {
+    flex-direction: column;
+  }
+}
+
+.wrapper {
+  flex: 1;
+}
+
+.excerpts {
+  @include hl-margin('right', 80px);
+  @include hl-font-size-text(30px);
+  color: $dark-color;
+  line-height: 150%;
+  max-width: 460px;
+  width: 100%;
+
+  @media screen and (max-width: $xl) {
+    @include hl-font-size-text(28px);
+  }
+  @media screen and (max-width: $lg) {
+    @include hl-font-size-text(26px);
+    max-width: 300px;
+  }
+  @media screen and (max-width: $md) {
+    @include hl-margin('right', 0);
+    @include hl-margin('bottom', 30px);
+    max-width: 600px;
+  }
+  @media screen and (max-width: $sm) {
+    @include hl-font-size-text(24px);
+  }
+}
+
+.content {
+  @include hl-font-size-text(18px);
+  font-family: $font-sofia-pro;
+  font-weight: 300;
+  line-height: 160%;
+  letter-spacing: 0.5px;
+  color: $dark-color;
+  opacity: 0.9;
+  margin: 0;
+
+  @media screen and (max-width: $lg) {
+    @include hl-font-size-text(17px);
+  }
+  @media screen and (max-width: $sm) {
+    @include hl-font-size-text(16px);
+  }
+}
+
+.line {
+  margin: 40px 0 30px 0;
+  background: #aeaeae;
+  opacity: 0.5;
+  width: 100%;
+  height: 1px;
+}
+.companies-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.company-item {
+  @include hl-margin('right', 50px);
+  @include hl-margin('bottom', 50px);
+  opacity: 0.5;
+  max-width: 200px;
+
+  @media screen and (max-width: $sm) {
+    @include hl-margin('right', 40px);
+  }
+}
+.companies-list .company-item:last-child {
+  @include hl-margin('right', 0px);
+}
+
+.company-title {
+  @include hl-font-size-text(12.7px);
+  @include hl-margin('top', 18px);
+  @include hl-margin('bottom', 0px);
+  font-family: $font-sofia-pro;
+  line-height: 120%;
+  color: $dark-color;
+  font-weight: 700;
+  max-width: 130px;
+}
+
+.more-info {
+  @include hl-margin('top', 100px);
+  text-align: center;
+}
+
+.more-info-link {
+  @include hl-font-size-text(14px);
+  @include hl-padding('top', 10px);
+  @include hl-padding('bottom', 10px);
+  @include hl-padding('right', 5px);
+  @include hl-padding('left', 5px);
+  font-family: $font-sofia-pro;
+  font-weight: 600;
+  line-height: 125%;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: $dark-color;
+  text-decoration: none;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $main-color;
+    transition: 0.3s;
+  }
+  &:hover:after {
+    transform: scale(0.9);
+  }
+
+  @media screen and (max-width: $sm) {
+    @include hl-font-size-text(12px);
+    letter-spacing: 8px;
+  }
+  @media screen and (max-width: 480px) {
+    letter-spacing: 5px;
+  }
+}

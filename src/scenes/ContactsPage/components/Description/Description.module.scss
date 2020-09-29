@@ -29,7 +29,8 @@
 
 .title {
   display: block;
-  font-family: $font-gramatika-black;
+  font-family: $font-gramatika;
+  font-weight: 900;
   @include hl-font-size-title(96px);
   line-height: 1.04em;
   color: $white-color;
@@ -48,8 +49,8 @@
 
   h2 {
     @include hl-font-size-title(30px);
-    font-weight: 700;
-    font-family: $font-gramatika-black;
+    font-weight: 900;
+    font-family: $font-gramatika;
     line-height: 1.63em;
     text-align: left;
     @include col-width(12, 31);

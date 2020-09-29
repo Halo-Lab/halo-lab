@@ -1,4 +1,6 @@
 require('dotenv').config();
+const { version } = require('./package.json');
+const { nanoid } = require('nanoid');
 
 module.exports = {
   siteMetadata: {
@@ -124,18 +126,18 @@ module.exports = {
         sv: process.env.HOTJAR_SNIPPET_VERSION,
       },
     },
-    {
-      resolve: 'gatsby-plugin-eslint',
-      options: {
-        test: /\.js$|\.jsx$/,
-        exclude: /(node_modules|.cache|public)/,
-        stages: ['develop'],
-        options: {
-          emitWarning: true,
-          failOnError: false,
-        },
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-eslint',
+    //   options: {
+    //     test: /\.js$|\.jsx$/,
+    //     exclude: /(node_modules|.cache|public)/,
+    //     stages: ['develop'],
+    //     options: {
+    //       emitWarning: true,
+    //       failOnError: false,
+    //     },
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
@@ -151,6 +153,16 @@ module.exports = {
       options: {
         enableOnDevelopment: false,
         selectorLength: 7,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+      options: {
+        disable: !process.env.npm_config_report,
+        devMode: false,
+        analyzerMode: 'static',
+        reportFilename: `../reports/report_v${version}_${nanoid(5)}_.html`,
+        openAnalyzer: true,
       },
     },
   ],

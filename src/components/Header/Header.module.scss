@@ -11,7 +11,10 @@ $header-transition: all 0.3s;
   box-sizing: border-box;
   width: 100%;
   padding: 2rem 2rem 1rem;
-  animation: appear 1s 0.5s both cubic-bezier(0.76, 0, 0.24, 1);
+  transition: $header-transition;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
 
   .contact {
     transition: $header-transition;
@@ -108,6 +111,12 @@ $header-transition: all 0.3s;
       color: #fff;
     }
   }
+}
+
+.isShow {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
 }
 
 .bar {
@@ -273,18 +282,6 @@ $header-transition: all 0.3s;
 .hiddenTitle {
   position: absolute;
   left: -9999px;
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translateY(-25%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .gradient-is-removed {

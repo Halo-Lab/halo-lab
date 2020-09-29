@@ -1,49 +1,27 @@
-import React, { useContext } from 'react';
-import useBreakpoints from 'use-breakpoints-width';
-
-import { MenuContext } from '@contexts';
-import { BREAKPOINTS } from '@constants';
+import React from 'react';
 import { useHomeGalleryAssets } from '@hooks/queries';
-import Ticker from '@components/Ticker';
-import Slider from '@components/Slider';
-import Item from './components/Item';
 import Img from 'gatsby-image';
+import ScrollGallery from '@components/ScrollGallery/ScrollGallery';
 
 import styles from './Gallery.module.scss';
 
 const Gallery = () => {
-  const { breakpoint } = useBreakpoints();
-  const { isOpened } = useContext(MenuContext);
-  const { photos, arrowLeft, arrowRight } = useHomeGalleryAssets();
-
-  const settings = {
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
-  };
+  const { photos } = useHomeGalleryAssets();
 
   const photosList = photos.map(({ childImageSharp }) => {
     return {
       name: childImageSharp.fluid.src,
       element: (
-        <li className={styles.item}>
+        <li className={styles.item} key={childImageSharp.fluid.src}>
           <div className={styles.card}>
-            <Img fluid={childImageSharp.fluid} draggable={false} />
+            <Img
+              fluid={childImageSharp.fluid}
+              draggable={false}
+              style={{
+                height: childImageSharp.fluid.height,
+                width: childImageSharp.fluid.width,
+              }}
+            />
           </div>
         </li>
       ),
@@ -53,23 +31,11 @@ const Gallery = () => {
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>Creative Atmosphere</h2>
-      <div className={styles.sliderWrapper}>
-        {breakpoint === BREAKPOINTS.DESKTOP && !isOpened ? (
-          <Ticker
-            images={photosList}
-            arrowLeft={arrowLeft}
-            arrowRight={arrowRight}
-          />
-        ) : null}
-        {breakpoint === BREAKPOINTS.MOBILE ||
-        breakpoint === BREAKPOINTS.TABLET ? (
-          <Slider settings={settings}>
-            {photos.map((item, index) => {
-              return <Item key={index} data-name={index} {...item} />;
-            })}
-          </Slider>
-        ) : null}
-      </div>
+      <ScrollGallery step={5}>
+        {photosList.map(({ element }) => {
+          return element;
+        })}
+      </ScrollGallery>
     </section>
   );
 };
