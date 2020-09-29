@@ -81,8 +81,6 @@ $layoutSwitchResolution: 1100px;
     flex-direction: column;
   }
   @media screen and (max-width: $sm) {
-    margin-left: hl-grid-multiplier(-3);
-    margin-right: hl-grid-multiplier(-3);
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -104,6 +102,7 @@ $layoutSwitchResolution: 1100px;
 .inputWrapper {
   display: flex;
   align-items: center;
+  position: relative;
   @include hl-width(360px);
   @include hl-padding(top, 28px);
   @include hl-padding(bottom, 15px);
@@ -117,7 +116,9 @@ $layoutSwitchResolution: 1100px;
   }
   @media screen and (max-width: $sm) {
     width: 100%;
-    padding: 0;
+    margin-top: -18px;
+    padding-top: 18px;
+    padding-bottom: 0;
   }
 }
 
@@ -211,6 +212,10 @@ $layoutSwitchResolution: 1100px;
         fill: #7f5ffc;
       }
     }
+  }
+
+  @media screen and (max-width: $sm) {
+    transform: scale(0.7) translateY(-3px);
   }
 }
 
