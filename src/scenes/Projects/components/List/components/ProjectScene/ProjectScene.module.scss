@@ -49,6 +49,7 @@
   @include hl-padding(top, 60px);
   @include hl-padding(bottom, 60px);
   @include col-width(8, 58);
+  pointer-events: none;
 
   @media screen and (min-width: $xl) {
     @include hl-padding(top, 80px);
