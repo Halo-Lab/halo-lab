@@ -11,34 +11,37 @@
     margin-right: 0;
   }
 
+  @media screen and (min-width: $lg) {
+    // hover: the link remains the same size, but the picture becomes smaller -->
+    > a {
+      > div {
+        transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    }
+    // <-- hover
+  }
+
+  & > a {
+    display: block;
+
+    & > div {
+      transform: scale(1);
+      transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+      min-height: 460px;
+      @media screen and (max-width: $md) {
+        min-height: auto;
+      }
+    }
+
+    &:hover > div {
+      transform: scale(0.9);
+    }
+  }
   &.reversed {
     @media screen and (min-width: $md) {
       @include col-width(24, 65);
       margin-left: 0;
     }
-  }
-}
-
-.imageLink {
-  display: block;
-}
-
-.image {
-  transform: scale(1);
-  transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-  min-height: 460px;
-  @media screen and (max-width: $md) {
-    min-height: auto;
-  }
-
-  @media screen and (min-width: $lg) {
-    transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-}
-
-.hovered {
-  .image {
-    transform: scale(0.9);
   }
 }
 
@@ -49,7 +52,6 @@
   @include hl-padding(top, 60px);
   @include hl-padding(bottom, 60px);
   @include col-width(8, 58);
-  pointer-events: none;
 
   @media screen and (min-width: $xl) {
     @include hl-padding(top, 80px);
@@ -98,29 +100,19 @@
 .title {
   @include hl-margin(top, 20px);
   @include hl-font-size-title(36px);
+
   line-height: 1.25em;
   font-family: $font-gramatika;
   font-weight: 700;
-}
 
-.titleLink {
-  width: fit-content;
-  height: auto;
-  color: inherit;
-  text-decoration: none;
-  cursor: default;
-  display: block;
-}
-
-.titleLinkText {
-  cursor: pointer;
-  position: relative;
-  border-bottom: 0.75rem solid rgba(0, 0, 0, 0);
+  > a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .descriptionLink {
-  width: fit-content;
-
   @include hl-margin(top, 60px);
   @include hl-margin(bottom, 10px);
   @media screen and (min-width: $xl) {
@@ -131,23 +123,22 @@
     @include hl-margin(top, 30px);
     @include hl-margin(bottom, 40px);
   }
-}
 
-.slideLink {
-  white-space: nowrap;
-  margin-right: -10px;
-  padding-bottom: 8px;
+  a {
+    margin-right: -10px;
+    padding-bottom: 8px;
 
-  color: $white-color;
+    color: $white-color;
 
-  @include hl-font-size-text(14px);
-  letter-spacing: 10px;
-  font-weight: 600;
-  line-height: 1.42em;
-  text-decoration: none;
-  text-transform: uppercase;
+    @include hl-font-size-text(14px);
+    letter-spacing: 10px;
+    font-weight: 600;
+    line-height: 1.42em;
+    text-decoration: none;
+    text-transform: uppercase;
 
-  transition: color 0.3s;
+    transition: color 0.3s;
+  }
 }
 
 .review {

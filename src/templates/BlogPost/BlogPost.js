@@ -46,13 +46,10 @@ const BlogPost = ({ pageContext }) => {
     allPosts,
     data,
   ]);
-  const imageURL =
-    data.featured_media && data.featured_media.source_url
-      ? data.featured_media.source_url
-      : '';
-  const [headerIsWhite, setHeaderIsWhite] = React.useState(false);
+
   const articleRef = React.useRef(null);
   const headerIsWhite = useHeaderIsWhite(articleRef);
+
   const thumbnailsItems = [];
   if (next) thumbnailsItems.push(next);
   if (previous) thumbnailsItems.push(previous);
@@ -67,7 +64,7 @@ const BlogPost = ({ pageContext }) => {
         <div className={pageWrapperClass}>
           <Headline
             categories={data.categories}
-            image={imageURL}
+            image={data.featured_media.source_url}
             title={data.title}
           />
         </div>
