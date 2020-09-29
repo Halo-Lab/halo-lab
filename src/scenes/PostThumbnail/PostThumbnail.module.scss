@@ -23,7 +23,7 @@
 
 .thumbnail {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 75.2632%;
   width: 100%;
   max-width: 100%;
   height: 0;
@@ -38,10 +38,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-  @media screen and (min-width: $lg) {
-    padding-bottom: 75%;
   }
 }
 

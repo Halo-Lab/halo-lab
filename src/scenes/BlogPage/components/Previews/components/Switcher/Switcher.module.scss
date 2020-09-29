@@ -78,14 +78,13 @@
   grid-gap: 40px;
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 40px 0;
 
   @media screen and (max-width: $lg) {
     grid-template-columns: 1fr 1fr;
   }
 
   @media screen and (max-width: $md) {
-    grid-gap: 70px;
     grid-template-columns: 1fr;
   }
 }
@@ -101,8 +100,14 @@
     grid-row: span 2;
     grid-column: span 2;
 
+    & div[aria-hidden='true'] {
+      padding-bottom: 95.245% !important;
+    }
+
     & h3 {
       @include hl-font-size-text(34px);
+      line-height: 1.25;
+      min-height: 84px;
     }
   }
 
@@ -110,6 +115,16 @@
     &:first-of-type {
       grid-row: initial;
       grid-column: initial;
+
+      & div[aria-hidden='true'] {
+        padding-bottom: 75.2632% !important;
+      }
+
+      & h3 {
+        @include hl-font-size-text(24px);
+        line-height: 1.5;
+        min-height: auto;
+      }
     }
   }
 }

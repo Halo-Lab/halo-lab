@@ -93,9 +93,6 @@ const Switcher = ({ items, location }) => {
                     </li>
                   );
                 })}
-              </ul>
-
-              <ul className={styles.tabContentList}>
                 {moreItems.map(item => {
                   return (
                     <li
