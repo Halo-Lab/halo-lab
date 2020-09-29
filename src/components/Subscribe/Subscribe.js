@@ -28,21 +28,22 @@ const Subscribe = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
+    const form = e.target;
+
     const isValid = isValidEmail(data.email.value);
 
     if (!isValid) {
       return;
     }
 
-    const url = process.env.GATSBY_FORM_SUBSCRIBE_URL;
     const formData = new FormData();
 
-    formData.append('quote-email', data.email.value);
+    formData.append('form-name', form.getAttribute('name'));
+    formData.append('email', data.email.value);
 
     isValid &&
-      fetch(url, {
+      fetch('/', {
         method: 'POST',
-        header: {},
         body: formData,
       })
         .then(() => {
@@ -63,7 +64,12 @@ const Subscribe = () => {
     <div className={styles.container}>
       <div className={styles.block}>
         <h2 className={styles.title}>Subscribe and be on the course!</h2>
-        <form className={styles.form} onSubmit={e => handleSubmit(e)}>
+        <form
+          className={styles.form}
+          onSubmit={e => handleSubmit(e)}
+          data-netlify="true"
+          name="subscribe form"
+        >
           <input type="hidden" name="form-name" value="subscribe form" />
           <div className={inputWrapperClass}>
             {!isSubmitted ? (

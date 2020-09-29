@@ -44,24 +44,25 @@ const Form = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
+    const form = e.target;
+
     const valid =
       data.name.valid && isValidEmail(data.email.value) && data.message.valid;
 
     setIsValid(valid);
 
-    const url = process.env.GATSBY_FORM_CONTACT_URL;
     const formData = new FormData();
 
-    formData.append('quote-name', data.name.value);
-    formData.append('quote-company', data.company.value);
-    formData.append('quote-email', data.email.value);
-    formData.append('quote-message', data.message.value);
-    formData.append('file', attachmentInput.current.files[0] || '');
+    formData.append('form-name', form.getAttribute('name'));
+    formData.append('name', data.name.value);
+    formData.append('company', data.company.value);
+    formData.append('email', data.email.value);
+    formData.append('message', data.message.value);
+    formData.append('attachment', attachmentInput.current.files[0] || '');
 
     valid &&
-      fetch(url, {
+      fetch('/', {
         method: 'POST',
-        headers: {},
         body: formData,
       })
         .then(response => {
@@ -87,7 +88,13 @@ const Form = () => {
 
   return (
     <div className={styles.container}>
-      <form className={styles.form} onSubmit={e => handleSubmit(e)}>
+      <form
+        className={styles.form}
+        onSubmit={e => handleSubmit(e)}
+        data-netlify="true"
+        name="contacts"
+      >
+        <input type="hidden" name="form-name" value="contacts" />
         <h3 className={styles.formTitle}>REQUEST A QUOTE</h3>
         <div className={`${styles.inputWrapper} ${styles.nameWrapper}`}>
           <input
@@ -165,7 +172,7 @@ const Form = () => {
             <input
               className={styles.attachmentFile}
               type="file"
-              name="quote-file"
+              name="attachment"
               id="attachment-file"
               ref={attachmentInput}
               accept={fileAccept}
