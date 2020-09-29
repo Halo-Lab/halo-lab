@@ -68,10 +68,12 @@
 .title {
   @include hl-margin('top', 26px);
   @include hl-font-size-title(52px);
-  font-family: $font-gramatika-black;
+  font-family: $font-gramatika;
+  font-weight: 900;
   line-height: 1.25em;
   letter-spacing: -2px;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .image-box {
@@ -86,4 +88,6 @@
 
 .image {
   max-height: 500px;
+  width: 100%;
+  object-fit: cover;
 }

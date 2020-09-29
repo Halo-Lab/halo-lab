@@ -1,116 +1,108 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
-// sofia pro
-
-// 300
+//SOFIA-PRO FONT
 
 @font-face {
-  font-family: 'sofia-pro';
-  src: url('https://use.typekit.net/af/572508/00000000000000003b9b1a96/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
-      format('woff2'),
-    url('https://use.typekit.net/af/572508/00000000000000003b9b1a96/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
-      format('woff');
-  font-display: swap;
+  font-family: 'Sofia Pro';
+  src: local('Sofia Pro Bold'), local('SofiaProBold'),
+      url('../assets/fonts/SofiaPro/Sofia-Pro - Bold.woff2') format('woff2'),
+      url('../assets/fonts/SofiaPro/Sofia-Pro - Bold.woff') format('woff');
+  font-weight: bold;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: local('Sofia Pro Semi-Bold'), local('SofiaProSemiBold'),
+      url('../assets/fonts/SofiaPro/Sofia-Pro - SemiBold.woff2') format('woff2'),
+      url('../assets/fonts/SofiaPro/Sofia-Pro - SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: local('Sofia Pro Regular'), local('SofiaProRegular'),
+      url('../assets/fonts/SofiaPro/Sofia-Pro - Regular.woff2') format('woff2'),
+      url('../assets/fonts/SofiaPro/Sofia-Pro - Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: local('Sofia Pro Light'), local('SofiaProLight'),
+      url('../assets/fonts/SofiaPro/Sofia-Pro - Light.woff2') format('woff2'),
+      url('../assets/fonts/SofiaPro/Sofia-Pro - Light.woff') format('woff');
   font-weight: 300;
-}
-
-// 400
-
-@font-face {
-  font-family: 'sofia-pro';
-  src: url('https://use.typekit.net/af/5855b2/00000000000000003b9b1a98/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
-      format('woff2'),
-    url('https://use.typekit.net/af/5855b2/00000000000000003b9b1a98/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
-      format('woff');
-  font-display: swap;
   font-style: normal;
-  font-weight: 400;
-}
-
-// 700
-
-@font-face {
-  font-family: 'sofia-pro';
-  src: url('https://use.typekit.net/af/30420e/00000000000000003b9b1a9e/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
-      format('woff2'),
-    url('https://use.typekit.net/af/30420e/00000000000000003b9b1a9e/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
-      format('woff');
   font-display: swap;
-  font-style: normal;
-  font-weight: 700;
 }
 
-// sofia-pro-soft
+// GRAMATIKA FONT
 
-// 300
-
-@font-face {
-  font-family: 'sofia-pro-soft';
-  src: url('https://use.typekit.net/af/0040a7/0000000000000000000157ba/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
-      format('woff2'),
-    url('https://use.typekit.net/af/0040a7/0000000000000000000157ba/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
-      format('woff');
-  font-display: swap;
-  font-style: normal;
-  font-weight: 300;
-}
-
-// 400
-
-@font-face {
-  font-family: 'sofia-pro-soft';
-  src: url('https://use.typekit.net/af/5c3c84/0000000000000000000157bc/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
-      format('woff2'),
-    url('https://use.typekit.net/af/5c3c84/0000000000000000000157bc/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
-      format('woff');
-  font-display: swap;
-  font-style: normal;
-  font-weight: 400;
-}
-
-// 700
-
-@font-face {
-  font-family: 'sofia-pro-soft';
-  src: url('https://use.typekit.net/af/9b5307/0000000000000000000157b7/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
-      format('woff2'),
-    url('https://use.typekit.net/af/9b5307/0000000000000000000157b7/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
-      format('woff');
-  font-display: swap;
-  font-style: normal;
-  font-weight: 700;
-}
-
-// Gramatika
-
-// Black
-@font-face {
-  font-family: 'Gramatika-Black';
-  src: url('../assets/fonts/Gramatika-Black.woff2') format('woff2'),
-    url('../assets/fonts/Gramatika-Black.woff') format('woff');
-  font-display: swap;
-  font-style: normal;
-  font-weight: 700;
-}
-
-//medium
 @font-face {
   font-family: 'Gramatika';
-  src: url('../assets/fonts/Gramatika-Medium.woff2') format('woff2'),
-    url('../assets/fonts/Gramatika-Medium.woff') format('woff');
-  font-display: swap;
+  src: local('Gramatika Black'), local('Gramatika-Black'),
+      url('../assets/fonts/Gramatika/Gramatika - Black.woff2') format('woff2'),
+      url('../assets/fonts/Gramatika/Gramatika - Black.woff') format('woff');
+  font-weight: 900;
   font-style: normal;
-  font-weight: 500;
+  font-display: swap;
 }
 
-//Bold
 @font-face {
   font-family: 'Gramatika';
-  src: url('../assets/fonts/Gramatika-Bold.woff2') format('woff2'),
-    url('../assets/fonts/Gramatika-Bold.woff') format('woff');
-  font-display: swap;
+  src: local('Gramatika Bold'), local('Gramatika-Bold'),
+      url('../assets/fonts/Gramatika/Gramatika - Bold.woff2') format('woff2'),
+      url('../assets/fonts/Gramatika/Gramatika - Bold.woff') format('woff');
+  font-weight: bold;
   font-style: normal;
-  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gramatika';
+  src: local('Gramatika Regular'), local('Gramatika-Regular'),
+      url('../assets/fonts/Gramatika/Gramatika - Regular.woff2') format('woff2'),
+      url('../assets/fonts/Gramatika/Gramatika - Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+//SOFIA-PRO-SOFT FONT
+
+@font-face {
+  font-family: 'Sofia Pro Soft';
+  src: local('Sofia Pro Soft Bold'), local('SofiaProSoftBold'),
+      url('../assets/fonts/SofiaProSoft/Sofia-Pro-Soft - Bold.woff2') format('woff2'),
+      url('../assets/fonts/SofiaProSoft/Sofia-Pro-Soft - Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sofia Pro Soft';
+  src: local('Sofia Pro Soft Regular'), local('SofiaProSoftRegular'),
+      url('../assets/fonts/SofiaProSoft/Sofia-Pro-Soft - Regular.woff2') format('woff2'),
+      url('../assets/fonts/SofiaProSoft/Sofia-Pro-Soft - Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sofia Pro Soft';
+  src: local('Sofia Pro Soft Light'), local('SofiaProSoftLight'),
+      url('../assets/fonts/SofiaProSoft/Sofia-Pro-Soft - Light.woff2') format('woff2'),
+      url('../assets/fonts/SofiaProSoft/Sofia-Pro-Soft - Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }

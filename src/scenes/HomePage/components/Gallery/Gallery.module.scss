@@ -26,7 +26,8 @@
 }
 
 .title {
-  font-family: $font-gramatika-black;
+  font-family: $font-gramatika;
+  font-weight: 900;
   @include hl-font-size-title(80px);
   @include hl-margin(bottom, 110px);
   letter-spacing: -2px;

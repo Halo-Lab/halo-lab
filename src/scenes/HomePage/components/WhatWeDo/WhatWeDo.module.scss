@@ -9,7 +9,8 @@
 
 .title {
   @include col-width(9, 24);
-  font-family: $font-gramatika-black;
+  font-family: $font-gramatika;
+  font-weight: 900;
   @include hl-font-size-title(30px);
   line-height: 1.53em;
 

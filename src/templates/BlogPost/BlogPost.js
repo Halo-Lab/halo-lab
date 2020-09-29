@@ -7,9 +7,11 @@ import Layout from '@components/Layout';
 import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
 import MailUs from '@scenes/MailUs';
+import Subscribe from '@components/Subscribe';
 import Article from './components/Article';
 import Headline from './components/Headline';
 import Thumbnails from './components/Thumbnails';
+import { useHeaderIsWhite } from '@src/hooks';
 
 import styles from './BlogPost.module.scss';
 
@@ -33,16 +35,6 @@ function getRecommendedPosts(allPosts = [], currentPost) {
 
   return recommendedPosts;
 }
-// this function takes an element on at the time of finding which callback will be returned
-function scrollHandler(ref, callback) {
-  return function() {
-    const pos = ref.getBoundingClientRect();
-    if (pos.y <= 0 && -pos.y < pos.height) {
-      return callback(true);
-    }
-    callback(false);
-  };
-}
 
 const BlogPost = ({ pageContext }) => {
   const {
@@ -54,25 +46,18 @@ const BlogPost = ({ pageContext }) => {
     allPosts,
     data,
   ]);
-
   const imageURL =
     data.featured_media && data.featured_media.source_url
       ? data.featured_media.source_url
       : '';
-
   const [headerIsWhite, setHeaderIsWhite] = React.useState(false);
+  const articleRef = React.useRef(null);
+  const headerIsWhite = useHeaderIsWhite(articleRef);
   const thumbnailsItems = [];
   if (next) thumbnailsItems.push(next);
   if (previous) thumbnailsItems.push(previous);
   const pageWrapperClass = classNames(styles.container, 'pageWrapper');
   const excr = data.excerpt.replace(/(<([^>]+)>)/gi, '');
-  const articleRef = React.useRef(null);
-
-  React.useEffect(() => {
-    const handler = scrollHandler(articleRef.current, setHeaderIsWhite);
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
-  }, []);
 
   return (
     <Providers>
@@ -90,6 +75,7 @@ const BlogPost = ({ pageContext }) => {
           <Article content={data.content} />
         </div>
         <div className="oldPageWrapper">
+          <Subscribe />
           <Thumbnails items={recommendedPosts} />
         </div>
         <MailUs />
