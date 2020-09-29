@@ -11,6 +11,7 @@ const PostThumbnail = ({ title, slug, featured_media, categories }) => {
     featured_media.localFile &&
     featured_media.localFile.childImageSharp &&
     featured_media.localFile.childImageSharp.fluid;
+
   const link = `/blog/${slug}`;
 
   return (
