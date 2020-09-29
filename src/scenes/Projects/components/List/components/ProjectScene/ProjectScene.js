@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+import classnames from 'classnames';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import styles from './ProjectScene.module.scss';
@@ -13,11 +14,40 @@ const ProjectScene = ({
   tags,
   title,
 }) => {
+  const [isHover, setIsHover] = useState(false);
+  const [isSpanHover, setIsSpanHover] = useState(false);
+
+  const previewClassnames = classnames(styles.preview, {
+    [styles.reversed]: reversed,
+    [styles.hovered]: isHover,
+  });
+
+  const handleHoverOn = () => {
+    setIsSpanHover(true);
+    setIsHover(true);
+  };
+
+  const handleHoverOut = () => {
+    setIsHover(false);
+    setIsSpanHover(false);
+  };
+
   return (
     <Fragment>
-      <div className={`${styles.preview} ${reversed ? styles.reversed : ''}`}>
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          <Img fluid={preview.childImageSharp.fluid} draggable={false} />
+      <div className={previewClassnames}>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.imageLink}
+          onMouseOver={handleHoverOn}
+          onMouseLeave={handleHoverOut}
+        >
+          <Img
+            fluid={preview.childImageSharp.fluid}
+            draggable={false}
+            className={styles.image}
+          />
           <span className={styles.hiddenTitle}>{title}</span>
         </a>
       </div>
@@ -26,14 +56,39 @@ const ProjectScene = ({
       >
         <div className={styles.tags}>{tags}</div>
         <div className={styles.title}>
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            {title}
+          <a
+            href={link}
+            onClick={ev => {
+              if (!isSpanHover) {
+                ev.preventDefault();
+              }
+            }}
+            className={styles.titleLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span
+              onMouseEnter={handleHoverOn}
+              onMouseOut={handleHoverOut}
+              className={styles.titleLinkText}
+            >
+              {title}
+            </span>
           </a>
         </div>
 
-        <div className={styles.descriptionLink}>
+        <div
+          className={styles.descriptionLink}
+          onMouseOver={handleHoverOn}
+          onMouseLeave={handleHoverOut}
+        >
           <SlideHover>
-            <a href={link} target="_blank" rel="noopener noreferrer">
+            <a
+              href={link}
+              className={styles.slideLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {linkTitle}
             </a>
           </SlideHover>
