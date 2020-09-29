@@ -26,10 +26,14 @@ const getDefaultTabIndex = search => {
   }
 };
 
-const STEP_VALUE = 3;
+const LOAD_MORE_POSTS_AMOUNT = 3;
+
+const INITIAL_AMOUNT_OF_POSTS = 9;
 
 const Switcher = ({ items, location }) => {
-  const [numberOfRendered, setNumberOfRendered] = useState(STEP_VALUE);
+  const [numberOfRendered, setNumberOfRendered] = useState(
+    INITIAL_AMOUNT_OF_POSTS
+  );
   const defaultIndex = getDefaultTabIndex(location.search);
   const itemsAgency = [];
   const itemsCaseStudies = [];
@@ -58,7 +62,7 @@ const Switcher = ({ items, location }) => {
   });
 
   const handleClick = () => {
-    const value = numberOfRendered + STEP_VALUE * 3;
+    const value = numberOfRendered + LOAD_MORE_POSTS_AMOUNT;
     setNumberOfRendered(value > items.length ? items.length : value);
   };
 
@@ -76,8 +80,7 @@ const Switcher = ({ items, location }) => {
         </TabList>
 
         {allCategories.map(({ title, items }) => {
-          const newItems = items.slice(0, 6); // take the first six articles
-          const moreItems = items.slice(6, 3 + numberOfRendered);
+          const newItems = items.slice(0, numberOfRendered);
           return (
             <TabPanel key={title} className={styles.tabsContentContainer}>
               <ul className={styles.tabContentList}>
@@ -94,21 +97,7 @@ const Switcher = ({ items, location }) => {
                   );
                 })}
               </ul>
-
-              <ul className={styles.tabContentList}>
-                {moreItems.map(item => {
-                  return (
-                    <li
-                      data-automation="articles"
-                      key={item.id}
-                      className={styles.tabContentItem}
-                    >
-                      <PostThumbnail {...item} />
-                    </li>
-                  );
-                })}
-              </ul>
-              {moreItems.length && numberOfRendered >= items.length ? null : (
+              {numberOfRendered >= items.length ? null : (
                 <button className={styles.button} onClick={handleClick}>
                   Load more
                 </button>

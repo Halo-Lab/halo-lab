@@ -82,12 +82,13 @@
 
   background: transparent;
   position: relative;
-  display: flex;
-  justify-content: center;
 }
 
 .image {
+  display: block;
   max-height: 500px;
+  max-width: 100%;
+  height: auto;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
