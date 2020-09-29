@@ -26,12 +26,14 @@ const getDefaultTabIndex = search => {
   }
 };
 
-const STEP_VALUE = 3;
+const LOAD_MORE_POSTS_AMOUNT = 3;
 
-const START_VALUE = STEP_VALUE * 3;
+const INITIAL_AMOUNT_OF_POSTS = 9;
 
 const Switcher = ({ items, location }) => {
-  const [numberOfRendered, setNumberOfRendered] = useState(START_VALUE);
+  const [numberOfRendered, setNumberOfRendered] = useState(
+    INITIAL_AMOUNT_OF_POSTS
+  );
   const defaultIndex = getDefaultTabIndex(location.search);
   const itemsAgency = [];
   const itemsCaseStudies = [];
@@ -60,7 +62,7 @@ const Switcher = ({ items, location }) => {
   });
 
   const handleClick = () => {
-    const value = numberOfRendered + STEP_VALUE;
+    const value = numberOfRendered + LOAD_MORE_POSTS_AMOUNT;
     setNumberOfRendered(value > items.length ? items.length : value);
   };
 
