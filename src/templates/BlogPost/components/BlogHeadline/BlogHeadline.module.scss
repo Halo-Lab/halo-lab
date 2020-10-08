@@ -1,29 +1,29 @@
-@import "@styles/variables/all";
-@import "@styles/mixins/all";
-@import "@functions/functions";
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+@import '@functions/functions';
 
 .headline {
-    padding-top: 11.4rem;
+  padding-top: 11.4rem;
 }
 
 .container {
-    @include grid-template();
-    @include col-width(1, 65);
+  @include grid-template();
+  @include col-width(1, 65);
 }
 
 .picture {
-    max-height: 500px;
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
+  display: block;
+  max-height: 500px;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  object-fit: contain;
 }
 
 .image-box {
-    @include hl-margin("top", 65px);
-    @include col-width(12, 54);
+  @include hl-margin('top', 65px);
+  @include col-width(12, 54);
 
-    background: transparent;
-    position: relative;
-    display: flex;
-    justify-content: center;
+  background: transparent;
+  position: relative;
 }

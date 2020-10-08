@@ -1,22 +1,29 @@
-import React, { useContext, useRef } from 'react';
-import { Helmet } from 'react-helmet';
+import React, { useContext, useRef, useEffect, useState } from 'react';
+import Helmet from 'react-helmet';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import Header from '@components/Header';
+import Footer from '@components/Footer';
 import CustomerChat from '@components/CustomerChat';
+
 import { MenuContext, HeaderGradientContext } from '@contexts';
 
 import styles from './Layout.module.scss';
 import '@styles/index.scss';
-import Footer from '../Footer';
+
+let oldScrollPosition = 0;
 
 const Layout = ({ children, isGlow, headerIsWhite, footerIsHide }) => {
   const { isOpened } = useContext(MenuContext);
+  const headerRef = useRef(null);
+  let scrollPosition = null;
 
-  const containerClasses = classNames(styles.container, {
-    [styles.glow]: isGlow,
-  });
+  const [isHeaderGradient, setIsHeaderWithoutGradient] = useState(null);
+  const [isHeaderShow, setIsHeaderShow] = useState(null);
+
+  const mainClasses = classNames(styles.main, styles.hidden);
+  const footerClasses = classNames(styles.footer, styles.hidden);
 
   const footer = !footerIsHide && (
     <footer className={footerClasses}>
@@ -24,12 +31,23 @@ const Layout = ({ children, isGlow, headerIsWhite, footerIsHide }) => {
     </footer>
   );
 
-  const mainClasses = classNames(styles.main, styles.hidden);
-  const footerClasses = classNames(styles.footer, styles.hidden);
+  const handleScroll = () => {
+    scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollPosition - oldScrollPosition > 0) {
+      setIsHeaderShow(false);
+    } else {
+      setIsHeaderShow(true);
+    }
+    oldScrollPosition = scrollPosition;
+  };
 
-  const headerRef = useRef(null);
-
-  const [isHeaderGradient, setIsHeaderWithoutGradient] = React.useState(null);
+  useEffect(() => {
+    setIsHeaderShow(true);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <HeaderGradientContext.Provider value={{ setIsHeaderWithoutGradient }}>
@@ -41,12 +59,15 @@ const Layout = ({ children, isGlow, headerIsWhite, footerIsHide }) => {
           </Helmet>
         ) : null}
         <CustomerChat />
-        <div className={containerClasses}>
+        <div
+          className={classNames(styles.container, { [styles.glow]: isGlow })}
+        >
           <header className={styles.header}>
             <Header
               headerIsWhite={headerIsWhite}
-              forwardedRef={headerRef}
               withoutGradient={isHeaderGradient}
+              headerShow={isHeaderShow}
+              forwardedRef={headerRef}
             />
           </header>
           <main className={mainClasses}>{children}</main>
@@ -67,6 +88,7 @@ Layout.propTypes = {
 
 Layout.defaultProps = {
   isGlow: true,
+  isHeaderReady: true,
   footerIsHide: false,
 };
 

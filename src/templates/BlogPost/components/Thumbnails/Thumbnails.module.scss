@@ -1,34 +1,56 @@
-@import "@styles/variables/all";
-@import "@styles/mixins/all";
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
 
 .container {
   margin-bottom: 140px;
 }
 
 .title {
-  margin-bottom: 3.2rem;
+  margin-bottom: 2.3rem;
   font-family: $font-sofia-pro;
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 700;
-  line-height: 1.43rem;
+  line-height: 24px;
   letter-spacing: 10px;
   text-transform: uppercase;
-  color: $dark-color;
+  color: #ffffff;
+  opacity: 0.5;
 }
 
 .list {
   list-style-type: none;
-  margin: 0 -24px -120px;
+  margin: 0 0 -120px 0;
   padding: 0;
-
-  @media screen and (min-width: $lg) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  font-size: 0;
+  line-height: 0;
 }
 
 .item {
   box-sizing: border-box;
-  padding: 0 24px;
-  @include hl-height(500px);
+  flex: 1 1 100%;
+  max-width: 100%;
+  margin-right: 0;
+  margin-bottom: 40px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $lg) {
+    flex: 1 1 calc(33.333% - 27px);
+    max-width: calc(33.333% - 27px);
+    margin-right: 40px;
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+  }
 }

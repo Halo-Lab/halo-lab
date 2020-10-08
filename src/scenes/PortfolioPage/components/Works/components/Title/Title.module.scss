@@ -2,7 +2,8 @@
 @import '@styles/mixins/all';
 
 .container {
-  font-family: $font-gramatika-black;
+  font-family: $font-gramatika;
+  font-weight: 900;
   color: $white-color;
   text-align: center;
   display: inline-flex;

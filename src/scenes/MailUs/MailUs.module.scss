@@ -63,7 +63,8 @@
 .title {
   position: relative;
   color: $white-color;
-  font-family: $font-gramatika-black;
+  font-family: $font-gramatika;
+  font-weight: 900;
   @include hl-font-size-title(96px);
   line-height: 1;
   letter-spacing: -2px;
