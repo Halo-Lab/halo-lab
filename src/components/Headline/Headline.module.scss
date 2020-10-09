@@ -1,0 +1,37 @@
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+@import '@functions/functions';
+
+.text-align {
+  @include col-width(5, 61);
+}
+
+.title {
+  @include hl-margin('top', 26px);
+  @include hl-font-size-title(52px);
+  @include hl-max-width(700px);
+  margin-left: auto;
+  margin-right: auto;
+  font-family: $font-gramatika;
+  font-weight: 900;
+  line-height: 1.25em;
+  letter-spacing: -2px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.next-project-category {
+  @include hl-font-size-text(12px);
+  font-family: $font-gramatika;
+  font-weight: bold;
+  line-height: 155%;
+  text-transform: uppercase;
+  color: $white-color;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    color: $yellow-color;
+    transition: 0.4s;
+  }
+}

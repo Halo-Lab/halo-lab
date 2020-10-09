@@ -106,6 +106,7 @@ module.exports = {
         alias: {
           '@src': 'src',
           '@components': 'src/components',
+          '@templates': 'src/templates',
           '@pages': 'src/pages',
           '@scenes': 'src/scenes',
           '@hooks': 'src/hooks',
@@ -126,18 +127,18 @@ module.exports = {
         sv: process.env.HOTJAR_SNIPPET_VERSION,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-eslint',
-    //   options: {
-    //     test: /\.js$|\.jsx$/,
-    //     exclude: /(node_modules|.cache|public)/,
-    //     stages: ['develop'],
-    //     options: {
-    //       emitWarning: true,
-    //       failOnError: false,
-    //     },
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        test: /\.js$|\.jsx$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ['develop'],
+        options: {
+          emitWarning: true,
+          failOnError: false,
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
