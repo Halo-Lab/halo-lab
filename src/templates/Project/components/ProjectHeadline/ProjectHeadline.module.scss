@@ -1,6 +1,6 @@
-@import "@styles/variables/all";
-@import "@styles/mixins/all";
-@import "@functions/functions";
+@import '@styles/variables/all';
+@import '@styles/mixins/all';
+@import '@functions/functions';
 
 .headline {
   padding-top: 11.4rem;
@@ -20,13 +20,11 @@
 }
 
 .image-box {
-  @include hl-margin("top", 65px);
+  @include hl-margin('top', 65px);
   @include col-width(5, 61);
 
   background: transparent;
   position: relative;
-  display: flex;
-  justify-content: center;
 }
 
 .next-image-box {
@@ -35,9 +33,12 @@
 }
 
 .picture {
-  max-width: 1120px;
+  display: block;
+  max-width: 100%;
+  max-height: 700px;
   width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
 .next-image-box .picture {
