@@ -15,7 +15,7 @@ const BackgroundBlackHole = () => {
       window.mozRequestAnimationFrame ||
       window.oRequestAnimationFrame ||
       window.msRequestAnimationFrame ||
-      function(callback) {
+      function (callback) {
         window.setTimeout(callback, 1000 / 60);
       };
 
@@ -41,7 +41,7 @@ const BackgroundBlackHole = () => {
         y: y + this.distance * Math.sin(this.angle),
       };
 
-      this.draw = function() {
+      this.draw = function () {
         ctx.fillStyle = 'rgba(255,255,255,' + this.opacity + ')';
         ctx.beginPath();
         ctx.arc(
@@ -50,12 +50,12 @@ const BackgroundBlackHole = () => {
           this.radius,
           0,
           Math.PI * 2,
-          false
+          false,
         );
         ctx.fill();
         ctx.closePath();
       };
-      this.update = function() {
+      this.update = function () {
         this.angle += this.speed;
         this.position = {
           x: x + this.distance * Math.cos(this.angle),
@@ -87,13 +87,13 @@ const BackgroundBlackHole = () => {
 
       for (var i = 0; i < this.count; i++) {
         this.particles.push(
-          new Particle(this.position.x, this.position.y, this.radius)
+          new Particle(this.position.x, this.position.y, this.radius),
         );
       }
     }
 
     Emitter.prototype = {
-      draw: function() {
+      draw: function () {
         ctx.fillStyle = 'rgba(2,2,30,1)';
         ctx.beginPath();
         ctx.arc(
@@ -102,12 +102,12 @@ const BackgroundBlackHole = () => {
           this.radius,
           0,
           Math.PI * 2,
-          false
+          false,
         );
         ctx.fill();
         ctx.closePath();
       },
-      update: function() {
+      update: function () {
         for (var i = 0; i < this.count; i++) {
           this.particles[i].update();
         }

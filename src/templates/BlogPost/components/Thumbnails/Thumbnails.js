@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import PostThumbnail from '@scenes/PostThumbnail';
+import PostThumbnail from '@/scenes/PostThumbnail';
 
 import styles from './Thumbnails.module.scss';
 

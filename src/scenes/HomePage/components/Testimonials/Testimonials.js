@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import Swiper from 'react-id-swiper';
 import useBreakpoints from 'use-breakpoints-width';
 
+import { useTestimonialsAssets } from '@/hooks/queries';
+
 import Item from './components/Item';
-import { useTestimonialsAssets } from '@hooks/queries';
-import Swiper from 'react-id-swiper';
+
 import styles from './Testimonials.module.scss';
 
 const Testimonials = () => {
@@ -74,7 +76,7 @@ const Testimonials = () => {
   return (
     <section className={`${styles.container} slider`}>
       <Swiper {...params} key={buildKey}>
-        {items.map(item => {
+        {items.map((item) => {
           return (
             <Item
               key={item.author}

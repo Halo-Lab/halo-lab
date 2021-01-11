@@ -1,6 +1,8 @@
-import React from 'react';
 import { Link } from 'gatsby';
-import SlideHover from '@components/SlideHover';
+import React from 'react';
+
+import SlideHover from '@/components/SlideHover';
+
 import image from './images/man-image.gif';
 
 import styles from './Title.module.scss';

@@ -1,8 +1,10 @@
-import React, { Fragment } from 'react';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
+
+import SlideHover from '@/components/SlideHover';
+
 import styles from './ProjectScene.module.scss';
-import SlideHover from '@components/SlideHover';
 
 const ProjectScene = ({
   link,
@@ -21,9 +23,7 @@ const ProjectScene = ({
           <span className={styles.hiddenTitle}>{title}</span>
         </a>
       </div>
-      <div
-        className={`${styles.description} ${reversed ? styles.reversed : ''}`}
-      >
+      <div className={`${styles.description} ${reversed ? styles.reversed : ''}`}>
         <div className={styles.tags}>{tags}</div>
         <div className={styles.title}>
           <a href={link} target="_blank" rel="noopener noreferrer">
@@ -41,10 +41,7 @@ const ProjectScene = ({
 
         <div className={styles.review}>
           <div className={styles.avatar}>
-            <Img
-              fluid={review.avatar.childImageSharp.fluid}
-              draggable={false}
-            />
+            <Img fluid={review.avatar.childImageSharp.fluid} draggable={false} />
           </div>
           <div className={styles.reviewContent}>
             <div className={styles.reviewText}>{review.text}</div>

@@ -1,7 +1,8 @@
-import React from 'react';
-import { useHomeGalleryAssets } from '@hooks/queries';
 import Img from 'gatsby-image';
-import ScrollGallery from '@components/ScrollGallery/ScrollGallery';
+import React from 'react';
+
+import ScrollGallery from '@/components/ScrollGallery/ScrollGallery';
+import { useHomeGalleryAssets } from '@/hooks/queries';
 
 import styles from './Gallery.module.scss';
 

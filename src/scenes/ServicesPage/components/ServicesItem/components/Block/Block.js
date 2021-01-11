@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import { useSiteMetadata } from '@hooks/queries';
+import { useSiteMetadata } from '@/hooks/queries';
 
 import styles from './Block.module.scss';
 

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
-import PostThumbnail from '@scenes/PostThumbnail';
+import PostThumbnail from '@/scenes/PostThumbnail';
 
 import styles from './List.module.scss';
 
@@ -27,7 +27,7 @@ const List = ({ items }) => {
         className={styles.item}
       >
         <PostThumbnail {...items[i]} />
-      </li>
+      </li>,
     );
   }
 

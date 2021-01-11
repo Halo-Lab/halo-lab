@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Providers from '@components/Providers';
-import Layout from '@components/Layout';
-import Head from '@components/Head';
-import BackgroundStars from '@components/BackgroundStars';
-import ThanksPage from '@scenes/ThanksPage';
+import BackgroundStars from '@/components/BackgroundStars';
+import Head from '@/components/Head';
+import Layout from '@/components/Layout';
+import Providers from '@/components/Providers';
+import ThanksPage from '@/scenes/ThanksPage';
 
 const Thanks = () => {
   const title = `Thanks - Halo Lab`;

@@ -1,5 +1,5 @@
-@import '@styles/variables/all';
-@import '@styles/mixins/all';
+@import '@/styles/variables/all';
+@import '@/styles/mixins/all';
 
 @mixin expandedLink($scale: 1, $starsScale: 1) {
   [data-circle='1'] {

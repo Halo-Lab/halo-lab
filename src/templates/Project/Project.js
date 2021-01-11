@@ -1,14 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import Providers from '@components/Providers';
-import Layout from '@components/Layout';
-import BackgroundStars from '@components/BackgroundStars';
-import Head from '@components/Head';
+import BackgroundStars from '@/components/BackgroundStars';
+import Head from '@/components/Head';
+import Layout from '@/components/Layout';
+import Providers from '@/components/Providers';
+import { useHeaderIsWhite } from '@/src/hooks';
+
 import Description from './components/Description';
 import Headline from './components/Headline';
-import { useHeaderIsWhite } from '@src/hooks';
 
 import styles from './Project.module.scss';
 

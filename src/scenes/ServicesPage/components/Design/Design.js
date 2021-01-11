@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { useServicesDesignAssets } from '@hooks/queries';
+import { useServicesDesignAssets } from '@/hooks/queries';
+
 import ServicesItem from '../ServicesItem';
 
 import styles from './Design.module.scss';

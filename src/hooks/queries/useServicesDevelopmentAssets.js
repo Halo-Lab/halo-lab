@@ -11,23 +11,17 @@ const useServicesDevelopmentAssets = () => {
         publicURL
       }
       projectManagement: file(
-        relativePath: {
-          eq: "sections/services-development/project-management.svg"
-        }
+        relativePath: { eq: "sections/services-development/project-management.svg" }
       ) {
         publicURL
       }
       qualityAssurance: file(
-        relativePath: {
-          eq: "sections/services-development/quality-assurance.svg"
-        }
+        relativePath: { eq: "sections/services-development/quality-assurance.svg" }
       ) {
         publicURL
       }
       webDevelopment: file(
-        relativePath: {
-          eq: "sections/services-development/web-development.svg"
-        }
+        relativePath: { eq: "sections/services-development/web-development.svg" }
       ) {
         publicURL
       }

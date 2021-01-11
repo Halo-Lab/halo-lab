@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
-import PropTypes from 'prop-types';
-import { springDebounce } from '@helpers';
+
+import { springDebounce } from '@/helpers';
 
 import styles from './Styles.module.scss';
 
@@ -10,8 +11,7 @@ const Gallery = ({ children, step }) => {
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', springDebounce(handleScroll));
-    return () =>
-      window.removeEventListener('scroll', springDebounce(handleScroll));
+    return () => window.removeEventListener('scroll', springDebounce(handleScroll));
   }, [springDebounce]);
 
   const [{ springscrollY }, springsetScrollY] = useSpring(() => ({
@@ -20,7 +20,7 @@ const Gallery = ({ children, step }) => {
   const STEP = step;
   springsetScrollY({ springscrollY: scrollY });
   const interpHeader = springscrollY.interpolate(
-    o => `translateX(-${o / STEP}px)`
+    (o) => `translateX(-${o / STEP}px)`,
   );
 
   return (

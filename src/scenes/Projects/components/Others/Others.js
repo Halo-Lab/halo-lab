@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import styles from './Others.module.scss';
 
@@ -19,11 +19,7 @@ const Others = ({ auth, kklLuzern, udemy }) => {
           <img src={udemy.publicURL} alt="partner logotype" loading="lazy" />
         </li>
         <li className={styles.item}>
-          <img
-            src={kklLuzern.publicURL}
-            alt="partner logotype"
-            loading="lazy"
-          />
+          <img src={kklLuzern.publicURL} alt="partner logotype" loading="lazy" />
         </li>
         <li className={styles.item}>
           <Link to="/portfolio" className={styles.link}>

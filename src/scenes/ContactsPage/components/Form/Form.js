@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
 import { navigate } from 'gatsby';
-import { isValidEmail } from '@helpers';
+import React, { useState, useRef } from 'react';
+
+import { isValidEmail } from '@/helpers';
 
 import styles from './Form.module.scss';
 
@@ -26,7 +27,7 @@ const Form = () => {
   });
 
   const handleChange = ({ target: { name, value } }) => {
-    setData(data => ({
+    setData((data) => ({
       ...data,
       [name]: {
         valid: name === 'email' ? isValidEmail(value) : value,
@@ -41,7 +42,7 @@ const Form = () => {
   const fileAccept =
     '.png,.jpg,.pdf,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document';
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const valid =
@@ -64,7 +65,7 @@ const Form = () => {
         headers: {},
         body: formData,
       })
-        .then(response => {
+        .then((response) => {
           if (response.ok) {
             navigate('/thanks');
           } else {
@@ -76,7 +77,7 @@ const Form = () => {
         });
   };
 
-  const handleInputFileChange = async e => {
+  const handleInputFileChange = async (e) => {
     const mergedFilesList = [...e.target.files];
     setFilesList(mergedFilesList);
   };
@@ -87,7 +88,7 @@ const Form = () => {
 
   return (
     <div className={styles.container}>
-      <form className={styles.form} onSubmit={e => handleSubmit(e)}>
+      <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
         <h3 className={styles.formTitle}>REQUEST A QUOTE</h3>
         <div className={`${styles.inputWrapper} ${styles.nameWrapper}`}>
           <input
@@ -107,9 +108,7 @@ const Form = () => {
         </div>
         <div className={`${styles.inputWrapper} ${styles.companyWrapper}`}>
           <input
-            className={`${styles.input} ${
-              data.company.valid ? styles.focused : ''
-            }`}
+            className={`${styles.input} ${data.company.valid ? styles.focused : ''}`}
             type="text"
             name="company"
             id="company"
@@ -135,9 +134,7 @@ const Form = () => {
             Email
           </label>
         </div>
-        <h3 className={`${styles.formTitle} ${styles.formTitleMobile}`}>
-          Message
-        </h3>
+        <h3 className={`${styles.formTitle} ${styles.formTitleMobile}`}>Message</h3>
         <div className={styles.textareaWrapper}>
           <textarea
             className={`${styles.textarea} ${

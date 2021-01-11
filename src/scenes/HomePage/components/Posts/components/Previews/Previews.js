@@ -1,9 +1,10 @@
-import React from 'react';
 import { Link } from 'gatsby';
+import React from 'react';
+
+import SlideHover from '@/components/SlideHover';
+import { useWordpressPosts } from '@/hooks/queries';
 
 import Item from './components/Item';
-import SlideHover from '@components/SlideHover';
-import { useWordpressPosts } from '@hooks/queries';
 
 import styles from './Previews.module.scss';
 
@@ -13,7 +14,7 @@ const Previews = () => {
   return (
     <div className={styles.container}>
       <div className={styles.list}>
-        {items.map(item => {
+        {items.map((item) => {
           return <Item key={item.path} {...item} />;
         })}
       </div>

@@ -1,8 +1,9 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 
-import Previews from './components/Previews';
 import GradientText from '../../components/GradientText';
+import Previews from './components/Previews';
+
 import styles from './BlogPage.module.scss';
 
 const BlogPage = () => {

@@ -1,10 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import useBreakpoints from 'use-breakpoints-width';
 
-import Slider from '@components/Slider';
+import Slider from '@/components/Slider';
+import { BREAKPOINTS } from '@/constants';
+
 import Item from './components/Item';
-import { BREAKPOINTS } from '@constants';
 
 import styles from './List.module.scss';
 
@@ -22,8 +23,7 @@ const List = ({ items }) => {
 
   return (
     <div className={styles.container}>
-      {breakpoint === BREAKPOINTS.DESKTOP ||
-      breakpoint === BREAKPOINTS.TABLET ? (
+      {breakpoint === BREAKPOINTS.DESKTOP || breakpoint === BREAKPOINTS.TABLET ? (
         <ul className={styles.list}>
           {items.map((item, index) => {
             return (

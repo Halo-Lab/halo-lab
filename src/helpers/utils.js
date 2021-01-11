@@ -5,7 +5,7 @@ function isValidEmail(email) {
 
 // this function takes an element on at the time of finding which callback will be returned
 export function scrollHandler(ref, callback) {
-  return function() {
+  return function () {
     const pos = ref.getBoundingClientRect();
     if (pos.y <= 0 && -pos.y < pos.height) {
       return callback(true);

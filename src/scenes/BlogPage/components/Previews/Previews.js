@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 
+import { useWordpressPosts } from '@/hooks/queries';
+
 import Switcher from './components/Switcher';
-import { useWordpressPosts } from '@hooks/queries';
 
 const Previews = () => {
   const items = useWordpressPosts();

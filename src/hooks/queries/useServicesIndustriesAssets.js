@@ -19,9 +19,7 @@ const useServicesIndustriesAssets = () => {
         publicURL
       }
       internetOfThings: file(
-        relativePath: {
-          eq: "sections/services-industries/internet-of-things.svg"
-        }
+        relativePath: { eq: "sections/services-industries/internet-of-things.svg" }
       ) {
         publicURL
       }

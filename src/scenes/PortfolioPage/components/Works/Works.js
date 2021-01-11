@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { useDribbbleShots, usePortfolioWorksAssets } from '@hooks/queries';
-import Title from './components/Title';
+import { useDribbbleShots, usePortfolioWorksAssets } from '@/hooks/queries';
+
 import List from './components/List';
+import Title from './components/Title';
 
 import styles from './Works.module.scss';
 

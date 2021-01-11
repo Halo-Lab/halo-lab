@@ -1,5 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import styles from './SlideHover.module.scss';
 
 const ProjectScene = ({ children }) => {

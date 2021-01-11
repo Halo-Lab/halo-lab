@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PageMessage from '@components/PageMessage';
+import PageMessage from '@/components/PageMessage';
 
 import styles from './ThanksPage.module.scss';
 

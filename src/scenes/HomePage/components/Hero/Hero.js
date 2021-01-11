@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-
 import { animated } from 'react-spring';
-import { useHomeHeroAssets } from '@hooks/queries';
+
+import { useHomeHeroAssets } from '@/hooks/queries';
+
 import Info from './components/Info';
 import Title from './images/headline.inline.svg';
-import PropTypes from 'prop-types';
 
 import styles from './Hero.module.scss';
 

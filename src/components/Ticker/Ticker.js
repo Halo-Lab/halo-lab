@@ -1,9 +1,8 @@
+import { easeQuadIn, easeQuadOut, easeLinear } from 'd3-ease';
+import PropTypes from 'prop-types';
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { useSpring, animated as a } from 'react-spring';
-import { easeQuadIn, easeQuadOut, easeLinear } from 'd3-ease';
 import useBreakpoints from 'use-breakpoints-width';
-
-import PropTypes from 'prop-types';
 
 import styles from './Ticker.module.scss';
 
@@ -30,7 +29,7 @@ const configFinish = {
 };
 const configDefault = { duration: TIME, precision: 0, easing: easeLinear };
 
-const iTranslate = value => `translate3d(${value}px, 0, 0)`;
+const iTranslate = (value) => `translate3d(${value}px, 0, 0)`;
 
 const Ticker = ({ images, arrowLeft, arrowRight }) => {
   const isRunning = useRef(false);
@@ -51,14 +50,12 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
     setMetrics,
   ] = useState(initialMetrics);
   const { width } = useBreakpoints();
-  const items = [...images, ...images, ...images].map(
-    ({ name, element }, index) => {
-      return {
-        name: name + index,
-        element,
-      };
-    }
-  ); // NUMBER_OF_LISTS
+  const items = [...images, ...images, ...images].map(({ name, element }, index) => {
+    return {
+      name: name + index,
+      element,
+    };
+  }); // NUMBER_OF_LISTS
 
   // metrics calculation
 
@@ -89,12 +86,12 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
 
   // animation engine -->
 
-  const move = offset => {
+  const move = (offset) => {
     set((...attrs) => {
       const [, controller] = attrs;
 
       return {
-        to: async next => {
+        to: async (next) => {
           isFinished.current = false;
 
           // start

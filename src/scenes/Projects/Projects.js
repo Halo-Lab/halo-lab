@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
 
-import { useProjectsAssets } from '@hooks/queries';
+import { useProjectsAssets } from '@/hooks/queries';
+
 import List from './components/List';
 import Others from './components/Others';
 

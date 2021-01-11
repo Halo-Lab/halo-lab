@@ -1,22 +1,17 @@
-import React, { useContext } from 'react';
-import { Link } from 'gatsby';
 import classNames from 'classnames';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+import { ReactSVG } from 'react-svg';
 
-import { MenuContext } from '@contexts';
-import { useHeaderAssets } from '@hooks/queries';
+import { MenuContext } from '@/contexts';
+import { useHeaderAssets } from '@/hooks/queries';
+
 import Menu from './components/Menu';
 
 import styles from './Header.module.scss';
 
-import { ReactSVG } from 'react-svg';
-
-const Header = ({
-  headerIsWhite,
-  forwardedRef,
-  withoutGradient,
-  headerShow,
-}) => {
+const Header = ({ headerIsWhite, forwardedRef, withoutGradient, headerShow }) => {
   const { logotype } = useHeaderAssets();
   const { isOpened, handleTogglingIsOpened } = useContext(MenuContext);
 
@@ -37,11 +32,7 @@ const Header = ({
           </Link>
         </div>
 
-        <Link
-          to="/contacts/"
-          className={styles.contact}
-          data-status={menuStatus}
-        >
+        <Link to="/contacts/" className={styles.contact} data-status={menuStatus}>
           Contact
         </Link>
 

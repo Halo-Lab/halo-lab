@@ -1,16 +1,15 @@
-import React, { useContext, useRef, useEffect, useState } from 'react';
-import Helmet from 'react-helmet';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import React, { useContext, useRef, useEffect, useState } from 'react';
+import Helmet from 'react-helmet';
 
-import Header from '@components/Header';
-import Footer from '@components/Footer';
-import CustomerChat from '@components/CustomerChat';
-
-import { MenuContext, HeaderGradientContext } from '@contexts';
+import CustomerChat from '@/components/CustomerChat';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { MenuContext, HeaderGradientContext } from '@/contexts';
+import '@/styles/index.scss';
 
 import styles from './Layout.module.scss';
-import '@styles/index.scss';
 
 let oldScrollPosition = 0;
 
@@ -59,9 +58,7 @@ const Layout = ({ children, isGlow, headerIsWhite, footerIsHide }) => {
           </Helmet>
         ) : null}
         <CustomerChat />
-        <div
-          className={classNames(styles.container, { [styles.glow]: isGlow })}
-        >
+        <div className={classNames(styles.container, { [styles.glow]: isGlow })}>
           <header className={styles.header}>
             <Header
               headerIsWhite={headerIsWhite}

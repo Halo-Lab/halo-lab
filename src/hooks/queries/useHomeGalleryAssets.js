@@ -26,9 +26,7 @@ const useHomeGalleryAssets = () => {
           }
         }
       }
-      arrowLeft: file(
-        relativePath: { eq: "sections/home-gallery/arrow-left.png" }
-      ) {
+      arrowLeft: file(relativePath: { eq: "sections/home-gallery/arrow-left.png" }) {
         publicURL
       }
       arrowRight: file(

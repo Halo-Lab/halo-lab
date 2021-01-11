@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import { useIsOpened } from '@hooks/index';
+import { useIsOpened } from '@/hooks/index';
 
 import styles from './ModalWindow.module.scss';
 

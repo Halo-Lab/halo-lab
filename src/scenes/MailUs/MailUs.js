@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { useSiteMetadata } from '@hooks/queries';
-import styles from './MailUs.module.scss';
-import { HeaderGradientContext } from '@contexts';
 import classNames from 'classnames';
+import React, { useEffect, useState, useContext } from 'react';
+
+import { HeaderGradientContext } from '@/contexts';
+import { useSiteMetadata } from '@/hooks/queries';
+
+import styles from './MailUs.module.scss';
 
 const MailUs = () => {
   const metadata = useSiteMetadata();

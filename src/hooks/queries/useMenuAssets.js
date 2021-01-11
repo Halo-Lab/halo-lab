@@ -9,19 +9,13 @@ const useMenuAssets = () => {
       blogStars: file(relativePath: { eq: "sections/menu/blog-stars.svg" }) {
         publicURL
       }
-      contactsIcon: file(
-        relativePath: { eq: "sections/menu/contacts-icon.svg" }
-      ) {
+      contactsIcon: file(relativePath: { eq: "sections/menu/contacts-icon.svg" }) {
         publicURL
       }
-      contactsStars: file(
-        relativePath: { eq: "sections/menu/contacts-stars.svg" }
-      ) {
+      contactsStars: file(relativePath: { eq: "sections/menu/contacts-stars.svg" }) {
         publicURL
       }
-      portfolioIcon: file(
-        relativePath: { eq: "sections/menu/portfolio-icon.svg" }
-      ) {
+      portfolioIcon: file(relativePath: { eq: "sections/menu/portfolio-icon.svg" }) {
         publicURL
       }
       portfolioStars: file(
@@ -29,14 +23,10 @@ const useMenuAssets = () => {
       ) {
         publicURL
       }
-      servicesIcon: file(
-        relativePath: { eq: "sections/menu/services-icon.svg" }
-      ) {
+      servicesIcon: file(relativePath: { eq: "sections/menu/services-icon.svg" }) {
         publicURL
       }
-      servicesStars: file(
-        relativePath: { eq: "sections/menu/services-stars.svg" }
-      ) {
+      servicesStars: file(relativePath: { eq: "sections/menu/services-stars.svg" }) {
         publicURL
       }
     }

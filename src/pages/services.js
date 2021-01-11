@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Providers from '@components/Providers';
-import Layout from '@components/Layout';
-import Head from '@components/Head';
-import BackgroundStars from '@components/BackgroundStars';
-import ServicesPage from '@scenes/ServicesPage';
+import BackgroundStars from '@/components/BackgroundStars';
+import Head from '@/components/Head';
+import Layout from '@/components/Layout';
+import Providers from '@/components/Providers';
+import ServicesPage from '@/scenes/ServicesPage';
 
 const Services = () => {
   const title = 'Services - Halo Lab';

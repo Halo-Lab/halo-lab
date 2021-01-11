@@ -1,7 +1,7 @@
-import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import styles from './PostThumbnail.module.scss';
 
@@ -32,7 +32,7 @@ const PostThumbnail = ({ title, slug, featured_media, categories }) => {
         <span className={styles.hiddenTitle}>{title}</span>
       </Link>
       <div className={styles.wrapper}>
-        {categories.map(category => {
+        {categories.map((category) => {
           return (
             <p className={styles.tag} key={category.id}>
               #{category.name}

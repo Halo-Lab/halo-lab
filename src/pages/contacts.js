@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Providers from '@components/Providers';
-import Layout from '@components/Layout';
-import Head from '@components/Head';
-import BackgroundStars from '@components/BackgroundStars';
-import ContactsPage from '@scenes/ContactsPage';
+import BackgroundStars from '@/components/BackgroundStars';
+import Head from '@/components/Head';
+import Layout from '@/components/Layout';
+import Providers from '@/components/Providers';
+import ContactsPage from '@/scenes/ContactsPage';
 
 const Contacts = () => {
   const title = 'Contacts - Halo Lab';

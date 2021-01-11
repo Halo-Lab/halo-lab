@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
 import styles from './List.module.scss';
 

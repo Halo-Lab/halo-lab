@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useServicesIndustriesAssets } from '@hooks/queries';
+import { useServicesIndustriesAssets } from '@/hooks/queries';
 
 import styles from './List.module.scss';
 

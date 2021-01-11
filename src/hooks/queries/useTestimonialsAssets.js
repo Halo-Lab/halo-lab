@@ -31,9 +31,7 @@ const useTestimonialsAssets = () => {
       ) {
         publicURL
       }
-      stars: file(
-        relativePath: { eq: "sections/home-testimonials/stars-5.svg" }
-      ) {
+      stars: file(relativePath: { eq: "sections/home-testimonials/stars-5.svg" }) {
         publicURL
       }
     }

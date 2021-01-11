@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Providers from '@components/Providers';
-import Layout from '@components/Layout';
-import Head from '@components/Head';
-import BackgroundStars from '@components/BackgroundStars';
-import PortfolioPage from '@scenes/PortfolioPage';
+import BackgroundStars from '@/components/BackgroundStars';
+import Head from '@/components/Head';
+import Layout from '@/components/Layout';
+import Providers from '@/components/Providers';
+import PortfolioPage from '@/scenes/PortfolioPage';
 
 const Portfolio = () => {
   const title = 'Projects - Halo Lab';

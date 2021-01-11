@@ -13,9 +13,7 @@ const useServicesTechnologiesAssets = () => {
       ) {
         publicURL
       }
-      css3: file(
-        relativePath: { eq: "sections/services-technologies/css3.svg" }
-      ) {
+      css3: file(relativePath: { eq: "sections/services-technologies/css3.svg" }) {
         publicURL
       }
       elasticsearch: file(
@@ -28,14 +26,10 @@ const useServicesTechnologiesAssets = () => {
       ) {
         publicURL
       }
-      html5: file(
-        relativePath: { eq: "sections/services-technologies/html5.svg" }
-      ) {
+      html5: file(relativePath: { eq: "sections/services-technologies/html5.svg" }) {
         publicURL
       }
-      ionic: file(
-        relativePath: { eq: "sections/services-technologies/ionic.svg" }
-      ) {
+      ionic: file(relativePath: { eq: "sections/services-technologies/ionic.svg" }) {
         publicURL
       }
       javascript: file(
@@ -53,9 +47,7 @@ const useServicesTechnologiesAssets = () => {
       ) {
         publicURL
       }
-      mysql: file(
-        relativePath: { eq: "sections/services-technologies/mysql.svg" }
-      ) {
+      mysql: file(relativePath: { eq: "sections/services-technologies/mysql.svg" }) {
         publicURL
       }
       nodejs: file(
@@ -63,9 +55,7 @@ const useServicesTechnologiesAssets = () => {
       ) {
         publicURL
       }
-      php: file(
-        relativePath: { eq: "sections/services-technologies/php.svg" }
-      ) {
+      php: file(relativePath: { eq: "sections/services-technologies/php.svg" }) {
         publicURL
       }
       postgresql: file(
@@ -73,9 +63,7 @@ const useServicesTechnologiesAssets = () => {
       ) {
         publicURL
       }
-      pwa: file(
-        relativePath: { eq: "sections/services-technologies/pwa.svg" }
-      ) {
+      pwa: file(relativePath: { eq: "sections/services-technologies/pwa.svg" }) {
         publicURL
       }
       reactNative: file(
@@ -83,14 +71,10 @@ const useServicesTechnologiesAssets = () => {
       ) {
         publicURL
       }
-      react: file(
-        relativePath: { eq: "sections/services-technologies/react.svg" }
-      ) {
+      react: file(relativePath: { eq: "sections/services-technologies/react.svg" }) {
         publicURL
       }
-      redis: file(
-        relativePath: { eq: "sections/services-technologies/redis.svg" }
-      ) {
+      redis: file(relativePath: { eq: "sections/services-technologies/redis.svg" }) {
         publicURL
       }
       typescript: file(
@@ -98,9 +82,7 @@ const useServicesTechnologiesAssets = () => {
       ) {
         publicURL
       }
-      vue: file(
-        relativePath: { eq: "sections/services-technologies/vue.svg" }
-      ) {
+      vue: file(relativePath: { eq: "sections/services-technologies/vue.svg" }) {
         publicURL
       }
       wordpress: file(

@@ -1,14 +1,15 @@
-import React from 'react';
-import Projects from '@scenes/Projects';
-import MailUs from '@scenes/MailUs';
-import Hero from './components/Hero';
-import WhatWeDo from './components/WhatWeDo';
-import Testimonials from './components/Testimonials';
-import Gallery from './components/Gallery';
-import Posts from './components/Posts';
-import Works from './components/Works';
-
 import PropTypes from 'prop-types';
+import React from 'react';
+
+import MailUs from '@/scenes/MailUs';
+import Projects from '@/scenes/Projects';
+
+import Gallery from './components/Gallery';
+import Hero from './components/Hero';
+import Posts from './components/Posts';
+import Testimonials from './components/Testimonials';
+import WhatWeDo from './components/WhatWeDo';
+import Works from './components/Works';
 
 import styles from './HomePage.module.scss';
 

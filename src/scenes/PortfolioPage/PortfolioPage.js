@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Projects from '@scenes/Projects';
-import MailUs from '@scenes/MailUs';
+import MailUs from '@/scenes/MailUs';
+import Projects from '@/scenes/Projects';
+
 import Clients from './components/Clients';
 import Works from './components/Works';
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import useBreakpoints from 'use-breakpoints-width';
 
-import { BREAKPOINTS } from '@constants';
-import { useServicesTechnologiesAssets } from '@hooks/queries';
-import Switcher from './components/Switcher';
+import { BREAKPOINTS } from '@/constants';
+import { useServicesTechnologiesAssets } from '@/hooks/queries';
+
 import List from './components/List';
+import Switcher from './components/Switcher';
 
 import styles from './Technologies.module.scss';
 

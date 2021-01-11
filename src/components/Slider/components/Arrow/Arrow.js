@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import styles from './Arrow.module.scss';
 
@@ -8,10 +8,7 @@ const Arrow = ({ onClick, children, direction }) => {
     direction && direction === 'next' ? styles.next : styles.previous;
 
   return (
-    <button
-      className={`${styles.container} ${directionStyles}`}
-      onClick={onClick}
-    >
+    <button className={`${styles.container} ${directionStyles}`} onClick={onClick}>
       {children}
       <span className={styles.titleHidden}>Arrow</span>
     </button>

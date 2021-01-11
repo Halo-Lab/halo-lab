@@ -35,21 +35,15 @@ const useProjectsAssets = () => {
         name
         ...projectsPreview
       }
-      avatar1: file(
-        relativePath: { eq: "sections/projects/anton_glance.png" }
-      ) {
+      avatar1: file(relativePath: { eq: "sections/projects/anton_glance.png" }) {
         name
         ...projectsAvatar
       }
-      avatar2: file(
-        relativePath: { eq: "sections/projects/bogdan_suchyk.jpg" }
-      ) {
+      avatar2: file(relativePath: { eq: "sections/projects/bogdan_suchyk.jpg" }) {
         name
         ...projectsAvatar
       }
-      avatar3: file(
-        relativePath: { eq: "sections/projects/marshall_haas.jpg" }
-      ) {
+      avatar3: file(relativePath: { eq: "sections/projects/marshall_haas.jpg" }) {
         name
         ...projectsAvatar
       }

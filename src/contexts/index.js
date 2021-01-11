@@ -1,4 +1,4 @@
-import MenuContext from './MenuContext';
 import HeaderGradientContext from './HeaderGradientContext';
+import MenuContext from './MenuContext';
 
 export { MenuContext, HeaderGradientContext };

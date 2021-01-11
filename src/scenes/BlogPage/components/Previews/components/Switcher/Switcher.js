@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
 import { Location } from '@reach/router';
-import PropTypes from 'prop-types';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import Subscribe from '@components/Subscribe';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import PostThumbnail from '@scenes/PostThumbnail';
+import Subscribe from '@/components/Subscribe';
+import PostThumbnail from '@/scenes/PostThumbnail';
 
 import styles from './Switcher.module.scss';
 
-const getDefaultTabIndex = search => {
+const getDefaultTabIndex = (search) => {
   const value = new URLSearchParams(search).get('category');
 
   switch (value) {
@@ -31,9 +31,7 @@ const LOAD_MORE_POSTS_AMOUNT = 3;
 const INITIAL_AMOUNT_OF_POSTS = 9;
 
 const Switcher = ({ items, location }) => {
-  const [numberOfRendered, setNumberOfRendered] = useState(
-    INITIAL_AMOUNT_OF_POSTS
-  );
+  const [numberOfRendered, setNumberOfRendered] = useState(INITIAL_AMOUNT_OF_POSTS);
   const defaultIndex = getDefaultTabIndex(location.search);
   const itemsAgency = [];
   const itemsCaseStudies = [];
@@ -45,8 +43,8 @@ const Switcher = ({ items, location }) => {
     { title: '#News', items: itemsNews },
   ];
 
-  items.forEach(item => {
-    const categories = item.categories.map(item => item.slug);
+  items.forEach((item) => {
+    const categories = item.categories.map((item) => item.slug);
 
     if (categories.indexOf('agency') !== -1) {
       itemsAgency.push(item);
@@ -84,7 +82,7 @@ const Switcher = ({ items, location }) => {
           return (
             <TabPanel key={title} className={styles.tabsContentContainer}>
               <ul className={styles.tabContentList}>
-                {newItems.map(item => {
+                {newItems.map((item) => {
                   const tabItemClass = classNames(styles.tabContentItem);
                   return (
                     <li
@@ -120,10 +118,10 @@ Switcher.propTypes = {
   location: PropTypes.object,
 };
 
-const Wrapped = props => {
+const Wrapped = (props) => {
   return (
     <Location>
-      {locationProps => <Switcher {...locationProps} {...props} />}
+      {(locationProps) => <Switcher {...locationProps} {...props} />}
     </Location>
   );
 };

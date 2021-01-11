@@ -49,23 +49,17 @@ const useHomeWorksAssets = () => {
         name
         ...homeWorksBigImage
       }
-      Hommy: file(
-        relativePath: { eq: "sections/home-works/Hommy-dashboard.jpg" }
-      ) {
+      Hommy: file(relativePath: { eq: "sections/home-works/Hommy-dashboard.jpg" }) {
         name
         ...homeWorksSmallImage
       }
       Investments: file(
-        relativePath: {
-          eq: "sections/home-works/Investments-Platform-Mobile.jpg"
-        }
+        relativePath: { eq: "sections/home-works/Investments-Platform-Mobile.jpg" }
       ) {
         name
         ...homeWorksMiddleImage
       }
-      Lazy: file(
-        relativePath: { eq: "sections/home-works/Lazy-Daisy-Mobile.jpg" }
-      ) {
+      Lazy: file(relativePath: { eq: "sections/home-works/Lazy-Daisy-Mobile.jpg" }) {
         name
         ...homeWorksSmallImage
       }
@@ -73,9 +67,7 @@ const useHomeWorksAssets = () => {
         name
         ...homeWorksSmallImage
       }
-      Teampoint: file(
-        relativePath: { eq: "sections/home-works/Teampoint.jpg" }
-      ) {
+      Teampoint: file(relativePath: { eq: "sections/home-works/Teampoint.jpg" }) {
         name
         ...homeWorksSmallImage
       }
@@ -95,9 +87,7 @@ const useHomeWorksAssets = () => {
         name
         ...homeWorksMiddleImage
       }
-      North: file(
-        relativePath: { eq: "sections/home-works/North-Face-Shop.jpg" }
-      ) {
+      North: file(relativePath: { eq: "sections/home-works/North-Face-Shop.jpg" }) {
         name
         ...homeWorksBigImage
       }

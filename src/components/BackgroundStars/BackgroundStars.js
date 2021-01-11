@@ -1,18 +1,18 @@
+import PropTypes from 'prop-types';
 import React, { useEffect, useContext } from 'react';
 import { useSpring, animated as a } from 'react-spring';
-import PropTypes from 'prop-types';
 
-import { MenuContext } from '@contexts';
-import { useBackgroundsAssets } from '@hooks/queries';
-import { checkBrowser } from '@helpers';
+import { MenuContext } from '@/contexts';
+import { checkBrowser } from '@/helpers';
+import { useBackgroundsAssets } from '@/hooks/queries';
 
 import styles from './BackgroundStars.module.scss';
 
 const myConfig = { mass: 1, tension: 280, friction: 40 };
 
-const iTranslateBig = y => `translate3d(0, ${y}%, 0)`;
-const iTranslateSmall = y => `translate3d(0, ${y / 1.5}%, 0)`;
-const iScale = value => `scale(${value})`;
+const iTranslateBig = (y) => `translate3d(0, ${y}%, 0)`;
+const iTranslateSmall = (y) => `translate3d(0, ${y / 1.5}%, 0)`;
+const iScale = (value) => `scale(${value})`;
 
 const transition = (x, y) => `translate3d(${x / 100}px,${y / 100}px,0)`;
 
@@ -53,7 +53,7 @@ const BackgroundStars = ({ animation }) => {
 
   const moveBackground = ({ isImmediate = false }) => {
     scrollPercentage = Math.ceil(
-      (100 / document.body.scrollHeight) * -window.pageYOffset
+      (100 / document.body.scrollHeight) * -window.pageYOffset,
     );
     set({ y: scrollPercentage, immediate: isImmediate });
   };

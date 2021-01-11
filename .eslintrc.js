@@ -1,4 +1,7 @@
 module.exports = {
+  extends: [
+    "halo-lab"
+  ],
   env: {
     browser: true,
     node: true,

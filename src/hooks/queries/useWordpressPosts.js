@@ -34,7 +34,7 @@ const useWordpressPosts = () => {
           }
         }
       }
-    `
+    `,
   );
 
   const result = data.allWordpressPost.edges.map(({ node }) => {

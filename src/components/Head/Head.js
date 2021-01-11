@@ -1,8 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { useSiteMetadata } from '@hooks/queries';
+import { useSiteMetadata } from '@/hooks/queries';
 
 const Head = ({ children, title, description }) => {
   const metadata = useSiteMetadata();

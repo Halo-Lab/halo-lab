@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { useServicesDevelopmentAssets } from '@hooks/queries';
+import { useServicesDevelopmentAssets } from '@/hooks/queries';
+
 import ServicesItem from '../ServicesItem';
 
 import styles from './Development.module.scss';
@@ -32,8 +33,7 @@ const Development = () => {
     },
     {
       title: 'Project Management',
-      text:
-        'Quality-driven web development according latest technology standards.',
+      text: 'Quality-driven web development according latest technology standards.',
       image: projectManagement,
     },
     {

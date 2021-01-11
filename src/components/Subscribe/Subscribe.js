@@ -1,10 +1,12 @@
-import React, { useState, Fragment } from 'react';
-import { navigate } from 'gatsby';
 import classNames from 'classnames';
+import { navigate } from 'gatsby';
+import React, { useState, Fragment } from 'react';
+
+import { isValidEmail } from '@/helpers';
+
+import Arrow from './images/arrow.inline.svg';
 
 import styles from './Subscribe.module.scss';
-import { isValidEmail } from '@helpers';
-import Arrow from './images/arrow.inline.svg';
 
 const Subscribe = () => {
   const [data, setData] = useState({
@@ -16,7 +18,7 @@ const Subscribe = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = ({ target: { name, value } }) => {
-    setData(data => ({
+    setData((data) => ({
       ...data,
       [name]: {
         isValid: isValidEmail(value),
@@ -25,7 +27,7 @@ const Subscribe = () => {
     }));
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const isValid = isValidEmail(data.email.value);
@@ -63,7 +65,7 @@ const Subscribe = () => {
     <div className={styles.container}>
       <div className={styles.block}>
         <h2 className={styles.title}>Subscribe and be on the course!</h2>
-        <form className={styles.form} onSubmit={e => handleSubmit(e)}>
+        <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
           <input type="hidden" name="form-name" value="subscribe form" />
           <div className={inputWrapperClass}>
             {!isSubmitted ? (

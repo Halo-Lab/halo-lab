@@ -12,7 +12,7 @@ const useSitePages = () => {
           }
         }
       }
-    `
+    `,
   );
 
   const result = {};

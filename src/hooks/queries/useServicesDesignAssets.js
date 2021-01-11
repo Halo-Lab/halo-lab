@@ -3,9 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 const useServicesDesignAssets = () => {
   const data = useStaticQuery(graphql`
     query {
-      branding: file(
-        relativePath: { eq: "sections/services-design/branding.svg" }
-      ) {
+      branding: file(relativePath: { eq: "sections/services-design/branding.svg" }) {
         publicURL
       }
       mobileAppsDesign: file(

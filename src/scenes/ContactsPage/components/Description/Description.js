@@ -1,7 +1,8 @@
 import React from 'react';
-import { useSiteMetadata } from '@hooks/queries';
-import GradientText from '@components/GradientText';
-import SlideHover from '@components/SlideHover';
+
+import GradientText from '@/components/GradientText';
+import SlideHover from '@/components/SlideHover';
+import { useSiteMetadata } from '@/hooks/queries';
 
 import styles from './Description.module.scss';
 
@@ -38,9 +39,9 @@ const Description = () => {
           </SlideHover>
         </h2>
         <p>
-          The team is open for your ideas, questions and needs. Our clients get
-          the superior results when a short-term acquaintance turns into a
-          long-term collaboration.
+          The team is open for your ideas, questions and needs. Our clients get the
+          superior results when a short-term acquaintance turns into a long-term
+          collaboration.
         </p>
 
         <div className={`${styles.circle} ${styles.circleSm}`}></div>

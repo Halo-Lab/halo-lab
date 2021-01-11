@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
 
 import Partners from './components/Partners';
 import ProjectScene from './components/ProjectScene';
@@ -25,8 +25,7 @@ const List = ({
   const items = [
     {
       id: 0,
-      link:
-        'https://www.behance.net/gallery/65940547/Primary-Smart-Bedding-Website',
+      link: 'https://www.behance.net/gallery/65940547/Primary-Smart-Bedding-Website',
       linkTitle: 'more info',
       preview: preview1,
       tags: 'UX, UI, Illustrations, Icons',

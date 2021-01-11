@@ -26,7 +26,7 @@ const useDribbbleShots = () => {
           }
         }
       }
-    `
+    `,
   );
 
   return data.allDribbbleShot.nodes;

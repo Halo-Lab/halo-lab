@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import styles from './Item.module.scss';
 
@@ -18,9 +18,7 @@ const Item = ({ author, generalLogo, rating, stars, text }) => {
       </div>
       <div className={styles.review}>
         <div className={styles.text}>{text}</div>
-        <div className={`${styles.name} ${styles.top}`}>
-          &#8212;&#8194;{author}
-        </div>
+        <div className={`${styles.name} ${styles.top}`}>&#8212;&#8194;{author}</div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { usePortfolioClientsAssets } from '@hooks/queries';
+import { usePortfolioClientsAssets } from '@/hooks/queries';
 
 import styles from './Clients.module.scss';
 

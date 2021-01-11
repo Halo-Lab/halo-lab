@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
 
 import styles from './Categories.module.scss';
 
@@ -14,7 +14,7 @@ const Categories = ({ items }) => {
           Portfolio
         </Link>
       </li>
-      {items.map(item => {
+      {items.map((item) => {
         let link = `/portfolio?category=${item.slug}`;
 
         return (
