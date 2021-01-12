@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
@@ -5,6 +6,7 @@ import React from 'react';
 
 import styles from './PostThumbnail.module.scss';
 
+// eslint-disable-next-line camelcase
 const PostThumbnail = ({ title, slug, featured_media, categories }) => {
   const imageSource = featured_media.source_url;
   const imageOptimized =
@@ -52,12 +54,12 @@ PostThumbnail.defaultProps = {
 };
 
 PostThumbnail.propTypes = {
-  title: PropTypes.string,
-  slug: PropTypes.string,
-  date: PropTypes.string,
-  featured_media: PropTypes.object,
+  title: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  // date: PropTypes.string.isRequired,
+  featured_media: PropTypes.object.isRequired,
   categories: PropTypes.array,
-  isFirst: PropTypes.bool,
+  // isFirst: PropTypes.bool.isRequired,
 };
 
 export default PostThumbnail;

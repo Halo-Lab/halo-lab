@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { useProjectsAssets } from '@/hooks/queries';
 
@@ -13,18 +13,18 @@ const Projects = ({ title, navigation }) => {
   const othersAssets = { auth, kklLuzern, udemy };
 
   return (
-    <Fragment>
+    <>
       <div className={styles.title}>{title}</div>
       <List {...listAssets} />
 
       {navigation ? <Others {...othersAssets} /> : null}
-    </Fragment>
+    </>
   );
 };
 
 Projects.propTypes = {
-  navigation: PropTypes.bool,
-  title: PropTypes.string,
+  navigation: PropTypes.bool.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Projects;

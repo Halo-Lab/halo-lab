@@ -61,7 +61,7 @@ const BlogPost = ({ pageContext }) => {
     <Providers>
       <BackgroundStars />
       <Layout headerIsWhite={headerIsWhite}>
-        <Head title={`${data.title} - Halo Lab Blog`} description={excr}></Head>
+        <Head title={`${data.title} - Halo Lab Blog`} description={excr} />
         <div className={pageWrapperClass}>
           <Headline
             categories={data.categories}
@@ -83,7 +83,8 @@ const BlogPost = ({ pageContext }) => {
 };
 
 BlogPost.propTypes = {
-  pageContext: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
+  pageContext: PropTypes.object.isRequired,
 };
 
 export default BlogPost;

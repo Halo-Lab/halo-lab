@@ -18,7 +18,8 @@ const Item = ({ childImageSharp }) => {
 };
 
 Item.propTypes = {
-  childImageSharp: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
+  childImageSharp: PropTypes.object.isRequired,
 };
 
 export default Item;

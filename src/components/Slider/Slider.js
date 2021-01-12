@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import PropTypes from 'prop-types';
 import React from 'react';
 import Slick from 'react-slick';
@@ -15,7 +16,7 @@ const Slider = ({ children, settings, instance }) => {
     dotsClass: styles.dots,
     customPaging: function customDot(i) {
       return (
-        <button className={styles.button}>
+        <button className={styles.button} type="button">
           <span className={styles.title}>{i}</span>
         </button>
       );
@@ -33,7 +34,8 @@ const Slider = ({ children, settings, instance }) => {
 
 Slider.propTypes = {
   children: PropTypes.node.isRequired,
-  settings: PropTypes.object,
+  settings: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/require-default-props
   instance: PropTypes.any,
 };
 

@@ -27,11 +27,11 @@ const Form = () => {
   });
 
   const handleChange = ({ target: { name, value } }) => {
-    setData((data) => ({
-      ...data,
+    setData((state) => ({
+      ...state,
       [name]: {
         valid: name === 'email' ? isValidEmail(value) : value,
-        value: value,
+        value,
       },
     }));
   };
@@ -59,7 +59,7 @@ const Form = () => {
     formData.append('quote-message', data.message.value);
     formData.append('file', attachmentInput.current.files[0] || '');
 
-    valid &&
+    if (valid) {
       fetch(url, {
         method: 'POST',
         headers: {},
@@ -75,6 +75,7 @@ const Form = () => {
         .catch(() => {
           navigate('/error');
         });
+    }
   };
 
   const handleInputFileChange = async (e) => {
@@ -113,7 +114,7 @@ const Form = () => {
             name="company"
             id="company"
             onChange={handleChange}
-          ></input>
+          />
           <label className={styles.placeholder} htmlFor="company">
             Company
           </label>
@@ -145,35 +146,34 @@ const Form = () => {
             require="true"
             required
             onChange={handleChange}
-          ></textarea>
+          />
           <label className={styles.placeholder} htmlFor="message">
             What is your project about?
           </label>
-          <div className={styles.block}></div>
+          <div className={styles.block} />
           <div
             className={`${styles.attachmentWrapper} ${
               filesList.length ? styles.attached : ''
             }`}
           >
-            <label
-              className={styles.attachmentLabel}
-              htmlFor="attachment-file"
-            ></label>
-            <input
-              className={styles.attachmentFile}
-              type="file"
-              name="quote-file"
-              id="attachment-file"
-              ref={attachmentInput}
-              accept={fileAccept}
-              onChange={handleInputFileChange}
-            ></input>
+            <label className={styles.attachmentLabel} htmlFor="attachment-file">
+              <input
+                className={styles.attachmentFile}
+                type="file"
+                name="quote-file"
+                id="attachment-file"
+                ref={attachmentInput}
+                accept={fileAccept}
+                onChange={handleInputFileChange}
+              />
+            </label>
             <div className={styles.attachmentName}>
               <button
                 type="button"
                 className={styles.attachmentButton}
                 onClick={handleFileClear}
-              ></button>
+                aria-label="clear files"
+              />
               {!!filesList.length && <span>{filesList[0].name}</span>}
             </div>
           </div>

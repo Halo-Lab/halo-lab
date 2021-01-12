@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -25,12 +26,12 @@ const Item = ({ author, generalLogo, rating, stars, text }) => {
 };
 
 Item.propTypes = {
-  author: PropTypes.string,
-  companyLogo: PropTypes.object,
-  generalLogo: PropTypes.object,
-  rating: PropTypes.string,
-  stars: PropTypes.object,
-  text: PropTypes.string,
+  author: PropTypes.string.isRequired,
+  // companyLogo: PropTypes.object.isRequired,
+  generalLogo: PropTypes.object.isRequired,
+  rating: PropTypes.string.isRequired,
+  stars: PropTypes.object.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 export default Item;

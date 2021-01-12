@@ -1,5 +1,7 @@
+/* eslint-disable react/forbid-prop-types */
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import React from 'react';
+import { v4 as uuid } from 'uuid';
 
 import styles from './Info.module.scss';
 
@@ -23,23 +25,23 @@ const Info = ({ clutchLaurel, dribbbleLaurel, upworkLaurel }) => {
   ];
 
   return (
-    <Fragment>
-      {items.map(({ icon, textStrings, classes }, index) => {
+    <>
+      {items.map(({ icon, textStrings, classes }) => {
         return (
-          <div key={index} className={`${styles.item} ${classes}`}>
-            <img className={styles.images} src={icon.publicURL} alt={'icon'} />
+          <div key={uuid()} className={`${styles.item} ${classes}`}>
+            <img className={styles.images} src={icon.publicURL} alt="icon" />
             <span className={styles.text}>{textStrings}</span>
           </div>
         );
       })}
-    </Fragment>
+    </>
   );
 };
 
 Info.propTypes = {
-  clutchLaurel: PropTypes.object,
-  dribbbleLaurel: PropTypes.object,
-  upworkLaurel: PropTypes.object,
+  clutchLaurel: PropTypes.object.isRequired,
+  dribbbleLaurel: PropTypes.object.isRequired,
+  upworkLaurel: PropTypes.object.isRequired,
 };
 
 export default Info;

@@ -22,7 +22,7 @@ const Home = () => {
       <div onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
         <BackgroundStars animation={props} />
         <Layout>
-          <Head title={title} description={description}></Head>
+          <Head title={title} description={description} />
           <HomePage animation={props} />
         </Layout>
       </div>

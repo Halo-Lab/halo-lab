@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { Location } from '@reach/router';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -44,7 +45,7 @@ const Switcher = ({ items, location }) => {
   ];
 
   items.forEach((item) => {
-    const categories = item.categories.map((item) => item.slug);
+    const categories = item.categories.map((category) => category.slug);
 
     if (categories.indexOf('agency') !== -1) {
       itemsAgency.push(item);
@@ -77,8 +78,8 @@ const Switcher = ({ items, location }) => {
           })}
         </TabList>
 
-        {allCategories.map(({ title, items }) => {
-          const newItems = items.slice(0, numberOfRendered);
+        {allCategories.map(({ title, items: category }) => {
+          const newItems = category.slice(0, numberOfRendered);
           return (
             <TabPanel key={title} className={styles.tabsContentContainer}>
               <ul className={styles.tabContentList}>
@@ -95,8 +96,12 @@ const Switcher = ({ items, location }) => {
                   );
                 })}
               </ul>
-              {numberOfRendered >= items.length ? null : (
-                <button className={styles.button} onClick={handleClick}>
+              {numberOfRendered >= category.length ? null : (
+                <button
+                  className={styles.button}
+                  onClick={handleClick}
+                  type="button"
+                >
                   Load more
                 </button>
               )}
@@ -115,7 +120,8 @@ Switcher.defaultProps = {
 
 Switcher.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
-  location: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
+  location: PropTypes.object.isRequired,
 };
 
 const Wrapped = (props) => {

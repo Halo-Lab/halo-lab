@@ -9,13 +9,13 @@ const Article = ({ content }) => {
       <div
         dangerouslySetInnerHTML={{ __html: content }}
         className={styles.wrapper}
-      ></div>
+      />
     </div>
   );
 };
 
 Article.propTypes = {
-  content: PropTypes.string,
+  content: PropTypes.string.isRequired,
 };
 
 export default Article;

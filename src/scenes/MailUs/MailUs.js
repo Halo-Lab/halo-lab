@@ -47,7 +47,7 @@ const MailUs = () => {
         : setIsHeaderWithoutGradient(false);
     }
 
-    let removeGradientOnScroll = removeGradient(elRef);
+    const removeGradientOnScroll = removeGradient(elRef);
     window.addEventListener('scroll', () => removeGradientOnScroll);
     return () => window.removeEventListener('scroll', removeGradientOnScroll);
   });

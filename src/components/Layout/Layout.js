@@ -54,7 +54,7 @@ const Layout = ({ children, isGlow, headerIsWhite, footerIsHide }) => {
         {/* TODO: This is very bad, I know. But. */}
         {isOpened ? (
           <Helmet>
-            <body className={styles.locked}></body>
+            <body className={styles.locked} />
           </Helmet>
         ) : null}
         <CustomerChat />
@@ -84,8 +84,9 @@ Layout.propTypes = {
 };
 
 Layout.defaultProps = {
+  headerIsWhite: false,
   isGlow: true,
-  isHeaderReady: true,
+  // isHeaderReady: true,
   footerIsHide: false,
 };
 

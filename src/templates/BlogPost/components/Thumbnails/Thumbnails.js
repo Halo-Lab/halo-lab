@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { v4 as uuid } from 'uuid';
 
 import PostThumbnail from '@/scenes/PostThumbnail';
 
@@ -10,9 +11,9 @@ const Thumbnails = ({ items }) => {
     <div className={styles.container}>
       <div className={styles.title}>Other recent posts</div>
       <ul className={styles.list}>
-        {items.map((item, index) => {
+        {items.map((item) => {
           return (
-            <li key={index} className={styles.item}>
+            <li key={uuid()} className={styles.item}>
               <PostThumbnail {...item} />
             </li>
           );
@@ -23,7 +24,7 @@ const Thumbnails = ({ items }) => {
 };
 
 Thumbnails.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Thumbnails;

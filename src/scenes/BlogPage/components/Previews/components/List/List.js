@@ -16,7 +16,7 @@ const List = ({ items }) => {
     setNumberOfRendered(value > items.length ? items.length : value);
   };
 
-  for (let i = 0; i < numberOfRendered; i++) {
+  for (let i = 0; i < numberOfRendered; i + 1) {
     const inlineStyles = { animationDelay: `0.${i}s` };
 
     postsToRender.push(
@@ -36,7 +36,7 @@ const List = ({ items }) => {
       <ul className={styles.list}>{postsToRender}</ul>
       {numberOfRendered < items.length ? (
         <div className={styles.buttonWrapper}>
-          <button className={styles.button} onClick={handleClick}>
+          <button className={styles.button} onClick={handleClick} type="button">
             Show More
           </button>
         </div>

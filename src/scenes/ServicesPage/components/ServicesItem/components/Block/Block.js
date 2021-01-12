@@ -21,8 +21,8 @@ const Block = ({ message }) => {
 };
 
 Block.propTypes = {
-  banner: PropTypes.bool,
-  message: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
+  message: PropTypes.object.isRequired,
 };
 
 export default Block;

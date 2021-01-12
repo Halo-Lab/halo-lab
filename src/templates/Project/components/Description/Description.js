@@ -16,7 +16,7 @@ const Description = ({ data }) => {
 
           <div className={styles.wrapper}>
             <p className={styles.content}>{content}</p>
-            <div className={styles.line}></div>
+            <div className={styles.line} />
 
             <ul className={styles.companiesList}>
               {companies.map(({ sourceImage, text }) => {
@@ -49,7 +49,8 @@ const Description = ({ data }) => {
 };
 
 Description.propTypes = {
-  data: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object.isRequired,
 };
 
 export default Description;

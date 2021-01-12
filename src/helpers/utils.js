@@ -5,6 +5,7 @@ function isValidEmail(email) {
 
 // this function takes an element on at the time of finding which callback will be returned
 export function scrollHandler(ref, callback) {
+  // eslint-disable-next-line consistent-return
   return function () {
     const pos = ref.getBoundingClientRect();
     if (pos.y <= 0 && -pos.y < pos.height) {

@@ -17,7 +17,7 @@ GradientText.defaultProps = {
 };
 
 GradientText.propTypes = {
-  text: PropTypes.string,
+  text: PropTypes.string.isRequired,
   background: PropTypes.string,
 };
 

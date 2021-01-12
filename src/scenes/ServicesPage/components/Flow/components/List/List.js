@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { v4 as uuid } from 'uuid';
 
 import styles from './List.module.scss';
 
@@ -8,7 +9,7 @@ const List = ({ items }) => {
     <ul className={styles.container}>
       {items.map(({ title, message }, index) => {
         return (
-          <li key={index} className={styles.item}>
+          <li key={uuid()} className={styles.item}>
             <div className={styles.title}>
               <span className={styles.icon}>{index + 1}</span>
               <span>{title}</span>

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { navigate } from 'gatsby';
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 
 import { isValidEmail } from '@/helpers';
 
@@ -18,11 +18,11 @@ const Subscribe = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = ({ target: { name, value } }) => {
-    setData((data) => ({
-      ...data,
+    setData((state) => ({
+      ...state,
       [name]: {
         isValid: isValidEmail(value),
-        value: value,
+        value,
       },
     }));
   };
@@ -41,7 +41,7 @@ const Subscribe = () => {
 
     formData.append('quote-email', data.email.value);
 
-    isValid &&
+    if (isValid) {
       fetch(url, {
         method: 'POST',
         header: {},
@@ -53,6 +53,7 @@ const Subscribe = () => {
         .catch(() => {
           navigate('/error');
         });
+    }
   };
 
   const inputWrapperClass = classNames(styles.inputWrapper, {
@@ -69,7 +70,7 @@ const Subscribe = () => {
           <input type="hidden" name="form-name" value="subscribe form" />
           <div className={inputWrapperClass}>
             {!isSubmitted ? (
-              <Fragment>
+              <>
                 <input
                   placeholder="Type your email"
                   className={styles.input}
@@ -82,17 +83,17 @@ const Subscribe = () => {
                 <label className={styles.label} htmlFor="email">
                   Email
                 </label>
-                <button className={btnClass}>
+                <button className={btnClass} type="button">
                   <Arrow className={styles.svg} />
                 </button>
-              </Fragment>
+              </>
             ) : (
               <p className={styles.successMessage}>EMAIL SENT, THANKS!</p>
             )}
           </div>
         </form>
       </div>
-      <span className={styles.smPlanet}></span>
+      <span className={styles.smPlanet} />
     </div>
   );
 };

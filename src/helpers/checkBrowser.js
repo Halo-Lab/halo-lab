@@ -7,9 +7,8 @@ const checkBrowser = () => {
       (function (p) {
         return p.toString() === '[object SafariRemoteNotification]';
       })(
-        !window['safari'] ||
-          (typeof window['safari'] !== 'undefined' &&
-            window['safari'].pushNotification),
+        !window.safari ||
+          (typeof window.safari !== 'undefined' && window.safari.pushNotification),
       );
   }
 

@@ -12,7 +12,7 @@ const NotFound = () => {
     <Providers>
       <BackgroundBlackHole />
       <Layout>
-        <Head title={title}></Head>
+        <Head title={title} />
         <NotFoundPage />
       </Layout>
     </Providers>

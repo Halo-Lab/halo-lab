@@ -112,7 +112,12 @@ const BackgroundStars = ({ animation }) => {
   );
 };
 
+BackgroundStars.defaultProps = {
+  animation: null,
+};
+
 BackgroundStars.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   animation: PropTypes.any,
 };
 

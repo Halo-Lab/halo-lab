@@ -44,8 +44,8 @@ const Description = () => {
           collaboration.
         </p>
 
-        <div className={`${styles.circle} ${styles.circleSm}`}></div>
-        <div className={`${styles.circle} ${styles.circleLg}`}></div>
+        <div className={`${styles.circle} ${styles.circleSm}`} />
+        <div className={`${styles.circle} ${styles.circleLg}`} />
       </div>
     </div>
   );

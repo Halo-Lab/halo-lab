@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { v4 as uuid } from 'uuid';
 
 import styles from './Switcher.module.scss';
 
@@ -12,7 +13,7 @@ const Switcher = ({ items }) => {
           return (
             <Tab
               className={styles.tabListItem}
-              key={index}
+              key={uuid()}
               style={{ flexBasis: `${100 / items.length}px` }}
             >
               <div className={styles.tabListIcon}>{index + 1}</div>
@@ -22,9 +23,9 @@ const Switcher = ({ items }) => {
         })}
       </TabList>
 
-      {items.map(({ message }, index) => {
+      {items.map(({ message }) => {
         return (
-          <TabPanel key={index}>
+          <TabPanel key={uuid()}>
             <div className={styles.tabContent}>{message}</div>
           </TabPanel>
         );

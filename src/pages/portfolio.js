@@ -14,7 +14,7 @@ const Portfolio = () => {
     <Providers>
       <BackgroundStars />
       <Layout>
-        <Head title={title} description={description}></Head>
+        <Head title={title} description={description} />
         <PortfolioPage />
       </Layout>
     </Providers>

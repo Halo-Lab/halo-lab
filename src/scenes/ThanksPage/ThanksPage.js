@@ -14,7 +14,7 @@ const ThanksPage = () => {
 
   return (
     <div className={`pageWrapper ${styles.container}`}>
-      <PageMessage title={title} message={message} mail={true} />
+      <PageMessage title={title} message={message} mail />
     </div>
   );
 };

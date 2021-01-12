@@ -32,10 +32,10 @@ const PageMessage = ({ title, large, mail, message }) => {
 };
 
 PageMessage.propTypes = {
-  large: PropTypes.bool,
-  mail: PropTypes.bool,
-  message: PropTypes.string,
-  title: PropTypes.string,
+  large: PropTypes.bool.isRequired,
+  mail: PropTypes.bool.isRequired,
+  message: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default PageMessage;

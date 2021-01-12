@@ -31,8 +31,9 @@ const Gallery = ({ children, step }) => {
 };
 
 Gallery.propTypes = {
-  step: PropTypes.number,
-  children: PropTypes.array,
+  step: PropTypes.number.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  children: PropTypes.array.isRequired,
 };
 
 export default Gallery;

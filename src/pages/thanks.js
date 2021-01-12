@@ -12,7 +12,7 @@ const Thanks = () => {
     <Providers>
       <BackgroundStars />
       <Layout>
-        <Head title={title}></Head>
+        <Head title={title} />
         <ThanksPage />
       </Layout>
     </Providers>

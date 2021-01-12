@@ -25,7 +25,7 @@ const Project = ({ pageContext }) => {
   return (
     <Providers>
       <BackgroundStars />
-      <Layout headerIsWhite={headerIsWhite} footerIsHide={true}>
+      <Layout headerIsWhite={headerIsWhite} footerIsHide>
         <Head title={title} description={data.excerpt} />
 
         <Headline data={data} />
@@ -43,7 +43,8 @@ const Project = ({ pageContext }) => {
 };
 
 Project.propTypes = {
-  pageContext: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
+  pageContext: PropTypes.object.isRequired,
 };
 
 export default Project;

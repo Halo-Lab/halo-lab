@@ -18,8 +18,8 @@ const Partners = ({ items, reversed }) => {
 };
 
 Partners.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
-  reversed: PropTypes.bool,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  reversed: PropTypes.bool.isRequired,
 };
 
 export default Partners;

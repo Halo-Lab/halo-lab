@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 
@@ -45,8 +46,8 @@ const Title = ({ icon, signature }) => {
 };
 
 Title.propTypes = {
-  icon: PropTypes.object,
-  signature: PropTypes.object,
+  icon: PropTypes.object.isRequired,
+  signature: PropTypes.object.isRequired,
 };
 
 export default Title;

@@ -12,7 +12,7 @@ const ErrorPage = () => {
 
   return (
     <div className={`pageWrapper ${styles.container}`}>
-      <PageMessage title={title} large={true} message={message} />
+      <PageMessage title={title} large message={message} />
     </div>
   );
 };

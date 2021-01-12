@@ -16,8 +16,9 @@ const ServicesItem = ({ items, message }) => {
 };
 
 ServicesItem.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
-  message: PropTypes.object,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  message: PropTypes.object.isRequired,
 };
 
 export default ServicesItem;

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -19,6 +20,7 @@ const ModalWindow = ({ children, button: Button }) => {
     <>
       <Button onClick={handleTogglingIsOpened} />
       {isOpened ? (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events
         <div
           className={styles.wrapper}
           data-name="modalWrapper"

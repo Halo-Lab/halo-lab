@@ -51,7 +51,8 @@ const Hero = ({ animation }) => {
 };
 
 Hero.propTypes = {
-  animation: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  animation: PropTypes.any.isRequired,
 };
 
 export default Hero;

@@ -12,9 +12,9 @@ const NextProjectCategory = () => (
   <div className={styles.nextProjectCategory}>Next Project</div>
 );
 
-NextProjectCategory.propTypes = {
-  slug: PropTypes.string,
-};
+// NextProjectCategory.propTypes = {
+//   slug: PropTypes.string.isRequired,
+// };
 
 const Headline = ({ data, truncated }) => {
   const { categories, title } = data;
@@ -46,7 +46,7 @@ const Headline = ({ data, truncated }) => {
         <div className={styleImageBox}>
           <img
             src={data.featured_media.source_url}
-            alt="project picture"
+            alt="project illustration"
             loading="lazy"
             className={styles.picture}
           />
@@ -57,7 +57,8 @@ const Headline = ({ data, truncated }) => {
 };
 
 Headline.propTypes = {
-  data: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object.isRequired,
   truncated: PropTypes.bool,
 };
 

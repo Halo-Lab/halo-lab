@@ -7,6 +7,6 @@ const ProjectScene = ({ children }) => {
   return <div className={styles.descriptionLink}>{children}</div>;
 };
 ProjectScene.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };
 export default ProjectScene;

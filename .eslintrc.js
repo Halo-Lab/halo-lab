@@ -14,12 +14,6 @@ module.exports = {
     semi: 0,
   },
   plugins: ['cypress'],
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:prettier/recommended',
-    'plugin:cypress/recommended',
-  ],
   settings: {
     react: {
       version: 'detect',

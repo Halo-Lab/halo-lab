@@ -1,3 +1,8 @@
+/* eslint-disable no-shadow */
+
+/* eslint-disable no-await-in-loop */
+
+/* eslint-disable react/forbid-prop-types */
 import { easeQuadIn, easeQuadOut, easeLinear } from 'd3-ease';
 import PropTypes from 'prop-types';
 import React, { Fragment, useEffect, useRef, useState } from 'react';
@@ -70,6 +75,7 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
     const rightBorder = -listWidth - listWidth;
 
     setMetrics({ startPosition, endPosition, leftBorder, rightBorder });
+    // eslint-disable-next-line no-use-before-define
     set({ x: startPosition, immediate: true });
   };
 
@@ -112,7 +118,7 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
             } else if (x <= rightBorder) {
               await next({ x: startPosition, immediate: true });
             } else {
-              await next({ x: x, config: configDefault, immediate: false });
+              await next({ x, config: configDefault, immediate: false });
             }
           }
 
@@ -150,6 +156,7 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
     <div ref={container} className={styles.container}>
       <a.ul
         ref={ticker}
+        // eslint-disable-next-line react/destructuring-assignment
         style={{ transform: props.x.interpolate(iTranslate) }}
         className={styles.ticker}
       >
@@ -176,10 +183,10 @@ const Ticker = ({ images, arrowLeft, arrowRight }) => {
 };
 
 Ticker.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.object),
-  arrowLeft: PropTypes.object,
-  arrowRight: PropTypes.object,
-  x: PropTypes.any,
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
+  arrowLeft: PropTypes.object.isRequired,
+  arrowRight: PropTypes.object.isRequired,
+  x: PropTypes.any.isRequired,
 };
 
 export default Ticker;

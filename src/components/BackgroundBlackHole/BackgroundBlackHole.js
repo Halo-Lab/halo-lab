@@ -1,3 +1,12 @@
+/* eslint-disable no-plusplus */
+
+/* eslint-disable no-var */
+
+/* eslint-disable vars-on-top */
+
+/* eslint-disable object-shorthand */
+
+/* eslint-disable react/no-this-in-sfc */
 import React, { useEffect, useRef } from 'react';
 import useBreakpoints from 'use-breakpoints-width';
 
@@ -42,7 +51,7 @@ const BackgroundBlackHole = () => {
       };
 
       this.draw = function () {
-        ctx.fillStyle = 'rgba(255,255,255,' + this.opacity + ')';
+        ctx.fillStyle = `rgba(255,255,255,${this.opacity})`;
         ctx.beginPath();
         ctx.arc(
           this.position.x,
@@ -126,7 +135,7 @@ const BackgroundBlackHole = () => {
     loop();
   }, [width]);
 
-  return <canvas ref={container} className={styles.container}></canvas>;
+  return <canvas ref={container} className={styles.container} />;
 };
 
 export default BackgroundBlackHole;

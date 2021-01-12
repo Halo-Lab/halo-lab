@@ -37,15 +37,15 @@ const useHomeGalleryAssets = () => {
     }
   `);
 
-  let LARGE_PICTURE = {
+  const LARGE_PICTURE = {
     WIDTH: '800px',
     HEIGHT: '560px',
   };
-  let MEDIUM_PICTURE = {
+  const MEDIUM_PICTURE = {
     WIDTH: '600px',
     HEIGHT: '440px',
   };
-  let SMALL_PICTURE = {
+  const SMALL_PICTURE = {
     WIDTH: '480px',
     HEIGHT: '360px',
   };
@@ -110,8 +110,7 @@ const useHomeGalleryAssets = () => {
       childImageSharp,
     };
   });
-  const arrowLeft = data.arrowLeft;
-  const arrowRight = data.arrowRight;
+  const { arrowLeft, arrowRight } = data;
 
   return { photos, arrowLeft, arrowRight };
 };

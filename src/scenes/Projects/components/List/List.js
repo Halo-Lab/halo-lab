@@ -1,5 +1,6 @@
+/* eslint-disable react/forbid-prop-types */
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import Partners from './components/Partners';
 import ProjectScene from './components/ProjectScene';
@@ -70,7 +71,7 @@ const List = ({
   ];
 
   return (
-    <Fragment>
+    <>
       {items.map((item, index) => {
         const isReversed = !((index + 1) % 2);
         const { id, partners, ...sceneProperties } = item;
@@ -82,25 +83,25 @@ const List = ({
           </div>
         );
       })}
-    </Fragment>
+    </>
   );
 };
 
 List.propTypes = {
-  preview1: PropTypes.object,
-  preview2: PropTypes.object,
-  preview3: PropTypes.object,
-  avatar1: PropTypes.object,
-  avatar2: PropTypes.object,
-  avatar3: PropTypes.object,
-  angellist: PropTypes.object,
-  forbes: PropTypes.object,
-  indiegogo: PropTypes.object,
-  mashable: PropTypes.object,
-  techcrunch: PropTypes.object,
-  vcRu: PropTypes.object,
-  kickstarter: PropTypes.object,
-  huffpost: PropTypes.object,
+  preview1: PropTypes.object.isRequired,
+  preview2: PropTypes.object.isRequired,
+  preview3: PropTypes.object.isRequired,
+  avatar1: PropTypes.object.isRequired,
+  avatar2: PropTypes.object.isRequired,
+  avatar3: PropTypes.object.isRequired,
+  angellist: PropTypes.object.isRequired,
+  forbes: PropTypes.object.isRequired,
+  indiegogo: PropTypes.object.isRequired,
+  mashable: PropTypes.object.isRequired,
+  techcrunch: PropTypes.object.isRequired,
+  vcRu: PropTypes.object.isRequired,
+  kickstarter: PropTypes.object.isRequired,
+  huffpost: PropTypes.object.isRequired,
 };
 
 export default List;

@@ -107,6 +107,7 @@ const Head = ({ children, title, description }) => {
 
 Head.defaultProps = {
   description: `Halo Lab Team brings the design-driven development of your digital product to reality. We are working with a variety of projects, from the strict insurance website to a dynamic music application.`,
+  children: null,
 };
 
 Head.propTypes = {

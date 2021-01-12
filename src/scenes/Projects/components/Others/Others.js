@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -38,9 +39,9 @@ const Others = ({ auth, kklLuzern, udemy }) => {
 };
 
 Others.propTypes = {
-  auth: PropTypes.object,
-  kklLuzern: PropTypes.object,
-  udemy: PropTypes.object,
+  auth: PropTypes.object.isRequired,
+  kklLuzern: PropTypes.object.isRequired,
+  udemy: PropTypes.object.isRequired,
 };
 
 export default Others;

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { v4 as uuid } from 'uuid';
 
 import styles from './Switcher.module.scss';
 
@@ -8,24 +9,24 @@ const Switcher = ({ items }) => {
   return (
     <Tabs>
       <TabList className={styles.tabList}>
-        {items.map((item, index) => {
+        {items.map((item) => {
           return (
-            <Tab className={styles.tabListItem} key={index}>
+            <Tab className={styles.tabListItem} key={uuid()}>
               <div className={styles.tabListTitle}>{item.title}</div>
             </Tab>
           );
         })}
       </TabList>
 
-      {items.map(({ items }, index) => {
+      {items.map(({ items: tab }) => {
         return (
-          <TabPanel key={index}>
+          <TabPanel key={uuid()}>
             <ul className={styles.tabContentList}>
-              {items.map(({ title, image }, index) => {
+              {tab.map(({ title, image }, index) => {
                 const inlineStyles = { animationDelay: `0.${index}s` };
                 return (
                   <li
-                    key={index}
+                    key={uuid()}
                     className={styles.tabContentItem}
                     style={inlineStyles}
                   >

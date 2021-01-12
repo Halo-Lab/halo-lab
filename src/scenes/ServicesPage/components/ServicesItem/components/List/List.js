@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import useBreakpoints from 'use-breakpoints-width';
+import { v4 as uuid } from 'uuid';
 
 import Slider from '@/components/Slider';
 import { BREAKPOINTS } from '@/constants';
@@ -25,9 +26,9 @@ const List = ({ items }) => {
     <div className={styles.container}>
       {breakpoint === BREAKPOINTS.DESKTOP || breakpoint === BREAKPOINTS.TABLET ? (
         <ul className={styles.list}>
-          {items.map((item, index) => {
+          {items.map((item) => {
             return (
-              <li key={index} className={styles.listItem}>
+              <li key={uuid()} className={styles.listItem}>
                 <Item {...item} />
               </li>
             );
@@ -36,8 +37,8 @@ const List = ({ items }) => {
       ) : (
         <div className={styles.wrapper}>
           <Slider settings={settings}>
-            {items.map((item, index) => {
-              return <Item key={index} {...item} />;
+            {items.map((item) => {
+              return <Item key={uuid()} {...item} />;
             })}
           </Slider>
         </div>
@@ -47,7 +48,7 @@ const List = ({ items }) => {
 };
 
 List.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default List;

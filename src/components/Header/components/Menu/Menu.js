@@ -59,17 +59,17 @@ const Menu = () => {
                 activeClassName={styles.active}
                 className={styles.link}
               >
-                <div className={styles.circle} data-circle={index + 1}></div>
+                <div className={styles.circle} data-circle={index + 1} />
                 <div className={styles.title}>{title}</div>
                 <div
                   style={{ backgroundImage: `url('${stars.publicURL}')` }}
                   className={styles.stars}
-                ></div>
+                />
                 <div
                   style={{ backgroundImage: `url('${icon.publicURL}')` }}
                   className={styles.icon}
                   data-icon={index + 1}
-                ></div>
+                />
               </Link>
             </li>
           );

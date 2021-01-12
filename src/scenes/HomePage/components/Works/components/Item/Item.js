@@ -29,7 +29,8 @@ const Item = ({ images }) => {
 };
 
 Item.propTypes = {
-  images: PropTypes.array,
+  // eslint-disable-next-line react/forbid-prop-types
+  images: PropTypes.array.isRequired,
 };
 
 export default Item;

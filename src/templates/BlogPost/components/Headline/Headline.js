@@ -30,7 +30,7 @@ const Headline = ({ categories, title, image }) => {
       <div className={styles.imageBox}>
         <img
           src={image}
-          alt="blog post main image"
+          alt="blog post main illustration"
           loading="lazy"
           className={styles.image}
         />
@@ -40,9 +40,9 @@ const Headline = ({ categories, title, image }) => {
 };
 
 Headline.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.object),
-  image: PropTypes.string,
-  title: PropTypes.string,
+  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Headline;

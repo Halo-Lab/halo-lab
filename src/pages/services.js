@@ -14,7 +14,7 @@ const Services = () => {
     <Providers>
       <BackgroundStars />
       <Layout>
-        <Head title={title} description={description}></Head>
+        <Head title={title} description={description} />
         <ServicesPage />
       </Layout>
     </Providers>

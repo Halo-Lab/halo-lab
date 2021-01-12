@@ -22,7 +22,7 @@ const HomePage = ({ animation }) => {
       </div>
       <Works />
       <div className="pageWrapper">
-        <Projects title="Projects" navigation={true} />
+        <Projects title="Projects" navigation />
       </div>
       <Testimonials />
       <Gallery />
@@ -35,7 +35,8 @@ const HomePage = ({ animation }) => {
 };
 
 HomePage.propTypes = {
-  animation: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  animation: PropTypes.any.isRequired,
 };
 
 export default HomePage;

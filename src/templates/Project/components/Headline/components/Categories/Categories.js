@@ -15,7 +15,7 @@ const Categories = ({ items }) => {
         </Link>
       </li>
       {items.map((item) => {
-        let link = `/portfolio?category=${item.slug}`;
+        const link = `/portfolio?category=${item.slug}`;
 
         return (
           <Fragment key={item.slug}>
@@ -33,6 +33,7 @@ const Categories = ({ items }) => {
 };
 
 Categories.propTypes = {
+  // eslint-disable-next-line react/require-default-props
   items: PropTypes.arrayOf(PropTypes.object),
 };
 

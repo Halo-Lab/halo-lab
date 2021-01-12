@@ -31,7 +31,7 @@ const Categories = ({ items }) => {
 };
 
 Categories.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Categories;

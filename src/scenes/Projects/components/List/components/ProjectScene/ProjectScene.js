@@ -1,6 +1,7 @@
+/* eslint-disable react/forbid-prop-types */
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import SlideHover from '@/components/SlideHover';
 
@@ -16,7 +17,7 @@ const ProjectScene = ({
   title,
 }) => {
   return (
-    <Fragment>
+    <>
       <div className={`${styles.preview} ${reversed ? styles.reversed : ''}`}>
         <a href={link} target="_blank" rel="noopener noreferrer">
           <Img fluid={preview.childImageSharp.fluid} draggable={false} />
@@ -49,17 +50,17 @@ const ProjectScene = ({
           </div>
         </div>
       </div>
-    </Fragment>
+    </>
   );
 };
 ProjectScene.propTypes = {
-  link: PropTypes.string,
-  linkTitle: PropTypes.string,
-  preview: PropTypes.object,
-  reversed: PropTypes.bool,
-  review: PropTypes.object,
-  tags: PropTypes.string,
-  title: PropTypes.string,
-  xys: PropTypes.any,
+  link: PropTypes.string.isRequired,
+  linkTitle: PropTypes.string.isRequired,
+  preview: PropTypes.object.isRequired,
+  reversed: PropTypes.bool.isRequired,
+  review: PropTypes.object.isRequired,
+  tags: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  // xys: PropTypes.any.isRequired,
 };
 export default ProjectScene;

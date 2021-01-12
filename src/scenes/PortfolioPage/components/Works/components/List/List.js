@@ -50,7 +50,11 @@ const List = ({ icon, items }) => {
             />
           </a>
         ) : (
-          <button className={styles.button} onClick={handleSetNumberOfRendered}>
+          <button
+            className={styles.button}
+            onClick={handleSetNumberOfRendered}
+            type="button"
+          >
             INSPIRE MORE
             <img
               src={icon.publicURL}
@@ -66,8 +70,9 @@ const List = ({ icon, items }) => {
 };
 
 List.propTypes = {
-  icon: PropTypes.object,
-  items: PropTypes.arrayOf(PropTypes.object),
+  // eslint-disable-next-line react/forbid-prop-types
+  icon: PropTypes.object.isRequired,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default List;

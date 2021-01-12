@@ -14,9 +14,10 @@ const Item = ({ title, text, image }) => {
 };
 
 Item.propTypes = {
-  title: PropTypes.string,
-  text: PropTypes.string,
-  image: PropTypes.object,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  image: PropTypes.object.isRequired,
 };
 
 export default Item;

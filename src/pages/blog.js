@@ -14,7 +14,7 @@ const Blog = () => {
     <Providers>
       <BackgroundStars />
       <Layout>
-        <Head title={title} description={description}></Head>
+        <Head title={title} description={description} />
         <BlogPage />
       </Layout>
     </Providers>

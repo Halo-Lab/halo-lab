@@ -44,7 +44,7 @@ const Header = ({ headerIsWhite, forwardedRef, withoutGradient, headerShow }) =>
             className={styles.menuButton}
             onClick={handleTogglingIsOpened}
           >
-            <span className={styles.menuIcon} data-status={menuStatus}></span>
+            <span className={styles.menuIcon} data-status={menuStatus} />
             <span className={styles.hiddenTitle}>Menu</span>
           </button>
         </div>
@@ -55,9 +55,16 @@ const Header = ({ headerIsWhite, forwardedRef, withoutGradient, headerShow }) =>
 
 export default Header;
 
+Header.defaultProps = {
+  headerIsWhite: false,
+  withoutGradient: false,
+  headerShow: false,
+};
+
 Header.propTypes = {
   headerIsWhite: PropTypes.bool,
-  forwardedRef: PropTypes.object,
+  // eslint-disable-next-line react/forbid-prop-types
+  forwardedRef: PropTypes.object.isRequired,
   withoutGradient: PropTypes.bool,
   headerShow: PropTypes.bool,
 };
