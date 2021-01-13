@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useMemo } from 'react';
 
@@ -8,13 +7,12 @@ import Layout from '@/components/Layout';
 import Providers from '@/components/Providers';
 import Subscribe from '@/components/Subscribe';
 import MailUs from '@/scenes/MailUs';
+import { getCategories } from '@/src/helpers/utils';
 import { useHeaderIsWhite } from '@/src/hooks';
 
 import Article from './components/Article';
-import Headline from './components/Headline';
+import BlogHeadline from './components/BlogHeadline';
 import Thumbnails from './components/Thumbnails';
-
-import styles from './BlogPost.module.scss';
 
 function getRecommendedPosts(allPosts = [], currentPost) {
   const RECOMMENDED_POSTS_LIMIT = 3;
@@ -42,11 +40,19 @@ const BlogPost = ({ pageContext }) => {
     data,
     allPosts,
     recent: { previous, next },
+    baseUrl,
   } = pageContext;
+
   const recommendedPosts = useMemo(() => getRecommendedPosts(allPosts, data), [
     allPosts,
     data,
   ]);
+
+  const mainCategory = {
+    id: '6485',
+    name: 'All Blog Posts',
+    link: baseUrl,
+  };
 
   const articleRef = React.useRef(null);
   const headerIsWhite = useHeaderIsWhite(articleRef);
@@ -54,21 +60,22 @@ const BlogPost = ({ pageContext }) => {
   const thumbnailsItems = [];
   if (next) thumbnailsItems.push(next);
   if (previous) thumbnailsItems.push(previous);
-  const pageWrapperClass = classNames(styles.container, 'pageWrapper');
   const excr = data.excerpt.replace(/(<([^>]+)>)/gi, '');
+
+  const categories = getCategories(mainCategory, data.categories);
+  const title = `${data.title} - Halo Lab Blog`;
 
   return (
     <Providers>
       <BackgroundStars />
       <Layout headerIsWhite={headerIsWhite}>
-        <Head title={`${data.title} - Halo Lab Blog`} description={excr} />
-        <div className={pageWrapperClass}>
-          <Headline
-            categories={data.categories}
-            image={data.featured_media.source_url}
-            title={data.title}
-          />
-        </div>
+        <Head title={title} description={excr} />
+
+        <BlogHeadline
+          categories={categories}
+          image={data.featured_media.source_url}
+          title={data.title}
+        />
         <div ref={articleRef}>
           <Article content={data.content} />
         </div>

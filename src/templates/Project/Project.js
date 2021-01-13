@@ -6,15 +6,25 @@ import BackgroundStars from '@/components/BackgroundStars';
 import Head from '@/components/Head';
 import Layout from '@/components/Layout';
 import Providers from '@/components/Providers';
+import { getCategories } from '@/src/helpers/utils';
 import { useHeaderIsWhite } from '@/src/hooks';
 
 import Description from './components/Description';
-import Headline from './components/Headline';
+import ProjectHeadline from './components/ProjectHeadline';
 
 import styles from './Project.module.scss';
 
 const Project = ({ pageContext }) => {
-  const { data, next } = pageContext;
+  const { data, next, baseUrl } = pageContext;
+
+  const mainCategory = {
+    id: '9875',
+    name: 'Portfolio',
+    link: baseUrl,
+  };
+
+  const categories = getCategories(mainCategory, data.categories);
+  const nextCategories = getCategories(mainCategory, next.categories);
 
   const contentRef = React.useRef(null);
   const headerIsWhite = useHeaderIsWhite(contentRef);
@@ -28,14 +38,23 @@ const Project = ({ pageContext }) => {
       <Layout headerIsWhite={headerIsWhite} footerIsHide>
         <Head title={title} description={data.excerpt} />
 
-        <Headline data={data} />
+        <ProjectHeadline
+          categories={categories}
+          image={data.featured_media.source_url}
+          title={data.title}
+        />
 
         <div ref={contentRef}>
           <Description data={data} />
         </div>
 
         <Link to={nextLink} className={styles.headlineWrapLink}>
-          <Headline data={next} truncated />
+          <ProjectHeadline
+            categories={nextCategories}
+            image={next.featured_media.source_url}
+            title={next.title}
+            truncated
+          />
         </Link>
       </Layout>
     </Providers>

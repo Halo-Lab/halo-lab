@@ -1,0 +1,46 @@
+@import '@/styles/variables/all';
+@import '@/styles/mixins/all';
+@import '@/functions/functions';
+
+.headline {
+  padding-top: 11.4rem;
+}
+
+.headline-truncated {
+  padding-top: 7.5rem;
+
+  @media screen and (max-width: $sm) {
+    padding-top: 6rem;
+  }
+}
+
+.container {
+  @include grid-template();
+  @include col-width(1, 65);
+}
+
+.image-box {
+  @include hl-margin('top', 65px);
+  @include col-width(5, 61);
+
+  background: transparent;
+  position: relative;
+}
+
+.next-image-box {
+  height: 180px;
+  overflow: hidden;
+}
+
+.picture {
+  display: block;
+  max-width: 100%;
+  max-height: 700px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.next-image-box .picture {
+  position: absolute;
+}

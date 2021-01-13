@@ -65,22 +65,30 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const allPosts = result.data.allWordpressPost.edges.map(({ node }) => node);
 
+  const blogLink = '/blog';
+  const portfolioLink = '/portfolio';
+
   result.data.allWordpressPost.edges.forEach(({ node, previous, next }) => {
     createPage({
-      path: `/blog/${node.slug}`,
+      path: `${blogLink}/${node.slug}`,
       component: require.resolve(`./src/templates/BlogPost`),
-      context: { data: node, allPosts, recent: { previous, next } },
+      context: {
+        data: node,
+        allPosts,
+        recent: { previous, next },
+        baseUrl: blogLink,
+      },
     });
   });
 
   projects.forEach((node, index) => {
-    let next =
+    const next =
       index === projects.length - 1 ? projects[0] : projects[index + 1];
 
     createPage({
-      path: `/portfolio/${node.slug}`,
+      path: `${portfolioLink}/${node.slug}`,
       component: require.resolve(`./src/templates/Project`),
-      context: { data: node, next },
+      context: { data: node, next, baseUrl: portfolioLink },
     });
   });
 };

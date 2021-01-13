@@ -17,12 +17,12 @@
 }
 
 .category-separator {
-  @include hl-margin('right', 8px);
-  @include hl-margin('left', 8px);
+  @include hl-margin("right", 8px);
+  @include hl-margin("left", 8px);
 
   @media screen and (max-width: $sm) {
-    @include hl-margin('right', 12px);
-    @include hl-margin('left', 12px);
+    @include hl-margin("right", 12px);
+    @include hl-margin("left", 12px);
   }
 }
 

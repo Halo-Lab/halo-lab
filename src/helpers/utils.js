@@ -3,22 +3,45 @@ function isValidEmail(email) {
   return regexp.test(email);
 }
 
-// this function takes an element on at the time of finding which callback will be returned
-export function scrollHandler(ref, callback) {
+/**
+ * Сall a callback function depending on the ref position, when scrolling the window
+ *
+ * @param {Object} ref - react ref
+ * @callback callback - call with a value of true/false
+ * @return {Function}  - remove scroll listener
+ *
+ */
+export function scrollEffect(ref, callback) {
   // eslint-disable-next-line consistent-return
-  return function () {
-    const pos = ref.getBoundingClientRect();
+  const handler = () => {
+    const pos = ref.current.getBoundingClientRect();
     if (pos.y <= 0 && -pos.y < pos.height) {
       return callback(true);
     }
     callback(false);
   };
-}
 
-export function useEffectScroll(ref, func) {
-  const handler = scrollHandler(ref.current, func);
   window.addEventListener('scroll', handler);
   return () => window.removeEventListener('scroll', handler);
+}
+
+/**
+ * Return an array of categories with links based on main category
+ *
+ * @param {Object} mainCategory - main category
+ * @param {Array} childCategories - array of categories without links
+ * @return {Array}  - array of categories with main category
+ *
+ */
+export function getCategories(mainCategory, childCategories) {
+  const categories = childCategories.map(item => {
+    return {
+      ...item,
+      link: `${mainCategory.link}?category=${item.slug}`,
+    };
+  });
+
+  return [mainCategory, ...categories];
 }
 
 export default isValidEmail;

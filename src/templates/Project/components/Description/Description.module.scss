@@ -2,9 +2,9 @@
 @import '@/styles/mixins/all';
 
 .project-description {
-  @include hl-margin('top', -160px);
-  @include hl-padding('top', 300px);
-  @include hl-padding('bottom', 150px);
+  @include hl-margin("top", -160px);
+  @include hl-padding("top", 300px);
+  @include hl-padding("bottom", 150px);
   @include hl-font-size-text(18px);
   @include grid-template();
   @include col-width(1, 65);
@@ -16,7 +16,7 @@
   color: $dark-color;
 
   @media screen and (max-width: $md) {
-    @include hl-padding('bottom', 200px);
+    @include hl-padding("bottom", 200px);
   }
 }
 
@@ -28,7 +28,7 @@
 
 .technologies {
   @include hl-font-size-text(12px);
-  @include hl-margin('bottom', 20px);
+  @include hl-margin("bottom", 20px);
   font-family: $font-gramatika;
   font-weight: 700;
   text-transform: uppercase;
@@ -38,11 +38,11 @@
   margin: 0;
 
   @media screen and (max-width: $md) {
-    @include hl-margin('bottom', 10px);
+    @include hl-margin("bottom", 10px);
   }
   @media screen and (max-width: $sm) {
     @include hl-font-size-text(11px);
-    @include hl-margin('bottom', 5px);
+    @include hl-margin("bottom", 5px);
   }
 }
 
@@ -60,7 +60,7 @@
 }
 
 .excerpts {
-  @include hl-margin('right', 80px);
+  @include hl-margin("right", 80px);
   @include hl-font-size-text(30px);
   color: $dark-color;
   line-height: 150%;
@@ -75,8 +75,8 @@
     max-width: 300px;
   }
   @media screen and (max-width: $md) {
-    @include hl-margin('right', 0);
-    @include hl-margin('bottom', 30px);
+    @include hl-margin("right", 0);
+    @include hl-margin("bottom", 30px);
     max-width: 600px;
   }
   @media screen and (max-width: $sm) {
@@ -118,23 +118,22 @@
 }
 
 .company-item {
-  @include hl-margin('right', 50px);
-  @include hl-margin('bottom', 50px);
+  @include hl-margin("right", 50px);
+  @include hl-margin("bottom", 50px);
   opacity: 0.5;
-  max-width: 200px;
 
   @media screen and (max-width: $sm) {
-    @include hl-margin('right', 40px);
+    @include hl-margin("right", 40px);
   }
 }
 .companies-list .company-item:last-child {
-  @include hl-margin('right', 0px);
+  @include hl-margin("right", 0px);
 }
 
 .company-title {
   @include hl-font-size-text(12.7px);
-  @include hl-margin('top', 18px);
-  @include hl-margin('bottom', 0px);
+  @include hl-margin("top", 18px);
+  @include hl-margin("bottom", 0px);
   font-family: $font-sofia-pro;
   line-height: 120%;
   color: $dark-color;
@@ -143,16 +142,16 @@
 }
 
 .more-info {
-  @include hl-margin('top', 100px);
+  @include hl-margin("top", 100px);
   text-align: center;
 }
 
 .more-info-link {
   @include hl-font-size-text(14px);
-  @include hl-padding('top', 10px);
-  @include hl-padding('bottom', 10px);
-  @include hl-padding('right', 5px);
-  @include hl-padding('left', 5px);
+  @include hl-padding("top", 10px);
+  @include hl-padding("bottom", 10px);
+  @include hl-padding("right", 5px);
+  @include hl-padding("left", 5px);
   font-family: $font-sofia-pro;
   font-weight: 600;
   line-height: 125%;
@@ -163,7 +162,7 @@
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -2px;
     left: 0;
