@@ -92,11 +92,14 @@ const Head = ({ children, title, description }) => {
 
       {/* <!-- Verification google search console --> */}
       <meta
-        content="KaWJr5sGtZ__QgG_cgjeVJ-BtUEvLAv7XFF1xXUb7yA"
+        content={process.env.GATSBY_GOOGLE_SEARCH_CONSOLE_VERIFICATION_ID}
         name="google-site-verification"
       />
       {/* <!-- Verification pinterest --> */}
-      <meta name="p:domain_verify" content="8f314f768ee3f49d7f0ad2ab44e21fd2" />
+      <meta
+        name="p:domain_verify"
+        content={process.env.GATSBY_PINTEREST_VERIFICATION_ID}
+      />
 
       {/* Micro data */}
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
