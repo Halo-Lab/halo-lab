@@ -84,16 +84,21 @@ const Head = ({ children, title, description }) => {
       {/* <!-- Facebook meta --> */}
       <meta content={metadata.siteUrl} property="og:site_name" />
       <meta content={title} property="og:title" />
-      <meta сontent={description} property="og:description" />
+      <meta content={description} property="og:description" />
       <meta content="website" property="og:type" />
       <meta content="https://halo-lab.com/tile-512.png" property="og:image" />
       <meta content={metadata.siteUrl} property="og:url" />
       <meta property="og:locale" content="en_US" />
 
-      {/* <!-- Verification --> */}
+      {/* <!-- Verification google search console --> */}
       <meta
-        content="KaWJr5sGtZ__QgG_cgjeVJ-BtUEvLAv7XFF1xXUb7yA"
+        content={process.env.GATSBY_GOOGLE_SEARCH_CONSOLE_VERIFICATION_ID}
         name="google-site-verification"
+      />
+      {/* <!-- Verification pinterest --> */}
+      <meta
+        name="p:domain_verify"
+        content={process.env.GATSBY_PINTEREST_VERIFICATION_ID}
       />
 
       {/* Micro data */}
