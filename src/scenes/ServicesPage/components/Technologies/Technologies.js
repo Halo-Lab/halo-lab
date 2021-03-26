@@ -82,7 +82,7 @@ const Technologies = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Technologies</h2>
+      <h3 className={styles.title}>Technologies</h3>
       {breakpoint === BREAKPOINTS.MOBILE ? (
         <List items={items} />
       ) : (

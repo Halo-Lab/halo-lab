@@ -13,7 +13,7 @@ const Projects = ({ title, navigation }) => {
 
   return (
     <Fragment>
-      <div className={styles.title}>{title}</div>
+      <h1 className={styles.title}>{title}</h1>
       <List {...listAssets} />
 
       {navigation ? <Others {...othersAssets} /> : null}
