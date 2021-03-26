@@ -27,7 +27,7 @@ const List = ({ icon, items }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Img fluid={item.localCover.childImageSharp.fluid} />
+                <Img fluid={item?.localCover?.childImageSharp.fluid} />
               </a>
             </li>
           ) : null;
