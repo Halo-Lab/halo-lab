@@ -94,5 +94,6 @@
     "hooks": {
       "pre-push": "npm test"
     }
-  }
+  },
+  "prettier": "prettier-config-halo-lab"
 }
