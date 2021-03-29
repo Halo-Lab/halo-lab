@@ -10,6 +10,7 @@
     "gatsby": "^2.24.85",
     "gatsby-image": "^2.4.3",
     "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-canonical-urls": "^3.1.0",
     "gatsby-plugin-css-modules-emoji": "^1.0.12",
     "gatsby-plugin-google-gtag": "^1.2.1",
     "gatsby-plugin-hotjar": "^1.0.1",
@@ -90,7 +91,6 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "husky": {
-    "hooks": {
-    }
+    "hooks": {}
   }
 }

@@ -165,5 +165,11 @@ module.exports = {
         openAnalyzer: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://halo-lab.com`,
+      },
+    },
   ],
 };
