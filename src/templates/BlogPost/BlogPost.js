@@ -7,7 +7,6 @@ import Layout from '@components/Layout';
 import BackgroundStars from '@components/BackgroundStars';
 import Head from '@components/Head';
 import MailUs from '@scenes/MailUs';
-import Subscribe from '@components/Subscribe';
 import Article from './components/Article';
 import Headline from './components/Headline';
 import Thumbnails from './components/Thumbnails';
@@ -72,7 +71,6 @@ const BlogPost = ({ pageContext }) => {
           <Article content={data.content} />
         </div>
         <div className="oldPageWrapper">
-          <Subscribe />
           <Thumbnails items={recommendedPosts} />
         </div>
         <MailUs />
