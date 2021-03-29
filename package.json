@@ -91,6 +91,8 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "husky": {
-    "hooks": {}
+    "hooks": {
+      "pre-push": "npm test"
+    }
   }
 }
