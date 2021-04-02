@@ -8,7 +8,7 @@ import styles from './Industries.module.scss';
 const Industries = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>Industries</div>
+      <h3 className={styles.title}>Industries</h3>
       <Description />
       <List />
     </div>

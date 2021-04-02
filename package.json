@@ -47,6 +47,7 @@
     "babel-eslint": "^10.1.0",
     "cypress": "^4.5.0",
     "eslint": "^6.8.0",
+    "eslint-config-halo-lab": "^1.0.16",
     "eslint-config-prettier": "^6.11.0",
     "eslint-loader": "^3.0.4",
     "eslint-plugin-cypress": "^2.11.1",
@@ -78,7 +79,7 @@
     "clean": "gatsby clean",
     "report": "gatsby build",
     "eslint": "eslint src/",
-    "test": "npm run eslint && npm run test:headless",
+    "test": "npm run test:headless",
     "test:file": "cypress run --headless --spec",
     "test:open": "cypress open",
     "test:headless": "cypress run --headless"
@@ -91,6 +92,9 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "husky": {
-    "hooks": {}
-  }
+    "hooks": {
+      "pre-push": "npm test"
+    }
+  },
+  "prettier": "prettier-config-halo-lab"
 }
