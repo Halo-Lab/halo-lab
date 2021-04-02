@@ -12,7 +12,7 @@ const Gallery = () => {
     return {
       name: childImageSharp.fluid.src,
       element: (
-        <li className={styles.item} key={childImageSharp.fluid.src}>
+        <div className={styles.item} key={childImageSharp.fluid.src}>
           <div className={styles.card}>
             <Img
               fluid={childImageSharp.fluid}
@@ -23,7 +23,7 @@ const Gallery = () => {
               }}
             />
           </div>
-        </li>
+        </div>
       ),
     };
   });
