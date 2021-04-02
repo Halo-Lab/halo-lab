@@ -17,6 +17,8 @@ const Gallery = () => {
             <Img
               fluid={childImageSharp.fluid}
               draggable={false}
+              alt={childImageSharp.fluid.alt}
+              title={childImageSharp.fluid.title}
               style={{
                 height: childImageSharp.fluid.height,
                 width: childImageSharp.fluid.width,

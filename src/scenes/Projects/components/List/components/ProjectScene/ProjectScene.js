@@ -12,12 +12,19 @@ const ProjectScene = ({
   review,
   tags,
   title,
+  alt,
+  imgTitle,
 }) => {
   return (
     <Fragment>
       <div className={`${styles.preview} ${reversed ? styles.reversed : ''}`}>
         <a href={link} target="_blank" rel="noopener noreferrer">
-          <Img fluid={preview.childImageSharp.fluid} draggable={false} />
+          <Img
+            fluid={preview.childImageSharp.fluid}
+            draggable={false}
+            alt={alt}
+            title={imgTitle}
+          />
           <span className={styles.hiddenTitle}>{title}</span>
         </a>
       </div>
@@ -63,6 +70,8 @@ ProjectScene.propTypes = {
   review: PropTypes.object,
   tags: PropTypes.string,
   title: PropTypes.string,
+  alt: PropTypes.string,
+  imgTitle: PropTypes.string,
   xys: PropTypes.any,
 };
 export default ProjectScene;

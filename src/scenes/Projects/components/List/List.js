@@ -31,6 +31,8 @@ const List = ({
       preview: preview1,
       tags: 'UX, UI, Illustrations, Icons',
       title: 'Reinvented bedding cutting price for 50%',
+      alt: 'Primary Smart Bedding Website',
+      imgTitle: 'Primary Smart Bedding Website',
       review: {
         avatar: avatar1,
         author: 'Marshall Haas, CEO',
@@ -46,6 +48,8 @@ const List = ({
       preview: preview2,
       tags: 'Analytics, UX, UI, Icons, Front-end',
       title: 'Game Analytics wins TechCrunch Disrupt & Raise $2.6M',
+      alt: 'Mobalytics. Game Analytics Platform Website',
+      imgTitle: 'Mobalytics. Game Analytics Platform Website',
       review: {
         avatar: avatar2,
         author: 'Bogdan Suchyk, CEO',
@@ -61,6 +65,8 @@ const List = ({
       preview: preview3,
       tags: 'Analytics, UX, UI, Front-end',
       title: 'Indiegogo superstar smart clock which ease your life',
+      alt: 'Glance Clock — First Smart Clock',
+      imgTitle: 'Glance Clock — First Smart Clock',
       review: {
         avatar: avatar3,
         author: 'Anton Glance, CEO',

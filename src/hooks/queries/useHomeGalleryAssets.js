@@ -91,21 +91,33 @@ const useHomeGalleryAssets = () => {
     if (img.src.includes('1.jpg')) {
       img.width = LARGE_PICTURE.WIDTH;
       img.height = LARGE_PICTURE.HEIGHT;
+      img.alt = 'workspace';
+      img.title = 'workspace';
     } else if (img.src.includes('2.jpg')) {
       img.width = MEDIUM_PICTURE.WIDTH;
       img.height = MEDIUM_PICTURE.HEIGHT;
+      img.alt = 'workspace';
+      img.title = 'workspace';
     } else if (img.src.includes('3.jpg')) {
       img.width = SMALL_PICTURE.WIDTH;
       img.height = SMALL_PICTURE.HEIGHT;
+      img.alt = 'workspace';
+      img.title = 'workspace';
     } else if (img.src.includes('4.jpg')) {
       img.width = LARGE_PICTURE.WIDTH;
       img.height = LARGE_PICTURE.HEIGHT;
+      img.alt = 'workspace';
+      img.title = 'workspace';
     } else if (img.src.includes('5.jpg')) {
       img.width = SMALL_PICTURE.WIDTH;
       img.height = SMALL_PICTURE.HEIGHT;
+      img.alt = 'workspace';
+      img.title = 'workspace';
     } else if (img.src.includes('6.jpg')) {
       img.width = MEDIUM_PICTURE.WIDTH;
       img.height = MEDIUM_PICTURE.HEIGHT;
+      img.alt = 'workspace';
+      img.title = 'workspace';
     }
 
     return {

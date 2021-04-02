@@ -10,7 +10,7 @@ const STEP_VALUE = 6;
 const List = ({ items }) => {
   const [numberOfRendered, setNumberOfRendered] = useState(STEP_VALUE);
   const postsToRender = [];
-
+  console.log(items);
   const handleClick = () => {
     const value = numberOfRendered + STEP_VALUE;
     setNumberOfRendered(value > items.length ? items.length : value);
