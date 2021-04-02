@@ -24,9 +24,9 @@ const Hero = ({ animation }) => {
     <section ref={ref} className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.title}>
-          <h2 className={styles.titleText}>
-            development of your web product for years
-          </h2>
+          <h1 className={styles.titleText}>
+            Design-driven development of your web product for years
+          </h1>
           <Title className={styles.titleSvg} />
         </div>
         <animated.div
