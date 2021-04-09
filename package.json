@@ -92,9 +92,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "husky": {
-    "hooks": {
-      "pre-push": "npm test"
-    }
+    "hooks": {}
   },
   "prettier": "prettier-config-halo-lab"
 }

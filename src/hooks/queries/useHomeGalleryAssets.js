@@ -91,33 +91,33 @@ const useHomeGalleryAssets = () => {
     if (img.src.includes('1.jpg')) {
       img.width = LARGE_PICTURE.WIDTH;
       img.height = LARGE_PICTURE.HEIGHT;
-      img.alt = 'workspace';
-      img.title = 'workspace';
+      img.alt = 'Image with dribbble shot on a screen';
+      img.title = 'Image with dribbble shot on a screen';
     } else if (img.src.includes('2.jpg')) {
       img.width = MEDIUM_PICTURE.WIDTH;
       img.height = MEDIUM_PICTURE.HEIGHT;
-      img.alt = 'workspace';
-      img.title = 'workspace';
+      img.alt = 'Man in the dark in front of a lamp';
+      img.title = 'Man in the dark in front of a lamp';
     } else if (img.src.includes('3.jpg')) {
       img.width = SMALL_PICTURE.WIDTH;
       img.height = SMALL_PICTURE.HEIGHT;
-      img.alt = 'workspace';
-      img.title = 'workspace';
+      img.alt = 'Screen, keyboard, lamp, headphones in the workplace';
+      img.title = 'Screen, keyboard, lamp, headphones in the workplace';
     } else if (img.src.includes('4.jpg')) {
       img.width = LARGE_PICTURE.WIDTH;
       img.height = LARGE_PICTURE.HEIGHT;
-      img.alt = 'workspace';
-      img.title = 'workspace';
+      img.alt = 'Girl working at the computer';
+      img.title = 'Girl working at the computer';
     } else if (img.src.includes('5.jpg')) {
       img.width = SMALL_PICTURE.WIDTH;
       img.height = SMALL_PICTURE.HEIGHT;
-      img.alt = 'workspace';
-      img.title = 'workspace';
+      img.alt = 'Laptop on a table';
+      img.title = 'Laptop on a table';
     } else if (img.src.includes('6.jpg')) {
       img.width = MEDIUM_PICTURE.WIDTH;
       img.height = MEDIUM_PICTURE.HEIGHT;
-      img.alt = 'workspace';
-      img.title = 'workspace';
+      img.alt = 'Man working on laptop';
+      img.title = 'Man working on laptop';
     }
 
     return {
