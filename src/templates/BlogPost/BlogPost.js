@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React, { useMemo } from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 
 import Providers from '@components/Providers';
 import Layout from '@components/Layout';
@@ -12,7 +12,7 @@ import Headline from './components/Headline';
 import Thumbnails from './components/Thumbnails';
 import { useHeaderIsWhite } from '@src/hooks';
 
-import styles from './BlogPost.module.scss';
+import styles from "./BlogPost.module.scss";
 
 function getRecommendedPosts(allPosts = [], currentPost) {
   const RECOMMENDED_POSTS_LIMIT = 3;
