@@ -149,35 +149,3 @@
   }
 }
 
-@keyframes gradient-x {
-  0% {
-    display: inline-block;
-    background: linear-gradient(
-      90deg,
-      #e7a28f 0.03%,
-      #f9d6ac 41.15%,
-      #fbfefc 99.97%
-    );
-    background-size: 0px 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-position: 0% 0%;
-    background-repeat: no-repeat;
-  }
-  100% {
-    display: inline-block;
-    background: linear-gradient(
-      90deg,
-      #e7a28f 0.03%,
-      #f9d6ac 41.15%,
-      #fbfefc 99.97%
-    );
-    background-size: 100% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-position: 0% 0%;
-    background-repeat: no-repeat;
-  }
-}

@@ -173,7 +173,7 @@ const Form = () => {
             ></input>
             <div className={styles.attachmentName}>
               <button
-                type="button"
+                type="reset"
                 className={styles.attachmentButton}
                 onClick={handleFileClear}
               ></button>

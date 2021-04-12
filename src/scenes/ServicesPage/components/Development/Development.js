@@ -46,7 +46,7 @@ const Development = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>Development</div>
+      <h2 className={styles.title}>Development</h2>
       <ServicesItem items={items} message={message} />
     </div>
   );

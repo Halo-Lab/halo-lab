@@ -7,32 +7,35 @@ const Info = ({ clutchLaurel, dribbbleLaurel, upworkLaurel }) => {
   const items = [
     {
       icon: upworkLaurel,
+      iconAlt: 'Upwork logo',
       classes: styles.upwork,
       textStrings: 'Awarded as Best Design & Creative',
     },
     {
       icon: dribbbleLaurel,
+      iconAlt: 'Dribbble logo',
       classes: styles.dribbble,
-      textStrings: 'We regullarly hit Top-5 Trending Teams',
+      textStrings: 'We regularly hit Top-5 Trending Teams',
     },
     {
       icon: clutchLaurel,
+      iconAlt: 'Clutch logo',
       classes: styles.clutch,
       textStrings: 'Top User Experience Agency',
     },
   ];
 
   return (
-    <Fragment>
-      {items.map(({ icon, textStrings, classes }, index) => {
+    <>
+      {items.map(({ icon, textStrings, classes, iconAlt }) => {
         return (
-          <div key={index} className={`${styles.item} ${classes}`}>
-            <img className={styles.images} src={icon.publicURL} alt={'icon'} />
+          <div key={iconAlt} className={`${styles.item} ${classes}`}>
+            <img className={styles.images} src={icon.publicURL} alt={iconAlt} />
             <span className={styles.text}>{textStrings}</span>
           </div>
         );
       })}
-    </Fragment>
+    </>
   );
 };
 

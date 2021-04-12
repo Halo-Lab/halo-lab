@@ -18,7 +18,11 @@ const PostThumbnail = ({ title, slug, featured_media, categories }) => {
     <article className={styles.container}>
       <Link to={link} className={styles.link}>
         {imageOptimized ? (
-          <Img fluid={imageOptimized} />
+          <Img
+            fluid={imageOptimized}
+            alt={title}
+            title={title}
+          />
         ) : (
           <div className={styles.thumbnail}>
             <img

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 import Header from '@components/Header';
 import Footer from '@components/Footer';
-import CustomerChat from '@components/CustomerChat';
 
 import { MenuContext, HeaderGradientContext } from '@contexts';
 
@@ -58,7 +57,6 @@ const Layout = ({ children, isGlow, headerIsWhite, footerIsHide }) => {
             <body className={styles.locked}></body>
           </Helmet>
         ) : null}
-        <CustomerChat />
         <div
           className={classNames(styles.container, { [styles.glow]: isGlow })}
         >

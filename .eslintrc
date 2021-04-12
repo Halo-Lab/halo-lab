@@ -1,0 +1,5 @@
+{
+    "extends": [
+      "halo-lab"
+    ]
+  }

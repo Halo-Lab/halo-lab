@@ -17,7 +17,7 @@ const Item = ({ author, generalLogo, rating, stars, text }) => {
         />
       </div>
       <div className={styles.review}>
-        <div className={styles.text}>{text}</div>
+        <h6 className={styles.text}>{text}</h6>
         <div className={`${styles.name} ${styles.top}`}>
           &#8212;&#8194;{author}
         </div>

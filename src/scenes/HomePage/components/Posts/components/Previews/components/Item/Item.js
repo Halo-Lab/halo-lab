@@ -20,9 +20,9 @@ const Item = ({ path, title, featured_media, categories }) => {
       </div>
       <div className={styles.description}>
         <div className={styles.tag}>#{tag}</div>
-        <h3 className={styles.title}>
+        <div className={styles.title}>
           <Link to={postUrl} dangerouslySetInnerHTML={{ __html: title }}></Link>
-        </h3>
+        </div>
       </div>
     </div>
   );
