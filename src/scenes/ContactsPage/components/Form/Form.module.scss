@@ -317,9 +317,6 @@
   background-position: center;
 
   transition: 0.4s;
-  @include media-breakpoint-down(md) {
-    display: none;
-  }
 
   &:hover {
     background-color: $main-color;
