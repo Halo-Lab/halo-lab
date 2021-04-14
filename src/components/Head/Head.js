@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
 import { useSiteMetadata } from '@hooks/queries';
+import { useLocation } from "@reach/router";
 
 const Head = ({ children, title, description }) => {
   const metadata = useSiteMetadata();
-
+  const location = useLocation();
+  const href = location.href;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -52,6 +54,24 @@ const Head = ({ children, title, description }) => {
         datePublished: '2019-02-27T12:02:41+00:00',
         dateModified: '2019-04-10T07:31:56+00:00',
       },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Halo-lab",
+          "item": "https://www.halo-lab.com/"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": title,
+          "item": href,
+        },{
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{h1}"
+        }]
+      }
     ],
   };
 
