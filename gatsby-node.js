@@ -83,4 +83,11 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { data: node, next },
     });
   });
+  const categories = ["agency", "case-studies", "news"];
+  categories.forEach((category) => {
+    createPage({
+      path: `/blog/${category}`,
+      component: require.resolve(`./src/pages/blog`),
+    });
+  });
 };

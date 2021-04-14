@@ -7,6 +7,9 @@
 .tabsContainer {
   @include grid-template();
 }
+.link {
+  text-decoration: none;
+}
 
 .tabList {
   @include col-width(13, 52);
@@ -38,6 +41,7 @@
   > div {
     position: relative;
     font-family: $font-sofia-pro;
+    color: $white-color;
     @include hl-font-size-text(14px);
     padding-left: 10px;
     font-weight: bold;
