@@ -86,7 +86,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const categories = ["agency", "case-studies", "news"];
   categories.forEach((category) => {
     createPage({
-      path: `/blog/category/${category}`,
+      path: `/blog/${category}`,
       component: require.resolve(`./src/pages/blog`),
     });
   });

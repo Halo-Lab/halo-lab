@@ -13,11 +13,11 @@ const getDefaultTabIndex = pathname => {
   switch (pathname) {
     case 'all':
       return 0;
-    case '/blog/category/agency':
+    case '/blog/agency':
       return 1;
-    case '/blog/category/case-studies':
+    case '/blog/case-studies':
       return 2;
-    case '/blog/category/news':
+    case '/blog/news':
       return 3;
     default:
       return 0;
@@ -38,9 +38,9 @@ const Switcher = ({ items, location }) => {
   const itemsNews = [];
   const allCategories = [
     { title: 'All', link: '/blog', items },
-    { title: '#Agency', link: '/blog/category/agency', items: itemsAgency },
-    { title: '#Case Studies', link: '/blog/category/case-studies', items: itemsCaseStudies },
-    { title: '#News', link: '/blog/category/news', items: itemsNews }
+    { title: '#Agency', link: '/blog/agency', items: itemsAgency },
+    { title: '#Case Studies', link: '/blog/case-studies', items: itemsCaseStudies },
+    { title: '#News', link: '/blog/news', items: itemsNews }
   ];
 
   items.forEach(item => {
