@@ -7,18 +7,17 @@ import classNames from 'classnames';
 import PostThumbnail from '@scenes/PostThumbnail';
 
 import styles from './Switcher.module.scss';
+import { Link } from "gatsby";
 
-const getDefaultTabIndex = search => {
-  const value = new URLSearchParams(search).get('category');
-
-  switch (value) {
+const getDefaultTabIndex = pathname => {
+  switch (pathname) {
     case 'all':
       return 0;
-    case 'agency':
+    case '/blog/category/agency':
       return 1;
-    case 'case-studies':
+    case '/blog/category/case-studies':
       return 2;
-    case 'news':
+    case '/blog/category/news':
       return 3;
     default:
       return 0;
@@ -33,15 +32,15 @@ const Switcher = ({ items, location }) => {
   const [numberOfRendered, setNumberOfRendered] = useState(
     INITIAL_AMOUNT_OF_POSTS
   );
-  const defaultIndex = getDefaultTabIndex(location.search);
+  const defaultIndex = getDefaultTabIndex(location.pathname);
   const itemsAgency = [];
   const itemsCaseStudies = [];
   const itemsNews = [];
   const allCategories = [
-    { title: 'All', items },
-    { title: '#Agency', items: itemsAgency },
-    { title: '#Case Studies', items: itemsCaseStudies },
-    { title: '#News', items: itemsNews },
+    { title: 'All', link: '/blog', items },
+    { title: '#Agency', link: '/blog/category/agency', items: itemsAgency },
+    { title: '#Case Studies', link: '/blog/category/case-studies', items: itemsCaseStudies },
+    { title: '#News', link: '/blog/category/news', items: itemsNews }
   ];
 
   items.forEach(item => {
@@ -64,16 +63,17 @@ const Switcher = ({ items, location }) => {
     const value = numberOfRendered + LOAD_MORE_POSTS_AMOUNT;
     setNumberOfRendered(value > items.length ? items.length : value);
   };
-
   return (
     <div className={styles.container}>
       <Tabs defaultIndex={defaultIndex} className={styles.tabsContainer}>
         <TabList className={styles.tabList}>
-          {allCategories.map(({ title }) => {
+          {allCategories.map(({ title,link }) => {
             return (
-              <Tab key={title} className={styles.tabItem}>
-                <div>{title}</div>
-              </Tab>
+              <Link to={link} className={styles.link}>
+                <Tab key={title} className={styles.tabItem}>
+                  <div>{title}</div>
+                </Tab>
+              </Link>
             );
           })}
         </TabList>

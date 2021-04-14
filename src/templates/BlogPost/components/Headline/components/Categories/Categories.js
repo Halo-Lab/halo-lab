@@ -19,7 +19,7 @@ const Categories = ({ items }) => {
         </Link>
       </li>
       {items.map(item => {
-        const link = `/blog?category=${item.slug}`;
+        const link = `/blog/category/${item.slug}`;
 
         return (
           <React.Fragment key={item.slug}>
