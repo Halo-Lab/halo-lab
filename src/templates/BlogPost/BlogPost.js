@@ -11,6 +11,8 @@ import Article from './components/Article';
 import Headline from './components/Headline';
 import Thumbnails from './components/Thumbnails';
 import { useHeaderIsWhite } from '@src/hooks';
+import { Helmet } from "react-helmet";
+import { useLocation } from "@reach/router";
 
 import styles from "./BlogPost.module.scss";
 
@@ -55,8 +57,36 @@ const BlogPost = ({ pageContext }) => {
   const pageWrapperClass = classNames(styles.container, 'pageWrapper');
   const excr = data.excerpt.replace(/(<([^>]+)>)/gi, '');
 
+  const location = useLocation();
+  const href = location.href;
+
+  const schemaBlog = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Halo-lab",
+          "item": "https://www.halo-lab.com/"
+        }, {
+          "@type": "ListItem",
+          "position": 2,
+          "name": data.title,
+          "item": href,
+        }, {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{h1}"
+        }]
+      }
+    ]
+  };
+
   return (
     <Providers>
+      <Helmet><script type="application/ld+json">{JSON.stringify(schemaBlog)}</script></Helmet>
       <BackgroundStars />
       <Layout headerIsWhite={headerIsWhite}>
         <Head title={`${data.title} - Halo Lab Blog`} description={excr}></Head>
