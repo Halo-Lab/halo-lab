@@ -12,7 +12,6 @@ import Headline from './components/Headline';
 import Thumbnails from './components/Thumbnails';
 import { useHeaderIsWhite } from '@src/hooks';
 import { Helmet } from "react-helmet";
-import { useLocation } from "@reach/router";
 
 import styles from "./BlogPost.module.scss";
 
@@ -57,9 +56,6 @@ const BlogPost = ({ pageContext }) => {
   const pageWrapperClass = classNames(styles.container, 'pageWrapper');
   const excr = data.excerpt.replace(/(<([^>]+)>)/gi, '');
 
-  const location = useLocation();
-  const href = location.href;
-
   const schemaBlog = {
     "@context": "https://schema.org",
     "@graph": [
@@ -74,7 +70,7 @@ const BlogPost = ({ pageContext }) => {
           "@type": "ListItem",
           "position": 2,
           "name": data.title,
-          "item": href,
+          "item": `https://www.halo-lab.com/blog/${data.categories[0].slug}`,
         }, {
           "@type": "ListItem",
           "position": 3,
@@ -83,7 +79,6 @@ const BlogPost = ({ pageContext }) => {
       }
     ]
   };
-
   return (
     <Providers>
       <Helmet><script type="application/ld+json">{JSON.stringify(schemaBlog)}</script></Helmet>
