@@ -56,6 +56,13 @@ const BlogPost = ({ pageContext }) => {
   const pageWrapperClass = classNames(styles.container, 'pageWrapper');
   const excr = data.excerpt.replace(/(<([^>]+)>)/gi, '');
 
+  const images = !data.featured_media.localFile.childImageSharp?
+    [data.featured_media.source_url]:
+    [
+    data.featured_media.localFile.childImageSharp.smallImg.src,
+    data.featured_media.localFile.childImageSharp.mediumImg.src,
+    data.featured_media.localFile.childImageSharp.largeImg.src,
+  ]
   const schemaBlog = {
     "@context": "https://schema.org",
     "@graph": [
@@ -76,6 +83,29 @@ const BlogPost = ({ pageContext }) => {
           "position": 3,
           "name": "{h1}"
         }]
+      },
+      {
+        "@type": "NewsArticle",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://google.com/article"
+        },
+        "headline": data.title,
+        "image": images,
+        "datePublished": data.date,
+        "dateModified": data.date,
+        "author": {
+          "@type": "Organization",
+          "name": "Halo lab"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Halo lab",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.halo-lab.com/tile-512.png"
+          }
+        }
       }
     ]
   };

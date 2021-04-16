@@ -17,7 +17,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             slug
             title
-            date(formatString: "MMM DD, YYYY")
+            date(formatString: "YYYY-MM-DDTHH:mm:ssZ")
             content
             excerpt
             categories {
@@ -28,6 +28,19 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             featured_media {
               source_url
+              localFile {
+                childImageSharp {
+                  smallImg: fixed(width: 70, height: 70) {
+                    src
+                  }
+                  mediumImg: fixed(width: 720, height: 540) {
+                    src
+                  }
+                  largeImg: fixed(width: 640, height: 360) {
+                    src
+                  }
+                }
+              }
             }
           }
           next {
