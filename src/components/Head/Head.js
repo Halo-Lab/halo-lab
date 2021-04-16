@@ -6,7 +6,6 @@ import { useSiteMetadata } from '@hooks/queries';
 
 const Head = ({ children, title, description }) => {
   const metadata = useSiteMetadata();
-
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
