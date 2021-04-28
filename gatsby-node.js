@@ -96,11 +96,57 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { data: node, next },
     });
   });
-  const categories = ["agency", "case-studies", "news"];
-  categories.forEach((category) => {
-    createPage({
-      path: `/blog/${category}`,
-      component: require.resolve(`./src/pages/blog`),
+
+  result.data.allWordpressPost.edges.forEach(({ node }) => {
+    const itemsAgency = [];
+    const itemsCaseStudies = [];
+    const itemsNews = [];
+
+    allPosts.forEach(item => {
+      const categories = item.categories.map(item => item.slug);
+
+      if (categories.indexOf("agency") !== -1) {
+        itemsAgency.push(item);
+      }
+
+      if (categories.indexOf("case-studies") !== -1) {
+        itemsCaseStudies.push(item);
+      }
+
+      if (categories.indexOf("news") !== -1) {
+        itemsNews.push(item);
+      }
+    });
+
+    const lengthOfArray = (i) => {
+      if (i.length <= 9){
+        return 1
+      } else {
+        return (i.length - 9) / 3 + 1
+      }
+    }
+    const agencyPages = Array.from({
+      length: Math.ceil(lengthOfArray(itemsAgency))}, (_, i) => i + 1);
+    const caseStudiesPages = Array.from({
+      length: Math.ceil(lengthOfArray(itemsCaseStudies))}, (_, i) => i + 1);
+    const newsPages = Array.from({
+      length: Math.ceil(lengthOfArray(itemsNews))}, (_, i) => i + 1);
+
+    const categoriesPages = [
+      { category: "agency", item: agencyPages },
+      { category: "case-studies", item: caseStudiesPages },
+      { category: "news", item: newsPages },
+    ];
+
+    categoriesPages.forEach((category) => {
+      category.item.forEach((page) => {
+        let pageUrl = page === 1? '': '/' + page;
+        createPage({
+          path: `/blog/${category.category}${pageUrl}`,
+          component: require.resolve(`./src/pages/blog`),
+          context: { page },
+        });
+      })
     });
   });
 };
