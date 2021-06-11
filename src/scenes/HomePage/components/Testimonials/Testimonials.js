@@ -4,8 +4,11 @@ import useBreakpoints from 'use-breakpoints-width';
 import Item from './components/Item';
 import { useTestimonialsAssets } from '@hooks/queries';
 import Swiper from 'react-id-swiper';
+import SwiperCore, { Navigation } from 'swiper';
 import styles from './Testimonials.module.scss';
 
+
+SwiperCore.use([Navigation]);
 const Testimonials = () => {
   const {
     clutchLogo,
@@ -84,6 +87,7 @@ const Testimonials = () => {
             />
           );
         })}
+        
       </Swiper>
     </section>
   );
