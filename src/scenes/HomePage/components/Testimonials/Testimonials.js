@@ -4,6 +4,8 @@ import useBreakpoints from 'use-breakpoints-width';
 import Item from './components/Item';
 import { useTestimonialsAssets } from '@hooks/queries';
 import Swiper from 'react-id-swiper';
+import SwiperCore, { Navigation } from 'swiper';
+SwiperCore.use([Navigation]);
 import styles from './Testimonials.module.scss';
 
 const Testimonials = () => {
@@ -84,6 +86,7 @@ const Testimonials = () => {
             />
           );
         })}
+        
       </Swiper>
     </section>
   );
