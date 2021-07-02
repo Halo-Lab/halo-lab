@@ -42,7 +42,7 @@ const List = ({
     {
       id: 1,
       link:
-        '/',
+        'https://raven.gg/',
       linkTitle: 'View project',
       preview: preview2,
       tags: 'E-commerce, 3D Builder, Esports',
