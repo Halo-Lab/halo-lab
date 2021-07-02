@@ -51,7 +51,7 @@
   z-index: 10;
   @include hl-padding(top, 60px);
   @include hl-padding(bottom, 60px);
-  @include col-width(8, 58);
+  @include col-width(5, 58);
 
   @media screen and (min-width: $xl) {
     @include hl-padding(top, 80px);
@@ -120,8 +120,8 @@
     @include hl-margin(bottom, 30px);
   }
   @media screen and (max-width: $lg) {
-    @include hl-margin(top, 30px);
-    @include hl-margin(bottom, 40px);
+    @include hl-margin(top, 42px);
+    @include hl-margin(bottom, 54px);
   }
 
   a {

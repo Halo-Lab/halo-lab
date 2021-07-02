@@ -8,15 +8,14 @@ import Others from './components/Others';
 import styles from './Projects.module.scss';
 
 const Projects = ({ title, navigation }) => {
-  const { corel, mobalytics, udemy, auth, jbl, ...listAssets } = useProjectsAssets();
-  const othersAssets = { corel, mobalytics, udemy, auth, jbl };
+  const { ...listAssets } = useProjectsAssets();
 
   return (
     <Fragment>
       <h1 className={styles.title}>{title}</h1>
       <List {...listAssets} />
 
-      {navigation ? <Others {...othersAssets} /> : null}
+      {navigation ? <Others /> : null}
     </Fragment>
   );
 };

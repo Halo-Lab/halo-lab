@@ -20,12 +20,12 @@
     text-align: left;
     white-space: nowrap;
     margin-bottom: auto;
-    @include col-width(9, 15);
+    @include col-width(8, 15);
     @include hl-margin(top, 44px);
   }
 
   @media screen and (min-width: $lg) {
-    @include col-width(9, 15);
+    @include col-width(8, 15);
   }
 
   br {
@@ -90,28 +90,85 @@
     }
   }
 
-  img {
+  svg {
     width: 100%;
     height: auto;
+
+    path {
+      transition: fill 0.2s ease-in-out;
+    }
+
     @media screen and (max-width: $md) {
       --coef-size: 0.9;
     }
   }
 
-  li:nth-of-type(1) img {
-    @include hl-width(83px);
+  li:nth-of-type(1) svg {
+    @include hl-width(70px);
+
+    &:hover {
+      path {
+        fill: #ADADBD;
+      }
+    }
+
+    @media screen and (min-width: $sm) {
+      @include hl-width(83px);
+    }
   }
-  li:nth-of-type(2) img {
-    @include hl-width(128px);
+  li:nth-of-type(2) svg {
+    @include hl-width(109px);
+
+    &:hover {
+      path {
+        &:not(:nth-child(4)) {
+          fill: #ADADBD;
+        }
+      }
+    }
+
+    @media screen and (min-width: $sm) {
+      @include hl-width(128px);
+    }
   }
-  li:nth-of-type(3) img {
-    @include hl-width(98px);
+  li:nth-of-type(3) svg {
+    @include hl-width(84px);
+
+    &:hover {
+      path {
+        fill: #ADADBD;
+      }
+    }
+
+    @media screen and (min-width: $sm) {
+      @include hl-width(84px);
+    }
   }
-  li:nth-of-type(4) img {
-    @include hl-width(90px);
+  li:nth-of-type(4) svg {
+    @include hl-width(76px);
+
+    &:hover {
+      path {
+        fill: #ADADBD;
+      }
+    }
+
+    @media screen and (min-width: $sm) {
+      @include hl-width(90px);
+    }
   }
-  li:nth-of-type(5) img {
-    @include hl-width(44px);
+  li:nth-of-type(5) svg {
+    @include hl-width(38px);
+
+    &:hover {
+      path {
+        fill: #ADADBD;
+      }
+    }
+
+    @media screen and (min-width: $sm) {
+      @include hl-width(44px);
+    }
   }
 }
 

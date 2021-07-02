@@ -3,8 +3,14 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import styles from './Others.module.scss';
+import Corel from '../../../../assets/images/brands/corel.inline.svg';
+import Mobalytics from '../../../../assets/images/brands/mobalytics.inline.svg';
+import Udemy from '../../../../assets/images/brands/udemy-new.inline.svg';
+import Auth from '../../../../assets/images/brands/auth0.inline.svg';
+import Jbl from '../../../../assets/images/brands/jbl.inline.svg';
 
-const Others = ({ corel, mobalytics, udemy, auth, jbl, }) => {
+
+const Others = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -25,7 +31,8 @@ const Others = ({ corel, mobalytics, udemy, auth, jbl, }) => {
               products
             </p>
             <a href="https://www.corel.com/" target="_blank" rel="noopener noreferrer">
-              <img src={corel.publicURL} alt="partner logotype" />
+              {/*<img src={corel.publicURL} alt="partner logotype" />*/}
+              <Corel />
             </a>
           </div>
         </li>
@@ -39,7 +46,8 @@ const Others = ({ corel, mobalytics, udemy, auth, jbl, }) => {
               & raise $2.6M
             </p>
             <a href="https://mobalytics.gg/" target="_blank" rel="noopener noreferrer">
-              <img src={mobalytics.publicURL} alt="partner logotype" loading="lazy" />
+              {/*<img src={mobalytics.publicURL} alt="partner logotype" loading="lazy" />*/}
+              <Mobalytics />
             </a>
           </div>
         </li>
@@ -53,7 +61,8 @@ const Others = ({ corel, mobalytics, udemy, auth, jbl, }) => {
               experience
             </p>
             <a href="https://www.udemy.com/" target="_blank" rel="noopener noreferrer">
-              <img src={udemy.publicURL} alt="partner logotype" loading="lazy" />
+              {/*<img src={udemy.publicURL} alt="partner logotype" loading="lazy" />*/}
+              <Udemy />
             </a>
           </div>
         </li>
@@ -67,7 +76,8 @@ const Others = ({ corel, mobalytics, udemy, auth, jbl, }) => {
               processes
             </p>
             <a href="https://auth0.com/" target="_blank" rel="noopener noreferrer">
-              <img src={auth.publicURL} alt="partner logotype" loading="lazy" />
+              {/*<img src={auth.publicURL} alt="partner logotype" loading="lazy" />*/}
+              <Auth />
             </a>
           </div>
         </li>
@@ -81,7 +91,8 @@ const Others = ({ corel, mobalytics, udemy, auth, jbl, }) => {
               lovemark brand
             </p>
             <a href="https://jbl.com/" target="_blank" rel="noopener noreferrer">
-              <img src={jbl.publicURL} alt="partner logotype" loading="lazy" />
+              {/*<img src={jbl.publicURL} alt="partner logotype" loading="lazy" />*/}
+              <Jbl />
             </a>
           </div>
         </li>
@@ -99,14 +110,6 @@ const Others = ({ corel, mobalytics, udemy, auth, jbl, }) => {
       </ul>
     </div>
   );
-};
-
-Others.propTypes = {
-  corel: PropTypes.object,
-  mobalytics: PropTypes.object,
-  udemy: PropTypes.object,
-  auth: PropTypes.object,
-  jbl: PropTypes.object,
 };
 
 export default Others;

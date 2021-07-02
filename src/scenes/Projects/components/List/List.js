@@ -78,7 +78,7 @@ const List = ({
         'https://buecherregister.de/',
       linkTitle: 'View project',
       preview: preview4,
-      tags: 'B2C, Content Management, Books',
+      tags: 'B2C, Content Management, SAAS',
       title: 'Tailored B2C Portal for Europe Bibliophile Audience',
       alt: 'Central online register for private libraries',
       imgTitle: 'Central online register for private libraries',

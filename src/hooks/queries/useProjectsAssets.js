@@ -53,31 +53,6 @@ const useProjectsAssets = () => {
         name
         ...projectsPreview
       }
-      auth: file(
-        relativePath: { eq: "brands/auth0.svg" }
-      ) {
-        publicURL
-      }
-      udemy: file(
-        relativePath: { eq: "brands/udemy-new.svg" }
-      ) {
-        publicURL
-      }
-      corel: file(
-        relativePath: { eq: "brands/corel.svg" }
-      ) {
-        publicURL
-      }
-      mobalytics: file(
-        relativePath: { eq: "brands/mobalytics.svg" }
-      ) {
-        publicURL
-      }
-      jbl: file(
-        relativePath: { eq: "brands/jbl.svg" }
-      ) {
-        publicURL
-      }
       nodejs: file(
         relativePath: { eq: "sections/projects/technologies/nodejs.svg" }
       ) {
