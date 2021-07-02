@@ -8,8 +8,8 @@ import Others from './components/Others';
 import styles from './Projects.module.scss';
 
 const Projects = ({ title, navigation }) => {
-  const { auth, kklLuzern, udemy, ...listAssets } = useProjectsAssets();
-  const othersAssets = { auth, kklLuzern, udemy };
+  const { corel, mobalytics, udemy, auth, jbl, ...listAssets } = useProjectsAssets();
+  const othersAssets = { corel, mobalytics, udemy, auth, jbl };
 
   return (
     <Fragment>

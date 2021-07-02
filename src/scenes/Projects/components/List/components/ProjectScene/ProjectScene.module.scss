@@ -141,13 +141,36 @@
   }
 }
 
-.review {
+.technologies {
   display: flex;
   align-items: center;
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
   margin-top: auto;
   @media screen and (max-width: 1024px) {
     margin-top: 20px;
   }
+}
+
+.technologiesItem {
+  @include hl-margin(right, 32px);
+}
+
+.technologyIcon {
+  display: block;
+  width: auto;
+  height: 2.8rem;
+  margin: 0 auto 10px;
+
+}
+
+.technologyName {
+  line-height: 1.45em;
+  font-weight: 300;
+  vertical-align: center;
+
+  @include hl-font-size-text(16px);
 }
 
 .avatar {

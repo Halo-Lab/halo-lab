@@ -23,70 +23,109 @@ export const projectsAvatar = graphql`
 const useProjectsAssets = () => {
   const data = useStaticQuery(graphql`
     query {
-      preview1: file(relativePath: { eq: "sections/projects/preview-1.jpg" }) {
+      preview1: file(
+        relativePath: { eq: "sections/projects/preview-1.jpeg" }
+      ) {
         name
         ...projectsPreview
       }
-      preview2: file(relativePath: { eq: "sections/projects/preview-2.jpg" }) {
+      preview2: file(
+        relativePath: { eq: "sections/projects/preview-2.jpeg" }
+      ) {
         name
         ...projectsPreview
       }
-      preview3: file(relativePath: { eq: "sections/projects/preview-3.jpg" }) {
+      preview3: file(
+        relativePath: { eq: "sections/projects/preview-3.jpeg" }
+      ) {
         name
         ...projectsPreview
       }
-      avatar1: file(
-        relativePath: { eq: "sections/projects/anton_glance.png" }
+      preview4: file(
+        relativePath: { eq: "sections/projects/preview-4.jpeg" }
       ) {
         name
-        ...projectsAvatar
+        ...projectsPreview
       }
-      avatar2: file(
-        relativePath: { eq: "sections/projects/bogdan_suchyk.jpg" }
+      preview5: file(
+        relativePath: { eq: "sections/projects/preview-5.jpeg" }
       ) {
         name
-        ...projectsAvatar
+        ...projectsPreview
       }
-      avatar3: file(
-        relativePath: { eq: "sections/projects/marshall_haas.jpg" }
+      auth: file(
+        relativePath: { eq: "brands/auth0.svg" }
       ) {
-        name
-        ...projectsAvatar
-      }
-      angellist: file(relativePath: { eq: "brands/angellist.svg" }) {
         publicURL
       }
-      auth: file(relativePath: { eq: "brands/auth0.svg" }) {
+      udemy: file(
+        relativePath: { eq: "brands/udemy-new.svg" }
+      ) {
         publicURL
       }
-      forbes: file(relativePath: { eq: "brands/forbes.svg" }) {
+      corel: file(
+        relativePath: { eq: "brands/corel.svg" }
+      ) {
         publicURL
       }
-      indiegogo: file(relativePath: { eq: "brands/indiegogo.svg" }) {
+      mobalytics: file(
+        relativePath: { eq: "brands/mobalytics.svg" }
+      ) {
         publicURL
       }
-      mashable: file(relativePath: { eq: "brands/mashable.svg" }) {
+      jbl: file(
+        relativePath: { eq: "brands/jbl.svg" }
+      ) {
         publicURL
       }
-      techcrunch: file(relativePath: { eq: "brands/techcrunch.svg" }) {
+      nodejs: file(
+        relativePath: { eq: "sections/projects/technologies/nodejs.svg" }
+      ) {
         publicURL
       }
-      vcRu: file(relativePath: { eq: "brands/vc.ru.svg" }) {
+      nextjs: file(
+        relativePath: { eq: "sections/projects/technologies/nextjs.svg" }
+      ) {
         publicURL
       }
-      jackAndJones: file(relativePath: { eq: "brands/jack-and-jones.svg" }) {
+      figma: file(
+        relativePath: { eq: "sections/projects/technologies/figma.svg" }
+      ) {
         publicURL
       }
-      kklLuzern: file(relativePath: { eq: "brands/kkl-luzern.svg" }) {
+      gatsby: file(
+        relativePath: { eq: "sections/projects/technologies/gatsby.svg" }
+      ) {
         publicURL
       }
-      udemy: file(relativePath: { eq: "brands/udemy.svg" }) {
+      laravel: file(
+        relativePath: { eq: "sections/projects/technologies/laravel.svg" }
+      ) {
         publicURL
       }
-      kickstarter: file(relativePath: { eq: "brands/kickstarter.svg" }) {
+      react: file(
+        relativePath: { eq: "sections/projects/technologies/react.svg" }
+      ) {
         publicURL
       }
-      huffpost: file(relativePath: { eq: "brands/huffpost.svg" }) {
+      prismic: file(
+        relativePath: { eq: "sections/projects/technologies/prismic.svg" }
+      ) {
+        publicURL
+      }
+      strapi: file(
+        relativePath: { eq: "sections/projects/technologies/strapi.svg" }
+      ) {
+        publicURL
+      }
+      vue: file(
+        relativePath: { eq: "sections/projects/technologies/vue.svg" }
+      ) {
+        publicURL
+      }
+      threejs: file(
+        relativePath: { eq: "sections/projects/technologies/threejs.svg" }
+      ) {
         publicURL
       }
     }

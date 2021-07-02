@@ -4,35 +4,95 @@ import { Link } from 'gatsby';
 
 import styles from './Others.module.scss';
 
-const Others = ({ auth, kklLuzern, udemy }) => {
+const Others = ({ corel, mobalytics, udemy, auth, jbl, }) => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <span>And</span> <br />
-        <span>others</span>
+        <span>And a lot </span>
+        <br />
+        <span>more we help </span>
+        <br />
+        <span>to achieve</span>
       </div>
       <ul className={styles.list}>
         <li className={styles.item}>
-          <img src={auth.publicURL} alt="partner logotype" />
+          <div>
+            <p className={styles.listItemDescription}>
+              The future vision
+              <br />
+              for WinZip family
+              <br />
+              products
+            </p>
+            <a href="https://www.corel.com/" target="_blank" rel="noopener noreferrer">
+              <img src={corel.publicURL} alt="partner logotype" />
+            </a>
+          </div>
         </li>
         <li className={styles.item}>
-          <img src={udemy.publicURL} alt="partner logotype" loading="lazy" />
+          <div>
+            <p className={styles.listItemDescription}>
+              Game analytics wins
+              <br />
+              TechCrunch Disrupt
+              <br />
+              & raise $2.6M
+            </p>
+            <a href="https://mobalytics.gg/" target="_blank" rel="noopener noreferrer">
+              <img src={mobalytics.publicURL} alt="partner logotype" loading="lazy" />
+            </a>
+          </div>
         </li>
         <li className={styles.item}>
-          <img
-            src={kklLuzern.publicURL}
-            alt="partner logotype"
-            loading="lazy"
-          />
+          <div>
+            <p className={styles.listItemDescription}>
+              Exploring new
+              <br />
+              course player
+              <br />
+              experience
+            </p>
+            <a href="https://www.udemy.com/" target="_blank" rel="noopener noreferrer">
+              <img src={udemy.publicURL} alt="partner logotype" loading="lazy" />
+            </a>
+          </div>
         </li>
         <li className={styles.item}>
-          <Link to="/portfolio" className={styles.link}>
+          <div>
+            <p className={styles.listItemDescription}>
+              Using our expertise
+              <br />
+              to boost Auth0
+              <br />
+              processes
+            </p>
+            <a href="https://auth0.com/" target="_blank" rel="noopener noreferrer">
+              <img src={auth.publicURL} alt="partner logotype" loading="lazy" />
+            </a>
+          </div>
+        </li>
+        <li className={styles.item}>
+          <div>
+            <p className={styles.listItemDescription}>
+              Promo campaign for
+              <br />
+              the hi-end audio
+              <br />
+              lovemark brand
+            </p>
+            <a href="https://jbl.com/" target="_blank" rel="noopener noreferrer">
+              <img src={jbl.publicURL} alt="partner logotype" loading="lazy" />
+            </a>
+          </div>
+        </li>
+        <li className={styles.item}>
+          <Link to="/contacts" className={styles.link}>
             <span className={styles.linkText}>
-              View
+              Want
               <br />
-              All
+              to be
               <br />
-              Cases
+              here?
             </span>
           </Link>
         </li>
@@ -42,9 +102,11 @@ const Others = ({ auth, kklLuzern, udemy }) => {
 };
 
 Others.propTypes = {
-  auth: PropTypes.object,
-  kklLuzern: PropTypes.object,
+  corel: PropTypes.object,
+  mobalytics: PropTypes.object,
   udemy: PropTypes.object,
+  auth: PropTypes.object,
+  jbl: PropTypes.object,
 };
 
 export default Others;
