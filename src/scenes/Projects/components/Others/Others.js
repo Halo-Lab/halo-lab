@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import styles from './Others.module.scss';
@@ -31,7 +30,6 @@ const Others = () => {
               products
             </p>
             <a href="https://www.corel.com/" target="_blank" rel="noopener noreferrer">
-              {/*<img src={corel.publicURL} alt="partner logotype" />*/}
               <Corel />
             </a>
           </div>
@@ -46,7 +44,6 @@ const Others = () => {
               & raise $2.6M
             </p>
             <a href="https://mobalytics.gg/" target="_blank" rel="noopener noreferrer">
-              {/*<img src={mobalytics.publicURL} alt="partner logotype" loading="lazy" />*/}
               <Mobalytics />
             </a>
           </div>
@@ -61,7 +58,6 @@ const Others = () => {
               experience
             </p>
             <a href="https://www.udemy.com/" target="_blank" rel="noopener noreferrer">
-              {/*<img src={udemy.publicURL} alt="partner logotype" loading="lazy" />*/}
               <Udemy />
             </a>
           </div>
@@ -76,7 +72,6 @@ const Others = () => {
               processes
             </p>
             <a href="https://auth0.com/" target="_blank" rel="noopener noreferrer">
-              {/*<img src={auth.publicURL} alt="partner logotype" loading="lazy" />*/}
               <Auth />
             </a>
           </div>
@@ -91,7 +86,6 @@ const Others = () => {
               lovemark brand
             </p>
             <a href="https://jbl.com/" target="_blank" rel="noopener noreferrer">
-              {/*<img src={jbl.publicURL} alt="partner logotype" loading="lazy" />*/}
               <Jbl />
             </a>
           </div>
