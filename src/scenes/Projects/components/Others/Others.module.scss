@@ -1,6 +1,8 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
+$light-grey-color-hover: #ADADBD;
+
 .container {
   align-items: center;
   @include grid-template();
@@ -12,18 +14,20 @@
   font-weight: 700;
   @include hl-font-size-title(36px);
   line-height: 1.25;
-
   text-align: center;
   @include col-width(5, 61);
   grid-row: 1;
 
   @media screen and (min-width: $md) {
-    @include col-width(9, 15);
     text-align: left;
+    white-space: nowrap;
+    margin-bottom: auto;
+    @include col-width(8, 15);
+    @include hl-margin(top, 44px);
   }
 
   @media screen and (min-width: $lg) {
-    @include col-width(9, 15);
+    @include col-width(8, 15);
   }
 
   br {
@@ -39,6 +43,7 @@
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
+  text-align: center;
   box-sizing: border-box;
   margin: 0;
   @include hl-margin(top, 60px);
@@ -47,53 +52,122 @@
   @include col-width(5, 61);
   grid-row: 2;
 
+  @media screen and (min-width: $sm) {
+
+  }
+
   @media screen and (min-width: $md) {
-    @include col-width(22, 65);
-    flex-wrap: nowrap;
+    @include col-width(28, 65);
     margin-top: 0;
     grid-row: 1;
   }
 
   @media screen and (min-width: $lg) {
-    @include col-width(22, 65);
+
+    @include col-width(24, 65);
   }
 
   li {
-    flex: 1 1 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     position: relative;
     box-sizing: border-box;
     box-shadow: inset -1px -1px 0px 0.25px #32344d;
-    padding-bottom: 50%;
 
-    @media screen and (min-width: $md) {
-      flex: 0 0 25%;
-      padding-bottom: 25%;
+    &::before {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &:not(:nth-of-type(2)) {
+      svg {
+        &:hover {
+          path {
+            fill: $light-grey-color-hover;
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: $sm) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $lg) {
+      width: 33.3%;
     }
   }
 
-  img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    display: block;
+  svg {
     width: 100%;
     height: auto;
+
+    path {
+      transition: fill 0.2s ease-in-out;
+    }
+
     @media screen and (max-width: $md) {
       --coef-size: 0.9;
     }
   }
 
-  li:nth-of-type(1) img {
-    @include hl-width(112px);
+  li:nth-of-type(1) svg {
+    @include hl-width(70px);
+
+    @media screen and (min-width: $sm) {
+      @include hl-width(83px);
+    }
   }
-  li:nth-of-type(2) img {
-    @include hl-width(83px);
+  li:nth-of-type(2) svg {
+    @include hl-width(109px);
+
+    &:hover {
+      path {
+        &:not(:nth-child(4)) {
+          fill: #ADADBD;
+        }
+      }
+    }
+
+    @media screen and (min-width: $sm) {
+      @include hl-width(128px);
+    }
   }
-  li:nth-of-type(3) img {
-    @include hl-width(92px);
-    // @include hl-height(92px);
+  li:nth-of-type(3) svg {
+    @include hl-width(84px);
+
+    @media screen and (min-width: $sm) {
+      @include hl-width(84px);
+    }
+  }
+  li:nth-of-type(4) svg {
+    @include hl-width(76px);
+
+    @media screen and (min-width: $sm) {
+      @include hl-width(90px);
+    }
+  }
+  li:nth-of-type(5) svg {
+    @include hl-width(38px);
+
+    @media screen and (min-width: $sm) {
+      @include hl-width(44px);
+    }
+  }
+}
+
+.listItemDescription {
+  line-height: 1.3em;
+  font-weight: 600;
+  font-size: 14px;
+  @include hl-margin(bottom, 45px);
+
+  @media screen and (min-width: $sm) {
+    @include hl-font-size-text(22px);
   }
 }
 

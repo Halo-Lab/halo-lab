@@ -23,70 +23,84 @@ export const projectsAvatar = graphql`
 const useProjectsAssets = () => {
   const data = useStaticQuery(graphql`
     query {
-      preview1: file(relativePath: { eq: "sections/projects/preview-1.jpg" }) {
+      preview1: file(
+        relativePath: { eq: "sections/projects/preview-1.jpeg" }
+      ) {
         name
         ...projectsPreview
       }
-      preview2: file(relativePath: { eq: "sections/projects/preview-2.jpg" }) {
+      preview2: file(
+        relativePath: { eq: "sections/projects/preview-2.jpeg" }
+      ) {
         name
         ...projectsPreview
       }
-      preview3: file(relativePath: { eq: "sections/projects/preview-3.jpg" }) {
+      preview3: file(
+        relativePath: { eq: "sections/projects/preview-3.jpeg" }
+      ) {
         name
         ...projectsPreview
       }
-      avatar1: file(
-        relativePath: { eq: "sections/projects/anton_glance.png" }
+      preview4: file(
+        relativePath: { eq: "sections/projects/preview-4.jpeg" }
       ) {
         name
-        ...projectsAvatar
+        ...projectsPreview
       }
-      avatar2: file(
-        relativePath: { eq: "sections/projects/bogdan_suchyk.jpg" }
+      preview5: file(
+        relativePath: { eq: "sections/projects/preview-5.jpeg" }
       ) {
         name
-        ...projectsAvatar
+        ...projectsPreview
       }
-      avatar3: file(
-        relativePath: { eq: "sections/projects/marshall_haas.jpg" }
+      nodejs: file(
+        relativePath: { eq: "sections/projects/technologies/nodejs.svg" }
       ) {
-        name
-        ...projectsAvatar
-      }
-      angellist: file(relativePath: { eq: "brands/angellist.svg" }) {
         publicURL
       }
-      auth: file(relativePath: { eq: "brands/auth0.svg" }) {
+      nextjs: file(
+        relativePath: { eq: "sections/projects/technologies/nextjs.svg" }
+      ) {
         publicURL
       }
-      forbes: file(relativePath: { eq: "brands/forbes.svg" }) {
+      figma: file(
+        relativePath: { eq: "sections/projects/technologies/figma.svg" }
+      ) {
         publicURL
       }
-      indiegogo: file(relativePath: { eq: "brands/indiegogo.svg" }) {
+      gatsby: file(
+        relativePath: { eq: "sections/projects/technologies/gatsby.svg" }
+      ) {
         publicURL
       }
-      mashable: file(relativePath: { eq: "brands/mashable.svg" }) {
+      laravel: file(
+        relativePath: { eq: "sections/projects/technologies/laravel.svg" }
+      ) {
         publicURL
       }
-      techcrunch: file(relativePath: { eq: "brands/techcrunch.svg" }) {
+      react: file(
+        relativePath: { eq: "sections/projects/technologies/react.svg" }
+      ) {
         publicURL
       }
-      vcRu: file(relativePath: { eq: "brands/vc.ru.svg" }) {
+      prismic: file(
+        relativePath: { eq: "sections/projects/technologies/prismic.svg" }
+      ) {
         publicURL
       }
-      jackAndJones: file(relativePath: { eq: "brands/jack-and-jones.svg" }) {
+      strapi: file(
+        relativePath: { eq: "sections/projects/technologies/strapi.svg" }
+      ) {
         publicURL
       }
-      kklLuzern: file(relativePath: { eq: "brands/kkl-luzern.svg" }) {
+      vue: file(
+        relativePath: { eq: "sections/projects/technologies/vue.svg" }
+      ) {
         publicURL
       }
-      udemy: file(relativePath: { eq: "brands/udemy.svg" }) {
-        publicURL
-      }
-      kickstarter: file(relativePath: { eq: "brands/kickstarter.svg" }) {
-        publicURL
-      }
-      huffpost: file(relativePath: { eq: "brands/huffpost.svg" }) {
+      threejs: file(
+        relativePath: { eq: "sections/projects/technologies/threejs.svg" }
+      ) {
         publicURL
       }
     }

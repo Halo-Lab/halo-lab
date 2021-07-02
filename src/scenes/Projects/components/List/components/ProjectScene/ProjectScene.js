@@ -9,7 +9,7 @@ const ProjectScene = ({
   linkTitle,
   preview,
   reversed,
-  review,
+  technologies,
   tags,
   title,
   alt,
@@ -46,17 +46,17 @@ const ProjectScene = ({
           </SlideHover>
         </div>
 
-        <div className={styles.review}>
-          <div className={styles.avatar}>
-            <Img
-              fluid={review.avatar.childImageSharp.fluid}
-              draggable={false}
-            />
-          </div>
-          <div className={styles.reviewContent}>
-            <div className={styles.reviewText}>{review.text}</div>
-            <div className={styles.reviewAuthor}>{review.author}</div>
-          </div>
+        <div className={styles.technologies}>
+          {technologies.map(({name, icon}, index) => (
+            <li key={index} className={styles.technologiesItem}>
+              <img src={icon.publicURL}
+                   alt="technologies item icon"
+                   loading="lazy"
+                   className={styles.technologyIcon}
+              />
+              <div className={styles.technologyName}>{name}</div>
+            </li>
+          ))}
         </div>
       </div>
     </Fragment>
@@ -67,7 +67,7 @@ ProjectScene.propTypes = {
   linkTitle: PropTypes.string,
   preview: PropTypes.object,
   reversed: PropTypes.bool,
-  review: PropTypes.object,
+  technologies: PropTypes.arrayOf(PropTypes.object),
   tags: PropTypes.string,
   title: PropTypes.string,
   alt: PropTypes.string,
