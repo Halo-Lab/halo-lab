@@ -23,7 +23,7 @@ $light-grey-color-hover: #ADADBD;
     white-space: nowrap;
     margin-bottom: auto;
     @include col-width(8, 15);
-    @include hl-margin(top, 44px);
+    @include hl-margin(top, 62px);
   }
 
   @media screen and (min-width: $lg) {
