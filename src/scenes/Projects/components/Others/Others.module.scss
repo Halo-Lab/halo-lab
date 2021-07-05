@@ -23,7 +23,7 @@ $light-grey-color-hover: #ADADBD;
     white-space: nowrap;
     margin-bottom: auto;
     @include col-width(8, 15);
-    @include hl-margin(top, 62px);
+    @include hl-margin(top, 42px);
   }
 
   @media screen and (min-width: $lg) {
@@ -70,6 +70,7 @@ $light-grey-color-hover: #ADADBD;
   li {
     width: 50%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -104,7 +105,7 @@ $light-grey-color-hover: #ADADBD;
 
   svg {
     width: 100%;
-    height: auto;
+    @include hl-height(32px);
 
     path {
       transition: fill 0.2s ease-in-out;
@@ -164,10 +165,13 @@ $light-grey-color-hover: #ADADBD;
   line-height: 1.3em;
   font-weight: 600;
   font-size: 14px;
-  @include hl-margin(bottom, 45px);
+  margin-top: 0;
+  margin-bottom: 0;
+  @include hl-margin(bottom, 25px);
 
   @media screen and (min-width: $sm) {
     @include hl-font-size-text(22px);
+    @include hl-margin(bottom, 45px);
   }
 }
 
