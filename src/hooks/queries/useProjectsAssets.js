@@ -30,7 +30,7 @@ const useProjectsAssets = () => {
         ...projectsPreview
       }
       preview2: file(
-        relativePath: { eq: "sections/projects/preview-2.jpeg" }
+        relativePath: { eq: "sections/projects/preview-2.png" }
       ) {
         name
         ...projectsPreview
@@ -42,7 +42,7 @@ const useProjectsAssets = () => {
         ...projectsPreview
       }
       preview4: file(
-        relativePath: { eq: "sections/projects/preview-4.jpeg" }
+        relativePath: { eq: "sections/projects/preview-4.png" }
       ) {
         name
         ...projectsPreview
