@@ -25,7 +25,28 @@ const Home = () => {
       >
         <BackgroundStars animation={props} />
         <Layout>
-          <Head title={title} description={description}></Head>
+          <Head title={title} description={description}>
+            <script type="application/ld+json">
+              {`{
+              "@context": "schema.org",
+              "@type":"Organization",
+              "name":"site",
+              "url":"https://halo-lab.com/",
+              "logo":"https://halo-lab.com/logo.svg",
+              "contactPoint":
+              [
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+380632362920",
+                  "contactType": "",
+                  "areaServed": ""
+                }
+              ],
+              "sameAs":
+              ["https://www.facebook.com/halolabteam/", "https://www.instagram.com/halolabteam/", "https://twitter.com/halolabteam"]
+            }`}
+            </script>
+          </Head>
           <HomePage animation={props} />
         </Layout>
       </div>

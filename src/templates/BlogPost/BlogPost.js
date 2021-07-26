@@ -111,10 +111,11 @@ const BlogPost = ({ pageContext }) => {
   };
   return (
     <Providers>
-      <Helmet><script type="application/ld+json">{JSON.stringify(schemaBlog)}</script></Helmet>
       <BackgroundStars />
       <Layout headerIsWhite={headerIsWhite}>
-        <Head title={`${data.title} - Halo Lab Blog`} description={excr}></Head>
+        <Head title={`${data.title} - Halo Lab Blog`} description={excr}>
+          <script type="application/ld+json">{JSON.stringify(schemaBlog)}</script>
+        </Head>
         <div className={pageWrapperClass}>
           <Headline
             categories={data.categories}
