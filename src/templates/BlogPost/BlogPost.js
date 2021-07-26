@@ -11,7 +11,6 @@ import Article from './components/Article';
 import Headline from './components/Headline';
 import Thumbnails from './components/Thumbnails';
 import { useHeaderIsWhite } from '@src/hooks';
-import { Helmet } from "react-helmet";
 
 import styles from "./BlogPost.module.scss";
 
@@ -63,52 +62,7 @@ const BlogPost = ({ pageContext }) => {
     `"${data.featured_media.localFile.childImageSharp.mediumImg.src}"`,
     `"${data.featured_media.localFile.childImageSharp.largeImg.src}"`,
   ]
-  const schemaBlog = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Halo-lab",
-          "item": "https://www.halo-lab.com/"
-        }, {
-          "@type": "ListItem",
-          "position": 2,
-          "name": data.title,
-          "item": `https://www.halo-lab.com/blog/${data.categories[0].slug}`,
-        }, {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "{h1}"
-        }]
-      },
-      {
-        "@type": "NewsArticle",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://google.com/article"
-        },
-        "headline": data.title,
-        "image": images,
-        "datePublished": data.date,
-        "dateModified": data.date,
-        "author": {
-          "@type": "Organization",
-          "name": "Halo lab"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Halo lab",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.halo-lab.com/tile-512.png"
-          }
-        }
-      }
-    ]
-  };
+
   return (
     <Providers>
       <BackgroundStars />
