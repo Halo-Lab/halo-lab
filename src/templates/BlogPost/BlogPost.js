@@ -56,12 +56,12 @@ const BlogPost = ({ pageContext }) => {
   const pageWrapperClass = classNames(styles.container, 'pageWrapper');
   const excr = data.excerpt.replace(/(<([^>]+)>)/gi, '');
 
-  const images = !data.featured_media.localFile.childImageSharp?
-    [data.featured_media.source_url]:
+  const images = !data.featured_media.localFile.childImageSharp ?
+    `"${[data.featured_media.source_url]}"` :
     [
-    data.featured_media.localFile.childImageSharp.smallImg.src,
-    data.featured_media.localFile.childImageSharp.mediumImg.src,
-    data.featured_media.localFile.childImageSharp.largeImg.src,
+    `"${data.featured_media.localFile.childImageSharp.smallImg.src}"`,
+    `"${data.featured_media.localFile.childImageSharp.mediumImg.src}"`,
+    `"${data.featured_media.localFile.childImageSharp.largeImg.src}"`,
   ]
   const schemaBlog = {
     "@context": "https://schema.org",
@@ -114,7 +114,54 @@ const BlogPost = ({ pageContext }) => {
       <BackgroundStars />
       <Layout headerIsWhite={headerIsWhite}>
         <Head title={`${data.title} - Halo Lab Blog`} description={excr}>
-          <script type="application/ld+json">{JSON.stringify(schemaBlog)}</script>
+          <script type="application/ld+json">
+            {`{
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [{
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Halo-lab",
+                    "item": "https://www.halo-lab.com/"
+                  }, {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "${data.title}",
+                    "item": "https://www.halo-lab.com/blog/${data.categories[0].slug}"
+                  }, {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "{h1}"
+                  }]
+                },
+                {
+                  "@type": "NewsArticle",
+                  "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://google.com/article"
+                  },
+                  "headline": "${data.title}",
+                  "image": [${images}],
+                  "datePublished": "${data.date}",
+                  "dateModified": "${data.date}",
+                  "author": {
+                    "@type": "Organization",
+                    "name": "Halo lab"
+                  },
+                  "publisher": {
+                    "@type": "Organization",
+                    "name": "Halo lab",
+                    "logo": {
+                      "@type": "ImageObject",
+                      "url": "https://www.halo-lab.com/tile-512.png"
+                    }
+                  }
+                }
+              ]
+            }`}
+          </script>
         </Head>
         <div className={pageWrapperClass}>
           <Headline
