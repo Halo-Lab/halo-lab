@@ -8,7 +8,7 @@ import BlogPage from '@scenes/BlogPage';
 import PropTypes from "prop-types";
 
 const Blog = ({ pageContext }) => {
-  const title = 'Blog - Halo Lab';
+  const title = 'Blog | Web Design and Development Services | Halo Lab';
   const description = `If you would like to find some useful articles about digital products - welcome to our blog page. Here we tell you about design and development, we share our case studies with you, and we talk about logos and branding.`;
   const { page } = pageContext;
   return (

@@ -7,7 +7,7 @@ import BackgroundBlackHole from '@components/BackgroundBlackHole';
 import NotFoundPage from '@scenes/NotFoundPage';
 
 const NotFound = () => {
-  const title = `404 - Halo Lab`;
+  const title = `404 Not found | Web Design and Development Services | Halo Lab`;
   return (
     <Providers>
       <BackgroundBlackHole />

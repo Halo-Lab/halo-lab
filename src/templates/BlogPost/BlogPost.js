@@ -67,7 +67,7 @@ const BlogPost = ({ pageContext }) => {
     <Providers>
       <BackgroundStars />
       <Layout headerIsWhite={headerIsWhite}>
-        <Head title={`${data.title} - Halo Lab Blog`} description={excr}>
+        <Head title={`${data.title} - Web Design and Development Services | Halo Lab`} description={excr}>
           <script type="application/ld+json">
             {`{
               "@context": "https://schema.org",

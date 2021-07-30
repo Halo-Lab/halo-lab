@@ -16,7 +16,7 @@ const Home = () => {
     config: { mass: 10, tension: 550, friction: 140 },
   }));
 
-  const title = 'Home Page - Halo Lab';
+  const title = 'Web Design and Development Services | Halo Lab';
   const description = `Halo Lab Team brings the design-driven development of your digital product to reality. We are working with a variety of projects, from the strict insurance website to a dynamic music application.`;
   return (
     <Providers>

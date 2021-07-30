@@ -7,7 +7,7 @@ import BackgroundStars from '@components/BackgroundStars';
 import ThanksPage from '@scenes/ThanksPage';
 
 const Thanks = () => {
-  const title = `Thanks - Halo Lab`;
+  const title = `Thanks | Web Design and Development Services | Halo Lab`;
   return (
     <Providers>
       <BackgroundStars />

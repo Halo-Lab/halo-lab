@@ -18,7 +18,7 @@ const Project = ({ pageContext }) => {
   const contentRef = React.useRef(null);
   const headerIsWhite = useHeaderIsWhite(contentRef);
 
-  const title = `${data.title} - Halo Lab Projects`;
+  const title = `${data.title} - Web Design and Development Services | Halo Lab | Projects`;
   const nextLink = `portfolio/${next.slug}`;
 
   return (

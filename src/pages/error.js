@@ -7,7 +7,7 @@ import BackgroundStars from '@components/BackgroundStars';
 import ErrorPage from '@scenes/ErrorPage';
 
 const Error = () => {
-  const title = `Error - Halo Lab`;
+  const title = `Error | Web Design and Development Services | Halo Lab`;
   return (
     <Providers>
       <BackgroundStars />
