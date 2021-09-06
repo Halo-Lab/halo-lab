@@ -104,6 +104,8 @@ const Head = ({ children, title, description, }) => {
       {/* Micro data */}
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
+      <link rel="stylesheet" href="https://use.typekit.net/yka6loi.css" />
+
       {/* Additional tags */}
       {children}
     </Helmet>
