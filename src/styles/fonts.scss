@@ -1,55 +1,13 @@
 @import '@styles/variables/all';
 @import '@styles/mixins/all';
 
-//SOFIA-PRO FONT
-
-@font-face {
-  font-family: 'Sofia Pro';
-  src: local('Sofia Pro Bold'), local('SofiaProBold'),
-      url('../assets/fonts/SofiaPro/Sofia-Pro - Bold.woff2') format('woff2'),
-      url('../assets/fonts/SofiaPro/Sofia-Pro - Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Sofia Pro';
-  src: local('Sofia Pro Semi-Bold'), local('SofiaProSemiBold'),
-      url('../assets/fonts/SofiaPro/Sofia-Pro - SemiBold.woff2') format('woff2'),
-      url('../assets/fonts/SofiaPro/Sofia-Pro - SemiBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Sofia Pro';
-  src: local('Sofia Pro Regular'), local('SofiaProRegular'),
-      url('../assets/fonts/SofiaPro/Sofia-Pro - Regular.woff2') format('woff2'),
-      url('../assets/fonts/SofiaPro/Sofia-Pro - Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Sofia Pro';
-  src: local('Sofia Pro Light'), local('SofiaProLight'),
-      url('../assets/fonts/SofiaPro/Sofia-Pro - Light.woff2') format('woff2'),
-      url('../assets/fonts/SofiaPro/Sofia-Pro - Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
 // GRAMATIKA FONT
 
 @font-face {
   font-family: 'Gramatika';
   src: local('Gramatika Black'), local('Gramatika-Black'),
-      url('../assets/fonts/Gramatika/Gramatika - Black.woff2') format('woff2'),
-      url('../assets/fonts/Gramatika/Gramatika - Black.woff') format('woff');
+    url('../assets/fonts/Gramatika/Gramatika - Black.woff2') format('woff2'),
+    url('../assets/fonts/Gramatika/Gramatika - Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -58,8 +16,8 @@
 @font-face {
   font-family: 'Gramatika';
   src: local('Gramatika Bold'), local('Gramatika-Bold'),
-      url('../assets/fonts/Gramatika/Gramatika - Bold.woff2') format('woff2'),
-      url('../assets/fonts/Gramatika/Gramatika - Bold.woff') format('woff');
+    url('../assets/fonts/Gramatika/Gramatika - Bold.woff2') format('woff2'),
+    url('../assets/fonts/Gramatika/Gramatika - Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -68,41 +26,9 @@
 @font-face {
   font-family: 'Gramatika';
   src: local('Gramatika Regular'), local('Gramatika-Regular'),
-      url('../assets/fonts/Gramatika/Gramatika - Regular.woff2') format('woff2'),
-      url('../assets/fonts/Gramatika/Gramatika - Regular.woff') format('woff');
+    url('../assets/fonts/Gramatika/Gramatika - Regular.woff2') format('woff2'),
+    url('../assets/fonts/Gramatika/Gramatika - Regular.woff') format('woff');
   font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-//SOFIA-PRO-SOFT FONT
-
-@font-face {
-  font-family: 'Sofia Pro Soft';
-  src: local('Sofia Pro Soft Bold'), local('SofiaProSoftBold'),
-      url('../assets/fonts/SofiaProSoft/Sofia-Pro-Soft - Bold.woff2') format('woff2'),
-      url('../assets/fonts/SofiaProSoft/Sofia-Pro-Soft - Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Sofia Pro Soft';
-  src: local('Sofia Pro Soft Regular'), local('SofiaProSoftRegular'),
-      url('../assets/fonts/SofiaProSoft/Sofia-Pro-Soft - Regular.woff2') format('woff2'),
-      url('../assets/fonts/SofiaProSoft/Sofia-Pro-Soft - Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Sofia Pro Soft';
-  src: local('Sofia Pro Soft Light'), local('SofiaProSoftLight'),
-      url('../assets/fonts/SofiaProSoft/Sofia-Pro-Soft - Light.woff2') format('woff2'),
-      url('../assets/fonts/SofiaProSoft/Sofia-Pro-Soft - Light.woff') format('woff');
-  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
