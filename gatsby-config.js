@@ -1,6 +1,9 @@
 require('dotenv').config();
-const { version } = require('./package.json');
 const { nanoid } = require('nanoid');
+const { version } = require('./package.json');
+
+
+const siteUrl = process.env.URL || `https://www.halo-lab.com`
 
 module.exports = {
   siteMetadata: {
@@ -146,7 +149,60 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `{
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+        }`,
+        serialize: ({ site, allSitePage }) => {
+          const services = [
+            "https://www.halo-lab.com/services/responsive-website-design/",
+            "https://www.halo-lab.com/services/healthcare-medical-web-design/",
+            "https://www.halo-lab.com/services/mobile-application-design-services/",
+            "https://www.halo-lab.com/services/saas-website-design/",
+            "https://www.halo-lab.com/services/branding/",
+            "https://www.halo-lab.com/services/pitch/",
+            "https://www.halo-lab.com/services/media/",
+            "https://www.halo-lab.com/services/landing/",
+            "https://www.halo-lab.com/services/front-end-development-services/",
+            "https://www.halo-lab.com/services/back-end-development-services/",
+            "https://www.halo-lab.com/services/web-design-and-development/",
+          ]
+
+          const pages = []
+
+          allSitePage.edges.forEach(edge => {
+            pages.push({
+              url: site.siteMetadata.siteUrl + edge.node.path,
+              changefreq: `daily`,
+              priority: 0.7,
+            });
+          })
+
+          services.forEach(service => {
+            pages.push({
+              url: service,
+              changefreq: `daily`,
+              priority: 0.7,
+            });
+          })
+
+          return pages
+        },
+      }, 
+    },
     `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-css-modules-emoji`,
