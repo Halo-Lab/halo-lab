@@ -12,7 +12,7 @@
   transition: all 2s;
 }
 
-// Hiding animation due to a11y reasons
+// Hiding animation due when user prefers to reduce motion
 // https://github.com/Halo-Lab/halo-lab/issues/185
 @media (prefers-reduced-motion) {
   .container {
