@@ -11,3 +11,11 @@
   z-index: -1;
   transition: all 2s;
 }
+
+// Hiding animation due when user prefers to reduce motion
+// https://github.com/Halo-Lab/halo-lab/issues/185
+@media (prefers-reduced-motion) {
+  .container {
+    display: none;
+  }
+}
