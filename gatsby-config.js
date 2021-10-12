@@ -203,7 +203,13 @@ module.exports = {
         },
       }, 
     },
-    `gatsby-plugin-robots-txt`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.halo-lab.onrender.com',
+        policy: [{ userAgent: '*', disallow: ['/'] }]
+      }
+    },
     {
       resolve: `gatsby-plugin-css-modules-emoji`,
       options: {
