@@ -1,5 +1,8 @@
 # Halo Lab Website
 
+**DEPRECATED.**
+This repo contains previous version of the website, the current one is written with Eleventy and not yet open sourced. But we're working on it.
+
 It's an open sourced version of [www.halo-lab.com](https://www.halo-lab.com/?utm_source=github-halo-lab) website. 
 
 <a href="https://www.halo-lab.com/?utm_source=github-halo-lab">
